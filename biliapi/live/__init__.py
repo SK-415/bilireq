@@ -5,17 +5,29 @@ from ..utils import get, post
 BASE_URL = "https://api.live.bilibili.com"
 
 
-async def get_rooms_info(uids: List[Union[int, str]]):
+async def get_rooms_info_by_uids(uids: List[Union[int, str]]):
     """根据 UID 批量获取直播间信息"""
-
     url = "/room/v1/Room/get_status_info_by_uids"
     data = {"uids": uids}
     return await post(BASE_URL+url, json=data)
 
 
-async def get_room_info(uid: Union[int, str]):
-    """根据 UID 获取指定直播间信息"""
+async def get_rooms_info_by_ids(room_ids: List[Union[int, str]]):
+    """根据房间号批量获取直播间信息"""
+    url = f"{BASE_URL}/room/v1/Room/get_info_by_id"
+    data = {"ids": room_ids}
+    return await post(url, json=data)
 
-    url = "/room/v1/Room/getRoomInfoOld"
+
+async def get_room_info_by_uid(uid: Union[int, str]):
+    """根据 UID 获取指定直播间信息"""
+    url = f"{BASE_URL}/room/v1/Room/getRoomInfoOld"
     params = {"mid": uid}
-    return await get(BASE_URL+url, params=params)
+    return await get(url, params=params)
+
+
+async def get_room_info_by_id(room_id: Union[int, str]):
+    """根据房间号获取指定直播间信息"""
+    url = f"{BASE_URL}/room/v1/Room/get_info"
+    params = {"id": room_id}
+    return await get(url, params=params)
