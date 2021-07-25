@@ -8,9 +8,13 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.7"
 httpx = "^0.18.2"
+qrcode = {extras = ["pil"], version = "^7.1", optional = true}
 
 [tool.poetry.dev-dependencies]
 black = "^21.7b0"
+
+[tool.poetry.extras]
+qrcode = ["qrcode"]
 
 [[tool.poetry.source]]
 name = "tsinghua"
