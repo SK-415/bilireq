@@ -6,6 +6,7 @@ from typing import Union
 from ..exceptions import ResponseCodeError
 from .qrcode_login import get_qrcode_login_info, get_qrcode_login_result
 from .sms_login import send_sms, sms_login
+from .pwd_login import pwd_login
 
 
 class Login:
@@ -69,4 +70,6 @@ class Login:
             cid = cid or self.cid,
             captcha_key = captcha_key or self.captcha_key
         )
-        
+
+    async def pwd_login(self, username: str, password: str):
+        return await pwd_login(username, password)
