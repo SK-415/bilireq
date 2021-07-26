@@ -36,7 +36,7 @@ async def _request(
     method: str,
     url: URLTypes,
     *,
-    params: Dict[str, Any] = {},
+    params: Dict[str, Any] = None,
     encrypt: bool = False,
     headers: HeaderTypes = DEFAULT_HEADERS,
     proxies: ProxiesTypes = {"all://": None},
@@ -47,9 +47,10 @@ async def _request(
             method,
             url,
             headers = headers,
-            params = _encrypt_params(params) if encrypt else params,
+            params = _encrypt_params(params or {}) if encrypt else params,
             **kwargs
         )
+    print(resp.request.url)
     resp.encoding = "utf-8"
     return resp
 
