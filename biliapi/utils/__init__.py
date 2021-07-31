@@ -7,7 +7,7 @@ from httpx import AsyncClient
 from httpx._models import Response
 from httpx._types import HeaderTypes, ProxiesTypes, URLTypes
 
-from .exceptions import ResponseCodeError
+from ..exceptions import ResponseCodeError
 
 DEFAULT_HEADERS = {
     "user-agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
@@ -50,7 +50,6 @@ async def _request(
             params = _encrypt_params(params or {}) if encrypt else params,
             **kwargs
         )
-    print(resp.request.url)
     resp.encoding = "utf-8"
     return resp
 
@@ -80,3 +79,5 @@ async def get(url: URLTypes, **kwargs):
 
 async def post(url: URLTypes, **kwargs):
     return await request("POST", url, **kwargs)
+
+from .token import Token
