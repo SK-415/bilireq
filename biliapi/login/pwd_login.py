@@ -33,7 +33,7 @@ async def pwd_login(username: str, password: str):
 
 
     Returns:
-        Dict: 登录 Tokens
+        Dict: 登录 Token
     """
     url = f"{BASE_URL}x/passport-tv-login/login"
     params = {"username": username, "password": await _encrypt_pwd(password)}

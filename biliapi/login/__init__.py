@@ -4,9 +4,50 @@ from base64 import b64encode
 from typing import Union
 
 from ..exceptions import ResponseCodeError
+from ..utils import get, post
+from .pwd_login import pwd_login
 from .qrcode_login import get_qrcode_login_info, get_qrcode_login_result
 from .sms_login import send_sms, sms_login
-from .pwd_login import pwd_login
+
+BASE_URL = "https://passport.bilibili.com/api/v2/oauth2/"
+
+
+async def refresh_token(access_token: str, refresh_token: str):
+    """
+    刷新 Token
+
+    Args:
+        access_token (str): Access Token
+        refresh_token (str): Refresh Token
+    
+    Raises:
+        ResponseCodeError: 返回码不为 0
+
+    Returns:
+        Dict: 刷新后的 Token 信息，原 Token 失效
+    """
+    url = f"{BASE_URL}refresh_token"
+    params = {"access_token": access_token, "refresh_token": refresh_token}
+    return await post(url, params=params, encrypt=True)
+
+
+async def get_token_info(access_token: str):
+    """
+    获取 Token 登录信息
+
+    Args:
+        access_token (str): Access Token
+    
+    Raises:
+        ResponseCodeError: 返回码不为 0
+            -101: user not login
+
+    Returns:
+        Dict: Token 信息
+    """
+    url = f"{BASE_URL}info"
+    params = {"access_token": access_token}
+    return await get(url, params=params, encrypt=True)
 
 
 class Login:
@@ -26,7 +67,7 @@ class Login:
         try:
             import qrcode
         except ImportError:
-            raise ImportError("biliapi[qrcode] did not installed.")
+            raise ImportError("biliapi[qrcode] did not install.")
         url = url or await self.get_qrcode_url()
         qr = qrcode.QRCode()
         qr.add_data(url)
