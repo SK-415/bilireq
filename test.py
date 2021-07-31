@@ -1,8 +1,8 @@
 import asyncio
 
-from test_data import UID, PHONE, USERNAME, PASSWORD
+from test_data import UID, PHONE, USERNAME, PASSWORD, ACCESS_TOKEN, REFRESH_TOKEN
 from biliapi.dynamic import get_user_dynamics
-from biliapi.login import Login
+from biliapi.login import Login, refresh_token, get_token_info
 from biliapi.user import get_user_info
 
 
@@ -11,7 +11,9 @@ async def main():
     # print(await test_qrcode_login())
     # print(await test_sms_login())
     # print(await test_pwd_login())
-    await test_pwd_login_duration()
+    # await test_pwd_login_duration()
+    # print(await refresh_token(access_token=ACCESS_TOKEN, refresh_token=REFRESH_TOKEN))
+    print(await get_token_info(access_token=ACCESS_TOKEN))
 
     # print(await get_user_dynamics(UID))
     # print(await get_rooms_info(room_ids=[1,2]))
