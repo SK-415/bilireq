@@ -79,5 +79,3 @@ async def get(url: URLTypes, **kwargs):
 
 async def post(url: URLTypes, **kwargs):
     return await request("POST", url, **kwargs)
-
-from .token import Token
