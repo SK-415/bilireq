@@ -3,6 +3,8 @@ import io
 from base64 import b64encode
 from typing import Union
 
+from .._typing import T_Auth
+from ..auth import Auth
 from ..exceptions import ResponseCodeError
 from ..utils import get, post
 from .pwd_login import pwd_login
@@ -12,7 +14,7 @@ from .sms_login import send_sms, sms_login
 BASE_URL = "https://passport.bilibili.com/api/v2/oauth2/"
 
 
-async def refresh_token(access_token: str, refresh_token: str):
+async def refresh_token(auth: T_Auth = None, *, reqtype="app"):
     """
     刷新 Token
 
@@ -27,11 +29,10 @@ async def refresh_token(access_token: str, refresh_token: str):
         Dict: 刷新后的 Token 信息，原 Token 失效
     """
     url = f"{BASE_URL}refresh_token"
-    params = {"access_token": access_token, "refresh_token": refresh_token}
-    return await post(url, params=params, encrypt=True)
+    return await post(url, auth=auth, reqtype=reqtype)
 
 
-async def get_token_info(access_token: str):
+async def get_token_info(auth: T_Auth = None, *, reqtype="app"):
     """
     获取 Token 登录信息
 
@@ -46,8 +47,7 @@ async def get_token_info(access_token: str):
         Dict: Token 信息
     """
     url = f"{BASE_URL}info"
-    params = {"access_token": access_token}
-    return await get(url, params=params, encrypt=True)
+    return await get(url, auth=auth, reqtype=reqtype)
 
 
 class Login:
@@ -67,7 +67,7 @@ class Login:
         try:
             import qrcode
         except ImportError:
-            raise ImportError("biliapi[qrcode] did not install.")
+            raise ImportError("bilireq[qrcode] not installed.")
         url = url or await self.get_qrcode_url()
         qr = qrcode.QRCode()
         qr.add_data(url)
@@ -81,15 +81,20 @@ class Login:
         img.save(buf, format='PNG')
         return b64encode(buf.getvalue()).decode()
     
-    async def qrcode_login(self, auth_code=None, retry=10):
+    async def qrcode_login(self, auth_code=None, retry=-1, interval=1):
         auth_code = auth_code or self.auth_code
         while retry:
             try:
-                return await get_qrcode_login_result(auth_code)
+                resp = await get_qrcode_login_result(auth_code)
+                auth = Auth(
+                    access_token=resp["token_info"]["access_token"],
+                    refresh_token=resp["token_info"]["refresh_token"]
+                )
+                return await auth.refresh()
             except ResponseCodeError as e:
                 if e.code != 86039:
                     raise
-            await asyncio.sleep(1)
+            await asyncio.sleep(interval)
             retry -= 1
     
     async def send_sms(self, tel, cid=86) -> str:
@@ -104,13 +109,23 @@ class Login:
         tel: Union[int, str] = None,
         cid: Union[int, str] = None,
         captcha_key: str = None
-    ):
-        return await sms_login(
+        ):
+        resp = await sms_login(
             code = code,
             tel = tel or self.tel,
             cid = cid or self.cid,
             captcha_key = captcha_key or self.captcha_key
         )
+        auth = Auth(
+            access_token=resp["access_token"],
+            refresh_token=resp["refresh_token"]
+        )
+        return await auth.refresh()
 
     async def pwd_login(self, username: str, password: str):
-        return await pwd_login(username, password)
+        resp = await pwd_login(username, password)
+        auth = Auth(
+            access_token=resp["access_token"],
+            refresh_token=resp["refresh_token"]
+        )
+        return await auth.refresh()

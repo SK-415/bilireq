@@ -1,24 +1,41 @@
 import asyncio
+import sys
+from pathlib import Path
 
-from test_data import UID, PHONE, USERNAME, PASSWORD, ACCESS_TOKEN, REFRESH_TOKEN
-from biliapi.dynamic import get_user_dynamics
-from biliapi.login import Login, refresh_token, get_token_info
-from biliapi.user import get_user_info
+sys.path.append(str(Path(__file__).parent.parent))
+
+from bilireq.auth import Auth
+from bilireq.dynamic import get_user_dynamics, get_followed_dynamics_update_info, get_followed_new_dynamics, get_followed_history_dynamics
+from bilireq.live import get_rooms_info_by_ids
+from bilireq.login import Login, get_token_info, refresh_token
+from bilireq.user import get_user_info
+
+from test_data import AUTH, PASSWORD, PHONE, UID, USERNAME
 
 
 async def main():
+    pass
     # 登录相关测试
+    # auth = Auth()
+    # print(auth.get_cookies(), auth.get_tokens(), auth["access_token"])
+    auth = Auth(AUTH)
+    # print(await auth.get_info())
     # print(await test_qrcode_login())
     # print(await test_sms_login())
     # print(await test_pwd_login())
     # await test_pwd_login_duration()
     # print(await refresh_token(access_token=ACCESS_TOKEN, refresh_token=REFRESH_TOKEN))
-    print(await get_token_info(access_token=ACCESS_TOKEN))
+    # print(await get_token_info(auth))
 
     # print(await get_user_dynamics(UID))
-    # print(await get_rooms_info(room_ids=[1,2]))
+    print(await get_followed_new_dynamics(auth=auth, reqtype="app"))
+    # print(await get_followed_dynamics_update_info(auth=auth))
+    # print(await get_followed_history_dynamics(578888250640167815, auth=auth))
+    # print(await get_rooms_info_by_ids(room_ids=[1,2], auth=auth, reqtype="app"))
     # print(await get_room_info(UID))
     # print(await get_user_info(str(UID)))
+    # print(await get_user_info(20709866, auth=auth, reqtype="app"))
+    # print(await get_user_info(20709866, auth=auth, reqtype="web"))
 
 
 async def test_qrcode_login():

@@ -25,7 +25,7 @@ async def send_sms(tel: Union[int, str], cid: Union[int, str] = 86):
     """
     url = f"{BASE_URL}sms/send"
     params = {"tel": tel, "cid": cid}
-    return await post(url, params=params, encrypt=True)
+    return await post(url, params=params, reqtype="app")
 
 
 async def sms_login(
@@ -57,4 +57,4 @@ async def sms_login(
     """    
     url = f"{BASE_URL}login/sms"
     params = {"code": code, "tel": tel, "cid": cid, "captcha_key": captcha_key}
-    return await post(url, params=params, encrypt=True)
+    return await post(url, params=params, reqtype="app")

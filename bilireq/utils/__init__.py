@@ -7,6 +7,8 @@ from httpx import AsyncClient
 from httpx._models import Response
 from httpx._types import HeaderTypes, ProxiesTypes, URLTypes
 
+from .._typing import T_Auth
+from ..auth import Auth
 from ..exceptions import ResponseCodeError
 
 DEFAULT_HEADERS = {
@@ -37,17 +39,30 @@ async def _request(
     url: URLTypes,
     *,
     params: Dict[str, Any] = None,
-    encrypt: bool = False,
+    cookies: Dict[str, Any] = None,
+    auth: T_Auth = None,
+    reqtype: str = "both",
     headers: HeaderTypes = DEFAULT_HEADERS,
     proxies: ProxiesTypes = {"all://": None},
     **kwargs
 ) -> Response:
+    auth = Auth(auth)
+    if params is None:
+        params = {}
+    if reqtype.lower() in ["app", "both"]:
+        params.update(auth.get_tokens())
+        _encrypt_params(params)
+    else:
+        if cookies is None:
+            cookies = {}
+        cookies.update(auth.get_cookies())
     async with AsyncClient(proxies=proxies) as client:
         resp = await client.request(
             method,
             url,
             headers = headers,
-            params = _encrypt_params(params or {}) if encrypt else params,
+            params = params,
+            cookies = cookies,
             **kwargs
         )
     resp.encoding = "utf-8"

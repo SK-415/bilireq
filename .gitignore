@@ -1,5 +1,5 @@
+.vscode
+__pycache__
 *.pyc
 
-__pycache__
-.vscode/
 test_data.py
