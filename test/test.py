@@ -18,9 +18,9 @@ async def main():
     # 登录相关测试
     # auth = Auth()
     # print(auth.get_cookies(), auth.get_tokens(), auth["access_token"])
-    auth = Auth(AUTH)
+    # auth = Auth(AUTH)
     # print(await auth.get_info())
-    # print(await test_qrcode_login())
+    print(await test_qrcode_login())
     # print(await test_sms_login())
     # print(await test_pwd_login())
     # await test_pwd_login_duration()
@@ -28,7 +28,7 @@ async def main():
     # print(await get_token_info(auth))
 
     # print(await get_user_dynamics(UID))
-    print(await get_followed_new_dynamics(auth=auth, reqtype="app"))
+    # print(await get_followed_new_dynamics(auth=auth, reqtype="app"))
     # print(await get_followed_dynamics_update_info(auth=auth))
     # print(await get_followed_history_dynamics(578888250640167815, auth=auth))
     # print(await get_rooms_info_by_ids(room_ids=[1,2], auth=auth, reqtype="app"))
