@@ -14,7 +14,7 @@ from .sms_login import send_sms, sms_login as _sms_login
 BASE_URL = "https://passport.bilibili.com/api/v2/oauth2/"
 
 
-async def refresh_token(auth: T_Auth = None, *, reqtype="app"):
+async def refresh_token(auth: T_Auth = None, *, reqtype="app", **kwargs):
     """
     刷新 Token
 
@@ -29,10 +29,10 @@ async def refresh_token(auth: T_Auth = None, *, reqtype="app"):
         Dict: 刷新后的 Token 信息，原 Token 失效
     """
     url = f"{BASE_URL}refresh_token"
-    return await post(url, auth=auth, reqtype=reqtype)
+    return await post(url, auth=auth, reqtype=reqtype, **kwargs)
 
 
-async def get_token_info(auth: T_Auth = None, *, reqtype="app"):
+async def get_token_info(auth: T_Auth = None, *, reqtype="app", **kwargs):
     """
     获取 Token 登录信息
 
@@ -47,7 +47,7 @@ async def get_token_info(auth: T_Auth = None, *, reqtype="app"):
         Dict: Token 信息
     """
     url = f"{BASE_URL}info"
-    return await get(url, auth=auth, reqtype=reqtype)
+    return await get(url, auth=auth, reqtype=reqtype, **kwargs)
 
 
 class Login:

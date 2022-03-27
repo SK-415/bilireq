@@ -5,7 +5,7 @@ from ..utils import post
 BASE_URL = "https://passport.bilibili.com/x/passport-tv-login/"
 
 
-async def send_sms(tel: Union[int, str], cid: Union[int, str] = 86):
+async def send_sms(tel: Union[int, str], cid: Union[int, str] = 86, **kwargs):
     """
     发送短信验证码
 
@@ -25,14 +25,15 @@ async def send_sms(tel: Union[int, str], cid: Union[int, str] = 86):
     """
     url = f"{BASE_URL}sms/send"
     params = {"tel": tel, "cid": cid}
-    return await post(url, params=params, reqtype="app")
+    return await post(url, params=params, reqtype="app", **kwargs)
 
 
 async def sms_login(
     code: Union[int, str],
     tel: Union[int, str],
     captcha_key: str,
-    cid: Union[int, str] = 86
+    cid: Union[int, str] = 86,
+    **kwargs,
 ):
     """
     短信验证码登录
@@ -54,7 +55,7 @@ async def sms_login(
 
     Returns:
         Dict: 登录 Tokens
-    """    
+    """
     url = f"{BASE_URL}login/sms"
     params = {"code": code, "tel": tel, "cid": cid, "captcha_key": captcha_key}
-    return await post(url, params=params, reqtype="app")
+    return await post(url, params=params, reqtype="app", **kwargs)

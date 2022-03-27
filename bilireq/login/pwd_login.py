@@ -14,10 +14,10 @@ async def _encrypt_pwd(pwd: str) -> str:
     resp: Dict[str, str] = await post(url, reqtype="app")
     pub_key = rsa.PublicKey.load_pkcs1_openssl_pem(resp["key"].encode())
     msg = (resp["hash"] + pwd).encode()
-    return base64.b64encode(rsa.encrypt(msg, pub_key)).decode('ascii')
+    return base64.b64encode(rsa.encrypt(msg, pub_key)).decode("ascii")
 
 
-async def pwd_login(username: str, password: str):
+async def pwd_login(username: str, password: str, **kwargs):
     """
     账号密码登录
 
@@ -37,4 +37,4 @@ async def pwd_login(username: str, password: str):
     """
     url = f"{BASE_URL}x/passport-tv-login/login"
     params = {"username": username, "password": await _encrypt_pwd(password)}
-    return await post(url, params=params, reqtype="app")
+    return await post(url, params=params, reqtype="app", **kwargs)

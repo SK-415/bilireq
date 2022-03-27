@@ -1,5 +1,6 @@
 class ResponseCodeError(Exception):
     """请求返回 code 不为 0"""
+
     def __init__(self, code: int, msg: str, data: dict):
         self.code = code
         self.msg = msg
@@ -14,6 +15,7 @@ class ResponseCodeError(Exception):
 
 class AuthParamError(Exception):
     """缺少必要鉴权参数"""
+
     def __init__(self, *params: str):
         self.params = params
 
@@ -26,6 +28,7 @@ class AuthParamError(Exception):
 
 class AuthTypeError(Exception):
     """鉴权类型错误"""
+
     def __init__(self, auth_type: str):
         self.auth_type = auth_type
 

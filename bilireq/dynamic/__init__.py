@@ -9,7 +9,8 @@ async def get_user_dynamics(
     need_top: bool = False,
     *,
     auth=None,
-    reqtype="both"
+    reqtype="both",
+    **kwargs,
 ):
     """获取指定用户历史动态"""
     url = f"{BASE_URL}/dynamic_svr/v1/dynamic_svr/space_history"
@@ -18,33 +19,33 @@ async def get_user_dynamics(
         "offset_dynamic_id": offset,
         "need_top": int(bool(need_top)),
     }
-    return await get(url, params=params, auth=auth, reqtype=reqtype)
+    return await get(url, params=params, auth=auth, reqtype=reqtype, **kwargs)
 
 
-async def get_followed_new_dynamics(*, auth, reqtype="web"):
+async def get_followed_new_dynamics(*, auth, reqtype="web", **kwargs):
     """获取最新关注动态"""
     url = f"{BASE_URL}/dynamic_svr/v1/dynamic_svr/dynamic_new"
     params = {
         "type_list": 268435455,
     }
-    return await get(url, params=params, auth=auth, reqtype=reqtype)
+    return await get(url, params=params, auth=auth, reqtype=reqtype, **kwargs)
 
 
-async def get_followed_history_dynamics(offset: int, *, auth, reqtype="web"):
+async def get_followed_history_dynamics(offset: int, *, auth, reqtype="web", **kwargs):
     """获取历史关注动态"""
     url = f"{BASE_URL}/dynamic_svr/v1/dynamic_svr/dynamic_history"
     params = {
         "type_list": 268435455,
         "offset_dynamic_id": offset,
     }
-    return await get(url, params=params, auth=auth, reqtype=reqtype)
+    return await get(url, params=params, auth=auth, reqtype=reqtype, **kwargs)
 
 
-async def get_followed_dynamics_update_info(offset=0, *, auth, reqtype="web"):
+async def get_followed_dynamics_update_info(offset=0, *, auth, reqtype="web", **kwargs):
     """获取关注动态更新信息"""
     url = f"{BASE_URL}/dynamic_svr/v1/dynamic_svr/web_cyclic_num"
     params = {
         "type_list": 268435455,
         "offset": offset,
     }
-    return await get(url, params=params, auth=auth, reqtype=reqtype)
+    return await get(url, params=params, auth=auth, reqtype=reqtype, **kwargs)
