@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bilireq"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["SK-415 <2967923486@qq.com>"]
 license = "MIT"
