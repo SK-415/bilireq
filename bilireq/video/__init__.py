@@ -1,5 +1,25 @@
-from bilireq.utils import post
 from typing import Union
+
+from bilireq.utils import get, post
+from bilireq.utils.av_bv import BV2av
+
+
+async def get_video_base_info(video_id: Union[int, str]):
+    """获取bilibili视频基本信息"""
+    base_url = "https://api.bilibili.com/x/web-interface/view"
+    if isinstance(video_id, int):
+        url = f"{base_url}?aid={str(video_id)}"
+    else:
+        if video_id[:2] in ["av", "AV", "aV", "Av"]:
+            if video_id[2:].isdigit():
+                url = f"{base_url}?bvid={str(video_id[2:])}"
+            else:
+                raise ValueError(f"{video_id} 不是一个有效的av号")
+        elif video_id[:2] in ["bv", "BV", "bV", "Bv"]:
+            url = f"{base_url}?bvid={str(video_id)}"
+        else:
+            raise ValueError(f"{video_id} 不是一个有效的av或BV号")
+    return await get(url)
 
 
 async def get_video_share(video_id: Union[int, str]):
@@ -10,17 +30,7 @@ async def get_video_share(video_id: Union[int, str]):
                 av_id = int(video_id[2:])
         elif video_id[:2] in ["bv", "BV", "bV", "Bv"]:
             bv_id = video_id
-            table = "fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF"
-            tr = {}
-            for i in range(58):
-                tr[table[i]] = i
-            s = [11, 10, 3, 8, 4, 6]
-            xor = 177451812
-            add = 8728348608
-            r = 0
-            for i in range(6):
-                r += tr[bv_id[s[i]]] * 58**i
-            av_id = (r - add) ^ xor
+            av_id = BV2av(bv_id)
     else:
         av_id = video_id
     body = {
