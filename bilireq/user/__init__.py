@@ -12,8 +12,15 @@ async def get_user_info(uid: Union[int, str], *, auth=None, reqtype="both", **kw
 
 
 async def get_videos(
-        uid: int, tid: int = 0, pn: int = 1, keyword: str = "", order: str = "pubdate",
-        *, auth=None, reqtype="both", **kwargs
+    uid: int,
+    tid: int = 0,
+    pn: int = 1,
+    keyword: str = "",
+    order: str = "pubdate",
+    *,
+    auth=None,
+    reqtype="both",
+    **kwargs,
 ):
     """
     获取用户投该视频信息
@@ -31,6 +38,6 @@ async def get_videos(
         "tid": tid,
         "pn": pn,
         "keyword": keyword,
-        "order": order
+        "order": order,
     }
     return await get(url, params=params, auth=auth, reqtype=reqtype, **kwargs)
