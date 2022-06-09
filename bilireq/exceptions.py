@@ -39,6 +39,20 @@ class AuthTypeError(Exception):
         return self.__repr__()
 
 
+class GrpcError(Exception):
+    """RPC 错误"""
+
+    def __init__(self, code: int, msg: str):
+        self.code = code
+        self.msg = msg
+
+    def __repr__(self) -> str:
+        return f"错误码: {self.code}, 信息: {self.msg}"
+
+    def __str__(self) -> str:
+        return self.__repr__()
+
+
 if __name__ == "__main__":
     raise ValueError("test")
     raise AuthParamError("hehe", "heihei", "233")
