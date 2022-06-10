@@ -28,7 +28,7 @@ def grpc_request(func):
     @wraps(func)
     async def wrapper(
         *args,
-        proxy="",
+        proxy=None,
         auth: T_Auth = None,
         access_key: Optional[str] = None,
         timeout: int = 10,
@@ -37,7 +37,7 @@ def grpc_request(func):
     ):
         options: List[Tuple[str, Any]] = [
             # ("grpc.keepalive_timeout_ms", 10000),
-            ("grpc.http_proxy", proxy),
+            ("grpc.http_proxy", proxy or ""),
         ]
         async with grpc.aio.secure_channel(
             "grpc.biliapi.net",
