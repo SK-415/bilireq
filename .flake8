@@ -6,6 +6,7 @@ exclude =
     */_test/,
     */test/,
     data/,
+    bilireq/grpc/protos/*,
 max-line-length = 90
 statistics = True
 ; ignore =
