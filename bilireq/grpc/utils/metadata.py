@@ -28,7 +28,7 @@ BUVID = fake_buvid()
 
 def make_metadata(auth: T_Auth = None, access_key: Optional[str] = None):
     if not access_key and auth:
-        access_key = auth["access_key"]
+        access_key = auth["access_token"]
     device_params = {
         "mobi_app": "android",
         "device": "phone",
