@@ -3,5 +3,6 @@ __pycache__
 *.pyc
 
 dist/
+_test/
 
 test_data.py
