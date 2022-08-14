@@ -51,7 +51,8 @@ async def _request(
     if cookies is None:
         cookies = {}
     if reqtype.lower() in ["app", "both"]:
-        params.update(auth.get_tokens())
+        # params.update(auth.get_tokens())
+        params["access_key"] = auth.data["access_token"]
         _encrypt_params(params)
     else:
         cookies.update(auth.get_cookies())
