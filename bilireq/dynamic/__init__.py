@@ -9,7 +9,7 @@ async def get_user_dynamics(
     need_top: bool = False,
     *,
     auth=None,
-    reqtype="both",
+    reqtype="app",
     **kwargs,
 ):
     """获取指定用户历史动态"""

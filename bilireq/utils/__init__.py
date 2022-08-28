@@ -40,7 +40,7 @@ async def _request(
     params: Optional[Dict[str, Any]] = None,
     cookies: Optional[Dict[str, Any]] = None,
     auth: T_Auth = None,
-    reqtype: str = "both",
+    reqtype: str = "app",
     headers: HeaderTypes = DEFAULT_HEADERS,
     proxies: ProxiesTypes = {"all://": None},
     **kwargs,
@@ -50,12 +50,11 @@ async def _request(
         params = {}
     if cookies is None:
         cookies = {}
-    if reqtype.lower() in ["app", "both"]:
-        # params.update(auth.get_tokens())
-        params["access_key"] = auth.data["access_token"]
+    if reqtype.lower() == "app":
+        params.update(auth.tokens)
         _encrypt_params(params)
     else:
-        cookies.update(auth.get_cookies())
+        cookies.update(auth.cookies)
     async with AsyncClient(proxies=proxies) as client:
         resp = await client.request(
             method, url, headers=headers, params=params, cookies=cookies, **kwargs

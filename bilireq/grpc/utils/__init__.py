@@ -5,10 +5,10 @@ import grpc
 from google.protobuf.json_format import MessageToDict
 from grpc import RpcError
 
+from ..._typing import T_Auth
 from ...exceptions import GrpcError
 from ..protos.bilibili.rpc.status_pb2 import Status
 from .metadata import make_metadata
-from ..._typing import T_Auth
 
 # _channel = None
 

@@ -1,3 +1,4 @@
+from ..protos.bilibili.ad.v1 import ad_pb2
 from ..protos.bilibili.app.dynamic.v2.dynamic_pb2 import (
     DynAllReq,
     DynMixUpListViewMoreReq,
@@ -22,13 +23,6 @@ async def grpc_get_followed_dynamics(**kwargs):
     stub = DynamicStub(kwargs.pop("_channel"))
     req = DynAllReq()
     return await stub.DynAll(req, **kwargs)
-
-    # exclude_list = [DynamicType.ad, DynamicType.live, DynamicType.live_rcmd]
-    # dynlist = filter(
-    #     lambda x: x.card_type not in exclude_list,
-    #     resp.dynamic_list.list,
-    # )
-    # return list(dynlist)
 
 
 @grpc_request

@@ -9,7 +9,8 @@ from ..exceptions import ResponseCodeError
 from ..utils import get, post
 from .pwd_login import pwd_login as _pwd_login
 from .qrcode_login import get_qrcode_login_info, get_qrcode_login_result
-from .sms_login import send_sms, sms_login as _sms_login
+from .sms_login import send_sms
+from .sms_login import sms_login as _sms_login
 
 BASE_URL = "https://passport.bilibili.com/api/v2/oauth2/"
 
@@ -86,10 +87,9 @@ class Login:
         while retry:
             try:
                 resp = await get_qrcode_login_result(auth_code)
-                auth = Auth(
-                    access_token=resp["token_info"]["access_token"],
-                    refresh_token=resp["token_info"]["refresh_token"],
-                )
+                auth = Auth()
+                auth.access_token = resp["token_info"]["access_token"]
+                auth.refresh_token = resp["token_info"]["refresh_token"]
                 return await auth.refresh()
             except ResponseCodeError as e:
                 if e.code != 86039:
@@ -116,14 +116,14 @@ class Login:
             cid=cid or self.cid,
             captcha_key=captcha_key or self.captcha_key,
         )
-        auth = Auth(
-            access_token=resp["access_token"], refresh_token=resp["refresh_token"]
-        )
+        auth = Auth()
+        auth.access_token = resp["access_token"]
+        auth.refresh_token = resp["refresh_token"]
         return await auth.refresh()
 
     async def pwd_login(self, username: str, password: str):
         resp = await _pwd_login(username, password)
-        auth = Auth(
-            access_token=resp["access_token"], refresh_token=resp["refresh_token"]
-        )
+        auth = Auth()
+        auth.access_token = resp["access_token"]
+        auth.refresh_token = resp["refresh_token"]
         return await auth.refresh()
