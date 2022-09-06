@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.playeronline.v1 import playeronline_pb2 as bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2
+from bilireq.grpc.protos.bilibili.app.playeronline.v1 import playeronline_pb2 as bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2
 
 
 class PlayerOnlineStub(object):

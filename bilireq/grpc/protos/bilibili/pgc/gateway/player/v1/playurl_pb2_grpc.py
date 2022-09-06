@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.pgc.gateway.player.v1 import playurl_pb2 as bilibili_dot_pgc_dot_gateway_dot_player_dot_v1_dot_playurl__pb2
+from bilireq.grpc.protos.bilibili.pgc.gateway.player.v1 import playurl_pb2 as bilibili_dot_pgc_dot_gateway_dot_player_dot_v1_dot_playurl__pb2
 
 
 class PlayURLStub(object):

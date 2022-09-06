@@ -4,13 +4,18 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent))
 
+from test_data import AUTH, PASSWORD, PHONE, UID, USERNAME
+
 from bilireq.auth import Auth
-from bilireq.dynamic import get_user_dynamics, get_followed_dynamics_update_info, get_followed_new_dynamics, get_followed_history_dynamics
+from bilireq.dynamic import (
+    get_followed_dynamics_update_info,
+    get_followed_history_dynamics,
+    get_followed_new_dynamics,
+    get_user_dynamics,
+)
 from bilireq.live import get_rooms_info_by_ids
 from bilireq.login import Login, get_token_info, refresh_token
 from bilireq.user import get_user_info
-
-from test_data import AUTH, PASSWORD, PHONE, UID, USERNAME
 
 
 async def main():
@@ -18,9 +23,11 @@ async def main():
     # 登录相关测试
     # auth = Auth()
     # print(auth.get_cookies(), auth.get_tokens(), auth["access_token"])
-    # auth = Auth(AUTH)
-    # print(await auth.get_info())
-    print(await test_qrcode_login())
+    auth = Auth(AUTH)
+    # await auth.refresh()
+    # print(auth)
+    print(await auth.get_info())
+    # print(await test_qrcode_login())
     # print(await test_sms_login())
     # print(await test_pwd_login())
     # await test_pwd_login_duration()
@@ -58,8 +65,10 @@ async def test_pwd_login():
     login = Login()
     return await login.pwd_login(USERNAME, PASSWORD)
 
+
 async def test_pwd_login_duration():
     from datetime import datetime
+
     print(datetime.now())
     while True:
         try:
@@ -69,7 +78,6 @@ async def test_pwd_login_duration():
         except Exception as e:
             print(e)
         await asyncio.sleep(10)
-        
 
 
 asyncio.run(main())

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.show.rank.v1 import rank_pb2 as bilibili_dot_app_dot_show_dot_rank_dot_v1_dot_rank__pb2
+from bilireq.grpc.protos.bilibili.app.show.rank.v1 import rank_pb2 as bilibili_dot_app_dot_show_dot_rank_dot_v1_dot_rank__pb2
 
 
 class RankStub(object):

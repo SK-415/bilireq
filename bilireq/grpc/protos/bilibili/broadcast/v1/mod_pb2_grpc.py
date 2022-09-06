@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.broadcast.v1 import mod_pb2 as bilibili_dot_broadcast_dot_v1_dot_mod__pb2
+from bilireq.grpc.protos.bilibili.broadcast.v1 import mod_pb2 as bilibili_dot_broadcast_dot_v1_dot_mod__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.resource.privacy.v1 import api_pb2 as bilibili_dot_app_dot_resource_dot_privacy_dot_v1_dot_api__pb2
+from bilireq.grpc.protos.bilibili.app.resource.privacy.v1 import api_pb2 as bilibili_dot_app_dot_resource_dot_privacy_dot_v1_dot_api__pb2
 
 
 class PrivacyStub(object):

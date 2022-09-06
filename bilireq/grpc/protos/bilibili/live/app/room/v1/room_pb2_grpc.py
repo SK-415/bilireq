@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.live.app.room.v1 import room_pb2 as bilibili_dot_live_dot_app_dot_room_dot_v1_dot_room__pb2
+from bilireq.grpc.protos.bilibili.live.app.room.v1 import room_pb2 as bilibili_dot_live_dot_app_dot_room_dot_v1_dot_room__pb2
 
 
 class StudioListStub(object):

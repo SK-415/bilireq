@@ -3,7 +3,7 @@
 import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-from pgc.gaetway.vega.v1 import vega_pb2 as pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2
+from bilireq.grpc.protos.pgc.gaetway.vega.v1 import vega_pb2 as pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2
 
 
 class VegaStub(object):

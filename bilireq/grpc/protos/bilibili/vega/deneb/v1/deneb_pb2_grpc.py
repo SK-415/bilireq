@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.vega.deneb.v1 import deneb_pb2 as bilibili_dot_vega_dot_deneb_dot_v1_dot_deneb__pb2
+from bilireq.grpc.protos.bilibili.vega.deneb.v1 import deneb_pb2 as bilibili_dot_vega_dot_deneb_dot_v1_dot_deneb__pb2
 
 
 class VegaDenebRPCStub(object):

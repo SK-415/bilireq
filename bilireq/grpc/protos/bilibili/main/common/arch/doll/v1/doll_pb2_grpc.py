@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.main.common.arch.doll.v1 import doll_pb2 as bilibili_dot_main_dot_common_dot_arch_dot_doll_dot_v1_dot_doll__pb2
+from bilireq.grpc.protos.bilibili.main.common.arch.doll.v1 import doll_pb2 as bilibili_dot_main_dot_common_dot_arch_dot_doll_dot_v1_dot_doll__pb2
 
 
 class EchoStub(object):

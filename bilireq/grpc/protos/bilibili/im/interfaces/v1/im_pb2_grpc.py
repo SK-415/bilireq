@@ -2,8 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.im.interfaces.v1 import im_pb2 as bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2
-from bilibili.im.type import im_pb2 as bilibili_dot_im_dot_type_dot_im__pb2
+from bilireq.grpc.protos.bilibili.im.interfaces.v1 import im_pb2 as bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2
+from bilireq.grpc.protos.bilibili.im.type import im_pb2 as bilibili_dot_im_dot_type_dot_im__pb2
 
 
 class ImInterfaceStub(object):

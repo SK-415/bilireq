@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.splash.v1 import splash_pb2 as bilibili_dot_app_dot_splash_dot_v1_dot_splash__pb2
+from bilireq.grpc.protos.bilibili.app.splash.v1 import splash_pb2 as bilibili_dot_app_dot_splash_dot_v1_dot_splash__pb2
 
 
 class SplashStub(object):

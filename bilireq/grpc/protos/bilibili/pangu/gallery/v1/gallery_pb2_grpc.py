@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.pangu.gallery.v1 import gallery_pb2 as bilibili_dot_pangu_dot_gallery_dot_v1_dot_gallery__pb2
+from bilireq.grpc.protos.bilibili.pangu.gallery.v1 import gallery_pb2 as bilibili_dot_pangu_dot_gallery_dot_v1_dot_gallery__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 

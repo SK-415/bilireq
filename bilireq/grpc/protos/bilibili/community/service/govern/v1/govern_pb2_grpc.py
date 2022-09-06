@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.community.service.govern.v1 import govern_pb2 as bilibili_dot_community_dot_service_dot_govern_dot_v1_dot_govern__pb2
+from bilireq.grpc.protos.bilibili.community.service.govern.v1 import govern_pb2 as bilibili_dot_community_dot_service_dot_govern_dot_v1_dot_govern__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 

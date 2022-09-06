@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.account.fission.v1 import fission_pb2 as bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2
+from bilireq.grpc.protos.bilibili.account.fission.v1 import fission_pb2 as bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2
 
 
 class FissionStub(object):

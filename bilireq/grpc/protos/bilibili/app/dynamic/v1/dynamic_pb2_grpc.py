@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.dynamic.v1 import dynamic_pb2 as bilibili_dot_app_dot_dynamic_dot_v1_dot_dynamic__pb2
+from bilireq.grpc.protos.bilibili.app.dynamic.v1 import dynamic_pb2 as bilibili_dot_app_dot_dynamic_dot_v1_dot_dynamic__pb2
 
 
 class DynamicStub(object):

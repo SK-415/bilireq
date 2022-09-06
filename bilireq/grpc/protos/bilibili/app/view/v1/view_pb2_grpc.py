@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.view.v1 import view_pb2 as bilibili_dot_app_dot_view_dot_v1_dot_view__pb2
+from bilireq.grpc.protos.bilibili.app.view.v1 import view_pb2 as bilibili_dot_app_dot_view_dot_v1_dot_view__pb2
 
 
 class ViewStub(object):

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.show.popular.v1 import popular_pb2 as bilibili_dot_app_dot_show_dot_popular_dot_v1_dot_popular__pb2
+from bilireq.grpc.protos.bilibili.app.show.popular.v1 import popular_pb2 as bilibili_dot_app_dot_show_dot_popular_dot_v1_dot_popular__pb2
 
 
 class PopularStub(object):

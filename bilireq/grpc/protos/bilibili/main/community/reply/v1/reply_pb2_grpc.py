@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.main.community.reply.v1 import reply_pb2 as bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2
+from bilireq.grpc.protos.bilibili.main.community.reply.v1 import reply_pb2 as bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2
 
 
 class ReplyStub(object):

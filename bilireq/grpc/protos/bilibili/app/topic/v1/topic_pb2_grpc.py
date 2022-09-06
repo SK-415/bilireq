@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.topic.v1 import topic_pb2 as bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2
+from bilireq.grpc.protos.bilibili.app.topic.v1 import topic_pb2 as bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2
 
 
 class TopicStub(object):

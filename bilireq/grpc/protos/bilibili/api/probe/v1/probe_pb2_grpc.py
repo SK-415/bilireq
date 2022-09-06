@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.api.probe.v1 import probe_pb2 as bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2
+from bilireq.grpc.protos.bilibili.api.probe.v1 import probe_pb2 as bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2
 
 
 class ProbeStub(object):

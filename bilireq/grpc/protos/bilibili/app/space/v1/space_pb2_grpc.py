@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.space.v1 import space_pb2 as bilibili_dot_app_dot_space_dot_v1_dot_space__pb2
+from bilireq.grpc.protos.bilibili.app.space.v1 import space_pb2 as bilibili_dot_app_dot_space_dot_v1_dot_space__pb2
 
 
 class SpaceStub(object):

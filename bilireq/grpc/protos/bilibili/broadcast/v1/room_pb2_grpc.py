@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.broadcast.v1 import room_pb2 as bilibili_dot_broadcast_dot_v1_dot_room__pb2
+from bilireq.grpc.protos.bilibili.broadcast.v1 import room_pb2 as bilibili_dot_broadcast_dot_v1_dot_room__pb2
 
 
 class BroadcastRoomStub(object):

@@ -2,8 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.dynamic.common import dynamic_pb2 as bilibili_dot_dynamic_dot_common_dot_dynamic__pb2
-from bilibili.dynamic.interfaces.feed.v1 import api_pb2 as bilibili_dot_dynamic_dot_interfaces_dot_feed_dot_v1_dot_api__pb2
+from bilireq.grpc.protos.bilibili.dynamic.common import dynamic_pb2 as bilibili_dot_dynamic_dot_common_dot_dynamic__pb2
+from bilireq.grpc.protos.bilibili.dynamic.interfaces.feed.v1 import api_pb2 as bilibili_dot_dynamic_dot_interfaces_dot_feed_dot_v1_dot_api__pb2
 
 
 class FeedStub(object):

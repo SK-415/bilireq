@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from bilibili.rpc import status_pb2 as bilibili_dot_rpc_dot_status__pb2
+from bilireq.grpc.protos.bilibili.rpc import status_pb2 as bilibili_dot_rpc_dot_status__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 

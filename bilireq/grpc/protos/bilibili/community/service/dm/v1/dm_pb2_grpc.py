@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.community.service.dm.v1 import dm_pb2 as bilibili_dot_community_dot_service_dot_dm_dot_v1_dot_dm__pb2
+from bilireq.grpc.protos.bilibili.community.service.dm.v1 import dm_pb2 as bilibili_dot_community_dot_service_dot_dm_dot_v1_dot_dm__pb2
 
 
 class DMStub(object):

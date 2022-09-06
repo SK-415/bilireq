@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.resource.v1 import module_pb2 as bilibili_dot_app_dot_resource_dot_v1_dot_module__pb2
+from bilireq.grpc.protos.bilibili.app.resource.v1 import module_pb2 as bilibili_dot_app_dot_resource_dot_v1_dot_module__pb2
 
 
 class ModuleStub(object):

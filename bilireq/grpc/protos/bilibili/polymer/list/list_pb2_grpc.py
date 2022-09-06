@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.polymer.list import list_pb2 as bilibili_dot_polymer_dot_list_dot_list__pb2
+from bilireq.grpc.protos.bilibili.polymer.list import list_pb2 as bilibili_dot_polymer_dot_list_dot_list__pb2
 
 
 class ListStub(object):

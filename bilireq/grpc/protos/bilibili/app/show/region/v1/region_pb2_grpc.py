@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from bilibili.app.show.region.v1 import region_pb2 as bilibili_dot_app_dot_show_dot_region_dot_v1_dot_region__pb2
+from bilireq.grpc.protos.bilibili.app.show.region.v1 import region_pb2 as bilibili_dot_app_dot_show_dot_region_dot_v1_dot_region__pb2
 
 
 class RegionStub(object):
