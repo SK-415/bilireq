@@ -1,4 +1,5 @@
 import time
+import uuid
 from hashlib import md5
 from typing import Any, Dict, Optional
 from urllib.parse import urlencode
@@ -18,6 +19,7 @@ DEFAULT_HEADERS = {
         " Safari/537.36 Edg/87.0.664.60"
     ),
     "Referer": "https://www.bilibili.com/",
+    "cookie":f'buvid3={uuid.uuid4()}',
 }
 APPKEY = "4409e2ce8ffd12b8"
 APPSEC = "59b43e04ad6965f34319062b478f83dd"
