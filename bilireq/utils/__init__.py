@@ -21,6 +21,18 @@ DEFAULT_HEADERS = {
 }
 APPKEY = "4409e2ce8ffd12b8"
 APPSEC = "59b43e04ad6965f34319062b478f83dd"
+HTTPX_CLIENT: Optional[AsyncClient] = None
+
+
+async def httpx_init(proxies):
+    global HTTPX_CLIENT
+    HTTPX_CLIENT = AsyncClient(proxies=proxies)
+    await HTTPX_CLIENT.get("https://bilibili.com/", follow_redirects=True)
+    return HTTPX_CLIENT
+
+
+async def get_httpx_client(proxies):
+    return HTTPX_CLIENT or await httpx_init(proxies)
 
 
 def _encrypt_params(params: Dict[str, Any], local_id: int = 0) -> Dict[str, Any]:
@@ -55,17 +67,14 @@ async def _request(
         _encrypt_params(params)
     else:
         cookies.update(auth.cookies)
-    async with AsyncClient(proxies=proxies) as client:
-        resp = await client.request(
-            method, url, headers=headers, params=params, cookies=cookies, **kwargs
-        )
+    async with await get_httpx_client(proxies=proxies) as client:
+        client.cookies.update(cookies)
+        resp = await client.request(method, url, headers=headers, params=params, **kwargs)
     resp.encoding = "utf-8"
     return resp
 
 
-async def request(
-    method: str, url: URLTypes, *, raw: bool = False, **kwargs
-) -> Dict[str, Any]:
+async def request(method: str, url: URLTypes, *, raw: bool = False, **kwargs) -> Dict[str, Any]:
     raw_json: Dict[str, Any] = (await _request(method, url, **kwargs)).json()
     if raw:
         return raw_json
