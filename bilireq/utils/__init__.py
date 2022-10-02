@@ -21,6 +21,21 @@ DEFAULT_HEADERS = {
 }
 APPKEY = "4409e2ce8ffd12b8"
 APPSEC = "59b43e04ad6965f34319062b478f83dd"
+homepage_cookies: Dict[str, str] = {}
+
+
+async def get_homepage_cookies(proxies=None):
+    if not homepage_cookies:
+        async with AsyncClient(proxies=proxies) as client:
+            resp = await client.request(
+                "GET",
+                "https://www.bilibili.com/",
+                headers=DEFAULT_HEADERS,
+                follow_redirects=True,
+            )
+        resp.encoding = "utf-8"
+        homepage_cookies.update(resp.cookies)
+    return homepage_cookies
 
 
 def _encrypt_params(params: Dict[str, Any], local_id: int = 0) -> Dict[str, Any]:
@@ -55,6 +70,7 @@ async def _request(
         _encrypt_params(params)
     else:
         cookies.update(auth.cookies)
+    cookies.update(await get_homepage_cookies(proxies))
     async with AsyncClient(proxies=proxies) as client:
         resp = await client.request(
             method, url, headers=headers, params=params, cookies=cookies, **kwargs
