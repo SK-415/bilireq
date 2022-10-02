@@ -4,46 +4,54 @@ isort:skip_file
 """
 import bilireq.grpc.protos.bilibili.app.card.v1.common_pb2
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class DoubleCards(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     SMALL_COVER_V2_FIELD_NUMBER: builtins.int
     ONE_PIC_V2_FIELD_NUMBER: builtins.int
     THREE_PIC_V2_FIELD_NUMBER: builtins.int
     @property
     def small_cover_v2(self) -> global___SmallCoverV2:
         """"""
-        pass
     @property
     def one_pic_v2(self) -> global___OnePicV2:
         """"""
-        pass
     @property
     def three_pic_v2(self) -> global___ThreePicV2:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        small_cover_v2: typing.Optional[global___SmallCoverV2] = ...,
-        one_pic_v2: typing.Optional[global___OnePicV2] = ...,
-        three_pic_v2: typing.Optional[global___ThreePicV2] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["Card",b"Card","one_pic_v2",b"one_pic_v2","small_cover_v2",b"small_cover_v2","three_pic_v2",b"three_pic_v2"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["Card",b"Card","one_pic_v2",b"one_pic_v2","small_cover_v2",b"small_cover_v2","three_pic_v2",b"three_pic_v2"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["Card",b"Card"]) -> typing.Optional[typing_extensions.Literal["small_cover_v2","one_pic_v2","three_pic_v2"]]: ...
+        small_cover_v2: global___SmallCoverV2 | None = ...,
+        one_pic_v2: global___OnePicV2 | None = ...,
+        three_pic_v2: global___ThreePicV2 | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["Card", b"Card", "one_pic_v2", b"one_pic_v2", "small_cover_v2", b"small_cover_v2", "three_pic_v2", b"three_pic_v2"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["Card", b"Card", "one_pic_v2", b"one_pic_v2", "small_cover_v2", b"small_cover_v2", "three_pic_v2", b"three_pic_v2"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["Card", b"Card"]) -> typing_extensions.Literal["small_cover_v2", "one_pic_v2", "three_pic_v2"] | None: ...
+
 global___DoubleCards = DoubleCards
 
 class SmallCoverV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_GIF_FIELD_NUMBER: builtins.int
     COVER_BLUR_FIELD_NUMBER: builtins.int
@@ -67,98 +75,82 @@ class SmallCoverV2(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    cover_gif: typing.Text
+    cover_gif: builtins.str
     """"""
-
     cover_blur: builtins.int
     """"""
-
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
     cover_left_icon_2: builtins.int
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
     cover_right_icon: builtins.int
     """"""
-
-    cover_right_background_color: typing.Text
+    cover_right_background_color: builtins.str
     """"""
-
-    subtitle: typing.Text
+    subtitle: builtins.str
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
-    rcmd_reason: typing.Text
+    rcmd_reason: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
     @property
     def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
         """"""
-        pass
     official_icon: builtins.int
     """"""
-
     can_play: builtins.int
     """"""
-
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
     @property
     def rcmd_reason_style_v2(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
     @property
     def like_button(self) -> bilibili.app.card.v1.common_pb2.LikeButton:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        cover_gif: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        cover_gif: builtins.str = ...,
         cover_blur: builtins.int = ...,
-        cover_left_text_1: typing.Text = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
         cover_left_icon_2: builtins.int = ...,
-        cover_right_text: typing.Text = ...,
+        cover_right_text: builtins.str = ...,
         cover_right_icon: builtins.int = ...,
-        cover_right_background_color: typing.Text = ...,
-        subtitle: typing.Text = ...,
-        badge: typing.Text = ...,
-        rcmd_reason: typing.Text = ...,
-        desc: typing.Text = ...,
-        avatar: typing.Optional[bilibili.app.card.v1.common_pb2.Avatar] = ...,
+        cover_right_background_color: builtins.str = ...,
+        subtitle: builtins.str = ...,
+        badge: builtins.str = ...,
+        rcmd_reason: builtins.str = ...,
+        desc: builtins.str = ...,
+        avatar: bilibili.app.card.v1.common_pb2.Avatar | None = ...,
         official_icon: builtins.int = ...,
         can_play: builtins.int = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        rcmd_reason_style_v2: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        like_button: typing.Optional[bilibili.app.card.v1.common_pb2.LikeButton] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","like_button",b"like_button","rcmd_reason_style",b"rcmd_reason_style","rcmd_reason_style_v2",b"rcmd_reason_style_v2"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["avatar",b"avatar","badge",b"badge","base",b"base","can_play",b"can_play","cover_blur",b"cover_blur","cover_gif",b"cover_gif","cover_left_icon_1",b"cover_left_icon_1","cover_left_icon_2",b"cover_left_icon_2","cover_left_text_1",b"cover_left_text_1","cover_left_text_2",b"cover_left_text_2","cover_right_background_color",b"cover_right_background_color","cover_right_icon",b"cover_right_icon","cover_right_text",b"cover_right_text","desc",b"desc","like_button",b"like_button","official_icon",b"official_icon","rcmd_reason",b"rcmd_reason","rcmd_reason_style",b"rcmd_reason_style","rcmd_reason_style_v2",b"rcmd_reason_style_v2","subtitle",b"subtitle"]) -> None: ...
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        rcmd_reason_style_v2: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        like_button: bilibili.app.card.v1.common_pb2.LikeButton | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "like_button", b"like_button", "rcmd_reason_style", b"rcmd_reason_style", "rcmd_reason_style_v2", b"rcmd_reason_style_v2"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "badge", b"badge", "base", b"base", "can_play", b"can_play", "cover_blur", b"cover_blur", "cover_gif", b"cover_gif", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_icon_2", b"cover_left_icon_2", "cover_left_text_1", b"cover_left_text_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_background_color", b"cover_right_background_color", "cover_right_icon", b"cover_right_icon", "cover_right_text", b"cover_right_text", "desc", b"desc", "like_button", b"like_button", "official_icon", b"official_icon", "rcmd_reason", b"rcmd_reason", "rcmd_reason_style", b"rcmd_reason_style", "rcmd_reason_style_v2", b"rcmd_reason_style_v2", "subtitle", b"subtitle"]) -> None: ...
+
 global___SmallCoverV2 = SmallCoverV2
 
 class SmallCoverV3(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     AVATAR_FIELD_NUMBER: builtins.int
     COVER_LEFT_TEXT_FIELD_NUMBER: builtins.int
@@ -171,53 +163,48 @@ class SmallCoverV3(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
     @property
     def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
         """"""
-        pass
-    cover_left_text: typing.Text
+    cover_left_text: builtins.str
     """"""
-
     @property
     def cover_right_button(self) -> bilibili.app.card.v1.common_pb2.Button:
         """"""
-        pass
-    rcmd_reason: typing.Text
+    rcmd_reason: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
     official_icon: builtins.int
     """"""
-
     can_play: builtins.int
     """"""
-
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        avatar: typing.Optional[bilibili.app.card.v1.common_pb2.Avatar] = ...,
-        cover_left_text: typing.Text = ...,
-        cover_right_button: typing.Optional[bilibili.app.card.v1.common_pb2.Button] = ...,
-        rcmd_reason: typing.Text = ...,
-        desc: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        avatar: bilibili.app.card.v1.common_pb2.Avatar | None = ...,
+        cover_left_text: builtins.str = ...,
+        cover_right_button: bilibili.app.card.v1.common_pb2.Button | None = ...,
+        rcmd_reason: builtins.str = ...,
+        desc: builtins.str = ...,
         official_icon: builtins.int = ...,
         can_play: builtins.int = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","cover_right_button",b"cover_right_button","rcmd_reason_style",b"rcmd_reason_style"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","can_play",b"can_play","cover_left_text",b"cover_left_text","cover_right_button",b"cover_right_button","desc",b"desc","official_icon",b"official_icon","rcmd_reason",b"rcmd_reason","rcmd_reason_style",b"rcmd_reason_style"]) -> None: ...
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "cover_right_button", b"cover_right_button", "rcmd_reason_style", b"rcmd_reason_style"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "can_play", b"can_play", "cover_left_text", b"cover_left_text", "cover_right_button", b"cover_right_button", "desc", b"desc", "official_icon", b"official_icon", "rcmd_reason", b"rcmd_reason", "rcmd_reason_style", b"rcmd_reason_style"]) -> None: ...
+
 global___SmallCoverV3 = SmallCoverV3
 
 class MiddleCoverV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     RATIO_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
@@ -225,30 +212,30 @@ class MiddleCoverV2(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
     ratio: builtins.int
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
         ratio: builtins.int = ...,
-        desc: typing.Text = ...,
-        badge: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["badge",b"badge","base",b"base","desc",b"desc","ratio",b"ratio"]) -> None: ...
+        desc: builtins.str = ...,
+        badge: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "base", b"base", "desc", b"desc", "ratio", b"ratio"]) -> None: ...
+
 global___MiddleCoverV2 = MiddleCoverV2
 
 class LargeCoverV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     AVATAR_FIELD_NUMBER: builtins.int
     BADGE_FIELD_NUMBER: builtins.int
@@ -266,73 +253,63 @@ class LargeCoverV2(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
     @property
     def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
         """"""
-        pass
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
     @property
     def cover_right_button(self) -> bilibili.app.card.v1.common_pb2.Button:
         """"""
-        pass
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
     cover_left_icon_2: builtins.int
     """"""
-
-    rcmd_reason: typing.Text
+    rcmd_reason: builtins.str
     """"""
-
     official_icon: builtins.int
     """"""
-
     can_play: builtins.int
     """"""
-
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
     show_top: builtins.int
     """"""
-
     show_bottom: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        avatar: typing.Optional[bilibili.app.card.v1.common_pb2.Avatar] = ...,
-        badge: typing.Text = ...,
-        cover_right_button: typing.Optional[bilibili.app.card.v1.common_pb2.Button] = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        avatar: bilibili.app.card.v1.common_pb2.Avatar | None = ...,
+        badge: builtins.str = ...,
+        cover_right_button: bilibili.app.card.v1.common_pb2.Button | None = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
         cover_left_icon_2: builtins.int = ...,
-        rcmd_reason: typing.Text = ...,
+        rcmd_reason: builtins.str = ...,
         official_icon: builtins.int = ...,
         can_play: builtins.int = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         show_top: builtins.int = ...,
         show_bottom: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","cover_right_button",b"cover_right_button","rcmd_reason_style",b"rcmd_reason_style"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["avatar",b"avatar","badge",b"badge","base",b"base","can_play",b"can_play","cover_left_icon_1",b"cover_left_icon_1","cover_left_icon_2",b"cover_left_icon_2","cover_left_text_1",b"cover_left_text_1","cover_left_text_2",b"cover_left_text_2","cover_right_button",b"cover_right_button","official_icon",b"official_icon","rcmd_reason",b"rcmd_reason","rcmd_reason_style",b"rcmd_reason_style","show_bottom",b"show_bottom","show_top",b"show_top"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "cover_right_button", b"cover_right_button", "rcmd_reason_style", b"rcmd_reason_style"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "badge", b"badge", "base", b"base", "can_play", b"can_play", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_icon_2", b"cover_left_icon_2", "cover_left_text_1", b"cover_left_text_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_button", b"cover_right_button", "official_icon", b"official_icon", "rcmd_reason", b"rcmd_reason", "rcmd_reason_style", b"rcmd_reason_style", "show_bottom", b"show_bottom", "show_top", b"show_top"]) -> None: ...
+
 global___LargeCoverV2 = LargeCoverV2
 
 class ThreeItemV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     TITLE_ICON_FIELD_NUMBER: builtins.int
     MORE_URI_FIELD_NUMBER: builtins.int
@@ -341,35 +318,34 @@ class ThreeItemV2(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
     title_icon: builtins.int
     """"""
-
-    more_uri: typing.Text
+    more_uri: builtins.str
     """"""
-
-    more_text: typing.Text
+    more_text: builtins.str
     """"""
-
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ThreeItemV2Item]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
         title_icon: builtins.int = ...,
-        more_uri: typing.Text = ...,
-        more_text: typing.Text = ...,
-        items: typing.Optional[typing.Iterable[global___ThreeItemV2Item]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base",b"base","items",b"items","more_text",b"more_text","more_uri",b"more_uri","title_icon",b"title_icon"]) -> None: ...
+        more_uri: builtins.str = ...,
+        more_text: builtins.str = ...,
+        items: collections.abc.Iterable[global___ThreeItemV2Item] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "items", b"items", "more_text", b"more_text", "more_uri", b"more_uri", "title_icon", b"title_icon"]) -> None: ...
+
 global___ThreeItemV2 = ThreeItemV2
 
 class ThreeItemV2Item(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_LEFT_ICON_FIELD_NUMBER: builtins.int
     DESC_TEXT_1_FIELD_NUMBER: builtins.int
@@ -380,42 +356,39 @@ class ThreeItemV2Item(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
     cover_left_icon: builtins.int
     """"""
-
-    desc_text_1: typing.Text
+    desc_text_1: builtins.str
     """"""
-
     desc_icon_1: builtins.int
     """"""
-
-    desc_text_2: typing.Text
+    desc_text_2: builtins.str
     """"""
-
     desc_icon_2: builtins.int
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
         cover_left_icon: builtins.int = ...,
-        desc_text_1: typing.Text = ...,
+        desc_text_1: builtins.str = ...,
         desc_icon_1: builtins.int = ...,
-        desc_text_2: typing.Text = ...,
+        desc_text_2: builtins.str = ...,
         desc_icon_2: builtins.int = ...,
-        badge: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["badge",b"badge","base",b"base","cover_left_icon",b"cover_left_icon","desc_icon_1",b"desc_icon_1","desc_icon_2",b"desc_icon_2","desc_text_1",b"desc_text_1","desc_text_2",b"desc_text_2"]) -> None: ...
+        badge: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "base", b"base", "cover_left_icon", b"cover_left_icon", "desc_icon_1", b"desc_icon_1", "desc_icon_2", b"desc_icon_2", "desc_text_1", b"desc_text_1", "desc_text_2", b"desc_text_2"]) -> None: ...
+
 global___ThreeItemV2Item = ThreeItemV2Item
 
 class SmallCoverV4(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_BADGE_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
@@ -424,55 +397,55 @@ class SmallCoverV4(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    cover_badge: typing.Text
+    cover_badge: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
-    title_right_text: typing.Text
+    title_right_text: builtins.str
     """"""
-
     title_right_pic: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        cover_badge: typing.Text = ...,
-        desc: typing.Text = ...,
-        title_right_text: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        cover_badge: builtins.str = ...,
+        desc: builtins.str = ...,
+        title_right_text: builtins.str = ...,
         title_right_pic: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base",b"base","cover_badge",b"cover_badge","desc",b"desc","title_right_pic",b"title_right_pic","title_right_text",b"title_right_text"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "cover_badge", b"cover_badge", "desc", b"desc", "title_right_pic", b"title_right_pic", "title_right_text", b"title_right_text"]) -> None: ...
+
 global___SmallCoverV4 = SmallCoverV4
 
 class TwoItemV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TwoItemV2Item]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        items: typing.Optional[typing.Iterable[global___TwoItemV2Item]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base",b"base","items",b"items"]) -> None: ...
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        items: collections.abc.Iterable[global___TwoItemV2Item] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "items", b"items"]) -> None: ...
+
 global___TwoItemV2 = TwoItemV2
 
 class TwoItemV2Item(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     BADGE_FIELD_NUMBER: builtins.int
     COVER_LEFT_TEXT_1_FIELD_NUMBER: builtins.int
@@ -480,30 +453,30 @@ class TwoItemV2Item(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        badge: typing.Text = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        badge: builtins.str = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["badge",b"badge","base",b"base","cover_left_icon_1",b"cover_left_icon_1","cover_left_text_1",b"cover_left_text_1"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "base", b"base", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_text_1", b"cover_left_text_1"]) -> None: ...
+
 global___TwoItemV2Item = TwoItemV2Item
 
 class MultiItem(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     MORE_URI_FIELD_NUMBER: builtins.int
     MORE_TEXT_FIELD_NUMBER: builtins.int
@@ -511,31 +484,31 @@ class MultiItem(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    more_uri: typing.Text
+    more_uri: builtins.str
     """"""
-
-    more_text: typing.Text
+    more_text: builtins.str
     """"""
-
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DoubleCards]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        more_uri: typing.Text = ...,
-        more_text: typing.Text = ...,
-        items: typing.Optional[typing.Iterable[global___DoubleCards]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base",b"base","items",b"items","more_text",b"more_text","more_uri",b"more_uri"]) -> None: ...
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        more_uri: builtins.str = ...,
+        more_text: builtins.str = ...,
+        items: collections.abc.Iterable[global___DoubleCards] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "items", b"items", "more_text", b"more_text", "more_uri", b"more_uri"]) -> None: ...
+
 global___MultiItem = MultiItem
 
 class ThreePicV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     LEFT_COVER_FIELD_NUMBER: builtins.int
     RIGHT_COVER_1_FIELD_NUMBER: builtins.int
@@ -555,80 +528,68 @@ class ThreePicV2(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    left_cover: typing.Text
+    left_cover: builtins.str
     """"""
-
-    right_cover_1: typing.Text
+    right_cover_1: builtins.str
     """"""
-
-    right_cover_2: typing.Text
+    right_cover_2: builtins.str
     """"""
-
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
     cover_left_icon_2: builtins.int
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
     cover_right_icon: builtins.int
     """"""
-
-    cover_right_background_color: typing.Text
+    cover_right_background_color: builtins.str
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
-    rcmd_reason: typing.Text
+    rcmd_reason: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
     @property
     def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
         """"""
-        pass
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        left_cover: typing.Text = ...,
-        right_cover_1: typing.Text = ...,
-        right_cover_2: typing.Text = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        left_cover: builtins.str = ...,
+        right_cover_1: builtins.str = ...,
+        right_cover_2: builtins.str = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
         cover_left_icon_2: builtins.int = ...,
-        cover_right_text: typing.Text = ...,
+        cover_right_text: builtins.str = ...,
         cover_right_icon: builtins.int = ...,
-        cover_right_background_color: typing.Text = ...,
-        badge: typing.Text = ...,
-        rcmd_reason: typing.Text = ...,
-        desc: typing.Text = ...,
-        avatar: typing.Optional[bilibili.app.card.v1.common_pb2.Avatar] = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","rcmd_reason_style",b"rcmd_reason_style"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["avatar",b"avatar","badge",b"badge","base",b"base","cover_left_icon_1",b"cover_left_icon_1","cover_left_icon_2",b"cover_left_icon_2","cover_left_text_1",b"cover_left_text_1","cover_left_text_2",b"cover_left_text_2","cover_right_background_color",b"cover_right_background_color","cover_right_icon",b"cover_right_icon","cover_right_text",b"cover_right_text","desc",b"desc","left_cover",b"left_cover","rcmd_reason",b"rcmd_reason","rcmd_reason_style",b"rcmd_reason_style","right_cover_1",b"right_cover_1","right_cover_2",b"right_cover_2"]) -> None: ...
+        cover_right_background_color: builtins.str = ...,
+        badge: builtins.str = ...,
+        rcmd_reason: builtins.str = ...,
+        desc: builtins.str = ...,
+        avatar: bilibili.app.card.v1.common_pb2.Avatar | None = ...,
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "rcmd_reason_style", b"rcmd_reason_style"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "badge", b"badge", "base", b"base", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_icon_2", b"cover_left_icon_2", "cover_left_text_1", b"cover_left_text_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_background_color", b"cover_right_background_color", "cover_right_icon", b"cover_right_icon", "cover_right_text", b"cover_right_text", "desc", b"desc", "left_cover", b"left_cover", "rcmd_reason", b"rcmd_reason", "rcmd_reason_style", b"rcmd_reason_style", "right_cover_1", b"right_cover_1", "right_cover_2", b"right_cover_2"]) -> None: ...
+
 global___ThreePicV2 = ThreePicV2
 
 class OnePicV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_LEFT_ICON_1_FIELD_NUMBER: builtins.int
     COVER_LEFT_TEXT_2_FIELD_NUMBER: builtins.int
@@ -642,56 +603,50 @@ class OnePicV2(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
     cover_right_icon: builtins.int
     """"""
-
-    cover_right_background_color: typing.Text
+    cover_right_background_color: builtins.str
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
-    rcmd_reason: typing.Text
+    rcmd_reason: builtins.str
     """"""
-
     @property
     def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
         """"""
-        pass
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
-        cover_right_text: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
+        cover_right_text: builtins.str = ...,
         cover_right_icon: builtins.int = ...,
-        cover_right_background_color: typing.Text = ...,
-        badge: typing.Text = ...,
-        rcmd_reason: typing.Text = ...,
-        avatar: typing.Optional[bilibili.app.card.v1.common_pb2.Avatar] = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","rcmd_reason_style",b"rcmd_reason_style"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["avatar",b"avatar","badge",b"badge","base",b"base","cover_left_icon_1",b"cover_left_icon_1","cover_left_text_2",b"cover_left_text_2","cover_right_background_color",b"cover_right_background_color","cover_right_icon",b"cover_right_icon","cover_right_text",b"cover_right_text","rcmd_reason",b"rcmd_reason","rcmd_reason_style",b"rcmd_reason_style"]) -> None: ...
+        cover_right_background_color: builtins.str = ...,
+        badge: builtins.str = ...,
+        rcmd_reason: builtins.str = ...,
+        avatar: bilibili.app.card.v1.common_pb2.Avatar | None = ...,
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "rcmd_reason_style", b"rcmd_reason_style"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "badge", b"badge", "base", b"base", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_background_color", b"cover_right_background_color", "cover_right_icon", b"cover_right_icon", "cover_right_text", b"cover_right_text", "rcmd_reason", b"rcmd_reason", "rcmd_reason_style", b"rcmd_reason_style"]) -> None: ...
+
 global___OnePicV2 = OnePicV2
 
 class LargeCoverV3(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_GIF_FIELD_NUMBER: builtins.int
     AVATAR_FIELD_NUMBER: builtins.int
@@ -707,65 +662,57 @@ class LargeCoverV3(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    cover_gif: typing.Text
+    cover_gif: builtins.str
     """"""
-
     @property
     def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
         """"""
-        pass
     @property
     def top_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
     @property
     def bottom_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
     cover_left_icon_2: builtins.int
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
     official_icon: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        cover_gif: typing.Text = ...,
-        avatar: typing.Optional[bilibili.app.card.v1.common_pb2.Avatar] = ...,
-        top_rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        bottom_rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        cover_gif: builtins.str = ...,
+        avatar: bilibili.app.card.v1.common_pb2.Avatar | None = ...,
+        top_rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        bottom_rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
         cover_left_icon_2: builtins.int = ...,
-        cover_right_text: typing.Text = ...,
-        desc: typing.Text = ...,
+        cover_right_text: builtins.str = ...,
+        desc: builtins.str = ...,
         official_icon: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","bottom_rcmd_reason_style",b"bottom_rcmd_reason_style","top_rcmd_reason_style",b"top_rcmd_reason_style"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["avatar",b"avatar","base",b"base","bottom_rcmd_reason_style",b"bottom_rcmd_reason_style","cover_gif",b"cover_gif","cover_left_icon_1",b"cover_left_icon_1","cover_left_icon_2",b"cover_left_icon_2","cover_left_text_1",b"cover_left_text_1","cover_left_text_2",b"cover_left_text_2","cover_right_text",b"cover_right_text","desc",b"desc","official_icon",b"official_icon","top_rcmd_reason_style",b"top_rcmd_reason_style"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "bottom_rcmd_reason_style", b"bottom_rcmd_reason_style", "top_rcmd_reason_style", b"top_rcmd_reason_style"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "base", b"base", "bottom_rcmd_reason_style", b"bottom_rcmd_reason_style", "cover_gif", b"cover_gif", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_icon_2", b"cover_left_icon_2", "cover_left_text_1", b"cover_left_text_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_text", b"cover_right_text", "desc", b"desc", "official_icon", b"official_icon", "top_rcmd_reason_style", b"top_rcmd_reason_style"]) -> None: ...
+
 global___LargeCoverV3 = LargeCoverV3
 
 class ThreePicV3(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     LEFT_COVER_FIELD_NUMBER: builtins.int
     RIGHT_COVER_1_FIELD_NUMBER: builtins.int
@@ -782,67 +729,58 @@ class ThreePicV3(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    left_cover: typing.Text
+    left_cover: builtins.str
     """"""
-
-    right_cover_1: typing.Text
+    right_cover_1: builtins.str
     """"""
-
-    right_cover_2: typing.Text
+    right_cover_2: builtins.str
     """"""
-
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
     cover_left_icon_2: builtins.int
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
     cover_right_icon: builtins.int
     """"""
-
-    cover_right_background_color: typing.Text
+    cover_right_background_color: builtins.str
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        left_cover: typing.Text = ...,
-        right_cover_1: typing.Text = ...,
-        right_cover_2: typing.Text = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        left_cover: builtins.str = ...,
+        right_cover_1: builtins.str = ...,
+        right_cover_2: builtins.str = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
         cover_left_icon_2: builtins.int = ...,
-        cover_right_text: typing.Text = ...,
+        cover_right_text: builtins.str = ...,
         cover_right_icon: builtins.int = ...,
-        cover_right_background_color: typing.Text = ...,
-        badge: typing.Text = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base","rcmd_reason_style",b"rcmd_reason_style"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["badge",b"badge","base",b"base","cover_left_icon_1",b"cover_left_icon_1","cover_left_icon_2",b"cover_left_icon_2","cover_left_text_1",b"cover_left_text_1","cover_left_text_2",b"cover_left_text_2","cover_right_background_color",b"cover_right_background_color","cover_right_icon",b"cover_right_icon","cover_right_text",b"cover_right_text","left_cover",b"left_cover","rcmd_reason_style",b"rcmd_reason_style","right_cover_1",b"right_cover_1","right_cover_2",b"right_cover_2"]) -> None: ...
+        cover_right_background_color: builtins.str = ...,
+        badge: builtins.str = ...,
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base", "rcmd_reason_style", b"rcmd_reason_style"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "base", b"base", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_icon_2", b"cover_left_icon_2", "cover_left_text_1", b"cover_left_text_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_background_color", b"cover_right_background_color", "cover_right_icon", b"cover_right_icon", "cover_right_text", b"cover_right_text", "left_cover", b"left_cover", "rcmd_reason_style", b"rcmd_reason_style", "right_cover_1", b"right_cover_1", "right_cover_2", b"right_cover_2"]) -> None: ...
+
 global___ThreePicV3 = ThreePicV3
 
 class OnePicV3(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_LEFT_TEXT_1_FIELD_NUMBER: builtins.int
     COVER_LEFT_ICON_1_FIELD_NUMBER: builtins.int
@@ -854,68 +792,66 @@ class OnePicV3(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
     cover_right_icon: builtins.int
     """"""
-
-    cover_right_background_color: typing.Text
+    cover_right_background_color: builtins.str
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_right_text: typing.Text = ...,
+        cover_right_text: builtins.str = ...,
         cover_right_icon: builtins.int = ...,
-        cover_right_background_color: typing.Text = ...,
-        badge: typing.Text = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base","rcmd_reason_style",b"rcmd_reason_style"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["badge",b"badge","base",b"base","cover_left_icon_1",b"cover_left_icon_1","cover_left_text_1",b"cover_left_text_1","cover_right_background_color",b"cover_right_background_color","cover_right_icon",b"cover_right_icon","cover_right_text",b"cover_right_text","rcmd_reason_style",b"rcmd_reason_style"]) -> None: ...
+        cover_right_background_color: builtins.str = ...,
+        badge: builtins.str = ...,
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base", "rcmd_reason_style", b"rcmd_reason_style"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "base", b"base", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_text_1", b"cover_left_text_1", "cover_right_background_color", b"cover_right_background_color", "cover_right_icon", b"cover_right_icon", "cover_right_text", b"cover_right_text", "rcmd_reason_style", b"rcmd_reason_style"]) -> None: ...
+
 global___OnePicV3 = OnePicV3
 
 class SmallCoverV7(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        desc: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base",b"base","desc",b"desc"]) -> None: ...
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        desc: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "desc", b"desc"]) -> None: ...
+
 global___SmallCoverV7 = SmallCoverV7
 
 class SmallCoverV9(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_LEFT_TEXT_1_FIELD_NUMBER: builtins.int
     COVER_LEFT_ICON_1_FIELD_NUMBER: builtins.int
@@ -931,66 +867,58 @@ class SmallCoverV9(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
     cover_left_icon_2: builtins.int
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
     cover_right_icon: builtins.int
     """"""
-
     can_play: builtins.int
     """"""
-
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
     @property
     def up(self) -> bilibili.app.card.v1.common_pb2.Up:
         """"""
-        pass
     @property
     def left_cover_badge_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
     @property
     def left_bottom_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
         cover_left_icon_2: builtins.int = ...,
-        cover_right_text: typing.Text = ...,
+        cover_right_text: builtins.str = ...,
         cover_right_icon: builtins.int = ...,
         can_play: builtins.int = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        up: typing.Optional[bilibili.app.card.v1.common_pb2.Up] = ...,
-        left_cover_badge_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        left_bottom_rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base","left_bottom_rcmd_reason_style",b"left_bottom_rcmd_reason_style","left_cover_badge_style",b"left_cover_badge_style","rcmd_reason_style",b"rcmd_reason_style","up",b"up"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base",b"base","can_play",b"can_play","cover_left_icon_1",b"cover_left_icon_1","cover_left_icon_2",b"cover_left_icon_2","cover_left_text_1",b"cover_left_text_1","cover_left_text_2",b"cover_left_text_2","cover_right_icon",b"cover_right_icon","cover_right_text",b"cover_right_text","left_bottom_rcmd_reason_style",b"left_bottom_rcmd_reason_style","left_cover_badge_style",b"left_cover_badge_style","rcmd_reason_style",b"rcmd_reason_style","up",b"up"]) -> None: ...
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        up: bilibili.app.card.v1.common_pb2.Up | None = ...,
+        left_cover_badge_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        left_bottom_rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base", "left_bottom_rcmd_reason_style", b"left_bottom_rcmd_reason_style", "left_cover_badge_style", b"left_cover_badge_style", "rcmd_reason_style", b"rcmd_reason_style", "up", b"up"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "can_play", b"can_play", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_icon_2", b"cover_left_icon_2", "cover_left_text_1", b"cover_left_text_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_icon", b"cover_right_icon", "cover_right_text", b"cover_right_text", "left_bottom_rcmd_reason_style", b"left_bottom_rcmd_reason_style", "left_cover_badge_style", b"left_cover_badge_style", "rcmd_reason_style", b"rcmd_reason_style", "up", b"up"]) -> None: ...
+
 global___SmallCoverV9 = SmallCoverV9
 
 class SmallCoverConvergeV2(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     COVER_LEFT_TEXT_1_FIELD_NUMBER: builtins.int
     COVER_LEFT_ICON_1_FIELD_NUMBER: builtins.int
@@ -1003,52 +931,47 @@ class SmallCoverConvergeV2(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    cover_left_text_1: typing.Text
+    cover_left_text_1: builtins.str
     """"""
-
     cover_left_icon_1: builtins.int
     """"""
-
-    cover_left_text_2: typing.Text
+    cover_left_text_2: builtins.str
     """"""
-
     cover_left_icon_2: builtins.int
     """"""
-
-    cover_right_text: typing.Text
+    cover_right_text: builtins.str
     """"""
-
-    cover_right_top_text: typing.Text
+    cover_right_top_text: builtins.str
     """"""
-
     @property
     def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
     @property
     def rcmd_reason_style_v2(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        cover_left_text_1: typing.Text = ...,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
-        cover_left_text_2: typing.Text = ...,
+        cover_left_text_2: builtins.str = ...,
         cover_left_icon_2: builtins.int = ...,
-        cover_right_text: typing.Text = ...,
-        cover_right_top_text: typing.Text = ...,
-        rcmd_reason_style: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        rcmd_reason_style_v2: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base","rcmd_reason_style",b"rcmd_reason_style","rcmd_reason_style_v2",b"rcmd_reason_style_v2"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base",b"base","cover_left_icon_1",b"cover_left_icon_1","cover_left_icon_2",b"cover_left_icon_2","cover_left_text_1",b"cover_left_text_1","cover_left_text_2",b"cover_left_text_2","cover_right_text",b"cover_right_text","cover_right_top_text",b"cover_right_top_text","rcmd_reason_style",b"rcmd_reason_style","rcmd_reason_style_v2",b"rcmd_reason_style_v2"]) -> None: ...
+        cover_right_text: builtins.str = ...,
+        cover_right_top_text: builtins.str = ...,
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        rcmd_reason_style_v2: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base", "rcmd_reason_style", b"rcmd_reason_style", "rcmd_reason_style_v2", b"rcmd_reason_style_v2"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "cover_left_icon_1", b"cover_left_icon_1", "cover_left_icon_2", b"cover_left_icon_2", "cover_left_text_1", b"cover_left_text_1", "cover_left_text_2", b"cover_left_text_2", "cover_right_text", b"cover_right_text", "cover_right_top_text", b"cover_right_top_text", "rcmd_reason_style", b"rcmd_reason_style", "rcmd_reason_style_v2", b"rcmd_reason_style_v2"]) -> None: ...
+
 global___SmallCoverConvergeV2 = SmallCoverConvergeV2
 
 class SmallChannelSpecial(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BASE_FIELD_NUMBER: builtins.int
     BG_COVER_FIELD_NUMBER: builtins.int
     DESC_1_FIELD_NUMBER: builtins.int
@@ -1058,32 +981,28 @@ class SmallChannelSpecial(google.protobuf.message.Message):
     @property
     def base(self) -> bilibili.app.card.v1.common_pb2.Base:
         """"""
-        pass
-    bg_cover: typing.Text
+    bg_cover: builtins.str
     """"""
-
-    desc_1: typing.Text
+    desc_1: builtins.str
     """"""
-
-    desc_2: typing.Text
+    desc_2: builtins.str
     """"""
-
-    badge: typing.Text
+    badge: builtins.str
     """"""
-
     @property
     def rcmd_reason_style_2(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        base: typing.Optional[bilibili.app.card.v1.common_pb2.Base] = ...,
-        bg_cover: typing.Text = ...,
-        desc_1: typing.Text = ...,
-        desc_2: typing.Text = ...,
-        badge: typing.Text = ...,
-        rcmd_reason_style_2: typing.Optional[bilibili.app.card.v1.common_pb2.ReasonStyle] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["base",b"base","rcmd_reason_style_2",b"rcmd_reason_style_2"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["badge",b"badge","base",b"base","bg_cover",b"bg_cover","desc_1",b"desc_1","desc_2",b"desc_2","rcmd_reason_style_2",b"rcmd_reason_style_2"]) -> None: ...
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        bg_cover: builtins.str = ...,
+        desc_1: builtins.str = ...,
+        desc_2: builtins.str = ...,
+        badge: builtins.str = ...,
+        rcmd_reason_style_2: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base", "rcmd_reason_style_2", b"rcmd_reason_style_2"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "base", b"base", "bg_cover", b"bg_cover", "desc_1", b"desc_1", "desc_2", b"desc_2", "rcmd_reason_style_2", b"rcmd_reason_style_2"]) -> None: ...
+
 global___SmallChannelSpecial = SmallChannelSpecial

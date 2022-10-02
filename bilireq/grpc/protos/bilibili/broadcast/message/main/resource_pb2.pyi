@@ -5,35 +5,43 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class TopActivityReply(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ONLINE_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
     @property
     def online(self) -> global___TopOnline:
         """当前生效的资源"""
-        pass
-    hash: typing.Text
+    hash: builtins.str
     """对online内容进行hash和上次结果一样则不重新加载"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        online: typing.Optional[global___TopOnline] = ...,
-        hash: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["online",b"online"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["hash",b"hash","online",b"online"]) -> None: ...
+        online: global___TopOnline | None = ...,
+        hash: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["online", b"online"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["hash", b"hash", "online", b"online"]) -> None: ...
+
 global___TopActivityReply = TopActivityReply
 
 class TopOnline(google.protobuf.message.Message):
     """当前生效的资源"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TYPE_FIELD_NUMBER: builtins.int
     ICON_FIELD_NUMBER: builtins.int
     URI_FIELD_NUMBER: builtins.int
@@ -46,91 +54,87 @@ class TopOnline(google.protobuf.message.Message):
     """活动类型
     1:七日活动 2:后台配置
     """
-
-    icon: typing.Text
+    icon: builtins.str
     """图标"""
-
-    uri: typing.Text
+    uri: builtins.str
     """跳转链接"""
-
-    unique_id: typing.Text
+    unique_id: builtins.str
     """资源状态标识(后台配置)"""
-
     @property
     def animate(self) -> global___Animate:
         """动画资源"""
-        pass
     @property
     def red_dot(self) -> global___RedDot:
         """红点"""
-        pass
-    name: typing.Text
+    name: builtins.str
     """活动名称"""
-
     interval: builtins.int
     """轮询间隔 单位秒"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         type: builtins.int = ...,
-        icon: typing.Text = ...,
-        uri: typing.Text = ...,
-        unique_id: typing.Text = ...,
-        animate: typing.Optional[global___Animate] = ...,
-        red_dot: typing.Optional[global___RedDot] = ...,
-        name: typing.Text = ...,
+        icon: builtins.str = ...,
+        uri: builtins.str = ...,
+        unique_id: builtins.str = ...,
+        animate: global___Animate | None = ...,
+        red_dot: global___RedDot | None = ...,
+        name: builtins.str = ...,
         interval: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["animate",b"animate","red_dot",b"red_dot"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["animate",b"animate","icon",b"icon","interval",b"interval","name",b"name","red_dot",b"red_dot","type",b"type","unique_id",b"unique_id","uri",b"uri"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["animate", b"animate", "red_dot", b"red_dot"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["animate", b"animate", "icon", b"icon", "interval", b"interval", "name", b"name", "red_dot", b"red_dot", "type", b"type", "unique_id", b"unique_id", "uri", b"uri"]) -> None: ...
+
 global___TopOnline = TopOnline
 
 class Animate(google.protobuf.message.Message):
     """动画资源"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ICON_FIELD_NUMBER: builtins.int
     JSON_FIELD_NUMBER: builtins.int
     SVG_FIELD_NUMBER: builtins.int
     LOOP_FIELD_NUMBER: builtins.int
-    icon: typing.Text
+    icon: builtins.str
     """动效结束展示icon"""
-
-    json: typing.Text
+    json: builtins.str
     """7日活动动画"""
-
-    svg: typing.Text
+    svg: builtins.str
     """s10活动svg动画"""
-
     loop: builtins.int
     """循环次数(默认0不返回 表示无限循环)"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        icon: typing.Text = ...,
-        json: typing.Text = ...,
-        svg: typing.Text = ...,
+        icon: builtins.str = ...,
+        json: builtins.str = ...,
+        svg: builtins.str = ...,
         loop: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["icon",b"icon","json",b"json","loop",b"loop","svg",b"svg"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["icon", b"icon", "json", b"json", "loop", b"loop", "svg", b"svg"]) -> None: ...
+
 global___Animate = Animate
 
 class RedDot(google.protobuf.message.Message):
     """红点"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TYPE_FIELD_NUMBER: builtins.int
     NUMBER_FIELD_NUMBER: builtins.int
     type: builtins.int
     """红点类型
     1:纯红点 2:数字红点
     """
-
     number: builtins.int
     """如果是数字红点 显示的数字"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         type: builtins.int = ...,
         number: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["number",b"number","type",b"type"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["number", b"number", "type", b"type"]) -> None: ...
+
 global___RedDot = RedDot

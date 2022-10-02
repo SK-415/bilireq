@@ -5,8 +5,12 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -14,7 +18,9 @@ class Metadata(google.protobuf.message.Message):
     """请求元数据
     gRPC头部:x-bili-metadata-bin
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ACCESS_KEY_FIELD_NUMBER: builtins.int
     MOBI_APP_FIELD_NUMBER: builtins.int
     DEVICE_FIELD_NUMBER: builtins.int
@@ -22,36 +28,31 @@ class Metadata(google.protobuf.message.Message):
     CHANNEL_FIELD_NUMBER: builtins.int
     BUVID_FIELD_NUMBER: builtins.int
     PLATFORM_FIELD_NUMBER: builtins.int
-    access_key: typing.Text
+    access_key: builtins.str
     """登录Token"""
-
-    mobi_app: typing.Text
+    mobi_app: builtins.str
     """包类型"""
-
-    device: typing.Text
+    device: builtins.str
     """运行设备"""
-
     build: builtins.int
     """构建id"""
-
-    channel: typing.Text
+    channel: builtins.str
     """渠道"""
-
-    buvid: typing.Text
+    buvid: builtins.str
     """设备buvid"""
-
-    platform: typing.Text
+    platform: builtins.str
     """平台类型"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        access_key: typing.Text = ...,
-        mobi_app: typing.Text = ...,
-        device: typing.Text = ...,
+        access_key: builtins.str = ...,
+        mobi_app: builtins.str = ...,
+        device: builtins.str = ...,
         build: builtins.int = ...,
-        channel: typing.Text = ...,
-        buvid: typing.Text = ...,
-        platform: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["access_key",b"access_key","build",b"build","buvid",b"buvid","channel",b"channel","device",b"device","mobi_app",b"mobi_app","platform",b"platform"]) -> None: ...
+        channel: builtins.str = ...,
+        buvid: builtins.str = ...,
+        platform: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["access_key", b"access_key", "build", b"build", "buvid", b"buvid", "channel", b"channel", "device", b"device", "mobi_app", b"mobi_app", "platform", b"platform"]) -> None: ...
+
 global___Metadata = Metadata

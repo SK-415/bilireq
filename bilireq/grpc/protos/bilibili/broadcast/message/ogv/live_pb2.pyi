@@ -5,42 +5,59 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class LiveStartEvent(google.protobuf.message.Message):
     """开播事件"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___LiveStartEvent = LiveStartEvent
 
 class LiveEndEvent(google.protobuf.message.Message):
     """直播中止事件"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___LiveEndEvent = LiveEndEvent
 
 class LiveOnlineEvent(google.protobuf.message.Message):
     """在线人数事件"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ONLINE_FIELD_NUMBER: builtins.int
     online: builtins.int
     """在线人数"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         online: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["online",b"online"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["online", b"online"]) -> None: ...
+
 global___LiveOnlineEvent = LiveOnlineEvent
 
 class LiveUpdateEvent(google.protobuf.message.Message):
     """变更通知"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     AFTER_PREMIERE_TYPE_FIELD_NUMBER: builtins.int
     START_TIME_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
@@ -49,31 +66,31 @@ class LiveUpdateEvent(google.protobuf.message.Message):
     """直播后状态
     1:下线 2:转点播
     """
-
     start_time: builtins.int
     """直播开始绝对时间 单位ms"""
-
-    id: typing.Text
+    id: builtins.str
     """id"""
-
     progress: builtins.int
     """服务端播放进度，未打散，负数表示距离开播时间，正数表示已开播时间，单位：毫秒
     用户实际播放进度：progress - delay_time
     """
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         after_premiere_type: builtins.int = ...,
         start_time: builtins.int = ...,
-        id: typing.Text = ...,
+        id: builtins.str = ...,
         progress: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["after_premiere_type",b"after_premiere_type","id",b"id","progress",b"progress","start_time",b"start_time"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["after_premiere_type", b"after_premiere_type", "id", b"id", "progress", b"progress", "start_time", b"start_time"]) -> None: ...
+
 global___LiveUpdateEvent = LiveUpdateEvent
 
 class CMDBody(google.protobuf.message.Message):
     """直播间事件"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     START_FIELD_NUMBER: builtins.int
     EMERGENCY_FIELD_NUMBER: builtins.int
     ONLINE_FIELD_NUMBER: builtins.int
@@ -81,27 +98,25 @@ class CMDBody(google.protobuf.message.Message):
     @property
     def start(self) -> global___LiveStartEvent:
         """开播事件"""
-        pass
     @property
     def emergency(self) -> global___LiveEndEvent:
         """直播中止事件"""
-        pass
     @property
     def online(self) -> global___LiveOnlineEvent:
         """在线人数事件"""
-        pass
     @property
     def update(self) -> global___LiveUpdateEvent:
         """变更通知"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        start: typing.Optional[global___LiveStartEvent] = ...,
-        emergency: typing.Optional[global___LiveEndEvent] = ...,
-        online: typing.Optional[global___LiveOnlineEvent] = ...,
-        update: typing.Optional[global___LiveUpdateEvent] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["emergency",b"emergency","event",b"event","online",b"online","start",b"start","update",b"update"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["emergency",b"emergency","event",b"event","online",b"online","start",b"start","update",b"update"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["event",b"event"]) -> typing.Optional[typing_extensions.Literal["start","emergency","online","update"]]: ...
+        start: global___LiveStartEvent | None = ...,
+        emergency: global___LiveEndEvent | None = ...,
+        online: global___LiveOnlineEvent | None = ...,
+        update: global___LiveUpdateEvent | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["emergency", b"emergency", "event", b"event", "online", b"online", "start", b"start", "update", b"update"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["emergency", b"emergency", "event", b"event", "online", b"online", "start", b"start", "update", b"update"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["event", b"event"]) -> typing_extensions.Literal["start", "emergency", "online", "update"] | None: ...
+
 global___CMDBody = CMDBody

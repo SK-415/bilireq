@@ -5,121 +5,137 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class ErrorRequest(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ERROR_FIELD_NUMBER: builtins.int
     TIME_FIELD_NUMBER: builtins.int
     DELAY_FIELD_NUMBER: builtins.int
     error: builtins.int
     """"""
-
     time: builtins.int
     """"""
-
     delay: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         error: builtins.int = ...,
         time: builtins.int = ...,
         delay: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["delay",b"delay","error",b"error","time",b"time"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["delay", b"delay", "error", b"error", "time", b"time"]) -> None: ...
+
 global___ErrorRequest = ErrorRequest
 
 class ErrorResponse(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     HOST_FIELD_NUMBER: builtins.int
     TIME_FIELD_NUMBER: builtins.int
-    host: typing.Text
+    host: builtins.str
     """"""
-
     time: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        host: typing.Text = ...,
+        host: builtins.str = ...,
         time: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["host",b"host","time",b"time"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["host", b"host", "time", b"time"]) -> None: ...
+
 global___ErrorResponse = ErrorResponse
 
 class PingRequest(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TIME_FIELD_NUMBER: builtins.int
     time: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         time: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["time",b"time"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["time", b"time"]) -> None: ...
+
 global___PingRequest = PingRequest
 
 class PingResponse(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     HOST_FIELD_NUMBER: builtins.int
     TIME_FIELD_NUMBER: builtins.int
-    host: typing.Text
+    host: builtins.str
     """"""
-
     time: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        host: typing.Text = ...,
+        host: builtins.str = ...,
         time: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["host",b"host","time",b"time"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["host", b"host", "time", b"time"]) -> None: ...
+
 global___PingResponse = PingResponse
 
 class SayRequest(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    CONTENT_FIELD_NUMBER: builtins.int
-    content: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONTENT_FIELD_NUMBER: builtins.int
+    content: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        content: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["content",b"content"]) -> None: ...
+        content: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["content", b"content"]) -> None: ...
+
 global___SayRequest = SayRequest
 
 class SayResponse(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     HOST_FIELD_NUMBER: builtins.int
     CONTENT_FIELD_NUMBER: builtins.int
     TIME_FIELD_NUMBER: builtins.int
-    host: typing.Text
+    host: builtins.str
     """"""
-
-    content: typing.Text
+    content: builtins.str
     """"""
-
     time: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        host: typing.Text = ...,
-        content: typing.Text = ...,
+        host: builtins.str = ...,
+        content: builtins.str = ...,
         time: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["content",b"content","host",b"host","time",b"time"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["content", b"content", "host", b"host", "time", b"time"]) -> None: ...
+
 global___SayResponse = SayResponse

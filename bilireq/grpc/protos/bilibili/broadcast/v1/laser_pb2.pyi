@@ -5,26 +5,32 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class LaserLogUploadResp(google.protobuf.message.Message):
     """服务端下发日志上报事件"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TASKID_FIELD_NUMBER: builtins.int
     DATE_FIELD_NUMBER: builtins.int
     taskid: builtins.int
     """任务id"""
-
-    date: typing.Text
+    date: builtins.str
     """下发时间"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         taskid: builtins.int = ...,
-        date: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["date",b"date","taskid",b"taskid"]) -> None: ...
+        date: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["date", b"date", "taskid", b"taskid"]) -> None: ...
+
 global___LaserLogUploadResp = LaserLogUploadResp

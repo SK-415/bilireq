@@ -5,8 +5,12 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -14,7 +18,9 @@ class Device(google.protobuf.message.Message):
     """设备信息
     gRPC头部:x-bili-device-bin
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     APP_ID_FIELD_NUMBER: builtins.int
     BUILD_FIELD_NUMBER: builtins.int
     BUVID_FIELD_NUMBER: builtins.int
@@ -35,68 +41,55 @@ class Device(google.protobuf.message.Message):
     粉 白 蓝 直播姬 HD 海外 OTT 漫画 TV野版 小视频 网易漫画 网易漫画 网易漫画HD 国际版
     1  2  3    4    5   6    7   8     9     10      11       12       13       14
     """
-
     build: builtins.int
     """构建id"""
-
-    buvid: typing.Text
+    buvid: builtins.str
     """设备buvid"""
-
-    mobi_app: typing.Text
+    mobi_app: builtins.str
     """包类型"""
-
-    platform: typing.Text
+    platform: builtins.str
     """平台类型
     ios android
     """
-
-    device: typing.Text
+    device: builtins.str
     """设备类型"""
-
-    channel: typing.Text
+    channel: builtins.str
     """渠道"""
-
-    brand: typing.Text
+    brand: builtins.str
     """手机品牌"""
-
-    model: typing.Text
+    model: builtins.str
     """手机型号"""
-
-    osver: typing.Text
+    osver: builtins.str
     """系统版本"""
-
-    fp_local: typing.Text
+    fp_local: builtins.str
     """本地设备指纹"""
-
-    fp_remote: typing.Text
+    fp_remote: builtins.str
     """远程设备指纹"""
-
-    version_name: typing.Text
+    version_name: builtins.str
     """APP版本号"""
-
-    fp: typing.Text
+    fp: builtins.str
     """设备指纹, 不区分本地或远程设备指纹，作为推送目标的索引"""
-
     fts: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         app_id: builtins.int = ...,
         build: builtins.int = ...,
-        buvid: typing.Text = ...,
-        mobi_app: typing.Text = ...,
-        platform: typing.Text = ...,
-        device: typing.Text = ...,
-        channel: typing.Text = ...,
-        brand: typing.Text = ...,
-        model: typing.Text = ...,
-        osver: typing.Text = ...,
-        fp_local: typing.Text = ...,
-        fp_remote: typing.Text = ...,
-        version_name: typing.Text = ...,
-        fp: typing.Text = ...,
+        buvid: builtins.str = ...,
+        mobi_app: builtins.str = ...,
+        platform: builtins.str = ...,
+        device: builtins.str = ...,
+        channel: builtins.str = ...,
+        brand: builtins.str = ...,
+        model: builtins.str = ...,
+        osver: builtins.str = ...,
+        fp_local: builtins.str = ...,
+        fp_remote: builtins.str = ...,
+        version_name: builtins.str = ...,
+        fp: builtins.str = ...,
         fts: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["app_id",b"app_id","brand",b"brand","build",b"build","buvid",b"buvid","channel",b"channel","device",b"device","fp",b"fp","fp_local",b"fp_local","fp_remote",b"fp_remote","fts",b"fts","mobi_app",b"mobi_app","model",b"model","osver",b"osver","platform",b"platform","version_name",b"version_name"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["app_id", b"app_id", "brand", b"brand", "build", b"build", "buvid", b"buvid", "channel", b"channel", "device", b"device", "fp", b"fp", "fp_local", b"fp_local", "fp_remote", b"fp_remote", "fts", b"fts", "mobi_app", b"mobi_app", "model", b"model", "osver", b"osver", "platform", b"platform", "version_name", b"version_name"]) -> None: ...
+
 global___Device = Device

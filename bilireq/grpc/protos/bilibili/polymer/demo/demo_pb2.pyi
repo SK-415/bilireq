@@ -5,35 +5,45 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class HelloWorldReq(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    CONTENT_FIELD_NUMBER: builtins.int
-    content: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONTENT_FIELD_NUMBER: builtins.int
+    content: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        content: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["content",b"content"]) -> None: ...
+        content: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["content", b"content"]) -> None: ...
+
 global___HelloWorldReq = HelloWorldReq
 
 class HelloWorldResp(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    DATA_FIELD_NUMBER: builtins.int
-    data: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATA_FIELD_NUMBER: builtins.int
+    data: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        data: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["data",b"data"]) -> None: ...
+        data: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["data", b"data"]) -> None: ...
+
 global___HelloWorldResp = HelloWorldResp

@@ -5,41 +5,49 @@ isort:skip_file
 import bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2
 import bilireq.grpc.protos.bilibili.app.card.v1.card_pb2
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class Bubble(google.protobuf.message.Message):
     """气泡信息"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BUBBLE_CONTENT_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     STIME_FIELD_NUMBER: builtins.int
-    bubble_content: typing.Text
+    bubble_content: builtins.str
     """文案"""
-
     version: builtins.int
     """版本"""
-
     stime: builtins.int
     """起始时间"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        bubble_content: typing.Text = ...,
+        bubble_content: builtins.str = ...,
         version: builtins.int = ...,
         stime: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bubble_content",b"bubble_content","stime",b"stime","version",b"version"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bubble_content", b"bubble_content", "stime", b"stime", "version", b"version"]) -> None: ...
+
 global___Bubble = Bubble
 
 class Config(google.protobuf.message.Message):
     """配置信息"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_TITLE_FIELD_NUMBER: builtins.int
     BOTTOM_TEXT_FIELD_NUMBER: builtins.int
     BOTTOM_TEXT_COVER_FIELD_NUMBER: builtins.int
@@ -48,49 +56,45 @@ class Config(google.protobuf.message.Message):
     HEAD_IMAGE_FIELD_NUMBER: builtins.int
     PAGE_ITEMS_FIELD_NUMBER: builtins.int
     HIT_FIELD_NUMBER: builtins.int
-    item_title: typing.Text
+    item_title: builtins.str
     """标题"""
-
-    bottom_text: typing.Text
+    bottom_text: builtins.str
     """底部文案"""
-
-    bottom_text_cover: typing.Text
+    bottom_text_cover: builtins.str
     """底部图片url"""
-
-    bottom_text_url: typing.Text
+    bottom_text_url: builtins.str
     """底部跳转页url"""
-
     @property
     def top_items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EntranceShow]:
         """顶部按钮信息列表"""
-        pass
-    head_image: typing.Text
+    head_image: builtins.str
     """头图url"""
-
     @property
     def page_items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EntranceShow]:
         """当前页按钮信息"""
-        pass
     hit: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item_title: typing.Text = ...,
-        bottom_text: typing.Text = ...,
-        bottom_text_cover: typing.Text = ...,
-        bottom_text_url: typing.Text = ...,
-        top_items: typing.Optional[typing.Iterable[global___EntranceShow]] = ...,
-        head_image: typing.Text = ...,
-        page_items: typing.Optional[typing.Iterable[global___EntranceShow]] = ...,
+        item_title: builtins.str = ...,
+        bottom_text: builtins.str = ...,
+        bottom_text_cover: builtins.str = ...,
+        bottom_text_url: builtins.str = ...,
+        top_items: collections.abc.Iterable[global___EntranceShow] | None = ...,
+        head_image: builtins.str = ...,
+        page_items: collections.abc.Iterable[global___EntranceShow] | None = ...,
         hit: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bottom_text",b"bottom_text","bottom_text_cover",b"bottom_text_cover","bottom_text_url",b"bottom_text_url","head_image",b"head_image","hit",b"hit","item_title",b"item_title","page_items",b"page_items","top_items",b"top_items"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bottom_text", b"bottom_text", "bottom_text_cover", b"bottom_text_cover", "bottom_text_url", b"bottom_text_url", "head_image", b"head_image", "hit", b"hit", "item_title", b"item_title", "page_items", b"page_items", "top_items", b"top_items"]) -> None: ...
+
 global___Config = Config
 
 class EntranceShow(google.protobuf.message.Message):
     """按钮信息"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ICON_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     MODULE_ID_FIELD_NUMBER: builtins.int
@@ -99,76 +103,73 @@ class EntranceShow(google.protobuf.message.Message):
     ENTRANCE_ID_FIELD_NUMBER: builtins.int
     TOP_PHOTO_FIELD_NUMBER: builtins.int
     ENTRANCE_TYPE_FIELD_NUMBER: builtins.int
-    icon: typing.Text
+    icon: builtins.str
     """按钮图标url"""
-
-    title: typing.Text
+    title: builtins.str
     """按钮名"""
-
-    module_id: typing.Text
+    module_id: builtins.str
     """入口模块id"""
-
-    uri: typing.Text
+    uri: builtins.str
     """跳转uri"""
-
     @property
     def bubble(self) -> global___Bubble:
         """气泡信息"""
-        pass
     entrance_id: builtins.int
     """入口id"""
-
-    top_photo: typing.Text
+    top_photo: builtins.str
     """头图url"""
-
     entrance_type: builtins.int
     """入口类型"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        icon: typing.Text = ...,
-        title: typing.Text = ...,
-        module_id: typing.Text = ...,
-        uri: typing.Text = ...,
-        bubble: typing.Optional[global___Bubble] = ...,
+        icon: builtins.str = ...,
+        title: builtins.str = ...,
+        module_id: builtins.str = ...,
+        uri: builtins.str = ...,
+        bubble: global___Bubble | None = ...,
         entrance_id: builtins.int = ...,
-        top_photo: typing.Text = ...,
+        top_photo: builtins.str = ...,
         entrance_type: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["bubble",b"bubble"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bubble",b"bubble","entrance_id",b"entrance_id","entrance_type",b"entrance_type","icon",b"icon","module_id",b"module_id","title",b"title","top_photo",b"top_photo","uri",b"uri"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["bubble", b"bubble"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bubble", b"bubble", "entrance_id", b"entrance_id", "entrance_type", b"entrance_type", "icon", b"icon", "module_id", b"module_id", "title", b"title", "top_photo", b"top_photo", "uri", b"uri"]) -> None: ...
+
 global___EntranceShow = EntranceShow
 
 class PopularReply(google.protobuf.message.Message):
     """热门列表-响应"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEMS_FIELD_NUMBER: builtins.int
     CONFIG_FIELD_NUMBER: builtins.int
     VER_FIELD_NUMBER: builtins.int
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[bilibili.app.card.v1.card_pb2.Card]:
         """卡片列表"""
-        pass
     @property
     def config(self) -> global___Config:
         """配置信息"""
-        pass
-    ver: typing.Text
+    ver: builtins.str
     """版本"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        items: typing.Optional[typing.Iterable[bilibili.app.card.v1.card_pb2.Card]] = ...,
-        config: typing.Optional[global___Config] = ...,
-        ver: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["config",b"config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["config",b"config","items",b"items","ver",b"ver"]) -> None: ...
+        items: collections.abc.Iterable[bilibili.app.card.v1.card_pb2.Card] | None = ...,
+        config: global___Config | None = ...,
+        ver: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["config", b"config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["config", b"config", "items", b"items", "ver", b"ver"]) -> None: ...
+
 global___PopularReply = PopularReply
 
 class PopularResultReq(google.protobuf.message.Message):
     """热门列表-请求"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     IDX_FIELD_NUMBER: builtins.int
     LOGIN_EVENT_FIELD_NUMBER: builtins.int
     QN_FIELD_NUMBER: builtins.int
@@ -186,55 +187,41 @@ class PopularResultReq(google.protobuf.message.Message):
     PLAYER_ARGS_FIELD_NUMBER: builtins.int
     idx: builtins.int
     """排位索引id，为上此请求末尾项的idx"""
-
     login_event: builtins.int
     """登录标识
     1:未登陆用户第一页 2:登陆用户第一页
     """
-
     qn: builtins.int
     """清晰度(旧版)"""
-
     fnver: builtins.int
     """视频流版本(旧版)"""
-
     fnval: builtins.int
     """视频流功能(旧版)"""
-
     force_host: builtins.int
     """是否强制使用域名(旧版)"""
-
     fourk: builtins.int
     """是否4K(旧版)"""
-
-    spmid: typing.Text
+    spmid: builtins.str
     """当前页面spm"""
-
-    last_param: typing.Text
+    last_param: builtins.str
     """上此请求末尾项的param"""
-
-    ver: typing.Text
+    ver: builtins.str
     """上此请求的ver"""
-
     entrance_id: builtins.int
     """分品类热门的入口ID"""
-
-    location_ids: typing.Text
+    location_ids: builtins.str
     """热门定位id集合"""
-
     source_id: builtins.int
     """0:tag页 1:中间页"""
-
     flush: builtins.int
     """数据埋点上报
     0:代表手动刷新 1:代表自动刷新
     """
-
     @property
     def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """秒开参数"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         idx: builtins.int = ...,
         login_event: builtins.int = ...,
@@ -243,15 +230,16 @@ class PopularResultReq(google.protobuf.message.Message):
         fnval: builtins.int = ...,
         force_host: builtins.int = ...,
         fourk: builtins.int = ...,
-        spmid: typing.Text = ...,
-        last_param: typing.Text = ...,
-        ver: typing.Text = ...,
+        spmid: builtins.str = ...,
+        last_param: builtins.str = ...,
+        ver: builtins.str = ...,
         entrance_id: builtins.int = ...,
-        location_ids: typing.Text = ...,
+        location_ids: builtins.str = ...,
         source_id: builtins.int = ...,
         flush: builtins.int = ...,
-        player_args: typing.Optional[bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["player_args",b"player_args"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["entrance_id",b"entrance_id","flush",b"flush","fnval",b"fnval","fnver",b"fnver","force_host",b"force_host","fourk",b"fourk","idx",b"idx","last_param",b"last_param","location_ids",b"location_ids","login_event",b"login_event","player_args",b"player_args","qn",b"qn","source_id",b"source_id","spmid",b"spmid","ver",b"ver"]) -> None: ...
+        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["player_args", b"player_args"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["entrance_id", b"entrance_id", "flush", b"flush", "fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "fourk", b"fourk", "idx", b"idx", "last_param", b"last_param", "location_ids", b"location_ids", "login_event", b"login_event", "player_args", b"player_args", "qn", b"qn", "source_id", b"source_id", "spmid", b"spmid", "ver", b"ver"]) -> None: ...
+
 global___PopularResultReq = PopularResultReq

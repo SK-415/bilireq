@@ -5,25 +5,30 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class GameNotifyReply(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TYPE_FIELD_NUMBER: builtins.int
     DATA_FIELD_NUMBER: builtins.int
     type: builtins.int
     """类型字段"""
-
-    data: typing.Text
+    data: builtins.str
     """数据字段"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         type: builtins.int = ...,
-        data: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["data",b"data","type",b"type"]) -> None: ...
+        data: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["data", b"data", "type", b"type"]) -> None: ...
+
 global___GameNotifyReply = GameNotifyReply

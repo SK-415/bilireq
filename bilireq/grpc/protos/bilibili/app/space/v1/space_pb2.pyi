@@ -3,17 +3,24 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class ArchiveReply(google.protobuf.message.Message):
     """-响应"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     COUNT_FIELD_NUMBER: builtins.int
     EPISODIC_BUTTON_FIELD_NUMBER: builtins.int
@@ -21,61 +28,61 @@ class ArchiveReply(google.protobuf.message.Message):
     @property
     def item(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BiliSpaceVideo]:
         """"""
-        pass
     count: builtins.int
     """"""
-
     @property
     def episodic_button(self) -> global___EpisodicButton:
         """"""
-        pass
     @property
     def order(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OrderConfig]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[typing.Iterable[global___BiliSpaceVideo]] = ...,
+        item: collections.abc.Iterable[global___BiliSpaceVideo] | None = ...,
         count: builtins.int = ...,
-        episodic_button: typing.Optional[global___EpisodicButton] = ...,
-        order: typing.Optional[typing.Iterable[global___OrderConfig]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["episodic_button",b"episodic_button"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["count",b"count","episodic_button",b"episodic_button","item",b"item","order",b"order"]) -> None: ...
+        episodic_button: global___EpisodicButton | None = ...,
+        order: collections.abc.Iterable[global___OrderConfig] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["episodic_button", b"episodic_button"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["count", b"count", "episodic_button", b"episodic_button", "item", b"item", "order", b"order"]) -> None: ...
+
 global___ArchiveReply = ArchiveReply
 
 class ArchiveReq(google.protobuf.message.Message):
     """-请求"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VMID_FIELD_NUMBER: builtins.int
     PN_FIELD_NUMBER: builtins.int
     PS_FIELD_NUMBER: builtins.int
     ORDER_FIELD_NUMBER: builtins.int
     vmid: builtins.int
     """"""
-
     pn: builtins.int
     """"""
-
     ps: builtins.int
     """"""
-
-    order: typing.Text
+    order: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         vmid: builtins.int = ...,
         pn: builtins.int = ...,
         ps: builtins.int = ...,
-        order: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["order",b"order","pn",b"pn","ps",b"ps","vmid",b"vmid"]) -> None: ...
+        order: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["order", b"order", "pn", b"pn", "ps", b"ps", "vmid", b"vmid"]) -> None: ...
+
 global___ArchiveReq = ArchiveReq
 
 class Badge(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TEXT_FIELD_NUMBER: builtins.int
     TEXT_COLOR_FIELD_NUMBER: builtins.int
     TEXT_COLOR_NIGHT_FIELD_NUMBER: builtins.int
@@ -84,47 +91,43 @@ class Badge(google.protobuf.message.Message):
     BORDER_COLOR_FIELD_NUMBER: builtins.int
     BORDER_COLOR_NIGHT_FIELD_NUMBER: builtins.int
     BG_STYLE_FIELD_NUMBER: builtins.int
-    text: typing.Text
+    text: builtins.str
     """"""
-
-    text_color: typing.Text
+    text_color: builtins.str
     """"""
-
-    text_color_night: typing.Text
+    text_color_night: builtins.str
     """"""
-
-    bg_color: typing.Text
+    bg_color: builtins.str
     """"""
-
-    bg_color_night: typing.Text
+    bg_color_night: builtins.str
     """"""
-
-    border_color: typing.Text
+    border_color: builtins.str
     """"""
-
-    border_color_night: typing.Text
+    border_color_night: builtins.str
     """"""
-
     bg_style: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        text: typing.Text = ...,
-        text_color: typing.Text = ...,
-        text_color_night: typing.Text = ...,
-        bg_color: typing.Text = ...,
-        bg_color_night: typing.Text = ...,
-        border_color: typing.Text = ...,
-        border_color_night: typing.Text = ...,
+        text: builtins.str = ...,
+        text_color: builtins.str = ...,
+        text_color_night: builtins.str = ...,
+        bg_color: builtins.str = ...,
+        bg_color_night: builtins.str = ...,
+        border_color: builtins.str = ...,
+        border_color_night: builtins.str = ...,
         bg_style: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bg_color",b"bg_color","bg_color_night",b"bg_color_night","bg_style",b"bg_style","border_color",b"border_color","border_color_night",b"border_color_night","text",b"text","text_color",b"text_color","text_color_night",b"text_color_night"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "bg_style", b"bg_style", "border_color", b"border_color", "border_color_night", b"border_color_night", "text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night"]) -> None: ...
+
 global___Badge = Badge
 
 class BiliSpaceVideo(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TITLE_FIELD_NUMBER: builtins.int
     TNAME_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
@@ -142,115 +145,104 @@ class BiliSpaceVideo(google.protobuf.message.Message):
     IS_STEINS_FIELD_NUMBER: builtins.int
     IS_UGCPAY_FIELD_NUMBER: builtins.int
     IS_COOPERATION_FIELD_NUMBER: builtins.int
-    title: typing.Text
+    title: builtins.str
     """"""
-
-    tname: typing.Text
+    tname: builtins.str
     """"""
-
     duration: builtins.int
     """"""
-
-    cover: typing.Text
+    cover: builtins.str
     """"""
-
-    uri: typing.Text
+    uri: builtins.str
     """"""
-
-    param: typing.Text
+    param: builtins.str
     """"""
-
-    danmaku: typing.Text
+    danmaku: builtins.str
     """"""
-
     play: builtins.int
     """"""
-
     ctime: builtins.int
     """"""
-
     state: builtins.bool
     """"""
-
     is_popular: builtins.bool
     """"""
-
     @property
     def badges(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Badge]:
         """"""
-        pass
-    cover_right: typing.Text
+    cover_right: builtins.str
     """"""
-
-    bvid: typing.Text
+    bvid: builtins.str
     """"""
-
     is_steins: builtins.bool
     """"""
-
     is_ugcpay: builtins.bool
     """"""
-
     is_cooperation: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        tname: typing.Text = ...,
+        title: builtins.str = ...,
+        tname: builtins.str = ...,
         duration: builtins.int = ...,
-        cover: typing.Text = ...,
-        uri: typing.Text = ...,
-        param: typing.Text = ...,
-        danmaku: typing.Text = ...,
+        cover: builtins.str = ...,
+        uri: builtins.str = ...,
+        param: builtins.str = ...,
+        danmaku: builtins.str = ...,
         play: builtins.int = ...,
         ctime: builtins.int = ...,
         state: builtins.bool = ...,
         is_popular: builtins.bool = ...,
-        badges: typing.Optional[typing.Iterable[global___Badge]] = ...,
-        cover_right: typing.Text = ...,
-        bvid: typing.Text = ...,
+        badges: collections.abc.Iterable[global___Badge] | None = ...,
+        cover_right: builtins.str = ...,
+        bvid: builtins.str = ...,
         is_steins: builtins.bool = ...,
         is_ugcpay: builtins.bool = ...,
         is_cooperation: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["badges",b"badges","bvid",b"bvid","cover",b"cover","cover_right",b"cover_right","ctime",b"ctime","danmaku",b"danmaku","duration",b"duration","is_cooperation",b"is_cooperation","is_popular",b"is_popular","is_steins",b"is_steins","is_ugcpay",b"is_ugcpay","param",b"param","play",b"play","state",b"state","title",b"title","tname",b"tname","uri",b"uri"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badges", b"badges", "bvid", b"bvid", "cover", b"cover", "cover_right", b"cover_right", "ctime", b"ctime", "danmaku", b"danmaku", "duration", b"duration", "is_cooperation", b"is_cooperation", "is_popular", b"is_popular", "is_steins", b"is_steins", "is_ugcpay", b"is_ugcpay", "param", b"param", "play", b"play", "state", b"state", "title", b"title", "tname", b"tname", "uri", b"uri"]) -> None: ...
+
 global___BiliSpaceVideo = BiliSpaceVideo
 
 class EpisodicButton(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TEXT_FIELD_NUMBER: builtins.int
     URI_FIELD_NUMBER: builtins.int
-    text: typing.Text
+    text: builtins.str
     """"""
-
-    uri: typing.Text
+    uri: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        text: typing.Text = ...,
-        uri: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["text",b"text","uri",b"uri"]) -> None: ...
+        text: builtins.str = ...,
+        uri: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["text", b"text", "uri", b"uri"]) -> None: ...
+
 global___EpisodicButton = EpisodicButton
 
 class OrderConfig(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TITLE_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
-    title: typing.Text
+    title: builtins.str
     """"""
-
-    value: typing.Text
+    value: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        value: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["title",b"title","value",b"value"]) -> None: ...
+        title: builtins.str = ...,
+        value: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["title", b"title", "value", b"value"]) -> None: ...
+
 global___OrderConfig = OrderConfig

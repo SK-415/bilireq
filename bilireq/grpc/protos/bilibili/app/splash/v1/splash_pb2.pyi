@@ -3,42 +3,50 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.any_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class ShowStrategy(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ID_FIELD_NUMBER: builtins.int
     STIME_FIELD_NUMBER: builtins.int
     ETIME_FIELD_NUMBER: builtins.int
     id: builtins.int
     """"""
-
     stime: builtins.int
     """"""
-
     etime: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         id: builtins.int = ...,
         stime: builtins.int = ...,
         etime: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["etime",b"etime","id",b"id","stime",b"stime"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["etime", b"etime", "id", b"id", "stime", b"stime"]) -> None: ...
+
 global___ShowStrategy = ShowStrategy
 
 class SplashItem(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ID_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     CARD_TYPE_FIELD_NUMBER: builtins.int
@@ -80,124 +88,86 @@ class SplashItem(google.protobuf.message.Message):
     ENABLE_BACKGROUND_DOWNLOAD_FIELD_NUMBER: builtins.int
     id: builtins.int
     """"""
-
     type: builtins.int
     """"""
-
     card_type: builtins.int
     """"""
-
     duration: builtins.int
     """"""
-
     begin_time: builtins.int
     """"""
-
     end_time: builtins.int
     """"""
-
-    thumb: typing.Text
+    thumb: builtins.str
     """"""
-
-    hash: typing.Text
+    hash: builtins.str
     """"""
-
-    logo_url: typing.Text
+    logo_url: builtins.str
     """"""
-
-    logo_hash: typing.Text
+    logo_hash: builtins.str
     """"""
-
-    video_url: typing.Text
+    video_url: builtins.str
     """"""
-
-    video_hash: typing.Text
+    video_hash: builtins.str
     """"""
-
     video_width: builtins.int
     """"""
-
     video_height: builtins.int
     """"""
-
-    schema: typing.Text
+    schema: builtins.str
     """"""
-
-    schema_title: typing.Text
+    schema_title: builtins.str
     """"""
-
-    schema_package_name: typing.Text
+    schema_package_name: builtins.str
     """"""
-
     @property
-    def schema_callup_whiteList(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+    def schema_callup_whiteList(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """"""
-        pass
     skip: builtins.int
     """"""
-
-    uri: typing.Text
+    uri: builtins.str
     """"""
-
-    uri_title: typing.Text
+    uri_title: builtins.str
     """"""
-
     source: builtins.int
     """"""
-
     cm_mark: builtins.int
     """"""
-
-    ad_cb: typing.Text
+    ad_cb: builtins.str
     """"""
-
     resource_id: builtins.int
     """"""
-
-    request_id: typing.Text
+    request_id: builtins.str
     """"""
-
-    client_ip: typing.Text
+    client_ip: builtins.str
     """"""
-
     is_ad: builtins.bool
     """"""
-
     is_ad_loc: builtins.bool
     """"""
-
     @property
     def extra(self) -> google.protobuf.any_pb2.Any:
         """"""
-        pass
     card_index: builtins.int
     """"""
-
     server_type: builtins.int
     """"""
-
     index: builtins.int
     """"""
-
-    click_url: typing.Text
+    click_url: builtins.str
     """"""
-
-    show_url: typing.Text
+    show_url: builtins.str
     """"""
-
     time_target: builtins.int
     """"""
-
     encryption: builtins.int
     """"""
-
     enable_pre_download: builtins.bool
     """"""
-
     enable_background_download: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         id: builtins.int = ...,
         type: builtins.int = ...,
@@ -205,47 +175,50 @@ class SplashItem(google.protobuf.message.Message):
         duration: builtins.int = ...,
         begin_time: builtins.int = ...,
         end_time: builtins.int = ...,
-        thumb: typing.Text = ...,
-        hash: typing.Text = ...,
-        logo_url: typing.Text = ...,
-        logo_hash: typing.Text = ...,
-        video_url: typing.Text = ...,
-        video_hash: typing.Text = ...,
+        thumb: builtins.str = ...,
+        hash: builtins.str = ...,
+        logo_url: builtins.str = ...,
+        logo_hash: builtins.str = ...,
+        video_url: builtins.str = ...,
+        video_hash: builtins.str = ...,
         video_width: builtins.int = ...,
         video_height: builtins.int = ...,
-        schema: typing.Text = ...,
-        schema_title: typing.Text = ...,
-        schema_package_name: typing.Text = ...,
-        schema_callup_whiteList: typing.Optional[typing.Iterable[typing.Text]] = ...,
+        schema: builtins.str = ...,
+        schema_title: builtins.str = ...,
+        schema_package_name: builtins.str = ...,
+        schema_callup_whiteList: collections.abc.Iterable[builtins.str] | None = ...,
         skip: builtins.int = ...,
-        uri: typing.Text = ...,
-        uri_title: typing.Text = ...,
+        uri: builtins.str = ...,
+        uri_title: builtins.str = ...,
         source: builtins.int = ...,
         cm_mark: builtins.int = ...,
-        ad_cb: typing.Text = ...,
+        ad_cb: builtins.str = ...,
         resource_id: builtins.int = ...,
-        request_id: typing.Text = ...,
-        client_ip: typing.Text = ...,
+        request_id: builtins.str = ...,
+        client_ip: builtins.str = ...,
         is_ad: builtins.bool = ...,
         is_ad_loc: builtins.bool = ...,
-        extra: typing.Optional[google.protobuf.any_pb2.Any] = ...,
+        extra: google.protobuf.any_pb2.Any | None = ...,
         card_index: builtins.int = ...,
         server_type: builtins.int = ...,
         index: builtins.int = ...,
-        click_url: typing.Text = ...,
-        show_url: typing.Text = ...,
+        click_url: builtins.str = ...,
+        show_url: builtins.str = ...,
         time_target: builtins.int = ...,
         encryption: builtins.int = ...,
         enable_pre_download: builtins.bool = ...,
         enable_background_download: builtins.bool = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["extra",b"extra"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ad_cb",b"ad_cb","begin_time",b"begin_time","card_index",b"card_index","card_type",b"card_type","click_url",b"click_url","client_ip",b"client_ip","cm_mark",b"cm_mark","duration",b"duration","enable_background_download",b"enable_background_download","enable_pre_download",b"enable_pre_download","encryption",b"encryption","end_time",b"end_time","extra",b"extra","hash",b"hash","id",b"id","index",b"index","is_ad",b"is_ad","is_ad_loc",b"is_ad_loc","logo_hash",b"logo_hash","logo_url",b"logo_url","request_id",b"request_id","resource_id",b"resource_id","schema",b"schema","schema_callup_whiteList",b"schema_callup_whiteList","schema_package_name",b"schema_package_name","schema_title",b"schema_title","server_type",b"server_type","show_url",b"show_url","skip",b"skip","source",b"source","thumb",b"thumb","time_target",b"time_target","type",b"type","uri",b"uri","uri_title",b"uri_title","video_hash",b"video_hash","video_height",b"video_height","video_url",b"video_url","video_width",b"video_width"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["extra", b"extra"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ad_cb", b"ad_cb", "begin_time", b"begin_time", "card_index", b"card_index", "card_type", b"card_type", "click_url", b"click_url", "client_ip", b"client_ip", "cm_mark", b"cm_mark", "duration", b"duration", "enable_background_download", b"enable_background_download", "enable_pre_download", b"enable_pre_download", "encryption", b"encryption", "end_time", b"end_time", "extra", b"extra", "hash", b"hash", "id", b"id", "index", b"index", "is_ad", b"is_ad", "is_ad_loc", b"is_ad_loc", "logo_hash", b"logo_hash", "logo_url", b"logo_url", "request_id", b"request_id", "resource_id", b"resource_id", "schema", b"schema", "schema_callup_whiteList", b"schema_callup_whiteList", "schema_package_name", b"schema_package_name", "schema_title", b"schema_title", "server_type", b"server_type", "show_url", b"show_url", "skip", b"skip", "source", b"source", "thumb", b"thumb", "time_target", b"time_target", "type", b"type", "uri", b"uri", "uri_title", b"uri_title", "video_hash", b"video_hash", "video_height", b"video_height", "video_url", b"video_url", "video_width", b"video_width"]) -> None: ...
+
 global___SplashItem = SplashItem
 
 class SplashReply(google.protobuf.message.Message):
     """-响应"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MAX_TIME_FIELD_NUMBER: builtins.int
     MIN_INTERVAL_FIELD_NUMBER: builtins.int
     PULL_INTERVAL_FIELD_NUMBER: builtins.int
@@ -253,35 +226,34 @@ class SplashReply(google.protobuf.message.Message):
     SHOW_FIELD_NUMBER: builtins.int
     max_time: builtins.int
     """"""
-
     min_interval: builtins.int
     """"""
-
     pull_interval: builtins.int
     """"""
-
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SplashItem]:
         """"""
-        pass
     @property
     def show(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ShowStrategy]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         max_time: builtins.int = ...,
         min_interval: builtins.int = ...,
         pull_interval: builtins.int = ...,
-        list: typing.Optional[typing.Iterable[global___SplashItem]] = ...,
-        show: typing.Optional[typing.Iterable[global___ShowStrategy]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["list",b"list","max_time",b"max_time","min_interval",b"min_interval","pull_interval",b"pull_interval","show",b"show"]) -> None: ...
+        list: collections.abc.Iterable[global___SplashItem] | None = ...,
+        show: collections.abc.Iterable[global___ShowStrategy] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["list", b"list", "max_time", b"max_time", "min_interval", b"min_interval", "pull_interval", b"pull_interval", "show", b"show"]) -> None: ...
+
 global___SplashReply = SplashReply
 
 class SplashReq(google.protobuf.message.Message):
     """-请求"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     WIDTH_FIELD_NUMBER: builtins.int
     HEIGHT_FIELD_NUMBER: builtins.int
     BIRTH_FIELD_NUMBER: builtins.int
@@ -289,26 +261,23 @@ class SplashReq(google.protobuf.message.Message):
     NETWORK_FIELD_NUMBER: builtins.int
     width: builtins.int
     """"""
-
     height: builtins.int
     """"""
-
-    birth: typing.Text
+    birth: builtins.str
     """"""
-
-    ad_extra: typing.Text
+    ad_extra: builtins.str
     """"""
-
-    network: typing.Text
+    network: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         width: builtins.int = ...,
         height: builtins.int = ...,
-        birth: typing.Text = ...,
-        ad_extra: typing.Text = ...,
-        network: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ad_extra",b"ad_extra","birth",b"birth","height",b"height","network",b"network","width",b"width"]) -> None: ...
+        birth: builtins.str = ...,
+        ad_extra: builtins.str = ...,
+        network: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ad_extra", b"ad_extra", "birth", b"birth", "height", b"height", "network", b"network", "width", b"width"]) -> None: ...
+
 global___SplashReq = SplashReq

@@ -5,26 +5,32 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class Sync(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     NOTE_ID_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
     note_id: builtins.int
     """笔记id"""
-
-    hash: typing.Text
+    hash: builtins.str
     """唯一标示"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         note_id: builtins.int = ...,
-        hash: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["hash",b"hash","note_id",b"note_id"]) -> None: ...
+        hash: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["hash", b"hash", "note_id", b"note_id"]) -> None: ...
+
 global___Sync = Sync

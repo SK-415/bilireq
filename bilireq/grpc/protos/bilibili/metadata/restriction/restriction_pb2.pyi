@@ -6,44 +6,45 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
-import typing_extensions
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class _ModeType:
-    ValueType = typing.NewType('ValueType', builtins.int)
+    ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
-class _ModeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModeType.ValueType], builtins.type):
+
+class _ModeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModeType.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NORMAL: _ModeType.ValueType  # 0
     """正常模式"""
-
     TEENAGERS: _ModeType.ValueType  # 1
     """青少年模式"""
-
     LESSONS: _ModeType.ValueType  # 2
     """课堂模式"""
 
 class ModeType(_ModeType, metaclass=_ModeTypeEnumTypeWrapper):
     """模式类型"""
-    pass
 
 NORMAL: ModeType.ValueType  # 0
 """正常模式"""
-
 TEENAGERS: ModeType.ValueType  # 1
 """青少年模式"""
-
 LESSONS: ModeType.ValueType  # 2
 """课堂模式"""
-
 global___ModeType = ModeType
-
 
 class Restriction(google.protobuf.message.Message):
     """限制条件"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TEENAGERS_MODE_FIELD_NUMBER: builtins.int
     LESSONS_MODE_FIELD_NUMBER: builtins.int
     MODE_FIELD_NUMBER: builtins.int
@@ -51,26 +52,23 @@ class Restriction(google.protobuf.message.Message):
     DISABLE_RCMD_FIELD_NUMBER: builtins.int
     teenagers_mode: builtins.bool
     """青少年模式开关状态"""
-
     lessons_mode: builtins.bool
     """课堂模式开关状态"""
-
     mode: global___ModeType.ValueType
     """模式类型(旧版)"""
-
     review: builtins.bool
     """app 审核review状态"""
-
     disable_rcmd: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         teenagers_mode: builtins.bool = ...,
         lessons_mode: builtins.bool = ...,
         mode: global___ModeType.ValueType = ...,
         review: builtins.bool = ...,
         disable_rcmd: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["disable_rcmd",b"disable_rcmd","lessons_mode",b"lessons_mode","mode",b"mode","review",b"review","teenagers_mode",b"teenagers_mode"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["disable_rcmd", b"disable_rcmd", "lessons_mode", b"lessons_mode", "mode", b"mode", "review", b"review", "teenagers_mode", b"teenagers_mode"]) -> None: ...
+
 global___Restriction = Restriction

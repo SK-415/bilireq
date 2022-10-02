@@ -6,14 +6,20 @@ import bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class PlayViewReq(google.protobuf.message.Message):
     """播放页信息-请求"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EP_ID_FIELD_NUMBER: builtins.int
     CID_FIELD_NUMBER: builtins.int
     QN_FIELD_NUMBER: builtins.int
@@ -29,48 +35,36 @@ class PlayViewReq(google.protobuf.message.Message):
     IS_PREVIEW_FIELD_NUMBER: builtins.int
     ep_id: builtins.int
     """课程epid(与番剧不互通)"""
-
     cid: builtins.int
     """视频cid"""
-
     qn: builtins.int
     """清晰度"""
-
     fnver: builtins.int
     """视频流版本"""
-
     fnval: builtins.int
     """视频流格式"""
-
     download: builtins.int
     """下载模式
     0:播放 1:flv下载 2:dash下载
     """
-
     force_host: builtins.int
     """流url强制是用域名
     0:允许使用ip 1:使用http 2:使用https
     """
-
     fourk: builtins.bool
     """是否4K"""
-
-    spmid: typing.Text
+    spmid: builtins.str
     """当前页spm"""
-
-    from_spmid: typing.Text
+    from_spmid: builtins.str
     """上一页spm"""
-
     teenagers_mode: builtins.int
     """青少年模式"""
-
     prefer_codec_type: bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType
     """视频编码"""
-
     is_preview: builtins.bool
     """是否强制请求预览视频"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         ep_id: builtins.int = ...,
         cid: builtins.int = ...,
@@ -80,18 +74,21 @@ class PlayViewReq(google.protobuf.message.Message):
         download: builtins.int = ...,
         force_host: builtins.int = ...,
         fourk: builtins.bool = ...,
-        spmid: typing.Text = ...,
-        from_spmid: typing.Text = ...,
+        spmid: builtins.str = ...,
+        from_spmid: builtins.str = ...,
         teenagers_mode: builtins.int = ...,
         prefer_codec_type: bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType = ...,
         is_preview: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cid",b"cid","download",b"download","ep_id",b"ep_id","fnval",b"fnval","fnver",b"fnver","force_host",b"force_host","fourk",b"fourk","from_spmid",b"from_spmid","is_preview",b"is_preview","prefer_codec_type",b"prefer_codec_type","qn",b"qn","spmid",b"spmid","teenagers_mode",b"teenagers_mode"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "download", b"download", "ep_id", b"ep_id", "fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "fourk", b"fourk", "from_spmid", b"from_spmid", "is_preview", b"is_preview", "prefer_codec_type", b"prefer_codec_type", "qn", b"qn", "spmid", b"spmid", "teenagers_mode", b"teenagers_mode"]) -> None: ...
+
 global___PlayViewReq = PlayViewReq
 
 class ProjectReq(google.protobuf.message.Message):
     """投屏地址-请求"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     EP_ID_FIELD_NUMBER: builtins.int
     CID_FIELD_NUMBER: builtins.int
     QN_FIELD_NUMBER: builtins.int
@@ -107,52 +104,40 @@ class ProjectReq(google.protobuf.message.Message):
     FLV_PROJ_FIELD_NUMBER: builtins.int
     ep_id: builtins.int
     """课程epid(与番剧不互通)"""
-
     cid: builtins.int
     """视频cid"""
-
     qn: builtins.int
     """清晰度"""
-
     fnver: builtins.int
     """视频流版本"""
-
     fnval: builtins.int
     """视频流格式"""
-
     download: builtins.int
     """下载模式
     0:播放 1:flv下载 2:dash下载
     """
-
     force_host: builtins.int
     """流url强制是用域名
     0:允许使用ip 1:使用http 2:使用https
     """
-
     fourk: builtins.bool
     """是否4K"""
-
-    spmid: typing.Text
+    spmid: builtins.str
     """当前页spm"""
-
-    from_spmid: typing.Text
+    from_spmid: builtins.str
     """上一页spm"""
-
     protocol: builtins.int
     """投屏协议
     0:默认乐播 1:自建协议 2:云投屏
     """
-
     device_type: builtins.int
     """投屏设备
     0:默认其他 1:OTT设备
     """
-
     flv_proj: builtins.bool
     """是否flv格式"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         ep_id: builtins.int = ...,
         cid: builtins.int = ...,
@@ -162,40 +147,45 @@ class ProjectReq(google.protobuf.message.Message):
         download: builtins.int = ...,
         force_host: builtins.int = ...,
         fourk: builtins.bool = ...,
-        spmid: typing.Text = ...,
-        from_spmid: typing.Text = ...,
+        spmid: builtins.str = ...,
+        from_spmid: builtins.str = ...,
         protocol: builtins.int = ...,
         device_type: builtins.int = ...,
         flv_proj: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cid",b"cid","device_type",b"device_type","download",b"download","ep_id",b"ep_id","flv_proj",b"flv_proj","fnval",b"fnval","fnver",b"fnver","force_host",b"force_host","fourk",b"fourk","from_spmid",b"from_spmid","protocol",b"protocol","qn",b"qn","spmid",b"spmid"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "device_type", b"device_type", "download", b"download", "ep_id", b"ep_id", "flv_proj", b"flv_proj", "fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "fourk", b"fourk", "from_spmid", b"from_spmid", "protocol", b"protocol", "qn", b"qn", "spmid", b"spmid"]) -> None: ...
+
 global___ProjectReq = ProjectReq
 
 class PlayViewReply(google.protobuf.message.Message):
     """播放页信息-响应"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VIDEO_INFO_FIELD_NUMBER: builtins.int
     PLAY_CONF_FIELD_NUMBER: builtins.int
     @property
     def video_info(self) -> bilibili.app.playurl.v1.playurl_pb2.VideoInfo:
         """视频url信息"""
-        pass
     @property
     def play_conf(self) -> global___PlayAbilityConf:
         """禁用功能配置"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        video_info: typing.Optional[bilibili.app.playurl.v1.playurl_pb2.VideoInfo] = ...,
-        play_conf: typing.Optional[global___PlayAbilityConf] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["play_conf",b"play_conf","video_info",b"video_info"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["play_conf",b"play_conf","video_info",b"video_info"]) -> None: ...
+        video_info: bilibili.app.playurl.v1.playurl_pb2.VideoInfo | None = ...,
+        play_conf: global___PlayAbilityConf | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["play_conf", b"play_conf", "video_info", b"video_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["play_conf", b"play_conf", "video_info", b"video_info"]) -> None: ...
+
 global___PlayViewReply = PlayViewReply
 
 class PlayAbilityConf(google.protobuf.message.Message):
     """禁用功能配置"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     BACKGROUND_PLAY_DISABLE_FIELD_NUMBER: builtins.int
     FLIP_DISABLE_FIELD_NUMBER: builtins.int
     CAST_DISABLE_FIELD_NUMBER: builtins.int
@@ -223,80 +213,56 @@ class PlayAbilityConf(google.protobuf.message.Message):
     SMALL_WINDOW_DISABLE_FIELD_NUMBER: builtins.int
     background_play_disable: builtins.bool
     """后台播放"""
-
     flip_disable: builtins.bool
     """镜像反转"""
-
     cast_disable: builtins.bool
     """支持投屏"""
-
     feedback_disable: builtins.bool
     """反馈"""
-
     subtitle_disable: builtins.bool
     """字幕"""
-
     playback_rate_disable: builtins.bool
     """播放速度"""
-
     time_up_disable: builtins.bool
     """定时停止播放"""
-
     playback_mode_disable: builtins.bool
     """播放方式"""
-
     scale_mode_disable: builtins.bool
     """画面尺寸"""
-
     like_disable: builtins.bool
     """顶"""
-
     dislike_disable: builtins.bool
     """踩"""
-
     coin_disable: builtins.bool
     """投币"""
-
     elec_disable: builtins.bool
     """充电"""
-
     share_disable: builtins.bool
     """分享"""
-
     screen_shot_disable: builtins.bool
     """截图"""
-
     lock_screen_disable: builtins.bool
     """锁屏"""
-
     recommend_disable: builtins.bool
     """相关推荐"""
-
     playback_speed_disable: builtins.bool
     """倍速"""
-
     definition_disable: builtins.bool
     """清晰度"""
-
     selections_disable: builtins.bool
     """选集"""
-
     next_disable: builtins.bool
     """下一集"""
-
     edit_dm_disable: builtins.bool
     """编辑弹幕"""
-
     outer_dm_disable: builtins.bool
     """外层面板弹幕设置"""
-
     inner_dm_disable: builtins.bool
     """三点内弹幕设置"""
-
     small_window_disable: builtins.bool
     """画中画"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         background_play_disable: builtins.bool = ...,
         flip_disable: builtins.bool = ...,
@@ -323,20 +289,25 @@ class PlayAbilityConf(google.protobuf.message.Message):
         outer_dm_disable: builtins.bool = ...,
         inner_dm_disable: builtins.bool = ...,
         small_window_disable: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["background_play_disable",b"background_play_disable","cast_disable",b"cast_disable","coin_disable",b"coin_disable","definition_disable",b"definition_disable","dislike_disable",b"dislike_disable","edit_dm_disable",b"edit_dm_disable","elec_disable",b"elec_disable","feedback_disable",b"feedback_disable","flip_disable",b"flip_disable","inner_dm_disable",b"inner_dm_disable","like_disable",b"like_disable","lock_screen_disable",b"lock_screen_disable","next_disable",b"next_disable","outer_dm_disable",b"outer_dm_disable","playback_mode_disable",b"playback_mode_disable","playback_rate_disable",b"playback_rate_disable","playback_speed_disable",b"playback_speed_disable","recommend_disable",b"recommend_disable","scale_mode_disable",b"scale_mode_disable","screen_shot_disable",b"screen_shot_disable","selections_disable",b"selections_disable","share_disable",b"share_disable","small_window_disable",b"small_window_disable","subtitle_disable",b"subtitle_disable","time_up_disable",b"time_up_disable"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["background_play_disable", b"background_play_disable", "cast_disable", b"cast_disable", "coin_disable", b"coin_disable", "definition_disable", b"definition_disable", "dislike_disable", b"dislike_disable", "edit_dm_disable", b"edit_dm_disable", "elec_disable", b"elec_disable", "feedback_disable", b"feedback_disable", "flip_disable", b"flip_disable", "inner_dm_disable", b"inner_dm_disable", "like_disable", b"like_disable", "lock_screen_disable", b"lock_screen_disable", "next_disable", b"next_disable", "outer_dm_disable", b"outer_dm_disable", "playback_mode_disable", b"playback_mode_disable", "playback_rate_disable", b"playback_rate_disable", "playback_speed_disable", b"playback_speed_disable", "recommend_disable", b"recommend_disable", "scale_mode_disable", b"scale_mode_disable", "screen_shot_disable", b"screen_shot_disable", "selections_disable", b"selections_disable", "share_disable", b"share_disable", "small_window_disable", b"small_window_disable", "subtitle_disable", b"subtitle_disable", "time_up_disable", b"time_up_disable"]) -> None: ...
+
 global___PlayAbilityConf = PlayAbilityConf
 
 class ProjectReply(google.protobuf.message.Message):
     """投屏地址-响应"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PROJECT_FIELD_NUMBER: builtins.int
     @property
     def project(self) -> bilibili.app.playurl.v1.playurl_pb2.PlayURLReply: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        project: typing.Optional[bilibili.app.playurl.v1.playurl_pb2.PlayURLReply] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["project",b"project"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["project",b"project"]) -> None: ...
+        project: bilibili.app.playurl.v1.playurl_pb2.PlayURLReply | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["project", b"project"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["project", b"project"]) -> None: ...
+
 global___ProjectReply = ProjectReply

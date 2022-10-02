@@ -3,83 +3,95 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class GetStudioListReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ROOM_ID_FIELD_NUMBER: builtins.int
     room_id: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         room_id: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["room_id",b"room_id"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["room_id", b"room_id"]) -> None: ...
+
 global___GetStudioListReq = GetStudioListReq
 
 class GetStudioListResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     class Pendants(google.protobuf.message.Message):
         """"""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
         FRAME_FIELD_NUMBER: builtins.int
         BADGE_FIELD_NUMBER: builtins.int
         @property
         def frame(self) -> global___GetStudioListResp.Pendant:
             """"""
-            pass
         @property
         def badge(self) -> global___GetStudioListResp.Pendant:
             """"""
-            pass
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            frame: typing.Optional[global___GetStudioListResp.Pendant] = ...,
-            badge: typing.Optional[global___GetStudioListResp.Pendant] = ...,
-            ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["badge",b"badge","frame",b"frame"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["badge",b"badge","frame",b"frame"]) -> None: ...
+            frame: global___GetStudioListResp.Pendant | None = ...,
+            badge: global___GetStudioListResp.Pendant | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["badge", b"badge", "frame", b"frame"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "frame", b"frame"]) -> None: ...
 
     class Pendant(google.protobuf.message.Message):
         """"""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
         NAME_FIELD_NUMBER: builtins.int
         POSITION_FIELD_NUMBER: builtins.int
         VALUE_FIELD_NUMBER: builtins.int
         DESC_FIELD_NUMBER: builtins.int
-        name: typing.Text
+        name: builtins.str
         """"""
-
         position: builtins.int
         """"""
-
-        value: typing.Text
+        value: builtins.str
         """"""
-
-        desc: typing.Text
+        desc: builtins.str
         """"""
-
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            name: typing.Text = ...,
+            name: builtins.str = ...,
             position: builtins.int = ...,
-            value: typing.Text = ...,
-            desc: typing.Text = ...,
-            ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["desc",b"desc","name",b"name","position",b"position","value",b"value"]) -> None: ...
+            value: builtins.str = ...,
+            desc: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["desc", b"desc", "name", b"name", "position", b"position", "value", b"value"]) -> None: ...
 
     class StudioMaster(google.protobuf.message.Message):
         """"""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
         UID_FIELD_NUMBER: builtins.int
         ROOM_ID_FIELD_NUMBER: builtins.int
         UNAME_FIELD_NUMBER: builtins.int
@@ -89,52 +101,46 @@ class GetStudioListResp(google.protobuf.message.Message):
         TAG_TYPE_FIELD_NUMBER: builtins.int
         uid: builtins.int
         """"""
-
         room_id: builtins.int
         """"""
-
-        uname: typing.Text
+        uname: builtins.str
         """"""
-
-        face: typing.Text
+        face: builtins.str
         """"""
-
         @property
         def pendants(self) -> global___GetStudioListResp.Pendants:
             """"""
-            pass
-        tag: typing.Text
+        tag: builtins.str
         """"""
-
         tag_type: builtins.int
         """"""
-
-        def __init__(self,
+        def __init__(
+            self,
             *,
             uid: builtins.int = ...,
             room_id: builtins.int = ...,
-            uname: typing.Text = ...,
-            face: typing.Text = ...,
-            pendants: typing.Optional[global___GetStudioListResp.Pendants] = ...,
-            tag: typing.Text = ...,
+            uname: builtins.str = ...,
+            face: builtins.str = ...,
+            pendants: global___GetStudioListResp.Pendants | None = ...,
+            tag: builtins.str = ...,
             tag_type: builtins.int = ...,
-            ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["pendants",b"pendants"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["face",b"face","pendants",b"pendants","room_id",b"room_id","tag",b"tag","tag_type",b"tag_type","uid",b"uid","uname",b"uname"]) -> None: ...
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["pendants", b"pendants"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["face", b"face", "pendants", b"pendants", "room_id", b"room_id", "tag", b"tag", "tag_type", b"tag_type", "uid", b"uid", "uname", b"uname"]) -> None: ...
 
     STATUS_FIELD_NUMBER: builtins.int
     MASTER_LIST_FIELD_NUMBER: builtins.int
     status: builtins.int
     """"""
-
     @property
     def master_list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GetStudioListResp.StudioMaster]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         status: builtins.int = ...,
-        master_list: typing.Optional[typing.Iterable[global___GetStudioListResp.StudioMaster]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["master_list",b"master_list","status",b"status"]) -> None: ...
+        master_list: collections.abc.Iterable[global___GetStudioListResp.StudioMaster] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["master_list", b"master_list", "status", b"status"]) -> None: ...
+
 global___GetStudioListResp = GetStudioListResp

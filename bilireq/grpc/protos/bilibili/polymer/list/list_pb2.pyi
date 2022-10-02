@@ -3,89 +3,107 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class CheckAccountReply(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     IS_NEW_FIELD_NUMBER: builtins.int
     is_new: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         is_new: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["is_new",b"is_new"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["is_new", b"is_new"]) -> None: ...
+
 global___CheckAccountReply = CheckAccountReply
 
 class CheckAccountReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     UID_FIELD_NUMBER: builtins.int
     PERIODS_FIELD_NUMBER: builtins.int
     uid: builtins.int
     """"""
-
-    periods: typing.Text
+    periods: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         uid: builtins.int = ...,
-        periods: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["periods",b"periods","uid",b"uid"]) -> None: ...
+        periods: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["periods", b"periods", "uid", b"uid"]) -> None: ...
+
 global___CheckAccountReq = CheckAccountReq
 
 class FavoriteTabItem(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     NAME_FIELD_NUMBER: builtins.int
     URI_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
-    name: typing.Text
+    name: builtins.str
     """"""
-
-    uri: typing.Text
+    uri: builtins.str
     """"""
-
-    type: typing.Text
+    type: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        name: typing.Text = ...,
-        uri: typing.Text = ...,
-        type: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["name",b"name","type",b"type","uri",b"uri"]) -> None: ...
+        name: builtins.str = ...,
+        uri: builtins.str = ...,
+        type: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["name", b"name", "type", b"type", "uri", b"uri"]) -> None: ...
+
 global___FavoriteTabItem = FavoriteTabItem
 
 class FavoriteTabReply(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEMS_FIELD_NUMBER: builtins.int
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FavoriteTabItem]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        items: typing.Optional[typing.Iterable[global___FavoriteTabItem]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["items",b"items"]) -> None: ...
+        items: collections.abc.Iterable[global___FavoriteTabItem] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["items", b"items"]) -> None: ...
+
 global___FavoriteTabReply = FavoriteTabReply
 
 class FavoriteTabReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    def __init__(self,
-        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
 global___FavoriteTabReq = FavoriteTabReq

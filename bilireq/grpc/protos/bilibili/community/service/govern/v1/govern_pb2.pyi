@@ -5,14 +5,20 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class QoeReportReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ID_FIELD_NUMBER: builtins.int
     SCENE_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
@@ -22,50 +28,48 @@ class QoeReportReq(google.protobuf.message.Message):
     BUSINESS_DATA_FIELD_NUMBER: builtins.int
     id: builtins.int
     """"""
-
     scene: builtins.int
     """"""
-
     type: builtins.int
     """"""
-
     cancel: builtins.bool
     """"""
-
-    business_type: typing.Text
+    business_type: builtins.str
     """"""
-
     @property
     def score_result(self) -> global___QoeScoreResult:
         """"""
-        pass
-    business_data: typing.Text
+    business_data: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         id: builtins.int = ...,
         scene: builtins.int = ...,
         type: builtins.int = ...,
         cancel: builtins.bool = ...,
-        business_type: typing.Text = ...,
-        score_result: typing.Optional[global___QoeScoreResult] = ...,
-        business_data: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["score_result",b"score_result"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["business_data",b"business_data","business_type",b"business_type","cancel",b"cancel","id",b"id","scene",b"scene","score_result",b"score_result","type",b"type"]) -> None: ...
+        business_type: builtins.str = ...,
+        score_result: global___QoeScoreResult | None = ...,
+        business_data: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["score_result", b"score_result"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["business_data", b"business_data", "business_type", b"business_type", "cancel", b"cancel", "id", b"id", "scene", b"scene", "score_result", b"score_result", "type", b"type"]) -> None: ...
+
 global___QoeReportReq = QoeReportReq
 
 class QoeScoreResult(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     SCORE_FIELD_NUMBER: builtins.int
     score: builtins.float
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         score: builtins.float = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["score",b"score"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["score", b"score"]) -> None: ...
+
 global___QoeScoreResult = QoeScoreResult

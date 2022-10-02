@@ -3,12 +3,17 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.any_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -16,25 +21,26 @@ class Status(google.protobuf.message.Message):
     """响应gRPC Status
     当status code是[UNKNOWN = 2]时，details为业务详细的错误信息，进行proto any转换成业务码结构体
     """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CODE_FIELD_NUMBER: builtins.int
     MESSAGE_FIELD_NUMBER: builtins.int
     DETAILS_FIELD_NUMBER: builtins.int
     code: builtins.int
     """业务错误码"""
-
-    message: typing.Text
+    message: builtins.str
     """业务错误信息"""
-
     @property
     def details(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[google.protobuf.any_pb2.Any]:
         """扩展信息嵌套(相当于该messasge的套娃)"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         code: builtins.int = ...,
-        message: typing.Text = ...,
-        details: typing.Optional[typing.Iterable[google.protobuf.any_pb2.Any]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["code",b"code","details",b"details","message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+        details: collections.abc.Iterable[google.protobuf.any_pb2.Any] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "details", b"details", "message", b"message"]) -> None: ...
+
 global___Status = Status

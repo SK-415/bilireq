@@ -4,27 +4,34 @@ isort:skip_file
 """
 import bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
-import typing_extensions
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class _CardModuleType:
-    ValueType = typing.NewType('ValueType', builtins.int)
+    ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
-class _CardModuleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CardModuleType.ValueType], builtins.type):
+
+class _CardModuleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CardModuleType.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Module_invalid: _CardModuleType.ValueType  # 0
     Module_header: _CardModuleType.ValueType  # 1
     Module_archive: _CardModuleType.ValueType  # 2
     Module_cbtn: _CardModuleType.ValueType  # 3
+
 class CardModuleType(_CardModuleType, metaclass=_CardModuleTypeEnumTypeWrapper):
     """"""
-    pass
 
 Module_invalid: CardModuleType.ValueType  # 0
 Module_header: CardModuleType.ValueType  # 1
@@ -32,11 +39,11 @@ Module_archive: CardModuleType.ValueType  # 2
 Module_cbtn: CardModuleType.ValueType  # 3
 global___CardModuleType = CardModuleType
 
-
 class _PlaylistSource:
-    ValueType = typing.NewType('ValueType', builtins.int)
+    ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
-class _PlaylistSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlaylistSource.ValueType], builtins.type):
+
+class _PlaylistSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlaylistSource.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DEFAULT: _PlaylistSource.ValueType  # 0
     MEM_SPACE: _PlaylistSource.ValueType  # 1
@@ -46,9 +53,9 @@ class _PlaylistSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper.
     UP_ARCHIVE: _PlaylistSource.ValueType  # 5
     AUDIO_CACHE: _PlaylistSource.ValueType  # 6
     PICK_CARD: _PlaylistSource.ValueType  # 7
+
 class PlaylistSource(_PlaylistSource, metaclass=_PlaylistSourceEnumTypeWrapper):
     """"""
-    pass
 
 DEFAULT: PlaylistSource.ValueType  # 0
 MEM_SPACE: PlaylistSource.ValueType  # 1
@@ -60,78 +67,84 @@ AUDIO_CACHE: PlaylistSource.ValueType  # 6
 PICK_CARD: PlaylistSource.ValueType  # 7
 global___PlaylistSource = PlaylistSource
 
-
 class Author(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     AVATAR_FIELD_NUMBER: builtins.int
     RELATION_FIELD_NUMBER: builtins.int
     mid: builtins.int
     """"""
-
-    name: typing.Text
+    name: builtins.str
     """"""
-
-    avatar: typing.Text
+    avatar: builtins.str
     """"""
-
     @property
     def relation(self) -> global___FollowRelation:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         mid: builtins.int = ...,
-        name: typing.Text = ...,
-        avatar: typing.Text = ...,
-        relation: typing.Optional[global___FollowRelation] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["relation",b"relation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["avatar",b"avatar","mid",b"mid","name",b"name","relation",b"relation"]) -> None: ...
+        name: builtins.str = ...,
+        avatar: builtins.str = ...,
+        relation: global___FollowRelation | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["relation", b"relation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "mid", b"mid", "name", b"name", "relation", b"relation"]) -> None: ...
+
 global___Author = Author
 
 class BKArcDetailsReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEMS_FIELD_NUMBER: builtins.int
     PLAYERARGS_FIELD_NUMBER: builtins.int
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlayItem]:
         """"""
-        pass
     @property
     def playerArgs(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        items: typing.Optional[typing.Iterable[global___PlayItem]] = ...,
-        playerArgs: typing.Optional[bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["playerArgs",b"playerArgs"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["items",b"items","playerArgs",b"playerArgs"]) -> None: ...
+        items: collections.abc.Iterable[global___PlayItem] | None = ...,
+        playerArgs: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["playerArgs", b"playerArgs"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["items", b"items", "playerArgs", b"playerArgs"]) -> None: ...
+
 global___BKArcDetailsReq = BKArcDetailsReq
 
 class BKArcDetailsResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     LIST_FIELD_NUMBER: builtins.int
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DetailItem]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        list: typing.Optional[typing.Iterable[global___DetailItem]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["list",b"list"]) -> None: ...
+        list: collections.abc.Iterable[global___DetailItem] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["list", b"list"]) -> None: ...
+
 global___BKArcDetailsResp = BKArcDetailsResp
 
 class BKArchive(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     OID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     COVER_FIELD_NUMBER: builtins.int
@@ -145,59 +158,52 @@ class BKArchive(google.protobuf.message.Message):
     RIGHTS_FIELD_NUMBER: builtins.int
     oid: builtins.int
     """"""
-
-    title: typing.Text
+    title: builtins.str
     """"""
-
-    cover: typing.Text
+    cover: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
     duration: builtins.int
     """"""
-
     rid: builtins.int
     """"""
-
-    rname: typing.Text
+    rname: builtins.str
     """"""
-
     publish: builtins.int
     """"""
-
-    displayed_oid: typing.Text
+    displayed_oid: builtins.str
     """"""
-
     copyright: builtins.int
     """"""
-
     @property
     def rights(self) -> global___BKArcRights:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         oid: builtins.int = ...,
-        title: typing.Text = ...,
-        cover: typing.Text = ...,
-        desc: typing.Text = ...,
+        title: builtins.str = ...,
+        cover: builtins.str = ...,
+        desc: builtins.str = ...,
         duration: builtins.int = ...,
         rid: builtins.int = ...,
-        rname: typing.Text = ...,
+        rname: builtins.str = ...,
         publish: builtins.int = ...,
-        displayed_oid: typing.Text = ...,
+        displayed_oid: builtins.str = ...,
         copyright: builtins.int = ...,
-        rights: typing.Optional[global___BKArcRights] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["rights",b"rights"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["copyright",b"copyright","cover",b"cover","desc",b"desc","displayed_oid",b"displayed_oid","duration",b"duration","oid",b"oid","publish",b"publish","rid",b"rid","rights",b"rights","rname",b"rname","title",b"title"]) -> None: ...
+        rights: global___BKArcRights | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["rights", b"rights"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["copyright", b"copyright", "cover", b"cover", "desc", b"desc", "displayed_oid", b"displayed_oid", "duration", b"duration", "oid", b"oid", "publish", b"publish", "rid", b"rid", "rights", b"rights", "rname", b"rname", "title", b"title"]) -> None: ...
+
 global___BKArchive = BKArchive
 
 class BKArcPart(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     OID_FIELD_NUMBER: builtins.int
     SUB_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -205,47 +211,49 @@ class BKArcPart(google.protobuf.message.Message):
     PAGE_FIELD_NUMBER: builtins.int
     oid: builtins.int
     """"""
-
     sub_id: builtins.int
     """"""
-
-    title: typing.Text
+    title: builtins.str
     """"""
-
     duration: builtins.int
     """"""
-
     page: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         oid: builtins.int = ...,
         sub_id: builtins.int = ...,
-        title: typing.Text = ...,
+        title: builtins.str = ...,
         duration: builtins.int = ...,
         page: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["duration",b"duration","oid",b"oid","page",b"page","sub_id",b"sub_id","title",b"title"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["duration", b"duration", "oid", b"oid", "page", b"page", "sub_id", b"sub_id", "title", b"title"]) -> None: ...
+
 global___BKArcPart = BKArcPart
 
 class BKArcRights(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     NO_REPRINT_FIELD_NUMBER: builtins.int
     no_reprint: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         no_reprint: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["no_reprint",b"no_reprint"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["no_reprint", b"no_reprint"]) -> None: ...
+
 global___BKArcRights = BKArcRights
 
 class BKStat(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     LIKE_FIELD_NUMBER: builtins.int
     COIN_FIELD_NUMBER: builtins.int
     FAVOURITE_FIELD_NUMBER: builtins.int
@@ -257,32 +265,24 @@ class BKStat(google.protobuf.message.Message):
     HAS_FAV_FIELD_NUMBER: builtins.int
     like: builtins.int
     """"""
-
     coin: builtins.int
     """"""
-
     favourite: builtins.int
     """"""
-
     reply: builtins.int
     """"""
-
     share: builtins.int
     """"""
-
     view: builtins.int
     """"""
-
     has_like: builtins.bool
     """"""
-
     has_coin: builtins.bool
     """"""
-
     has_fav: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         like: builtins.int = ...,
         coin: builtins.int = ...,
@@ -293,87 +293,94 @@ class BKStat(google.protobuf.message.Message):
         has_like: builtins.bool = ...,
         has_coin: builtins.bool = ...,
         has_fav: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["coin",b"coin","favourite",b"favourite","has_coin",b"has_coin","has_fav",b"has_fav","has_like",b"has_like","like",b"like","reply",b"reply","share",b"share","view",b"view"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["coin", b"coin", "favourite", b"favourite", "has_coin", b"has_coin", "has_fav", b"has_fav", "has_like", b"has_like", "like", b"like", "reply", b"reply", "share", b"share", "view", b"view"]) -> None: ...
+
 global___BKStat = BKStat
 
 class CardModule(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MODULE_TYPE_FIELD_NUMBER: builtins.int
     MODULE_HEADER_FIELD_NUMBER: builtins.int
     MODULE_ARCHIVE_FIELD_NUMBER: builtins.int
     MODULE_CBTN_FIELD_NUMBER: builtins.int
     module_type: builtins.int
     """"""
-
     @property
     def module_header(self) -> global___PkcmHeader:
         """"""
-        pass
     @property
     def module_archive(self) -> global___PkcmArchive:
         """"""
-        pass
     @property
     def module_cbtn(self) -> global___PkcmCenterButton:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         module_type: builtins.int = ...,
-        module_header: typing.Optional[global___PkcmHeader] = ...,
-        module_archive: typing.Optional[global___PkcmArchive] = ...,
-        module_cbtn: typing.Optional[global___PkcmCenterButton] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["module",b"module","module_archive",b"module_archive","module_cbtn",b"module_cbtn","module_header",b"module_header"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["module",b"module","module_archive",b"module_archive","module_cbtn",b"module_cbtn","module_header",b"module_header","module_type",b"module_type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["module",b"module"]) -> typing.Optional[typing_extensions.Literal["module_header","module_archive","module_cbtn"]]: ...
+        module_header: global___PkcmHeader | None = ...,
+        module_archive: global___PkcmArchive | None = ...,
+        module_cbtn: global___PkcmCenterButton | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["module", b"module", "module_archive", b"module_archive", "module_cbtn", b"module_cbtn", "module_header", b"module_header"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["module", b"module", "module_archive", b"module_archive", "module_cbtn", b"module_cbtn", "module_header", b"module_header", "module_type", b"module_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["module", b"module"]) -> typing_extensions.Literal["module_header", "module_archive", "module_cbtn"] | None: ...
+
 global___CardModule = CardModule
 
 class CoinAddReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     NUM_FIELD_NUMBER: builtins.int
     THUMB_UP_FIELD_NUMBER: builtins.int
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
     num: builtins.int
     """"""
-
     thumb_up: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
+        item: global___PlayItem | None = ...,
         num: builtins.int = ...,
         thumb_up: builtins.bool = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["item",b"item","num",b"num","thumb_up",b"thumb_up"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["item", b"item", "num", b"num", "thumb_up", b"thumb_up"]) -> None: ...
+
 global___CoinAddReq = CoinAddReq
 
 class CoinAddResp(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    MESSAGE_FIELD_NUMBER: builtins.int
-    message: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message"]) -> None: ...
+
 global___CoinAddResp = CoinAddResp
 
 class DashItem(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ID_FIELD_NUMBER: builtins.int
     BASE_URL_FIELD_NUMBER: builtins.int
     BACKUP_URL_FIELD_NUMBER: builtins.int
@@ -386,89 +393,87 @@ class DashItem(google.protobuf.message.Message):
     SIZE_FIELD_NUMBER: builtins.int
     id: builtins.int
     """"""
-
-    base_url: typing.Text
+    base_url: builtins.str
     """"""
-
     @property
-    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """"""
-        pass
     bandwidth: builtins.int
     """"""
-
-    mime_type: typing.Text
+    mime_type: builtins.str
     """"""
-
-    codecs: typing.Text
+    codecs: builtins.str
     """"""
-
     @property
     def segment_base(self) -> global___DashSegmentBase:
         """"""
-        pass
     codecid: builtins.int
     """"""
-
-    md5: typing.Text
+    md5: builtins.str
     """"""
-
     size: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         id: builtins.int = ...,
-        base_url: typing.Text = ...,
-        backup_url: typing.Optional[typing.Iterable[typing.Text]] = ...,
+        base_url: builtins.str = ...,
+        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
         bandwidth: builtins.int = ...,
-        mime_type: typing.Text = ...,
-        codecs: typing.Text = ...,
-        segment_base: typing.Optional[global___DashSegmentBase] = ...,
+        mime_type: builtins.str = ...,
+        codecs: builtins.str = ...,
+        segment_base: global___DashSegmentBase | None = ...,
         codecid: builtins.int = ...,
-        md5: typing.Text = ...,
+        md5: builtins.str = ...,
         size: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["segment_base",b"segment_base"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["backup_url",b"backup_url","bandwidth",b"bandwidth","base_url",b"base_url","codecid",b"codecid","codecs",b"codecs","id",b"id","md5",b"md5","mime_type",b"mime_type","segment_base",b"segment_base","size",b"size"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["segment_base", b"segment_base"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "codecs", b"codecs", "id", b"id", "md5", b"md5", "mime_type", b"mime_type", "segment_base", b"segment_base", "size", b"size"]) -> None: ...
+
 global___DashItem = DashItem
 
 class DashSegmentBase(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     INITIALIZATION_FIELD_NUMBER: builtins.int
     INDEX_RANGE_FIELD_NUMBER: builtins.int
-    initialization: typing.Text
+    initialization: builtins.str
     """"""
-
-    index_range: typing.Text
+    index_range: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        initialization: typing.Text = ...,
-        index_range: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["index_range",b"index_range","initialization",b"initialization"]) -> None: ...
+        initialization: builtins.str = ...,
+        index_range: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["index_range", b"index_range", "initialization", b"initialization"]) -> None: ...
+
 global___DashSegmentBase = DashSegmentBase
 
 class DetailItem(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     class PlayerInfoEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
         KEY_FIELD_NUMBER: builtins.int
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.int
         @property
         def value(self) -> global___PlayInfo: ...
-        def __init__(self,
+        def __init__(
+            self,
             *,
             key: builtins.int = ...,
-            value: typing.Optional[global___PlayInfo] = ...,
-            ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["value",b"value"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["key",b"key","value",b"value"]) -> None: ...
+            value: global___PlayInfo | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     ITEM_FIELD_NUMBER: builtins.int
     ARC_FIELD_NUMBER: builtins.int
@@ -483,93 +488,86 @@ class DetailItem(google.protobuf.message.Message):
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
     @property
     def arc(self) -> global___BKArchive:
         """"""
-        pass
     @property
     def parts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BKArcPart]:
         """"""
-        pass
     @property
     def owner(self) -> global___Author:
         """"""
-        pass
     @property
     def stat(self) -> global___BKStat:
         """"""
-        pass
     last_part: builtins.int
     """"""
-
     progress: builtins.int
     """"""
-
     playable: builtins.int
     """"""
-
-    message: typing.Text
+    message: builtins.str
     """"""
-
     @property
     def player_info(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___PlayInfo]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
-        arc: typing.Optional[global___BKArchive] = ...,
-        parts: typing.Optional[typing.Iterable[global___BKArcPart]] = ...,
-        owner: typing.Optional[global___Author] = ...,
-        stat: typing.Optional[global___BKStat] = ...,
+        item: global___PlayItem | None = ...,
+        arc: global___BKArchive | None = ...,
+        parts: collections.abc.Iterable[global___BKArcPart] | None = ...,
+        owner: global___Author | None = ...,
+        stat: global___BKStat | None = ...,
         last_part: builtins.int = ...,
         progress: builtins.int = ...,
         playable: builtins.int = ...,
-        message: typing.Text = ...,
-        player_info: typing.Optional[typing.Mapping[builtins.int, global___PlayInfo]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["arc",b"arc","item",b"item","owner",b"owner","stat",b"stat"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["arc",b"arc","item",b"item","last_part",b"last_part","message",b"message","owner",b"owner","parts",b"parts","playable",b"playable","player_info",b"player_info","progress",b"progress","stat",b"stat"]) -> None: ...
+        message: builtins.str = ...,
+        player_info: collections.abc.Mapping[builtins.int, global___PlayInfo] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["arc", b"arc", "item", b"item", "owner", b"owner", "stat", b"stat"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["arc", b"arc", "item", b"item", "last_part", b"last_part", "message", b"message", "owner", b"owner", "parts", b"parts", "playable", b"playable", "player_info", b"player_info", "progress", b"progress", "stat", b"stat"]) -> None: ...
+
 global___DetailItem = DetailItem
 
 class EventTracking(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     OPERATOR_FIELD_NUMBER: builtins.int
     BATCH_FIELD_NUMBER: builtins.int
     TRACK_ID_FIELD_NUMBER: builtins.int
     ENTITY_TYPE_FIELD_NUMBER: builtins.int
     ENTITY_ID_FIELD_NUMBER: builtins.int
-    operator: typing.Text
+    operator: builtins.str
     """"""
-
-    batch: typing.Text
+    batch: builtins.str
     """"""
-
-    track_id: typing.Text
+    track_id: builtins.str
     """"""
-
-    entity_type: typing.Text
+    entity_type: builtins.str
     """"""
-
-    entity_id: typing.Text
+    entity_id: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        operator: typing.Text = ...,
-        batch: typing.Text = ...,
-        track_id: typing.Text = ...,
-        entity_type: typing.Text = ...,
-        entity_id: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["batch",b"batch","entity_id",b"entity_id","entity_type",b"entity_type","operator",b"operator","track_id",b"track_id"]) -> None: ...
+        operator: builtins.str = ...,
+        batch: builtins.str = ...,
+        track_id: builtins.str = ...,
+        entity_type: builtins.str = ...,
+        entity_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["batch", b"batch", "entity_id", b"entity_id", "entity_type", b"entity_type", "operator", b"operator", "track_id", b"track_id"]) -> None: ...
+
 global___EventTracking = EventTracking
 
 class FavFolder(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     OWNER_FIELD_NUMBER: builtins.int
@@ -590,67 +588,50 @@ class FavFolder(google.protobuf.message.Message):
     FAV_STATE_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
     @property
     def owner(self) -> global___FavFolderAuthor:
         """"""
-        pass
-    name: typing.Text
+    name: builtins.str
     """"""
-
-    cover: typing.Text
+    cover: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
     count: builtins.int
     """"""
-
     attr: builtins.int
     """"""
-
     state: builtins.int
     """"""
-
     favored: builtins.int
     """"""
-
     ctime: builtins.int
     """"""
-
     mtime: builtins.int
     """"""
-
     stat_fav_cnt: builtins.int
     """"""
-
     stat_share_cnt: builtins.int
     """"""
-
     stat_like_cnt: builtins.int
     """"""
-
     stat_Play_cnt: builtins.int
     """"""
-
     stat_reply_cnt: builtins.int
     """"""
-
     fav_state: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
-        owner: typing.Optional[global___FavFolderAuthor] = ...,
-        name: typing.Text = ...,
-        cover: typing.Text = ...,
-        desc: typing.Text = ...,
+        owner: global___FavFolderAuthor | None = ...,
+        name: builtins.str = ...,
+        cover: builtins.str = ...,
+        desc: builtins.str = ...,
         count: builtins.int = ...,
         attr: builtins.int = ...,
         state: builtins.int = ...,
@@ -663,143 +644,155 @@ class FavFolder(google.protobuf.message.Message):
         stat_Play_cnt: builtins.int = ...,
         stat_reply_cnt: builtins.int = ...,
         fav_state: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["owner",b"owner"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["attr",b"attr","count",b"count","cover",b"cover","ctime",b"ctime","desc",b"desc","fav_state",b"fav_state","favored",b"favored","fid",b"fid","folder_type",b"folder_type","mtime",b"mtime","name",b"name","owner",b"owner","stat_Play_cnt",b"stat_Play_cnt","stat_fav_cnt",b"stat_fav_cnt","stat_like_cnt",b"stat_like_cnt","stat_reply_cnt",b"stat_reply_cnt","stat_share_cnt",b"stat_share_cnt","state",b"state"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["owner", b"owner"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["attr", b"attr", "count", b"count", "cover", b"cover", "ctime", b"ctime", "desc", b"desc", "fav_state", b"fav_state", "favored", b"favored", "fid", b"fid", "folder_type", b"folder_type", "mtime", b"mtime", "name", b"name", "owner", b"owner", "stat_Play_cnt", b"stat_Play_cnt", "stat_fav_cnt", b"stat_fav_cnt", "stat_like_cnt", b"stat_like_cnt", "stat_reply_cnt", b"stat_reply_cnt", "stat_share_cnt", b"stat_share_cnt", "state", b"state"]) -> None: ...
+
 global___FavFolder = FavFolder
 
 class FavFolderAction(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     ACTION_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
     action: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
         action: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["action",b"action","fid",b"fid","folder_type",b"folder_type"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "fid", b"fid", "folder_type", b"folder_type"]) -> None: ...
+
 global___FavFolderAction = FavFolderAction
 
 class FavFolderAuthor(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     mid: builtins.int
     """"""
-
-    name: typing.Text
+    name: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         mid: builtins.int = ...,
-        name: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["mid",b"mid","name",b"name"]) -> None: ...
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["mid", b"mid", "name", b"name"]) -> None: ...
+
 global___FavFolderAuthor = FavFolderAuthor
 
 class FavFolderCreateReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     NAME_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
     PUBLIC_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
-    name: typing.Text
+    name: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
     public: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        name: typing.Text = ...,
-        desc: typing.Text = ...,
+        name: builtins.str = ...,
+        desc: builtins.str = ...,
         public: builtins.int = ...,
         folder_type: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["desc",b"desc","folder_type",b"folder_type","name",b"name","public",b"public"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["desc", b"desc", "folder_type", b"folder_type", "name", b"name", "public", b"public"]) -> None: ...
+
 global___FavFolderCreateReq = FavFolderCreateReq
 
 class FavFolderCreateResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     MESSAGE_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
-    message: typing.Text
+    message: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fid",b"fid","folder_type",b"folder_type","message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fid", b"fid", "folder_type", b"folder_type", "message", b"message"]) -> None: ...
+
 global___FavFolderCreateResp = FavFolderCreateResp
 
 class FavFolderDeleteReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fid",b"fid","folder_type",b"folder_type"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fid", b"fid", "folder_type", b"folder_type"]) -> None: ...
+
 global___FavFolderDeleteReq = FavFolderDeleteReq
 
 class FavFolderDeleteResp(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    MESSAGE_FIELD_NUMBER: builtins.int
-    message: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message"]) -> None: ...
+
 global___FavFolderDeleteResp = FavFolderDeleteResp
 
 class FavFolderDetailReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     FAV_MID_FIELD_NUMBER: builtins.int
@@ -808,127 +801,132 @@ class FavFolderDetailReq(google.protobuf.message.Message):
     NEED_FOLDER_INFO_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
     fav_mid: builtins.int
     """"""
-
     @property
     def last_item(self) -> global___FavItem:
         """"""
-        pass
     page_size: builtins.int
     """"""
-
     need_folder_info: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
         fav_mid: builtins.int = ...,
-        last_item: typing.Optional[global___FavItem] = ...,
+        last_item: global___FavItem | None = ...,
         page_size: builtins.int = ...,
         need_folder_info: builtins.bool = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["last_item",b"last_item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fav_mid",b"fav_mid","fid",b"fid","folder_type",b"folder_type","last_item",b"last_item","need_folder_info",b"need_folder_info","page_size",b"page_size"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["last_item", b"last_item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fav_mid", b"fav_mid", "fid", b"fid", "folder_type", b"folder_type", "last_item", b"last_item", "need_folder_info", b"need_folder_info", "page_size", b"page_size"]) -> None: ...
+
 global___FavFolderDetailReq = FavFolderDetailReq
 
 class FavFolderDetailResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TOTAL_FIELD_NUMBER: builtins.int
     REACH_END_FIELD_NUMBER: builtins.int
     LIST_FIELD_NUMBER: builtins.int
     FOLDER_INFO_FIELD_NUMBER: builtins.int
     total: builtins.int
     """"""
-
     reach_end: builtins.bool
     """"""
-
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FavItemDetail]:
         """"""
-        pass
     @property
     def folder_info(self) -> global___FavFolder:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         total: builtins.int = ...,
         reach_end: builtins.bool = ...,
-        list: typing.Optional[typing.Iterable[global___FavItemDetail]] = ...,
-        folder_info: typing.Optional[global___FavFolder] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["folder_info",b"folder_info"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["folder_info",b"folder_info","list",b"list","reach_end",b"reach_end","total",b"total"]) -> None: ...
+        list: collections.abc.Iterable[global___FavItemDetail] | None = ...,
+        folder_info: global___FavFolder | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["folder_info", b"folder_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["folder_info", b"folder_info", "list", b"list", "reach_end", b"reach_end", "total", b"total"]) -> None: ...
+
 global___FavFolderDetailResp = FavFolderDetailResp
 
 class FavFolderListReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FOLDER_TYPES_FIELD_NUMBER: builtins.int
     ITEM_FIELD_NUMBER: builtins.int
     @property
     def folder_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
         """"""
-        pass
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        folder_types: typing.Optional[typing.Iterable[builtins.int]] = ...,
-        item: typing.Optional[global___PlayItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["folder_types",b"folder_types","item",b"item"]) -> None: ...
+        folder_types: collections.abc.Iterable[builtins.int] | None = ...,
+        item: global___PlayItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["folder_types", b"folder_types", "item", b"item"]) -> None: ...
+
 global___FavFolderListReq = FavFolderListReq
 
 class FavFolderListResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     LIST_FIELD_NUMBER: builtins.int
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FavFolder]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        list: typing.Optional[typing.Iterable[global___FavFolder]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["list",b"list"]) -> None: ...
+        list: collections.abc.Iterable[global___FavFolder] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["list", b"list"]) -> None: ...
+
 global___FavFolderListResp = FavFolderListResp
 
 class FavFolderMeta(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fid",b"fid","folder_type",b"folder_type"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fid", b"fid", "folder_type", b"folder_type"]) -> None: ...
+
 global___FavFolderMeta = FavFolderMeta
 
 class FavItem(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_TYPE_FIELD_NUMBER: builtins.int
     OID_FIELD_NUMBER: builtins.int
     FID_FIELD_NUMBER: builtins.int
@@ -938,27 +936,21 @@ class FavItem(google.protobuf.message.Message):
     ET_FIELD_NUMBER: builtins.int
     item_type: builtins.int
     """"""
-
     oid: builtins.int
     """"""
-
     fid: builtins.int
     """"""
-
     mid: builtins.int
     """"""
-
     mtime: builtins.int
     """"""
-
     ctime: builtins.int
     """"""
-
     @property
     def et(self) -> global___EventTracking:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         item_type: builtins.int = ...,
         oid: builtins.int = ...,
@@ -966,171 +958,186 @@ class FavItem(google.protobuf.message.Message):
         mid: builtins.int = ...,
         mtime: builtins.int = ...,
         ctime: builtins.int = ...,
-        et: typing.Optional[global___EventTracking] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["et",b"et"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ctime",b"ctime","et",b"et","fid",b"fid","item_type",b"item_type","mid",b"mid","mtime",b"mtime","oid",b"oid"]) -> None: ...
+        et: global___EventTracking | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["et", b"et"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ctime", b"ctime", "et", b"et", "fid", b"fid", "item_type", b"item_type", "mid", b"mid", "mtime", b"mtime", "oid", b"oid"]) -> None: ...
+
 global___FavItem = FavItem
 
 class FavItemAddReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     PLAY_FIELD_NUMBER: builtins.int
     FAV_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
     @property
     def play(self) -> global___PlayItem:
         """"""
-        pass
     @property
     def fav(self) -> global___FavItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
-        play: typing.Optional[global___PlayItem] = ...,
-        fav: typing.Optional[global___FavItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["fav",b"fav","item",b"item","play",b"play"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fav",b"fav","fid",b"fid","folder_type",b"folder_type","item",b"item","play",b"play"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["item",b"item"]) -> typing.Optional[typing_extensions.Literal["play","fav"]]: ...
+        play: global___PlayItem | None = ...,
+        fav: global___FavItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["fav", b"fav", "item", b"item", "play", b"play"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fav", b"fav", "fid", b"fid", "folder_type", b"folder_type", "item", b"item", "play", b"play"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["item", b"item"]) -> typing_extensions.Literal["play", "fav"] | None: ...
+
 global___FavItemAddReq = FavItemAddReq
 
 class FavItemAddResp(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    MESSAGE_FIELD_NUMBER: builtins.int
-    message: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message"]) -> None: ...
+
 global___FavItemAddResp = FavItemAddResp
 
 class FavItemAuthor(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     mid: builtins.int
     """"""
-
-    name: typing.Text
+    name: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         mid: builtins.int = ...,
-        name: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["mid",b"mid","name",b"name"]) -> None: ...
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["mid", b"mid", "name", b"name"]) -> None: ...
+
 global___FavItemAuthor = FavItemAuthor
 
 class FavItemBatchReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ACTIONS_FIELD_NUMBER: builtins.int
     PLAY_FIELD_NUMBER: builtins.int
     FAV_FIELD_NUMBER: builtins.int
     @property
     def actions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FavFolderAction]:
         """"""
-        pass
     @property
     def play(self) -> global___PlayItem:
         """"""
-        pass
     @property
     def fav(self) -> global___FavItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        actions: typing.Optional[typing.Iterable[global___FavFolderAction]] = ...,
-        play: typing.Optional[global___PlayItem] = ...,
-        fav: typing.Optional[global___FavItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["fav",b"fav","item",b"item","play",b"play"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["actions",b"actions","fav",b"fav","item",b"item","play",b"play"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["item",b"item"]) -> typing.Optional[typing_extensions.Literal["play","fav"]]: ...
+        actions: collections.abc.Iterable[global___FavFolderAction] | None = ...,
+        play: global___PlayItem | None = ...,
+        fav: global___FavItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["fav", b"fav", "item", b"item", "play", b"play"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["actions", b"actions", "fav", b"fav", "item", b"item", "play", b"play"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["item", b"item"]) -> typing_extensions.Literal["play", "fav"] | None: ...
+
 global___FavItemBatchReq = FavItemBatchReq
 
 class FavItemBatchResp(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    MESSAGE_FIELD_NUMBER: builtins.int
-    message: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message"]) -> None: ...
+
 global___FavItemBatchResp = FavItemBatchResp
 
 class FavItemDelReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FID_FIELD_NUMBER: builtins.int
     FOLDER_TYPE_FIELD_NUMBER: builtins.int
     PLAY_FIELD_NUMBER: builtins.int
     FAV_FIELD_NUMBER: builtins.int
     fid: builtins.int
     """"""
-
     folder_type: builtins.int
     """"""
-
     @property
     def play(self) -> global___PlayItem:
         """"""
-        pass
     @property
     def fav(self) -> global___FavItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         fid: builtins.int = ...,
         folder_type: builtins.int = ...,
-        play: typing.Optional[global___PlayItem] = ...,
-        fav: typing.Optional[global___FavItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["fav",b"fav","item",b"item","play",b"play"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fav",b"fav","fid",b"fid","folder_type",b"folder_type","item",b"item","play",b"play"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["item",b"item"]) -> typing.Optional[typing_extensions.Literal["play","fav"]]: ...
+        play: global___PlayItem | None = ...,
+        fav: global___FavItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["fav", b"fav", "item", b"item", "play", b"play"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fav", b"fav", "fid", b"fid", "folder_type", b"folder_type", "item", b"item", "play", b"play"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["item", b"item"]) -> typing_extensions.Literal["play", "fav"] | None: ...
+
 global___FavItemDelReq = FavItemDelReq
 
 class FavItemDelResp(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    MESSAGE_FIELD_NUMBER: builtins.int
-    message: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message"]) -> None: ...
+
 global___FavItemDelResp = FavItemDelResp
 
 class FavItemDetail(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     OWNER_FIELD_NUMBER: builtins.int
     STAT_FIELD_NUMBER: builtins.int
@@ -1143,129 +1150,133 @@ class FavItemDetail(google.protobuf.message.Message):
     @property
     def item(self) -> global___FavItem:
         """"""
-        pass
     @property
     def owner(self) -> global___FavItemAuthor:
         """"""
-        pass
     @property
     def stat(self) -> global___FavItemStat:
         """"""
-        pass
-    cover: typing.Text
+    cover: builtins.str
     """"""
-
-    name: typing.Text
+    name: builtins.str
     """"""
-
     duration: builtins.int
     """"""
-
     state: builtins.int
     """"""
-
-    message: typing.Text
+    message: builtins.str
     """"""
-
     parts: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___FavItem] = ...,
-        owner: typing.Optional[global___FavItemAuthor] = ...,
-        stat: typing.Optional[global___FavItemStat] = ...,
-        cover: typing.Text = ...,
-        name: typing.Text = ...,
+        item: global___FavItem | None = ...,
+        owner: global___FavItemAuthor | None = ...,
+        stat: global___FavItemStat | None = ...,
+        cover: builtins.str = ...,
+        name: builtins.str = ...,
         duration: builtins.int = ...,
         state: builtins.int = ...,
-        message: typing.Text = ...,
+        message: builtins.str = ...,
         parts: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item","owner",b"owner","stat",b"stat"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cover",b"cover","duration",b"duration","item",b"item","message",b"message","name",b"name","owner",b"owner","parts",b"parts","stat",b"stat","state",b"state"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item", "owner", b"owner", "stat", b"stat"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "duration", b"duration", "item", b"item", "message", b"message", "name", b"name", "owner", b"owner", "parts", b"parts", "stat", b"stat", "state", b"state"]) -> None: ...
+
 global___FavItemDetail = FavItemDetail
 
 class FavItemStat(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     VIEW_FIELD_NUMBER: builtins.int
     REPLY_FIELD_NUMBER: builtins.int
     view: builtins.int
     """"""
-
     reply: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         view: builtins.int = ...,
         reply: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["reply",b"reply","view",b"view"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["reply", b"reply", "view", b"view"]) -> None: ...
+
 global___FavItemStat = FavItemStat
 
 class FavoredInAnyFoldersReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FOLDER_TYPES_FIELD_NUMBER: builtins.int
     ITEM_FIELD_NUMBER: builtins.int
     @property
     def folder_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
         """"""
-        pass
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        folder_types: typing.Optional[typing.Iterable[builtins.int]] = ...,
-        item: typing.Optional[global___PlayItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["folder_types",b"folder_types","item",b"item"]) -> None: ...
+        folder_types: collections.abc.Iterable[builtins.int] | None = ...,
+        item: global___PlayItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["folder_types", b"folder_types", "item", b"item"]) -> None: ...
+
 global___FavoredInAnyFoldersReq = FavoredInAnyFoldersReq
 
 class FavoredInAnyFoldersResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FOLDERS_FIELD_NUMBER: builtins.int
     ITEM_FIELD_NUMBER: builtins.int
     @property
     def folders(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FavFolderMeta]:
         """"""
-        pass
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        folders: typing.Optional[typing.Iterable[global___FavFolderMeta]] = ...,
-        item: typing.Optional[global___PlayItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["folders",b"folders","item",b"item"]) -> None: ...
+        folders: collections.abc.Iterable[global___FavFolderMeta] | None = ...,
+        item: global___PlayItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["folders", b"folders", "item", b"item"]) -> None: ...
+
 global___FavoredInAnyFoldersResp = FavoredInAnyFoldersResp
 
 class FollowRelation(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     STATUS_FIELD_NUMBER: builtins.int
     status: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         status: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["status",b"status"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["status", b"status"]) -> None: ...
+
 global___FollowRelation = FollowRelation
 
 class FormatDescription(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     QUALITY_FIELD_NUMBER: builtins.int
     FORMAT_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -1273,59 +1284,59 @@ class FormatDescription(google.protobuf.message.Message):
     SUPERSCRIPT_FIELD_NUMBER: builtins.int
     quality: builtins.int
     """"""
-
-    format: typing.Text
+    format: builtins.str
     """"""
-
-    description: typing.Text
+    description: builtins.str
     """"""
-
-    display_desc: typing.Text
+    display_desc: builtins.str
     """"""
-
-    superscript: typing.Text
+    superscript: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         quality: builtins.int = ...,
-        format: typing.Text = ...,
-        description: typing.Text = ...,
-        display_desc: typing.Text = ...,
-        superscript: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["description",b"description","display_desc",b"display_desc","format",b"format","quality",b"quality","superscript",b"superscript"]) -> None: ...
+        format: builtins.str = ...,
+        description: builtins.str = ...,
+        display_desc: builtins.str = ...,
+        superscript: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["description", b"description", "display_desc", b"display_desc", "format", b"format", "quality", b"quality", "superscript", b"superscript"]) -> None: ...
+
 global___FormatDescription = FormatDescription
 
 class PageOption(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     DIRECTION_FIELD_NUMBER: builtins.int
     LAST_ITEM_FIELD_NUMBER: builtins.int
     page_size: builtins.int
     """"""
-
     direction: builtins.int
     """"""
-
     @property
     def last_item(self) -> global___PlayItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         page_size: builtins.int = ...,
         direction: builtins.int = ...,
-        last_item: typing.Optional[global___PlayItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["last_item",b"last_item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["direction",b"direction","last_item",b"last_item","page_size",b"page_size"]) -> None: ...
+        last_item: global___PlayItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["last_item", b"last_item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["direction", b"direction", "last_item", b"last_item", "page_size", b"page_size"]) -> None: ...
+
 global___PageOption = PageOption
 
 class PickArchive(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     OWNER_FIELD_NUMBER: builtins.int
@@ -1339,307 +1350,316 @@ class PickArchive(google.protobuf.message.Message):
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
-    title: typing.Text
+    title: builtins.str
     """"""
-
     @property
     def owner(self) -> global___PickArchiveAuthor:
         """"""
-        pass
-    cover: typing.Text
+    cover: builtins.str
     """"""
-
     duration: builtins.int
     """"""
-
     parts: builtins.int
     """"""
-
     stat_view: builtins.int
     """"""
-
     stat_reply: builtins.int
     """"""
-
     state: builtins.int
     """"""
-
-    message: typing.Text
+    message: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
-        title: typing.Text = ...,
-        owner: typing.Optional[global___PickArchiveAuthor] = ...,
-        cover: typing.Text = ...,
+        item: global___PlayItem | None = ...,
+        title: builtins.str = ...,
+        owner: global___PickArchiveAuthor | None = ...,
+        cover: builtins.str = ...,
         duration: builtins.int = ...,
         parts: builtins.int = ...,
         stat_view: builtins.int = ...,
         stat_reply: builtins.int = ...,
         state: builtins.int = ...,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item","owner",b"owner"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cover",b"cover","duration",b"duration","item",b"item","message",b"message","owner",b"owner","parts",b"parts","stat_reply",b"stat_reply","stat_view",b"stat_view","state",b"state","title",b"title"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item", "owner", b"owner"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "duration", b"duration", "item", b"item", "message", b"message", "owner", b"owner", "parts", b"parts", "stat_reply", b"stat_reply", "stat_view", b"stat_view", "state", b"state", "title", b"title"]) -> None: ...
+
 global___PickArchive = PickArchive
 
 class PickArchiveAuthor(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     mid: builtins.int
     """"""
-
-    name: typing.Text
+    name: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         mid: builtins.int = ...,
-        name: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["mid",b"mid","name",b"name"]) -> None: ...
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["mid", b"mid", "name", b"name"]) -> None: ...
+
 global___PickArchiveAuthor = PickArchiveAuthor
 
 class PickCard(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PICK_ID_FIELD_NUMBER: builtins.int
     CARD_ID_FIELD_NUMBER: builtins.int
     CARD_NAME_FIELD_NUMBER: builtins.int
     MODULES_FIELD_NUMBER: builtins.int
     pick_id: builtins.int
     """"""
-
     card_id: builtins.int
     """"""
-
-    card_name: typing.Text
+    card_name: builtins.str
     """"""
-
     @property
     def modules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CardModule]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         pick_id: builtins.int = ...,
         card_id: builtins.int = ...,
-        card_name: typing.Text = ...,
-        modules: typing.Optional[typing.Iterable[global___CardModule]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["card_id",b"card_id","card_name",b"card_name","modules",b"modules","pick_id",b"pick_id"]) -> None: ...
+        card_name: builtins.str = ...,
+        modules: collections.abc.Iterable[global___CardModule] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["card_id", b"card_id", "card_name", b"card_name", "modules", b"modules", "pick_id", b"pick_id"]) -> None: ...
+
 global___PickCard = PickCard
 
 class PickCardDetailReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CARD_ID_FIELD_NUMBER: builtins.int
     PICK_ID_FIELD_NUMBER: builtins.int
     card_id: builtins.int
     """"""
-
     pick_id: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         card_id: builtins.int = ...,
         pick_id: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["card_id",b"card_id","pick_id",b"pick_id"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["card_id", b"card_id", "pick_id", b"pick_id"]) -> None: ...
+
 global___PickCardDetailReq = PickCardDetailReq
 
 class PickCardDetailResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     CARD_ID_FIELD_NUMBER: builtins.int
     PICK_ID_FIELD_NUMBER: builtins.int
     MODULES_FIELD_NUMBER: builtins.int
     card_id: builtins.int
     """"""
-
     pick_id: builtins.int
     """"""
-
     @property
     def modules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CardModule]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         card_id: builtins.int = ...,
         pick_id: builtins.int = ...,
-        modules: typing.Optional[typing.Iterable[global___CardModule]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["card_id",b"card_id","modules",b"modules","pick_id",b"pick_id"]) -> None: ...
+        modules: collections.abc.Iterable[global___CardModule] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["card_id", b"card_id", "modules", b"modules", "pick_id", b"pick_id"]) -> None: ...
+
 global___PickCardDetailResp = PickCardDetailResp
 
 class PickFeedReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     OFFSET_FIELD_NUMBER: builtins.int
     offset: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         offset: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["offset",b"offset"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["offset", b"offset"]) -> None: ...
+
 global___PickFeedReq = PickFeedReq
 
 class PickFeedResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     OFFSET_FIELD_NUMBER: builtins.int
     CARDS_FIELD_NUMBER: builtins.int
     offset: builtins.int
     """"""
-
     @property
     def cards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PickCard]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         offset: builtins.int = ...,
-        cards: typing.Optional[typing.Iterable[global___PickCard]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cards",b"cards","offset",b"offset"]) -> None: ...
+        cards: collections.abc.Iterable[global___PickCard] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cards", b"cards", "offset", b"offset"]) -> None: ...
+
 global___PickFeedResp = PickFeedResp
 
 class PkcmArchive(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ARC_FIELD_NUMBER: builtins.int
     PICK_REASON_FIELD_NUMBER: builtins.int
     @property
     def arc(self) -> global___PickArchive:
         """"""
-        pass
-    pick_reason: typing.Text
+    pick_reason: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        arc: typing.Optional[global___PickArchive] = ...,
-        pick_reason: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["arc",b"arc"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["arc",b"arc","pick_reason",b"pick_reason"]) -> None: ...
+        arc: global___PickArchive | None = ...,
+        pick_reason: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["arc", b"arc"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["arc", b"arc", "pick_reason", b"pick_reason"]) -> None: ...
+
 global___PkcmArchive = PkcmArchive
 
 class PkcmCenterButton(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ICON_HEAD_FIELD_NUMBER: builtins.int
     ICON_TAIL_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     URI_FIELD_NUMBER: builtins.int
-    icon_head: typing.Text
+    icon_head: builtins.str
     """"""
-
-    icon_tail: typing.Text
+    icon_tail: builtins.str
     """"""
-
-    title: typing.Text
+    title: builtins.str
     """"""
-
-    uri: typing.Text
+    uri: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        icon_head: typing.Text = ...,
-        icon_tail: typing.Text = ...,
-        title: typing.Text = ...,
-        uri: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["icon_head",b"icon_head","icon_tail",b"icon_tail","title",b"title","uri",b"uri"]) -> None: ...
+        icon_head: builtins.str = ...,
+        icon_tail: builtins.str = ...,
+        title: builtins.str = ...,
+        uri: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["icon_head", b"icon_head", "icon_tail", b"icon_tail", "title", b"title", "uri", b"uri"]) -> None: ...
+
 global___PkcmCenterButton = PkcmCenterButton
 
 class PkcmHeader(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TITLE_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
     BTN_ICON_FIELD_NUMBER: builtins.int
     BTN_TEXT_FIELD_NUMBER: builtins.int
     BTN_URI_FIELD_NUMBER: builtins.int
-    title: typing.Text
+    title: builtins.str
     """"""
-
-    desc: typing.Text
+    desc: builtins.str
     """"""
-
-    btn_icon: typing.Text
+    btn_icon: builtins.str
     """"""
-
-    btn_text: typing.Text
+    btn_text: builtins.str
     """"""
-
-    btn_uri: typing.Text
+    btn_uri: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        desc: typing.Text = ...,
-        btn_icon: typing.Text = ...,
-        btn_text: typing.Text = ...,
-        btn_uri: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["btn_icon",b"btn_icon","btn_text",b"btn_text","btn_uri",b"btn_uri","desc",b"desc","title",b"title"]) -> None: ...
+        title: builtins.str = ...,
+        desc: builtins.str = ...,
+        btn_icon: builtins.str = ...,
+        btn_text: builtins.str = ...,
+        btn_uri: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["btn_icon", b"btn_icon", "btn_text", b"btn_text", "btn_uri", b"btn_uri", "desc", b"desc", "title", b"title"]) -> None: ...
+
 global___PkcmHeader = PkcmHeader
 
 class PlayActionReportReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["item",b"item"]) -> None: ...
+        item: global___PlayItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["item", b"item"]) -> None: ...
+
 global___PlayActionReportReq = PlayActionReportReq
 
 class PlayDASH(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     DURATION_FIELD_NUMBER: builtins.int
     MIN_BUFFER_TIME_FIELD_NUMBER: builtins.int
     AUDIO_FIELD_NUMBER: builtins.int
     duration: builtins.int
     """"""
-
     min_buffer_time: builtins.float
     """"""
-
     @property
     def audio(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DashItem]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         duration: builtins.int = ...,
         min_buffer_time: builtins.float = ...,
-        audio: typing.Optional[typing.Iterable[global___DashItem]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["audio",b"audio","duration",b"duration","min_buffer_time",b"min_buffer_time"]) -> None: ...
+        audio: collections.abc.Iterable[global___DashItem] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "duration", b"duration", "min_buffer_time", b"min_buffer_time"]) -> None: ...
+
 global___PlayDASH = PlayDASH
 
 class PlayHistoryAddReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     PROGRESS_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
@@ -1647,89 +1667,96 @@ class PlayHistoryAddReq(google.protobuf.message.Message):
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
     progress: builtins.int
     """"""
-
     duration: builtins.int
     """"""
-
     play_style: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
+        item: global___PlayItem | None = ...,
         progress: builtins.int = ...,
         duration: builtins.int = ...,
         play_style: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["duration",b"duration","item",b"item","play_style",b"play_style","progress",b"progress"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["duration", b"duration", "item", b"item", "play_style", b"play_style", "progress", b"progress"]) -> None: ...
+
 global___PlayHistoryAddReq = PlayHistoryAddReq
 
 class PlayHistoryDelReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEMS_FIELD_NUMBER: builtins.int
     TRUNCATE_FIELD_NUMBER: builtins.int
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlayItem]:
         """"""
-        pass
     truncate: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        items: typing.Optional[typing.Iterable[global___PlayItem]] = ...,
+        items: collections.abc.Iterable[global___PlayItem] | None = ...,
         truncate: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["items",b"items","truncate",b"truncate"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["items", b"items", "truncate", b"truncate"]) -> None: ...
+
 global___PlayHistoryDelReq = PlayHistoryDelReq
 
 class PlayHistoryReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PAGE_OPT_FIELD_NUMBER: builtins.int
     @property
     def page_opt(self) -> global___PageOption: ...
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        page_opt: typing.Optional[global___PageOption] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["page_opt",b"page_opt"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["page_opt",b"page_opt"]) -> None: ...
+        page_opt: global___PageOption | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["page_opt", b"page_opt"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["page_opt", b"page_opt"]) -> None: ...
+
 global___PlayHistoryReq = PlayHistoryReq
 
 class PlayHistoryResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TOTAL_FIELD_NUMBER: builtins.int
     REACH_END_FIELD_NUMBER: builtins.int
     LIST_FIELD_NUMBER: builtins.int
     total: builtins.int
     """"""
-
     reach_end: builtins.bool
     """"""
-
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DetailItem]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         total: builtins.int = ...,
         reach_end: builtins.bool = ...,
-        list: typing.Optional[typing.Iterable[global___DetailItem]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["list",b"list","reach_end",b"reach_end","total",b"total"]) -> None: ...
+        list: collections.abc.Iterable[global___DetailItem] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["list", b"list", "reach_end", b"reach_end", "total", b"total"]) -> None: ...
+
 global___PlayHistoryResp = PlayHistoryResp
 
 class PlayInfo(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     QN_FIELD_NUMBER: builtins.int
     FORMAT_FIELD_NUMBER: builtins.int
     QN_TYPE_FIELD_NUMBER: builtins.int
@@ -1744,96 +1771,89 @@ class PlayInfo(google.protobuf.message.Message):
     MESSAGE_FIELD_NUMBER: builtins.int
     qn: builtins.int
     """"""
-
-    format: typing.Text
+    format: builtins.str
     """"""
-
     qn_type: builtins.int
     """"""
-
     @property
     def play_url(self) -> global___PlayURL:
         """"""
-        pass
     @property
     def play_dash(self) -> global___PlayDASH:
         """"""
-        pass
     fnver: builtins.int
     fnval: builtins.int
     """"""
-
     @property
     def formats(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
         """"""
-        pass
     video_codecid: builtins.int
     """"""
-
     length: builtins.int
     """"""
-
     code: builtins.int
     """"""
-
-    message: typing.Text
+    message: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         qn: builtins.int = ...,
-        format: typing.Text = ...,
+        format: builtins.str = ...,
         qn_type: builtins.int = ...,
-        play_url: typing.Optional[global___PlayURL] = ...,
-        play_dash: typing.Optional[global___PlayDASH] = ...,
+        play_url: global___PlayURL | None = ...,
+        play_dash: global___PlayDASH | None = ...,
         fnver: builtins.int = ...,
         fnval: builtins.int = ...,
-        formats: typing.Optional[typing.Iterable[builtins.int]] = ...,
+        formats: collections.abc.Iterable[builtins.int] | None = ...,
         video_codecid: builtins.int = ...,
         length: builtins.int = ...,
         code: builtins.int = ...,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["info",b"info","play_dash",b"play_dash","play_url",b"play_url"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["code",b"code","fnval",b"fnval","fnver",b"fnver","format",b"format","formats",b"formats","info",b"info","length",b"length","message",b"message","play_dash",b"play_dash","play_url",b"play_url","qn",b"qn","qn_type",b"qn_type","video_codecid",b"video_codecid"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["info",b"info"]) -> typing.Optional[typing_extensions.Literal["play_url","play_dash"]]: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["info", b"info", "play_dash", b"play_dash", "play_url", b"play_url"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "fnval", b"fnval", "fnver", b"fnver", "format", b"format", "formats", b"formats", "info", b"info", "length", b"length", "message", b"message", "play_dash", b"play_dash", "play_url", b"play_url", "qn", b"qn", "qn_type", b"qn_type", "video_codecid", b"video_codecid"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["info", b"info"]) -> typing_extensions.Literal["play_url", "play_dash"] | None: ...
+
 global___PlayInfo = PlayInfo
 
 class PlayItem(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_TYPE_FIELD_NUMBER: builtins.int
     OID_FIELD_NUMBER: builtins.int
     SUB_ID_FIELD_NUMBER: builtins.int
     ET_FIELD_NUMBER: builtins.int
     item_type: builtins.int
     """"""
-
     oid: builtins.int
     """"""
-
     @property
     def sub_id(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
         """"""
-        pass
     @property
     def et(self) -> global___EventTracking:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
         item_type: builtins.int = ...,
         oid: builtins.int = ...,
-        sub_id: typing.Optional[typing.Iterable[builtins.int]] = ...,
-        et: typing.Optional[global___EventTracking] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["et",b"et"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["et",b"et","item_type",b"item_type","oid",b"oid","sub_id",b"sub_id"]) -> None: ...
+        sub_id: collections.abc.Iterable[builtins.int] | None = ...,
+        et: global___EventTracking | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["et", b"et"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["et", b"et", "item_type", b"item_type", "oid", b"oid", "sub_id", b"sub_id"]) -> None: ...
+
 global___PlayItem = PlayItem
 
 class PlaylistAddReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEMS_FIELD_NUMBER: builtins.int
     AFTER_FIELD_NUMBER: builtins.int
     HEAD_FIELD_NUMBER: builtins.int
@@ -1841,52 +1861,54 @@ class PlaylistAddReq(google.protobuf.message.Message):
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlayItem]:
         """"""
-        pass
     @property
     def after(self) -> global___PlayItem:
         """"""
-        pass
     head: builtins.bool
     """"""
-
     tail: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        items: typing.Optional[typing.Iterable[global___PlayItem]] = ...,
-        after: typing.Optional[global___PlayItem] = ...,
+        items: collections.abc.Iterable[global___PlayItem] | None = ...,
+        after: global___PlayItem | None = ...,
         head: builtins.bool = ...,
         tail: builtins.bool = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["after",b"after","head",b"head","pos",b"pos","tail",b"tail"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["after",b"after","head",b"head","items",b"items","pos",b"pos","tail",b"tail"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["pos",b"pos"]) -> typing.Optional[typing_extensions.Literal["after","head","tail"]]: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["after", b"after", "head", b"head", "pos", b"pos", "tail", b"tail"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["after", b"after", "head", b"head", "items", b"items", "pos", b"pos", "tail", b"tail"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["pos", b"pos"]) -> typing_extensions.Literal["after", "head", "tail"] | None: ...
+
 global___PlaylistAddReq = PlaylistAddReq
 
 class PlaylistDelReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEMS_FIELD_NUMBER: builtins.int
     TRUNCATE_FIELD_NUMBER: builtins.int
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlayItem]:
         """"""
-        pass
     truncate: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        items: typing.Optional[typing.Iterable[global___PlayItem]] = ...,
+        items: collections.abc.Iterable[global___PlayItem] | None = ...,
         truncate: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["items",b"items","truncate",b"truncate"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["items", b"items", "truncate", b"truncate"]) -> None: ...
+
 global___PlaylistDelReq = PlaylistDelReq
 
 class PlaylistReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FROM_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     ANCHOR_FIELD_NUMBER: builtins.int
@@ -1895,37 +1917,36 @@ class PlaylistReq(google.protobuf.message.Message):
     EXTRA_ID_FIELD_NUMBER: builtins.int
     id: builtins.int
     """"""
-
     @property
     def anchor(self) -> global___PlayItem:
         """"""
-        pass
     @property
     def page_opt(self) -> global___PageOption:
         """"""
-        pass
     @property
     def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """"""
-        pass
     extra_id: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         id: builtins.int = ...,
-        anchor: typing.Optional[global___PlayItem] = ...,
-        page_opt: typing.Optional[global___PageOption] = ...,
-        player_args: typing.Optional[bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs] = ...,
+        anchor: global___PlayItem | None = ...,
+        page_opt: global___PageOption | None = ...,
+        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         extra_id: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["anchor",b"anchor","page_opt",b"page_opt","player_args",b"player_args"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["anchor",b"anchor","extra_id",b"extra_id","from",b"from","id",b"id","page_opt",b"page_opt","player_args",b"player_args"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["anchor", b"anchor", "page_opt", b"page_opt", "player_args", b"player_args"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["anchor", b"anchor", "extra_id", b"extra_id", "from", b"from", "id", b"id", "page_opt", b"page_opt", "player_args", b"player_args"]) -> None: ...
+
 global___PlaylistReq = PlaylistReq
 
 class PlaylistResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TOTAL_FIELD_NUMBER: builtins.int
     REACH_START_FIELD_NUMBER: builtins.int
     REACH_END_FIELD_NUMBER: builtins.int
@@ -1934,91 +1955,96 @@ class PlaylistResp(google.protobuf.message.Message):
     LAST_PROGRESS_FIELD_NUMBER: builtins.int
     total: builtins.int
     """"""
-
     reach_start: builtins.bool
     """"""
-
     reach_end: builtins.bool
     """"""
-
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DetailItem]:
         """"""
-        pass
     @property
     def last_play(self) -> global___PlayItem:
         """"""
-        pass
     last_progress: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         total: builtins.int = ...,
         reach_start: builtins.bool = ...,
         reach_end: builtins.bool = ...,
-        list: typing.Optional[typing.Iterable[global___DetailItem]] = ...,
-        last_play: typing.Optional[global___PlayItem] = ...,
+        list: collections.abc.Iterable[global___DetailItem] | None = ...,
+        last_play: global___PlayItem | None = ...,
         last_progress: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["last_play",b"last_play"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["last_play",b"last_play","last_progress",b"last_progress","list",b"list","reach_end",b"reach_end","reach_start",b"reach_start","total",b"total"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["last_play", b"last_play"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["last_play", b"last_play", "last_progress", b"last_progress", "list", b"list", "reach_end", b"reach_end", "reach_start", b"reach_start", "total", b"total"]) -> None: ...
+
 global___PlaylistResp = PlaylistResp
 
 class PlayURL(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     DURL_FIELD_NUMBER: builtins.int
     @property
     def durl(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ResponseUrl]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        durl: typing.Optional[typing.Iterable[global___ResponseUrl]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["durl",b"durl"]) -> None: ...
+        durl: collections.abc.Iterable[global___ResponseUrl] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["durl", b"durl"]) -> None: ...
+
 global___PlayURL = PlayURL
 
 class PlayURLReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     PLAYER_ARGS_FIELD_NUMBER: builtins.int
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
     @property
     def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
-        player_args: typing.Optional[bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item","player_args",b"player_args"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["item",b"item","player_args",b"player_args"]) -> None: ...
+        item: global___PlayItem | None = ...,
+        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item", "player_args", b"player_args"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["item", b"item", "player_args", b"player_args"]) -> None: ...
+
 global___PlayURLReq = PlayURLReq
 
 class PlayURLResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     class PlayerInfoEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
         KEY_FIELD_NUMBER: builtins.int
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.int
         @property
         def value(self) -> global___PlayInfo: ...
-        def __init__(self,
+        def __init__(
+            self,
             *,
             key: builtins.int = ...,
-            value: typing.Optional[global___PlayInfo] = ...,
-            ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["value",b"value"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["key",b"key","value",b"value"]) -> None: ...
+            value: global___PlayInfo | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     ITEM_FIELD_NUMBER: builtins.int
     PLAYABLE_FIELD_NUMBER: builtins.int
@@ -2027,71 +2053,75 @@ class PlayURLResp(google.protobuf.message.Message):
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
     playable: builtins.int
     """"""
-
-    message: typing.Text
+    message: builtins.str
     """"""
-
     @property
     def playerInfo(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___PlayInfo]:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
+        item: global___PlayItem | None = ...,
         playable: builtins.int = ...,
-        message: typing.Text = ...,
-        playerInfo: typing.Optional[typing.Mapping[builtins.int, global___PlayInfo]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["item",b"item","message",b"message","playable",b"playable","playerInfo",b"playerInfo"]) -> None: ...
+        message: builtins.str = ...,
+        playerInfo: collections.abc.Mapping[builtins.int, global___PlayInfo] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["item", b"item", "message", b"message", "playable", b"playable", "playerInfo", b"playerInfo"]) -> None: ...
+
 global___PlayURLResp = PlayURLResp
 
 class RcmdPlaylistReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FROM_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     NEED_HISTORY_FIELD_NUMBER: builtins.int
     id: builtins.int
     """"""
-
     need_history: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         id: builtins.int = ...,
         need_history: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["from",b"from","id",b"id","need_history",b"need_history"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["from", b"from", "id", b"id", "need_history", b"need_history"]) -> None: ...
+
 global___RcmdPlaylistReq = RcmdPlaylistReq
 
 class RcmdPlaylistResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     LIST_FIELD_NUMBER: builtins.int
     HISTORY_LEN_FIELD_NUMBER: builtins.int
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DetailItem]:
         """"""
-        pass
     history_len: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        list: typing.Optional[typing.Iterable[global___DetailItem]] = ...,
+        list: collections.abc.Iterable[global___DetailItem] | None = ...,
         history_len: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["history_len",b"history_len","list",b"list"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["history_len", b"history_len", "list", b"list"]) -> None: ...
+
 global___RcmdPlaylistResp = RcmdPlaylistResp
 
 class ResponseUrl(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ORDER_FIELD_NUMBER: builtins.int
     LENGTH_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
@@ -2102,119 +2132,121 @@ class ResponseUrl(google.protobuf.message.Message):
     MD5_FIELD_NUMBER: builtins.int
     order: builtins.int
     """"""
-
     length: builtins.int
     """"""
-
     size: builtins.int
     """"""
-
-    ahead: typing.Text
+    ahead: builtins.str
     """"""
-
-    vhead: typing.Text
+    vhead: builtins.str
     """"""
-
-    url: typing.Text
+    url: builtins.str
     """"""
-
     @property
-    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """"""
-        pass
-    md5: typing.Text
+    md5: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         order: builtins.int = ...,
         length: builtins.int = ...,
         size: builtins.int = ...,
-        ahead: typing.Text = ...,
-        vhead: typing.Text = ...,
-        url: typing.Text = ...,
-        backup_url: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        md5: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ahead",b"ahead","backup_url",b"backup_url","length",b"length","md5",b"md5","order",b"order","size",b"size","url",b"url","vhead",b"vhead"]) -> None: ...
+        ahead: builtins.str = ...,
+        vhead: builtins.str = ...,
+        url: builtins.str = ...,
+        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
+        md5: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ahead", b"ahead", "backup_url", b"backup_url", "length", b"length", "md5", b"md5", "order", b"order", "size", b"size", "url", b"url", "vhead", b"vhead"]) -> None: ...
+
 global___ResponseUrl = ResponseUrl
 
 class ThumbUpReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     ACTION_FIELD_NUMBER: builtins.int
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
     action: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
+        item: global___PlayItem | None = ...,
         action: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["action",b"action","item",b"item"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "item", b"item"]) -> None: ...
+
 global___ThumbUpReq = ThumbUpReq
 
 class ThumbUpResp(google.protobuf.message.Message):
     """"""
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    MESSAGE_FIELD_NUMBER: builtins.int
-    message: typing.Text
-    """"""
 
-    def __init__(self,
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """"""
+    def __init__(
+        self,
         *,
-        message: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["message",b"message"]) -> None: ...
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message"]) -> None: ...
+
 global___ThumbUpResp = ThumbUpResp
 
 class TripleLikeReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     ITEM_FIELD_NUMBER: builtins.int
     @property
     def item(self) -> global___PlayItem:
         """"""
-        pass
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        item: typing.Optional[global___PlayItem] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["item",b"item"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["item",b"item"]) -> None: ...
+        item: global___PlayItem | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["item", b"item"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["item", b"item"]) -> None: ...
+
 global___TripleLikeReq = TripleLikeReq
 
 class TripleLikeResp(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     MESSAGE_FIELD_NUMBER: builtins.int
     THUMB_OK_FIELD_NUMBER: builtins.int
     COIN_OK_FIELD_NUMBER: builtins.int
     FAV_OK_FIELD_NUMBER: builtins.int
-    message: typing.Text
+    message: builtins.str
     """"""
-
     thumb_ok: builtins.bool
     """"""
-
     coin_ok: builtins.bool
     """"""
-
     fav_ok: builtins.bool
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        message: typing.Text = ...,
+        message: builtins.str = ...,
         thumb_ok: builtins.bool = ...,
         coin_ok: builtins.bool = ...,
         fav_ok: builtins.bool = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["coin_ok",b"coin_ok","fav_ok",b"fav_ok","message",b"message","thumb_ok",b"thumb_ok"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["coin_ok", b"coin_ok", "fav_ok", b"fav_ok", "message", b"message", "thumb_ok", b"thumb_ok"]) -> None: ...
+
 global___TripleLikeResp = TripleLikeResp

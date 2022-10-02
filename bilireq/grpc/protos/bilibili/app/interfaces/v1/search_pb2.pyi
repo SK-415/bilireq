@@ -3,70 +3,79 @@
 isort:skip_file
 """
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class SuggestionResult3Req(google.protobuf.message.Message):
     """获取搜索建议-请求"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     KEYWORD_FIELD_NUMBER: builtins.int
     HIGHLIGHT_FIELD_NUMBER: builtins.int
     TEENAGERS_MODE_FIELD_NUMBER: builtins.int
-    keyword: typing.Text
+    keyword: builtins.str
     """关键字"""
-
     highlight: builtins.int
     """是否语法高亮
     0:不显示 1:显示
     """
-
     teenagers_mode: builtins.int
     """是否青少年模式
     1:开启青少年模式
     """
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        keyword: typing.Text = ...,
+        keyword: builtins.str = ...,
         highlight: builtins.int = ...,
         teenagers_mode: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["highlight",b"highlight","keyword",b"keyword","teenagers_mode",b"teenagers_mode"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["highlight", b"highlight", "keyword", b"keyword", "teenagers_mode", b"teenagers_mode"]) -> None: ...
+
 global___SuggestionResult3Req = SuggestionResult3Req
 
 class SuggestionResult3Reply(google.protobuf.message.Message):
     """获取搜索建议-响应"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TRACKID_FIELD_NUMBER: builtins.int
     LIST_FIELD_NUMBER: builtins.int
     EXPSTR_FIELD_NUMBER: builtins.int
-    trackid: typing.Text
+    trackid: builtins.str
     """搜索追踪id"""
-
     @property
     def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ResultItem]:
         """搜索建议条目列表"""
-        pass
-    expStr: typing.Text
+    expStr: builtins.str
     """搜索的abtest 实验信息"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        trackid: typing.Text = ...,
-        list: typing.Optional[typing.Iterable[global___ResultItem]] = ...,
-        expStr: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["expStr",b"expStr","list",b"list","trackid",b"trackid"]) -> None: ...
+        trackid: builtins.str = ...,
+        list: collections.abc.Iterable[global___ResultItem] | None = ...,
+        expStr: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["expStr", b"expStr", "list", b"list", "trackid", b"trackid"]) -> None: ...
+
 global___SuggestionResult3Reply = SuggestionResult3Reply
 
 class ResultItem(google.protobuf.message.Message):
     """搜索建议条目"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     FROM_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     KEYWORD_FIELD_NUMBER: builtins.int
@@ -94,143 +103,123 @@ class ResultItem(google.protobuf.message.Message):
     STYLES_FIELD_NUMBER: builtins.int
     MODULE_ID_FIELD_NUMBER: builtins.int
     LIVE_LINK_FIELD_NUMBER: builtins.int
-    title: typing.Text
+    title: builtins.str
     """显示结果(语法高亮)"""
-
-    keyword: typing.Text
+    keyword: builtins.str
     """搜索关键字"""
-
     position: builtins.int
     """序号"""
-
-    cover: typing.Text
+    cover: builtins.str
     """图片"""
-
     cover_size: builtins.float
     """图片尺寸"""
-
-    sug_type: typing.Text
+    sug_type: builtins.str
     """sug词类型"""
-
     term_type: builtins.int
     """词条大类型"""
-
-    goto: typing.Text
+    goto: builtins.str
     """跳转类型"""
-
-    uri: typing.Text
+    uri: builtins.str
     """跳转uri"""
-
     @property
     def official_verify(self) -> global___OfficialVerify:
         """认证信息"""
-        pass
-    param: typing.Text
+    param: builtins.str
     """跳转参数"""
-
     mid: builtins.int
     """up主mid"""
-
     fans: builtins.int
     """粉丝数"""
-
     level: builtins.int
     """up主等级"""
-
     archives: builtins.int
     """up主稿件数"""
-
     ptime: builtins.int
     """投稿时间"""
-
-    season_type_name: typing.Text
+    season_type_name: builtins.str
     """season类型名称"""
-
-    area: typing.Text
+    area: builtins.str
     """地区"""
-
-    style: typing.Text
+    style: builtins.str
     """作品风格"""
-
-    label: typing.Text
+    label: builtins.str
     """描述信息"""
-
     rating: builtins.float
     """评分"""
-
     vote: builtins.int
     """投票数"""
-
     @property
     def badges(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ReasonStyle]:
         """角标"""
-        pass
-    styles: typing.Text
+    styles: builtins.str
     """"""
-
     module_id: builtins.int
     """"""
-
-    live_link: typing.Text
+    live_link: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        title: typing.Text = ...,
-        keyword: typing.Text = ...,
+        title: builtins.str = ...,
+        keyword: builtins.str = ...,
         position: builtins.int = ...,
-        cover: typing.Text = ...,
+        cover: builtins.str = ...,
         cover_size: builtins.float = ...,
-        sug_type: typing.Text = ...,
+        sug_type: builtins.str = ...,
         term_type: builtins.int = ...,
-        goto: typing.Text = ...,
-        uri: typing.Text = ...,
-        official_verify: typing.Optional[global___OfficialVerify] = ...,
-        param: typing.Text = ...,
+        goto: builtins.str = ...,
+        uri: builtins.str = ...,
+        official_verify: global___OfficialVerify | None = ...,
+        param: builtins.str = ...,
         mid: builtins.int = ...,
         fans: builtins.int = ...,
         level: builtins.int = ...,
         archives: builtins.int = ...,
         ptime: builtins.int = ...,
-        season_type_name: typing.Text = ...,
-        area: typing.Text = ...,
-        style: typing.Text = ...,
-        label: typing.Text = ...,
+        season_type_name: builtins.str = ...,
+        area: builtins.str = ...,
+        style: builtins.str = ...,
+        label: builtins.str = ...,
         rating: builtins.float = ...,
         vote: builtins.int = ...,
-        badges: typing.Optional[typing.Iterable[global___ReasonStyle]] = ...,
-        styles: typing.Text = ...,
+        badges: collections.abc.Iterable[global___ReasonStyle] | None = ...,
+        styles: builtins.str = ...,
         module_id: builtins.int = ...,
-        live_link: typing.Text = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["official_verify",b"official_verify"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["archives",b"archives","area",b"area","badges",b"badges","cover",b"cover","cover_size",b"cover_size","fans",b"fans","from",b"from","goto",b"goto","keyword",b"keyword","label",b"label","level",b"level","live_link",b"live_link","mid",b"mid","module_id",b"module_id","official_verify",b"official_verify","param",b"param","position",b"position","ptime",b"ptime","rating",b"rating","season_type_name",b"season_type_name","style",b"style","styles",b"styles","sug_type",b"sug_type","term_type",b"term_type","title",b"title","uri",b"uri","vote",b"vote"]) -> None: ...
+        live_link: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["official_verify", b"official_verify"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["archives", b"archives", "area", b"area", "badges", b"badges", "cover", b"cover", "cover_size", b"cover_size", "fans", b"fans", "from", b"from", "goto", b"goto", "keyword", b"keyword", "label", b"label", "level", b"level", "live_link", b"live_link", "mid", b"mid", "module_id", b"module_id", "official_verify", b"official_verify", "param", b"param", "position", b"position", "ptime", b"ptime", "rating", b"rating", "season_type_name", b"season_type_name", "style", b"style", "styles", b"styles", "sug_type", b"sug_type", "term_type", b"term_type", "title", b"title", "uri", b"uri", "vote", b"vote"]) -> None: ...
+
 global___ResultItem = ResultItem
 
 class OfficialVerify(google.protobuf.message.Message):
     """认证信息"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TYPE_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
     type: builtins.int
     """认证类型
     127:未认证 0:个人 1:机构
     """
-
-    desc: typing.Text
+    desc: builtins.str
     """认证描述"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
         type: builtins.int = ...,
-        desc: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["desc",b"desc","type",b"type"]) -> None: ...
+        desc: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["desc", b"desc", "type", b"type"]) -> None: ...
+
 global___OfficialVerify = OfficialVerify
 
 class ReasonStyle(google.protobuf.message.Message):
     """角标"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     TEXT_FIELD_NUMBER: builtins.int
     TEXT_COLOR_FIELD_NUMBER: builtins.int
     TEXT_COLOR_NIGHT_FIELD_NUMBER: builtins.int
@@ -239,42 +228,36 @@ class ReasonStyle(google.protobuf.message.Message):
     BORDER_COLOR_FIELD_NUMBER: builtins.int
     BORDER_COLOR_NIGHT_FIELD_NUMBER: builtins.int
     BG_STYLE_FIELD_NUMBER: builtins.int
-    text: typing.Text
+    text: builtins.str
     """角标文案"""
-
-    text_color: typing.Text
+    text_color: builtins.str
     """文案日间色值"""
-
-    text_color_night: typing.Text
+    text_color_night: builtins.str
     """文案夜间色值"""
-
-    bg_color: typing.Text
+    bg_color: builtins.str
     """背景日间色值"""
-
-    bg_color_night: typing.Text
+    bg_color_night: builtins.str
     """背景夜间色值"""
-
-    border_color: typing.Text
+    border_color: builtins.str
     """边框日间色值"""
-
-    border_color_night: typing.Text
+    border_color_night: builtins.str
     """边框夜间色值"""
-
     bg_style: builtins.int
     """角标样式
     1:填充模式 2:镂空模式
     """
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        text: typing.Text = ...,
-        text_color: typing.Text = ...,
-        text_color_night: typing.Text = ...,
-        bg_color: typing.Text = ...,
-        bg_color_night: typing.Text = ...,
-        border_color: typing.Text = ...,
-        border_color_night: typing.Text = ...,
+        text: builtins.str = ...,
+        text_color: builtins.str = ...,
+        text_color_night: builtins.str = ...,
+        bg_color: builtins.str = ...,
+        bg_color_night: builtins.str = ...,
+        border_color: builtins.str = ...,
+        border_color_night: builtins.str = ...,
         bg_style: builtins.int = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bg_color",b"bg_color","bg_color_night",b"bg_color_night","bg_style",b"bg_style","border_color",b"border_color","border_color_night",b"border_color_night","text",b"text","text_color",b"text_color","text_color_night",b"text_color_night"]) -> None: ...
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "bg_style", b"bg_style", "border_color", b"border_color", "border_color_night", b"border_color_night", "text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night"]) -> None: ...
+
 global___ReasonStyle = ReasonStyle

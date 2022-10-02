@@ -5,14 +5,20 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
-import typing
-import typing_extensions
+import sys
+
+if sys.version_info >= (3, 8):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class AddContractReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     COMMON_FIELD_NUMBER: builtins.int
     MID_FIELD_NUMBER: builtins.int
     UP_MID_FIELD_NUMBER: builtins.int
@@ -20,30 +26,30 @@ class AddContractReq(google.protobuf.message.Message):
     @property
     def common(self) -> global___CommonReq:
         """"""
-        pass
     mid: builtins.int
     """"""
-
     up_mid: builtins.int
     """"""
-
     aid: builtins.int
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        common: typing.Optional[global___CommonReq] = ...,
+        common: global___CommonReq | None = ...,
         mid: builtins.int = ...,
         up_mid: builtins.int = ...,
         aid: builtins.int = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["common",b"common"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aid",b"aid","common",b"common","mid",b"mid","up_mid",b"up_mid"]) -> None: ...
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["common", b"common"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "common", b"common", "mid", b"mid", "up_mid", b"up_mid"]) -> None: ...
+
 global___AddContractReq = AddContractReq
 
 class CommonReq(google.protobuf.message.Message):
     """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PLATFORM_FIELD_NUMBER: builtins.int
     BUILD_FIELD_NUMBER: builtins.int
     BUVID_FIELD_NUMBER: builtins.int
@@ -51,36 +57,31 @@ class CommonReq(google.protobuf.message.Message):
     DEVICE_FIELD_NUMBER: builtins.int
     IP_FIELD_NUMBER: builtins.int
     SPMID_FIELD_NUMBER: builtins.int
-    platform: typing.Text
+    platform: builtins.str
     """"""
-
     build: builtins.int
     """"""
-
-    buvid: typing.Text
+    buvid: builtins.str
     """"""
-
-    mobi_app: typing.Text
+    mobi_app: builtins.str
     """"""
-
-    device: typing.Text
+    device: builtins.str
     """"""
-
-    ip: typing.Text
+    ip: builtins.str
     """"""
-
-    spmid: typing.Text
+    spmid: builtins.str
     """"""
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        platform: typing.Text = ...,
+        platform: builtins.str = ...,
         build: builtins.int = ...,
-        buvid: typing.Text = ...,
-        mobi_app: typing.Text = ...,
-        device: typing.Text = ...,
-        ip: typing.Text = ...,
-        spmid: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["build",b"build","buvid",b"buvid","device",b"device","ip",b"ip","mobi_app",b"mobi_app","platform",b"platform","spmid",b"spmid"]) -> None: ...
+        buvid: builtins.str = ...,
+        mobi_app: builtins.str = ...,
+        device: builtins.str = ...,
+        ip: builtins.str = ...,
+        spmid: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["build", b"build", "buvid", b"buvid", "device", b"device", "ip", b"ip", "mobi_app", b"mobi_app", "platform", b"platform", "spmid", b"spmid"]) -> None: ...
+
 global___CommonReq = CommonReq
