@@ -5,6 +5,7 @@ from typing import Union
 
 class VideoID:
     # 哔哩哔哩视频ID类
+    # TODO 对avid>=29460791296进行处理（虽然这种情况还很遥远）
     def __init__(self, id: Union[int, str]):
         if isinstance(id, int):
             self.aid = id
