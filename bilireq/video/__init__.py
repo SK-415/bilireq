@@ -1,15 +1,14 @@
 from typing import Union
-
 from bilireq.utils import get, post
 from bilireq.utils.av_bv import VideoID
 
 
 async def get_video_base_info(video_id: Union[int, str]):
     """获取哔哩哔哩视频基本信息"""
-    base_url = "https://api.bilibili.com/x/web-interface/view"
+    url = "https://api.bilibili.com/x/web-interface/view"
     vid = VideoID(video_id)
-    url = f"{base_url}?aid={vid.aid}"
-    return await get(url)
+    params = {"aid": vid.aid}
+    return await get(url, params=params)
 
 
 async def get_video_share(video_id: Union[int, str]):
