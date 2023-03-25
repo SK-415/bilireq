@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class AdInfo(google.protobuf.message.Message):
     """"""
 
@@ -93,6 +94,7 @@ class AdInfo(google.protobuf.message.Message):
 
 global___AdInfo = AdInfo
 
+@typing_extensions.final
 class CreativeContent(google.protobuf.message.Message):
     """"""
 

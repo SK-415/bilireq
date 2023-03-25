@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Metadata(google.protobuf.message.Message):
     """请求元数据
     gRPC头部:x-bili-metadata-bin
@@ -37,7 +38,7 @@ class Metadata(google.protobuf.message.Message):
     build: builtins.int
     """构建id"""
     channel: builtins.str
-    """渠道"""
+    """APP分发渠道"""
     buvid: builtins.str
     """设备buvid"""
     platform: builtins.str

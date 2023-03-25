@@ -4,6 +4,7 @@ isort:skip_file
 """
 import builtins
 import collections.abc
+import google.protobuf.any_pb2
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
@@ -17,447 +18,193 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
-class AdsControlDto(google.protobuf.message.Message):
-    """广告控制"""
+@typing_extensions.final
+class AdAutoPlayVideoDto(google.protobuf.message.Message):
+    """自动播放视频"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    HAS_DANMU_FIELD_NUMBER: builtins.int
-    CIDS_FIELD_NUMBER: builtins.int
-    EPS_FIELD_NUMBER: builtins.int
-    has_danmu: builtins.int
-    """视频是否有弹幕，如有，需请求弹幕广告"""
-    @property
-    def cids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
-        """有弹幕的分P视频的cid"""
-    @property
-    def eps(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AdOgvEpDto]:
-        """有弹幕的ogv ep"""
-    def __init__(
-        self,
-        *,
-        has_danmu: builtins.int = ...,
-        cids: collections.abc.Iterable[builtins.int] | None = ...,
-        eps: collections.abc.Iterable[global___AdOgvEpDto] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cids", b"cids", "eps", b"eps", "has_danmu", b"has_danmu"]) -> None: ...
-
-global___AdsControlDto = AdsControlDto
-
-class AdOgvEpDto(google.protobuf.message.Message):
-    """有弹幕的ogv ep"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EPID_FIELD_NUMBER: builtins.int
-    HAS_RECOMMEND_FIELD_NUMBER: builtins.int
-    epid: builtins.int
-    """分集epid"""
-    has_recommend: builtins.bool
-    """是否显示 "荐" """
-    def __init__(
-        self,
-        *,
-        epid: builtins.int = ...,
-        has_recommend: builtins.bool = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["epid", b"epid", "has_recommend", b"has_recommend"]) -> None: ...
-
-global___AdOgvEpDto = AdOgvEpDto
-
-class SourceContentDto(google.protobuf.message.Message):
-    """广告数据"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    REQUEST_ID_FIELD_NUMBER: builtins.int
-    SOURCE_ID_FIELD_NUMBER: builtins.int
-    RESOURCE_ID_FIELD_NUMBER: builtins.int
-    IS_AD_LOC_FIELD_NUMBER: builtins.int
-    SERVER_TYPE_FIELD_NUMBER: builtins.int
-    CLIENT_IP_FIELD_NUMBER: builtins.int
-    CARD_INDEX_FIELD_NUMBER: builtins.int
-    INDEX_FIELD_NUMBER: builtins.int
-    AD_CONTENT_FIELD_NUMBER: builtins.int
-    request_id: builtins.str
-    """广告请求id"""
-    source_id: builtins.int
-    """广告资源位source ID"""
-    resource_id: builtins.int
-    """广告资源位resource ID"""
-    is_ad_loc: builtins.bool
-    """广告位上报标记,对广告返回数据恒为true"""
-    @property
-    def server_type(self) -> google.protobuf.wrappers_pb2.Int32Value:
-        """与天马现有逻辑一致, 0有含义
-        0:内容 1:广告
-        """
-    client_ip: builtins.str
-    """客户端IP回传拼接"""
-    @property
-    def card_index(self) -> google.protobuf.wrappers_pb2.Int32Value:
-        """广告卡片位置在一刷中的位置, 天马用, 0有含义"""
-    index: builtins.int
-    """广告资源位source 位次"""
-    @property
-    def ad_content(self) -> global___AdDto:
-        """广告内容"""
-    def __init__(
-        self,
-        *,
-        request_id: builtins.str = ...,
-        source_id: builtins.int = ...,
-        resource_id: builtins.int = ...,
-        is_ad_loc: builtins.bool = ...,
-        server_type: google.protobuf.wrappers_pb2.Int32Value | None = ...,
-        client_ip: builtins.str = ...,
-        card_index: google.protobuf.wrappers_pb2.Int32Value | None = ...,
-        index: builtins.int = ...,
-        ad_content: global___AdDto | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["ad_content", b"ad_content", "card_index", b"card_index", "server_type", b"server_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ad_content", b"ad_content", "card_index", b"card_index", "client_ip", b"client_ip", "index", b"index", "is_ad_loc", b"is_ad_loc", "request_id", b"request_id", "resource_id", b"resource_id", "server_type", b"server_type", "source_id", b"source_id"]) -> None: ...
-
-global___SourceContentDto = SourceContentDto
-
-class AdDto(google.protobuf.message.Message):
-    """广告内容"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CREATIVE_ID_FIELD_NUMBER: builtins.int
-    AD_CB_FIELD_NUMBER: builtins.int
-    EXTRA_FIELD_NUMBER: builtins.int
-    CM_MARK_FIELD_NUMBER: builtins.int
-    TOP_VIEW_ID_FIELD_NUMBER: builtins.int
-    CREATIVE_TYPE_FIELD_NUMBER: builtins.int
-    CARD_TYPE_FIELD_NUMBER: builtins.int
-    CREATIVE_STYLE_FIELD_NUMBER: builtins.int
-    IS_AD_FIELD_NUMBER: builtins.int
-    CREATIVE_CONTENT_FIELD_NUMBER: builtins.int
-    creative_id: builtins.int
-    """广告创意ID"""
-    ad_cb: builtins.str
-    """广告闭环上报回传数据"""
-    @property
-    def extra(self) -> global___AdContentExtraDto:
-        """额外广告数据"""
-    cm_mark: builtins.int
-    """广告标记"""
-    top_view_id: builtins.int
-    """"""
-    creative_type: builtins.int
-    """"""
-    card_type: builtins.int
-    """"""
-    creative_style: builtins.int
-    """"""
-    is_ad: builtins.int
-    """"""
-    @property
-    def creative_content(self) -> global___CreativeDto:
-        """"""
-    def __init__(
-        self,
-        *,
-        creative_id: builtins.int = ...,
-        ad_cb: builtins.str = ...,
-        extra: global___AdContentExtraDto | None = ...,
-        cm_mark: builtins.int = ...,
-        top_view_id: builtins.int = ...,
-        creative_type: builtins.int = ...,
-        card_type: builtins.int = ...,
-        creative_style: builtins.int = ...,
-        is_ad: builtins.int = ...,
-        creative_content: global___CreativeDto | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["creative_content", b"creative_content", "extra", b"extra"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ad_cb", b"ad_cb", "card_type", b"card_type", "cm_mark", b"cm_mark", "creative_content", b"creative_content", "creative_id", b"creative_id", "creative_style", b"creative_style", "creative_type", b"creative_type", "extra", b"extra", "is_ad", b"is_ad", "top_view_id", b"top_view_id"]) -> None: ...
-
-global___AdDto = AdDto
-
-class AdContentExtraDto(google.protobuf.message.Message):
-    """额外广告数据"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    LAYOUT_FIELD_NUMBER: builtins.int
-    SHOW_URLS_FIELD_NUMBER: builtins.int
-    CLICK_URLS_FIELD_NUMBER: builtins.int
-    DANMU_LIST_SHOW_URLS_FIELD_NUMBER: builtins.int
-    DANMU_LIST_CLICK_URLS_FIELD_NUMBER: builtins.int
-    DANMU_DETAIL_SHOW_URLS_FIELD_NUMBER: builtins.int
-    DANMU_TROLLEY_ADD_URLS_FIELD_NUMBER: builtins.int
-    USE_AD_WEB_V2_FIELD_NUMBER: builtins.int
-    OPEN_WHITELIST_FIELD_NUMBER: builtins.int
-    DOWNLOAD_WHITELIST_FIELD_NUMBER: builtins.int
-    CARD_FIELD_NUMBER: builtins.int
-    REPORT_TIME_FIELD_NUMBER: builtins.int
-    APPSTORE_PRIORITY_FIELD_NUMBER: builtins.int
-    SALES_TYPE_FIELD_NUMBER: builtins.int
-    PRELOAD_LANDINGPAGE_FIELD_NUMBER: builtins.int
-    SPECIAL_INDUSTRY_FIELD_NUMBER: builtins.int
-    SPECIAL_INDUSTRY_TIPS_FIELD_NUMBER: builtins.int
-    ENABLE_DOWNLOAD_DIALOG_FIELD_NUMBER: builtins.int
-    ENABLE_SHARE_FIELD_NUMBER: builtins.int
-    UPZONE_ENTRANCE_TYPE_FIELD_NUMBER: builtins.int
-    UPZONE_ENTRANCE_REPORT_ID_FIELD_NUMBER: builtins.int
-    SHARE_INFO_FIELD_NUMBER: builtins.int
-    TOPVIEW_PIC_URL_FIELD_NUMBER: builtins.int
-    TOPVIEW_VIDEO_URL_FIELD_NUMBER: builtins.int
-    CLICK_AREA_FIELD_NUMBER: builtins.int
-    SHOP_ID_FIELD_NUMBER: builtins.int
-    UP_MID_FIELD_NUMBER: builtins.int
-    TRACK_ID_FIELD_NUMBER: builtins.int
-    ENABLE_STORE_DIRECT_LAUNCH_FIELD_NUMBER: builtins.int
-    PRODUCT_ID_FIELD_NUMBER: builtins.int
-    layout: builtins.str
-    """动态布局"""
-    @property
-    def show_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """展现监控url"""
-    @property
-    def click_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """点击监控url"""
-    @property
-    def danmu_list_show_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """弹幕创意列表展示第三方上报"""
-    @property
-    def danmu_list_click_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """弹幕创意列表点击第三方上报"""
-    @property
-    def danmu_detail_show_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """弹幕详情页展示第三方上报"""
-    @property
-    def danmu_trolley_add_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """弹幕商品添加购物车第三方上报"""
-    use_ad_web_v2: builtins.bool
-    """useWebView默认false"""
-    @property
-    def open_whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """app唤起白名单"""
-    @property
-    def download_whitelist(self) -> global___AppPackageDto:
-        """app下载白名单"""
-    @property
-    def card(self) -> global___AdCardDto:
-        """卡片相关信息"""
-    report_time: builtins.int
-    """视频播放和弹幕播放上报控制时间 ms"""
-    appstore_priority: builtins.int
-    """是否优先唤起app store"""
-    sales_type: builtins.int
-    """广告售卖类型"""
-    preload_landingpage: builtins.int
-    """落地页是否预加载"""
-    special_industry: builtins.bool
-    """是否需要展示风险行业提示"""
-    special_industry_tips: builtins.str
-    """风险行业提示"""
-    enable_download_dialog: builtins.bool
-    """是否展示下载弹框"""
-    enable_share: builtins.bool
-    """是否允许分享"""
-    upzone_entrance_type: builtins.int
-    """个人空间广告入口类型
-    1:橱窗 2:商品店铺 3:小程序
-    """
-    upzone_entrance_report_id: builtins.int
-    """个人空间广告入口上报id,橱窗id(当前用Mid)、店铺id或者小程序id"""
-    @property
-    def share_info(self) -> global___AdShareInfoDto:
-        """分享数据"""
-    topview_pic_url: builtins.str
-    """topview图片链接，闪屏预下载用"""
-    topview_video_url: builtins.str
-    """topview视频链接，闪屏预下载用"""
-    click_area: builtins.int
-    """点击区域
-    0:表示banner可点击 1:表示素材可点击
-    """
-    shop_id: builtins.int
-    """店铺"""
-    up_mid: builtins.int
-    """up主"""
-    track_id: builtins.str
-    """回传id"""
-    enable_store_direct_launch: builtins.int
-    """商店直投"""
-    product_id: builtins.int
-    """DPA2.0商品ID"""
-    def __init__(
-        self,
-        *,
-        layout: builtins.str = ...,
-        show_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        click_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        danmu_list_show_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        danmu_list_click_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        danmu_detail_show_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        danmu_trolley_add_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        use_ad_web_v2: builtins.bool = ...,
-        open_whitelist: collections.abc.Iterable[builtins.str] | None = ...,
-        download_whitelist: global___AppPackageDto | None = ...,
-        card: global___AdCardDto | None = ...,
-        report_time: builtins.int = ...,
-        appstore_priority: builtins.int = ...,
-        sales_type: builtins.int = ...,
-        preload_landingpage: builtins.int = ...,
-        special_industry: builtins.bool = ...,
-        special_industry_tips: builtins.str = ...,
-        enable_download_dialog: builtins.bool = ...,
-        enable_share: builtins.bool = ...,
-        upzone_entrance_type: builtins.int = ...,
-        upzone_entrance_report_id: builtins.int = ...,
-        share_info: global___AdShareInfoDto | None = ...,
-        topview_pic_url: builtins.str = ...,
-        topview_video_url: builtins.str = ...,
-        click_area: builtins.int = ...,
-        shop_id: builtins.int = ...,
-        up_mid: builtins.int = ...,
-        track_id: builtins.str = ...,
-        enable_store_direct_launch: builtins.int = ...,
-        product_id: builtins.int = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["card", b"card", "download_whitelist", b"download_whitelist", "share_info", b"share_info"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["appstore_priority", b"appstore_priority", "card", b"card", "click_area", b"click_area", "click_urls", b"click_urls", "danmu_detail_show_urls", b"danmu_detail_show_urls", "danmu_list_click_urls", b"danmu_list_click_urls", "danmu_list_show_urls", b"danmu_list_show_urls", "danmu_trolley_add_urls", b"danmu_trolley_add_urls", "download_whitelist", b"download_whitelist", "enable_download_dialog", b"enable_download_dialog", "enable_share", b"enable_share", "enable_store_direct_launch", b"enable_store_direct_launch", "layout", b"layout", "open_whitelist", b"open_whitelist", "preload_landingpage", b"preload_landingpage", "product_id", b"product_id", "report_time", b"report_time", "sales_type", b"sales_type", "share_info", b"share_info", "shop_id", b"shop_id", "show_urls", b"show_urls", "special_industry", b"special_industry", "special_industry_tips", b"special_industry_tips", "topview_pic_url", b"topview_pic_url", "topview_video_url", b"topview_video_url", "track_id", b"track_id", "up_mid", b"up_mid", "upzone_entrance_report_id", b"upzone_entrance_report_id", "upzone_entrance_type", b"upzone_entrance_type", "use_ad_web_v2", b"use_ad_web_v2"]) -> None: ...
-
-global___AdContentExtraDto = AdContentExtraDto
-
-class CreativeDto(google.protobuf.message.Message):
-    """"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TITLE_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    IMAGE_URL_FIELD_NUMBER: builtins.int
-    IMAGE_MD5_FIELD_NUMBER: builtins.int
+    AVID_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    PAGE_FIELD_NUMBER: builtins.int
+    FROM_FIELD_NUMBER: builtins.int
     URL_FIELD_NUMBER: builtins.int
-    CLICK_URL_FIELD_NUMBER: builtins.int
-    SHOW_URL_FIELD_NUMBER: builtins.int
-    VIDEO_ID_FIELD_NUMBER: builtins.int
-    THUMBNAIL_URL_FIELD_NUMBER: builtins.int
-    THUMBNAIL_URL_MD5_FIELD_NUMBER: builtins.int
-    LOGO_URL_FIELD_NUMBER: builtins.int
-    LOGO_MD5_FIELD_NUMBER: builtins.int
-    USERNAME_FIELD_NUMBER: builtins.int
-    title: builtins.str
-    """"""
-    description: builtins.str
-    """"""
-    image_url: builtins.str
-    """"""
-    image_md5: builtins.str
-    """"""
+    COVER_FIELD_NUMBER: builtins.int
+    AUTO_PLAY_FIELD_NUMBER: builtins.int
+    BTN_DYC_COLOR_FIELD_NUMBER: builtins.int
+    BTN_DYC_TIME_FIELD_NUMBER: builtins.int
+    BIZ_ID_FIELD_NUMBER: builtins.int
+    PROCESS0_URLS_FIELD_NUMBER: builtins.int
+    PLAY_3S_URLS_FIELD_NUMBER: builtins.int
+    PLAY_5S_URLS_FIELD_NUMBER: builtins.int
+    ORIENTATION_FIELD_NUMBER: builtins.int
+    avid: builtins.int
+    """avid"""
+    cid: builtins.int
+    """cid"""
+    page: builtins.int
+    """分P"""
     url: builtins.str
-    """"""
-    click_url: builtins.str
-    """"""
-    show_url: builtins.str
-    """"""
-    video_id: builtins.int
-    """"""
-    thumbnail_url: builtins.str
-    """"""
-    thumbnail_url_md5: builtins.str
-    """"""
-    logo_url: builtins.str
-    """"""
-    logo_md5: builtins.str
-    """"""
-    username: builtins.str
-    """"""
+    """是否自动播放"""
+    cover: builtins.str
+    """是否自动播放"""
+    auto_play: builtins.bool
+    """是否自动播放"""
+    btn_dyc_color: builtins.bool
+    """按钮是否动态变色"""
+    btn_dyc_time: builtins.int
+    """按钮动态变色时间 ms"""
+    biz_id: builtins.int
+    """用于做联播是否是同一个视频的id"""
+    @property
+    def process0_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """开始播放三方监控"""
+    @property
+    def play_3s_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """播放3S三方监控"""
+    @property
+    def play_5s_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """播放5S三方监控"""
+    orientation: builtins.int
+    """横竖屏"""
     def __init__(
         self,
         *,
-        title: builtins.str = ...,
-        description: builtins.str = ...,
-        image_url: builtins.str = ...,
-        image_md5: builtins.str = ...,
+        avid: builtins.int = ...,
+        cid: builtins.int = ...,
+        page: builtins.int = ...,
         url: builtins.str = ...,
-        click_url: builtins.str = ...,
-        show_url: builtins.str = ...,
-        video_id: builtins.int = ...,
-        thumbnail_url: builtins.str = ...,
-        thumbnail_url_md5: builtins.str = ...,
-        logo_url: builtins.str = ...,
-        logo_md5: builtins.str = ...,
-        username: builtins.str = ...,
+        cover: builtins.str = ...,
+        auto_play: builtins.bool = ...,
+        btn_dyc_color: builtins.bool = ...,
+        btn_dyc_time: builtins.int = ...,
+        biz_id: builtins.int = ...,
+        process0_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        play_3s_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        play_5s_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        orientation: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["click_url", b"click_url", "description", b"description", "image_md5", b"image_md5", "image_url", b"image_url", "logo_md5", b"logo_md5", "logo_url", b"logo_url", "show_url", b"show_url", "thumbnail_url", b"thumbnail_url", "thumbnail_url_md5", b"thumbnail_url_md5", "title", b"title", "url", b"url", "username", b"username", "video_id", b"video_id"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["auto_play", b"auto_play", "avid", b"avid", "biz_id", b"biz_id", "btn_dyc_color", b"btn_dyc_color", "btn_dyc_time", b"btn_dyc_time", "cid", b"cid", "cover", b"cover", "from", b"from", "orientation", b"orientation", "page", b"page", "play_3s_urls", b"play_3s_urls", "play_5s_urls", b"play_5s_urls", "process0_urls", b"process0_urls", "url", b"url"]) -> None: ...
 
-global___CreativeDto = CreativeDto
+global___AdAutoPlayVideoDto = AdAutoPlayVideoDto
 
-class AppPackageDto(google.protobuf.message.Message):
-    """app下载白名单"""
+@typing_extensions.final
+class AdBusinessMarkDto(google.protobuf.message.Message):
+    """商业标信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    SIZE_FIELD_NUMBER: builtins.int
-    DISPLAY_NAME_FIELD_NUMBER: builtins.int
-    APK_NAME_FIELD_NUMBER: builtins.int
-    URL_FIELD_NUMBER: builtins.int
-    BILI_URL_FIELD_NUMBER: builtins.int
-    MD5_FIELD_NUMBER: builtins.int
-    ICON_FIELD_NUMBER: builtins.int
-    DEV_NAME_FIELD_NUMBER: builtins.int
-    AUTH_URL_FIELD_NUMBER: builtins.int
-    AUTH_NAME_FIELD_NUMBER: builtins.int
-    VERSION_FIELD_NUMBER: builtins.int
-    UPDATE_TIME_FIELD_NUMBER: builtins.int
-    PRIVACY_NAME_FIELD_NUMBER: builtins.int
-    PRIVACY_URL_FIELD_NUMBER: builtins.int
-    size: builtins.int
-    """包大小(单位bytes)"""
-    display_name: builtins.str
+    TYPE_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_NIGHT_FIELD_NUMBER: builtins.int
+    BG_COLOR_FIELD_NUMBER: builtins.int
+    BG_COLOR_NIGHT_FIELD_NUMBER: builtins.int
+    BORDER_COLOR_FIELD_NUMBER: builtins.int
+    BORDER_COLOR_NIGHT_FIELD_NUMBER: builtins.int
+    IMG_URL_FIELD_NUMBER: builtins.int
+    IMG_HEIGHT_FIELD_NUMBER: builtins.int
+    IMG_WIDTH_FIELD_NUMBER: builtins.int
+    BG_BORDER_COLOR_FIELD_NUMBER: builtins.int
+    type: builtins.int
+    """商业标样式
+    0:不展示标 1:实心+文字 2:空心框+文字 3:纯文字标 4:纯图片标
+    """
+    text: builtins.str
+    """商业标文案"""
+    text_color: builtins.str
+    """商业标文案颜色,如#80FFFFFF RGBA"""
+    text_color_night: builtins.str
+    """夜间模式文字色"""
+    bg_color: builtins.str
+    """背景色"""
+    bg_color_night: builtins.str
+    """夜间模式背景色"""
+    border_color: builtins.str
+    """边框色"""
+    border_color_night: builtins.str
+    """夜间模式边框色"""
+    img_url: builtins.str
+    """图片商业标"""
+    img_height: builtins.int
+    """图片高度"""
+    img_width: builtins.int
+    """图片宽度"""
+    bg_border_color: builtins.str
     """"""
-    apk_name: builtins.str
-    """"""
-    url: builtins.str
-    """url"""
-    bili_url: builtins.str
-    """bili schema url"""
-    md5: builtins.str
-    """包md5"""
-    icon: builtins.str
-    """包icon"""
-    dev_name: builtins.str
-    """开发者姓名"""
-    auth_url: builtins.str
-    """权限地址"""
-    auth_name: builtins.str
-    """权限名，逗号隔开"""
-    version: builtins.str
-    """版本"""
-    update_time: builtins.str
-    """更新时间,yy-mm-hh格式"""
-    privacy_name: builtins.str
-    """隐私协议标题"""
-    privacy_url: builtins.str
-    """隐私协议url"""
     def __init__(
         self,
         *,
-        size: builtins.int = ...,
-        display_name: builtins.str = ...,
-        apk_name: builtins.str = ...,
-        url: builtins.str = ...,
-        bili_url: builtins.str = ...,
-        md5: builtins.str = ...,
-        icon: builtins.str = ...,
-        dev_name: builtins.str = ...,
-        auth_url: builtins.str = ...,
-        auth_name: builtins.str = ...,
-        version: builtins.str = ...,
-        update_time: builtins.str = ...,
-        privacy_name: builtins.str = ...,
-        privacy_url: builtins.str = ...,
+        type: builtins.int = ...,
+        text: builtins.str = ...,
+        text_color: builtins.str = ...,
+        text_color_night: builtins.str = ...,
+        bg_color: builtins.str = ...,
+        bg_color_night: builtins.str = ...,
+        border_color: builtins.str = ...,
+        border_color_night: builtins.str = ...,
+        img_url: builtins.str = ...,
+        img_height: builtins.int = ...,
+        img_width: builtins.int = ...,
+        bg_border_color: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["apk_name", b"apk_name", "auth_name", b"auth_name", "auth_url", b"auth_url", "bili_url", b"bili_url", "dev_name", b"dev_name", "display_name", b"display_name", "icon", b"icon", "md5", b"md5", "privacy_name", b"privacy_name", "privacy_url", b"privacy_url", "size", b"size", "update_time", b"update_time", "url", b"url", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_border_color", b"bg_border_color", "bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "border_color", b"border_color", "border_color_night", b"border_color_night", "img_height", b"img_height", "img_url", b"img_url", "img_width", b"img_width", "text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night", "type", b"type"]) -> None: ...
 
-global___AppPackageDto = AppPackageDto
+global___AdBusinessMarkDto = AdBusinessMarkDto
 
+@typing_extensions.final
+class AdButtonDto(google.protobuf.message.Message):
+    """按钮"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TYPE_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    JUMP_URL_FIELD_NUMBER: builtins.int
+    REPORT_URLS_FIELD_NUMBER: builtins.int
+    DLSUC_CALLUP_URL_FIELD_NUMBER: builtins.int
+    GAME_ID_FIELD_NUMBER: builtins.int
+    GAME_MONITOR_PARAM_FIELD_NUMBER: builtins.int
+    GAME_CHANNEL_ID_FIELD_NUMBER: builtins.int
+    GAME_CHANNEL_EXTRA_FIELD_NUMBER: builtins.int
+    type: builtins.int
+    """类型
+    1:落地页 2:应用唤起 3:应用下载
+    """
+    text: builtins.str
+    """按钮文案"""
+    jump_url: builtins.str
+    """按钮跳转地址"""
+    report_urls: builtins.str
+    """跳转监测链接"""
+    dlsuc_callup_url: builtins.str
+    """唤起schema"""
+    game_id: builtins.int
+    """游戏id"""
+    game_monitor_param: builtins.str
+    """游戏监控字段"""
+    game_channel_id: builtins.int
+    """"""
+    game_channel_extra: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        type: builtins.int = ...,
+        text: builtins.str = ...,
+        jump_url: builtins.str = ...,
+        report_urls: builtins.str = ...,
+        dlsuc_callup_url: builtins.str = ...,
+        game_id: builtins.int = ...,
+        game_monitor_param: builtins.str = ...,
+        game_channel_id: builtins.int = ...,
+        game_channel_extra: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["dlsuc_callup_url", b"dlsuc_callup_url", "game_channel_extra", b"game_channel_extra", "game_channel_id", b"game_channel_id", "game_id", b"game_id", "game_monitor_param", b"game_monitor_param", "jump_url", b"jump_url", "report_urls", b"report_urls", "text", b"text", "type", b"type"]) -> None: ...
+
+global___AdButtonDto = AdButtonDto
+
+@typing_extensions.final
 class AdCardDto(google.protobuf.message.Message):
     """卡片"""
 
@@ -508,6 +255,22 @@ class AdCardDto(google.protobuf.message.Message):
     DYNAMIC_TEXT_FIELD_NUMBER: builtins.int
     ADVER_FIELD_NUMBER: builtins.int
     GRADE_LEVEL_FIELD_NUMBER: builtins.int
+    SUPPORT_TRANSITION_FIELD_NUMBER: builtins.int
+    TRANSITION_FIELD_NUMBER: builtins.int
+    UNDER_PLAYER_INTERACTION_STYLE_FIELD_NUMBER: builtins.int
+    IMAX_LANDING_PAGE_V2_FIELD_NUMBER: builtins.int
+    SUBCARD_MODULE_FIELD_NUMBER: builtins.int
+    GRADE_DENOMINATOR_FIELD_NUMBER: builtins.int
+    STAR_LEVEL_FIELD_NUMBER: builtins.int
+    BULLETIN_FIELD_NUMBER: builtins.int
+    GIFT_FIELD_NUMBER: builtins.int
+    GAME_TAGS_FIELD_NUMBER: builtins.int
+    ORI_MARK_HIDDEN_FIELD_NUMBER: builtins.int
+    USE_MULTI_COVER_FIELD_NUMBER: builtins.int
+    WX_PROGRAM_INFO_FIELD_NUMBER: builtins.int
+    ANDROID_GAME_PAGE_RES_FIELD_NUMBER: builtins.int
+    NOT_CLICKABLE_AREA_FIELD_NUMBER: builtins.int
+    FORWARD_REPLY_FIELD_NUMBER: builtins.int
     card_type: builtins.int
     """卡片类型"""
     title: builtins.str
@@ -607,6 +370,46 @@ class AdCardDto(google.protobuf.message.Message):
         """广告主信息"""
     grade_level: builtins.int
     """评分"""
+    support_transition: builtins.bool
+    """"""
+    transition: builtins.str
+    """"""
+    under_player_interaction_style: builtins.int
+    """"""
+    imax_landing_page_v2: builtins.str
+    """"""
+    @property
+    def subcard_module(self) -> global___SubCardModule:
+        """"""
+    grade_denominator: builtins.int
+    """"""
+    star_level: builtins.int
+    """"""
+    @property
+    def bulletin(self) -> global___Bulletin:
+        """"""
+    @property
+    def gift(self) -> global___Gift:
+        """"""
+    @property
+    def game_tags(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    ori_mark_hidden: builtins.int
+    """"""
+    use_multi_cover: builtins.bool
+    """"""
+    @property
+    def wx_program_info(self) -> global___WxProgramInfo:
+        """"""
+    @property
+    def android_game_page_res(self) -> global___AndroidGamePageRes:
+        """"""
+    @property
+    def not_clickable_area(self) -> global___NotClickableArea:
+        """"""
+    @property
+    def forward_reply(self) -> global___ForwardReply:
+        """"""
     def __init__(
         self,
         *,
@@ -655,37 +458,231 @@ class AdCardDto(google.protobuf.message.Message):
         dynamic_text: builtins.str = ...,
         adver: global___AdverDto | None = ...,
         grade_level: builtins.int = ...,
+        support_transition: builtins.bool = ...,
+        transition: builtins.str = ...,
+        under_player_interaction_style: builtins.int = ...,
+        imax_landing_page_v2: builtins.str = ...,
+        subcard_module: global___SubCardModule | None = ...,
+        grade_denominator: builtins.int = ...,
+        star_level: builtins.int = ...,
+        bulletin: global___Bulletin | None = ...,
+        gift: global___Gift | None = ...,
+        game_tags: collections.abc.Iterable[builtins.str] | None = ...,
+        ori_mark_hidden: builtins.int = ...,
+        use_multi_cover: builtins.bool = ...,
+        wx_program_info: global___WxProgramInfo | None = ...,
+        android_game_page_res: global___AndroidGamePageRes | None = ...,
+        not_clickable_area: global___NotClickableArea | None = ...,
+        forward_reply: global___ForwardReply | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["ad_tag_style", b"ad_tag_style", "adver", b"adver", "button", b"button", "feedback_panel", b"feedback_panel", "good", b"good", "video", b"video"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ad_tag", b"ad_tag", "ad_tag_style", b"ad_tag_style", "adver", b"adver", "adver_account_id", b"adver_account_id", "adver_logo", b"adver_logo", "adver_mid", b"adver_mid", "adver_name", b"adver_name", "adver_page_url", b"adver_page_url", "button", b"button", "callup_url", b"callup_url", "card_type", b"card_type", "covers", b"covers", "cur_price", b"cur_price", "danmu_begin", b"danmu_begin", "danmu_color", b"danmu_color", "danmu_h5url", b"danmu_h5url", "danmu_height", b"danmu_height", "danmu_icon", b"danmu_icon", "danmu_life", b"danmu_life", "danmu_title", b"danmu_title", "danmu_width", b"danmu_width", "desc", b"desc", "duration", b"duration", "dynamic_text", b"dynamic_text", "extra_desc", b"extra_desc", "feedback_panel", b"feedback_panel", "fold_time", b"fold_time", "good", b"good", "goods_cur_price", b"goods_cur_price", "goods_ori_price", b"goods_ori_price", "grade_level", b"grade_level", "hot_score", b"hot_score", "imax_landing_page_json_string", b"imax_landing_page_json_string", "jump_url", b"jump_url", "long_desc", b"long_desc", "ori_price", b"ori_price", "price_desc", b"price_desc", "price_symbol", b"price_symbol", "quality_infos", b"quality_infos", "rank", b"rank", "short_title", b"short_title", "title", b"title", "universal_app", b"universal_app", "video", b"video", "video_barrage", b"video_barrage"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["ad_tag_style", b"ad_tag_style", "adver", b"adver", "android_game_page_res", b"android_game_page_res", "bulletin", b"bulletin", "button", b"button", "feedback_panel", b"feedback_panel", "forward_reply", b"forward_reply", "gift", b"gift", "good", b"good", "not_clickable_area", b"not_clickable_area", "subcard_module", b"subcard_module", "video", b"video", "wx_program_info", b"wx_program_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ad_tag", b"ad_tag", "ad_tag_style", b"ad_tag_style", "adver", b"adver", "adver_account_id", b"adver_account_id", "adver_logo", b"adver_logo", "adver_mid", b"adver_mid", "adver_name", b"adver_name", "adver_page_url", b"adver_page_url", "android_game_page_res", b"android_game_page_res", "bulletin", b"bulletin", "button", b"button", "callup_url", b"callup_url", "card_type", b"card_type", "covers", b"covers", "cur_price", b"cur_price", "danmu_begin", b"danmu_begin", "danmu_color", b"danmu_color", "danmu_h5url", b"danmu_h5url", "danmu_height", b"danmu_height", "danmu_icon", b"danmu_icon", "danmu_life", b"danmu_life", "danmu_title", b"danmu_title", "danmu_width", b"danmu_width", "desc", b"desc", "duration", b"duration", "dynamic_text", b"dynamic_text", "extra_desc", b"extra_desc", "feedback_panel", b"feedback_panel", "fold_time", b"fold_time", "forward_reply", b"forward_reply", "game_tags", b"game_tags", "gift", b"gift", "good", b"good", "goods_cur_price", b"goods_cur_price", "goods_ori_price", b"goods_ori_price", "grade_denominator", b"grade_denominator", "grade_level", b"grade_level", "hot_score", b"hot_score", "imax_landing_page_json_string", b"imax_landing_page_json_string", "imax_landing_page_v2", b"imax_landing_page_v2", "jump_url", b"jump_url", "long_desc", b"long_desc", "not_clickable_area", b"not_clickable_area", "ori_mark_hidden", b"ori_mark_hidden", "ori_price", b"ori_price", "price_desc", b"price_desc", "price_symbol", b"price_symbol", "quality_infos", b"quality_infos", "rank", b"rank", "short_title", b"short_title", "star_level", b"star_level", "subcard_module", b"subcard_module", "support_transition", b"support_transition", "title", b"title", "transition", b"transition", "under_player_interaction_style", b"under_player_interaction_style", "universal_app", b"universal_app", "use_multi_cover", b"use_multi_cover", "video", b"video", "video_barrage", b"video_barrage", "wx_program_info", b"wx_program_info"]) -> None: ...
 
 global___AdCardDto = AdCardDto
 
-class AdShareInfoDto(google.protobuf.message.Message):
-    """分享"""
+@typing_extensions.final
+class AdContentExtraDto(google.protobuf.message.Message):
+    """额外广告数据"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    TITLE_FIELD_NUMBER: builtins.int
-    SUBTITLE_FIELD_NUMBER: builtins.int
-    IMAGE_URL_FIELD_NUMBER: builtins.int
-    title: builtins.str
-    """分享标题"""
-    subtitle: builtins.str
-    """分享副标题"""
-    image_url: builtins.str
-    """分享图片url"""
+    LAYOUT_FIELD_NUMBER: builtins.int
+    SHOW_URLS_FIELD_NUMBER: builtins.int
+    CLICK_URLS_FIELD_NUMBER: builtins.int
+    DANMU_LIST_SHOW_URLS_FIELD_NUMBER: builtins.int
+    DANMU_LIST_CLICK_URLS_FIELD_NUMBER: builtins.int
+    DANMU_DETAIL_SHOW_URLS_FIELD_NUMBER: builtins.int
+    DANMU_TROLLEY_ADD_URLS_FIELD_NUMBER: builtins.int
+    USE_AD_WEB_V2_FIELD_NUMBER: builtins.int
+    OPEN_WHITELIST_FIELD_NUMBER: builtins.int
+    DOWNLOAD_WHITELIST_FIELD_NUMBER: builtins.int
+    CARD_FIELD_NUMBER: builtins.int
+    REPORT_TIME_FIELD_NUMBER: builtins.int
+    APPSTORE_PRIORITY_FIELD_NUMBER: builtins.int
+    SALES_TYPE_FIELD_NUMBER: builtins.int
+    PRELOAD_LANDINGPAGE_FIELD_NUMBER: builtins.int
+    SPECIAL_INDUSTRY_FIELD_NUMBER: builtins.int
+    SPECIAL_INDUSTRY_TIPS_FIELD_NUMBER: builtins.int
+    ENABLE_DOWNLOAD_DIALOG_FIELD_NUMBER: builtins.int
+    ENABLE_SHARE_FIELD_NUMBER: builtins.int
+    UPZONE_ENTRANCE_TYPE_FIELD_NUMBER: builtins.int
+    UPZONE_ENTRANCE_REPORT_ID_FIELD_NUMBER: builtins.int
+    SHARE_INFO_FIELD_NUMBER: builtins.int
+    TOPVIEW_PIC_URL_FIELD_NUMBER: builtins.int
+    TOPVIEW_VIDEO_URL_FIELD_NUMBER: builtins.int
+    CLICK_AREA_FIELD_NUMBER: builtins.int
+    SHOP_ID_FIELD_NUMBER: builtins.int
+    UP_MID_FIELD_NUMBER: builtins.int
+    TRACK_ID_FIELD_NUMBER: builtins.int
+    ENABLE_STORE_DIRECT_LAUNCH_FIELD_NUMBER: builtins.int
+    PRODUCT_ID_FIELD_NUMBER: builtins.int
+    ENABLE_DOUBLE_JUMP_FIELD_NUMBER: builtins.int
+    SHOW1S_URLS_FIELD_NUMBER: builtins.int
+    FROM_TRACK_ID_FIELD_NUMBER: builtins.int
+    STORE_CALLUP_CARD_FIELD_NUMBER: builtins.int
+    LANDINGPAGE_DOWNLOAD_STYLE_FIELD_NUMBER: builtins.int
+    SPECIAL_INDUSTRY_STYLE_FIELD_NUMBER: builtins.int
+    ENABLE_H5_ALERT_FIELD_NUMBER: builtins.int
+    MACRO_REPLACE_PRIORITY_FIELD_NUMBER: builtins.int
+    FEEDBACK_PANEL_STYLE_FIELD_NUMBER: builtins.int
+    APPSTORE_URL_FIELD_NUMBER: builtins.int
+    ENABLE_H5_PRE_LOAD_FIELD_NUMBER: builtins.int
+    H5_PRE_LOAD_URL_FIELD_NUMBER: builtins.int
+    CM_FROM_TRACK_ID_FIELD_NUMBER: builtins.int
+    layout: builtins.str
+    """动态布局"""
+    @property
+    def show_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """展现监控url"""
+    @property
+    def click_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """点击监控url"""
+    @property
+    def danmu_list_show_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """弹幕创意列表展示第三方上报"""
+    @property
+    def danmu_list_click_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """弹幕创意列表点击第三方上报"""
+    @property
+    def danmu_detail_show_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """弹幕详情页展示第三方上报"""
+    @property
+    def danmu_trolley_add_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """弹幕商品添加购物车第三方上报"""
+    use_ad_web_v2: builtins.bool
+    """useWebView默认false"""
+    @property
+    def open_whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """app唤起白名单"""
+    @property
+    def download_whitelist(self) -> global___AppPackageDto:
+        """app下载白名单"""
+    @property
+    def card(self) -> global___AdCardDto:
+        """卡片相关信息"""
+    report_time: builtins.int
+    """视频播放和弹幕播放上报控制时间 ms"""
+    appstore_priority: builtins.int
+    """是否优先唤起app store"""
+    sales_type: builtins.int
+    """广告售卖类型"""
+    preload_landingpage: builtins.int
+    """落地页是否预加载"""
+    special_industry: builtins.bool
+    """是否需要展示风险行业提示"""
+    special_industry_tips: builtins.str
+    """风险行业提示"""
+    enable_download_dialog: builtins.bool
+    """是否展示下载弹框"""
+    enable_share: builtins.bool
+    """是否允许分享"""
+    upzone_entrance_type: builtins.int
+    """个人空间广告入口类型
+    1:橱窗 2:商品店铺 3:小程序
+    """
+    upzone_entrance_report_id: builtins.int
+    """个人空间广告入口上报id,橱窗id(当前用Mid)、店铺id或者小程序id"""
+    @property
+    def share_info(self) -> global___AdShareInfoDto:
+        """分享数据"""
+    topview_pic_url: builtins.str
+    """topview图片链接，闪屏预下载用"""
+    topview_video_url: builtins.str
+    """topview视频链接，闪屏预下载用"""
+    click_area: builtins.int
+    """点击区域
+    0:表示banner可点击 1:表示素材可点击
+    """
+    shop_id: builtins.int
+    """店铺"""
+    up_mid: builtins.int
+    """up主"""
+    track_id: builtins.str
+    """回传id"""
+    enable_store_direct_launch: builtins.int
+    """商店直投"""
+    product_id: builtins.int
+    """DPA2.0商品ID"""
+    enable_double_jump: builtins.bool
+    """"""
+    @property
+    def show1s_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    from_track_id: builtins.str
+    """"""
+    store_callup_card: builtins.bool
+    """"""
+    landingpage_download_style: builtins.int
+    """"""
+    special_industry_style: builtins.int
+    """"""
+    enable_h5_alert: builtins.bool
+    """"""
+    macro_replace_priority: builtins.int
+    """"""
+    feedback_panel_style: builtins.int
+    """"""
+    appstore_url: builtins.str
+    """"""
+    enable_h5_pre_load: builtins.int
+    """"""
+    h5_pre_load_url: builtins.str
+    """"""
+    cm_from_track_id: builtins.str
+    """"""
     def __init__(
         self,
         *,
-        title: builtins.str = ...,
-        subtitle: builtins.str = ...,
-        image_url: builtins.str = ...,
+        layout: builtins.str = ...,
+        show_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        click_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        danmu_list_show_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        danmu_list_click_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        danmu_detail_show_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        danmu_trolley_add_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        use_ad_web_v2: builtins.bool = ...,
+        open_whitelist: collections.abc.Iterable[builtins.str] | None = ...,
+        download_whitelist: global___AppPackageDto | None = ...,
+        card: global___AdCardDto | None = ...,
+        report_time: builtins.int = ...,
+        appstore_priority: builtins.int = ...,
+        sales_type: builtins.int = ...,
+        preload_landingpage: builtins.int = ...,
+        special_industry: builtins.bool = ...,
+        special_industry_tips: builtins.str = ...,
+        enable_download_dialog: builtins.bool = ...,
+        enable_share: builtins.bool = ...,
+        upzone_entrance_type: builtins.int = ...,
+        upzone_entrance_report_id: builtins.int = ...,
+        share_info: global___AdShareInfoDto | None = ...,
+        topview_pic_url: builtins.str = ...,
+        topview_video_url: builtins.str = ...,
+        click_area: builtins.int = ...,
+        shop_id: builtins.int = ...,
+        up_mid: builtins.int = ...,
+        track_id: builtins.str = ...,
+        enable_store_direct_launch: builtins.int = ...,
+        product_id: builtins.int = ...,
+        enable_double_jump: builtins.bool = ...,
+        show1s_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        from_track_id: builtins.str = ...,
+        store_callup_card: builtins.bool = ...,
+        landingpage_download_style: builtins.int = ...,
+        special_industry_style: builtins.int = ...,
+        enable_h5_alert: builtins.bool = ...,
+        macro_replace_priority: builtins.int = ...,
+        feedback_panel_style: builtins.int = ...,
+        appstore_url: builtins.str = ...,
+        enable_h5_pre_load: builtins.int = ...,
+        h5_pre_load_url: builtins.str = ...,
+        cm_from_track_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["image_url", b"image_url", "subtitle", b"subtitle", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["card", b"card", "download_whitelist", b"download_whitelist", "share_info", b"share_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["appstore_priority", b"appstore_priority", "appstore_url", b"appstore_url", "card", b"card", "click_area", b"click_area", "click_urls", b"click_urls", "cm_from_track_id", b"cm_from_track_id", "danmu_detail_show_urls", b"danmu_detail_show_urls", "danmu_list_click_urls", b"danmu_list_click_urls", "danmu_list_show_urls", b"danmu_list_show_urls", "danmu_trolley_add_urls", b"danmu_trolley_add_urls", "download_whitelist", b"download_whitelist", "enable_double_jump", b"enable_double_jump", "enable_download_dialog", b"enable_download_dialog", "enable_h5_alert", b"enable_h5_alert", "enable_h5_pre_load", b"enable_h5_pre_load", "enable_share", b"enable_share", "enable_store_direct_launch", b"enable_store_direct_launch", "feedback_panel_style", b"feedback_panel_style", "from_track_id", b"from_track_id", "h5_pre_load_url", b"h5_pre_load_url", "landingpage_download_style", b"landingpage_download_style", "layout", b"layout", "macro_replace_priority", b"macro_replace_priority", "open_whitelist", b"open_whitelist", "preload_landingpage", b"preload_landingpage", "product_id", b"product_id", "report_time", b"report_time", "sales_type", b"sales_type", "share_info", b"share_info", "shop_id", b"shop_id", "show1s_urls", b"show1s_urls", "show_urls", b"show_urls", "special_industry", b"special_industry", "special_industry_style", b"special_industry_style", "special_industry_tips", b"special_industry_tips", "store_callup_card", b"store_callup_card", "topview_pic_url", b"topview_pic_url", "topview_video_url", b"topview_video_url", "track_id", b"track_id", "up_mid", b"up_mid", "upzone_entrance_report_id", b"upzone_entrance_report_id", "upzone_entrance_type", b"upzone_entrance_type", "use_ad_web_v2", b"use_ad_web_v2"]) -> None: ...
 
-global___AdShareInfoDto = AdShareInfoDto
+global___AdContentExtraDto = AdContentExtraDto
 
+@typing_extensions.final
 class AdCoverDto(google.protobuf.message.Message):
     """广告卡片封面数据"""
 
@@ -726,181 +723,64 @@ class AdCoverDto(google.protobuf.message.Message):
 
 global___AdCoverDto = AdCoverDto
 
-class AdButtonDto(google.protobuf.message.Message):
-    """按钮"""
+@typing_extensions.final
+class AdDto(google.protobuf.message.Message):
+    """广告内容"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    TYPE_FIELD_NUMBER: builtins.int
-    TEXT_FIELD_NUMBER: builtins.int
-    JUMP_URL_FIELD_NUMBER: builtins.int
-    REPORT_URLS_FIELD_NUMBER: builtins.int
-    DLSUC_CALLUP_URL_FIELD_NUMBER: builtins.int
-    GAME_ID_FIELD_NUMBER: builtins.int
-    GAME_MONITOR_PARAM_FIELD_NUMBER: builtins.int
-    type: builtins.int
-    """类型
-    1:落地页 2:应用唤起 3:应用下载
-    """
-    text: builtins.str
-    """按钮文案"""
-    jump_url: builtins.str
-    """按钮跳转地址"""
-    report_urls: builtins.str
-    """跳转监测链接"""
-    dlsuc_callup_url: builtins.str
-    """唤起schema"""
-    game_id: builtins.int
-    """游戏id"""
-    game_monitor_param: builtins.str
-    """游戏监控字段"""
-    def __init__(
-        self,
-        *,
-        type: builtins.int = ...,
-        text: builtins.str = ...,
-        jump_url: builtins.str = ...,
-        report_urls: builtins.str = ...,
-        dlsuc_callup_url: builtins.str = ...,
-        game_id: builtins.int = ...,
-        game_monitor_param: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["dlsuc_callup_url", b"dlsuc_callup_url", "game_id", b"game_id", "game_monitor_param", b"game_monitor_param", "jump_url", b"jump_url", "report_urls", b"report_urls", "text", b"text", "type", b"type"]) -> None: ...
-
-global___AdButtonDto = AdButtonDto
-
-class AdBusinessMarkDto(google.protobuf.message.Message):
-    """商业标信息"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TYPE_FIELD_NUMBER: builtins.int
-    TEXT_FIELD_NUMBER: builtins.int
-    TEXT_COLOR_FIELD_NUMBER: builtins.int
-    TEXT_COLOR_NIGHT_FIELD_NUMBER: builtins.int
-    BG_COLOR_FIELD_NUMBER: builtins.int
-    BG_COLOR_NIGHT_FIELD_NUMBER: builtins.int
-    BORDER_COLOR_FIELD_NUMBER: builtins.int
-    BORDER_COLOR_NIGHT_FIELD_NUMBER: builtins.int
-    IMG_URL_FIELD_NUMBER: builtins.int
-    IMG_HEIGHT_FIELD_NUMBER: builtins.int
-    IMG_WIDTH_FIELD_NUMBER: builtins.int
-    BG_BORDER_COLOR_FIELD_NUMBER: builtins.int
-    type: builtins.int
-    """商业标样式
-    0:不展示标 1:实心+文字 2:空心框+文字 3:纯文字标 4:纯图片标
-    """
-    text: builtins.str
-    """商业标文案"""
-    text_color: builtins.str
-    """商业标文案颜色,如#80FFFFFF RGBA"""
-    text_color_night: builtins.str
-    """夜间模式文字色"""
-    bg_color: builtins.str
-    """背景色"""
-    bg_color_night: builtins.str
-    """夜间模式背景色"""
-    border_color: builtins.str
-    """边框色"""
-    border_color_night: builtins.str
-    """夜间模式边框色"""
-    img_url: builtins.str
-    """图片商业标"""
-    img_height: builtins.int
-    """图片高度"""
-    img_width: builtins.int
-    """图片宽度"""
-    bg_border_color: builtins.str
+    CREATIVE_ID_FIELD_NUMBER: builtins.int
+    AD_CB_FIELD_NUMBER: builtins.int
+    EXTRA_FIELD_NUMBER: builtins.int
+    CM_MARK_FIELD_NUMBER: builtins.int
+    TOP_VIEW_ID_FIELD_NUMBER: builtins.int
+    CREATIVE_TYPE_FIELD_NUMBER: builtins.int
+    CARD_TYPE_FIELD_NUMBER: builtins.int
+    CREATIVE_STYLE_FIELD_NUMBER: builtins.int
+    IS_AD_FIELD_NUMBER: builtins.int
+    CREATIVE_CONTENT_FIELD_NUMBER: builtins.int
+    creative_id: builtins.int
+    """广告创意ID"""
+    ad_cb: builtins.str
+    """广告闭环上报回传数据"""
+    @property
+    def extra(self) -> global___AdContentExtraDto:
+        """额外广告数据"""
+    cm_mark: builtins.int
+    """广告标记"""
+    top_view_id: builtins.int
     """"""
+    creative_type: builtins.int
+    """"""
+    card_type: builtins.int
+    """"""
+    creative_style: builtins.int
+    """"""
+    is_ad: builtins.int
+    """"""
+    @property
+    def creative_content(self) -> global___CreativeDto:
+        """"""
     def __init__(
         self,
         *,
-        type: builtins.int = ...,
-        text: builtins.str = ...,
-        text_color: builtins.str = ...,
-        text_color_night: builtins.str = ...,
-        bg_color: builtins.str = ...,
-        bg_color_night: builtins.str = ...,
-        border_color: builtins.str = ...,
-        border_color_night: builtins.str = ...,
-        img_url: builtins.str = ...,
-        img_height: builtins.int = ...,
-        img_width: builtins.int = ...,
-        bg_border_color: builtins.str = ...,
+        creative_id: builtins.int = ...,
+        ad_cb: builtins.str = ...,
+        extra: global___AdContentExtraDto | None = ...,
+        cm_mark: builtins.int = ...,
+        top_view_id: builtins.int = ...,
+        creative_type: builtins.int = ...,
+        card_type: builtins.int = ...,
+        creative_style: builtins.int = ...,
+        is_ad: builtins.int = ...,
+        creative_content: global___CreativeDto | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bg_border_color", b"bg_border_color", "bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "border_color", b"border_color", "border_color_night", b"border_color_night", "img_height", b"img_height", "img_url", b"img_url", "img_width", b"img_width", "text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["creative_content", b"creative_content", "extra", b"extra"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ad_cb", b"ad_cb", "card_type", b"card_type", "cm_mark", b"cm_mark", "creative_content", b"creative_content", "creative_id", b"creative_id", "creative_style", b"creative_style", "creative_type", b"creative_type", "extra", b"extra", "is_ad", b"is_ad", "top_view_id", b"top_view_id"]) -> None: ...
 
-global___AdBusinessMarkDto = AdBusinessMarkDto
+global___AdDto = AdDto
 
-class AdAutoPlayVideoDto(google.protobuf.message.Message):
-    """自动播放视频"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    AVID_FIELD_NUMBER: builtins.int
-    CID_FIELD_NUMBER: builtins.int
-    PAGE_FIELD_NUMBER: builtins.int
-    FROM_FIELD_NUMBER: builtins.int
-    URL_FIELD_NUMBER: builtins.int
-    COVER_FIELD_NUMBER: builtins.int
-    AUTO_PLAY_FIELD_NUMBER: builtins.int
-    BTN_DYC_COLOR_FIELD_NUMBER: builtins.int
-    BTN_DYC_TIME_FIELD_NUMBER: builtins.int
-    BIZ_ID_FIELD_NUMBER: builtins.int
-    PROCESS0_URLS_FIELD_NUMBER: builtins.int
-    PLAY_3S_URLS_FIELD_NUMBER: builtins.int
-    PLAY_5S_URLS_FIELD_NUMBER: builtins.int
-    ORIENTATION_FIELD_NUMBER: builtins.int
-    avid: builtins.int
-    """avid"""
-    cid: builtins.int
-    """cid"""
-    page: builtins.int
-    """分P"""
-    url: builtins.str
-    """是否自动播放"""
-    cover: builtins.str
-    """是否自动播放"""
-    auto_play: builtins.bool
-    """是否自动播放"""
-    btn_dyc_color: builtins.bool
-    """按钮是否动态变色"""
-    btn_dyc_time: builtins.int
-    """按钮动态变色时间 ms"""
-    biz_id: builtins.int
-    """用于做联播是否是同一个视频的id"""
-    @property
-    def process0_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """开始播放三方监控"""
-    @property
-    def play_3s_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """播放3S三方监控"""
-    @property
-    def play_5s_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """播放5S三方监控"""
-    orientation: builtins.int
-    """横竖屏"""
-    def __init__(
-        self,
-        *,
-        avid: builtins.int = ...,
-        cid: builtins.int = ...,
-        page: builtins.int = ...,
-        url: builtins.str = ...,
-        cover: builtins.str = ...,
-        auto_play: builtins.bool = ...,
-        btn_dyc_color: builtins.bool = ...,
-        btn_dyc_time: builtins.int = ...,
-        biz_id: builtins.int = ...,
-        process0_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        play_3s_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        play_5s_urls: collections.abc.Iterable[builtins.str] | None = ...,
-        orientation: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["auto_play", b"auto_play", "avid", b"avid", "biz_id", b"biz_id", "btn_dyc_color", b"btn_dyc_color", "btn_dyc_time", b"btn_dyc_time", "cid", b"cid", "cover", b"cover", "from", b"from", "orientation", b"orientation", "page", b"page", "play_3s_urls", b"play_3s_urls", "play_5s_urls", b"play_5s_urls", "process0_urls", b"process0_urls", "url", b"url"]) -> None: ...
-
-global___AdAutoPlayVideoDto = AdAutoPlayVideoDto
-
+@typing_extensions.final
 class AdFeedbackPanelDto(google.protobuf.message.Message):
     """反馈面板功能模块"""
 
@@ -908,21 +788,34 @@ class AdFeedbackPanelDto(google.protobuf.message.Message):
 
     PANEL_TYPE_TEXT_FIELD_NUMBER: builtins.int
     FEEDBACK_PANEL_DETAIL_FIELD_NUMBER: builtins.int
+    TOAST_FIELD_NUMBER: builtins.int
+    OPEN_REC_TIPS_FIELD_NUMBER: builtins.int
+    CLOSE_REC_TIPS_FIELD_NUMBER: builtins.int
     panel_type_text: builtins.str
     """面板类型，广告、推广"""
     @property
     def feedback_panel_detail(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AdFeedbackPanelModuleDto]:
         """反馈面版信息"""
+    toast: builtins.str
+    """"""
+    open_rec_tips: builtins.str
+    """"""
+    close_rec_tips: builtins.str
+    """"""
     def __init__(
         self,
         *,
         panel_type_text: builtins.str = ...,
         feedback_panel_detail: collections.abc.Iterable[global___AdFeedbackPanelModuleDto] | None = ...,
+        toast: builtins.str = ...,
+        open_rec_tips: builtins.str = ...,
+        close_rec_tips: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["feedback_panel_detail", b"feedback_panel_detail", "panel_type_text", b"panel_type_text"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["close_rec_tips", b"close_rec_tips", "feedback_panel_detail", b"feedback_panel_detail", "open_rec_tips", b"open_rec_tips", "panel_type_text", b"panel_type_text", "toast", b"toast"]) -> None: ...
 
 global___AdFeedbackPanelDto = AdFeedbackPanelDto
 
+@typing_extensions.final
 class AdFeedbackPanelModuleDto(google.protobuf.message.Message):
     """反馈面版信息"""
 
@@ -934,6 +827,7 @@ class AdFeedbackPanelModuleDto(google.protobuf.message.Message):
     JUMP_URL_FIELD_NUMBER: builtins.int
     TEXT_FIELD_NUMBER: builtins.int
     SECONDARY_PANEL_FIELD_NUMBER: builtins.int
+    SUB_TEXT_FIELD_NUMBER: builtins.int
     module_id: builtins.int
     """模块id"""
     icon_url: builtins.str
@@ -949,6 +843,8 @@ class AdFeedbackPanelModuleDto(google.protobuf.message.Message):
     @property
     def secondary_panel(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AdSecondFeedbackPanelDto]:
         """二级文案数组"""
+    sub_text: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -958,32 +854,13 @@ class AdFeedbackPanelModuleDto(google.protobuf.message.Message):
         jump_url: builtins.str = ...,
         text: builtins.str = ...,
         secondary_panel: collections.abc.Iterable[global___AdSecondFeedbackPanelDto] | None = ...,
+        sub_text: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["icon_url", b"icon_url", "jump_type", b"jump_type", "jump_url", b"jump_url", "module_id", b"module_id", "secondary_panel", b"secondary_panel", "text", b"text"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["icon_url", b"icon_url", "jump_type", b"jump_type", "jump_url", b"jump_url", "module_id", b"module_id", "secondary_panel", b"secondary_panel", "sub_text", b"sub_text", "text", b"text"]) -> None: ...
 
 global___AdFeedbackPanelModuleDto = AdFeedbackPanelModuleDto
 
-class AdSecondFeedbackPanelDto(google.protobuf.message.Message):
-    """二级文案"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    REASON_ID_FIELD_NUMBER: builtins.int
-    TEXT_FIELD_NUMBER: builtins.int
-    reason_id: builtins.int
-    """屏蔽理由id"""
-    text: builtins.str
-    """理由文案"""
-    def __init__(
-        self,
-        *,
-        reason_id: builtins.int = ...,
-        text: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["reason_id", b"reason_id", "text", b"text"]) -> None: ...
-
-global___AdSecondFeedbackPanelDto = AdSecondFeedbackPanelDto
-
+@typing_extensions.final
 class AdGoodDto(google.protobuf.message.Message):
     """开放平台商品"""
 
@@ -1013,39 +890,105 @@ class AdGoodDto(google.protobuf.message.Message):
 
 global___AdGoodDto = AdGoodDto
 
-class QualityInfo(google.protobuf.message.Message):
-    """"""
+@typing_extensions.final
+class AdOgvEpDto(google.protobuf.message.Message):
+    """有弹幕的ogv ep"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ICON_FIELD_NUMBER: builtins.int
-    TEXT_FIELD_NUMBER: builtins.int
-    IS_BG_FIELD_NUMBER: builtins.int
-    BG_COLOR_FIELD_NUMBER: builtins.int
-    BG_COLOR_NIGHT_FIELD_NUMBER: builtins.int
-    icon: builtins.str
-    """"""
-    text: builtins.str
-    """"""
-    is_bg: builtins.bool
-    """"""
-    bg_color: builtins.str
-    """"""
-    bg_color_night: builtins.str
-    """"""
+    EPID_FIELD_NUMBER: builtins.int
+    HAS_RECOMMEND_FIELD_NUMBER: builtins.int
+    epid: builtins.int
+    """分集epid"""
+    has_recommend: builtins.bool
+    """是否显示 "荐" """
     def __init__(
         self,
         *,
-        icon: builtins.str = ...,
-        text: builtins.str = ...,
-        is_bg: builtins.bool = ...,
-        bg_color: builtins.str = ...,
-        bg_color_night: builtins.str = ...,
+        epid: builtins.int = ...,
+        has_recommend: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "icon", b"icon", "is_bg", b"is_bg", "text", b"text"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["epid", b"epid", "has_recommend", b"has_recommend"]) -> None: ...
 
-global___QualityInfo = QualityInfo
+global___AdOgvEpDto = AdOgvEpDto
 
+@typing_extensions.final
+class AdsControlDto(google.protobuf.message.Message):
+    """广告控制"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HAS_DANMU_FIELD_NUMBER: builtins.int
+    CIDS_FIELD_NUMBER: builtins.int
+    EPS_FIELD_NUMBER: builtins.int
+    has_danmu: builtins.int
+    """视频是否有弹幕，如有，需请求弹幕广告"""
+    @property
+    def cids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+        """有弹幕的分P视频的cid，已弃用"""
+    @property
+    def eps(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AdOgvEpDto]:
+        """有弹幕的ogv ep"""
+    def __init__(
+        self,
+        *,
+        has_danmu: builtins.int = ...,
+        cids: collections.abc.Iterable[builtins.int] | None = ...,
+        eps: collections.abc.Iterable[global___AdOgvEpDto] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cids", b"cids", "eps", b"eps", "has_danmu", b"has_danmu"]) -> None: ...
+
+global___AdsControlDto = AdsControlDto
+
+@typing_extensions.final
+class AdSecondFeedbackPanelDto(google.protobuf.message.Message):
+    """二级文案"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REASON_ID_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    reason_id: builtins.int
+    """屏蔽理由id"""
+    text: builtins.str
+    """理由文案"""
+    def __init__(
+        self,
+        *,
+        reason_id: builtins.int = ...,
+        text: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["reason_id", b"reason_id", "text", b"text"]) -> None: ...
+
+global___AdSecondFeedbackPanelDto = AdSecondFeedbackPanelDto
+
+@typing_extensions.final
+class AdShareInfoDto(google.protobuf.message.Message):
+    """分享"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TITLE_FIELD_NUMBER: builtins.int
+    SUBTITLE_FIELD_NUMBER: builtins.int
+    IMAGE_URL_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    """分享标题"""
+    subtitle: builtins.str
+    """分享副标题"""
+    image_url: builtins.str
+    """分享图片url"""
+    def __init__(
+        self,
+        *,
+        title: builtins.str = ...,
+        subtitle: builtins.str = ...,
+        image_url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["image_url", b"image_url", "subtitle", b"subtitle", "title", b"title"]) -> None: ...
+
+global___AdShareInfoDto = AdShareInfoDto
+
+@typing_extensions.final
 class AdverDto(google.protobuf.message.Message):
     """广告主信息"""
 
@@ -1082,3 +1025,1389 @@ class AdverDto(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["adver_desc", b"adver_desc", "adver_id", b"adver_id", "adver_logo", b"adver_logo", "adver_name", b"adver_name", "adver_page_url", b"adver_page_url", "adver_type", b"adver_type"]) -> None: ...
 
 global___AdverDto = AdverDto
+
+@typing_extensions.final
+class AndroidGamePageRes(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MODULE1_FIELD_NUMBER: builtins.int
+    MODULE3_FIELD_NUMBER: builtins.int
+    MODULE4_FIELD_NUMBER: builtins.int
+    MODULE5_FIELD_NUMBER: builtins.int
+    MODULE6_FIELD_NUMBER: builtins.int
+    MODULE7_FIELD_NUMBER: builtins.int
+    MODULE8_FIELD_NUMBER: builtins.int
+    MODULE9_FIELD_NUMBER: builtins.int
+    MODULE10_FIELD_NUMBER: builtins.int
+    MODULE11_FIELD_NUMBER: builtins.int
+    MODULE12_FIELD_NUMBER: builtins.int
+    MODULE13_FIELD_NUMBER: builtins.int
+    MODULE_SEQ_FIELD_NUMBER: builtins.int
+    BACKGROUND_COLOR_FIELD_NUMBER: builtins.int
+    MODULE14_FIELD_NUMBER: builtins.int
+    @property
+    def module1(self) -> global___Module1:
+        """"""
+    @property
+    def module3(self) -> global___Module3:
+        """"""
+    @property
+    def module4(self) -> global___Module4:
+        """"""
+    @property
+    def module5(self) -> global___Module5:
+        """"""
+    @property
+    def module6(self) -> global___Module6:
+        """"""
+    @property
+    def module7(self) -> global___Module7:
+        """"""
+    @property
+    def module8(self) -> global___Module8:
+        """"""
+    @property
+    def module9(self) -> global___Module9:
+        """"""
+    @property
+    def module10(self) -> global___Module10:
+        """"""
+    @property
+    def module11(self) -> global___Module11:
+        """"""
+    @property
+    def module12(self) -> global___Module12:
+        """"""
+    @property
+    def module13(self) -> global___Module13:
+        """"""
+    @property
+    def module_seq(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+        """"""
+    background_color: builtins.str
+    """"""
+    @property
+    def module14(self) -> global___Module14:
+        """"""
+    def __init__(
+        self,
+        *,
+        module1: global___Module1 | None = ...,
+        module3: global___Module3 | None = ...,
+        module4: global___Module4 | None = ...,
+        module5: global___Module5 | None = ...,
+        module6: global___Module6 | None = ...,
+        module7: global___Module7 | None = ...,
+        module8: global___Module8 | None = ...,
+        module9: global___Module9 | None = ...,
+        module10: global___Module10 | None = ...,
+        module11: global___Module11 | None = ...,
+        module12: global___Module12 | None = ...,
+        module13: global___Module13 | None = ...,
+        module_seq: collections.abc.Iterable[builtins.int] | None = ...,
+        background_color: builtins.str = ...,
+        module14: global___Module14 | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["module1", b"module1", "module10", b"module10", "module11", b"module11", "module12", b"module12", "module13", b"module13", "module14", b"module14", "module3", b"module3", "module4", b"module4", "module5", b"module5", "module6", b"module6", "module7", b"module7", "module8", b"module8", "module9", b"module9"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["background_color", b"background_color", "module1", b"module1", "module10", b"module10", "module11", b"module11", "module12", b"module12", "module13", b"module13", "module14", b"module14", "module3", b"module3", "module4", b"module4", "module5", b"module5", "module6", b"module6", "module7", b"module7", "module8", b"module8", "module9", b"module9", "module_seq", b"module_seq"]) -> None: ...
+
+global___AndroidGamePageRes = AndroidGamePageRes
+
+@typing_extensions.final
+class AndroidTag(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    type: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        type: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["text", b"text", "type", b"type"]) -> None: ...
+
+global___AndroidTag = AndroidTag
+
+@typing_extensions.final
+class AppPackageDto(google.protobuf.message.Message):
+    """app下载白名单"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SIZE_FIELD_NUMBER: builtins.int
+    DISPLAY_NAME_FIELD_NUMBER: builtins.int
+    APK_NAME_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    BILI_URL_FIELD_NUMBER: builtins.int
+    MD5_FIELD_NUMBER: builtins.int
+    ICON_FIELD_NUMBER: builtins.int
+    DEV_NAME_FIELD_NUMBER: builtins.int
+    AUTH_URL_FIELD_NUMBER: builtins.int
+    AUTH_NAME_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
+    UPDATE_TIME_FIELD_NUMBER: builtins.int
+    PRIVACY_NAME_FIELD_NUMBER: builtins.int
+    PRIVACY_URL_FIELD_NUMBER: builtins.int
+    size: builtins.int
+    """包大小(单位bytes)"""
+    display_name: builtins.str
+    """"""
+    apk_name: builtins.str
+    """"""
+    url: builtins.str
+    """url"""
+    bili_url: builtins.str
+    """bili schema url"""
+    md5: builtins.str
+    """包md5"""
+    icon: builtins.str
+    """包icon"""
+    dev_name: builtins.str
+    """开发者姓名"""
+    auth_url: builtins.str
+    """权限地址"""
+    auth_name: builtins.str
+    """权限名，逗号隔开"""
+    version: builtins.str
+    """版本"""
+    update_time: builtins.str
+    """更新时间,yy-mm-hh格式"""
+    privacy_name: builtins.str
+    """隐私协议标题"""
+    privacy_url: builtins.str
+    """隐私协议url"""
+    def __init__(
+        self,
+        *,
+        size: builtins.int = ...,
+        display_name: builtins.str = ...,
+        apk_name: builtins.str = ...,
+        url: builtins.str = ...,
+        bili_url: builtins.str = ...,
+        md5: builtins.str = ...,
+        icon: builtins.str = ...,
+        dev_name: builtins.str = ...,
+        auth_url: builtins.str = ...,
+        auth_name: builtins.str = ...,
+        version: builtins.str = ...,
+        update_time: builtins.str = ...,
+        privacy_name: builtins.str = ...,
+        privacy_url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["apk_name", b"apk_name", "auth_name", b"auth_name", "auth_url", b"auth_url", "bili_url", b"bili_url", "dev_name", b"dev_name", "display_name", b"display_name", "icon", b"icon", "md5", b"md5", "privacy_name", b"privacy_name", "privacy_url", b"privacy_url", "size", b"size", "update_time", b"update_time", "url", b"url", "version", b"version"]) -> None: ...
+
+global___AppPackageDto = AppPackageDto
+
+@typing_extensions.final
+class Bulletin(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TAG_TEXT_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    tag_text: builtins.str
+    """"""
+    text: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        tag_text: builtins.str = ...,
+        text: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["tag_text", b"tag_text", "text", b"text"]) -> None: ...
+
+global___Bulletin = Bulletin
+
+@typing_extensions.final
+class Comment(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GAME_BASE_ID_FIELD_NUMBER: builtins.int
+    USER_NAME_FIELD_NUMBER: builtins.int
+    USER_FACE_FIELD_NUMBER: builtins.int
+    USER_LEVEL_FIELD_NUMBER: builtins.int
+    COMMENT_NO_FIELD_NUMBER: builtins.int
+    GRADE_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    UP_COUNT_FIELD_NUMBER: builtins.int
+    game_base_id: builtins.int
+    """"""
+    user_name: builtins.str
+    """"""
+    user_face: builtins.str
+    """"""
+    user_level: builtins.int
+    """"""
+    comment_no: builtins.str
+    """"""
+    grade: builtins.int
+    """"""
+    content: builtins.str
+    """"""
+    up_count: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        game_base_id: builtins.int = ...,
+        user_name: builtins.str = ...,
+        user_face: builtins.str = ...,
+        user_level: builtins.int = ...,
+        comment_no: builtins.str = ...,
+        grade: builtins.int = ...,
+        content: builtins.str = ...,
+        up_count: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["comment_no", b"comment_no", "content", b"content", "game_base_id", b"game_base_id", "grade", b"grade", "up_count", b"up_count", "user_face", b"user_face", "user_level", b"user_level", "user_name", b"user_name"]) -> None: ...
+
+global___Comment = Comment
+
+@typing_extensions.final
+class CreativeDto(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TITLE_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    IMAGE_URL_FIELD_NUMBER: builtins.int
+    IMAGE_MD5_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    CLICK_URL_FIELD_NUMBER: builtins.int
+    SHOW_URL_FIELD_NUMBER: builtins.int
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    THUMBNAIL_URL_FIELD_NUMBER: builtins.int
+    THUMBNAIL_URL_MD5_FIELD_NUMBER: builtins.int
+    LOGO_URL_FIELD_NUMBER: builtins.int
+    LOGO_MD5_FIELD_NUMBER: builtins.int
+    USERNAME_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    """"""
+    description: builtins.str
+    """"""
+    image_url: builtins.str
+    """"""
+    image_md5: builtins.str
+    """"""
+    url: builtins.str
+    """"""
+    click_url: builtins.str
+    """"""
+    show_url: builtins.str
+    """"""
+    video_id: builtins.int
+    """"""
+    thumbnail_url: builtins.str
+    """"""
+    thumbnail_url_md5: builtins.str
+    """"""
+    logo_url: builtins.str
+    """"""
+    logo_md5: builtins.str
+    """"""
+    username: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        image_url: builtins.str = ...,
+        image_md5: builtins.str = ...,
+        url: builtins.str = ...,
+        click_url: builtins.str = ...,
+        show_url: builtins.str = ...,
+        video_id: builtins.int = ...,
+        thumbnail_url: builtins.str = ...,
+        thumbnail_url_md5: builtins.str = ...,
+        logo_url: builtins.str = ...,
+        logo_md5: builtins.str = ...,
+        username: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["click_url", b"click_url", "description", b"description", "image_md5", b"image_md5", "image_url", b"image_url", "logo_md5", b"logo_md5", "logo_url", b"logo_url", "show_url", b"show_url", "thumbnail_url", b"thumbnail_url", "thumbnail_url_md5", b"thumbnail_url_md5", "title", b"title", "url", b"url", "username", b"username", "video_id", b"video_id"]) -> None: ...
+
+global___CreativeDto = CreativeDto
+
+@typing_extensions.final
+class CustomPlayUrl(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLAY_TIME_FIELD_NUMBER: builtins.int
+    URLS_FIELD_NUMBER: builtins.int
+    play_time: builtins.int
+    """"""
+    @property
+    def urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    def __init__(
+        self,
+        *,
+        play_time: builtins.int = ...,
+        urls: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["play_time", b"play_time", "urls", b"urls"]) -> None: ...
+
+global___CustomPlayUrl = CustomPlayUrl
+
+@typing_extensions.final
+class ForwardReply(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COMMENT_ID_FIELD_NUMBER: builtins.int
+    MESSAGE_FIELD_NUMBER: builtins.int
+    HIGHLIGHT_TEXT_FIELD_NUMBER: builtins.int
+    HIGHLIGHT_PREFIX_ICON_FIELD_NUMBER: builtins.int
+    CALLUP_URL_FIELD_NUMBER: builtins.int
+    JUMP_URL_FIELD_NUMBER: builtins.int
+    JUMP_TYPE_FIELD_NUMBER: builtins.int
+    AUTHOR_NAME_FIELD_NUMBER: builtins.int
+    AUTHOR_ICON_FIELD_NUMBER: builtins.int
+    comment_id: builtins.int
+    """"""
+    message: builtins.str
+    """"""
+    highlight_text: builtins.str
+    """"""
+    highlight_prefix_icon: builtins.str
+    """"""
+    callup_url: builtins.str
+    """"""
+    jump_url: builtins.str
+    """"""
+    jump_type: builtins.int
+    """"""
+    author_name: builtins.str
+    """"""
+    author_icon: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        comment_id: builtins.int = ...,
+        message: builtins.str = ...,
+        highlight_text: builtins.str = ...,
+        highlight_prefix_icon: builtins.str = ...,
+        callup_url: builtins.str = ...,
+        jump_url: builtins.str = ...,
+        jump_type: builtins.int = ...,
+        author_name: builtins.str = ...,
+        author_icon: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["author_icon", b"author_icon", "author_name", b"author_name", "callup_url", b"callup_url", "comment_id", b"comment_id", "highlight_prefix_icon", b"highlight_prefix_icon", "highlight_text", b"highlight_text", "jump_type", b"jump_type", "jump_url", b"jump_url", "message", b"message"]) -> None: ...
+
+global___ForwardReply = ForwardReply
+
+@typing_extensions.final
+class Gift(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ICON_FIELD_NUMBER: builtins.int
+    NIGHT_ICON_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    icon: builtins.str
+    """"""
+    night_icon: builtins.str
+    """"""
+    text: builtins.str
+    """"""
+    url: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        icon: builtins.str = ...,
+        night_icon: builtins.str = ...,
+        text: builtins.str = ...,
+        url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["icon", b"icon", "night_icon", b"night_icon", "text", b"text", "url", b"url"]) -> None: ...
+
+global___Gift = Gift
+
+@typing_extensions.final
+class IosGamePageRes(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOGO_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    SUB_TITILE_FIELD_NUMBER: builtins.int
+    IMAGE_URL_FIELD_NUMBER: builtins.int
+    DESC_FIELD_NUMBER: builtins.int
+    GAME_BUTTON_FIELD_NUMBER: builtins.int
+    GRADE_FIELD_NUMBER: builtins.int
+    RANK_NUM_FIELD_NUMBER: builtins.int
+    RANK_NAME_FIELD_NUMBER: builtins.int
+    logo: builtins.str
+    """"""
+    name: builtins.str
+    """"""
+    sub_titile: builtins.str
+    """"""
+    @property
+    def image_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    desc: builtins.str
+    """"""
+    @property
+    def game_button(self) -> global___AdButtonDto:
+        """"""
+    grade: builtins.float
+    """"""
+    rank_num: builtins.str
+    """"""
+    rank_name: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        logo: builtins.str = ...,
+        name: builtins.str = ...,
+        sub_titile: builtins.str = ...,
+        image_url: collections.abc.Iterable[builtins.str] | None = ...,
+        desc: builtins.str = ...,
+        game_button: global___AdButtonDto | None = ...,
+        grade: builtins.float = ...,
+        rank_num: builtins.str = ...,
+        rank_name: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["game_button", b"game_button"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["desc", b"desc", "game_button", b"game_button", "grade", b"grade", "image_url", b"image_url", "logo", b"logo", "name", b"name", "rank_name", b"rank_name", "rank_num", b"rank_num", "sub_titile", b"sub_titile"]) -> None: ...
+
+global___IosGamePageRes = IosGamePageRes
+
+@typing_extensions.final
+class Module1(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GAME_NAME_FIELD_NUMBER: builtins.int
+    GAME_ICON_FIELD_NUMBER: builtins.int
+    DEVELOPER_INPUT_NAME_FIELD_NUMBER: builtins.int
+    TAG_LIST_FIELD_NUMBER: builtins.int
+    game_name: builtins.str
+    """"""
+    game_icon: builtins.str
+    """"""
+    developer_input_name: builtins.str
+    """"""
+    @property
+    def tag_list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AndroidTag]:
+        """"""
+    def __init__(
+        self,
+        *,
+        game_name: builtins.str = ...,
+        game_icon: builtins.str = ...,
+        developer_input_name: builtins.str = ...,
+        tag_list: collections.abc.Iterable[global___AndroidTag] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["developer_input_name", b"developer_input_name", "game_icon", b"game_icon", "game_name", b"game_name", "tag_list", b"tag_list"]) -> None: ...
+
+global___Module1 = Module1
+
+@typing_extensions.final
+class Module3(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    QUALITY_PARAMS_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    @property
+    def quality_params(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___QualityParmas]:
+        """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        quality_params: collections.abc.Iterable[global___QualityParmas] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "quality_params", b"quality_params"]) -> None: ...
+
+global___Module3 = Module3
+
+@typing_extensions.final
+class Module4(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    GIFT_NUM_FIELD_NUMBER: builtins.int
+    GIFT_NAME_FIELD_NUMBER: builtins.int
+    GIFT_ICON_NUM_FIELD_NUMBER: builtins.int
+    ICON_URLS_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    gift_num: builtins.int
+    """"""
+    gift_name: builtins.str
+    """"""
+    gift_icon_num: builtins.int
+    """"""
+    @property
+    def icon_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        gift_num: builtins.int = ...,
+        gift_name: builtins.str = ...,
+        gift_icon_num: builtins.int = ...,
+        icon_urls: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "gift_icon_num", b"gift_icon_num", "gift_name", b"gift_name", "gift_num", b"gift_num", "icon_urls", b"icon_urls"]) -> None: ...
+
+global___Module4 = Module4
+
+@typing_extensions.final
+class Module5(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    GAME_SUMMARY_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    game_summary: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        game_summary: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "game_summary", b"game_summary"]) -> None: ...
+
+global___Module5 = Module5
+
+@typing_extensions.final
+class Module6(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    GAME_DESC_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    game_desc: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        game_desc: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "game_desc", b"game_desc"]) -> None: ...
+
+global___Module6 = Module6
+
+@typing_extensions.final
+class Module7(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    SCREEN_SHOTS_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    @property
+    def screen_shots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ScreenShots]:
+        """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        screen_shots: collections.abc.Iterable[global___ScreenShots] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "screen_shots", b"screen_shots"]) -> None: ...
+
+global___Module7 = Module7
+
+@typing_extensions.final
+class Module8(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    TAG_LIST_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    @property
+    def tag_list(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        tag_list: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "tag_list", b"tag_list"]) -> None: ...
+
+global___Module8 = Module8
+
+@typing_extensions.final
+class Module9(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    DEV_INTRODUCTION_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    dev_introduction: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        dev_introduction: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["dev_introduction", b"dev_introduction", "display", b"display"]) -> None: ...
+
+global___Module9 = Module9
+
+@typing_extensions.final
+class Module10(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    LATEST_UPDATE_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    latest_update: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        latest_update: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "latest_update", b"latest_update"]) -> None: ...
+
+global___Module10 = Module10
+
+@typing_extensions.final
+class Module11(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    STAR_NUMBER_LIST_FIELD_NUMBER: builtins.int
+    COMMENT_STR_FIELD_NUMBER: builtins.int
+    GRADE_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    @property
+    def star_number_list(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+        """"""
+    comment_str: builtins.str
+    """"""
+    grade: builtins.float
+    """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        star_number_list: collections.abc.Iterable[builtins.int] | None = ...,
+        comment_str: builtins.str = ...,
+        grade: builtins.float = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["comment_str", b"comment_str", "display", b"display", "grade", b"grade", "star_number_list", b"star_number_list"]) -> None: ...
+
+global___Module11 = Module11
+
+@typing_extensions.final
+class Module12(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAY_FIELD_NUMBER: builtins.int
+    COMMENT_LIST_FIELD_NUMBER: builtins.int
+    COMMENT_NUM_FIELD_NUMBER: builtins.int
+    SHOW_ALL_COMMENT_FIELD_NUMBER: builtins.int
+    display: builtins.bool
+    """"""
+    @property
+    def comment_list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Comment]:
+        """"""
+    comment_num: builtins.str
+    """"""
+    show_all_comment: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        display: builtins.bool = ...,
+        comment_list: collections.abc.Iterable[global___Comment] | None = ...,
+        comment_num: builtins.str = ...,
+        show_all_comment: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["comment_list", b"comment_list", "comment_num", b"comment_num", "display", b"display", "show_all_comment", b"show_all_comment"]) -> None: ...
+
+global___Module12 = Module12
+
+@typing_extensions.final
+class Module13(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PKG_SIZE_FIELD_NUMBER: builtins.int
+    CUSTOMER_SERVICE_FIELD_NUMBER: builtins.int
+    WEBSITE_FIELD_NUMBER: builtins.int
+    AUTHORITY_FIELD_NUMBER: builtins.int
+    PRIVACY_FIELD_NUMBER: builtins.int
+    DEVELOPER_NAME_FIELD_NUMBER: builtins.int
+    UPDATE_TIME_FIELD_NUMBER: builtins.int
+    GAME_VERSION_FIELD_NUMBER: builtins.int
+    ANDROID_PKG_NAME_FIELD_NUMBER: builtins.int
+    pkg_size: builtins.int
+    """"""
+    customer_service: builtins.str
+    """"""
+    website: builtins.str
+    """"""
+    authority: builtins.str
+    """"""
+    privacy: builtins.str
+    """"""
+    developer_name: builtins.str
+    """"""
+    update_time: builtins.str
+    """"""
+    game_version: builtins.str
+    """"""
+    android_pkg_name: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        pkg_size: builtins.int = ...,
+        customer_service: builtins.str = ...,
+        website: builtins.str = ...,
+        authority: builtins.str = ...,
+        privacy: builtins.str = ...,
+        developer_name: builtins.str = ...,
+        update_time: builtins.str = ...,
+        game_version: builtins.str = ...,
+        android_pkg_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["android_pkg_name", b"android_pkg_name", "authority", b"authority", "customer_service", b"customer_service", "developer_name", b"developer_name", "game_version", b"game_version", "pkg_size", b"pkg_size", "privacy", b"privacy", "update_time", b"update_time", "website", b"website"]) -> None: ...
+
+global___Module13 = Module13
+
+@typing_extensions.final
+class Module14(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REWARD_LIST_FIELD_NUMBER: builtins.int
+    DISPLAY_FIELD_NUMBER: builtins.int
+    @property
+    def reward_list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Reward]:
+        """"""
+    display: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        reward_list: collections.abc.Iterable[global___Reward] | None = ...,
+        display: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["display", b"display", "reward_list", b"reward_list"]) -> None: ...
+
+global___Module14 = Module14
+
+@typing_extensions.final
+class NotClickableArea(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    X_FIELD_NUMBER: builtins.int
+    Y_FIELD_NUMBER: builtins.int
+    Z_FIELD_NUMBER: builtins.int
+    x: builtins.int
+    """"""
+    y: builtins.int
+    """"""
+    z: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        x: builtins.int = ...,
+        y: builtins.int = ...,
+        z: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["x", b"x", "y", b"y", "z", b"z"]) -> None: ...
+
+global___NotClickableArea = NotClickableArea
+
+@typing_extensions.final
+class QualityInfo(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ICON_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    IS_BG_FIELD_NUMBER: builtins.int
+    BG_COLOR_FIELD_NUMBER: builtins.int
+    BG_COLOR_NIGHT_FIELD_NUMBER: builtins.int
+    icon: builtins.str
+    """"""
+    text: builtins.str
+    """"""
+    is_bg: builtins.bool
+    """"""
+    bg_color: builtins.str
+    """"""
+    bg_color_night: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        icon: builtins.str = ...,
+        text: builtins.str = ...,
+        is_bg: builtins.bool = ...,
+        bg_color: builtins.str = ...,
+        bg_color_night: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "icon", b"icon", "is_bg", b"is_bg", "text", b"text"]) -> None: ...
+
+global___QualityInfo = QualityInfo
+
+@typing_extensions.final
+class QualityParmas(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FIRST_LINE_FIELD_NUMBER: builtins.int
+    SECOND_LINE_FIELD_NUMBER: builtins.int
+    GRADE_FIELD_NUMBER: builtins.int
+    RANK_ICON_FIELD_NUMBER: builtins.int
+    QUALITY_TYPE_FIELD_NUMBER: builtins.int
+    first_line: builtins.str
+    """"""
+    second_line: builtins.str
+    """"""
+    grade: builtins.float
+    """"""
+    rank_icon: builtins.str
+    """"""
+    quality_type: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        first_line: builtins.str = ...,
+        second_line: builtins.str = ...,
+        grade: builtins.float = ...,
+        rank_icon: builtins.str = ...,
+        quality_type: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["first_line", b"first_line", "grade", b"grade", "quality_type", b"quality_type", "rank_icon", b"rank_icon", "second_line", b"second_line"]) -> None: ...
+
+global___QualityParmas = QualityParmas
+
+@typing_extensions.final
+class Reward(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LEVEL_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    PIC_FIELD_NUMBER: builtins.int
+    REACH_FIELD_NUMBER: builtins.int
+    level: builtins.int
+    """"""
+    title: builtins.str
+    """"""
+    content: builtins.str
+    """"""
+    pic: builtins.str
+    """"""
+    reach: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        level: builtins.int = ...,
+        title: builtins.str = ...,
+        content: builtins.str = ...,
+        pic: builtins.str = ...,
+        reach: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["content", b"content", "level", b"level", "pic", b"pic", "reach", b"reach", "title", b"title"]) -> None: ...
+
+global___Reward = Reward
+
+@typing_extensions.final
+class ScreenShots(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    URL_FIELD_NUMBER: builtins.int
+    HEIGHT_FIELD_NUMBER: builtins.int
+    WIDTH_FIELD_NUMBER: builtins.int
+    SEQ_FIELD_NUMBER: builtins.int
+    url: builtins.str
+    """"""
+    height: builtins.int
+    """"""
+    width: builtins.int
+    """"""
+    seq: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        url: builtins.str = ...,
+        height: builtins.int = ...,
+        width: builtins.int = ...,
+        seq: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["height", b"height", "seq", b"seq", "url", b"url", "width", b"width"]) -> None: ...
+
+global___ScreenShots = ScreenShots
+
+@typing_extensions.final
+class SourceContentDto(google.protobuf.message.Message):
+    """广告数据"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    SOURCE_ID_FIELD_NUMBER: builtins.int
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    IS_AD_LOC_FIELD_NUMBER: builtins.int
+    SERVER_TYPE_FIELD_NUMBER: builtins.int
+    CLIENT_IP_FIELD_NUMBER: builtins.int
+    CARD_INDEX_FIELD_NUMBER: builtins.int
+    INDEX_FIELD_NUMBER: builtins.int
+    AD_CONTENT_FIELD_NUMBER: builtins.int
+    request_id: builtins.str
+    """广告请求id"""
+    source_id: builtins.int
+    """广告资源位source ID"""
+    resource_id: builtins.int
+    """广告资源位resource ID"""
+    is_ad_loc: builtins.bool
+    """广告位上报标记,对广告返回数据恒为true"""
+    @property
+    def server_type(self) -> google.protobuf.wrappers_pb2.Int32Value:
+        """与天马现有逻辑一致, 0有含义
+        0:内容 1:广告
+        """
+    client_ip: builtins.str
+    """客户端IP回传拼接"""
+    @property
+    def card_index(self) -> google.protobuf.wrappers_pb2.Int32Value:
+        """广告卡片位置在一刷中的位置, 天马用, 0有含义"""
+    index: builtins.int
+    """广告资源位source 位次"""
+    @property
+    def ad_content(self) -> global___AdDto:
+        """广告内容"""
+    def __init__(
+        self,
+        *,
+        request_id: builtins.str = ...,
+        source_id: builtins.int = ...,
+        resource_id: builtins.int = ...,
+        is_ad_loc: builtins.bool = ...,
+        server_type: google.protobuf.wrappers_pb2.Int32Value | None = ...,
+        client_ip: builtins.str = ...,
+        card_index: google.protobuf.wrappers_pb2.Int32Value | None = ...,
+        index: builtins.int = ...,
+        ad_content: global___AdDto | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["ad_content", b"ad_content", "card_index", b"card_index", "server_type", b"server_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ad_content", b"ad_content", "card_index", b"card_index", "client_ip", b"client_ip", "index", b"index", "is_ad_loc", b"is_ad_loc", "request_id", b"request_id", "resource_id", b"resource_id", "server_type", b"server_type", "source_id", b"source_id"]) -> None: ...
+
+global___SourceContentDto = SourceContentDto
+
+@typing_extensions.final
+class SubCardModule(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBCARD_TYPE_FIELD_NUMBER: builtins.int
+    ICON_FIELD_NUMBER: builtins.int
+    DESC_FIELD_NUMBER: builtins.int
+    RANK_STARS_FIELD_NUMBER: builtins.int
+    AMOUNT_NUMBER_FIELD_NUMBER: builtins.int
+    AVATAR_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    BUTTON_FIELD_NUMBER: builtins.int
+    TAG_INFOS_FIELD_NUMBER: builtins.int
+    subcard_type: builtins.str
+    """"""
+    icon: builtins.str
+    """"""
+    desc: builtins.str
+    """"""
+    rank_stars: builtins.str
+    """"""
+    amount_number: builtins.str
+    """"""
+    avatar: builtins.str
+    """"""
+    title: builtins.str
+    """"""
+    @property
+    def button(self) -> global___AdButtonDto:
+        """"""
+    @property
+    def tag_infos(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TagInfo]:
+        """"""
+    def __init__(
+        self,
+        *,
+        subcard_type: builtins.str = ...,
+        icon: builtins.str = ...,
+        desc: builtins.str = ...,
+        rank_stars: builtins.str = ...,
+        amount_number: builtins.str = ...,
+        avatar: builtins.str = ...,
+        title: builtins.str = ...,
+        button: global___AdButtonDto | None = ...,
+        tag_infos: collections.abc.Iterable[global___TagInfo] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["button", b"button"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount_number", b"amount_number", "avatar", b"avatar", "button", b"button", "desc", b"desc", "icon", b"icon", "rank_stars", b"rank_stars", "subcard_type", b"subcard_type", "tag_infos", b"tag_infos", "title", b"title"]) -> None: ...
+
+global___SubCardModule = SubCardModule
+
+@typing_extensions.final
+class Tab2ExtraDto(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COVER_URL_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    DESC_FIELD_NUMBER: builtins.int
+    BUTTON_FIELD_NUMBER: builtins.int
+    AUTO_ANIMATE_TIME_MS_FIELD_NUMBER: builtins.int
+    ENABLE_CLICK_FIELD_NUMBER: builtins.int
+    PANEL_URL_FIELD_NUMBER: builtins.int
+    DOWNLOAD_WHITELIST_FIELD_NUMBER: builtins.int
+    OPEN_WHITELIST_FIELD_NUMBER: builtins.int
+    USE_AD_WEB_V2_FIELD_NUMBER: builtins.int
+    ENABLE_STORE_DIRECT_LAUNCH_FIELD_NUMBER: builtins.int
+    SALES_TYPE_FIELD_NUMBER: builtins.int
+    LANDINGPAGE_DOWNLOAD_STYLE_FIELD_NUMBER: builtins.int
+    APPSTORE_PRIORITY_FIELD_NUMBER: builtins.int
+    APPSTORE_URL_FIELD_NUMBER: builtins.int
+    APPSTORE_DELAY_TIME_FIELD_NUMBER: builtins.int
+    PAGE_COVER_TYPE_FIELD_NUMBER: builtins.int
+    PAGE_PULL_TYPE_FIELD_NUMBER: builtins.int
+    ANDROID_GAME_PAGE_RES_FIELD_NUMBER: builtins.int
+    IOS_GAME_PAGE_RES_FIELD_NUMBER: builtins.int
+    AD_TAG_STYLE_FIELD_NUMBER: builtins.int
+    FEEDBACK_PANEL_FIELD_NUMBER: builtins.int
+    AD_CB_FIELD_NUMBER: builtins.int
+    URL_TYPE_FIELD_NUMBER: builtins.int
+    cover_url: builtins.str
+    """"""
+    title: builtins.str
+    """"""
+    desc: builtins.str
+    """"""
+    @property
+    def button(self) -> global___AdButtonDto:
+        """"""
+    auto_animate_time_ms: builtins.int
+    """"""
+    enable_click: builtins.bool
+    """"""
+    panel_url: builtins.str
+    """"""
+    @property
+    def download_whitelist(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AppPackageDto]:
+        """"""
+    @property
+    def open_whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    use_ad_web_v2: builtins.bool
+    """"""
+    enable_store_direct_launch: builtins.bool
+    """"""
+    sales_type: builtins.int
+    """"""
+    landingpage_download_style: builtins.int
+    """"""
+    appstore_priority: builtins.int
+    """"""
+    appstore_url: builtins.str
+    """"""
+    appstore_delay_time: builtins.int
+    """"""
+    page_cover_type: builtins.int
+    """"""
+    page_pull_type: builtins.int
+    """"""
+    @property
+    def android_game_page_res(self) -> global___AndroidGamePageRes:
+        """"""
+    @property
+    def ios_game_page_res(self) -> global___IosGamePageRes:
+        """"""
+    @property
+    def ad_tag_style(self) -> global___AdBusinessMarkDto:
+        """"""
+    @property
+    def feedback_panel(self) -> global___AdFeedbackPanelDto:
+        """"""
+    ad_cb: builtins.str
+    """"""
+    url_type: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        cover_url: builtins.str = ...,
+        title: builtins.str = ...,
+        desc: builtins.str = ...,
+        button: global___AdButtonDto | None = ...,
+        auto_animate_time_ms: builtins.int = ...,
+        enable_click: builtins.bool = ...,
+        panel_url: builtins.str = ...,
+        download_whitelist: collections.abc.Iterable[global___AppPackageDto] | None = ...,
+        open_whitelist: collections.abc.Iterable[builtins.str] | None = ...,
+        use_ad_web_v2: builtins.bool = ...,
+        enable_store_direct_launch: builtins.bool = ...,
+        sales_type: builtins.int = ...,
+        landingpage_download_style: builtins.int = ...,
+        appstore_priority: builtins.int = ...,
+        appstore_url: builtins.str = ...,
+        appstore_delay_time: builtins.int = ...,
+        page_cover_type: builtins.int = ...,
+        page_pull_type: builtins.int = ...,
+        android_game_page_res: global___AndroidGamePageRes | None = ...,
+        ios_game_page_res: global___IosGamePageRes | None = ...,
+        ad_tag_style: global___AdBusinessMarkDto | None = ...,
+        feedback_panel: global___AdFeedbackPanelDto | None = ...,
+        ad_cb: builtins.str = ...,
+        url_type: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["ad_tag_style", b"ad_tag_style", "android_game_page_res", b"android_game_page_res", "button", b"button", "feedback_panel", b"feedback_panel", "ios_game_page_res", b"ios_game_page_res"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ad_cb", b"ad_cb", "ad_tag_style", b"ad_tag_style", "android_game_page_res", b"android_game_page_res", "appstore_delay_time", b"appstore_delay_time", "appstore_priority", b"appstore_priority", "appstore_url", b"appstore_url", "auto_animate_time_ms", b"auto_animate_time_ms", "button", b"button", "cover_url", b"cover_url", "desc", b"desc", "download_whitelist", b"download_whitelist", "enable_click", b"enable_click", "enable_store_direct_launch", b"enable_store_direct_launch", "feedback_panel", b"feedback_panel", "ios_game_page_res", b"ios_game_page_res", "landingpage_download_style", b"landingpage_download_style", "open_whitelist", b"open_whitelist", "page_cover_type", b"page_cover_type", "page_pull_type", b"page_pull_type", "panel_url", b"panel_url", "sales_type", b"sales_type", "title", b"title", "url_type", b"url_type", "use_ad_web_v2", b"use_ad_web_v2"]) -> None: ...
+
+global___Tab2ExtraDto = Tab2ExtraDto
+
+@typing_extensions.final
+class TabExtraDto(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TAB_URL_FIELD_NUMBER: builtins.int
+    ENABLE_STORE_DIRECT_LAUNCH_FIELD_NUMBER: builtins.int
+    STORE_CALLUP_CARD_FIELD_NUMBER: builtins.int
+    SALES_TYPE_FIELD_NUMBER: builtins.int
+    DOWNLOAD_WHITELIST_FIELD_NUMBER: builtins.int
+    SPECIAL_INDUSTRY_FIELD_NUMBER: builtins.int
+    SPECIAL_INDUSTRY_TIPS_FIELD_NUMBER: builtins.int
+    OPEN_WHITELIST_FIELD_NUMBER: builtins.int
+    LANDINGPAGE_DOWNLOAD_STYLE_FIELD_NUMBER: builtins.int
+    APPSTORE_PRIORITY_FIELD_NUMBER: builtins.int
+    USE_AD_WEB_V2_FIELD_NUMBER: builtins.int
+    ENABLE_DOWNLOAD_DIALOG_FIELD_NUMBER: builtins.int
+    APPSTORE_URL_FIELD_NUMBER: builtins.int
+    APPSTORE_DELAY_TIME_FIELD_NUMBER: builtins.int
+    tab_url: builtins.str
+    """"""
+    enable_store_direct_launch: builtins.int
+    """"""
+    store_callup_card: builtins.int
+    """"""
+    sales_type: builtins.int
+    """"""
+    @property
+    def download_whitelist(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AppPackageDto]:
+        """"""
+    special_industry: builtins.bool
+    """"""
+    special_industry_tips: builtins.str
+    """"""
+    @property
+    def open_whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    landingpage_download_style: builtins.int
+    """"""
+    appstore_priority: builtins.int
+    """"""
+    use_ad_web_v2: builtins.bool
+    """"""
+    enable_download_dialog: builtins.bool
+    """"""
+    appstore_url: builtins.str
+    """"""
+    appstore_delay_time: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        tab_url: builtins.str = ...,
+        enable_store_direct_launch: builtins.int = ...,
+        store_callup_card: builtins.int = ...,
+        sales_type: builtins.int = ...,
+        download_whitelist: collections.abc.Iterable[global___AppPackageDto] | None = ...,
+        special_industry: builtins.bool = ...,
+        special_industry_tips: builtins.str = ...,
+        open_whitelist: collections.abc.Iterable[builtins.str] | None = ...,
+        landingpage_download_style: builtins.int = ...,
+        appstore_priority: builtins.int = ...,
+        use_ad_web_v2: builtins.bool = ...,
+        enable_download_dialog: builtins.bool = ...,
+        appstore_url: builtins.str = ...,
+        appstore_delay_time: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["appstore_delay_time", b"appstore_delay_time", "appstore_priority", b"appstore_priority", "appstore_url", b"appstore_url", "download_whitelist", b"download_whitelist", "enable_download_dialog", b"enable_download_dialog", "enable_store_direct_launch", b"enable_store_direct_launch", "landingpage_download_style", b"landingpage_download_style", "open_whitelist", b"open_whitelist", "sales_type", b"sales_type", "special_industry", b"special_industry", "special_industry_tips", b"special_industry_tips", "store_callup_card", b"store_callup_card", "tab_url", b"tab_url", "use_ad_web_v2", b"use_ad_web_v2"]) -> None: ...
+
+global___TabExtraDto = TabExtraDto
+
+@typing_extensions.final
+class TabInfoDto(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TAB_NAME_FIELD_NUMBER: builtins.int
+    EXTRA_FIELD_NUMBER: builtins.int
+    TAB_VERSION_FIELD_NUMBER: builtins.int
+    tab_name: builtins.str
+    """"""
+    @property
+    def extra(self) -> google.protobuf.any_pb2.Any:
+        """"""
+    tab_version: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        tab_name: builtins.str = ...,
+        extra: google.protobuf.any_pb2.Any | None = ...,
+        tab_version: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["extra", b"extra"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["extra", b"extra", "tab_name", b"tab_name", "tab_version", b"tab_version"]) -> None: ...
+
+global___TabInfoDto = TabInfoDto
+
+@typing_extensions.final
+class TagInfo(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_NIGHT_FIELD_NUMBER: builtins.int
+    BG_COLOR_FIELD_NUMBER: builtins.int
+    BG_COLOR_NIGHT_FIELD_NUMBER: builtins.int
+    BORDER_COLOR_FIELD_NUMBER: builtins.int
+    BORDER_COLOR_NIGHT_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    text_color: builtins.str
+    """"""
+    text_color_night: builtins.str
+    """"""
+    bg_color: builtins.str
+    """"""
+    bg_color_night: builtins.str
+    """"""
+    border_color: builtins.str
+    """"""
+    border_color_night: builtins.str
+    """"""
+    type: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        text_color: builtins.str = ...,
+        text_color_night: builtins.str = ...,
+        bg_color: builtins.str = ...,
+        bg_color_night: builtins.str = ...,
+        border_color: builtins.str = ...,
+        border_color_night: builtins.str = ...,
+        type: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "border_color", b"border_color", "border_color_night", b"border_color_night", "text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night", "type", b"type"]) -> None: ...
+
+global___TagInfo = TagInfo
+
+@typing_extensions.final
+class WxProgramInfo(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ORG_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    PATH_FIELD_NUMBER: builtins.int
+    org_id: builtins.str
+    """"""
+    name: builtins.str
+    """"""
+    path: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        org_id: builtins.str = ...,
+        name: builtins.str = ...,
+        path: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["name", b"name", "org_id", b"org_id", "path", b"path"]) -> None: ...
+
+global___WxProgramInfo = WxProgramInfo

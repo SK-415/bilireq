@@ -3,12 +3,6 @@ syntax = "proto3";
 package bilibili.live.app.room.v1;
 
 //
-service StudioList {
-    //
-    rpc GetStudioList(GetStudioListReq) returns (GetStudioListResp);
-}
-
-//
 message GetStudioListReq {
     //
     int64 room_id = 1;

@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GetStudioListReq(google.protobuf.message.Message):
     """"""
 
@@ -33,11 +34,13 @@ class GetStudioListReq(google.protobuf.message.Message):
 
 global___GetStudioListReq = GetStudioListReq
 
+@typing_extensions.final
 class GetStudioListResp(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class Pendants(google.protobuf.message.Message):
         """"""
 
@@ -60,6 +63,7 @@ class GetStudioListResp(google.protobuf.message.Message):
         def HasField(self, field_name: typing_extensions.Literal["badge", b"badge", "frame", b"frame"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "frame", b"frame"]) -> None: ...
 
+    @typing_extensions.final
     class Pendant(google.protobuf.message.Message):
         """"""
 
@@ -87,6 +91,7 @@ class GetStudioListResp(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing_extensions.Literal["desc", b"desc", "name", b"name", "position", b"position", "value", b"value"]) -> None: ...
 
+    @typing_extensions.final
     class StudioMaster(google.protobuf.message.Message):
         """"""
 

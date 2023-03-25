@@ -22,7 +22,7 @@ class _PLType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PLTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PLType.ValueType], builtins.type):  # noqa: F821
+class _PLTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PLType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EN_PAYLOAD_NORMAL: _PLType.ValueType  # 0
     """"""
@@ -42,7 +42,7 @@ class _CmdId:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CmdIdEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CmdId.ValueType], builtins.type):  # noqa: F821
+class _CmdIdEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CmdId.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EN_CMD_ID_INVALID: _CmdId.ValueType  # 0
     """非法cmd"""
@@ -62,6 +62,7 @@ EN_CMD_ID_KICK_OUT: CmdId.ValueType  # 2
 """"""
 global___CmdId = CmdId
 
+@typing_extensions.final
 class NotifyRsp(google.protobuf.message.Message):
     """"""
 
@@ -91,6 +92,7 @@ class NotifyRsp(google.protobuf.message.Message):
 
 global___NotifyRsp = NotifyRsp
 
+@typing_extensions.final
 class Msg(google.protobuf.message.Message):
     """"""
 
@@ -174,6 +176,7 @@ class Msg(google.protobuf.message.Message):
 
 global___Msg = Msg
 
+@typing_extensions.final
 class NotifyInfo(google.protobuf.message.Message):
     """"""
 
@@ -199,6 +202,7 @@ class NotifyInfo(google.protobuf.message.Message):
 
 global___NotifyInfo = NotifyInfo
 
+@typing_extensions.final
 class ReqServerNotify(google.protobuf.message.Message):
     """"""
 

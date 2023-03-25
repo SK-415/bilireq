@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class AuthReq(google.protobuf.message.Message):
     """"""
 
@@ -29,6 +30,7 @@ class AuthReq(google.protobuf.message.Message):
 
 global___AuthReq = AuthReq
 
+@typing_extensions.final
 class AuthResp(google.protobuf.message.Message):
     """"""
 
@@ -40,6 +42,7 @@ class AuthResp(google.protobuf.message.Message):
 
 global___AuthResp = AuthResp
 
+@typing_extensions.final
 class FrameOption(google.protobuf.message.Message):
     """"""
 
@@ -61,7 +64,7 @@ class FrameOption(google.protobuf.message.Message):
     is_ack: builtins.bool
     """"""
     @property
-    def status(self) -> bilibili.rpc.status_pb2.Status:
+    def status(self) -> bilireq.grpc.protos.bilibili.rpc.status_pb2.Status:
         """"""
     ack_origin: builtins.str
     """"""
@@ -83,6 +86,7 @@ class FrameOption(google.protobuf.message.Message):
 
 global___FrameOption = FrameOption
 
+@typing_extensions.final
 class HeartbeatReq(google.protobuf.message.Message):
     """"""
 
@@ -94,6 +98,7 @@ class HeartbeatReq(google.protobuf.message.Message):
 
 global___HeartbeatReq = HeartbeatReq
 
+@typing_extensions.final
 class HeartbeatResp(google.protobuf.message.Message):
     """"""
 
@@ -105,6 +110,7 @@ class HeartbeatResp(google.protobuf.message.Message):
 
 global___HeartbeatResp = HeartbeatResp
 
+@typing_extensions.final
 class MessageAckReq(google.protobuf.message.Message):
     """"""
 
@@ -134,6 +140,7 @@ class MessageAckReq(google.protobuf.message.Message):
 
 global___MessageAckReq = MessageAckReq
 
+@typing_extensions.final
 class SubscribeReq(google.protobuf.message.Message):
     """"""
 
@@ -152,6 +159,7 @@ class SubscribeReq(google.protobuf.message.Message):
 
 global___SubscribeReq = SubscribeReq
 
+@typing_extensions.final
 class TargetPath(google.protobuf.message.Message):
     """"""
 
@@ -175,6 +183,7 @@ class TargetPath(google.protobuf.message.Message):
 
 global___TargetPath = TargetPath
 
+@typing_extensions.final
 class VegaFrame(google.protobuf.message.Message):
     """"""
 

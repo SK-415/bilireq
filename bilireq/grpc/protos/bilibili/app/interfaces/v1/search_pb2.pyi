@@ -16,6 +16,161 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
+class DefaultWordsReply(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRACKID_FIELD_NUMBER: builtins.int
+    PARAM_FIELD_NUMBER: builtins.int
+    SHOW_FIELD_NUMBER: builtins.int
+    WORD_FIELD_NUMBER: builtins.int
+    SHOW_FRONT_FIELD_NUMBER: builtins.int
+    EXP_STR_FIELD_NUMBER: builtins.int
+    GOTO_FIELD_NUMBER: builtins.int
+    VALUE_FIELD_NUMBER: builtins.int
+    URI_FIELD_NUMBER: builtins.int
+    trackid: builtins.str
+    """"""
+    param: builtins.str
+    """"""
+    show: builtins.str
+    """"""
+    word: builtins.str
+    """"""
+    show_front: builtins.int
+    """"""
+    exp_str: builtins.str
+    """"""
+    goto: builtins.str
+    """"""
+    value: builtins.str
+    """"""
+    uri: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        trackid: builtins.str = ...,
+        param: builtins.str = ...,
+        show: builtins.str = ...,
+        word: builtins.str = ...,
+        show_front: builtins.int = ...,
+        exp_str: builtins.str = ...,
+        goto: builtins.str = ...,
+        value: builtins.str = ...,
+        uri: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["exp_str", b"exp_str", "goto", b"goto", "param", b"param", "show", b"show", "show_front", b"show_front", "trackid", b"trackid", "uri", b"uri", "value", b"value", "word", b"word"]) -> None: ...
+
+global___DefaultWordsReply = DefaultWordsReply
+
+@typing_extensions.final
+class NftFaceIcon(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGION_TYPE_FIELD_NUMBER: builtins.int
+    ICON_FIELD_NUMBER: builtins.int
+    SHOW_STATUS_FIELD_NUMBER: builtins.int
+    region_type: builtins.int
+    """"""
+    icon: builtins.str
+    """"""
+    show_status: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        region_type: builtins.int = ...,
+        icon: builtins.str = ...,
+        show_status: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["icon", b"icon", "region_type", b"region_type", "show_status", b"show_status"]) -> None: ...
+
+global___NftFaceIcon = NftFaceIcon
+
+@typing_extensions.final
+class DefaultWordsReq(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FROM_FIELD_NUMBER: builtins.int
+    LOGIN_EVENT_FIELD_NUMBER: builtins.int
+    TEENAGERS_MODE_FIELD_NUMBER: builtins.int
+    LESSONS_MODE_FIELD_NUMBER: builtins.int
+    TAB_FIELD_NUMBER: builtins.int
+    EVENT_ID_FIELD_NUMBER: builtins.int
+    AVID_FIELD_NUMBER: builtins.int
+    QUERY_FIELD_NUMBER: builtins.int
+    AN_FIELD_NUMBER: builtins.int
+    IS_FRESH_FIELD_NUMBER: builtins.int
+    login_event: builtins.int
+    """"""
+    teenagers_mode: builtins.int
+    """"""
+    lessons_mode: builtins.int
+    """"""
+    tab: builtins.str
+    """"""
+    event_id: builtins.str
+    """"""
+    avid: builtins.str
+    """"""
+    query: builtins.str
+    """"""
+    an: builtins.int
+    """"""
+    is_fresh: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        login_event: builtins.int = ...,
+        teenagers_mode: builtins.int = ...,
+        lessons_mode: builtins.int = ...,
+        tab: builtins.str = ...,
+        event_id: builtins.str = ...,
+        avid: builtins.str = ...,
+        query: builtins.str = ...,
+        an: builtins.int = ...,
+        is_fresh: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["an", b"an", "avid", b"avid", "event_id", b"event_id", "from", b"from", "is_fresh", b"is_fresh", "lessons_mode", b"lessons_mode", "login_event", b"login_event", "query", b"query", "tab", b"tab", "teenagers_mode", b"teenagers_mode"]) -> None: ...
+
+global___DefaultWordsReq = DefaultWordsReq
+
+@typing_extensions.final
+class SuggestionResult3Reply(google.protobuf.message.Message):
+    """获取搜索建议-响应"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRACKID_FIELD_NUMBER: builtins.int
+    LIST_FIELD_NUMBER: builtins.int
+    EXP_STR_FIELD_NUMBER: builtins.int
+    trackid: builtins.str
+    """搜索追踪id"""
+    @property
+    def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ResultItem]:
+        """搜索建议条目列表"""
+    exp_str: builtins.str
+    """搜索的abtest 实验信息"""
+    def __init__(
+        self,
+        *,
+        trackid: builtins.str = ...,
+        list: collections.abc.Iterable[global___ResultItem] | None = ...,
+        exp_str: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["exp_str", b"exp_str", "list", b"list", "trackid", b"trackid"]) -> None: ...
+
+global___SuggestionResult3Reply = SuggestionResult3Reply
+
+@typing_extensions.final
 class SuggestionResult3Req(google.protobuf.message.Message):
     """获取搜索建议-请求"""
 
@@ -45,32 +200,7 @@ class SuggestionResult3Req(google.protobuf.message.Message):
 
 global___SuggestionResult3Req = SuggestionResult3Req
 
-class SuggestionResult3Reply(google.protobuf.message.Message):
-    """获取搜索建议-响应"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TRACKID_FIELD_NUMBER: builtins.int
-    LIST_FIELD_NUMBER: builtins.int
-    EXPSTR_FIELD_NUMBER: builtins.int
-    trackid: builtins.str
-    """搜索追踪id"""
-    @property
-    def list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ResultItem]:
-        """搜索建议条目列表"""
-    expStr: builtins.str
-    """搜索的abtest 实验信息"""
-    def __init__(
-        self,
-        *,
-        trackid: builtins.str = ...,
-        list: collections.abc.Iterable[global___ResultItem] | None = ...,
-        expStr: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["expStr", b"expStr", "list", b"list", "trackid", b"trackid"]) -> None: ...
-
-global___SuggestionResult3Reply = SuggestionResult3Reply
-
+@typing_extensions.final
 class ResultItem(google.protobuf.message.Message):
     """搜索建议条目"""
 
@@ -103,6 +233,8 @@ class ResultItem(google.protobuf.message.Message):
     STYLES_FIELD_NUMBER: builtins.int
     MODULE_ID_FIELD_NUMBER: builtins.int
     LIVE_LINK_FIELD_NUMBER: builtins.int
+    FACE_NFT_NEW_FIELD_NUMBER: builtins.int
+    NFT_FACE_ICON_FIELD_NUMBER: builtins.int
     title: builtins.str
     """显示结果(语法高亮)"""
     keyword: builtins.str
@@ -157,6 +289,11 @@ class ResultItem(google.protobuf.message.Message):
     """"""
     live_link: builtins.str
     """"""
+    face_nft_new: builtins.int
+    """"""
+    @property
+    def nft_face_icon(self) -> global___NftFaceIcon:
+        """"""
     def __init__(
         self,
         *,
@@ -186,12 +323,15 @@ class ResultItem(google.protobuf.message.Message):
         styles: builtins.str = ...,
         module_id: builtins.int = ...,
         live_link: builtins.str = ...,
+        face_nft_new: builtins.int = ...,
+        nft_face_icon: global___NftFaceIcon | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["official_verify", b"official_verify"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["archives", b"archives", "area", b"area", "badges", b"badges", "cover", b"cover", "cover_size", b"cover_size", "fans", b"fans", "from", b"from", "goto", b"goto", "keyword", b"keyword", "label", b"label", "level", b"level", "live_link", b"live_link", "mid", b"mid", "module_id", b"module_id", "official_verify", b"official_verify", "param", b"param", "position", b"position", "ptime", b"ptime", "rating", b"rating", "season_type_name", b"season_type_name", "style", b"style", "styles", b"styles", "sug_type", b"sug_type", "term_type", b"term_type", "title", b"title", "uri", b"uri", "vote", b"vote"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["nft_face_icon", b"nft_face_icon", "official_verify", b"official_verify"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["archives", b"archives", "area", b"area", "badges", b"badges", "cover", b"cover", "cover_size", b"cover_size", "face_nft_new", b"face_nft_new", "fans", b"fans", "from", b"from", "goto", b"goto", "keyword", b"keyword", "label", b"label", "level", b"level", "live_link", b"live_link", "mid", b"mid", "module_id", b"module_id", "nft_face_icon", b"nft_face_icon", "official_verify", b"official_verify", "param", b"param", "position", b"position", "ptime", b"ptime", "rating", b"rating", "season_type_name", b"season_type_name", "style", b"style", "styles", b"styles", "sug_type", b"sug_type", "term_type", b"term_type", "title", b"title", "uri", b"uri", "vote", b"vote"]) -> None: ...
 
 global___ResultItem = ResultItem
 
+@typing_extensions.final
 class OfficialVerify(google.protobuf.message.Message):
     """认证信息"""
 
@@ -215,6 +355,7 @@ class OfficialVerify(google.protobuf.message.Message):
 
 global___OfficialVerify = OfficialVerify
 
+@typing_extensions.final
 class ReasonStyle(google.protobuf.message.Message):
     """角标"""
 

@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x62ilibili/app/wall/v1/wall.proto\x12\x14\x62ilibili.app.wall.v1\"\r\n\x0bRuleRequest\"\xa3\x01\n\nRulesReply\x12\x42\n\trulesInfo\x18\x01 \x03(\x0b\x32/.bilibili.app.wall.v1.RulesReply.RulesInfoEntry\x1aQ\n\x0eRulesInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x1f.bilibili.app.wall.v1.RulesInfo:\x02\x38\x01\"7\n\x08RuleInfo\x12\n\n\x02tf\x18\x01 \x01(\x08\x12\t\n\x01m\x18\x02 \x01(\t\x12\t\n\x01\x61\x18\x03 \x01(\t\x12\t\n\x01p\x18\x04 \x01(\t\">\n\tRulesInfo\x12\x31\n\trulesInfo\x18\x01 \x03(\x0b\x32\x1e.bilibili.app.wall.v1.RuleInfo2W\n\x04Wall\x12O\n\x08RuleInfo\x12!.bilibili.app.wall.v1.RuleRequest\x1a .bilibili.app.wall.v1.RulesReplyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x62ilibili/app/wall/v1/wall.proto\x12\x14\x62ilibili.app.wall.v1\"I\n\x08RuleInfo\x12\n\n\x02tf\x18\x01 \x01(\x08\x12\t\n\x01m\x18\x02 \x01(\t\x12\t\n\x01\x61\x18\x03 \x01(\t\x12\t\n\x01p\x18\x04 \x01(\t\x12\x10\n\x08\x61_backup\x18\x05 \x03(\t\"\r\n\x0bRuleRequest\">\n\tRulesInfo\x12\x31\n\trulesInfo\x18\x01 \x03(\x0b\x32\x1e.bilibili.app.wall.v1.RuleInfo\"\xb7\x01\n\nRulesReply\x12\x42\n\trulesInfo\x18\x01 \x03(\x0b\x32/.bilibili.app.wall.v1.RulesReply.RulesInfoEntry\x12\x12\n\nhash_value\x18\x02 \x01(\t\x1aQ\n\x0eRulesInfoEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x1f.bilibili.app.wall.v1.RulesInfo:\x02\x38\x01\x32W\n\x04Wall\x12O\n\x08RuleInfo\x12!.bilibili.app.wall.v1.RuleRequest\x1a .bilibili.app.wall.v1.RulesReplyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'bilibili.app.wall.v1.wall_pb2', globals())
@@ -22,16 +22,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   _RULESREPLY_RULESINFOENTRY._options = None
   _RULESREPLY_RULESINFOENTRY._serialized_options = b'8\001'
-  _RULEREQUEST._serialized_start=57
-  _RULEREQUEST._serialized_end=70
-  _RULESREPLY._serialized_start=73
-  _RULESREPLY._serialized_end=236
-  _RULESREPLY_RULESINFOENTRY._serialized_start=155
-  _RULESREPLY_RULESINFOENTRY._serialized_end=236
-  _RULEINFO._serialized_start=238
-  _RULEINFO._serialized_end=293
-  _RULESINFO._serialized_start=295
-  _RULESINFO._serialized_end=357
-  _WALL._serialized_start=359
-  _WALL._serialized_end=446
+  _RULEINFO._serialized_start=57
+  _RULEINFO._serialized_end=130
+  _RULEREQUEST._serialized_start=132
+  _RULEREQUEST._serialized_end=145
+  _RULESINFO._serialized_start=147
+  _RULESINFO._serialized_end=209
+  _RULESREPLY._serialized_start=212
+  _RULESREPLY._serialized_end=395
+  _RULESREPLY_RULESINFOENTRY._serialized_start=314
+  _RULESREPLY_RULESINFOENTRY._serialized_end=395
+  _WALL._serialized_start=397
+  _WALL._serialized_end=484
 # @@protoc_insertion_point(module_scope)

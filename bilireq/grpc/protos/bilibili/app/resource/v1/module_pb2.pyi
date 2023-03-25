@@ -22,7 +22,7 @@ class _CompressType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CompressTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CompressType.ValueType], builtins.type):  # noqa: F821
+class _CompressTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CompressType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Unzip: _CompressType.ValueType  # 0
     """unzip"""
@@ -42,7 +42,7 @@ class _EnvType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _EnvTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EnvType.ValueType], builtins.type):  # noqa: F821
+class _EnvTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EnvType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Unknown: _EnvType.ValueType  # 0
     """"""
@@ -66,7 +66,7 @@ class _IncrementType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _IncrementTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_IncrementType.ValueType], builtins.type):  # noqa: F821
+class _IncrementTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_IncrementType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Total: _IncrementType.ValueType  # 0
     """全量包"""
@@ -86,7 +86,7 @@ class _LevelType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _LevelTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LevelType.ValueType], builtins.type):  # noqa: F821
+class _LevelTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LevelType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Undefined: _LevelType.ValueType  # 0
     """"""
@@ -110,6 +110,7 @@ Low: LevelType.ValueType  # 3
 """低 仅在业务方使用到时由业务方手动进行下载"""
 global___LevelType = LevelType
 
+@typing_extensions.final
 class ListReply(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -134,6 +135,7 @@ class ListReply(google.protobuf.message.Message):
 
 global___ListReply = ListReply
 
+@typing_extensions.final
 class ListReq(google.protobuf.message.Message):
     """"""
 
@@ -180,6 +182,7 @@ class ListReq(google.protobuf.message.Message):
 
 global___ListReq = ListReq
 
+@typing_extensions.final
 class ModuleReply(google.protobuf.message.Message):
     """"""
 
@@ -265,6 +268,7 @@ class ModuleReply(google.protobuf.message.Message):
 
 global___ModuleReply = ModuleReply
 
+@typing_extensions.final
 class PoolReply(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -285,6 +289,7 @@ class PoolReply(google.protobuf.message.Message):
 
 global___PoolReply = PoolReply
 
+@typing_extensions.final
 class VersionListReq(google.protobuf.message.Message):
     """"""
 
@@ -307,6 +312,7 @@ class VersionListReq(google.protobuf.message.Message):
 
 global___VersionListReq = VersionListReq
 
+@typing_extensions.final
 class VersionReq(google.protobuf.message.Message):
     """"""
 

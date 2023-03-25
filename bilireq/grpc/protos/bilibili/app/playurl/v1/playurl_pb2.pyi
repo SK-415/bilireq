@@ -22,7 +22,7 @@ class _Business:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _BusinessEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Business.ValueType], builtins.type):  # noqa: F821
+class _BusinessEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Business.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNKNOWN: _Business.ValueType  # 0
     """未知类型"""
@@ -42,7 +42,7 @@ class _CodeType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CodeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CodeType.ValueType], builtins.type):  # noqa: F821
+class _CodeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CodeType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NOCODE: _CodeType.ValueType  # 0
     """默认"""
@@ -50,6 +50,8 @@ class _CodeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     """H.264"""
     CODE265: _CodeType.ValueType  # 2
     """H.265"""
+    CODEAV1: _CodeType.ValueType  # 3
+    """av1"""
 
 class CodeType(_CodeType, metaclass=_CodeTypeEnumTypeWrapper):
     """编码类型"""
@@ -60,13 +62,15 @@ CODE264: CodeType.ValueType  # 1
 """H.264"""
 CODE265: CodeType.ValueType  # 2
 """H.265"""
+CODEAV1: CodeType.ValueType  # 3
+"""av1"""
 global___CodeType = CodeType
 
 class _ConfType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ConfTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ConfType.ValueType], builtins.type):  # noqa: F821
+class _ConfTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ConfType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NoType: _ConfType.ValueType  # 0
     """"""
@@ -127,7 +131,7 @@ class _ConfTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     DOLBY: _ConfType.ValueType  # 28
     """杜比"""
     COLORFILTER: _ConfType.ValueType  # 29
-    """"""
+    """颜色滤镜"""
 
 class ConfType(_ConfType, metaclass=_ConfTypeEnumTypeWrapper):
     """设置类型"""
@@ -191,14 +195,14 @@ PANORAMA: ConfType.ValueType  # 27
 DOLBY: ConfType.ValueType  # 28
 """杜比"""
 COLORFILTER: ConfType.ValueType  # 29
-""""""
+"""颜色滤镜"""
 global___ConfType = ConfType
 
 class _Group:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _GroupEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Group.ValueType], builtins.type):  # noqa: F821
+class _GroupEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Group.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UnknownGroup: _Group.ValueType  # 0
     """"""
@@ -226,7 +230,7 @@ class _PlayErr:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PlayErrEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlayErr.ValueType], builtins.type):  # noqa: F821
+class _PlayErrEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlayErr.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NoErr: _PlayErr.ValueType  # 0
     """"""
@@ -242,11 +246,31 @@ WithMultiDeviceLoginErr: PlayErr.ValueType  # 1
 """管控类型的错误码"""
 global___PlayErr = PlayErr
 
+class _PlayLimitCode:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _PlayLimitCodeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlayLimitCode.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    PLCUnkown: _PlayLimitCode.ValueType  # 0
+    """"""
+    PLCUgcNotPayed: _PlayLimitCode.ValueType  # 1
+    """"""
+
+class PlayLimitCode(_PlayLimitCode, metaclass=_PlayLimitCodeEnumTypeWrapper):
+    """"""
+
+PLCUnkown: PlayLimitCode.ValueType  # 0
+""""""
+PLCUgcNotPayed: PlayLimitCode.ValueType  # 1
+""""""
+global___PlayLimitCode = PlayLimitCode
+
 class _VideoType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _VideoTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VideoType.ValueType], builtins.type):  # noqa: F821
+class _VideoTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VideoType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Unknown_VALUE: _VideoType.ValueType  # 0
     """"""
@@ -270,6 +294,7 @@ MP4_VALUE: VideoType.ValueType  # 3
 """mp4格式"""
 global___VideoType = VideoType
 
+@typing_extensions.final
 class AB(google.protobuf.message.Message):
     """"""
 
@@ -293,6 +318,7 @@ class AB(google.protobuf.message.Message):
 
 global___AB = AB
 
+@typing_extensions.final
 class ArcConf(google.protobuf.message.Message):
     """配置项"""
 
@@ -320,6 +346,7 @@ class ArcConf(google.protobuf.message.Message):
 
 global___ArcConf = ArcConf
 
+@typing_extensions.final
 class Chronos(google.protobuf.message.Message):
     """Chronos灰度管理"""
 
@@ -341,6 +368,37 @@ class Chronos(google.protobuf.message.Message):
 
 global___Chronos = Chronos
 
+@typing_extensions.final
+class ButtonStyle(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_FIELD_NUMBER: builtins.int
+    BG_COLOR_FIELD_NUMBER: builtins.int
+    JUMP_LINK_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    text_color: builtins.str
+    """"""
+    bg_color: builtins.str
+    """"""
+    jump_link: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        text_color: builtins.str = ...,
+        bg_color: builtins.str = ...,
+        jump_link: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "jump_link", b"jump_link", "text", b"text", "text_color", b"text_color"]) -> None: ...
+
+global___ButtonStyle = ButtonStyle
+
+@typing_extensions.final
 class CloudConf(google.protobuf.message.Message):
     """"""
 
@@ -373,6 +431,7 @@ class CloudConf(google.protobuf.message.Message):
 
 global___CloudConf = CloudConf
 
+@typing_extensions.final
 class ConfValue(google.protobuf.message.Message):
     """"""
 
@@ -396,6 +455,7 @@ class ConfValue(google.protobuf.message.Message):
 
 global___ConfValue = ConfValue
 
+@typing_extensions.final
 class DashItem(google.protobuf.message.Message):
     """dash条目"""
 
@@ -409,6 +469,7 @@ class DashItem(google.protobuf.message.Message):
     MD5_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     FRAME_RATE_FIELD_NUMBER: builtins.int
+    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
     id: builtins.int
     """清晰度"""
     baseUrl: builtins.str
@@ -426,6 +487,8 @@ class DashItem(google.protobuf.message.Message):
     """大小"""
     frame_rate: builtins.str
     """帧率"""
+    widevine_pssh: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -437,11 +500,13 @@ class DashItem(google.protobuf.message.Message):
         md5: builtins.str = ...,
         size: builtins.int = ...,
         frame_rate: builtins.str = ...,
+        widevine_pssh: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "bandwidth", b"bandwidth", "baseUrl", b"baseUrl", "codecid", b"codecid", "frame_rate", b"frame_rate", "id", b"id", "md5", b"md5", "size", b"size"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "bandwidth", b"bandwidth", "baseUrl", b"baseUrl", "codecid", b"codecid", "frame_rate", b"frame_rate", "id", b"id", "md5", b"md5", "size", b"size", "widevine_pssh", b"widevine_pssh"]) -> None: ...
 
 global___DashItem = DashItem
 
+@typing_extensions.final
 class DashVideo(google.protobuf.message.Message):
     """dash视频流"""
 
@@ -458,6 +523,7 @@ class DashVideo(google.protobuf.message.Message):
     FRAME_RATE_FIELD_NUMBER: builtins.int
     WIDTH_FIELD_NUMBER: builtins.int
     HEIGHT_FIELD_NUMBER: builtins.int
+    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
     base_url: builtins.str
     """主线流"""
     @property
@@ -481,6 +547,8 @@ class DashVideo(google.protobuf.message.Message):
     """宽度"""
     height: builtins.int
     """高度"""
+    widevine_pssh: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -495,11 +563,13 @@ class DashVideo(google.protobuf.message.Message):
         frame_rate: builtins.str = ...,
         width: builtins.int = ...,
         height: builtins.int = ...,
+        widevine_pssh: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["audioId", b"audioId", "backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "height", b"height", "md5", b"md5", "no_rexcode", b"no_rexcode", "size", b"size", "width", b"width"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audioId", b"audioId", "backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "height", b"height", "md5", b"md5", "no_rexcode", b"no_rexcode", "size", b"size", "widevine_pssh", b"widevine_pssh", "width", b"width"]) -> None: ...
 
 global___DashVideo = DashVideo
 
+@typing_extensions.final
 class DolbyItem(google.protobuf.message.Message):
     """杜比伴音信息"""
 
@@ -544,6 +614,7 @@ class DolbyItem(google.protobuf.message.Message):
 
 global___DolbyItem = DolbyItem
 
+@typing_extensions.final
 class Event(google.protobuf.message.Message):
     """事件"""
 
@@ -563,6 +634,7 @@ class Event(google.protobuf.message.Message):
 
 global___Event = Event
 
+@typing_extensions.final
 class ExtraContent(google.protobuf.message.Message):
     """"""
 
@@ -584,6 +656,7 @@ class ExtraContent(google.protobuf.message.Message):
 
 global___ExtraContent = ExtraContent
 
+@typing_extensions.final
 class FieldValue(google.protobuf.message.Message):
     """配置字段值"""
 
@@ -603,6 +676,7 @@ class FieldValue(google.protobuf.message.Message):
 
 global___FieldValue = FieldValue
 
+@typing_extensions.final
 class FormatDescription(google.protobuf.message.Message):
     """清晰度描述"""
 
@@ -640,6 +714,7 @@ class FormatDescription(google.protobuf.message.Message):
 
 global___FormatDescription = FormatDescription
 
+@typing_extensions.final
 class Glance(google.protobuf.message.Message):
     """"""
 
@@ -665,6 +740,7 @@ class Glance(google.protobuf.message.Message):
 
 global___Glance = Glance
 
+@typing_extensions.final
 class PlayAbilityConf(google.protobuf.message.Message):
     """禁用功能配置"""
 
@@ -785,7 +861,7 @@ class PlayAbilityConf(google.protobuf.message.Message):
         """杜比音效"""
     @property
     def color_filter_conf(self) -> global___CloudConf:
-        """"""
+        """颜色滤镜"""
     def __init__(
         self,
         *,
@@ -824,6 +900,7 @@ class PlayAbilityConf(google.protobuf.message.Message):
 
 global___PlayAbilityConf = PlayAbilityConf
 
+@typing_extensions.final
 class PlayArcConf(google.protobuf.message.Message):
     """播放控件稿件配置"""
 
@@ -945,10 +1022,10 @@ class PlayArcConf(google.protobuf.message.Message):
         """杜比音效"""
     @property
     def screen_recording_conf(self) -> global___ArcConf:
-        """"""
+        """屏幕录制"""
     @property
     def color_filter_conf(self) -> global___ArcConf:
-        """"""
+        """颜色滤镜"""
     def __init__(
         self,
         *,
@@ -988,6 +1065,7 @@ class PlayArcConf(google.protobuf.message.Message):
 
 global___PlayArcConf = PlayArcConf
 
+@typing_extensions.final
 class PlayConfEditReply(google.protobuf.message.Message):
     """编辑播放界面配置-响应"""
 
@@ -999,6 +1077,7 @@ class PlayConfEditReply(google.protobuf.message.Message):
 
 global___PlayConfEditReply = PlayConfEditReply
 
+@typing_extensions.final
 class PlayConfEditReq(google.protobuf.message.Message):
     """编辑播放界面配置-请求"""
 
@@ -1017,6 +1096,7 @@ class PlayConfEditReq(google.protobuf.message.Message):
 
 global___PlayConfEditReq = PlayConfEditReq
 
+@typing_extensions.final
 class PlayConfReply(google.protobuf.message.Message):
     """获取播放界面配置-响应"""
 
@@ -1036,6 +1116,7 @@ class PlayConfReply(google.protobuf.message.Message):
 
 global___PlayConfReply = PlayConfReply
 
+@typing_extensions.final
 class PlayConfReq(google.protobuf.message.Message):
     """获取播放界面配置-请求"""
 
@@ -1047,6 +1128,7 @@ class PlayConfReq(google.protobuf.message.Message):
 
 global___PlayConfReq = PlayConfReq
 
+@typing_extensions.final
 class PlayConfState(google.protobuf.message.Message):
     """播放界面配置"""
 
@@ -1079,6 +1161,39 @@ class PlayConfState(google.protobuf.message.Message):
 
 global___PlayConfState = PlayConfState
 
+@typing_extensions.final
+class PlayLimit(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CODE_FIELD_NUMBER: builtins.int
+    MESSAGE_FIELD_NUMBER: builtins.int
+    SUB_MESSAGE_FIELD_NUMBER: builtins.int
+    BUTTON_FIELD_NUMBER: builtins.int
+    code: global___PlayLimitCode.ValueType
+    """"""
+    message: builtins.str
+    """"""
+    sub_message: builtins.str
+    """"""
+    @property
+    def button(self) -> global___ButtonStyle:
+        """"""
+    def __init__(
+        self,
+        *,
+        code: global___PlayLimitCode.ValueType = ...,
+        message: builtins.str = ...,
+        sub_message: builtins.str = ...,
+        button: global___ButtonStyle | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["button", b"button"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["button", b"button", "code", b"code", "message", b"message", "sub_message", b"sub_message"]) -> None: ...
+
+global___PlayLimit = PlayLimit
+
+@typing_extensions.final
 class PlayURLReply(google.protobuf.message.Message):
     """视频地址-回复"""
 
@@ -1149,6 +1264,7 @@ class PlayURLReply(google.protobuf.message.Message):
 
 global___PlayURLReply = PlayURLReply
 
+@typing_extensions.final
 class PlayURLReq(google.protobuf.message.Message):
     """视频地址-请求"""
 
@@ -1206,6 +1322,7 @@ class PlayURLReq(google.protobuf.message.Message):
 
 global___PlayURLReq = PlayURLReq
 
+@typing_extensions.final
 class PlayViewReply(google.protobuf.message.Message):
     """播放页信息-回复"""
 
@@ -1218,6 +1335,7 @@ class PlayViewReply(google.protobuf.message.Message):
     PLAY_ARC_FIELD_NUMBER: builtins.int
     EVENT_FIELD_NUMBER: builtins.int
     AB_FIELD_NUMBER: builtins.int
+    PLAY_LIMIT_FIELD_NUMBER: builtins.int
     @property
     def video_info(self) -> global___VideoInfo:
         """视频流信息"""
@@ -1239,6 +1357,9 @@ class PlayViewReply(google.protobuf.message.Message):
     @property
     def ab(self) -> global___AB:
         """"""
+    @property
+    def play_limit(self) -> global___PlayLimit:
+        """"""
     def __init__(
         self,
         *,
@@ -1249,12 +1370,14 @@ class PlayViewReply(google.protobuf.message.Message):
         play_arc: global___PlayArcConf | None = ...,
         event: global___Event | None = ...,
         ab: global___AB | None = ...,
+        play_limit: global___PlayLimit | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["ab", b"ab", "chronos", b"chronos", "event", b"event", "play_arc", b"play_arc", "play_conf", b"play_conf", "upgrade_limit", b"upgrade_limit", "video_info", b"video_info"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ab", b"ab", "chronos", b"chronos", "event", b"event", "play_arc", b"play_arc", "play_conf", b"play_conf", "upgrade_limit", b"upgrade_limit", "video_info", b"video_info"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["ab", b"ab", "chronos", b"chronos", "event", b"event", "play_arc", b"play_arc", "play_conf", b"play_conf", "play_limit", b"play_limit", "upgrade_limit", b"upgrade_limit", "video_info", b"video_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ab", b"ab", "chronos", b"chronos", "event", b"event", "play_arc", b"play_arc", "play_conf", b"play_conf", "play_limit", b"play_limit", "upgrade_limit", b"upgrade_limit", "video_info", b"video_info"]) -> None: ...
 
 global___PlayViewReply = PlayViewReply
 
+@typing_extensions.final
 class PlayViewReq(google.protobuf.message.Message):
     """播放页信息-请求"""
 
@@ -1328,6 +1451,7 @@ class PlayViewReq(google.protobuf.message.Message):
 
 global___PlayViewReq = PlayViewReq
 
+@typing_extensions.final
 class ProjectReply(google.protobuf.message.Message):
     """投屏地址-响应"""
 
@@ -1346,6 +1470,7 @@ class ProjectReply(google.protobuf.message.Message):
 
 global___ProjectReply = ProjectReply
 
+@typing_extensions.final
 class ProjectReq(google.protobuf.message.Message):
     """投屏地址-请求"""
 
@@ -1415,6 +1540,7 @@ class ProjectReq(google.protobuf.message.Message):
 
 global___ProjectReq = ProjectReq
 
+@typing_extensions.final
 class ResponseDash(google.protobuf.message.Message):
     """dash数据"""
 
@@ -1438,6 +1564,7 @@ class ResponseDash(google.protobuf.message.Message):
 
 global___ResponseDash = ResponseDash
 
+@typing_extensions.final
 class ResponseUrl(google.protobuf.message.Message):
     """分段流条目"""
 
@@ -1476,6 +1603,7 @@ class ResponseUrl(google.protobuf.message.Message):
 
 global___ResponseUrl = ResponseUrl
 
+@typing_extensions.final
 class SegmentVideo(google.protobuf.message.Message):
     """分段视频流"""
 
@@ -1494,6 +1622,7 @@ class SegmentVideo(google.protobuf.message.Message):
 
 global___SegmentVideo = SegmentVideo
 
+@typing_extensions.final
 class Shake(google.protobuf.message.Message):
     """震动"""
 
@@ -1511,6 +1640,7 @@ class Shake(google.protobuf.message.Message):
 
 global___Shake = Shake
 
+@typing_extensions.final
 class Stream(google.protobuf.message.Message):
     """视频流信息"""
 
@@ -1541,6 +1671,7 @@ class Stream(google.protobuf.message.Message):
 
 global___Stream = Stream
 
+@typing_extensions.final
 class StreamInfo(google.protobuf.message.Message):
     """流媒体元数据"""
 
@@ -1565,7 +1696,7 @@ class StreamInfo(google.protobuf.message.Message):
     """格式"""
     description: builtins.str
     """格式描述"""
-    err_code: builtins.int
+    err_code: global___PlayErr.ValueType
     """错误码"""
     @property
     def limit(self) -> global___StreamLimit:
@@ -1592,7 +1723,7 @@ class StreamInfo(google.protobuf.message.Message):
         quality: builtins.int = ...,
         format: builtins.str = ...,
         description: builtins.str = ...,
-        err_code: builtins.int = ...,
+        err_code: global___PlayErr.ValueType = ...,
         limit: global___StreamLimit | None = ...,
         need_vip: builtins.bool = ...,
         need_login: builtins.bool = ...,
@@ -1608,6 +1739,7 @@ class StreamInfo(google.protobuf.message.Message):
 
 global___StreamInfo = StreamInfo
 
+@typing_extensions.final
 class StreamLimit(google.protobuf.message.Message):
     """清晰度不满足条件信息"""
 
@@ -1633,6 +1765,7 @@ class StreamLimit(google.protobuf.message.Message):
 
 global___StreamLimit = StreamLimit
 
+@typing_extensions.final
 class UpgradeButton(google.protobuf.message.Message):
     """互动视频升级按钮信息"""
 
@@ -1654,6 +1787,7 @@ class UpgradeButton(google.protobuf.message.Message):
 
 global___UpgradeButton = UpgradeButton
 
+@typing_extensions.final
 class UpgradeLimit(google.protobuf.message.Message):
     """互动视频升级提示"""
 
@@ -1685,6 +1819,7 @@ class UpgradeLimit(google.protobuf.message.Message):
 
 global___UpgradeLimit = UpgradeLimit
 
+@typing_extensions.final
 class VideoInfo(google.protobuf.message.Message):
     """视频url信息"""
 
@@ -1735,6 +1870,7 @@ class VideoInfo(google.protobuf.message.Message):
 
 global___VideoInfo = VideoInfo
 
+@typing_extensions.final
 class VolumeInfo(google.protobuf.message.Message):
     """"""
 

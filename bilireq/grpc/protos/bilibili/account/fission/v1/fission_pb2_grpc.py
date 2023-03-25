@@ -25,6 +25,11 @@ class FissionStub(object):
                 request_serializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.WindowReq.SerializeToString,
                 response_deserializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.WindowReply.FromString,
                 )
+        self.Privacy = channel.unary_unary(
+                '/bilibili.account.fission.v1.Fission/Privacy',
+                request_serializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.PrivacyReq.SerializeToString,
+                response_deserializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.PrivacyReply.FromString,
+                )
 
 
 class FissionServicer(object):
@@ -45,6 +50,13 @@ class FissionServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Privacy(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FissionServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -57,6 +69,11 @@ def add_FissionServicer_to_server(servicer, server):
                     servicer.Window,
                     request_deserializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.WindowReq.FromString,
                     response_serializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.WindowReply.SerializeToString,
+            ),
+            'Privacy': grpc.unary_unary_rpc_method_handler(
+                    servicer.Privacy,
+                    request_deserializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.PrivacyReq.FromString,
+                    response_serializer=bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.PrivacyReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -100,5 +117,22 @@ class Fission(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.account.fission.v1.Fission/Window',
             bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.WindowReq.SerializeToString,
             bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.WindowReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Privacy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.account.fission.v1.Fission/Privacy',
+            bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.PrivacyReq.SerializeToString,
+            bilibili_dot_account_dot_fission_dot_v1_dot_fission__pb2.PrivacyReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

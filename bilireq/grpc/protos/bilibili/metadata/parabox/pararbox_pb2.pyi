@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Exp(google.protobuf.message.Message):
     """"""
 
@@ -37,6 +38,7 @@ class Exp(google.protobuf.message.Message):
 
 global___Exp = Exp
 
+@typing_extensions.final
 class Exps(google.protobuf.message.Message):
     """"""
 

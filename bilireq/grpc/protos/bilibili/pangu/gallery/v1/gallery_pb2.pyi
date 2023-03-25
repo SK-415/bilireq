@@ -22,7 +22,7 @@ class _GT14Status:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _GT14StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_GT14Status.ValueType], builtins.type):  # noqa: F821
+class _GT14StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_GT14Status.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     LT14: _GT14Status.ValueType  # 0
     """"""
@@ -46,7 +46,7 @@ class _NFTStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _NFTStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_NFTStatus.ValueType], builtins.type):  # noqa: F821
+class _NFTStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_NFTStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNDEFINED: _NFTStatus.ValueType  # 0
     """"""
@@ -70,7 +70,7 @@ class _PolicyAgreeStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PolicyAgreeStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PolicyAgreeStatus.ValueType], builtins.type):  # noqa: F821
+class _PolicyAgreeStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PolicyAgreeStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNSIGNED: _PolicyAgreeStatus.ValueType  # 0
     """"""
@@ -94,7 +94,7 @@ class _PolicyType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PolicyTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PolicyType.ValueType], builtins.type):  # noqa: F821
+class _PolicyTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PolicyType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNKNOWN_POLICY: _PolicyType.ValueType  # 0
     """"""
@@ -114,6 +114,7 @@ SALE: PolicyType.ValueType  # 2
 """"""
 global___PolicyType = PolicyType
 
+@typing_extensions.final
 class AgreePolicyReply(google.protobuf.message.Message):
     """"""
 
@@ -125,6 +126,7 @@ class AgreePolicyReply(google.protobuf.message.Message):
 
 global___AgreePolicyReply = AgreePolicyReply
 
+@typing_extensions.final
 class AgreePolicyReq(google.protobuf.message.Message):
     """"""
 
@@ -146,6 +148,7 @@ class AgreePolicyReq(google.protobuf.message.Message):
 
 global___AgreePolicyReq = AgreePolicyReq
 
+@typing_extensions.final
 class BasicInfoReply(google.protobuf.message.Message):
     """"""
 
@@ -176,6 +179,7 @@ class BasicInfoReply(google.protobuf.message.Message):
 
 global___BasicInfoReply = BasicInfoReply
 
+@typing_extensions.final
 class BasicInfoReq(google.protobuf.message.Message):
     """"""
 
@@ -193,6 +197,7 @@ class BasicInfoReq(google.protobuf.message.Message):
 
 global___BasicInfoReq = BasicInfoReq
 
+@typing_extensions.final
 class Display(google.protobuf.message.Message):
     """"""
 
@@ -222,6 +227,7 @@ class Display(google.protobuf.message.Message):
 
 global___Display = Display
 
+@typing_extensions.final
 class GetLastPolicyReply(google.protobuf.message.Message):
     """"""
 
@@ -247,6 +253,7 @@ class GetLastPolicyReply(google.protobuf.message.Message):
 
 global___GetLastPolicyReply = GetLastPolicyReply
 
+@typing_extensions.final
 class GetLastPolicyReq(google.protobuf.message.Message):
     """"""
 
@@ -264,6 +271,7 @@ class GetLastPolicyReq(google.protobuf.message.Message):
 
 global___GetLastPolicyReq = GetLastPolicyReq
 
+@typing_extensions.final
 class GetUserInfoReply(google.protobuf.message.Message):
     """"""
 
@@ -297,6 +305,7 @@ class GetUserInfoReply(google.protobuf.message.Message):
 
 global___GetUserInfoReply = GetUserInfoReply
 
+@typing_extensions.final
 class GetUserInfoReq(google.protobuf.message.Message):
     """"""
 
@@ -314,6 +323,7 @@ class GetUserInfoReq(google.protobuf.message.Message):
 
 global___GetUserInfoReq = GetUserInfoReq
 
+@typing_extensions.final
 class Link(google.protobuf.message.Message):
     """"""
 
@@ -339,6 +349,7 @@ class Link(google.protobuf.message.Message):
 
 global___Link = Link
 
+@typing_extensions.final
 class ListNFTByMidReply(google.protobuf.message.Message):
     """"""
 
@@ -365,6 +376,7 @@ class ListNFTByMidReply(google.protobuf.message.Message):
 
 global___ListNFTByMidReply = ListNFTByMidReply
 
+@typing_extensions.final
 class ListNFTByMidReq(google.protobuf.message.Message):
     """"""
 
@@ -398,6 +410,7 @@ class ListNFTByMidReq(google.protobuf.message.Message):
 
 global___ListNFTByMidReq = ListNFTByMidReq
 
+@typing_extensions.final
 class ListOrderByMidReply(google.protobuf.message.Message):
     """"""
 
@@ -424,6 +437,7 @@ class ListOrderByMidReply(google.protobuf.message.Message):
 
 global___ListOrderByMidReply = ListOrderByMidReply
 
+@typing_extensions.final
 class ListOrderByMidReq(google.protobuf.message.Message):
     """"""
 
@@ -449,6 +463,7 @@ class ListOrderByMidReq(google.protobuf.message.Message):
 
 global___ListOrderByMidReq = ListOrderByMidReq
 
+@typing_extensions.final
 class NFT(google.protobuf.message.Message):
     """"""
 
@@ -496,6 +511,7 @@ class NFT(google.protobuf.message.Message):
 
 global___NFT = NFT
 
+@typing_extensions.final
 class Order(google.protobuf.message.Message):
     """"""
 
@@ -559,6 +575,7 @@ class Order(google.protobuf.message.Message):
 
 global___Order = Order
 
+@typing_extensions.final
 class UserCheckReply(google.protobuf.message.Message):
     """"""
 
@@ -580,6 +597,7 @@ class UserCheckReply(google.protobuf.message.Message):
 
 global___UserCheckReply = UserCheckReply
 
+@typing_extensions.final
 class UserCheckReq(google.protobuf.message.Message):
     """"""
 

@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class QoeReportReq(google.protobuf.message.Message):
     """"""
 
@@ -24,6 +25,7 @@ class QoeReportReq(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     CANCEL_FIELD_NUMBER: builtins.int
     BUSINESS_TYPE_FIELD_NUMBER: builtins.int
+    OID_FIELD_NUMBER: builtins.int
     SCORE_RESULT_FIELD_NUMBER: builtins.int
     BUSINESS_DATA_FIELD_NUMBER: builtins.int
     id: builtins.int
@@ -35,6 +37,8 @@ class QoeReportReq(google.protobuf.message.Message):
     cancel: builtins.bool
     """"""
     business_type: builtins.str
+    """"""
+    oid: builtins.int
     """"""
     @property
     def score_result(self) -> global___QoeScoreResult:
@@ -49,14 +53,16 @@ class QoeReportReq(google.protobuf.message.Message):
         type: builtins.int = ...,
         cancel: builtins.bool = ...,
         business_type: builtins.str = ...,
+        oid: builtins.int = ...,
         score_result: global___QoeScoreResult | None = ...,
         business_data: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["score_result", b"score_result"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["business_data", b"business_data", "business_type", b"business_type", "cancel", b"cancel", "id", b"id", "scene", b"scene", "score_result", b"score_result", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["business_data", b"business_data", "business_type", b"business_type", "cancel", b"cancel", "id", b"id", "oid", b"oid", "scene", b"scene", "score_result", b"score_result", "type", b"type"]) -> None: ...
 
 global___QoeReportReq = QoeReportReq
 
+@typing_extensions.final
 class QoeScoreResult(google.protobuf.message.Message):
     """"""
 

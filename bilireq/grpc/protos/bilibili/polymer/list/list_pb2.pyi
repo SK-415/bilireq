@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class CheckAccountReply(google.protobuf.message.Message):
     """"""
 
@@ -33,6 +34,7 @@ class CheckAccountReply(google.protobuf.message.Message):
 
 global___CheckAccountReply = CheckAccountReply
 
+@typing_extensions.final
 class CheckAccountReq(google.protobuf.message.Message):
     """"""
 
@@ -54,6 +56,7 @@ class CheckAccountReq(google.protobuf.message.Message):
 
 global___CheckAccountReq = CheckAccountReq
 
+@typing_extensions.final
 class FavoriteTabItem(google.protobuf.message.Message):
     """"""
 
@@ -79,6 +82,7 @@ class FavoriteTabItem(google.protobuf.message.Message):
 
 global___FavoriteTabItem = FavoriteTabItem
 
+@typing_extensions.final
 class FavoriteTabReply(google.protobuf.message.Message):
     """"""
 
@@ -97,6 +101,7 @@ class FavoriteTabReply(google.protobuf.message.Message):
 
 global___FavoriteTabReply = FavoriteTabReply
 
+@typing_extensions.final
 class FavoriteTabReq(google.protobuf.message.Message):
     """"""
 

@@ -16,37 +16,37 @@ class HistoryStub(object):
             channel: A grpc.Channel.
         """
         self.HistoryTab = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.History/HistoryTab',
+                '/bilibili.app.interface.v1.History/HistoryTab',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.HistoryTabReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.HistoryTabReply.FromString,
                 )
         self.Cursor = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.History/Cursor',
+                '/bilibili.app.interface.v1.History/Cursor',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorReply.FromString,
                 )
         self.CursorV2 = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.History/CursorV2',
+                '/bilibili.app.interface.v1.History/CursorV2',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorV2Req.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorV2Reply.FromString,
                 )
         self.Delete = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.History/Delete',
+                '/bilibili.app.interface.v1.History/Delete',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.DeleteReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.NoReply.FromString,
                 )
         self.Search = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.History/Search',
+                '/bilibili.app.interface.v1.History/Search',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.SearchReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.SearchReply.FromString,
                 )
         self.Clear = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.History/Clear',
+                '/bilibili.app.interface.v1.History/Clear',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.ClearReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.NoReply.FromString,
                 )
         self.LatestHistory = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.History/LatestHistory',
+                '/bilibili.app.interface.v1.History/LatestHistory',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.LatestHistoryReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.LatestHistoryReply.FromString,
                 )
@@ -145,7 +145,7 @@ def add_HistoryServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'bilibili.app.interfaces.v1.History', rpc_method_handlers)
+            'bilibili.app.interface.v1.History', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -165,7 +165,7 @@ class History(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.History/HistoryTab',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.History/HistoryTab',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.HistoryTabReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.HistoryTabReply.FromString,
             options, channel_credentials,
@@ -182,7 +182,7 @@ class History(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.History/Cursor',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.History/Cursor',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorReply.FromString,
             options, channel_credentials,
@@ -199,7 +199,7 @@ class History(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.History/CursorV2',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.History/CursorV2',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorV2Req.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.CursorV2Reply.FromString,
             options, channel_credentials,
@@ -216,7 +216,7 @@ class History(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.History/Delete',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.History/Delete',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.DeleteReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.NoReply.FromString,
             options, channel_credentials,
@@ -233,7 +233,7 @@ class History(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.History/Search',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.History/Search',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.SearchReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.SearchReply.FromString,
             options, channel_credentials,
@@ -250,7 +250,7 @@ class History(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.History/Clear',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.History/Clear',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.ClearReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.NoReply.FromString,
             options, channel_credentials,
@@ -267,7 +267,7 @@ class History(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.History/LatestHistory',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.History/LatestHistory',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.LatestHistoryReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_history__pb2.LatestHistoryReply.FromString,
             options, channel_credentials,

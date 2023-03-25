@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class MessagePullsReply(google.protobuf.message.Message):
     """"""
 
@@ -51,6 +52,7 @@ class MessagePullsReply(google.protobuf.message.Message):
 
 global___MessagePullsReply = MessagePullsReply
 
+@typing_extensions.final
 class MessagePullsReq(google.protobuf.message.Message):
     """"""
 

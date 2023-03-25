@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ArchiveReply(google.protobuf.message.Message):
     """-响应"""
 
@@ -49,6 +50,7 @@ class ArchiveReply(google.protobuf.message.Message):
 
 global___ArchiveReply = ArchiveReply
 
+@typing_extensions.final
 class ArchiveReq(google.protobuf.message.Message):
     """-请求"""
 
@@ -78,6 +80,7 @@ class ArchiveReq(google.protobuf.message.Message):
 
 global___ArchiveReq = ArchiveReq
 
+@typing_extensions.final
 class Badge(google.protobuf.message.Message):
     """"""
 
@@ -123,6 +126,7 @@ class Badge(google.protobuf.message.Message):
 
 global___Badge = Badge
 
+@typing_extensions.final
 class BiliSpaceVideo(google.protobuf.message.Message):
     """"""
 
@@ -205,6 +209,7 @@ class BiliSpaceVideo(google.protobuf.message.Message):
 
 global___BiliSpaceVideo = BiliSpaceVideo
 
+@typing_extensions.final
 class EpisodicButton(google.protobuf.message.Message):
     """"""
 
@@ -226,6 +231,7 @@ class EpisodicButton(google.protobuf.message.Message):
 
 global___EpisodicButton = EpisodicButton
 
+@typing_extensions.final
 class OrderConfig(google.protobuf.message.Message):
     """"""
 

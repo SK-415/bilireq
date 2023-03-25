@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class FawkesReply(google.protobuf.message.Message):
     """"""
 
@@ -35,6 +36,7 @@ class FawkesReply(google.protobuf.message.Message):
 
 global___FawkesReply = FawkesReply
 
+@typing_extensions.final
 class FawkesReq(google.protobuf.message.Message):
     """"""
 

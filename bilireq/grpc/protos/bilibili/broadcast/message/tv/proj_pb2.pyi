@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ProjReply(google.protobuf.message.Message):
     """投屏"""
 
@@ -67,6 +68,7 @@ class ProjReply(google.protobuf.message.Message):
 
 global___ProjReply = ProjReply
 
+@typing_extensions.final
 class LiveStatusNotify(google.protobuf.message.Message):
     """直播状态"""
 
@@ -94,6 +96,7 @@ class LiveStatusNotify(google.protobuf.message.Message):
 
 global___LiveStatusNotify = LiveStatusNotify
 
+@typing_extensions.final
 class EsportsNotify(google.protobuf.message.Message):
     """"""
 
@@ -111,6 +114,7 @@ class EsportsNotify(google.protobuf.message.Message):
 
 global___EsportsNotify = EsportsNotify
 
+@typing_extensions.final
 class PublicityNotify(google.protobuf.message.Message):
     """直播插卡"""
 
@@ -138,6 +142,7 @@ class PublicityNotify(google.protobuf.message.Message):
 
 global___PublicityNotify = PublicityNotify
 
+@typing_extensions.final
 class LiveSkipNotify(google.protobuf.message.Message):
     """直转点"""
 

@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GetOnlineRankReq(google.protobuf.message.Message):
     """"""
 
@@ -47,11 +48,13 @@ class GetOnlineRankReq(google.protobuf.message.Message):
 
 global___GetOnlineRankReq = GetOnlineRankReq
 
+@typing_extensions.final
 class GetOnlineRankResp(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class OnlineRankItem(google.protobuf.message.Message):
         """"""
 
@@ -107,6 +110,7 @@ class GetOnlineRankResp(google.protobuf.message.Message):
 
 global___GetOnlineRankResp = GetOnlineRankResp
 
+@typing_extensions.final
 class MedalInfo(google.protobuf.message.Message):
     """"""
 

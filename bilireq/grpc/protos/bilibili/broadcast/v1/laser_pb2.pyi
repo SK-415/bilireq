@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class LaserLogUploadResp(google.protobuf.message.Message):
     """服务端下发日志上报事件"""
 

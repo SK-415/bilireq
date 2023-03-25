@@ -22,7 +22,7 @@ class _EncryptType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _EncryptTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EncryptType.ValueType], builtins.type):  # noqa: F821
+class _EncryptTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EncryptType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     INVALID_ENCRYPT_TYPE: _EncryptType.ValueType  # 0
     """非法值"""
@@ -46,7 +46,7 @@ class _PayloadType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PayloadTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PayloadType.ValueType], builtins.type):  # noqa: F821
+class _PayloadTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PayloadType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     INVALID_PAYLOAD: _PayloadType.ValueType  # 0
     """非法值"""
@@ -62,6 +62,7 @@ DEVICE_APP_LIST: PayloadType.ValueType  # 1
 """设备app列表，对应DeviceAppList"""
 global___PayloadType = PayloadType
 
+@typing_extensions.final
 class DeviceAppList(google.protobuf.message.Message):
     """待加密的pb对象"""
 
@@ -91,6 +92,7 @@ class DeviceAppList(google.protobuf.message.Message):
 
 global___DeviceAppList = DeviceAppList
 
+@typing_extensions.final
 class FetchPublicKeyReply(google.protobuf.message.Message):
     """"""
 
@@ -116,6 +118,7 @@ class FetchPublicKeyReply(google.protobuf.message.Message):
 
 global___FetchPublicKeyReply = FetchPublicKeyReply
 
+@typing_extensions.final
 class GaiaDeviceBasicInfo(google.protobuf.message.Message):
     """"""
 
@@ -224,6 +227,7 @@ class GaiaDeviceBasicInfo(google.protobuf.message.Message):
 
 global___GaiaDeviceBasicInfo = GaiaDeviceBasicInfo
 
+@typing_extensions.final
 class GaiaEncryptMsgReq(google.protobuf.message.Message):
     """应用列表上报-请求"""
 
@@ -247,6 +251,7 @@ class GaiaEncryptMsgReq(google.protobuf.message.Message):
 
 global___GaiaEncryptMsgReq = GaiaEncryptMsgReq
 
+@typing_extensions.final
 class GaiaMsgHeader(google.protobuf.message.Message):
     """风控通用消息头"""
 
@@ -276,6 +281,7 @@ class GaiaMsgHeader(google.protobuf.message.Message):
 
 global___GaiaMsgHeader = GaiaMsgHeader
 
+@typing_extensions.final
 class UploadAppListReply(google.protobuf.message.Message):
     """应用列表上报-响应"""
 

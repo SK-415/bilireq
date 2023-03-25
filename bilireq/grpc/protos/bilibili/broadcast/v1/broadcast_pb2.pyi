@@ -24,7 +24,7 @@ class _Action:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Action.ValueType], builtins.type):  # noqa: F821
+class _ActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Action.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNKNOWN: _Action.ValueType  # 0
     """"""
@@ -44,6 +44,7 @@ DELETE: Action.ValueType  # 2
 """"""
 global___Action = Action
 
+@typing_extensions.final
 class AuthReq(google.protobuf.message.Message):
     """鉴权请求，通过authorization验证绑定用户mid"""
 
@@ -69,6 +70,7 @@ class AuthReq(google.protobuf.message.Message):
 
 global___AuthReq = AuthReq
 
+@typing_extensions.final
 class AuthResp(google.protobuf.message.Message):
     """鉴权返回"""
 
@@ -80,6 +82,7 @@ class AuthResp(google.protobuf.message.Message):
 
 global___AuthResp = AuthResp
 
+@typing_extensions.final
 class BroadcastFrame(google.protobuf.message.Message):
     """target_path:
       "/" Service-Name "/" {method name} 参考 gRPC Request Path
@@ -110,6 +113,7 @@ class BroadcastFrame(google.protobuf.message.Message):
 
 global___BroadcastFrame = BroadcastFrame
 
+@typing_extensions.final
 class FrameOption(google.protobuf.message.Message):
     """message_id: 
       client: 本次连接唯一的消息id，可用于回执
@@ -139,7 +143,7 @@ class FrameOption(google.protobuf.message.Message):
     通常只有业务帧才可能设置is_ack, 因为协议栈(例如心跳、鉴权)另有响应约定
     """
     @property
-    def status(self) -> bilibili.rpc.status_pb2.Status:
+    def status(self) -> bilireq.grpc.protos.bilibili.rpc.status_pb2.Status:
         """业务状态码"""
     ack_origin: builtins.str
     """业务ack来源, 仅downstream时候由服务端填写."""
@@ -160,6 +164,7 @@ class FrameOption(google.protobuf.message.Message):
 
 global___FrameOption = FrameOption
 
+@typing_extensions.final
 class HeartbeatReq(google.protobuf.message.Message):
     """心跳请求"""
 
@@ -171,6 +176,7 @@ class HeartbeatReq(google.protobuf.message.Message):
 
 global___HeartbeatReq = HeartbeatReq
 
+@typing_extensions.final
 class HeartbeatResp(google.protobuf.message.Message):
     """心跳返回"""
 
@@ -182,6 +188,7 @@ class HeartbeatResp(google.protobuf.message.Message):
 
 global___HeartbeatResp = HeartbeatResp
 
+@typing_extensions.final
 class MessageAckReq(google.protobuf.message.Message):
     """消息回执"""
 
@@ -207,6 +214,7 @@ class MessageAckReq(google.protobuf.message.Message):
 
 global___MessageAckReq = MessageAckReq
 
+@typing_extensions.final
 class TargetPath(google.protobuf.message.Message):
     """target_path"""
 

@@ -14,17 +14,29 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
-class EntranceReq(google.protobuf.message.Message):
-    """活动入口-请求"""
+@typing_extensions.final
+class AnimateIcon(google.protobuf.message.Message):
+    """动画效果"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    ICON_FIELD_NUMBER: builtins.int
+    JSON_FIELD_NUMBER: builtins.int
+    icon: builtins.str
+    """icon文件"""
+    json: builtins.str
+    """动效json文件"""
     def __init__(
         self,
+        *,
+        icon: builtins.str = ...,
+        json: builtins.str = ...,
     ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["icon", b"icon", "json", b"json"]) -> None: ...
 
-global___EntranceReq = EntranceReq
+global___AnimateIcon = AnimateIcon
 
+@typing_extensions.final
 class EntranceReply(google.protobuf.message.Message):
     """活动入口-响应"""
 
@@ -56,8 +68,9 @@ class EntranceReply(google.protobuf.message.Message):
 
 global___EntranceReply = EntranceReply
 
-class WindowReq(google.protobuf.message.Message):
-    """首页弹窗-请求"""
+@typing_extensions.final
+class EntranceReq(google.protobuf.message.Message):
+    """活动入口-请求"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -65,8 +78,45 @@ class WindowReq(google.protobuf.message.Message):
         self,
     ) -> None: ...
 
-global___WindowReq = WindowReq
+global___EntranceReq = EntranceReq
 
+@typing_extensions.final
+class PrivacyReply(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["message", b"message"]) -> None: ...
+
+global___PrivacyReply = PrivacyReply
+
+@typing_extensions.final
+class PrivacyReq(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ACTIVITY_UID_FIELD_NUMBER: builtins.int
+    activity_uid: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        activity_uid: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["activity_uid", b"activity_uid"]) -> None: ...
+
+global___PrivacyReq = PrivacyReq
+
+@typing_extensions.final
 class WindowReply(google.protobuf.message.Message):
     """首页弹窗-响应"""
 
@@ -94,23 +144,14 @@ class WindowReply(google.protobuf.message.Message):
 
 global___WindowReply = WindowReply
 
-class AnimateIcon(google.protobuf.message.Message):
-    """动画效果"""
+@typing_extensions.final
+class WindowReq(google.protobuf.message.Message):
+    """首页弹窗-请求"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ICON_FIELD_NUMBER: builtins.int
-    JSON_FIELD_NUMBER: builtins.int
-    icon: builtins.str
-    """icon文件"""
-    json: builtins.str
-    """动效json文件"""
     def __init__(
         self,
-        *,
-        icon: builtins.str = ...,
-        json: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["icon", b"icon", "json", b"json"]) -> None: ...
 
-global___AnimateIcon = AnimateIcon
+global___WindowReq = WindowReq

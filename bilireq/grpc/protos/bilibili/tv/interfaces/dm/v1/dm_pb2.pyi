@@ -16,8 +16,93 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
-class CommandDmOtt(google.protobuf.message.Message):
+@typing_extensions.final
+class Chronos(google.protobuf.message.Message):
     """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MD5_FIELD_NUMBER: builtins.int
+    FILE_FIELD_NUMBER: builtins.int
+    SIGN_FIELD_NUMBER: builtins.int
+    md5: builtins.str
+    """"""
+    file: builtins.str
+    """"""
+    sign: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        md5: builtins.str = ...,
+        file: builtins.str = ...,
+        sign: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["file", b"file", "md5", b"md5", "sign", b"sign"]) -> None: ...
+
+global___Chronos = Chronos
+
+@typing_extensions.final
+class CommandDm(google.protobuf.message.Message):
+    """互动弹幕条目信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    OID_FIELD_NUMBER: builtins.int
+    MID_FIELD_NUMBER: builtins.int
+    COMMAND_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    PROGRESS_FIELD_NUMBER: builtins.int
+    CTIME_FIELD_NUMBER: builtins.int
+    MTIME_FIELD_NUMBER: builtins.int
+    EXTRA_FIELD_NUMBER: builtins.int
+    IDSTR_FIELD_NUMBER: builtins.int
+    DISPLAY_FIELD_NUMBER: builtins.int
+    id: builtins.int
+    """弹幕id"""
+    oid: builtins.int
+    """对象视频cid"""
+    mid: builtins.str
+    """发送者mid"""
+    command: builtins.str
+    """互动弹幕指令"""
+    content: builtins.str
+    """互动弹幕正文"""
+    progress: builtins.int
+    """出现时间"""
+    ctime: builtins.str
+    """创建时间"""
+    mtime: builtins.str
+    """发布时间"""
+    extra: builtins.str
+    """扩展json数据"""
+    idStr: builtins.str
+    """弹幕id str类型"""
+    display: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        id: builtins.int = ...,
+        oid: builtins.int = ...,
+        mid: builtins.str = ...,
+        command: builtins.str = ...,
+        content: builtins.str = ...,
+        progress: builtins.int = ...,
+        ctime: builtins.str = ...,
+        mtime: builtins.str = ...,
+        extra: builtins.str = ...,
+        idStr: builtins.str = ...,
+        display: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["command", b"command", "content", b"content", "ctime", b"ctime", "display", b"display", "extra", b"extra", "id", b"id", "idStr", b"idStr", "mid", b"mid", "mtime", b"mtime", "oid", b"oid", "progress", b"progress"]) -> None: ...
+
+global___CommandDm = CommandDm
+
+@typing_extensions.final
+class CommandDmOtt(google.protobuf.message.Message):
+    """ott互动弹幕条目信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -34,29 +119,29 @@ class CommandDmOtt(google.protobuf.message.Message):
     EXTRA_FIELD_NUMBER: builtins.int
     ID_STR_FIELD_NUMBER: builtins.int
     id: builtins.int
-    """"""
+    """弹幕id"""
     oid: builtins.int
-    """"""
+    """对象视频cid"""
     mid: builtins.int
-    """"""
+    """发送者mid"""
     type: builtins.int
     """"""
     command: builtins.str
-    """"""
+    """互动弹幕指令"""
     content: builtins.str
-    """"""
+    """互动弹幕正文"""
     state: builtins.int
     """"""
     progress: builtins.int
-    """"""
+    """出现时间"""
     ctime: builtins.str
-    """"""
+    """创建时间"""
     mtime: builtins.str
-    """"""
+    """发布时间"""
     extra: builtins.str
-    """"""
+    """扩展json数据"""
     id_str: builtins.str
-    """"""
+    """弹幕id str类型"""
     def __init__(
         self,
         *,
@@ -77,6 +162,7 @@ class CommandDmOtt(google.protobuf.message.Message):
 
 global___CommandDmOtt = CommandDmOtt
 
+@typing_extensions.final
 class CommandDmsOttReply(google.protobuf.message.Message):
     """"""
 
@@ -95,6 +181,7 @@ class CommandDmsOttReply(google.protobuf.message.Message):
 
 global___CommandDmsOttReply = CommandDmsOttReply
 
+@typing_extensions.final
 class CommandDmsOttReq(google.protobuf.message.Message):
     """"""
 
@@ -120,6 +207,7 @@ class CommandDmsOttReq(google.protobuf.message.Message):
 
 global___CommandDmsOttReq = CommandDmsOttReq
 
+@typing_extensions.final
 class DanmakuAIFlag(google.protobuf.message.Message):
     """弹幕ai云屏蔽列表"""
 
@@ -138,6 +226,7 @@ class DanmakuAIFlag(google.protobuf.message.Message):
 
 global___DanmakuAIFlag = DanmakuAIFlag
 
+@typing_extensions.final
 class DanmakuElem(google.protobuf.message.Message):
     """弹幕条目"""
 
@@ -205,6 +294,7 @@ class DanmakuElem(google.protobuf.message.Message):
 
 global___DanmakuElem = DanmakuElem
 
+@typing_extensions.final
 class DanmakuFlag(google.protobuf.message.Message):
     """弹幕ai云屏蔽条目"""
 
@@ -226,6 +316,7 @@ class DanmakuFlag(google.protobuf.message.Message):
 
 global___DanmakuFlag = DanmakuFlag
 
+@typing_extensions.final
 class DanmakuFlagConfig(google.protobuf.message.Message):
     """云屏蔽配置信息"""
 
@@ -251,6 +342,7 @@ class DanmakuFlagConfig(google.protobuf.message.Message):
 
 global___DanmakuFlagConfig = DanmakuFlagConfig
 
+@typing_extensions.final
 class DanmuDefaultPlayerConfig(google.protobuf.message.Message):
     """弹幕默认配置"""
 
@@ -324,6 +416,7 @@ class DanmuDefaultPlayerConfig(google.protobuf.message.Message):
 
 global___DanmuDefaultPlayerConfig = DanmuDefaultPlayerConfig
 
+@typing_extensions.final
 class DanmuPlayerConfig(google.protobuf.message.Message):
     """弹幕配置"""
 
@@ -413,6 +506,7 @@ class DanmuPlayerConfig(google.protobuf.message.Message):
 
 global___DanmuPlayerConfig = DanmuPlayerConfig
 
+@typing_extensions.final
 class DanmuPlayerDynamicConfig(google.protobuf.message.Message):
     """弹幕显示区域自动配置"""
 
@@ -434,6 +528,7 @@ class DanmuPlayerDynamicConfig(google.protobuf.message.Message):
 
 global___DanmuPlayerDynamicConfig = DanmuPlayerDynamicConfig
 
+@typing_extensions.final
 class DanmuPlayerViewConfig(google.protobuf.message.Message):
     """弹幕配置信息"""
 
@@ -463,6 +558,7 @@ class DanmuPlayerViewConfig(google.protobuf.message.Message):
 
 global___DanmuPlayerViewConfig = DanmuPlayerViewConfig
 
+@typing_extensions.final
 class DmSegMobileReply(google.protobuf.message.Message):
     """获取弹幕-响应"""
 
@@ -493,6 +589,7 @@ class DmSegMobileReply(google.protobuf.message.Message):
 
 global___DmSegMobileReply = DmSegMobileReply
 
+@typing_extensions.final
 class DmSegMobileReq(google.protobuf.message.Message):
     """获取弹幕-请求"""
 
@@ -529,6 +626,7 @@ class DmSegMobileReq(google.protobuf.message.Message):
 
 global___DmSegMobileReq = DmSegMobileReq
 
+@typing_extensions.final
 class DmViewReply(google.protobuf.message.Message):
     """客户端弹幕元数据-响应"""
 
@@ -546,6 +644,7 @@ class DmViewReply(google.protobuf.message.Message):
     CHECK_BOX_SHOW_MSG_FIELD_NUMBER: builtins.int
     TEXT_PLACEHOLDER_FIELD_NUMBER: builtins.int
     INPUT_PLACEHOLDER_FIELD_NUMBER: builtins.int
+    COMMAND_CLOSE_FIELD_NUMBER: builtins.int
     closed: builtins.bool
     """是否已关闭弹幕
     0:未关闭 1:已关闭
@@ -577,6 +676,8 @@ class DmViewReply(google.protobuf.message.Message):
     """展示文案"""
     input_placeholder: builtins.str
     """弹幕输入框文案"""
+    command_close: builtins.bool
+    """"""
     def __init__(
         self,
         *,
@@ -592,12 +693,14 @@ class DmViewReply(google.protobuf.message.Message):
         check_box_show_msg: builtins.str = ...,
         text_placeholder: builtins.str = ...,
         input_placeholder: builtins.str = ...,
+        command_close: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag", "mask", b"mask", "player_config", b"player_config", "subtitle", b"subtitle"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag", "allow", b"allow", "check_box", b"check_box", "check_box_show_msg", b"check_box_show_msg", "closed", b"closed", "input_placeholder", b"input_placeholder", "mask", b"mask", "player_config", b"player_config", "send_box_style", b"send_box_style", "special_dms", b"special_dms", "subtitle", b"subtitle", "text_placeholder", b"text_placeholder"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag", "allow", b"allow", "check_box", b"check_box", "check_box_show_msg", b"check_box_show_msg", "closed", b"closed", "command_close", b"command_close", "input_placeholder", b"input_placeholder", "mask", b"mask", "player_config", b"player_config", "send_box_style", b"send_box_style", "special_dms", b"special_dms", "subtitle", b"subtitle", "text_placeholder", b"text_placeholder"]) -> None: ...
 
 global___DmViewReply = DmViewReply
 
+@typing_extensions.final
 class DmViewReq(google.protobuf.message.Message):
     """客户端弹幕元数据-请求"""
 
@@ -634,6 +737,7 @@ class DmViewReq(google.protobuf.message.Message):
 
 global___DmViewReq = DmViewReq
 
+@typing_extensions.final
 class SubtitleItem(google.protobuf.message.Message):
     """单个字幕信息"""
 
@@ -673,6 +777,87 @@ class SubtitleItem(google.protobuf.message.Message):
 
 global___SubtitleItem = SubtitleItem
 
+@typing_extensions.final
+class TvViewProgressReply(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_GUIDE_FIELD_NUMBER: builtins.int
+    CHRONOS_FIELD_NUMBER: builtins.int
+    @property
+    def video_guide(self) -> global___VideoGuide:
+        """"""
+    @property
+    def chronos(self) -> global___Chronos:
+        """"""
+    def __init__(
+        self,
+        *,
+        video_guide: global___VideoGuide | None = ...,
+        chronos: global___Chronos | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["chronos", b"chronos", "video_guide", b"video_guide"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["chronos", b"chronos", "video_guide", b"video_guide"]) -> None: ...
+
+global___TvViewProgressReply = TvViewProgressReply
+
+@typing_extensions.final
+class TvViewProgressReq(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AID_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    UP_MID_FIELD_NUMBER: builtins.int
+    ENGINE_VERSION_FIELD_NUMBER: builtins.int
+    MESSAGE_PROTOCOL_FIELD_NUMBER: builtins.int
+    SERVICE_KEY_FIELD_NUMBER: builtins.int
+    SID_FIELD_NUMBER: builtins.int
+    PID_FIELD_NUMBER: builtins.int
+    FROM_FIELD_NUMBER: builtins.int
+    GUEST_ACCESS_KEY_FIELD_NUMBER: builtins.int
+    EPID_FIELD_NUMBER: builtins.int
+    aid: builtins.int
+    """"""
+    cid: builtins.int
+    """"""
+    up_mid: builtins.int
+    """"""
+    engine_version: builtins.str
+    """"""
+    message_protocol: builtins.str
+    """"""
+    service_key: builtins.str
+    """"""
+    sid: builtins.int
+    """"""
+    pid: builtins.int
+    """"""
+    guest_access_key: builtins.str
+    """"""
+    epid: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        aid: builtins.int = ...,
+        cid: builtins.int = ...,
+        up_mid: builtins.int = ...,
+        engine_version: builtins.str = ...,
+        message_protocol: builtins.str = ...,
+        service_key: builtins.str = ...,
+        sid: builtins.int = ...,
+        pid: builtins.int = ...,
+        guest_access_key: builtins.str = ...,
+        epid: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "cid", b"cid", "engine_version", b"engine_version", "epid", b"epid", "from", b"from", "guest_access_key", b"guest_access_key", "message_protocol", b"message_protocol", "pid", b"pid", "service_key", b"service_key", "sid", b"sid", "up_mid", b"up_mid"]) -> None: ...
+
+global___TvViewProgressReq = TvViewProgressReq
+
+@typing_extensions.final
 class UserInfo(google.protobuf.message.Message):
     """字幕作者信息"""
 
@@ -710,6 +895,26 @@ class UserInfo(google.protobuf.message.Message):
 
 global___UserInfo = UserInfo
 
+@typing_extensions.final
+class VideoGuide(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COMMAND_DMS_FIELD_NUMBER: builtins.int
+    @property
+    def command_dms(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CommandDm]:
+        """"""
+    def __init__(
+        self,
+        *,
+        command_dms: collections.abc.Iterable[global___CommandDm] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["command_dms", b"command_dms"]) -> None: ...
+
+global___VideoGuide = VideoGuide
+
+@typing_extensions.final
 class VideoMask(google.protobuf.message.Message):
     """智能防挡弹幕蒙版信息"""
 
@@ -745,6 +950,7 @@ class VideoMask(google.protobuf.message.Message):
 
 global___VideoMask = VideoMask
 
+@typing_extensions.final
 class VideoSubtitle(google.protobuf.message.Message):
     """视频字幕信息"""
 

@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Locale(google.protobuf.message.Message):
     """区域标识
     gRPC头部:x-bili-locale-bin
@@ -48,6 +49,7 @@ class Locale(google.protobuf.message.Message):
 
 global___Locale = Locale
 
+@typing_extensions.final
 class LocaleIds(google.protobuf.message.Message):
     """Defined by https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html"""
 

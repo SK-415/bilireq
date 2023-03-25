@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class LiveStartEvent(google.protobuf.message.Message):
     """开播事件"""
 
@@ -25,6 +26,7 @@ class LiveStartEvent(google.protobuf.message.Message):
 
 global___LiveStartEvent = LiveStartEvent
 
+@typing_extensions.final
 class LiveEndEvent(google.protobuf.message.Message):
     """直播中止事件"""
 
@@ -36,6 +38,7 @@ class LiveEndEvent(google.protobuf.message.Message):
 
 global___LiveEndEvent = LiveEndEvent
 
+@typing_extensions.final
 class LiveOnlineEvent(google.protobuf.message.Message):
     """在线人数事件"""
 
@@ -53,6 +56,7 @@ class LiveOnlineEvent(google.protobuf.message.Message):
 
 global___LiveOnlineEvent = LiveOnlineEvent
 
+@typing_extensions.final
 class LiveUpdateEvent(google.protobuf.message.Message):
     """变更通知"""
 
@@ -86,6 +90,7 @@ class LiveUpdateEvent(google.protobuf.message.Message):
 
 global___LiveUpdateEvent = LiveUpdateEvent
 
+@typing_extensions.final
 class CMDBody(google.protobuf.message.Message):
     """直播间事件"""
 

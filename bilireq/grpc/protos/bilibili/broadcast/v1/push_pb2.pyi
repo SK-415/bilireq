@@ -22,7 +22,7 @@ class _LinkType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _LinkTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LinkType.ValueType], builtins.type):  # noqa: F821
+class _LinkTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LinkType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     LINK_TYPE_UNKNOWN: _LinkType.ValueType  # 0
     """未知"""
@@ -46,6 +46,7 @@ LINK_TYPE_LIVE: LinkType.ValueType  # 3
 """直播"""
 global___LinkType = LinkType
 
+@typing_extensions.final
 class PageBlackList(google.protobuf.message.Message):
     """"""
 
@@ -63,6 +64,7 @@ class PageBlackList(google.protobuf.message.Message):
 
 global___PageBlackList = PageBlackList
 
+@typing_extensions.final
 class PageView(google.protobuf.message.Message):
     """"""
 
@@ -80,6 +82,7 @@ class PageView(google.protobuf.message.Message):
 
 global___PageView = PageView
 
+@typing_extensions.final
 class PushMessageResp(google.protobuf.message.Message):
     """"""
 
@@ -257,11 +260,13 @@ class PushMessageResp(google.protobuf.message.Message):
 
 global___PushMessageResp = PushMessageResp
 
+@typing_extensions.final
 class TargetResource(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class ResourceEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

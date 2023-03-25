@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PremiereStatusReq(google.protobuf.message.Message):
     """获取首播状态-请求"""
 
@@ -31,6 +32,7 @@ class PremiereStatusReq(google.protobuf.message.Message):
 
 global___PremiereStatusReq = PremiereStatusReq
 
+@typing_extensions.final
 class PremiereStatusReply(google.protobuf.message.Message):
     """获取首播状态-响应"""
 

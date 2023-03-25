@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Status(google.protobuf.message.Message):
     """响应gRPC Status
     当status code是[UNKNOWN = 2]时，details为业务详细的错误信息，进行proto any转换成业务码结构体

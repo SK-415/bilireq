@@ -23,27 +23,28 @@ class _ClipType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ClipTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ClipType.ValueType], builtins.type):  # noqa: F821
+class _ClipTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ClipType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NT_UNKNOWN: _ClipType.ValueType  # 0
     """"""
     CLIP_TYPE_OP: _ClipType.ValueType  # 1
-    """"""
+    """跳过OP"""
     CLIP_TYPE_ED: _ClipType.ValueType  # 2
-    """"""
+    """跳过ED"""
     CLIP_TYPE_HE: _ClipType.ValueType  # 3
     """"""
     CLIP_TYPE_MULTI_VIEW: _ClipType.ValueType  # 4
     """"""
 
-class ClipType(_ClipType, metaclass=_ClipTypeEnumTypeWrapper): ...
+class ClipType(_ClipType, metaclass=_ClipTypeEnumTypeWrapper):
+    """跳过片头/片尾配置: Clip类型"""
 
 NT_UNKNOWN: ClipType.ValueType  # 0
 """"""
 CLIP_TYPE_OP: ClipType.ValueType  # 1
-""""""
+"""跳过OP"""
 CLIP_TYPE_ED: ClipType.ValueType  # 2
-""""""
+"""跳过ED"""
 CLIP_TYPE_HE: ClipType.ValueType  # 3
 """"""
 CLIP_TYPE_MULTI_VIEW: ClipType.ValueType  # 4
@@ -54,7 +55,7 @@ class _CodeType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CodeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CodeType.ValueType], builtins.type):  # noqa: F821
+class _CodeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CodeType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NOCODE: _CodeType.ValueType  # 0
     """默认"""
@@ -78,7 +79,7 @@ class _DrmTechType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DrmTechTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DrmTechType.ValueType], builtins.type):  # noqa: F821
+class _DrmTechTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DrmTechType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NON: _DrmTechType.ValueType  # 0
     """"""
@@ -86,7 +87,7 @@ class _DrmTechTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     """"""
 
 class DrmTechType(_DrmTechType, metaclass=_DrmTechTypeEnumTypeWrapper):
-    """"""
+    """DRM技术类型"""
 
 NON: DrmTechType.ValueType  # 0
 """"""
@@ -98,7 +99,7 @@ class _InlineScene:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _InlineSceneEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_InlineScene.ValueType], builtins.type):  # noqa: F821
+class _InlineSceneEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_InlineScene.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNKNOWN: _InlineScene.ValueType  # 0
     """"""
@@ -126,7 +127,7 @@ class _InlineType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _InlineTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_InlineType.ValueType], builtins.type):  # noqa: F821
+class _InlineTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_InlineType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     TYPE_UNKNOWN: _InlineType.ValueType  # 0
     """"""
@@ -154,7 +155,7 @@ class _PlayErr:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PlayErrEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlayErr.ValueType], builtins.type):  # noqa: F821
+class _PlayErrEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlayErr.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NoErr: _PlayErr.ValueType  # 0
     """"""
@@ -170,6 +171,7 @@ WithMultiDeviceLoginErr: PlayErr.ValueType  # 1
 """管控类型的错误码"""
 global___PlayErr = PlayErr
 
+@typing_extensions.final
 class BadgeInfo(google.protobuf.message.Message):
     """角标信息"""
 
@@ -190,7 +192,7 @@ class BadgeInfo(google.protobuf.message.Message):
     """文案色值"""
     @property
     def bg_gradient_color(self) -> global___GradientColor:
-        """"""
+        """? 新版本客户端已弃用此项"""
     def __init__(
         self,
         *,
@@ -205,8 +207,9 @@ class BadgeInfo(google.protobuf.message.Message):
 
 global___BadgeInfo = BadgeInfo
 
+@typing_extensions.final
 class BottomDisplay(google.protobuf.message.Message):
-    """"""
+    """Dialog组件: 底部显示"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -214,9 +217,9 @@ class BottomDisplay(google.protobuf.message.Message):
     ICON_FIELD_NUMBER: builtins.int
     @property
     def title(self) -> global___TextInfo:
-        """"""
+        """文案"""
     icon: builtins.str
-    """"""
+    """图标"""
     def __init__(
         self,
         *,
@@ -228,11 +231,13 @@ class BottomDisplay(google.protobuf.message.Message):
 
 global___BottomDisplay = BottomDisplay
 
+@typing_extensions.final
 class ButtonInfo(google.protobuf.message.Message):
     """按钮信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class OrderReportParamsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -322,8 +327,9 @@ class ButtonInfo(google.protobuf.message.Message):
 
 global___ButtonInfo = ButtonInfo
 
+@typing_extensions.final
 class CastTips(google.protobuf.message.Message):
-    """"""
+    """投屏限制. code = 0 时为无限制, 否则表示不不允许投屏并提示message"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -343,8 +349,9 @@ class CastTips(google.protobuf.message.Message):
 
 global___CastTips = CastTips
 
+@typing_extensions.final
 class ClipInfo(google.protobuf.message.Message):
-    """"""
+    """跳过片头/片尾配置"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -357,13 +364,13 @@ class ClipInfo(google.protobuf.message.Message):
     material_no: builtins.int
     """"""
     start: builtins.int
-    """"""
+    """DASH分段始"""
     end: builtins.int
-    """"""
+    """DASH分段终"""
     clip_type: global___ClipType.ValueType
-    """"""
+    """Clip类型"""
     toast_text: builtins.str
-    """"""
+    """跳过片头/片尾时的提示语"""
     @property
     def multi_view(self) -> global___MultiView:
         """"""
@@ -382,6 +389,7 @@ class ClipInfo(google.protobuf.message.Message):
 
 global___ClipInfo = ClipInfo
 
+@typing_extensions.final
 class ContinuePlayInfo(google.protobuf.message.Message):
     """"""
 
@@ -399,6 +407,7 @@ class ContinuePlayInfo(google.protobuf.message.Message):
 
 global___ContinuePlayInfo = ContinuePlayInfo
 
+@typing_extensions.final
 class Coupon(google.protobuf.message.Message):
     """优惠券"""
 
@@ -456,6 +465,7 @@ class Coupon(google.protobuf.message.Message):
 
 global___Coupon = Coupon
 
+@typing_extensions.final
 class CouponInfo(google.protobuf.message.Message):
     """优惠券信息"""
 
@@ -480,6 +490,7 @@ class CouponInfo(google.protobuf.message.Message):
 
 global___CouponInfo = CouponInfo
 
+@typing_extensions.final
 class CouponTextInfo(google.protobuf.message.Message):
     """优惠券提示框文案信息"""
 
@@ -501,6 +512,7 @@ class CouponTextInfo(google.protobuf.message.Message):
 
 global___CouponTextInfo = CouponTextInfo
 
+@typing_extensions.final
 class CouponToast(google.protobuf.message.Message):
     """优惠券提示框信息"""
 
@@ -525,6 +537,7 @@ class CouponToast(google.protobuf.message.Message):
 
 global___CouponToast = CouponToast
 
+@typing_extensions.final
 class DashItem(google.protobuf.message.Message):
     """dash条目"""
 
@@ -552,7 +565,7 @@ class DashItem(google.protobuf.message.Message):
     md5: builtins.str
     """md5"""
     size: builtins.int
-    """大小"""
+    """视频大小"""
     frame_rate: builtins.str
     """帧率"""
     def __init__(
@@ -571,6 +584,7 @@ class DashItem(google.protobuf.message.Message):
 
 global___DashItem = DashItem
 
+@typing_extensions.final
 class DashVideo(google.protobuf.message.Message):
     """dash视频流"""
 
@@ -629,6 +643,7 @@ class DashVideo(google.protobuf.message.Message):
 
 global___DashVideo = DashVideo
 
+@typing_extensions.final
 class Dialog(google.protobuf.message.Message):
     """鉴权浮层"""
 
@@ -708,6 +723,7 @@ class Dialog(google.protobuf.message.Message):
 
 global___Dialog = Dialog
 
+@typing_extensions.final
 class DialogConfig(google.protobuf.message.Message):
     """鉴权浮层配置"""
 
@@ -737,8 +753,9 @@ class DialogConfig(google.protobuf.message.Message):
 
 global___DialogConfig = DialogConfig
 
+@typing_extensions.final
 class Dimension(google.protobuf.message.Message):
-    """"""
+    """当前分辨率信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -746,11 +763,11 @@ class Dimension(google.protobuf.message.Message):
     HEIGHT_FIELD_NUMBER: builtins.int
     ROTATE_FIELD_NUMBER: builtins.int
     width: builtins.int
-    """"""
+    """宽"""
     height: builtins.int
-    """"""
+    """长"""
     rotate: builtins.int
-    """"""
+    """旋转角度"""
     def __init__(
         self,
         *,
@@ -762,6 +779,7 @@ class Dimension(google.protobuf.message.Message):
 
 global___Dimension = Dimension
 
+@typing_extensions.final
 class DolbyItem(google.protobuf.message.Message):
     """杜比音频信息"""
 
@@ -808,6 +826,7 @@ class DolbyItem(google.protobuf.message.Message):
 
 global___DolbyItem = DolbyItem
 
+@typing_extensions.final
 class EndPage(google.protobuf.message.Message):
     """播放结束页"""
 
@@ -831,6 +850,7 @@ class EndPage(google.protobuf.message.Message):
 
 global___EndPage = EndPage
 
+@typing_extensions.final
 class Event(google.protobuf.message.Message):
     """事件"""
 
@@ -850,8 +870,9 @@ class Event(google.protobuf.message.Message):
 
 global___Event = Event
 
+@typing_extensions.final
 class FreyaConfig(google.protobuf.message.Message):
-    """"""
+    """? 放映室提示语"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -887,8 +908,9 @@ class FreyaConfig(google.protobuf.message.Message):
 
 global___FreyaConfig = FreyaConfig
 
+@typing_extensions.final
 class GradientColor(google.protobuf.message.Message):
-    """"""
+    """渐变色信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -908,8 +930,9 @@ class GradientColor(google.protobuf.message.Message):
 
 global___GradientColor = GradientColor
 
+@typing_extensions.final
 class HighDefinitionTrialInfo(google.protobuf.message.Message):
-    """"""
+    """高画质试看信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -963,6 +986,7 @@ class HighDefinitionTrialInfo(google.protobuf.message.Message):
 
 global___HighDefinitionTrialInfo = HighDefinitionTrialInfo
 
+@typing_extensions.final
 class ImageInfo(google.protobuf.message.Message):
     """图片信息"""
 
@@ -980,6 +1004,7 @@ class ImageInfo(google.protobuf.message.Message):
 
 global___ImageInfo = ImageInfo
 
+@typing_extensions.final
 class MultiView(google.protobuf.message.Message):
     """"""
 
@@ -1009,11 +1034,13 @@ class MultiView(google.protobuf.message.Message):
 
 global___MultiView = MultiView
 
+@typing_extensions.final
 class PayTip(google.protobuf.message.Message):
-    """"""
+    """大会员广告: 支付提示信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class OrderReportParamsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1117,6 +1144,7 @@ class PayTip(google.protobuf.message.Message):
 
 global___PayTip = PayTip
 
+@typing_extensions.final
 class PlayAbilityConf(google.protobuf.message.Message):
     """禁用功能配置"""
 
@@ -1258,6 +1286,7 @@ class PlayAbilityConf(google.protobuf.message.Message):
 
 global___PlayAbilityConf = PlayAbilityConf
 
+@typing_extensions.final
 class PlayAbilityExtConf(google.protobuf.message.Message):
     """云控扩展配置信息"""
 
@@ -1286,11 +1315,13 @@ class PlayAbilityExtConf(google.protobuf.message.Message):
 
 global___PlayAbilityExtConf = PlayAbilityExtConf
 
+@typing_extensions.final
 class PlayViewBusinessInfo(google.protobuf.message.Message):
     """其他业务信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class QualityExtMapEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1308,6 +1339,7 @@ class PlayViewBusinessInfo(google.protobuf.message.Message):
         def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    @typing_extensions.final
     class ExpMapEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1348,14 +1380,14 @@ class PlayViewBusinessInfo(google.protobuf.message.Message):
         """"""
     @property
     def clip_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClipInfo]:
-        """"""
+        """跳过片头/片尾配置"""
     inline_type: global___InlineType.ValueType
     """"""
     ep_whole_duration: builtins.int
     """"""
     @property
     def dimension(self) -> global___Dimension:
-        """"""
+        """当前分辨率信息"""
     @property
     def quality_ext_map(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___QualityExtInfo]:
         """"""
@@ -1363,7 +1395,7 @@ class PlayViewBusinessInfo(google.protobuf.message.Message):
     def exp_map(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.int]:
         """"""
     drm_tech_type: global___DrmTechType.ValueType
-    """"""
+    """DRM技术类型"""
     def __init__(
         self,
         *,
@@ -1385,6 +1417,7 @@ class PlayViewBusinessInfo(google.protobuf.message.Message):
 
 global___PlayViewBusinessInfo = PlayViewBusinessInfo
 
+@typing_extensions.final
 class PlayViewReply(google.protobuf.message.Message):
     """播放页信息-响应"""
 
@@ -1429,6 +1462,7 @@ class PlayViewReply(google.protobuf.message.Message):
 
 global___PlayViewReply = PlayViewReply
 
+@typing_extensions.final
 class PlayViewReq(google.protobuf.message.Message):
     """播放页信息-请求"""
 
@@ -1520,6 +1554,7 @@ class PlayViewReq(google.protobuf.message.Message):
 
 global___PlayViewReq = PlayViewReq
 
+@typing_extensions.final
 class PopWin(google.protobuf.message.Message):
     """弹窗信息"""
 
@@ -1575,8 +1610,9 @@ class PopWin(google.protobuf.message.Message):
 
 global___PopWin = PopWin
 
+@typing_extensions.final
 class PromptBar(google.protobuf.message.Message):
-    """"""
+    """广告组件: 竖屏时视频下部提示栏"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1591,23 +1627,23 @@ class PromptBar(google.protobuf.message.Message):
     FULL_SCREEN_BG_GRADIENT_COLOR_FIELD_NUMBER: builtins.int
     @property
     def title(self) -> global___TextInfo:
-        """"""
+        """主标题, 如: "本片含大会员专享内容" """
     @property
     def sub_title(self) -> global___TextInfo:
-        """"""
+        """副标题, 如: "成为大会员可免费看全部剧集" """
     sub_title_icon: builtins.str
-    """"""
+    """副标题前面的icon"""
     bg_image: builtins.str
-    """"""
+    """背景图"""
     @property
     def bg_gradient_color(self) -> global___GradientColor:
-        """"""
+        """背景渐变色"""
     @property
     def button(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ButtonInfo]:
-        """"""
+        """按钮"""
     @property
     def report(self) -> global___Report:
-        """"""
+        """埋点上报信息"""
     full_screen_ip_icon: builtins.str
     """"""
     @property
@@ -1631,14 +1667,15 @@ class PromptBar(google.protobuf.message.Message):
 
 global___PromptBar = PromptBar
 
+@typing_extensions.final
 class QualityExtInfo(google.protobuf.message.Message):
-    """"""
+    """云控拓展视频画质信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TRIAL_SUPPORT_FIELD_NUMBER: builtins.int
     trial_support: builtins.bool
-    """"""
+    """是否支持试看"""
     def __init__(
         self,
         *,
@@ -1648,6 +1685,7 @@ class QualityExtInfo(google.protobuf.message.Message):
 
 global___QualityExtInfo = QualityExtInfo
 
+@typing_extensions.final
 class Report(google.protobuf.message.Message):
     """埋点上报信息"""
 
@@ -1673,6 +1711,7 @@ class Report(google.protobuf.message.Message):
 
 global___Report = Report
 
+@typing_extensions.final
 class ResponseUrl(google.protobuf.message.Message):
     """分段流条目"""
 
@@ -1711,6 +1750,7 @@ class ResponseUrl(google.protobuf.message.Message):
 
 global___ResponseUrl = ResponseUrl
 
+@typing_extensions.final
 class SceneControl(google.protobuf.message.Message):
     """场景控制"""
 
@@ -1744,6 +1784,7 @@ class SceneControl(google.protobuf.message.Message):
 
 global___SceneControl = SceneControl
 
+@typing_extensions.final
 class SegmentVideo(google.protobuf.message.Message):
     """分段视频流"""
 
@@ -1762,6 +1803,7 @@ class SegmentVideo(google.protobuf.message.Message):
 
 global___SegmentVideo = SegmentVideo
 
+@typing_extensions.final
 class Shake(google.protobuf.message.Message):
     """震动"""
 
@@ -1779,6 +1821,7 @@ class Shake(google.protobuf.message.Message):
 
 global___Shake = Shake
 
+@typing_extensions.final
 class Stream(google.protobuf.message.Message):
     """视频流信息"""
 
@@ -1809,6 +1852,7 @@ class Stream(google.protobuf.message.Message):
 
 global___Stream = Stream
 
+@typing_extensions.final
 class StreamInfo(google.protobuf.message.Message):
     """流媒体元数据"""
 
@@ -1876,6 +1920,7 @@ class StreamInfo(google.protobuf.message.Message):
 
 global___StreamInfo = StreamInfo
 
+@typing_extensions.final
 class StreamLimit(google.protobuf.message.Message):
     """清晰度不满足条件信息"""
 
@@ -1901,6 +1946,7 @@ class StreamLimit(google.protobuf.message.Message):
 
 global___StreamLimit = StreamLimit
 
+@typing_extensions.final
 class TextInfo(google.protobuf.message.Message):
     """文案信息"""
 
@@ -1926,11 +1972,13 @@ class TextInfo(google.protobuf.message.Message):
 
 global___TextInfo = TextInfo
 
+@typing_extensions.final
 class Toast(google.protobuf.message.Message):
     """toast"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class OrderReportParamsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1987,6 +2035,7 @@ class Toast(google.protobuf.message.Message):
 
 global___Toast = Toast
 
+@typing_extensions.final
 class VideoInfo(google.protobuf.message.Message):
     """视频url信息"""
 
@@ -2032,11 +2081,13 @@ class VideoInfo(google.protobuf.message.Message):
 
 global___VideoInfo = VideoInfo
 
+@typing_extensions.final
 class ViewInfo(google.protobuf.message.Message):
     """展示信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class ExpConfigEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -2052,6 +2103,7 @@ class ViewInfo(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    @typing_extensions.final
     class ExtDialogEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

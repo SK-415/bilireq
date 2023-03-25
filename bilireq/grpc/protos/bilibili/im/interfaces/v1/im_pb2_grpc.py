@@ -17,132 +17,132 @@ class ImInterfaceStub(object):
             channel: A grpc.Channel.
         """
         self.SendMsg = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SendMsg',
+                '/bilibili.im.interface.v1.ImInterface/SendMsg',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSendMsg.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSendMsg.FromString,
                 )
         self.SyncRelation = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SyncRelation',
+                '/bilibili.im.interface.v1.ImInterface/SyncRelation',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqRelationSync.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspRelationSync.FromString,
                 )
         self.SyncAck = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SyncAck',
+                '/bilibili.im.interface.v1.ImInterface/SyncAck',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSyncAck.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSyncAck.FromString,
                 )
         self.SyncFetchSessionMsgs = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SyncFetchSessionMsgs',
+                '/bilibili.im.interface.v1.ImInterface/SyncFetchSessionMsgs',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSessionMsg.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessionMsg.FromString,
                 )
         self.GetSessions = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/GetSessions',
+                '/bilibili.im.interface.v1.ImInterface/GetSessions',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqGetSessions.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
                 )
         self.NewSessions = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/NewSessions',
+                '/bilibili.im.interface.v1.ImInterface/NewSessions',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqNewSessions.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
                 )
         self.AckSessions = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/AckSessions',
+                '/bilibili.im.interface.v1.ImInterface/AckSessions',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqAckSessions.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
                 )
         self.UpdateAck = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/UpdateAck',
+                '/bilibili.im.interface.v1.ImInterface/UpdateAck',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqUpdateAck.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
                 )
         self.SetTop = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SetTop',
+                '/bilibili.im.interface.v1.ImInterface/SetTop',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSetTop.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
                 )
         self.RemoveSession = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/RemoveSession',
+                '/bilibili.im.interface.v1.ImInterface/RemoveSession',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqRemoveSession.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
                 )
         self.SingleUnread = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SingleUnread',
+                '/bilibili.im.interface.v1.ImInterface/SingleUnread',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSingleUnread.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSingleUnread.FromString,
                 )
         self.MyGroupUnread = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/MyGroupUnread',
+                '/bilibili.im.interface.v1.ImInterface/MyGroupUnread',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyReq.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspMyGroupUnread.FromString,
                 )
         self.UpdateUnflwRead = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/UpdateUnflwRead',
+                '/bilibili.im.interface.v1.ImInterface/UpdateUnflwRead',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyReq.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
                 )
         self.GroupAssisMsg = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/GroupAssisMsg',
+                '/bilibili.im.interface.v1.ImInterface/GroupAssisMsg',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqGroupAssisMsg.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessionMsg.FromString,
                 )
         self.AckAssisMsg = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/AckAssisMsg',
+                '/bilibili.im.interface.v1.ImInterface/AckAssisMsg',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqAckAssisMsg.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
                 )
         self.SessionDetail = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SessionDetail',
+                '/bilibili.im.interface.v1.ImInterface/SessionDetail',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSessionDetail.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_type_dot_im__pb2.SessionInfo.FromString,
                 )
         self.BatchSessDetail = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/BatchSessDetail',
+                '/bilibili.im.interface.v1.ImInterface/BatchSessDetail',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSessionDetails.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessionDetails.FromString,
                 )
         self.BatchRmSessions = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/BatchRmSessions',
+                '/bilibili.im.interface.v1.ImInterface/BatchRmSessions',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqBatRmSess.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
                 )
         self.ShareList = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/ShareList',
+                '/bilibili.im.interface.v1.ImInterface/ShareList',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqShareList.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspShareList.FromString,
                 )
         self.SpecificSingleUnread = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/SpecificSingleUnread',
+                '/bilibili.im.interface.v1.ImInterface/SpecificSingleUnread',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSpecificSingleUnread.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSpecificSingleUnread.FromString,
                 )
         self.GetSpecificSessions = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/GetSpecificSessions',
+                '/bilibili.im.interface.v1.ImInterface/GetSpecificSessions',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqGetSpecificSessions.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
                 )
         self.GetLiveInfo = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/GetLiveInfo',
+                '/bilibili.im.interface.v1.ImInterface/GetLiveInfo',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqLiveInfo.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspLiveInfo.FromString,
                 )
         self.GetTotalUnread = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/GetTotalUnread',
+                '/bilibili.im.interface.v1.ImInterface/GetTotalUnread',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqTotalUnread.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspTotalUnread.FromString,
                 )
         self.ShowClearUnreadUI = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/ShowClearUnreadUI',
+                '/bilibili.im.interface.v1.ImInterface/ShowClearUnreadUI',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqShowClearUnreadUI.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspShowClearUnreadUI.FromString,
                 )
         self.CloseClearUnreadUI = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/CloseClearUnreadUI',
+                '/bilibili.im.interface.v1.ImInterface/CloseClearUnreadUI',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqCloseClearUnreadUI.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspCloseClearUnreadUI.FromString,
                 )
         self.UpdateTotalUnread = channel.unary_unary(
-                '/bilibili.im.interfaces.v1.ImInterface/UpdateTotalUnread',
+                '/bilibili.im.interface.v1.ImInterface/UpdateTotalUnread',
                 request_serializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqUpdateTotalUnread.SerializeToString,
                 response_deserializer=bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspUpdateTotalUnread.FromString,
                 )
@@ -469,7 +469,7 @@ def add_ImInterfaceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'bilibili.im.interfaces.v1.ImInterface', rpc_method_handlers)
+            'bilibili.im.interface.v1.ImInterface', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -489,7 +489,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SendMsg',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SendMsg',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSendMsg.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSendMsg.FromString,
             options, channel_credentials,
@@ -506,7 +506,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SyncRelation',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SyncRelation',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqRelationSync.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspRelationSync.FromString,
             options, channel_credentials,
@@ -523,7 +523,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SyncAck',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SyncAck',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSyncAck.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSyncAck.FromString,
             options, channel_credentials,
@@ -540,7 +540,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SyncFetchSessionMsgs',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SyncFetchSessionMsgs',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSessionMsg.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessionMsg.FromString,
             options, channel_credentials,
@@ -557,7 +557,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/GetSessions',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/GetSessions',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqGetSessions.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
             options, channel_credentials,
@@ -574,7 +574,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/NewSessions',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/NewSessions',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqNewSessions.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
             options, channel_credentials,
@@ -591,7 +591,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/AckSessions',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/AckSessions',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqAckSessions.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
             options, channel_credentials,
@@ -608,7 +608,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/UpdateAck',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/UpdateAck',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqUpdateAck.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
             options, channel_credentials,
@@ -625,7 +625,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SetTop',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SetTop',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSetTop.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
             options, channel_credentials,
@@ -642,7 +642,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/RemoveSession',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/RemoveSession',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqRemoveSession.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
             options, channel_credentials,
@@ -659,7 +659,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SingleUnread',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SingleUnread',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSingleUnread.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSingleUnread.FromString,
             options, channel_credentials,
@@ -676,7 +676,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/MyGroupUnread',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/MyGroupUnread',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyReq.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspMyGroupUnread.FromString,
             options, channel_credentials,
@@ -693,7 +693,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/UpdateUnflwRead',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/UpdateUnflwRead',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyReq.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
             options, channel_credentials,
@@ -710,7 +710,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/GroupAssisMsg',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/GroupAssisMsg',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqGroupAssisMsg.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessionMsg.FromString,
             options, channel_credentials,
@@ -727,7 +727,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/AckAssisMsg',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/AckAssisMsg',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqAckAssisMsg.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
             options, channel_credentials,
@@ -744,7 +744,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SessionDetail',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SessionDetail',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSessionDetail.SerializeToString,
             bilibili_dot_im_dot_type_dot_im__pb2.SessionInfo.FromString,
             options, channel_credentials,
@@ -761,7 +761,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/BatchSessDetail',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/BatchSessDetail',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSessionDetails.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessionDetails.FromString,
             options, channel_credentials,
@@ -778,7 +778,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/BatchRmSessions',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/BatchRmSessions',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqBatRmSess.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.DummyRsp.FromString,
             options, channel_credentials,
@@ -795,7 +795,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/ShareList',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/ShareList',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqShareList.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspShareList.FromString,
             options, channel_credentials,
@@ -812,7 +812,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/SpecificSingleUnread',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/SpecificSingleUnread',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqSpecificSingleUnread.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSpecificSingleUnread.FromString,
             options, channel_credentials,
@@ -829,7 +829,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/GetSpecificSessions',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/GetSpecificSessions',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqGetSpecificSessions.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspSessions.FromString,
             options, channel_credentials,
@@ -846,7 +846,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/GetLiveInfo',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/GetLiveInfo',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqLiveInfo.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspLiveInfo.FromString,
             options, channel_credentials,
@@ -863,7 +863,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/GetTotalUnread',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/GetTotalUnread',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqTotalUnread.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspTotalUnread.FromString,
             options, channel_credentials,
@@ -880,7 +880,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/ShowClearUnreadUI',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/ShowClearUnreadUI',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqShowClearUnreadUI.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspShowClearUnreadUI.FromString,
             options, channel_credentials,
@@ -897,7 +897,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/CloseClearUnreadUI',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/CloseClearUnreadUI',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqCloseClearUnreadUI.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspCloseClearUnreadUI.FromString,
             options, channel_credentials,
@@ -914,7 +914,7 @@ class ImInterface(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interfaces.v1.ImInterface/UpdateTotalUnread',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.im.interface.v1.ImInterface/UpdateTotalUnread',
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.ReqUpdateTotalUnread.SerializeToString,
             bilibili_dot_im_dot_interfaces_dot_v1_dot_im__pb2.RspUpdateTotalUnread.FromString,
             options, channel_credentials,

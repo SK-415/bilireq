@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ShowStrategy(google.protobuf.message.Message):
     """"""
 
@@ -42,6 +43,7 @@ class ShowStrategy(google.protobuf.message.Message):
 
 global___ShowStrategy = ShowStrategy
 
+@typing_extensions.final
 class SplashItem(google.protobuf.message.Message):
     """"""
 
@@ -214,6 +216,7 @@ class SplashItem(google.protobuf.message.Message):
 
 global___SplashItem = SplashItem
 
+@typing_extensions.final
 class SplashReply(google.protobuf.message.Message):
     """-响应"""
 
@@ -249,6 +252,7 @@ class SplashReply(google.protobuf.message.Message):
 
 global___SplashReply = SplashReply
 
+@typing_extensions.final
 class SplashReq(google.protobuf.message.Message):
     """-请求"""
 

@@ -25,6 +25,11 @@ class TopicStub(object):
                 request_serializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicDetailsFoldReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicDetailsFoldReply.FromString,
                 )
+        self.TopicSetDetails = channel.unary_unary(
+                '/bilibili.app.topic.v1.Topic/TopicSetDetails',
+                request_serializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicSetDetailsReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicSetDetailsReply.FromString,
+                )
 
 
 class TopicServicer(object):
@@ -45,6 +50,13 @@ class TopicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def TopicSetDetails(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TopicServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -57,6 +69,11 @@ def add_TopicServicer_to_server(servicer, server):
                     servicer.TopicDetailsFold,
                     request_deserializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicDetailsFoldReq.FromString,
                     response_serializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicDetailsFoldReply.SerializeToString,
+            ),
+            'TopicSetDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.TopicSetDetails,
+                    request_deserializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicSetDetailsReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicSetDetailsReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -100,5 +117,22 @@ class Topic(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.app.topic.v1.Topic/TopicDetailsFold',
             bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicDetailsFoldReq.SerializeToString,
             bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicDetailsFoldReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TopicSetDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.topic.v1.Topic/TopicSetDetails',
+            bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicSetDetailsReq.SerializeToString,
+            bilibili_dot_app_dot_topic_dot_v1_dot_topic__pb2.TopicSetDetailsReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

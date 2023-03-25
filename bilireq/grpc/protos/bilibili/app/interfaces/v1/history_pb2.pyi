@@ -23,7 +23,7 @@ class _DT:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DTEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DT.ValueType], builtins.type):  # noqa: F821
+class _DTEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DT.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Unknown: _DT.ValueType  # 0
     """未知"""
@@ -36,9 +36,9 @@ class _DTEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWra
     TV: _DT.ValueType  # 4
     """TV端"""
     Car: _DT.ValueType  # 5
-    """"""
+    """车机端"""
     Iot: _DT.ValueType  # 6
-    """"""
+    """物联设备"""
     AndPad: _DT.ValueType  # 7
     """apad端"""
 
@@ -56,9 +56,9 @@ PC: DT.ValueType  # 3
 TV: DT.ValueType  # 4
 """TV端"""
 Car: DT.ValueType  # 5
-""""""
+"""车机端"""
 Iot: DT.ValueType  # 6
-""""""
+"""物联设备"""
 AndPad: DT.ValueType  # 7
 """apad端"""
 global___DT = DT
@@ -67,7 +67,7 @@ class _HistorySource:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _HistorySourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HistorySource.ValueType], builtins.type):  # noqa: F821
+class _HistorySourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HistorySource.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     history_VALUE: _HistorySource.ValueType  # 0
     """主站历史记录页"""
@@ -83,6 +83,7 @@ shopping_VALUE: HistorySource.ValueType  # 1
 """会员购浏览记录"""
 global___HistorySource = HistorySource
 
+@typing_extensions.final
 class CardArticle(google.protobuf.message.Message):
     """专栏卡片"""
 
@@ -123,6 +124,7 @@ class CardArticle(google.protobuf.message.Message):
 
 global___CardArticle = CardArticle
 
+@typing_extensions.final
 class CardCheese(google.protobuf.message.Message):
     """课程卡片"""
 
@@ -132,6 +134,7 @@ class CardCheese(google.protobuf.message.Message):
     PROGRESS_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
     SUBTITLE_FIELD_NUMBER: builtins.int
+    STATE_FIELD_NUMBER: builtins.int
     cover: builtins.str
     """封面url"""
     progress: builtins.int
@@ -140,6 +143,8 @@ class CardCheese(google.protobuf.message.Message):
     """总计时长"""
     subtitle: builtins.str
     """单集标题"""
+    state: builtins.int
+    """"""
     def __init__(
         self,
         *,
@@ -147,11 +152,13 @@ class CardCheese(google.protobuf.message.Message):
         progress: builtins.int = ...,
         duration: builtins.int = ...,
         subtitle: builtins.str = ...,
+        state: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "duration", b"duration", "progress", b"progress", "subtitle", b"subtitle"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "duration", b"duration", "progress", b"progress", "state", b"state", "subtitle", b"subtitle"]) -> None: ...
 
 global___CardCheese = CardCheese
 
+@typing_extensions.final
 class CardLive(google.protobuf.message.Message):
     """直播卡片"""
 
@@ -195,6 +202,7 @@ class CardLive(google.protobuf.message.Message):
 
 global___CardLive = CardLive
 
+@typing_extensions.final
 class CardOGV(google.protobuf.message.Message):
     """pgc稿件卡片"""
 
@@ -204,6 +212,8 @@ class CardOGV(google.protobuf.message.Message):
     PROGRESS_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
     SUBTITLE_FIELD_NUMBER: builtins.int
+    BADGE_FIELD_NUMBER: builtins.int
+    STATE_FIELD_NUMBER: builtins.int
     cover: builtins.str
     """封面url"""
     progress: builtins.int
@@ -212,6 +222,10 @@ class CardOGV(google.protobuf.message.Message):
     """总计时长"""
     subtitle: builtins.str
     """单集标题"""
+    badge: builtins.str
+    """"""
+    state: builtins.int
+    """"""
     def __init__(
         self,
         *,
@@ -219,11 +233,14 @@ class CardOGV(google.protobuf.message.Message):
         progress: builtins.int = ...,
         duration: builtins.int = ...,
         subtitle: builtins.str = ...,
+        badge: builtins.str = ...,
+        state: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "duration", b"duration", "progress", b"progress", "subtitle", b"subtitle"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge", b"badge", "cover", b"cover", "duration", b"duration", "progress", b"progress", "state", b"state", "subtitle", b"subtitle"]) -> None: ...
 
 global___CardOGV = CardOGV
 
+@typing_extensions.final
 class CardUGC(google.protobuf.message.Message):
     """ugc稿件卡片"""
 
@@ -303,6 +320,7 @@ class CardUGC(google.protobuf.message.Message):
 
 global___CardUGC = CardUGC
 
+@typing_extensions.final
 class ClearReq(google.protobuf.message.Message):
     """清空历史记录-请求"""
 
@@ -322,6 +340,7 @@ class ClearReq(google.protobuf.message.Message):
 
 global___ClearReq = ClearReq
 
+@typing_extensions.final
 class Cursor(google.protobuf.message.Message):
     """游标信息"""
 
@@ -343,6 +362,7 @@ class Cursor(google.protobuf.message.Message):
 
 global___Cursor = Cursor
 
+@typing_extensions.final
 class CursorItem(google.protobuf.message.Message):
     """历史记录卡片信息"""
 
@@ -422,6 +442,7 @@ class CursorItem(google.protobuf.message.Message):
 
 global___CursorItem = CursorItem
 
+@typing_extensions.final
 class CursorReply(google.protobuf.message.Message):
     """获取历史记录列表(旧版)-响应"""
 
@@ -455,6 +476,7 @@ class CursorReply(google.protobuf.message.Message):
 
 global___CursorReply = CursorReply
 
+@typing_extensions.final
 class CursorReq(google.protobuf.message.Message):
     """获取历史记录列表(旧版)-请求"""
 
@@ -475,7 +497,7 @@ class CursorReq(google.protobuf.message.Message):
     def player_preload(self) -> global___PlayerPreloadParams:
         """秒开参数(旧版)"""
     @property
-    def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
+    def player_args(self) -> bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """秒开参数"""
     def __init__(
         self,
@@ -490,6 +512,7 @@ class CursorReq(google.protobuf.message.Message):
 
 global___CursorReq = CursorReq
 
+@typing_extensions.final
 class CursorTab(google.protobuf.message.Message):
     """业务分类表"""
 
@@ -519,6 +542,7 @@ class CursorTab(google.protobuf.message.Message):
 
 global___CursorTab = CursorTab
 
+@typing_extensions.final
 class CursorV2Reply(google.protobuf.message.Message):
     """获取历史记录列表-响应"""
 
@@ -551,6 +575,7 @@ class CursorV2Reply(google.protobuf.message.Message):
 
 global___CursorV2Reply = CursorV2Reply
 
+@typing_extensions.final
 class CursorV2Req(google.protobuf.message.Message):
     """获取历史记录列表-请求"""
 
@@ -572,7 +597,7 @@ class CursorV2Req(google.protobuf.message.Message):
     def player_preload(self) -> global___PlayerPreloadParams:
         """秒开参数(旧版)"""
     @property
-    def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
+    def player_args(self) -> bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """秒开参数"""
     is_local: builtins.bool
     """是否选择本机的播放历史"""
@@ -590,6 +615,7 @@ class CursorV2Req(google.protobuf.message.Message):
 
 global___CursorV2Req = CursorV2Req
 
+@typing_extensions.final
 class DeleteReq(google.protobuf.message.Message):
     """删除历史记录-请求"""
 
@@ -609,6 +635,7 @@ class DeleteReq(google.protobuf.message.Message):
 
 global___DeleteReq = DeleteReq
 
+@typing_extensions.final
 class DeviceType(google.protobuf.message.Message):
     """设备类型"""
 
@@ -630,6 +657,7 @@ class DeviceType(google.protobuf.message.Message):
 
 global___DeviceType = DeviceType
 
+@typing_extensions.final
 class HisInfo(google.protobuf.message.Message):
     """历史记录信息"""
 
@@ -653,6 +681,7 @@ class HisInfo(google.protobuf.message.Message):
 
 global___HisInfo = HisInfo
 
+@typing_extensions.final
 class HistoryTabReply(google.protobuf.message.Message):
     """获取历史记录tab-响应"""
 
@@ -671,6 +700,7 @@ class HistoryTabReply(google.protobuf.message.Message):
 
 global___HistoryTabReply = HistoryTabReply
 
+@typing_extensions.final
 class HistoryTabReq(google.protobuf.message.Message):
     """获取历史记录tab-请求"""
 
@@ -698,6 +728,7 @@ class HistoryTabReq(google.protobuf.message.Message):
 
 global___HistoryTabReq = HistoryTabReq
 
+@typing_extensions.final
 class LatestHistoryReply(google.protobuf.message.Message):
     """获取最新的历史记录-响应"""
 
@@ -729,6 +760,7 @@ class LatestHistoryReply(google.protobuf.message.Message):
 
 global___LatestHistoryReply = LatestHistoryReply
 
+@typing_extensions.final
 class LatestHistoryReq(google.protobuf.message.Message):
     """获取最新的历史记录-请求"""
 
@@ -754,6 +786,7 @@ class LatestHistoryReq(google.protobuf.message.Message):
 
 global___LatestHistoryReq = LatestHistoryReq
 
+@typing_extensions.final
 class NoReply(google.protobuf.message.Message):
     """空响应"""
 
@@ -765,6 +798,7 @@ class NoReply(google.protobuf.message.Message):
 
 global___NoReply = NoReply
 
+@typing_extensions.final
 class Page(google.protobuf.message.Message):
     """页面信息"""
 
@@ -786,6 +820,7 @@ class Page(google.protobuf.message.Message):
 
 global___Page = Page
 
+@typing_extensions.final
 class PlayerPreloadParams(google.protobuf.message.Message):
     """秒开参数"""
 
@@ -819,6 +854,7 @@ class PlayerPreloadParams(google.protobuf.message.Message):
 
 global___PlayerPreloadParams = PlayerPreloadParams
 
+@typing_extensions.final
 class Relation(google.protobuf.message.Message):
     """关系信息"""
 
@@ -846,6 +882,7 @@ class Relation(google.protobuf.message.Message):
 
 global___Relation = Relation
 
+@typing_extensions.final
 class SearchReply(google.protobuf.message.Message):
     """搜索历史记录-响应"""
 
@@ -874,6 +911,7 @@ class SearchReply(google.protobuf.message.Message):
 
 global___SearchReply = SearchReply
 
+@typing_extensions.final
 class SearchReq(google.protobuf.message.Message):
     """搜索历史记录-请求"""
 

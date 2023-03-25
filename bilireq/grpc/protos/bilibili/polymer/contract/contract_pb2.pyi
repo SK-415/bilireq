@@ -14,6 +14,37 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
+class AddContractReply(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ALLOW_MESSAGE_FIELD_NUMBER: builtins.int
+    ALLOW_REPLY_FIELD_NUMBER: builtins.int
+    INPUT_TEXT_FIELD_NUMBER: builtins.int
+    INPUT_TITLE_FIELD_NUMBER: builtins.int
+    allow_message: builtins.bool
+    """"""
+    allow_reply: builtins.bool
+    """"""
+    input_text: builtins.str
+    """"""
+    input_title: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        allow_message: builtins.bool = ...,
+        allow_reply: builtins.bool = ...,
+        input_text: builtins.str = ...,
+        input_title: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["allow_message", b"allow_message", "allow_reply", b"allow_reply", "input_text", b"input_text", "input_title", b"input_title"]) -> None: ...
+
+global___AddContractReply = AddContractReply
+
+@typing_extensions.final
 class AddContractReq(google.protobuf.message.Message):
     """"""
 
@@ -23,6 +54,7 @@ class AddContractReq(google.protobuf.message.Message):
     MID_FIELD_NUMBER: builtins.int
     UP_MID_FIELD_NUMBER: builtins.int
     AID_FIELD_NUMBER: builtins.int
+    SOURCE_FIELD_NUMBER: builtins.int
     @property
     def common(self) -> global___CommonReq:
         """"""
@@ -32,6 +64,8 @@ class AddContractReq(google.protobuf.message.Message):
     """"""
     aid: builtins.int
     """"""
+    source: builtins.int
+    """"""
     def __init__(
         self,
         *,
@@ -39,12 +73,14 @@ class AddContractReq(google.protobuf.message.Message):
         mid: builtins.int = ...,
         up_mid: builtins.int = ...,
         aid: builtins.int = ...,
+        source: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["common", b"common"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "common", b"common", "mid", b"mid", "up_mid", b"up_mid"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "common", b"common", "mid", b"mid", "source", b"source", "up_mid", b"up_mid"]) -> None: ...
 
 global___AddContractReq = AddContractReq
 
+@typing_extensions.final
 class CommonReq(google.protobuf.message.Message):
     """"""
 
@@ -85,3 +121,89 @@ class CommonReq(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["build", b"build", "buvid", b"buvid", "device", b"device", "ip", b"ip", "mobi_app", b"mobi_app", "platform", b"platform", "spmid", b"spmid"]) -> None: ...
 
 global___CommonReq = CommonReq
+
+@typing_extensions.final
+class ContractCard(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TITLE_FIELD_NUMBER: builtins.int
+    SUB_TITLE_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    """"""
+    sub_title: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        title: builtins.str = ...,
+        sub_title: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["sub_title", b"sub_title", "title", b"title"]) -> None: ...
+
+global___ContractCard = ContractCard
+
+@typing_extensions.final
+class ContractConfigReply(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IS_FOLLOW_DISPLAY_FIELD_NUMBER: builtins.int
+    IS_TRIPLE_DISPLAY_FIELD_NUMBER: builtins.int
+    CONTRACT_CARD_FIELD_NUMBER: builtins.int
+    is_follow_display: builtins.int
+    """"""
+    is_triple_display: builtins.int
+    """"""
+    @property
+    def contract_card(self) -> global___ContractCard:
+        """"""
+    def __init__(
+        self,
+        *,
+        is_follow_display: builtins.int = ...,
+        is_triple_display: builtins.int = ...,
+        contract_card: global___ContractCard | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["contract_card", b"contract_card"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["contract_card", b"contract_card", "is_follow_display", b"is_follow_display", "is_triple_display", b"is_triple_display"]) -> None: ...
+
+global___ContractConfigReply = ContractConfigReply
+
+@typing_extensions.final
+class ContractConfigReq(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COMMON_FIELD_NUMBER: builtins.int
+    MID_FIELD_NUMBER: builtins.int
+    UP_MID_FIELD_NUMBER: builtins.int
+    AID_FIELD_NUMBER: builtins.int
+    SOURCE_FIELD_NUMBER: builtins.int
+    @property
+    def common(self) -> global___CommonReq:
+        """"""
+    mid: builtins.int
+    """"""
+    up_mid: builtins.int
+    """"""
+    aid: builtins.int
+    """"""
+    source: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        common: global___CommonReq | None = ...,
+        mid: builtins.int = ...,
+        up_mid: builtins.int = ...,
+        aid: builtins.int = ...,
+        source: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["common", b"common"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "common", b"common", "mid", b"mid", "source", b"source", "up_mid", b"up_mid"]) -> None: ...
+
+global___ContractConfigReq = ContractConfigReq

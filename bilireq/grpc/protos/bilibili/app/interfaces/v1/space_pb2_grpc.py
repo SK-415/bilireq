@@ -16,17 +16,17 @@ class SpaceStub(object):
             channel: A grpc.Channel.
         """
         self.SearchTab = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.Space/SearchTab',
+                '/bilibili.app.interface.v1.Space/SearchTab',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchTabReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchTabReply.FromString,
                 )
         self.SearchArchive = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.Space/SearchArchive',
+                '/bilibili.app.interface.v1.Space/SearchArchive',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchArchiveReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchArchiveReply.FromString,
                 )
         self.SearchDynamic = channel.unary_unary(
-                '/bilibili.app.interfaces.v1.Space/SearchDynamic',
+                '/bilibili.app.interface.v1.Space/SearchDynamic',
                 request_serializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchDynamicReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchDynamicReply.FromString,
                 )
@@ -77,7 +77,7 @@ def add_SpaceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'bilibili.app.interfaces.v1.Space', rpc_method_handlers)
+            'bilibili.app.interface.v1.Space', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -97,7 +97,7 @@ class Space(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.Space/SearchTab',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.Space/SearchTab',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchTabReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchTabReply.FromString,
             options, channel_credentials,
@@ -114,7 +114,7 @@ class Space(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.Space/SearchArchive',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.Space/SearchArchive',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchArchiveReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchArchiveReply.FromString,
             options, channel_credentials,
@@ -131,7 +131,7 @@ class Space(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interfaces.v1.Space/SearchDynamic',
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.interface.v1.Space/SearchDynamic',
             bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchDynamicReq.SerializeToString,
             bilibili_dot_app_dot_interfaces_dot_v1_dot_space__pb2.SearchDynamicReply.FromString,
             options, channel_credentials,
