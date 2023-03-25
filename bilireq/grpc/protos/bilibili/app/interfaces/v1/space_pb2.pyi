@@ -25,7 +25,7 @@ class _From:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _FromEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_From.ValueType], builtins.type):  # noqa: F821
+class _FromEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_From.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     ArchiveTab: _From.ValueType  # 0
     """"""
@@ -40,6 +40,7 @@ DynamicTab: From.ValueType  # 1
 """"""
 global___From = From
 
+@typing_extensions.final
 class Arc(google.protobuf.message.Message):
     """"""
 
@@ -48,7 +49,7 @@ class Arc(google.protobuf.message.Message):
     ARCHIVE_FIELD_NUMBER: builtins.int
     URI_FIELD_NUMBER: builtins.int
     @property
-    def archive(self) -> bilibili.app.archive.v1.archive_pb2.Arc:
+    def archive(self) -> bilireq.grpc.protos.bilibili.app.archive.v1.archive_pb2.Arc:
         """"""
     uri: builtins.str
     """"""
@@ -63,6 +64,7 @@ class Arc(google.protobuf.message.Message):
 
 global___Arc = Arc
 
+@typing_extensions.final
 class Dynamic(google.protobuf.message.Message):
     """"""
 
@@ -70,7 +72,7 @@ class Dynamic(google.protobuf.message.Message):
 
     DYNAMIC_FIELD_NUMBER: builtins.int
     @property
-    def dynamic(self) -> bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem:
+    def dynamic(self) -> bilireq.grpc.protos.bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem:
         """"""
     def __init__(
         self,
@@ -82,6 +84,7 @@ class Dynamic(google.protobuf.message.Message):
 
 global___Dynamic = Dynamic
 
+@typing_extensions.final
 class SearchTabReply(google.protobuf.message.Message):
     """"""
 
@@ -104,6 +107,7 @@ class SearchTabReply(google.protobuf.message.Message):
 
 global___SearchTabReply = SearchTabReply
 
+@typing_extensions.final
 class SearchTabReq(google.protobuf.message.Message):
     """"""
 
@@ -126,6 +130,7 @@ class SearchTabReq(google.protobuf.message.Message):
 
 global___SearchTabReq = SearchTabReq
 
+@typing_extensions.final
 class SearchArchiveReply(google.protobuf.message.Message):
     """"""
 
@@ -148,6 +153,7 @@ class SearchArchiveReply(google.protobuf.message.Message):
 
 global___SearchArchiveReply = SearchArchiveReply
 
+@typing_extensions.final
 class SearchArchiveReq(google.protobuf.message.Message):
     """"""
 
@@ -167,7 +173,7 @@ class SearchArchiveReq(google.protobuf.message.Message):
     ps: builtins.int
     """"""
     @property
-    def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
+    def player_args(self) -> bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """"""
     def __init__(
         self,
@@ -183,6 +189,7 @@ class SearchArchiveReq(google.protobuf.message.Message):
 
 global___SearchArchiveReq = SearchArchiveReq
 
+@typing_extensions.final
 class SearchDynamicReply(google.protobuf.message.Message):
     """"""
 
@@ -205,6 +212,7 @@ class SearchDynamicReply(google.protobuf.message.Message):
 
 global___SearchDynamicReply = SearchDynamicReply
 
+@typing_extensions.final
 class SearchDynamicReq(google.protobuf.message.Message):
     """"""
 
@@ -224,7 +232,7 @@ class SearchDynamicReq(google.protobuf.message.Message):
     ps: builtins.int
     """"""
     @property
-    def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
+    def player_args(self) -> bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """"""
     def __init__(
         self,
@@ -240,6 +248,7 @@ class SearchDynamicReq(google.protobuf.message.Message):
 
 global___SearchDynamicReq = SearchDynamicReq
 
+@typing_extensions.final
 class Tab(google.protobuf.message.Message):
     """"""
 

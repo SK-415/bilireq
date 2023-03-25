@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class BanUser(google.protobuf.message.Message):
     """"""
 
@@ -47,6 +48,7 @@ class BanUser(google.protobuf.message.Message):
 
 global___BanUser = BanUser
 
+@typing_extensions.final
 class ReqOpBlacklist(google.protobuf.message.Message):
     """"""
 
@@ -65,6 +67,7 @@ class ReqOpBlacklist(google.protobuf.message.Message):
 
 global___ReqOpBlacklist = ReqOpBlacklist
 
+@typing_extensions.final
 class RspOpBlacklist(google.protobuf.message.Message):
     """"""
 

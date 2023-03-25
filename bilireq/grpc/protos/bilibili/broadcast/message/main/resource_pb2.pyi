@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class TopActivityReply(google.protobuf.message.Message):
     """"""
 
@@ -37,6 +38,7 @@ class TopActivityReply(google.protobuf.message.Message):
 
 global___TopActivityReply = TopActivityReply
 
+@typing_extensions.final
 class TopOnline(google.protobuf.message.Message):
     """当前生效的资源"""
 
@@ -87,6 +89,7 @@ class TopOnline(google.protobuf.message.Message):
 
 global___TopOnline = TopOnline
 
+@typing_extensions.final
 class Animate(google.protobuf.message.Message):
     """动画资源"""
 
@@ -116,6 +119,7 @@ class Animate(google.protobuf.message.Message):
 
 global___Animate = Animate
 
+@typing_extensions.final
 class RedDot(google.protobuf.message.Message):
     """红点"""
 

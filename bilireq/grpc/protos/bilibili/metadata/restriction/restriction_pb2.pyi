@@ -20,7 +20,7 @@ class _ModeType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ModeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModeType.ValueType], builtins.type):  # noqa: F821
+class _ModeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModeType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NORMAL: _ModeType.ValueType  # 0
     """正常模式"""
@@ -40,6 +40,7 @@ LESSONS: ModeType.ValueType  # 2
 """课堂模式"""
 global___ModeType = ModeType
 
+@typing_extensions.final
 class Restriction(google.protobuf.message.Message):
     """限制条件"""
 
@@ -59,7 +60,7 @@ class Restriction(google.protobuf.message.Message):
     review: builtins.bool
     """app 审核review状态"""
     disable_rcmd: builtins.bool
-    """"""
+    """客户端是否选择关闭个性化推荐"""
     def __init__(
         self,
         *,

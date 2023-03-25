@@ -20,7 +20,7 @@ class _RoomStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _RoomStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RoomStatus.ValueType], builtins.type):  # noqa: F821
+class _RoomStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RoomStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Pause: _RoomStatus.ValueType  # 0
     """暂停:"""
@@ -40,6 +40,7 @@ End: RoomStatus.ValueType  # 2
 """终止:"""
 global___RoomStatus = RoomStatus
 
+@typing_extensions.final
 class RoomEvent(google.protobuf.message.Message):
     """推送选项"""
 

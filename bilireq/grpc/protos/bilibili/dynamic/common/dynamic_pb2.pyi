@@ -23,7 +23,7 @@ class _AtGroupType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AtGroupTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AtGroupType.ValueType], builtins.type):  # noqa: F821
+class _AtGroupTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AtGroupType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     AT_GROUP_TYPE_DEFAULT: _AtGroupType.ValueType  # 0
     """默认"""
@@ -55,7 +55,7 @@ class _AttachCardType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AttachCardTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AttachCardType.ValueType], builtins.type):  # noqa: F821
+class _AttachCardTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AttachCardType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     ATTACH_CARD_NONE: _AttachCardType.ValueType  # 0
     """无"""
@@ -131,7 +131,7 @@ class _ContentType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ContentTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ContentType.ValueType], builtins.type):  # noqa: F821
+class _ContentTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ContentType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     CONTENT_TYPE_NONE: _ContentType.ValueType  # 0
     """占位"""
@@ -215,7 +215,7 @@ class _CreateInitCheckScene:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CreateInitCheckSceneEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CreateInitCheckScene.ValueType], builtins.type):  # noqa: F821
+class _CreateInitCheckSceneEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CreateInitCheckScene.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     CREATE_INIT_CHECK_SCENE_INVALID: _CreateInitCheckScene.ValueType  # 0
     """"""
@@ -247,7 +247,7 @@ class _CreateScene:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CreateSceneEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CreateScene.ValueType], builtins.type):  # noqa: F821
+class _CreateSceneEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CreateScene.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     CREATE_SCENE_INVALID: _CreateScene.ValueType  # 0
     """"""
@@ -299,7 +299,7 @@ class _ReserveSource:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ReserveSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveSource.ValueType], builtins.type):  # noqa: F821
+class _ReserveSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveSource.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     RESERVE_SOURCE_NEW: _ReserveSource.ValueType  # 0
     """"""
@@ -319,7 +319,7 @@ class _UpPermissionType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _UpPermissionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_UpPermissionType.ValueType], builtins.type):  # noqa: F821
+class _UpPermissionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_UpPermissionType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UP_PERMISSION_TYPE_NONE: _UpPermissionType.ValueType  # 0
     """占位"""
@@ -367,6 +367,7 @@ UP_PERMISSION_TYPE_LIVE_RESERVE: UpPermissionType.ValueType  # 9
 """是否可以发起直播预约"""
 global___UpPermissionType = UpPermissionType
 
+@typing_extensions.final
 class AtGroup(google.protobuf.message.Message):
     """at分组信息"""
 
@@ -393,6 +394,7 @@ class AtGroup(google.protobuf.message.Message):
 
 global___AtGroup = AtGroup
 
+@typing_extensions.final
 class AtItem(google.protobuf.message.Message):
     """at返回单条信息"""
 
@@ -426,6 +428,7 @@ class AtItem(google.protobuf.message.Message):
 
 global___AtItem = AtItem
 
+@typing_extensions.final
 class AtListReq(google.protobuf.message.Message):
     """at列表-请求"""
 
@@ -443,6 +446,7 @@ class AtListReq(google.protobuf.message.Message):
 
 global___AtListReq = AtListReq
 
+@typing_extensions.final
 class AtListRsp(google.protobuf.message.Message):
     """at列表-响应"""
 
@@ -461,6 +465,7 @@ class AtListRsp(google.protobuf.message.Message):
 
 global___AtListRsp = AtListRsp
 
+@typing_extensions.final
 class AtSearchReq(google.protobuf.message.Message):
     """at搜索-请求"""
 
@@ -482,6 +487,7 @@ class AtSearchReq(google.protobuf.message.Message):
 
 global___AtSearchReq = AtSearchReq
 
+@typing_extensions.final
 class BottomBusiness(google.protobuf.message.Message):
     """"""
 
@@ -503,6 +509,7 @@ class BottomBusiness(google.protobuf.message.Message):
 
 global___BottomBusiness = BottomBusiness
 
+@typing_extensions.final
 class CreateActivity(google.protobuf.message.Message):
     """"""
 
@@ -532,6 +539,7 @@ class CreateActivity(google.protobuf.message.Message):
 
 global___CreateActivity = CreateActivity
 
+@typing_extensions.final
 class CreateAttachCard(google.protobuf.message.Message):
     """动态附带的附加大卡"""
 
@@ -556,6 +564,7 @@ class CreateAttachCard(google.protobuf.message.Message):
 
 global___CreateAttachCard = CreateAttachCard
 
+@typing_extensions.final
 class CreateCheckResp(google.protobuf.message.Message):
     """发布页预校验-响应"""
 
@@ -595,6 +604,7 @@ class CreateCheckResp(google.protobuf.message.Message):
 
 global___CreateCheckResp = CreateCheckResp
 
+@typing_extensions.final
 class CreateCommonAttachCard(google.protobuf.message.Message):
     """创建动态时附带的通用附加卡详情"""
 
@@ -624,6 +634,7 @@ class CreateCommonAttachCard(google.protobuf.message.Message):
 
 global___CreateCommonAttachCard = CreateCommonAttachCard
 
+@typing_extensions.final
 class CreateContent(google.protobuf.message.Message):
     """动态-描述文字模块"""
 
@@ -642,6 +653,7 @@ class CreateContent(google.protobuf.message.Message):
 
 global___CreateContent = CreateContent
 
+@typing_extensions.final
 class CreateContentItem(google.protobuf.message.Message):
     """文本描述"""
 
@@ -673,6 +685,7 @@ class CreateContentItem(google.protobuf.message.Message):
 
 global___CreateContentItem = CreateContentItem
 
+@typing_extensions.final
 class CreateDynVideo(google.protobuf.message.Message):
     """"""
 
@@ -804,6 +817,7 @@ class CreateDynVideo(google.protobuf.message.Message):
 
 global___CreateDynVideo = CreateDynVideo
 
+@typing_extensions.final
 class CreateDynVideoResult(google.protobuf.message.Message):
     """创建动态视频的应答包（透传给客户端）"""
 
@@ -836,6 +850,7 @@ class CreateDynVideoResult(google.protobuf.message.Message):
 
 global___CreateDynVideoResult = CreateDynVideoResult
 
+@typing_extensions.final
 class CreateGoodsCard(google.protobuf.message.Message):
     """创建动态时附带的商品大卡详情"""
 
@@ -854,6 +869,7 @@ class CreateGoodsCard(google.protobuf.message.Message):
 
 global___CreateGoodsCard = CreateGoodsCard
 
+@typing_extensions.final
 class CreateOption(google.protobuf.message.Message):
     """动态创建时的特殊选项"""
 
@@ -906,6 +922,7 @@ class CreateOption(google.protobuf.message.Message):
 
 global___CreateOption = CreateOption
 
+@typing_extensions.final
 class CreatePic(google.protobuf.message.Message):
     """创建图文动态时的图片信息"""
 
@@ -940,6 +957,7 @@ class CreatePic(google.protobuf.message.Message):
 
 global___CreatePic = CreatePic
 
+@typing_extensions.final
 class CreatePicTag(google.protobuf.message.Message):
     """"""
 
@@ -1009,6 +1027,7 @@ class CreatePicTag(google.protobuf.message.Message):
 
 global___CreatePicTag = CreatePicTag
 
+@typing_extensions.final
 class CreateResp(google.protobuf.message.Message):
     """创建动态-响应"""
 
@@ -1029,7 +1048,7 @@ class CreateResp(google.protobuf.message.Message):
     dyn_rid: builtins.int
     """动态id"""
     @property
-    def fake_card(self) -> bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem:
+    def fake_card(self) -> bilireq.grpc.protos.bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem:
         """假卡"""
     @property
     def video_result(self) -> global___CreateDynVideoResult:
@@ -1049,6 +1068,7 @@ class CreateResp(google.protobuf.message.Message):
 
 global___CreateResp = CreateResp
 
+@typing_extensions.final
 class CreateTag(google.protobuf.message.Message):
     """动态附带的小卡"""
 
@@ -1078,6 +1098,7 @@ class CreateTag(google.protobuf.message.Message):
 
 global___CreateTag = CreateTag
 
+@typing_extensions.final
 class CreateTopic(google.protobuf.message.Message):
     """"""
 
@@ -1099,6 +1120,7 @@ class CreateTopic(google.protobuf.message.Message):
 
 global___CreateTopic = CreateTopic
 
+@typing_extensions.final
 class DynIdentity(google.protobuf.message.Message):
     """动态的标识"""
 
@@ -1122,6 +1144,7 @@ class DynIdentity(google.protobuf.message.Message):
 
 global___DynIdentity = DynIdentity
 
+@typing_extensions.final
 class DynRevsId(google.protobuf.message.Message):
     """"""
 
@@ -1143,6 +1166,7 @@ class DynRevsId(google.protobuf.message.Message):
 
 global___DynRevsId = DynRevsId
 
+@typing_extensions.final
 class DynVideoEditor(google.protobuf.message.Message):
     """动态视频分P视频编辑环境上报信息"""
 
@@ -1320,6 +1344,7 @@ class DynVideoEditor(google.protobuf.message.Message):
 
 global___DynVideoEditor = DynVideoEditor
 
+@typing_extensions.final
 class DynVideoHotAct(google.protobuf.message.Message):
     """"""
 
@@ -1361,6 +1386,7 @@ class DynVideoHotAct(google.protobuf.message.Message):
 
 global___DynVideoHotAct = DynVideoHotAct
 
+@typing_extensions.final
 class DynVideoMultiP(google.protobuf.message.Message):
     """动态视频分P聚合字段"""
 
@@ -1392,6 +1418,7 @@ class DynVideoMultiP(google.protobuf.message.Message):
 
 global___DynVideoMultiP = DynVideoMultiP
 
+@typing_extensions.final
 class DynVideoPushIntro(google.protobuf.message.Message):
     """"""
 
@@ -1413,6 +1440,7 @@ class DynVideoPushIntro(google.protobuf.message.Message):
 
 global___DynVideoPushIntro = DynVideoPushIntro
 
+@typing_extensions.final
 class DynVideoSubmitActBanner(google.protobuf.message.Message):
     """"""
 
@@ -1439,6 +1467,7 @@ class DynVideoSubmitActBanner(google.protobuf.message.Message):
 
 global___DynVideoSubmitActBanner = DynVideoSubmitActBanner
 
+@typing_extensions.final
 class DynVideoVote(google.protobuf.message.Message):
     """"""
 
@@ -1464,6 +1493,7 @@ class DynVideoVote(google.protobuf.message.Message):
 
 global___DynVideoVote = DynVideoVote
 
+@typing_extensions.final
 class DynVideoWatermark(google.protobuf.message.Message):
     """动态视频水印信息"""
 
@@ -1495,6 +1525,7 @@ class DynVideoWatermark(google.protobuf.message.Message):
 
 global___DynVideoWatermark = DynVideoWatermark
 
+@typing_extensions.final
 class ExtLbs(google.protobuf.message.Message):
     """"""
 
@@ -1542,6 +1573,7 @@ class ExtLbs(google.protobuf.message.Message):
 
 global___ExtLbs = ExtLbs
 
+@typing_extensions.final
 class GetUidByNameReq(google.protobuf.message.Message):
     """根据name取uid-请求"""
 
@@ -1560,11 +1592,13 @@ class GetUidByNameReq(google.protobuf.message.Message):
 
 global___GetUidByNameReq = GetUidByNameReq
 
+@typing_extensions.final
 class GetUidByNameRsp(google.protobuf.message.Message):
     """根据name取uid-响应"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class UidsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1593,6 +1627,7 @@ class GetUidByNameRsp(google.protobuf.message.Message):
 
 global___GetUidByNameRsp = GetUidByNameRsp
 
+@typing_extensions.final
 class GoodsContent(google.protobuf.message.Message):
     """发布时附带的商品卡的详细内容"""
 
@@ -1620,6 +1655,7 @@ class GoodsContent(google.protobuf.message.Message):
 
 global___GoodsContent = GoodsContent
 
+@typing_extensions.final
 class LaunchedActivity(google.protobuf.message.Message):
     """UP已经创建的活动列表"""
 
@@ -1650,6 +1686,7 @@ class LaunchedActivity(google.protobuf.message.Message):
 
 global___LaunchedActivity = LaunchedActivity
 
+@typing_extensions.final
 class LaunchedActivityItem(google.protobuf.message.Message):
     """UP已经创建的活动详情"""
 
@@ -1677,6 +1714,7 @@ class LaunchedActivityItem(google.protobuf.message.Message):
 
 global___LaunchedActivityItem = LaunchedActivityItem
 
+@typing_extensions.final
 class LbsLoc(google.protobuf.message.Message):
     """"""
 
@@ -1698,6 +1736,7 @@ class LbsLoc(google.protobuf.message.Message):
 
 global___LbsLoc = LbsLoc
 
+@typing_extensions.final
 class MetaDataCtrl(google.protobuf.message.Message):
     """"""
 
@@ -1762,6 +1801,7 @@ class MetaDataCtrl(google.protobuf.message.Message):
 
 global___MetaDataCtrl = MetaDataCtrl
 
+@typing_extensions.final
 class PlusRedDot(google.protobuf.message.Message):
     """"""
 
@@ -1779,6 +1819,7 @@ class PlusRedDot(google.protobuf.message.Message):
 
 global___PlusRedDot = PlusRedDot
 
+@typing_extensions.final
 class Program(google.protobuf.message.Message):
     """小程序内容定义"""
 
@@ -1820,6 +1861,7 @@ class Program(google.protobuf.message.Message):
 
 global___Program = Program
 
+@typing_extensions.final
 class PublishSetting(google.protobuf.message.Message):
     """发布相关的设置项"""
 
@@ -1845,6 +1887,7 @@ class PublishSetting(google.protobuf.message.Message):
 
 global___PublishSetting = PublishSetting
 
+@typing_extensions.final
 class PublishYellowBar(google.protobuf.message.Message):
     """发布页小黄条"""
 
@@ -1870,6 +1913,7 @@ class PublishYellowBar(google.protobuf.message.Message):
 
 global___PublishYellowBar = PublishYellowBar
 
+@typing_extensions.final
 class RepostInitCheck(google.protobuf.message.Message):
     """"""
 
@@ -1897,6 +1941,7 @@ class RepostInitCheck(google.protobuf.message.Message):
 
 global___RepostInitCheck = RepostInitCheck
 
+@typing_extensions.final
 class ShareChannel(google.protobuf.message.Message):
     """分享渠道信息"""
 
@@ -1927,6 +1972,7 @@ class ShareChannel(google.protobuf.message.Message):
 
 global___ShareChannel = ShareChannel
 
+@typing_extensions.final
 class ShareChannelItem(google.protobuf.message.Message):
     """渠道"""
 
@@ -1958,6 +2004,7 @@ class ShareChannelItem(google.protobuf.message.Message):
 
 global___ShareChannelItem = ShareChannelItem
 
+@typing_extensions.final
 class ShareReserve(google.protobuf.message.Message):
     """"""
 
@@ -2010,6 +2057,7 @@ class ShareReserve(google.protobuf.message.Message):
 
 global___ShareReserve = ShareReserve
 
+@typing_extensions.final
 class ShareReserveLottery(google.protobuf.message.Message):
     """"""
 
@@ -2031,6 +2079,7 @@ class ShareReserveLottery(google.protobuf.message.Message):
 
 global___ShareReserveLottery = ShareReserveLottery
 
+@typing_extensions.final
 class ShareReservePoster(google.protobuf.message.Message):
     """"""
 
@@ -2056,6 +2105,7 @@ class ShareReservePoster(google.protobuf.message.Message):
 
 global___ShareReservePoster = ShareReservePoster
 
+@typing_extensions.final
 class ShareResult(google.protobuf.message.Message):
     """"""
 
@@ -2077,6 +2127,7 @@ class ShareResult(google.protobuf.message.Message):
 
 global___ShareResult = ShareResult
 
+@typing_extensions.final
 class ShowMoreLaunchedActivity(google.protobuf.message.Message):
     """UP已经创建的活动列表中的展示更多按钮详情"""
 
@@ -2098,6 +2149,7 @@ class ShowMoreLaunchedActivity(google.protobuf.message.Message):
 
 global___ShowMoreLaunchedActivity = ShowMoreLaunchedActivity
 
+@typing_extensions.final
 class Sketch(google.protobuf.message.Message):
     """通用模板的网页元内容(sketch结构)定义"""
 
@@ -2139,6 +2191,7 @@ class Sketch(google.protobuf.message.Message):
 
 global___Sketch = Sketch
 
+@typing_extensions.final
 class UpPermission(google.protobuf.message.Message):
     """发布相关的权限内容"""
 
@@ -2168,6 +2221,7 @@ class UpPermission(google.protobuf.message.Message):
 
 global___UpPermission = UpPermission
 
+@typing_extensions.final
 class UpPermissionItem(google.protobuf.message.Message):
     """通用发布权限内容的详细定义"""
 
@@ -2215,6 +2269,7 @@ class UpPermissionItem(google.protobuf.message.Message):
 
 global___UpPermissionItem = UpPermissionItem
 
+@typing_extensions.final
 class UserCreateMeta(google.protobuf.message.Message):
     """用户主动发布（app/web发布）时的meta信息"""
 
@@ -2243,6 +2298,7 @@ class UserCreateMeta(google.protobuf.message.Message):
 
 global___UserCreateMeta = UserCreateMeta
 
+@typing_extensions.final
 class VideoShareInfo(google.protobuf.message.Message):
     """"""
 

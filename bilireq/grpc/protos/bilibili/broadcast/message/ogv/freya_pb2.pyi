@@ -22,7 +22,7 @@ class _PlayStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PlayStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlayStatus.ValueType], builtins.type):  # noqa: F821
+class _PlayStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PlayStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Pause: _PlayStatus.ValueType  # 0
     """暂停"""
@@ -46,7 +46,7 @@ class _RoomType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _RoomTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RoomType.ValueType], builtins.type):  # noqa: F821
+class _RoomTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RoomType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     Private: _RoomType.ValueType  # 0
     """私密"""
@@ -66,7 +66,7 @@ class _MessageDomain:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MessageDomainEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MessageDomain.ValueType], builtins.type):  # noqa: F821
+class _MessageDomainEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MessageDomain.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DefaultDomain: _MessageDomain.ValueType  # 0
     """默认"""
@@ -90,7 +90,7 @@ class _MessageType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MessageTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MessageType.ValueType], builtins.type):  # noqa: F821
+class _MessageTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MessageType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DefaultType: _MessageType.ValueType  # 0
     """默认"""
@@ -114,7 +114,7 @@ class _TriggerType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _TriggerTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_TriggerType.ValueType], builtins.type):  # noqa: F821
+class _TriggerTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_TriggerType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DefaultTrigger: _TriggerType.ValueType  # 0
     """默认"""
@@ -130,6 +130,7 @@ Relation: TriggerType.ValueType  # 1
 """关注、取消关注"""
 global___TriggerType = TriggerType
 
+@typing_extensions.final
 class RoomMemberChangeEvent(google.protobuf.message.Message):
     """房间人员变更事件"""
 
@@ -162,6 +163,7 @@ class RoomMemberChangeEvent(google.protobuf.message.Message):
 
 global___RoomMemberChangeEvent = RoomMemberChangeEvent
 
+@typing_extensions.final
 class ProgressSyncEvent(google.protobuf.message.Message):
     """播放进度同步事件"""
 
@@ -201,6 +203,7 @@ class ProgressSyncEvent(google.protobuf.message.Message):
 
 global___ProgressSyncEvent = ProgressSyncEvent
 
+@typing_extensions.final
 class RoomUpdateEvent(google.protobuf.message.Message):
     """房间状态更新"""
 
@@ -228,6 +231,7 @@ class RoomUpdateEvent(google.protobuf.message.Message):
 
 global___RoomUpdateEvent = RoomUpdateEvent
 
+@typing_extensions.final
 class RoomDestroyEvent(google.protobuf.message.Message):
     """房间销毁通知"""
 
@@ -251,6 +255,7 @@ class RoomDestroyEvent(google.protobuf.message.Message):
 
 global___RoomDestroyEvent = RoomDestroyEvent
 
+@typing_extensions.final
 class RoomTriggerEvent(google.protobuf.message.Message):
     """房间触发通知"""
 
@@ -278,6 +283,7 @@ class RoomTriggerEvent(google.protobuf.message.Message):
 
 global___RoomTriggerEvent = RoomTriggerEvent
 
+@typing_extensions.final
 class UserInfoProto(google.protobuf.message.Message):
     """用户信息"""
 
@@ -331,6 +337,7 @@ class UserInfoProto(google.protobuf.message.Message):
 
 global___UserInfoProto = UserInfoProto
 
+@typing_extensions.final
 class MessageProto(google.protobuf.message.Message):
     """通知信息"""
 
@@ -354,6 +361,7 @@ class MessageProto(google.protobuf.message.Message):
 
 global___MessageProto = MessageProto
 
+@typing_extensions.final
 class VipProto(google.protobuf.message.Message):
     """大会员信息"""
 
@@ -392,6 +400,7 @@ class VipProto(google.protobuf.message.Message):
 
 global___VipProto = VipProto
 
+@typing_extensions.final
 class OfficialProto(google.protobuf.message.Message):
     """认证信息"""
 
@@ -417,6 +426,7 @@ class OfficialProto(google.protobuf.message.Message):
 
 global___OfficialProto = OfficialProto
 
+@typing_extensions.final
 class PendantProto(google.protobuf.message.Message):
     """挂件信息"""
 
@@ -445,6 +455,7 @@ class PendantProto(google.protobuf.message.Message):
 
 global___PendantProto = PendantProto
 
+@typing_extensions.final
 class MessageEvent(google.protobuf.message.Message):
     """通用信息通知"""
 
@@ -497,6 +508,7 @@ class MessageEvent(google.protobuf.message.Message):
 
 global___MessageEvent = MessageEvent
 
+@typing_extensions.final
 class RemoveChatEvent(google.protobuf.message.Message):
     """聊天信息清除通知"""
 
@@ -524,6 +536,7 @@ class RemoveChatEvent(google.protobuf.message.Message):
 
 global___RemoveChatEvent = RemoveChatEvent
 
+@typing_extensions.final
 class FreyaEventBody(google.protobuf.message.Message):
     """"一起看"房间事件"""
 

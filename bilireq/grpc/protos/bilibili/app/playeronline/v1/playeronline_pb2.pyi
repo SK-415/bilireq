@@ -14,6 +14,61 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
+class NoReply(google.protobuf.message.Message):
+    """空回复"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___NoReply = NoReply
+
+@typing_extensions.final
+class PlayerOnlineReply(google.protobuf.message.Message):
+    """获取在线人数-回复"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TOTAL_TEXT_FIELD_NUMBER: builtins.int
+    SEC_NEXT_FIELD_NUMBER: builtins.int
+    BOTTOM_SHOW_FIELD_NUMBER: builtins.int
+    SDM_SHOW_FIELD_NUMBER: builtins.int
+    SDM_TEXT_FIELD_NUMBER: builtins.int
+    TOTAL_NUMBER_FIELD_NUMBER: builtins.int
+    TOTAL_NUMBER_TEXT_FIELD_NUMBER: builtins.int
+    total_text: builtins.str
+    """"""
+    sec_next: builtins.int
+    """下次轮询间隔时间"""
+    bottom_show: builtins.bool
+    """是否底部显示"""
+    sdm_show: builtins.bool
+    """"""
+    sdm_text: builtins.str
+    """"""
+    total_number: builtins.int
+    """"""
+    total_number_text: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        total_text: builtins.str = ...,
+        sec_next: builtins.int = ...,
+        bottom_show: builtins.bool = ...,
+        sdm_show: builtins.bool = ...,
+        sdm_text: builtins.str = ...,
+        total_number: builtins.int = ...,
+        total_number_text: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bottom_show", b"bottom_show", "sdm_show", b"sdm_show", "sdm_text", b"sdm_text", "sec_next", b"sec_next", "total_number", b"total_number", "total_number_text", b"total_number_text", "total_text", b"total_text"]) -> None: ...
+
+global___PlayerOnlineReply = PlayerOnlineReply
+
+@typing_extensions.final
 class PlayerOnlineReq(google.protobuf.message.Message):
     """获取在线人数-请求"""
 
@@ -39,35 +94,72 @@ class PlayerOnlineReq(google.protobuf.message.Message):
 
 global___PlayerOnlineReq = PlayerOnlineReq
 
-class PlayerOnlineReply(google.protobuf.message.Message):
-    """获取在线人数-回复"""
+@typing_extensions.final
+class PremiereInfoReply(google.protobuf.message.Message):
+    """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    TOTAL_TEXT_FIELD_NUMBER: builtins.int
-    SEC_NEXT_FIELD_NUMBER: builtins.int
-    BOTTOM_SHOW_FIELD_NUMBER: builtins.int
-    SDM_SHOW_FIELD_NUMBER: builtins.int
-    SDM_TEXT_FIELD_NUMBER: builtins.int
-    total_text: builtins.str
+    PREMIERE_OVER_TEXT_FIELD_NUMBER: builtins.int
+    PARTICIPANT_FIELD_NUMBER: builtins.int
+    INTERACTION_FIELD_NUMBER: builtins.int
+    premiere_over_text: builtins.str
     """"""
-    sec_next: builtins.int
-    """下次轮询间隔时间"""
-    bottom_show: builtins.bool
-    """是否底部显示"""
-    sdm_show: builtins.bool
+    participant: builtins.int
     """"""
-    sdm_text: builtins.str
+    interaction: builtins.int
     """"""
     def __init__(
         self,
         *,
-        total_text: builtins.str = ...,
-        sec_next: builtins.int = ...,
-        bottom_show: builtins.bool = ...,
-        sdm_show: builtins.bool = ...,
-        sdm_text: builtins.str = ...,
+        premiere_over_text: builtins.str = ...,
+        participant: builtins.int = ...,
+        interaction: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bottom_show", b"bottom_show", "sdm_show", b"sdm_show", "sdm_text", b"sdm_text", "sec_next", b"sec_next", "total_text", b"total_text"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["interaction", b"interaction", "participant", b"participant", "premiere_over_text", b"premiere_over_text"]) -> None: ...
 
-global___PlayerOnlineReply = PlayerOnlineReply
+global___PremiereInfoReply = PremiereInfoReply
+
+@typing_extensions.final
+class PremiereInfoReq(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AID_FIELD_NUMBER: builtins.int
+    aid: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        aid: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid"]) -> None: ...
+
+global___PremiereInfoReq = PremiereInfoReq
+
+@typing_extensions.final
+class ReportWatchReq(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AID_FIELD_NUMBER: builtins.int
+    BIZ_FIELD_NUMBER: builtins.int
+    BUVID_FIELD_NUMBER: builtins.int
+    aid: builtins.int
+    """"""
+    biz: builtins.str
+    """"""
+    buvid: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        aid: builtins.int = ...,
+        biz: builtins.str = ...,
+        buvid: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "biz", b"biz", "buvid", b"buvid"]) -> None: ...
+
+global___ReportWatchReq = ReportWatchReq

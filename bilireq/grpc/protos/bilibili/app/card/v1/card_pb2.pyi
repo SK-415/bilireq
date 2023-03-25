@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Card(google.protobuf.message.Message):
     """卡片信息"""
 
@@ -30,35 +31,39 @@ class Card(google.protobuf.message.Message):
     LARGE_COVER_V4_FIELD_NUMBER: builtins.int
     POPULAR_TOP_ENTRANCE_FIELD_NUMBER: builtins.int
     RCMD_ONE_ITEM_FIELD_NUMBER: builtins.int
+    SMALL_COVER_V5_AD_FIELD_NUMBER: builtins.int
     @property
-    def small_cover_v5(self) -> bilibili.app.card.v1.single_pb2.SmallCoverV5:
+    def small_cover_v5(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.SmallCoverV5:
         """小封面条目"""
     @property
-    def large_cover_v1(self) -> bilibili.app.card.v1.single_pb2.LargeCoverV1:
+    def large_cover_v1(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.LargeCoverV1:
         """"""
     @property
-    def three_item_all_v2(self) -> bilibili.app.card.v1.single_pb2.ThreeItemAllV2:
+    def three_item_all_v2(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.ThreeItemAllV2:
         """"""
     @property
-    def three_item_v1(self) -> bilibili.app.card.v1.single_pb2.ThreeItemV1:
+    def three_item_v1(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.ThreeItemV1:
         """"""
     @property
-    def hot_topic(self) -> bilibili.app.card.v1.single_pb2.HotTopic:
+    def hot_topic(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.HotTopic:
         """"""
     @property
-    def three_item_h_v5(self) -> bilibili.app.card.v1.single_pb2.DynamicHot:
+    def three_item_h_v5(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.DynamicHot:
         """"""
     @property
-    def middle_cover_v3(self) -> bilibili.app.card.v1.single_pb2.MiddleCoverV3:
+    def middle_cover_v3(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.MiddleCoverV3:
         """"""
     @property
-    def large_cover_v4(self) -> bilibili.app.card.v1.single_pb2.LargeCoverV4:
+    def large_cover_v4(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.LargeCoverV4:
         """"""
     @property
-    def popular_top_entrance(self) -> bilibili.app.card.v1.single_pb2.PopularTopEntrance:
+    def popular_top_entrance(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.PopularTopEntrance:
         """热门列表顶部按钮"""
     @property
-    def rcmd_one_item(self) -> bilibili.app.card.v1.single_pb2.RcmdOneItem:
+    def rcmd_one_item(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.RcmdOneItem:
+        """"""
+    @property
+    def small_cover_v5_ad(self) -> bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.SmallCoverV5Ad:
         """"""
     def __init__(
         self,
@@ -73,9 +78,10 @@ class Card(google.protobuf.message.Message):
         large_cover_v4: bilibili.app.card.v1.single_pb2.LargeCoverV4 | None = ...,
         popular_top_entrance: bilibili.app.card.v1.single_pb2.PopularTopEntrance | None = ...,
         rcmd_one_item: bilibili.app.card.v1.single_pb2.RcmdOneItem | None = ...,
+        small_cover_v5_ad: bilibili.app.card.v1.single_pb2.SmallCoverV5Ad | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["hot_topic", b"hot_topic", "item", b"item", "large_cover_v1", b"large_cover_v1", "large_cover_v4", b"large_cover_v4", "middle_cover_v3", b"middle_cover_v3", "popular_top_entrance", b"popular_top_entrance", "rcmd_one_item", b"rcmd_one_item", "small_cover_v5", b"small_cover_v5", "three_item_all_v2", b"three_item_all_v2", "three_item_h_v5", b"three_item_h_v5", "three_item_v1", b"three_item_v1"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["hot_topic", b"hot_topic", "item", b"item", "large_cover_v1", b"large_cover_v1", "large_cover_v4", b"large_cover_v4", "middle_cover_v3", b"middle_cover_v3", "popular_top_entrance", b"popular_top_entrance", "rcmd_one_item", b"rcmd_one_item", "small_cover_v5", b"small_cover_v5", "three_item_all_v2", b"three_item_all_v2", "three_item_h_v5", b"three_item_h_v5", "three_item_v1", b"three_item_v1"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["item", b"item"]) -> typing_extensions.Literal["small_cover_v5", "large_cover_v1", "three_item_all_v2", "three_item_v1", "hot_topic", "three_item_h_v5", "middle_cover_v3", "large_cover_v4", "popular_top_entrance", "rcmd_one_item"] | None: ...
+    def HasField(self, field_name: typing_extensions.Literal["hot_topic", b"hot_topic", "item", b"item", "large_cover_v1", b"large_cover_v1", "large_cover_v4", b"large_cover_v4", "middle_cover_v3", b"middle_cover_v3", "popular_top_entrance", b"popular_top_entrance", "rcmd_one_item", b"rcmd_one_item", "small_cover_v5", b"small_cover_v5", "small_cover_v5_ad", b"small_cover_v5_ad", "three_item_all_v2", b"three_item_all_v2", "three_item_h_v5", b"three_item_h_v5", "three_item_v1", b"three_item_v1"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["hot_topic", b"hot_topic", "item", b"item", "large_cover_v1", b"large_cover_v1", "large_cover_v4", b"large_cover_v4", "middle_cover_v3", b"middle_cover_v3", "popular_top_entrance", b"popular_top_entrance", "rcmd_one_item", b"rcmd_one_item", "small_cover_v5", b"small_cover_v5", "small_cover_v5_ad", b"small_cover_v5_ad", "three_item_all_v2", b"three_item_all_v2", "three_item_h_v5", b"three_item_h_v5", "three_item_v1", b"three_item_v1"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["item", b"item"]) -> typing_extensions.Literal["small_cover_v5", "large_cover_v1", "three_item_all_v2", "three_item_v1", "hot_topic", "three_item_h_v5", "middle_cover_v3", "large_cover_v4", "popular_top_entrance", "rcmd_one_item", "small_cover_v5_ad"] | None: ...
 
 global___Card = Card

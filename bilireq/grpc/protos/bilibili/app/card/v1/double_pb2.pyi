@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class DoubleCards(google.protobuf.message.Message):
     """"""
 
@@ -47,6 +48,7 @@ class DoubleCards(google.protobuf.message.Message):
 
 global___DoubleCards = DoubleCards
 
+@typing_extensions.final
 class SmallCoverV2(google.protobuf.message.Message):
     """"""
 
@@ -73,7 +75,7 @@ class SmallCoverV2(google.protobuf.message.Message):
     RCMD_REASON_STYLE_V2_FIELD_NUMBER: builtins.int
     LIKE_BUTTON_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_gif: builtins.str
     """"""
@@ -102,20 +104,20 @@ class SmallCoverV2(google.protobuf.message.Message):
     desc: builtins.str
     """"""
     @property
-    def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
+    def avatar(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar:
         """"""
     official_icon: builtins.int
     """"""
     can_play: builtins.int
     """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def rcmd_reason_style_v2(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style_v2(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def like_button(self) -> bilibili.app.card.v1.common_pb2.LikeButton:
+    def like_button(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.LikeButton:
         """"""
     def __init__(
         self,
@@ -146,6 +148,7 @@ class SmallCoverV2(google.protobuf.message.Message):
 
 global___SmallCoverV2 = SmallCoverV2
 
+@typing_extensions.final
 class SmallCoverV3(google.protobuf.message.Message):
     """"""
 
@@ -161,15 +164,15 @@ class SmallCoverV3(google.protobuf.message.Message):
     CAN_PLAY_FIELD_NUMBER: builtins.int
     RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     @property
-    def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
+    def avatar(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar:
         """"""
     cover_left_text: builtins.str
     """"""
     @property
-    def cover_right_button(self) -> bilibili.app.card.v1.common_pb2.Button:
+    def cover_right_button(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Button:
         """"""
     rcmd_reason: builtins.str
     """"""
@@ -180,7 +183,7 @@ class SmallCoverV3(google.protobuf.message.Message):
     can_play: builtins.int
     """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -200,6 +203,7 @@ class SmallCoverV3(google.protobuf.message.Message):
 
 global___SmallCoverV3 = SmallCoverV3
 
+@typing_extensions.final
 class MiddleCoverV2(google.protobuf.message.Message):
     """"""
 
@@ -210,7 +214,7 @@ class MiddleCoverV2(google.protobuf.message.Message):
     DESC_FIELD_NUMBER: builtins.int
     BADGE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     ratio: builtins.int
     """"""
@@ -231,6 +235,7 @@ class MiddleCoverV2(google.protobuf.message.Message):
 
 global___MiddleCoverV2 = MiddleCoverV2
 
+@typing_extensions.final
 class LargeCoverV2(google.protobuf.message.Message):
     """"""
 
@@ -251,15 +256,15 @@ class LargeCoverV2(google.protobuf.message.Message):
     SHOW_TOP_FIELD_NUMBER: builtins.int
     SHOW_BOTTOM_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     @property
-    def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
+    def avatar(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar:
         """"""
     badge: builtins.str
     """"""
     @property
-    def cover_right_button(self) -> bilibili.app.card.v1.common_pb2.Button:
+    def cover_right_button(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Button:
         """"""
     cover_left_text_1: builtins.str
     """"""
@@ -276,7 +281,7 @@ class LargeCoverV2(google.protobuf.message.Message):
     can_play: builtins.int
     """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     show_top: builtins.int
     """"""
@@ -305,6 +310,7 @@ class LargeCoverV2(google.protobuf.message.Message):
 
 global___LargeCoverV2 = LargeCoverV2
 
+@typing_extensions.final
 class ThreeItemV2(google.protobuf.message.Message):
     """"""
 
@@ -316,7 +322,7 @@ class ThreeItemV2(google.protobuf.message.Message):
     MORE_TEXT_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     title_icon: builtins.int
     """"""
@@ -341,6 +347,7 @@ class ThreeItemV2(google.protobuf.message.Message):
 
 global___ThreeItemV2 = ThreeItemV2
 
+@typing_extensions.final
 class ThreeItemV2Item(google.protobuf.message.Message):
     """"""
 
@@ -354,7 +361,7 @@ class ThreeItemV2Item(google.protobuf.message.Message):
     DESC_ICON_2_FIELD_NUMBER: builtins.int
     BADGE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_left_icon: builtins.int
     """"""
@@ -384,6 +391,7 @@ class ThreeItemV2Item(google.protobuf.message.Message):
 
 global___ThreeItemV2Item = ThreeItemV2Item
 
+@typing_extensions.final
 class SmallCoverV4(google.protobuf.message.Message):
     """"""
 
@@ -395,7 +403,7 @@ class SmallCoverV4(google.protobuf.message.Message):
     TITLE_RIGHT_TEXT_FIELD_NUMBER: builtins.int
     TITLE_RIGHT_PIC_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_badge: builtins.str
     """"""
@@ -419,6 +427,7 @@ class SmallCoverV4(google.protobuf.message.Message):
 
 global___SmallCoverV4 = SmallCoverV4
 
+@typing_extensions.final
 class TwoItemV2(google.protobuf.message.Message):
     """"""
 
@@ -427,7 +436,7 @@ class TwoItemV2(google.protobuf.message.Message):
     BASE_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TwoItemV2Item]:
@@ -443,6 +452,7 @@ class TwoItemV2(google.protobuf.message.Message):
 
 global___TwoItemV2 = TwoItemV2
 
+@typing_extensions.final
 class TwoItemV2Item(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -451,7 +461,7 @@ class TwoItemV2Item(google.protobuf.message.Message):
     COVER_LEFT_TEXT_1_FIELD_NUMBER: builtins.int
     COVER_LEFT_ICON_1_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     badge: builtins.str
     """"""
@@ -472,6 +482,7 @@ class TwoItemV2Item(google.protobuf.message.Message):
 
 global___TwoItemV2Item = TwoItemV2Item
 
+@typing_extensions.final
 class MultiItem(google.protobuf.message.Message):
     """"""
 
@@ -482,7 +493,7 @@ class MultiItem(google.protobuf.message.Message):
     MORE_TEXT_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     more_uri: builtins.str
     """"""
@@ -504,6 +515,7 @@ class MultiItem(google.protobuf.message.Message):
 
 global___MultiItem = MultiItem
 
+@typing_extensions.final
 class ThreePicV2(google.protobuf.message.Message):
     """"""
 
@@ -526,7 +538,7 @@ class ThreePicV2(google.protobuf.message.Message):
     AVATAR_FIELD_NUMBER: builtins.int
     RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     left_cover: builtins.str
     """"""
@@ -555,10 +567,10 @@ class ThreePicV2(google.protobuf.message.Message):
     desc: builtins.str
     """"""
     @property
-    def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
+    def avatar(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar:
         """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -585,6 +597,7 @@ class ThreePicV2(google.protobuf.message.Message):
 
 global___ThreePicV2 = ThreePicV2
 
+@typing_extensions.final
 class OnePicV2(google.protobuf.message.Message):
     """"""
 
@@ -601,7 +614,7 @@ class OnePicV2(google.protobuf.message.Message):
     AVATAR_FIELD_NUMBER: builtins.int
     RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_left_icon_1: builtins.int
     """"""
@@ -618,10 +631,10 @@ class OnePicV2(google.protobuf.message.Message):
     rcmd_reason: builtins.str
     """"""
     @property
-    def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
+    def avatar(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar:
         """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -642,6 +655,7 @@ class OnePicV2(google.protobuf.message.Message):
 
 global___OnePicV2 = OnePicV2
 
+@typing_extensions.final
 class LargeCoverV3(google.protobuf.message.Message):
     """"""
 
@@ -660,18 +674,18 @@ class LargeCoverV3(google.protobuf.message.Message):
     DESC_FIELD_NUMBER: builtins.int
     OFFICIAL_ICON_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_gif: builtins.str
     """"""
     @property
-    def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
+    def avatar(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar:
         """"""
     @property
-    def top_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def top_rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def bottom_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def bottom_rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     cover_left_text_1: builtins.str
     """"""
@@ -708,6 +722,7 @@ class LargeCoverV3(google.protobuf.message.Message):
 
 global___LargeCoverV3 = LargeCoverV3
 
+@typing_extensions.final
 class ThreePicV3(google.protobuf.message.Message):
     """"""
 
@@ -727,7 +742,7 @@ class ThreePicV3(google.protobuf.message.Message):
     BADGE_FIELD_NUMBER: builtins.int
     RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     left_cover: builtins.str
     """"""
@@ -752,7 +767,7 @@ class ThreePicV3(google.protobuf.message.Message):
     badge: builtins.str
     """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -776,6 +791,7 @@ class ThreePicV3(google.protobuf.message.Message):
 
 global___ThreePicV3 = ThreePicV3
 
+@typing_extensions.final
 class OnePicV3(google.protobuf.message.Message):
     """"""
 
@@ -790,7 +806,7 @@ class OnePicV3(google.protobuf.message.Message):
     BADGE_FIELD_NUMBER: builtins.int
     RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_left_text_1: builtins.str
     """"""
@@ -805,7 +821,7 @@ class OnePicV3(google.protobuf.message.Message):
     badge: builtins.str
     """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -824,6 +840,7 @@ class OnePicV3(google.protobuf.message.Message):
 
 global___OnePicV3 = OnePicV3
 
+@typing_extensions.final
 class SmallCoverV7(google.protobuf.message.Message):
     """"""
 
@@ -832,7 +849,7 @@ class SmallCoverV7(google.protobuf.message.Message):
     BASE_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     desc: builtins.str
     """"""
@@ -847,6 +864,7 @@ class SmallCoverV7(google.protobuf.message.Message):
 
 global___SmallCoverV7 = SmallCoverV7
 
+@typing_extensions.final
 class SmallCoverV9(google.protobuf.message.Message):
     """"""
 
@@ -865,7 +883,7 @@ class SmallCoverV9(google.protobuf.message.Message):
     LEFT_COVER_BADGE_STYLE_FIELD_NUMBER: builtins.int
     LEFT_BOTTOM_RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_left_text_1: builtins.str
     """"""
@@ -882,16 +900,16 @@ class SmallCoverV9(google.protobuf.message.Message):
     can_play: builtins.int
     """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def up(self) -> bilibili.app.card.v1.common_pb2.Up:
+    def up(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Up:
         """"""
     @property
-    def left_cover_badge_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def left_cover_badge_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def left_bottom_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def left_bottom_rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -914,6 +932,7 @@ class SmallCoverV9(google.protobuf.message.Message):
 
 global___SmallCoverV9 = SmallCoverV9
 
+@typing_extensions.final
 class SmallCoverConvergeV2(google.protobuf.message.Message):
     """"""
 
@@ -929,7 +948,7 @@ class SmallCoverConvergeV2(google.protobuf.message.Message):
     RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     RCMD_REASON_STYLE_V2_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     cover_left_text_1: builtins.str
     """"""
@@ -944,10 +963,10 @@ class SmallCoverConvergeV2(google.protobuf.message.Message):
     cover_right_top_text: builtins.str
     """"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def rcmd_reason_style_v2(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style_v2(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -967,6 +986,7 @@ class SmallCoverConvergeV2(google.protobuf.message.Message):
 
 global___SmallCoverConvergeV2 = SmallCoverConvergeV2
 
+@typing_extensions.final
 class SmallChannelSpecial(google.protobuf.message.Message):
     """"""
 
@@ -979,7 +999,7 @@ class SmallChannelSpecial(google.protobuf.message.Message):
     BADGE_FIELD_NUMBER: builtins.int
     RCMD_REASON_STYLE_2_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """"""
     bg_cover: builtins.str
     """"""
@@ -990,7 +1010,7 @@ class SmallChannelSpecial(google.protobuf.message.Message):
     badge: builtins.str
     """"""
     @property
-    def rcmd_reason_style_2(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style_2(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,

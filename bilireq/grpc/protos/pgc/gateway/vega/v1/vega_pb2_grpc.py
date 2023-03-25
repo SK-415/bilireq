@@ -3,7 +3,7 @@
 import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-from bilireq.grpc.protos.pgc.gaetway.vega.v1 import vega_pb2 as pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2
+from bilireq.grpc.protos.pgc.gateway.vega.v1 import vega_pb2 as pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2
 
 
 class VegaStub(object):
@@ -18,8 +18,8 @@ class VegaStub(object):
         """
         self.CreateTunnel = channel.unary_unary(
                 '/pgc.gateway.vega.v1.Vega/CreateTunnel',
-                request_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.SerializeToString,
-                response_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.FromString,
+                request_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.SerializeToString,
+                response_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.FromString,
                 )
 
 
@@ -39,8 +39,8 @@ def add_VegaServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateTunnel': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateTunnel,
-                    request_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.FromString,
-                    response_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.SerializeToString,
+                    request_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.FromString,
+                    response_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -65,8 +65,8 @@ class Vega(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/pgc.gateway.vega.v1.Vega/CreateTunnel',
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.SerializeToString,
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.FromString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.SerializeToString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.VegaFrame.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -83,22 +83,22 @@ class VegaFrameDocStub(object):
         """
         self.Auth = channel.unary_unary(
                 '/pgc.gateway.vega.v1.VegaFrameDoc/Auth',
-                request_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.AuthReq.SerializeToString,
-                response_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.AuthResp.FromString,
+                request_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.AuthReq.SerializeToString,
+                response_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.AuthResp.FromString,
                 )
         self.Heartbeat = channel.unary_unary(
                 '/pgc.gateway.vega.v1.VegaFrameDoc/Heartbeat',
-                request_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatReq.SerializeToString,
-                response_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatResp.FromString,
+                request_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatReq.SerializeToString,
+                response_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatResp.FromString,
                 )
         self.MessageAck = channel.unary_unary(
                 '/pgc.gateway.vega.v1.VegaFrameDoc/MessageAck',
-                request_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.MessageAckReq.SerializeToString,
+                request_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.MessageAckReq.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.Subscribe = channel.unary_unary(
                 '/pgc.gateway.vega.v1.VegaFrameDoc/Subscribe',
-                request_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.SubscribeReq.SerializeToString,
+                request_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.SubscribeReq.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
@@ -140,22 +140,22 @@ def add_VegaFrameDocServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Auth': grpc.unary_unary_rpc_method_handler(
                     servicer.Auth,
-                    request_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.AuthReq.FromString,
-                    response_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.AuthResp.SerializeToString,
+                    request_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.AuthReq.FromString,
+                    response_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.AuthResp.SerializeToString,
             ),
             'Heartbeat': grpc.unary_unary_rpc_method_handler(
                     servicer.Heartbeat,
-                    request_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatReq.FromString,
-                    response_serializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatResp.SerializeToString,
+                    request_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatReq.FromString,
+                    response_serializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatResp.SerializeToString,
             ),
             'MessageAck': grpc.unary_unary_rpc_method_handler(
                     servicer.MessageAck,
-                    request_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.MessageAckReq.FromString,
+                    request_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.MessageAckReq.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'Subscribe': grpc.unary_unary_rpc_method_handler(
                     servicer.Subscribe,
-                    request_deserializer=pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.SubscribeReq.FromString,
+                    request_deserializer=pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.SubscribeReq.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -181,8 +181,8 @@ class VegaFrameDoc(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/pgc.gateway.vega.v1.VegaFrameDoc/Auth',
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.AuthReq.SerializeToString,
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.AuthResp.FromString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.AuthReq.SerializeToString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.AuthResp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -198,8 +198,8 @@ class VegaFrameDoc(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/pgc.gateway.vega.v1.VegaFrameDoc/Heartbeat',
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatReq.SerializeToString,
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatResp.FromString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatReq.SerializeToString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.HeartbeatResp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -215,7 +215,7 @@ class VegaFrameDoc(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/pgc.gateway.vega.v1.VegaFrameDoc/MessageAck',
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.MessageAckReq.SerializeToString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.MessageAckReq.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -232,7 +232,7 @@ class VegaFrameDoc(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/pgc.gateway.vega.v1.VegaFrameDoc/Subscribe',
-            pgc_dot_gaetway_dot_vega_dot_v1_dot_vega__pb2.SubscribeReq.SerializeToString,
+            pgc_dot_gateway_dot_vega_dot_v1_dot_vega__pb2.SubscribeReq.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

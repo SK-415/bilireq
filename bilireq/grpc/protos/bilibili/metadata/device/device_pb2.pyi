@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Device(google.protobuf.message.Message):
     """设备信息
     gRPC头部:x-bili-device-bin
@@ -38,8 +39,8 @@ class Device(google.protobuf.message.Message):
     FTS_FIELD_NUMBER: builtins.int
     app_id: builtins.int
     """产品id
-    粉 白 蓝 直播姬 HD 海外 OTT 漫画 TV野版 小视频 网易漫画 网易漫画 网易漫画HD 国际版
-    1  2  3    4    5   6    7   8     9     10      11       12       13       14
+    粉 白 蓝 直播姬 HD 海外 OTT 漫画 TV野版 小视频 网易漫画 网易漫画 网易漫画HD 国际版 东南亚版
+    1  2  3    4    5   6    7   8     9     10      11       12       13       14       30
     """
     build: builtins.int
     """构建id"""
@@ -70,7 +71,7 @@ class Device(google.protobuf.message.Message):
     fp: builtins.str
     """设备指纹, 不区分本地或远程设备指纹，作为推送目标的索引"""
     fts: builtins.int
-    """"""
+    """首次启动时的毫秒时间戳"""
     def __init__(
         self,
         *,

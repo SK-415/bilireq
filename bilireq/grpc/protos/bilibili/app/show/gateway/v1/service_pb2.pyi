@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class GetActProgressReq(google.protobuf.message.Message):
     """获取Native页进度数据-请求"""
 
@@ -36,6 +37,7 @@ class GetActProgressReq(google.protobuf.message.Message):
 
 global___GetActProgressReq = GetActProgressReq
 
+@typing_extensions.final
 class GetActProgressReply(google.protobuf.message.Message):
     """获取Native页进度数据-响应"""
 
@@ -43,7 +45,7 @@ class GetActProgressReply(google.protobuf.message.Message):
 
     EVENT_FIELD_NUMBER: builtins.int
     @property
-    def event(self) -> bilibili.broadcast.message.main.native_pb2.NativePageEvent:
+    def event(self) -> bilireq.grpc.protos.bilibili.broadcast.message.main.native_pb2.NativePageEvent:
         """进度数据"""
     def __init__(
         self,

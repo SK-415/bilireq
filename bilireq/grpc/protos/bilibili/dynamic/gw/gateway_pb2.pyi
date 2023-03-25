@@ -23,7 +23,7 @@ class _AddButtonBgStyle:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AddButtonBgStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AddButtonBgStyle.ValueType], builtins.type):  # noqa: F821
+class _AddButtonBgStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AddButtonBgStyle.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     fill: _AddButtonBgStyle.ValueType  # 0
     """默认填充"""
@@ -47,7 +47,7 @@ class _AddButtonType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AddButtonTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AddButtonType.ValueType], builtins.type):  # noqa: F821
+class _AddButtonTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AddButtonType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     bt_none: _AddButtonType.ValueType  # 0
     """占位"""
@@ -71,7 +71,7 @@ class _AdditionVoteState:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AdditionVoteStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionVoteState.ValueType], builtins.type):  # noqa: F821
+class _AdditionVoteStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionVoteState.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     addition_vote_state_none: _AdditionVoteState.ValueType  # 0
     """"""
@@ -95,7 +95,7 @@ class _AdditionVoteType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AdditionVoteTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionVoteType.ValueType], builtins.type):  # noqa: F821
+class _AdditionVoteTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionVoteType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     addition_vote_type_none: _AdditionVoteType.ValueType  # 0
     """"""
@@ -123,7 +123,7 @@ class _AdditionalButtonClickType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AdditionalButtonClickTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionalButtonClickType.ValueType], builtins.type):  # noqa: F821
+class _AdditionalButtonClickTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionalButtonClickType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     click_none: _AdditionalButtonClickType.ValueType  # 0
     """通用按钮"""
@@ -143,7 +143,7 @@ class _AdditionalButtonStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AdditionalButtonStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionalButtonStatus.ValueType], builtins.type):  # noqa: F821
+class _AdditionalButtonStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionalButtonStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     none: _AdditionalButtonStatus.ValueType  # 0
     """"""
@@ -167,7 +167,7 @@ class _AdditionalType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _AdditionalTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionalType.ValueType], builtins.type):  # noqa: F821
+class _AdditionalTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AdditionalType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     additional_none: _AdditionalType.ValueType  # 0
     """占位"""
@@ -215,7 +215,7 @@ class _DescType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DescTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DescType.ValueType], builtins.type):  # noqa: F821
+class _DescTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DescType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     desc_type_none: _DescType.ValueType  # 0
     """占位"""
@@ -299,7 +299,7 @@ class _DisableState:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DisableStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DisableState.ValueType], builtins.type):  # noqa: F821
+class _DisableStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DisableState.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     highlight: _DisableState.ValueType  # 0
     """高亮"""
@@ -319,7 +319,7 @@ class _DynExtendType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DynExtendTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynExtendType.ValueType], builtins.type):  # noqa: F821
+class _DynExtendTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynExtendType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     dyn_ext_type_none: _DynExtendType.ValueType  # 0
     """占位"""
@@ -367,7 +367,7 @@ class _DynModuleType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DynModuleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynModuleType.ValueType], builtins.type):  # noqa: F821
+class _DynModuleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynModuleType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     module_none: _DynModuleType.ValueType  # 0
     """占位"""
@@ -467,7 +467,7 @@ class _DynUriType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DynUriTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynUriType.ValueType], builtins.type):  # noqa: F821
+class _DynUriTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynUriType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     dyn_uri_type_none: _DynUriType.ValueType  # 0
     """"""
@@ -491,7 +491,7 @@ class _DynamicType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DynamicTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynamicType.ValueType], builtins.type):  # noqa: F821
+class _DynamicTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynamicType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     dyn_none: _DynamicType.ValueType  # 0
     """占位"""
@@ -591,7 +591,7 @@ class _EmojiType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _EmojiTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EmojiType.ValueType], builtins.type):  # noqa: F821
+class _EmojiTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EmojiType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     emoji_none: _EmojiType.ValueType  # 0
     """占位"""
@@ -619,7 +619,7 @@ class _EspaceStyle:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _EspaceStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EspaceStyle.ValueType], builtins.type):  # noqa: F821
+class _EspaceStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EspaceStyle.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     moba: _EspaceStyle.ValueType  # 0
     """moba类"""
@@ -635,7 +635,7 @@ class _FoldType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _FoldTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_FoldType.ValueType], builtins.type):  # noqa: F821
+class _FoldTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_FoldType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     FoldTypeZore: _FoldType.ValueType  # 0
     """占位"""
@@ -667,7 +667,7 @@ class _FollowType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _FollowTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_FollowType.ValueType], builtins.type):  # noqa: F821
+class _FollowTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_FollowType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     ft_not_follow: _FollowType.ValueType  # 0
     """"""
@@ -687,7 +687,7 @@ class _HighlightTextStyle:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _HighlightTextStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HighlightTextStyle.ValueType], builtins.type):  # noqa: F821
+class _HighlightTextStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HighlightTextStyle.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     style_none: _HighlightTextStyle.ValueType  # 0
     """默认"""
@@ -707,7 +707,7 @@ class _ImageStyle:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ImageStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ImageStyle.ValueType], builtins.type):  # noqa: F821
+class _ImageStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ImageStyle.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     add_style_vertical: _ImageStyle.ValueType  # 0
     """"""
@@ -727,7 +727,7 @@ class _LiveState:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _LiveStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LiveState.ValueType], builtins.type):  # noqa: F821
+class _LiveStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LiveState.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     live_none: _LiveState.ValueType  # 0
     """未直播"""
@@ -751,7 +751,7 @@ class _LocalIconType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _LocalIconTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LocalIconType.ValueType], builtins.type):  # noqa: F821
+class _LocalIconTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LocalIconType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     local_icon_comment: _LocalIconType.ValueType  # 0
     """"""
@@ -771,7 +771,7 @@ class _MdlDynCommonType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MdlDynCommonTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MdlDynCommonType.ValueType], builtins.type):  # noqa: F821
+class _MdlDynCommonTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MdlDynCommonType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     mdl_dyn_common_none: _MdlDynCommonType.ValueType  # 0
     """"""
@@ -795,7 +795,7 @@ class _MdlDynDrawTagType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MdlDynDrawTagTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MdlDynDrawTagType.ValueType], builtins.type):  # noqa: F821
+class _MdlDynDrawTagTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MdlDynDrawTagType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     mdl_draw_tag_none: _MdlDynDrawTagType.ValueType  # 0
     """占位"""
@@ -831,7 +831,7 @@ class _MdlDynSubscriptionNewStyle:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MdlDynSubscriptionNewStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MdlDynSubscriptionNewStyle.ValueType], builtins.type):  # noqa: F821
+class _MdlDynSubscriptionNewStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MdlDynSubscriptionNewStyle.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     mdl_dyn_subscription_new_style_nont: _MdlDynSubscriptionNewStyle.ValueType  # 0
     """占位"""
@@ -855,7 +855,7 @@ class _MediaType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MediaTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MediaType.ValueType], builtins.type):  # noqa: F821
+class _MediaTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MediaType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     MediaTypeNone: _MediaType.ValueType  # 0
     """本地"""
@@ -887,7 +887,7 @@ class _ModuleAuthorBadgeType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ModuleAuthorBadgeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModuleAuthorBadgeType.ValueType], builtins.type):  # noqa: F821
+class _ModuleAuthorBadgeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModuleAuthorBadgeType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     module_author_badge_type_none: _ModuleAuthorBadgeType.ValueType  # 0
     """占位"""
@@ -915,7 +915,7 @@ class _ModuleBannerType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ModuleBannerTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModuleBannerType.ValueType], builtins.type):  # noqa: F821
+class _ModuleBannerTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModuleBannerType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     module_banner_type_none: _ModuleBannerType.ValueType  # 0
     """"""
@@ -935,7 +935,7 @@ class _ModuleDynamicType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ModuleDynamicTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModuleDynamicType.ValueType], builtins.type):  # noqa: F821
+class _ModuleDynamicTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ModuleDynamicType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     mdl_dyn_archive: _ModuleDynamicType.ValueType  # 0
     """稿件"""
@@ -1011,7 +1011,7 @@ class _Refresh:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _RefreshEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Refresh.ValueType], builtins.type):  # noqa: F821
+class _RefreshEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Refresh.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     refresh_new: _Refresh.ValueType  # 0
     """刷新列表"""
@@ -1031,7 +1031,7 @@ class _RelationStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _RelationStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RelationStatus.ValueType], builtins.type):  # noqa: F821
+class _RelationStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RelationStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     relation_status_none: _RelationStatus.ValueType  # 0
     """1-未关注 2-关注 3-被关注 4-互相关注 5-特别关注"""
@@ -1057,7 +1057,7 @@ class _ReserveType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ReserveTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveType.ValueType], builtins.type):  # noqa: F821
+class _ReserveTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     reserve_none: _ReserveType.ValueType  # 0
     """占位"""
@@ -1077,7 +1077,7 @@ class _ThreePointAttentionStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ThreePointAttentionStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ThreePointAttentionStatus.ValueType], builtins.type):  # noqa: F821
+class _ThreePointAttentionStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ThreePointAttentionStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     tp_not_attention: _ThreePointAttentionStatus.ValueType  # 0
     """"""
@@ -1097,7 +1097,7 @@ class _ThreePointType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ThreePointTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ThreePointType.ValueType], builtins.type):  # noqa: F821
+class _ThreePointTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ThreePointType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     tp_none: _ThreePointType.ValueType  # 0
     """占位"""
@@ -1149,7 +1149,7 @@ class _ThumbType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ThumbTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ThumbType.ValueType], builtins.type):  # noqa: F821
+class _ThumbTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ThumbType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     cancel: _ThumbType.ValueType  # 0
     """"""
@@ -1169,7 +1169,7 @@ class _UserItemType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _UserItemTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_UserItemType.ValueType], builtins.type):  # noqa: F821
+class _UserItemTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_UserItemType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     user_item_type_none: _UserItemType.ValueType  # 0
     """"""
@@ -1201,7 +1201,7 @@ class _VideoSubType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _VideoSubTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VideoSubType.ValueType], builtins.type):  # noqa: F821
+class _VideoSubTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VideoSubType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     VideoSubTypeNone: _VideoSubType.ValueType  # 0
     """没有子类型"""
@@ -1237,7 +1237,7 @@ class _VideoType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _VideoTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VideoType.ValueType], builtins.type):  # noqa: F821
+class _VideoTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VideoType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     video_type_general: _VideoType.ValueType  # 0
     """普通视频"""
@@ -1261,7 +1261,7 @@ class _VoteStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _VoteStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VoteStatus.ValueType], builtins.type):  # noqa: F821
+class _VoteStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_VoteStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     normal: _VoteStatus.ValueType  # 0
     """正常"""
@@ -1281,7 +1281,7 @@ class _WeightType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _WeightTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_WeightType.ValueType], builtins.type):  # noqa: F821
+class _WeightTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_WeightType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     weight_none: _WeightType.ValueType  # 0
     """默认 占位"""
@@ -1301,6 +1301,7 @@ weight_jump: WeightType.ValueType  # 2
 """跳链"""
 global___WeightType = WeightType
 
+@typing_extensions.final
 class AdParam(google.protobuf.message.Message):
     """综合页请求广告所需字段，由客户端-网关透传"""
 
@@ -1322,6 +1323,7 @@ class AdParam(google.protobuf.message.Message):
 
 global___AdParam = AdParam
 
+@typing_extensions.final
 class AdditionCommon(google.protobuf.message.Message):
     """动态-附加卡-通用卡"""
 
@@ -1383,6 +1385,7 @@ class AdditionCommon(google.protobuf.message.Message):
 
 global___AdditionCommon = AdditionCommon
 
+@typing_extensions.final
 class AdditionEsport(google.protobuf.message.Message):
     """动态-附加卡-电竞卡"""
 
@@ -1417,6 +1420,7 @@ class AdditionEsport(google.protobuf.message.Message):
 
 global___AdditionEsport = AdditionEsport
 
+@typing_extensions.final
 class AdditionEsportMoba(google.protobuf.message.Message):
     """动态-附加卡-电竞卡-moba类"""
 
@@ -1470,6 +1474,7 @@ class AdditionEsportMoba(google.protobuf.message.Message):
 
 global___AdditionEsportMoba = AdditionEsportMoba
 
+@typing_extensions.final
 class AdditionEsportMobaStatus(google.protobuf.message.Message):
     """动态-附加卡-电竞卡-moba类-比赛信息"""
 
@@ -1504,6 +1509,7 @@ class AdditionEsportMobaStatus(google.protobuf.message.Message):
 
 global___AdditionEsportMobaStatus = AdditionEsportMobaStatus
 
+@typing_extensions.final
 class AdditionEsportMobaStatusDesc(google.protobuf.message.Message):
     """动态-附加卡-电竞卡-moba类-比赛信息-文案类"""
 
@@ -1529,6 +1535,7 @@ class AdditionEsportMobaStatusDesc(google.protobuf.message.Message):
 
 global___AdditionEsportMobaStatusDesc = AdditionEsportMobaStatusDesc
 
+@typing_extensions.final
 class AdditionGoods(google.protobuf.message.Message):
     """动态-附加卡-商品卡"""
 
@@ -1569,6 +1576,7 @@ class AdditionGoods(google.protobuf.message.Message):
 
 global___AdditionGoods = AdditionGoods
 
+@typing_extensions.final
 class AdditionUP(google.protobuf.message.Message):
     """up主预约发布卡"""
 
@@ -1618,6 +1626,7 @@ class AdditionUP(google.protobuf.message.Message):
 
 global___AdditionUP = AdditionUP
 
+@typing_extensions.final
 class AdditionUgc(google.protobuf.message.Message):
     """动态-附加卡-UGC视频附加卡"""
 
@@ -1667,6 +1676,7 @@ class AdditionUgc(google.protobuf.message.Message):
 
 global___AdditionUgc = AdditionUgc
 
+@typing_extensions.final
 class AdditionVote(google.protobuf.message.Message):
     """动态-附加卡-投票"""
 
@@ -1700,6 +1710,7 @@ class AdditionVote(google.protobuf.message.Message):
 
 global___AdditionVote = AdditionVote
 
+@typing_extensions.final
 class AdditionVote2(google.protobuf.message.Message):
     """动态模块-投票"""
 
@@ -1802,6 +1813,7 @@ class AdditionVote2(google.protobuf.message.Message):
 
 global___AdditionVote2 = AdditionVote2
 
+@typing_extensions.final
 class AdditionVoteDefaule(google.protobuf.message.Message):
     """外露投票"""
 
@@ -1820,6 +1832,7 @@ class AdditionVoteDefaule(google.protobuf.message.Message):
 
 global___AdditionVoteDefaule = AdditionVoteDefaule
 
+@typing_extensions.final
 class AdditionVotePic(google.protobuf.message.Message):
     """外露图片类型"""
 
@@ -1838,6 +1851,7 @@ class AdditionVotePic(google.protobuf.message.Message):
 
 global___AdditionVotePic = AdditionVotePic
 
+@typing_extensions.final
 class AdditionVotePicItem(google.protobuf.message.Message):
     """图片投票详情"""
 
@@ -1879,6 +1893,7 @@ class AdditionVotePicItem(google.protobuf.message.Message):
 
 global___AdditionVotePicItem = AdditionVotePicItem
 
+@typing_extensions.final
 class AdditionVoteWord(google.protobuf.message.Message):
     """外露文字类型"""
 
@@ -1897,6 +1912,7 @@ class AdditionVoteWord(google.protobuf.message.Message):
 
 global___AdditionVoteWord = AdditionVoteWord
 
+@typing_extensions.final
 class AdditionVoteWordItem(google.protobuf.message.Message):
     """外露文字投票详情"""
 
@@ -1934,6 +1950,7 @@ class AdditionVoteWordItem(google.protobuf.message.Message):
 
 global___AdditionVoteWordItem = AdditionVoteWordItem
 
+@typing_extensions.final
 class AdditionalActSkin(google.protobuf.message.Message):
     """活动皮肤"""
 
@@ -1959,6 +1976,7 @@ class AdditionalActSkin(google.protobuf.message.Message):
 
 global___AdditionalActSkin = AdditionalActSkin
 
+@typing_extensions.final
 class AdditionalButton(google.protobuf.message.Message):
     """动态-附加卡-按钮"""
 
@@ -2004,6 +2022,7 @@ class AdditionalButton(google.protobuf.message.Message):
 
 global___AdditionalButton = AdditionalButton
 
+@typing_extensions.final
 class AdditionalButtonInteractive(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -2031,6 +2050,7 @@ class AdditionalButtonInteractive(google.protobuf.message.Message):
 
 global___AdditionalButtonInteractive = AdditionalButtonInteractive
 
+@typing_extensions.final
 class AdditionalButtonStyle(google.protobuf.message.Message):
     """动态-附加卡-按钮样式"""
 
@@ -2072,6 +2092,7 @@ class AdditionalButtonStyle(google.protobuf.message.Message):
 
 global___AdditionalButtonStyle = AdditionalButtonStyle
 
+@typing_extensions.final
 class AdditionalPGC(google.protobuf.message.Message):
     """动态-附加卡-番剧卡"""
 
@@ -2127,6 +2148,7 @@ class AdditionalPGC(google.protobuf.message.Message):
 
 global___AdditionalPGC = AdditionalPGC
 
+@typing_extensions.final
 class CardVideoDynList(google.protobuf.message.Message):
     """动态卡片列表"""
 
@@ -2161,6 +2183,7 @@ class CardVideoDynList(google.protobuf.message.Message):
 
 global___CardVideoDynList = CardVideoDynList
 
+@typing_extensions.final
 class CardVideoFollowList(google.protobuf.message.Message):
     """视频页-我的追番"""
 
@@ -2183,6 +2206,7 @@ class CardVideoFollowList(google.protobuf.message.Message):
 
 global___CardVideoFollowList = CardVideoFollowList
 
+@typing_extensions.final
 class CardVideoUpList(google.protobuf.message.Message):
     """视频页-最近访问"""
 
@@ -2235,6 +2259,7 @@ class CardVideoUpList(google.protobuf.message.Message):
 
 global___CardVideoUpList = CardVideoUpList
 
+@typing_extensions.final
 class CmtShowItem(google.protobuf.message.Message):
     """评论外露展示项"""
 
@@ -2264,6 +2289,7 @@ class CmtShowItem(google.protobuf.message.Message):
 
 global___CmtShowItem = CmtShowItem
 
+@typing_extensions.final
 class DecoCardFan(google.protobuf.message.Message):
     """装扮卡片-粉丝勋章信息"""
 
@@ -2293,6 +2319,7 @@ class DecoCardFan(google.protobuf.message.Message):
 
 global___DecoCardFan = DecoCardFan
 
+@typing_extensions.final
 class DecorateCard(google.protobuf.message.Message):
     """装扮卡片"""
 
@@ -2324,6 +2351,7 @@ class DecorateCard(google.protobuf.message.Message):
 
 global___DecorateCard = DecorateCard
 
+@typing_extensions.final
 class Description(google.protobuf.message.Message):
     """文本描述"""
 
@@ -2379,6 +2407,7 @@ class Description(google.protobuf.message.Message):
 
 global___Description = Description
 
+@typing_extensions.final
 class Dimension(google.protobuf.message.Message):
     """尺寸信息"""
 
@@ -2404,6 +2433,7 @@ class Dimension(google.protobuf.message.Message):
 
 global___Dimension = Dimension
 
+@typing_extensions.final
 class DynAdditionCommonFollowReply(google.protobuf.message.Message):
     """动态通用附加卡-follow/取消follow-响应"""
 
@@ -2421,6 +2451,7 @@ class DynAdditionCommonFollowReply(google.protobuf.message.Message):
 
 global___DynAdditionCommonFollowReply = DynAdditionCommonFollowReply
 
+@typing_extensions.final
 class DynAdditionCommonFollowReq(google.protobuf.message.Message):
     """动态通用附加卡-follow/取消follow-请求"""
 
@@ -2446,6 +2477,7 @@ class DynAdditionCommonFollowReq(google.protobuf.message.Message):
 
 global___DynAdditionCommonFollowReq = DynAdditionCommonFollowReq
 
+@typing_extensions.final
 class DynAllPersonalReply(google.protobuf.message.Message):
     """最近访问-个人feed流列表-返回"""
 
@@ -2482,6 +2514,7 @@ class DynAllPersonalReply(google.protobuf.message.Message):
 
 global___DynAllPersonalReply = DynAllPersonalReply
 
+@typing_extensions.final
 class DynAllPersonalReq(google.protobuf.message.Message):
     """最近访问-个人feed流列表-请求"""
 
@@ -2531,6 +2564,7 @@ class DynAllPersonalReq(google.protobuf.message.Message):
 
 global___DynAllPersonalReq = DynAllPersonalReq
 
+@typing_extensions.final
 class DynAllReply(google.protobuf.message.Message):
     """动态综合页-响应"""
 
@@ -2565,6 +2599,7 @@ class DynAllReply(google.protobuf.message.Message):
 
 global___DynAllReply = DynAllReply
 
+@typing_extensions.final
 class DynAllReq(google.protobuf.message.Message):
     """动态综合页-请求"""
 
@@ -2628,6 +2663,7 @@ class DynAllReq(google.protobuf.message.Message):
 
 global___DynAllReq = DynAllReq
 
+@typing_extensions.final
 class DynAllUpdOffsetReq(google.protobuf.message.Message):
     """最近访问-标记已读-请求"""
 
@@ -2653,6 +2689,7 @@ class DynAllUpdOffsetReq(google.protobuf.message.Message):
 
 global___DynAllUpdOffsetReq = DynAllUpdOffsetReq
 
+@typing_extensions.final
 class DynDetailReply(google.protobuf.message.Message):
     """动态详情页-响应"""
 
@@ -2672,6 +2709,7 @@ class DynDetailReply(google.protobuf.message.Message):
 
 global___DynDetailReply = DynDetailReply
 
+@typing_extensions.final
 class DynDetailsReq(google.protobuf.message.Message):
     """批量动态id获取动态详情-请求"""
 
@@ -2704,6 +2742,7 @@ class DynDetailsReq(google.protobuf.message.Message):
 
 global___DynDetailsReq = DynDetailsReq
 
+@typing_extensions.final
 class DynFakeCardReply(google.protobuf.message.Message):
     """动态发布生成临时卡-响应"""
 
@@ -2723,6 +2762,7 @@ class DynFakeCardReply(google.protobuf.message.Message):
 
 global___DynFakeCardReply = DynFakeCardReply
 
+@typing_extensions.final
 class DynFakeCardReq(google.protobuf.message.Message):
     """动态发布生成临时卡-请求"""
 
@@ -2740,6 +2780,7 @@ class DynFakeCardReq(google.protobuf.message.Message):
 
 global___DynFakeCardReq = DynFakeCardReq
 
+@typing_extensions.final
 class DynMixUpListViewMoreReply(google.protobuf.message.Message):
     """查看更多-列表-响应"""
 
@@ -2775,6 +2816,7 @@ class DynMixUpListViewMoreReply(google.protobuf.message.Message):
 
 global___DynMixUpListViewMoreReply = DynMixUpListViewMoreReply
 
+@typing_extensions.final
 class DynMixUpListViewMoreReq(google.protobuf.message.Message):
     """查看更多-请求"""
 
@@ -2794,6 +2836,7 @@ class DynMixUpListViewMoreReq(google.protobuf.message.Message):
 
 global___DynMixUpListViewMoreReq = DynMixUpListViewMoreReq
 
+@typing_extensions.final
 class DynRcmdUpExchangeReply(google.protobuf.message.Message):
     """关注推荐up主换一换-响应"""
 
@@ -2813,6 +2856,7 @@ class DynRcmdUpExchangeReply(google.protobuf.message.Message):
 
 global___DynRcmdUpExchangeReply = DynRcmdUpExchangeReply
 
+@typing_extensions.final
 class DynRcmdUpExchangeReq(google.protobuf.message.Message):
     """关注推荐up主换一换-请求"""
 
@@ -2835,6 +2879,7 @@ class DynRcmdUpExchangeReq(google.protobuf.message.Message):
 
 global___DynRcmdUpExchangeReq = DynRcmdUpExchangeReq
 
+@typing_extensions.final
 class DynThumbReq(google.protobuf.message.Message):
     """动态点赞-请求"""
 
@@ -2868,6 +2913,7 @@ class DynThumbReq(google.protobuf.message.Message):
 
 global___DynThumbReq = DynThumbReq
 
+@typing_extensions.final
 class DynVideoPersonalReply(google.protobuf.message.Message):
     """最近访问-个人feed流列表-响应"""
 
@@ -2904,6 +2950,7 @@ class DynVideoPersonalReply(google.protobuf.message.Message):
 
 global___DynVideoPersonalReply = DynVideoPersonalReply
 
+@typing_extensions.final
 class DynVideoPersonalReq(google.protobuf.message.Message):
     """最近访问-个人feed流列表-请求"""
 
@@ -2953,6 +3000,7 @@ class DynVideoPersonalReq(google.protobuf.message.Message):
 
 global___DynVideoPersonalReq = DynVideoPersonalReq
 
+@typing_extensions.final
 class DynVideoReply(google.protobuf.message.Message):
     """动态视频页-响应"""
 
@@ -2982,6 +3030,7 @@ class DynVideoReply(google.protobuf.message.Message):
 
 global___DynVideoReply = DynVideoReply
 
+@typing_extensions.final
 class DynVideoReq(google.protobuf.message.Message):
     """动态视频页-请求"""
 
@@ -3033,6 +3082,7 @@ class DynVideoReq(google.protobuf.message.Message):
 
 global___DynVideoReq = DynVideoReq
 
+@typing_extensions.final
 class DynVideoUpdOffsetReq(google.protobuf.message.Message):
     """最近访问-标记已读-请求"""
 
@@ -3058,6 +3108,7 @@ class DynVideoUpdOffsetReq(google.protobuf.message.Message):
 
 global___DynVideoUpdOffsetReq = DynVideoUpdOffsetReq
 
+@typing_extensions.final
 class DynVoteReply(google.protobuf.message.Message):
     """投票操作-响应"""
 
@@ -3081,6 +3132,7 @@ class DynVoteReply(google.protobuf.message.Message):
 
 global___DynVoteReply = DynVoteReply
 
+@typing_extensions.final
 class DynVoteReq(google.protobuf.message.Message):
     """投票操作-请求"""
 
@@ -3115,6 +3167,7 @@ class DynVoteReq(google.protobuf.message.Message):
 
 global___DynVoteReq = DynVoteReq
 
+@typing_extensions.final
 class DynamicItem(google.protobuf.message.Message):
     """动态卡片"""
 
@@ -3151,6 +3204,7 @@ class DynamicItem(google.protobuf.message.Message):
 
 global___DynamicItem = DynamicItem
 
+@typing_extensions.final
 class DynamicList(google.protobuf.message.Message):
     """动态卡片列表"""
 
@@ -3185,6 +3239,7 @@ class DynamicList(google.protobuf.message.Message):
 
 global___DynamicList = DynamicList
 
+@typing_extensions.final
 class ExtInfoCommon(google.protobuf.message.Message):
     """动态-拓展小卡模块-通用小卡"""
 
@@ -3238,6 +3293,7 @@ class ExtInfoCommon(google.protobuf.message.Message):
 
 global___ExtInfoCommon = ExtInfoCommon
 
+@typing_extensions.final
 class ExtInfoGame(google.protobuf.message.Message):
     """动态-拓展小卡模块-游戏小卡"""
 
@@ -3263,6 +3319,7 @@ class ExtInfoGame(google.protobuf.message.Message):
 
 global___ExtInfoGame = ExtInfoGame
 
+@typing_extensions.final
 class ExtInfoHot(google.protobuf.message.Message):
     """动态-拓展小卡模块-热门小卡"""
 
@@ -3288,6 +3345,7 @@ class ExtInfoHot(google.protobuf.message.Message):
 
 global___ExtInfoHot = ExtInfoHot
 
+@typing_extensions.final
 class ExtInfoLBS(google.protobuf.message.Message):
     """动态-拓展小卡模块-lbs小卡"""
 
@@ -3317,6 +3375,7 @@ class ExtInfoLBS(google.protobuf.message.Message):
 
 global___ExtInfoLBS = ExtInfoLBS
 
+@typing_extensions.final
 class ExtInfoOGV(google.protobuf.message.Message):
     """动态-拓展小卡模块-ogv小卡"""
 
@@ -3335,6 +3394,7 @@ class ExtInfoOGV(google.protobuf.message.Message):
 
 global___ExtInfoOGV = ExtInfoOGV
 
+@typing_extensions.final
 class ExtInfoTopic(google.protobuf.message.Message):
     """动态-拓展小卡模块-话题小卡"""
 
@@ -3360,6 +3420,7 @@ class ExtInfoTopic(google.protobuf.message.Message):
 
 global___ExtInfoTopic = ExtInfoTopic
 
+@typing_extensions.final
 class Extend(google.protobuf.message.Message):
     """扩展字段，用于动态部分操作使用"""
 
@@ -3450,6 +3511,7 @@ class Extend(google.protobuf.message.Message):
 
 global___Extend = Extend
 
+@typing_extensions.final
 class ExtendReply(google.protobuf.message.Message):
     """评论扩展"""
 
@@ -3472,6 +3534,7 @@ class ExtendReply(google.protobuf.message.Message):
 
 global___ExtendReply = ExtendReply
 
+@typing_extensions.final
 class ExtendReplyParam(google.protobuf.message.Message):
     """评论扩展参数部分"""
 
@@ -3493,6 +3556,7 @@ class ExtendReplyParam(google.protobuf.message.Message):
 
 global___ExtendReplyParam = ExtendReplyParam
 
+@typing_extensions.final
 class FollowListItem(google.protobuf.message.Message):
     """视频页-我的追番-番剧信息"""
 
@@ -3536,6 +3600,7 @@ class FollowListItem(google.protobuf.message.Message):
 
 global___FollowListItem = FollowListItem
 
+@typing_extensions.final
 class GoodsItem(google.protobuf.message.Message):
     """动态-附加卡-商品卡-商品"""
 
@@ -3604,6 +3669,7 @@ class GoodsItem(google.protobuf.message.Message):
 
 global___GoodsItem = GoodsItem
 
+@typing_extensions.final
 class HighlightText(google.protobuf.message.Message):
     """高亮文本"""
 
@@ -3625,6 +3691,7 @@ class HighlightText(google.protobuf.message.Message):
 
 global___HighlightText = HighlightText
 
+@typing_extensions.final
 class InfoOGV(google.protobuf.message.Message):
     """动态-拓展小卡模块-ogv小卡-(one of 片单、榜单、分区)"""
 
@@ -3654,6 +3721,7 @@ class InfoOGV(google.protobuf.message.Message):
 
 global___InfoOGV = InfoOGV
 
+@typing_extensions.final
 class InteractionItem(google.protobuf.message.Message):
     """外露交互模块"""
 
@@ -3688,6 +3756,7 @@ class InteractionItem(google.protobuf.message.Message):
 
 global___InteractionItem = InteractionItem
 
+@typing_extensions.final
 class LikeAnimation(google.protobuf.message.Message):
     """点赞动画"""
 
@@ -3717,6 +3786,7 @@ class LikeAnimation(google.protobuf.message.Message):
 
 global___LikeAnimation = LikeAnimation
 
+@typing_extensions.final
 class LikeInfo(google.protobuf.message.Message):
     """点赞拓展信息"""
 
@@ -3740,6 +3810,7 @@ class LikeInfo(google.protobuf.message.Message):
 
 global___LikeInfo = LikeInfo
 
+@typing_extensions.final
 class LikeUser(google.protobuf.message.Message):
     """点赞用户"""
 
@@ -3765,6 +3836,7 @@ class LikeUser(google.protobuf.message.Message):
 
 global___LikeUser = LikeUser
 
+@typing_extensions.final
 class LiveInfo(google.protobuf.message.Message):
     """直播信息"""
 
@@ -3792,6 +3864,7 @@ class LiveInfo(google.protobuf.message.Message):
 
 global___LiveInfo = LiveInfo
 
+@typing_extensions.final
 class MatchTeam(google.protobuf.message.Message):
     """动态-附加卡-电竞卡-战队"""
 
@@ -3825,6 +3898,7 @@ class MatchTeam(google.protobuf.message.Message):
 
 global___MatchTeam = MatchTeam
 
+@typing_extensions.final
 class MdlDynApplet(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-小程序/小游戏"""
 
@@ -3870,6 +3944,7 @@ class MdlDynApplet(google.protobuf.message.Message):
 
 global___MdlDynApplet = MdlDynApplet
 
+@typing_extensions.final
 class MdlDynArchive(google.protobuf.message.Message):
     """动态-详情模块-稿件"""
 
@@ -3995,6 +4070,7 @@ class MdlDynArchive(google.protobuf.message.Message):
 
 global___MdlDynArchive = MdlDynArchive
 
+@typing_extensions.final
 class MdlDynArticle(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-专栏模块"""
 
@@ -4037,6 +4113,7 @@ class MdlDynArticle(google.protobuf.message.Message):
 
 global___MdlDynArticle = MdlDynArticle
 
+@typing_extensions.final
 class MdlDynCommon(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-通用"""
 
@@ -4091,6 +4168,7 @@ class MdlDynCommon(google.protobuf.message.Message):
 
 global___MdlDynCommon = MdlDynCommon
 
+@typing_extensions.final
 class MdlDynCourBatch(google.protobuf.message.Message):
     """动态-详情模块-付费课程批次"""
 
@@ -4134,6 +4212,7 @@ class MdlDynCourBatch(google.protobuf.message.Message):
 
 global___MdlDynCourBatch = MdlDynCourBatch
 
+@typing_extensions.final
 class MdlDynCourSeason(google.protobuf.message.Message):
     """动态-详情模块-付费课程系列"""
 
@@ -4177,6 +4256,7 @@ class MdlDynCourSeason(google.protobuf.message.Message):
 
 global___MdlDynCourSeason = MdlDynCourSeason
 
+@typing_extensions.final
 class MdlDynDraw(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-图文模块"""
 
@@ -4203,6 +4283,7 @@ class MdlDynDraw(google.protobuf.message.Message):
 
 global___MdlDynDraw = MdlDynDraw
 
+@typing_extensions.final
 class MdlDynDrawItem(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-图文"""
 
@@ -4237,6 +4318,7 @@ class MdlDynDrawItem(google.protobuf.message.Message):
 
 global___MdlDynDrawItem = MdlDynDrawItem
 
+@typing_extensions.final
 class MdlDynDrawTag(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-图文-标签"""
 
@@ -4260,6 +4342,7 @@ class MdlDynDrawTag(google.protobuf.message.Message):
 
 global___MdlDynDrawTag = MdlDynDrawTag
 
+@typing_extensions.final
 class MdlDynDrawTagItem(google.protobuf.message.Message):
     """动态列表部分-详情模块-图文-标签详情"""
 
@@ -4319,6 +4402,7 @@ class MdlDynDrawTagItem(google.protobuf.message.Message):
 
 global___MdlDynDrawTagItem = MdlDynDrawTagItem
 
+@typing_extensions.final
 class MdlDynForward(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-转发模块"""
 
@@ -4344,6 +4428,7 @@ class MdlDynForward(google.protobuf.message.Message):
 
 global___MdlDynForward = MdlDynForward
 
+@typing_extensions.final
 class MdlDynLive(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-直播"""
 
@@ -4395,6 +4480,7 @@ class MdlDynLive(google.protobuf.message.Message):
 
 global___MdlDynLive = MdlDynLive
 
+@typing_extensions.final
 class MdlDynLiveRcmd(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-直播推荐"""
 
@@ -4416,6 +4502,7 @@ class MdlDynLiveRcmd(google.protobuf.message.Message):
 
 global___MdlDynLiveRcmd = MdlDynLiveRcmd
 
+@typing_extensions.final
 class MdlDynMedialist(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-播单"""
 
@@ -4459,6 +4546,7 @@ class MdlDynMedialist(google.protobuf.message.Message):
 
 global___MdlDynMedialist = MdlDynMedialist
 
+@typing_extensions.final
 class MdlDynMusic(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-音频模块"""
 
@@ -4500,6 +4588,7 @@ class MdlDynMusic(google.protobuf.message.Message):
 
 global___MdlDynMusic = MdlDynMusic
 
+@typing_extensions.final
 class MdlDynPGC(google.protobuf.message.Message):
     """动态-详情模块-pgc"""
 
@@ -4606,6 +4695,7 @@ class MdlDynPGC(google.protobuf.message.Message):
 
 global___MdlDynPGC = MdlDynPGC
 
+@typing_extensions.final
 class MdlDynSubscription(google.protobuf.message.Message):
     """动态列表渲染部分-详情模块-订阅卡"""
 
@@ -4653,6 +4743,7 @@ class MdlDynSubscription(google.protobuf.message.Message):
 
 global___MdlDynSubscription = MdlDynSubscription
 
+@typing_extensions.final
 class MdlDynSubscriptionNew(google.protobuf.message.Message):
     """动态新附加卡"""
 
@@ -4682,6 +4773,7 @@ class MdlDynSubscriptionNew(google.protobuf.message.Message):
 
 global___MdlDynSubscriptionNew = MdlDynSubscriptionNew
 
+@typing_extensions.final
 class MdlDynUGCSeason(google.protobuf.message.Message):
     """动态列表渲染部分-UGC合集"""
 
@@ -4757,6 +4849,7 @@ class MdlDynUGCSeason(google.protobuf.message.Message):
 
 global___MdlDynUGCSeason = MdlDynUGCSeason
 
+@typing_extensions.final
 class MixUpListItem(google.protobuf.message.Message):
     """查看更多-列表单条数据"""
 
@@ -4815,6 +4908,7 @@ class MixUpListItem(google.protobuf.message.Message):
 
 global___MixUpListItem = MixUpListItem
 
+@typing_extensions.final
 class MixUpListLiveItem(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -4840,6 +4934,7 @@ class MixUpListLiveItem(google.protobuf.message.Message):
 
 global___MixUpListLiveItem = MixUpListLiveItem
 
+@typing_extensions.final
 class Module(google.protobuf.message.Message):
     """动态模块"""
 
@@ -4959,6 +5054,7 @@ class Module(google.protobuf.message.Message):
 
 global___Module = Module
 
+@typing_extensions.final
 class ModuleAd(google.protobuf.message.Message):
     """动态列表-用户模块-广告卡"""
 
@@ -4983,6 +5079,7 @@ class ModuleAd(google.protobuf.message.Message):
 
 global___ModuleAd = ModuleAd
 
+@typing_extensions.final
 class ModuleAdditional(google.protobuf.message.Message):
     """动态-附加卡模块"""
 
@@ -5046,6 +5143,7 @@ class ModuleAdditional(google.protobuf.message.Message):
 
 global___ModuleAdditional = ModuleAdditional
 
+@typing_extensions.final
 class ModuleAuthor(google.protobuf.message.Message):
     """动态-发布人模块"""
 
@@ -5112,6 +5210,7 @@ class ModuleAuthor(google.protobuf.message.Message):
 
 global___ModuleAuthor = ModuleAuthor
 
+@typing_extensions.final
 class ModuleAuthorBadgeButton(google.protobuf.message.Message):
     """动态列表渲染部分-用户模块-按钮"""
 
@@ -5141,6 +5240,7 @@ class ModuleAuthorBadgeButton(google.protobuf.message.Message):
 
 global___ModuleAuthorBadgeButton = ModuleAuthorBadgeButton
 
+@typing_extensions.final
 class ModuleAuthorForward(google.protobuf.message.Message):
     """动态列表-用户模块-转发模板"""
 
@@ -5190,6 +5290,7 @@ class ModuleAuthorForward(google.protobuf.message.Message):
 
 global___ModuleAuthorForward = ModuleAuthorForward
 
+@typing_extensions.final
 class ModuleAuthorForwardTitle(google.protobuf.message.Message):
     """动态列表-用户模块-转发模板-title部分"""
 
@@ -5211,6 +5312,7 @@ class ModuleAuthorForwardTitle(google.protobuf.message.Message):
 
 global___ModuleAuthorForwardTitle = ModuleAuthorForwardTitle
 
+@typing_extensions.final
 class ModuleBanner(google.protobuf.message.Message):
     """动态列表-通栏"""
 
@@ -5246,6 +5348,7 @@ class ModuleBanner(google.protobuf.message.Message):
 
 global___ModuleBanner = ModuleBanner
 
+@typing_extensions.final
 class ModuleBannerUser(google.protobuf.message.Message):
     """动态通栏-用户"""
 
@@ -5264,6 +5367,7 @@ class ModuleBannerUser(google.protobuf.message.Message):
 
 global___ModuleBannerUser = ModuleBannerUser
 
+@typing_extensions.final
 class ModuleBannerUserItem(google.protobuf.message.Message):
     """动态通栏-推荐用户卡"""
 
@@ -5317,6 +5421,7 @@ class ModuleBannerUserItem(google.protobuf.message.Message):
 
 global___ModuleBannerUserItem = ModuleBannerUserItem
 
+@typing_extensions.final
 class ModuleButtom(google.protobuf.message.Message):
     """底部模块"""
 
@@ -5336,6 +5441,7 @@ class ModuleButtom(google.protobuf.message.Message):
 
 global___ModuleButtom = ModuleButtom
 
+@typing_extensions.final
 class ModuleComment(google.protobuf.message.Message):
     """评论外露模块"""
 
@@ -5354,6 +5460,7 @@ class ModuleComment(google.protobuf.message.Message):
 
 global___ModuleComment = ModuleComment
 
+@typing_extensions.final
 class ModuleDesc(google.protobuf.message.Message):
     """动态-描述文字模块"""
 
@@ -5380,6 +5487,7 @@ class ModuleDesc(google.protobuf.message.Message):
 
 global___ModuleDesc = ModuleDesc
 
+@typing_extensions.final
 class ModuleDescGoods(google.protobuf.message.Message):
     """正文商品卡参数"""
 
@@ -5428,6 +5536,7 @@ class ModuleDescGoods(google.protobuf.message.Message):
 
 global___ModuleDescGoods = ModuleDescGoods
 
+@typing_extensions.final
 class ModuleDispute(google.protobuf.message.Message):
     """动态-争议小黄条模块"""
 
@@ -5453,6 +5562,7 @@ class ModuleDispute(google.protobuf.message.Message):
 
 global___ModuleDispute = ModuleDispute
 
+@typing_extensions.final
 class ModuleDynamic(google.protobuf.message.Message):
     """动态-详情模块"""
 
@@ -5552,6 +5662,7 @@ class ModuleDynamic(google.protobuf.message.Message):
 
 global___ModuleDynamic = ModuleDynamic
 
+@typing_extensions.final
 class ModuleExtend(google.protobuf.message.Message):
     """动态-小卡模块"""
 
@@ -5576,6 +5687,7 @@ class ModuleExtend(google.protobuf.message.Message):
 
 global___ModuleExtend = ModuleExtend
 
+@typing_extensions.final
 class ModuleExtendItem(google.protobuf.message.Message):
     """动态-拓展小卡模块"""
 
@@ -5625,6 +5737,7 @@ class ModuleExtendItem(google.protobuf.message.Message):
 
 global___ModuleExtendItem = ModuleExtendItem
 
+@typing_extensions.final
 class ModuleFold(google.protobuf.message.Message):
     """动态-折叠模块"""
 
@@ -5655,6 +5768,7 @@ class ModuleFold(google.protobuf.message.Message):
 
 global___ModuleFold = ModuleFold
 
+@typing_extensions.final
 class ModuleInteraction(google.protobuf.message.Message):
     """外露交互模块"""
 
@@ -5673,6 +5787,7 @@ class ModuleInteraction(google.protobuf.message.Message):
 
 global___ModuleInteraction = ModuleInteraction
 
+@typing_extensions.final
 class ModuleItemNull(google.protobuf.message.Message):
     """获取物料失败模块"""
 
@@ -5694,6 +5809,7 @@ class ModuleItemNull(google.protobuf.message.Message):
 
 global___ModuleItemNull = ModuleItemNull
 
+@typing_extensions.final
 class ModuleLikeUser(google.protobuf.message.Message):
     """动态-点赞用户模块"""
 
@@ -5716,6 +5832,7 @@ class ModuleLikeUser(google.protobuf.message.Message):
 
 global___ModuleLikeUser = ModuleLikeUser
 
+@typing_extensions.final
 class ModuleRecommend(google.protobuf.message.Message):
     """相关推荐模块"""
 
@@ -5754,6 +5871,7 @@ class ModuleRecommend(google.protobuf.message.Message):
 
 global___ModuleRecommend = ModuleRecommend
 
+@typing_extensions.final
 class ModuleShareInfo(google.protobuf.message.Message):
     """分享模块"""
 
@@ -5788,6 +5906,7 @@ class ModuleShareInfo(google.protobuf.message.Message):
 
 global___ModuleShareInfo = ModuleShareInfo
 
+@typing_extensions.final
 class ModuleStat(google.protobuf.message.Message):
     """动态-计数模块"""
 
@@ -5839,6 +5958,7 @@ class ModuleStat(google.protobuf.message.Message):
 
 global___ModuleStat = ModuleStat
 
+@typing_extensions.final
 class ModuleTop(google.protobuf.message.Message):
     """顶部模块"""
 
@@ -5857,6 +5977,7 @@ class ModuleTop(google.protobuf.message.Message):
 
 global___ModuleTop = ModuleTop
 
+@typing_extensions.final
 class Nameplate(google.protobuf.message.Message):
     """认证名牌"""
 
@@ -5894,6 +6015,7 @@ class Nameplate(google.protobuf.message.Message):
 
 global___Nameplate = Nameplate
 
+@typing_extensions.final
 class NewEP(google.protobuf.message.Message):
     """最新ep"""
 
@@ -5919,6 +6041,7 @@ class NewEP(google.protobuf.message.Message):
 
 global___NewEP = NewEP
 
+@typing_extensions.final
 class NoReply(google.protobuf.message.Message):
     """空响应"""
 
@@ -5930,6 +6053,7 @@ class NoReply(google.protobuf.message.Message):
 
 global___NoReply = NoReply
 
+@typing_extensions.final
 class NoReq(google.protobuf.message.Message):
     """空请求"""
 
@@ -5941,6 +6065,7 @@ class NoReq(google.protobuf.message.Message):
 
 global___NoReq = NoReq
 
+@typing_extensions.final
 class OfficialVerify(google.protobuf.message.Message):
     """认证信息"""
 
@@ -5966,6 +6091,7 @@ class OfficialVerify(google.protobuf.message.Message):
 
 global___OfficialVerify = OfficialVerify
 
+@typing_extensions.final
 class PGCSeason(google.protobuf.message.Message):
     """PGC单季信息"""
 
@@ -5991,6 +6117,7 @@ class PGCSeason(google.protobuf.message.Message):
 
 global___PGCSeason = PGCSeason
 
+@typing_extensions.final
 class PlayerArgs(google.protobuf.message.Message):
     """"""
 
@@ -6020,6 +6147,7 @@ class PlayerArgs(google.protobuf.message.Message):
 
 global___PlayerArgs = PlayerArgs
 
+@typing_extensions.final
 class PlayurlParam(google.protobuf.message.Message):
     """秒开通用参数"""
 
@@ -6053,6 +6181,7 @@ class PlayurlParam(google.protobuf.message.Message):
 
 global___PlayurlParam = PlayurlParam
 
+@typing_extensions.final
 class RcmdUPsParam(google.protobuf.message.Message):
     """推荐up主入参"""
 
@@ -6069,6 +6198,7 @@ class RcmdUPsParam(google.protobuf.message.Message):
 
 global___RcmdUPsParam = RcmdUPsParam
 
+@typing_extensions.final
 class Relation(google.protobuf.message.Message):
     """关注关系"""
 
@@ -6098,6 +6228,7 @@ class Relation(google.protobuf.message.Message):
 
 global___Relation = Relation
 
+@typing_extensions.final
 class ShareChannel(google.protobuf.message.Message):
     """分享渠道组件"""
 
@@ -6123,6 +6254,7 @@ class ShareChannel(google.protobuf.message.Message):
 
 global___ShareChannel = ShareChannel
 
+@typing_extensions.final
 class SortType(google.protobuf.message.Message):
     """排序类型"""
 
@@ -6146,6 +6278,7 @@ class SortType(google.protobuf.message.Message):
 
 global___SortType = SortType
 
+@typing_extensions.final
 class ThreePointAttention(google.protobuf.message.Message):
     """三点-关注"""
 
@@ -6179,6 +6312,7 @@ class ThreePointAttention(google.protobuf.message.Message):
 
 global___ThreePointAttention = ThreePointAttention
 
+@typing_extensions.final
 class ThreePointAutoPlay(google.protobuf.message.Message):
     """三点-自动播放 旧版不维护"""
 
@@ -6232,6 +6366,7 @@ class ThreePointAutoPlay(google.protobuf.message.Message):
 
 global___ThreePointAutoPlay = ThreePointAutoPlay
 
+@typing_extensions.final
 class ThreePointDefault(google.protobuf.message.Message):
     """三点-默认结构(使用此背景、举报、删除)"""
 
@@ -6261,6 +6396,7 @@ class ThreePointDefault(google.protobuf.message.Message):
 
 global___ThreePointDefault = ThreePointDefault
 
+@typing_extensions.final
 class ThreePointDislike(google.protobuf.message.Message):
     """三点-不感兴趣"""
 
@@ -6282,6 +6418,7 @@ class ThreePointDislike(google.protobuf.message.Message):
 
 global___ThreePointDislike = ThreePointDislike
 
+@typing_extensions.final
 class ThreePointFavorite(google.protobuf.message.Message):
     """三点-收藏"""
 
@@ -6319,6 +6456,7 @@ class ThreePointFavorite(google.protobuf.message.Message):
 
 global___ThreePointFavorite = ThreePointFavorite
 
+@typing_extensions.final
 class ThreePointItem(google.protobuf.message.Message):
     """三点Item"""
 
@@ -6373,6 +6511,7 @@ class ThreePointItem(google.protobuf.message.Message):
 
 global___ThreePointItem = ThreePointItem
 
+@typing_extensions.final
 class ThreePointShare(google.protobuf.message.Message):
     """三点-分享"""
 
@@ -6403,6 +6542,7 @@ class ThreePointShare(google.protobuf.message.Message):
 
 global___ThreePointShare = ThreePointShare
 
+@typing_extensions.final
 class ThreePointShareChannel(google.protobuf.message.Message):
     """三点-分享渠道"""
 
@@ -6424,6 +6564,7 @@ class ThreePointShareChannel(google.protobuf.message.Message):
 
 global___ThreePointShareChannel = ThreePointShareChannel
 
+@typing_extensions.final
 class ThreePointWait(google.protobuf.message.Message):
     """三点-稍后在看"""
 
@@ -6457,6 +6598,7 @@ class ThreePointWait(google.protobuf.message.Message):
 
 global___ThreePointWait = ThreePointWait
 
+@typing_extensions.final
 class TopicButton(google.protobuf.message.Message):
     """话题广场操作按钮"""
 
@@ -6482,6 +6624,7 @@ class TopicButton(google.protobuf.message.Message):
 
 global___TopicButton = TopicButton
 
+@typing_extensions.final
 class TopicList(google.protobuf.message.Message):
     """综合页-话题广场"""
 
@@ -6515,6 +6658,7 @@ class TopicList(google.protobuf.message.Message):
 
 global___TopicList = TopicList
 
+@typing_extensions.final
 class TopicListItem(google.protobuf.message.Message):
     """综合页-话题广场-话题"""
 
@@ -6552,6 +6696,7 @@ class TopicListItem(google.protobuf.message.Message):
 
 global___TopicListItem = TopicListItem
 
+@typing_extensions.final
 class Unfollow(google.protobuf.message.Message):
     """综合页-无关注列表"""
 
@@ -6578,6 +6723,7 @@ class Unfollow(google.protobuf.message.Message):
 
 global___Unfollow = Unfollow
 
+@typing_extensions.final
 class UnfollowUserItem(google.protobuf.message.Message):
     """综合页-无关注列表"""
 
@@ -6639,6 +6785,7 @@ class UnfollowUserItem(google.protobuf.message.Message):
 
 global___UnfollowUserItem = UnfollowUserItem
 
+@typing_extensions.final
 class UpListItem(google.protobuf.message.Message):
     """动态顶部up列表-up主信息"""
 
@@ -6707,6 +6854,7 @@ class UpListItem(google.protobuf.message.Message):
 
 global___UpListItem = UpListItem
 
+@typing_extensions.final
 class UpListMoreLabel(google.protobuf.message.Message):
     """最常访问-查看更多"""
 
@@ -6728,6 +6876,7 @@ class UpListMoreLabel(google.protobuf.message.Message):
 
 global___UpListMoreLabel = UpListMoreLabel
 
+@typing_extensions.final
 class UserInfo(google.protobuf.message.Message):
     """用户信息"""
 
@@ -6783,6 +6932,7 @@ class UserInfo(google.protobuf.message.Message):
 
 global___UserInfo = UserInfo
 
+@typing_extensions.final
 class UserItemStyle(google.protobuf.message.Message):
     """直播头像样式"""
 
@@ -6816,6 +6966,7 @@ class UserItemStyle(google.protobuf.message.Message):
 
 global___UserItemStyle = UserItemStyle
 
+@typing_extensions.final
 class UserPendant(google.protobuf.message.Message):
     """头像挂件信息"""
 
@@ -6845,6 +6996,7 @@ class UserPendant(google.protobuf.message.Message):
 
 global___UserPendant = UserPendant
 
+@typing_extensions.final
 class VideoBadge(google.protobuf.message.Message):
     """角标信息"""
 
@@ -6898,6 +7050,7 @@ class VideoBadge(google.protobuf.message.Message):
 
 global___VideoBadge = VideoBadge
 
+@typing_extensions.final
 class VipInfo(google.protobuf.message.Message):
     """大会员信息"""
 
@@ -6943,6 +7096,7 @@ class VipInfo(google.protobuf.message.Message):
 
 global___VipInfo = VipInfo
 
+@typing_extensions.final
 class VipLabel(google.protobuf.message.Message):
     """大会员标签"""
 
@@ -6968,6 +7122,7 @@ class VipLabel(google.protobuf.message.Message):
 
 global___VipLabel = VipLabel
 
+@typing_extensions.final
 class Weight(google.protobuf.message.Message):
     """提权样式"""
 
@@ -6994,6 +7149,7 @@ class Weight(google.protobuf.message.Message):
 
 global___Weight = Weight
 
+@typing_extensions.final
 class WeightButton(google.protobuf.message.Message):
     """热门默认跳转按钮"""
 
@@ -7014,6 +7170,7 @@ class WeightButton(google.protobuf.message.Message):
 
 global___WeightButton = WeightButton
 
+@typing_extensions.final
 class WeightDislike(google.protobuf.message.Message):
     """提权不感兴趣"""
 
@@ -7035,6 +7192,7 @@ class WeightDislike(google.protobuf.message.Message):
 
 global___WeightDislike = WeightDislike
 
+@typing_extensions.final
 class WeightItem(google.protobuf.message.Message):
     """提权样式"""
 

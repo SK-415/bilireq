@@ -20,6 +20,16 @@ class PlayerOnlineStub(object):
                 request_serializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PlayerOnlineReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PlayerOnlineReply.FromString,
                 )
+        self.PremiereInfo = channel.unary_unary(
+                '/bilibili.app.playeronline.v1.PlayerOnline/PremiereInfo',
+                request_serializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PremiereInfoReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PremiereInfoReply.FromString,
+                )
+        self.ReportWatch = channel.unary_unary(
+                '/bilibili.app.playeronline.v1.PlayerOnline/ReportWatch',
+                request_serializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.ReportWatchReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.NoReply.FromString,
+                )
 
 
 class PlayerOnlineServicer(object):
@@ -33,6 +43,20 @@ class PlayerOnlineServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PremiereInfo(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReportWatch(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PlayerOnlineServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -40,6 +64,16 @@ def add_PlayerOnlineServicer_to_server(servicer, server):
                     servicer.PlayerOnline,
                     request_deserializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PlayerOnlineReq.FromString,
                     response_serializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PlayerOnlineReply.SerializeToString,
+            ),
+            'PremiereInfo': grpc.unary_unary_rpc_method_handler(
+                    servicer.PremiereInfo,
+                    request_deserializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PremiereInfoReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PremiereInfoReply.SerializeToString,
+            ),
+            'ReportWatch': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReportWatch,
+                    request_deserializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.ReportWatchReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.NoReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -66,5 +100,39 @@ class PlayerOnline(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.app.playeronline.v1.PlayerOnline/PlayerOnline',
             bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PlayerOnlineReq.SerializeToString,
             bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PlayerOnlineReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PremiereInfo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.playeronline.v1.PlayerOnline/PremiereInfo',
+            bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PremiereInfoReq.SerializeToString,
+            bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.PremiereInfoReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReportWatch(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.playeronline.v1.PlayerOnline/ReportWatch',
+            bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.ReportWatchReq.SerializeToString,
+            bilibili_dot_app_dot_playeronline_dot_v1_dot_playeronline__pb2.NoReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

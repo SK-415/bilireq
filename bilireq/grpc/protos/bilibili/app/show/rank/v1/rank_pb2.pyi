@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Item(google.protobuf.message.Message):
     """排行榜列表项"""
 
@@ -141,6 +142,7 @@ class Item(google.protobuf.message.Message):
 
 global___Item = Item
 
+@typing_extensions.final
 class OfficialVerify(google.protobuf.message.Message):
     """认证信息"""
 
@@ -164,6 +166,7 @@ class OfficialVerify(google.protobuf.message.Message):
 
 global___OfficialVerify = OfficialVerify
 
+@typing_extensions.final
 class RankAllResultReq(google.protobuf.message.Message):
     """全站排行榜-请求"""
 
@@ -193,6 +196,7 @@ class RankAllResultReq(google.protobuf.message.Message):
 
 global___RankAllResultReq = RankAllResultReq
 
+@typing_extensions.final
 class RankListReply(google.protobuf.message.Message):
     """排行榜信息-响应"""
 
@@ -211,6 +215,7 @@ class RankListReply(google.protobuf.message.Message):
 
 global___RankListReply = RankListReply
 
+@typing_extensions.final
 class RankRegionResultReq(google.protobuf.message.Message):
     """分区排行榜-请求"""
 
@@ -242,6 +247,7 @@ class RankRegionResultReq(google.protobuf.message.Message):
 
 global___RankRegionResultReq = RankRegionResultReq
 
+@typing_extensions.final
 class Relation(google.protobuf.message.Message):
     """关系信息"""
 

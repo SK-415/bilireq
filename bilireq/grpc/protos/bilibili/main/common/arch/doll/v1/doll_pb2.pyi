@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class ErrorRequest(google.protobuf.message.Message):
     """"""
 
@@ -39,6 +40,7 @@ class ErrorRequest(google.protobuf.message.Message):
 
 global___ErrorRequest = ErrorRequest
 
+@typing_extensions.final
 class ErrorResponse(google.protobuf.message.Message):
     """"""
 
@@ -60,6 +62,7 @@ class ErrorResponse(google.protobuf.message.Message):
 
 global___ErrorResponse = ErrorResponse
 
+@typing_extensions.final
 class PingRequest(google.protobuf.message.Message):
     """"""
 
@@ -77,6 +80,7 @@ class PingRequest(google.protobuf.message.Message):
 
 global___PingRequest = PingRequest
 
+@typing_extensions.final
 class PingResponse(google.protobuf.message.Message):
     """"""
 
@@ -98,6 +102,7 @@ class PingResponse(google.protobuf.message.Message):
 
 global___PingResponse = PingResponse
 
+@typing_extensions.final
 class SayRequest(google.protobuf.message.Message):
     """"""
 
@@ -115,6 +120,7 @@ class SayRequest(google.protobuf.message.Message):
 
 global___SayRequest = SayRequest
 
+@typing_extensions.final
 class SayResponse(google.protobuf.message.Message):
     """"""
 

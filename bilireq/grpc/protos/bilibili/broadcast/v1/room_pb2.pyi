@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class RoomErrorEvent(google.protobuf.message.Message):
     """"""
 
@@ -23,7 +24,7 @@ class RoomErrorEvent(google.protobuf.message.Message):
 
     STATUS_FIELD_NUMBER: builtins.int
     @property
-    def status(self) -> bilibili.rpc.status_pb2.Status:
+    def status(self) -> bilireq.grpc.protos.bilibili.rpc.status_pb2.Status:
         """"""
     def __init__(
         self,
@@ -35,6 +36,7 @@ class RoomErrorEvent(google.protobuf.message.Message):
 
 global___RoomErrorEvent = RoomErrorEvent
 
+@typing_extensions.final
 class RoomJoinEvent(google.protobuf.message.Message):
     """"""
 
@@ -46,6 +48,7 @@ class RoomJoinEvent(google.protobuf.message.Message):
 
 global___RoomJoinEvent = RoomJoinEvent
 
+@typing_extensions.final
 class RoomLeaveEvent(google.protobuf.message.Message):
     """"""
 
@@ -57,6 +60,7 @@ class RoomLeaveEvent(google.protobuf.message.Message):
 
 global___RoomLeaveEvent = RoomLeaveEvent
 
+@typing_extensions.final
 class RoomMessageEvent(google.protobuf.message.Message):
     """"""
 
@@ -80,6 +84,7 @@ class RoomMessageEvent(google.protobuf.message.Message):
 
 global___RoomMessageEvent = RoomMessageEvent
 
+@typing_extensions.final
 class RoomOnlineEvent(google.protobuf.message.Message):
     """"""
 
@@ -101,6 +106,7 @@ class RoomOnlineEvent(google.protobuf.message.Message):
 
 global___RoomOnlineEvent = RoomOnlineEvent
 
+@typing_extensions.final
 class RoomReq(google.protobuf.message.Message):
     """"""
 
@@ -140,6 +146,7 @@ class RoomReq(google.protobuf.message.Message):
 
 global___RoomReq = RoomReq
 
+@typing_extensions.final
 class RoomResp(google.protobuf.message.Message):
     """"""
 

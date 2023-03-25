@@ -19,6 +19,16 @@ class ViewStub(object):
                 request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewReply.FromString,
                 )
+        self.ViewTag = channel.unary_unary(
+                '/bilibili.app.view.v1.View/ViewTag',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewTagReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewTagReply.FromString,
+                )
+        self.ViewMaterial = channel.unary_unary(
+                '/bilibili.app.view.v1.View/ViewMaterial',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewMaterialReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewMaterialReply.FromString,
+                )
         self.ViewProgress = channel.unary_unary(
                 '/bilibili.app.view.v1.View/ViewProgress',
                 request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewProgressReq.SerializeToString,
@@ -54,11 +64,6 @@ class ViewStub(object):
                 request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.AddContractReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.NoReply.FromString,
                 )
-        self.FeedView = channel.unary_unary(
-                '/bilibili.app.view.v1.View/FeedView',
-                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.FeedViewReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.FeedViewReply.FromString,
-                )
         self.ChronosPkg = channel.unary_unary(
                 '/bilibili.app.view.v1.View/ChronosPkg',
                 request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ChronosPkgReq.SerializeToString,
@@ -69,6 +74,46 @@ class ViewStub(object):
                 request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.CacheViewReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.CacheViewReply.FromString,
                 )
+        self.ContinuousPlay = channel.unary_unary(
+                '/bilibili.app.view.v1.View/ContinuousPlay',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ContinuousPlayReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ContinuousPlayReply.FromString,
+                )
+        self.RelatesFeed = channel.unary_unary(
+                '/bilibili.app.view.v1.View/RelatesFeed',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.RelatesFeedReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.RelatesFeedReply.FromString,
+                )
+        self.PremiereArchive = channel.unary_unary(
+                '/bilibili.app.view.v1.View/PremiereArchive',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PremiereArchiveReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PremiereArchiveReply.FromString,
+                )
+        self.Reserve = channel.unary_unary(
+                '/bilibili.app.view.v1.View/Reserve',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ReserveReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ReserveReply.FromString,
+                )
+        self.PlayerRelates = channel.unary_unary(
+                '/bilibili.app.view.v1.View/PlayerRelates',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PlayerRelatesReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PlayerRelatesReply.FromString,
+                )
+        self.SeasonActivityRecord = channel.unary_unary(
+                '/bilibili.app.view.v1.View/SeasonActivityRecord',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonActivityRecordReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonActivityRecordReply.FromString,
+                )
+        self.SeasonWidgetExpose = channel.unary_unary(
+                '/bilibili.app.view.v1.View/SeasonWidgetExpose',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonWidgetExposeReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonWidgetExposeReply.FromString,
+                )
+        self.GetArcsPlayer = channel.unary_unary(
+                '/bilibili.app.view.v1.View/GetArcsPlayer',
+                request_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.GetArcsPlayerReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.GetArcsPlayerReply.FromString,
+                )
 
 
 class ViewServicer(object):
@@ -76,6 +121,20 @@ class ViewServicer(object):
 
     def View(self, request, context):
         """视频页详情页
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ViewTag(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ViewMaterial(self, request, context):
+        """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -130,21 +189,70 @@ class ViewServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def FeedView(self, request, context):
-        """
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ChronosPkg(self, request, context):
-        """
+        """资源包
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CacheView(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ContinuousPlay(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RelatesFeed(self, request, context):
+        """播放页推荐IFS
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PremiereArchive(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Reserve(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PlayerRelates(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SeasonActivityRecord(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SeasonWidgetExpose(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetArcsPlayer(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -158,6 +266,16 @@ def add_ViewServicer_to_server(servicer, server):
                     servicer.View,
                     request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewReq.FromString,
                     response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewReply.SerializeToString,
+            ),
+            'ViewTag': grpc.unary_unary_rpc_method_handler(
+                    servicer.ViewTag,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewTagReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewTagReply.SerializeToString,
+            ),
+            'ViewMaterial': grpc.unary_unary_rpc_method_handler(
+                    servicer.ViewMaterial,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewMaterialReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewMaterialReply.SerializeToString,
             ),
             'ViewProgress': grpc.unary_unary_rpc_method_handler(
                     servicer.ViewProgress,
@@ -194,11 +312,6 @@ def add_ViewServicer_to_server(servicer, server):
                     request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.AddContractReq.FromString,
                     response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.NoReply.SerializeToString,
             ),
-            'FeedView': grpc.unary_unary_rpc_method_handler(
-                    servicer.FeedView,
-                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.FeedViewReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.FeedViewReply.SerializeToString,
-            ),
             'ChronosPkg': grpc.unary_unary_rpc_method_handler(
                     servicer.ChronosPkg,
                     request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ChronosPkgReq.FromString,
@@ -208,6 +321,46 @@ def add_ViewServicer_to_server(servicer, server):
                     servicer.CacheView,
                     request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.CacheViewReq.FromString,
                     response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.CacheViewReply.SerializeToString,
+            ),
+            'ContinuousPlay': grpc.unary_unary_rpc_method_handler(
+                    servicer.ContinuousPlay,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ContinuousPlayReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ContinuousPlayReply.SerializeToString,
+            ),
+            'RelatesFeed': grpc.unary_unary_rpc_method_handler(
+                    servicer.RelatesFeed,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.RelatesFeedReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.RelatesFeedReply.SerializeToString,
+            ),
+            'PremiereArchive': grpc.unary_unary_rpc_method_handler(
+                    servicer.PremiereArchive,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PremiereArchiveReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PremiereArchiveReply.SerializeToString,
+            ),
+            'Reserve': grpc.unary_unary_rpc_method_handler(
+                    servicer.Reserve,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ReserveReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ReserveReply.SerializeToString,
+            ),
+            'PlayerRelates': grpc.unary_unary_rpc_method_handler(
+                    servicer.PlayerRelates,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PlayerRelatesReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PlayerRelatesReply.SerializeToString,
+            ),
+            'SeasonActivityRecord': grpc.unary_unary_rpc_method_handler(
+                    servicer.SeasonActivityRecord,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonActivityRecordReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonActivityRecordReply.SerializeToString,
+            ),
+            'SeasonWidgetExpose': grpc.unary_unary_rpc_method_handler(
+                    servicer.SeasonWidgetExpose,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonWidgetExposeReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonWidgetExposeReply.SerializeToString,
+            ),
+            'GetArcsPlayer': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetArcsPlayer,
+                    request_deserializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.GetArcsPlayerReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.GetArcsPlayerReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -233,6 +386,40 @@ class View(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/View',
             bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewReq.SerializeToString,
             bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ViewTag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/ViewTag',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewTagReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewTagReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ViewMaterial(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/ViewMaterial',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewMaterialReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ViewMaterialReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -356,23 +543,6 @@ class View(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def FeedView(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/FeedView',
-            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.FeedViewReq.SerializeToString,
-            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.FeedViewReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def ChronosPkg(request,
             target,
             options=(),
@@ -403,5 +573,141 @@ class View(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/CacheView',
             bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.CacheViewReq.SerializeToString,
             bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.CacheViewReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ContinuousPlay(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/ContinuousPlay',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ContinuousPlayReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ContinuousPlayReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RelatesFeed(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/RelatesFeed',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.RelatesFeedReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.RelatesFeedReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PremiereArchive(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/PremiereArchive',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PremiereArchiveReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PremiereArchiveReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Reserve(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/Reserve',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ReserveReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.ReserveReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PlayerRelates(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/PlayerRelates',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PlayerRelatesReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.PlayerRelatesReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SeasonActivityRecord(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/SeasonActivityRecord',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonActivityRecordReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonActivityRecordReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SeasonWidgetExpose(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/SeasonWidgetExpose',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonWidgetExposeReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.SeasonWidgetExposeReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetArcsPlayer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.view.v1.View/GetArcsPlayer',
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.GetArcsPlayerReq.SerializeToString,
+            bilibili_dot_app_dot_view_dot_v1_dot_view__pb2.GetArcsPlayerReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

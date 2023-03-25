@@ -20,14 +20,14 @@ class _NetworkType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _NetworkTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_NetworkType.ValueType], builtins.type):  # noqa: F821
+class _NetworkTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_NetworkType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NT_UNKNOWN: _NetworkType.ValueType  # 0
     """未知"""
     WIFI: _NetworkType.ValueType  # 1
     """WIFI"""
     CELLULAR: _NetworkType.ValueType  # 2
-    """移动网络"""
+    """蜂窝网络"""
     OFFLINE: _NetworkType.ValueType  # 3
     """未连接"""
     OTHERNET: _NetworkType.ValueType  # 4
@@ -43,7 +43,7 @@ NT_UNKNOWN: NetworkType.ValueType  # 0
 WIFI: NetworkType.ValueType  # 1
 """WIFI"""
 CELLULAR: NetworkType.ValueType  # 2
-"""移动网络"""
+"""蜂窝网络"""
 OFFLINE: NetworkType.ValueType  # 3
 """未连接"""
 OTHERNET: NetworkType.ValueType  # 4
@@ -56,7 +56,7 @@ class _TFType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _TFTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_TFType.ValueType], builtins.type):  # noqa: F821
+class _TFTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_TFType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     TF_UNKNOWN: _TFType.ValueType  # 0
     """正常计费"""
@@ -92,6 +92,7 @@ T_PKG: TFType.ValueType  # 6
 """电信包"""
 global___TFType = TFType
 
+@typing_extensions.final
 class Network(google.protobuf.message.Message):
     """网络类型标识
     gRPC头部:x-bili-network-bin

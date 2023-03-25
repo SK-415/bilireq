@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class NativePageEvent(google.protobuf.message.Message):
     """"""
 
@@ -38,6 +39,7 @@ class NativePageEvent(google.protobuf.message.Message):
 
 global___NativePageEvent = NativePageEvent
 
+@typing_extensions.final
 class EventItem(google.protobuf.message.Message):
     """"""
 

@@ -16,6 +16,44 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
+class RuleInfo(google.protobuf.message.Message):
+    """免流规则信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TF_FIELD_NUMBER: builtins.int
+    M_FIELD_NUMBER: builtins.int
+    A_FIELD_NUMBER: builtins.int
+    P_FIELD_NUMBER: builtins.int
+    A_BACKUP_FIELD_NUMBER: builtins.int
+    tf: builtins.bool
+    """是否支持免流"""
+    m: builtins.str
+    """操作模式
+    break:无 replace:替换 proxy:代理
+    """
+    a: builtins.str
+    """操作参数"""
+    p: builtins.str
+    """匹配目标正则"""
+    @property
+    def a_backup(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    def __init__(
+        self,
+        *,
+        tf: builtins.bool = ...,
+        m: builtins.str = ...,
+        a: builtins.str = ...,
+        p: builtins.str = ...,
+        a_backup: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["a", b"a", "a_backup", b"a_backup", "m", b"m", "p", b"p", "tf", b"tf"]) -> None: ...
+
+global___RuleInfo = RuleInfo
+
+@typing_extensions.final
 class RuleRequest(google.protobuf.message.Message):
     """获取免流规则信息-请求"""
 
@@ -27,11 +65,32 @@ class RuleRequest(google.protobuf.message.Message):
 
 global___RuleRequest = RuleRequest
 
+@typing_extensions.final
+class RulesInfo(google.protobuf.message.Message):
+    """免流规则信息组"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RULESINFO_FIELD_NUMBER: builtins.int
+    @property
+    def rulesInfo(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RuleInfo]:
+        """免流规则信息"""
+    def __init__(
+        self,
+        *,
+        rulesInfo: collections.abc.Iterable[global___RuleInfo] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["rulesInfo", b"rulesInfo"]) -> None: ...
+
+global___RulesInfo = RulesInfo
+
+@typing_extensions.final
 class RulesReply(google.protobuf.message.Message):
     """获取免流规则信息-响应"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class RulesInfoEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -50,65 +109,20 @@ class RulesReply(google.protobuf.message.Message):
         def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     RULESINFO_FIELD_NUMBER: builtins.int
+    HASH_VALUE_FIELD_NUMBER: builtins.int
     @property
     def rulesInfo(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___RulesInfo]:
         """各ISP的免流规则信息组
         ISP如: cu ct cm
         """
+    hash_value: builtins.str
+    """"""
     def __init__(
         self,
         *,
         rulesInfo: collections.abc.Mapping[builtins.str, global___RulesInfo] | None = ...,
+        hash_value: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["rulesInfo", b"rulesInfo"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["hash_value", b"hash_value", "rulesInfo", b"rulesInfo"]) -> None: ...
 
 global___RulesReply = RulesReply
-
-class RuleInfo(google.protobuf.message.Message):
-    """免流规则信息"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TF_FIELD_NUMBER: builtins.int
-    M_FIELD_NUMBER: builtins.int
-    A_FIELD_NUMBER: builtins.int
-    P_FIELD_NUMBER: builtins.int
-    tf: builtins.bool
-    """是否支持免流"""
-    m: builtins.str
-    """操作模式
-    break:无 replace:替换 proxy:代理
-    """
-    a: builtins.str
-    """操作参数"""
-    p: builtins.str
-    """匹配目标正则"""
-    def __init__(
-        self,
-        *,
-        tf: builtins.bool = ...,
-        m: builtins.str = ...,
-        a: builtins.str = ...,
-        p: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["a", b"a", "m", b"m", "p", b"p", "tf", b"tf"]) -> None: ...
-
-global___RuleInfo = RuleInfo
-
-class RulesInfo(google.protobuf.message.Message):
-    """免流规则信息组"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    RULESINFO_FIELD_NUMBER: builtins.int
-    @property
-    def rulesInfo(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RuleInfo]:
-        """免流规则信息"""
-    def __init__(
-        self,
-        *,
-        rulesInfo: collections.abc.Iterable[global___RuleInfo] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["rulesInfo", b"rulesInfo"]) -> None: ...
-
-global___RulesInfo = RulesInfo

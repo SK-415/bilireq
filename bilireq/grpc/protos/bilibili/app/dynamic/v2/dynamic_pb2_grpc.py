@@ -100,6 +100,11 @@ class DynamicStub(object):
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.FromString,
                 )
+        self.ReactionList = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/ReactionList',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.FromString,
+                )
         self.DynSpace = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/DynSpace',
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceReq.SerializeToString,
@@ -340,6 +345,13 @@ class DynamicServicer(object):
 
     def RepostList(self, request, context):
         """转发列表
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReactionList(self, request, context):
+        """新版动态转发点赞列表 需要登录
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -600,6 +612,11 @@ def add_DynamicServicer_to_server(servicer, server):
                     servicer.RepostList,
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.SerializeToString,
+            ),
+            'ReactionList': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReactionList,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.SerializeToString,
             ),
             'DynSpace': grpc.unary_unary_rpc_method_handler(
                     servicer.DynSpace,
@@ -1018,6 +1035,23 @@ class Dynamic(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/RepostList',
             bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.SerializeToString,
             bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReactionList(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/ReactionList',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

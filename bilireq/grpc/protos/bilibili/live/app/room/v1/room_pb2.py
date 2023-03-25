@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$bilibili/live/app/room/v1/room.proto\x12\x19\x62ilibili.live.app.room.v1\"#\n\x10GetStudioListReq\x12\x0f\n\x07room_id\x18\x01 \x01(\x03\"\x86\x04\n\x11GetStudioListResp\x12\x0e\n\x06status\x18\x01 \x01(\x03\x12N\n\x0bmaster_list\x18\x02 \x03(\x0b\x32\x39.bilibili.live.app.room.v1.GetStudioListResp.StudioMaster\x1a\x94\x01\n\x08Pendants\x12\x43\n\x05\x66rame\x18\x01 \x01(\x0b\x32\x34.bilibili.live.app.room.v1.GetStudioListResp.Pendant\x12\x43\n\x05\x62\x61\x64ge\x18\x02 \x01(\x0b\x32\x34.bilibili.live.app.room.v1.GetStudioListResp.Pendant\x1a\x46\n\x07Pendant\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08position\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x1a\xb1\x01\n\x0cStudioMaster\x12\x0b\n\x03uid\x18\x01 \x01(\x03\x12\x0f\n\x07room_id\x18\x02 \x01(\x03\x12\r\n\x05uname\x18\x03 \x01(\t\x12\x0c\n\x04\x66\x61\x63\x65\x18\x04 \x01(\t\x12G\n\x08pendants\x18\x05 \x01(\x0b\x32\x35.bilibili.live.app.room.v1.GetStudioListResp.Pendants\x12\x0b\n\x03tag\x18\x06 \x01(\t\x12\x10\n\x08tag_type\x18\x07 \x01(\x03\x32x\n\nStudioList\x12j\n\rGetStudioList\x12+.bilibili.live.app.room.v1.GetStudioListReq\x1a,.bilibili.live.app.room.v1.GetStudioListRespb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$bilibili/live/app/room/v1/room.proto\x12\x19\x62ilibili.live.app.room.v1\"#\n\x10GetStudioListReq\x12\x0f\n\x07room_id\x18\x01 \x01(\x03\"\x86\x04\n\x11GetStudioListResp\x12\x0e\n\x06status\x18\x01 \x01(\x03\x12N\n\x0bmaster_list\x18\x02 \x03(\x0b\x32\x39.bilibili.live.app.room.v1.GetStudioListResp.StudioMaster\x1a\x94\x01\n\x08Pendants\x12\x43\n\x05\x66rame\x18\x01 \x01(\x0b\x32\x34.bilibili.live.app.room.v1.GetStudioListResp.Pendant\x12\x43\n\x05\x62\x61\x64ge\x18\x02 \x01(\x0b\x32\x34.bilibili.live.app.room.v1.GetStudioListResp.Pendant\x1a\x46\n\x07Pendant\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08position\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x1a\xb1\x01\n\x0cStudioMaster\x12\x0b\n\x03uid\x18\x01 \x01(\x03\x12\x0f\n\x07room_id\x18\x02 \x01(\x03\x12\r\n\x05uname\x18\x03 \x01(\t\x12\x0c\n\x04\x66\x61\x63\x65\x18\x04 \x01(\t\x12G\n\x08pendants\x18\x05 \x01(\x0b\x32\x35.bilibili.live.app.room.v1.GetStudioListResp.Pendants\x12\x0b\n\x03tag\x18\x06 \x01(\t\x12\x10\n\x08tag_type\x18\x07 \x01(\x03\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'bilibili.live.app.room.v1.room_pb2', globals())
@@ -30,6 +30,4 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GETSTUDIOLISTRESP_PENDANT._serialized_end=443
   _GETSTUDIOLISTRESP_STUDIOMASTER._serialized_start=446
   _GETSTUDIOLISTRESP_STUDIOMASTER._serialized_end=623
-  _STUDIOLIST._serialized_start=625
-  _STUDIOLIST._serialized_end=745
 # @@protoc_insertion_point(module_scope)

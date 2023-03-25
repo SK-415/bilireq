@@ -23,7 +23,7 @@ class _ENUM_FOLD:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ENUM_FOLDEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ENUM_FOLD.ValueType], builtins.type):  # noqa: F821
+class _ENUM_FOLDEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ENUM_FOLD.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     FOLD_NO: _ENUM_FOLD.ValueType  # 0
     """"""
@@ -47,7 +47,7 @@ class _ENUM_UNREAD_TYPE:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ENUM_UNREAD_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ENUM_UNREAD_TYPE.ValueType], builtins.type):  # noqa: F821
+class _ENUM_UNREAD_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ENUM_UNREAD_TYPE.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNREAD_TYPE_ALL: _ENUM_UNREAD_TYPE.ValueType  # 0
     """"""
@@ -75,7 +75,7 @@ class _SESSION_TYPE:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _SESSION_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SESSION_TYPE.ValueType], builtins.type):  # noqa: F821
+class _SESSION_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SESSION_TYPE.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNKNOWN: _SESSION_TYPE.ValueType  # 0
     """"""
@@ -91,9 +91,7 @@ class _SESSION_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._E
     """"""
 
 class SESSION_TYPE(_SESSION_TYPE, metaclass=_SESSION_TYPEEnumTypeWrapper):
-    """
-
-    """
+    """"""
 
 UNKNOWN: SESSION_TYPE.ValueType  # 0
 """"""
@@ -109,6 +107,7 @@ DUSTBIN_SESSION: SESSION_TYPE.ValueType  # 5
 """"""
 global___SESSION_TYPE = SESSION_TYPE
 
+@typing_extensions.final
 class DummyReq(google.protobuf.message.Message):
     """空请求"""
 
@@ -126,6 +125,7 @@ class DummyReq(google.protobuf.message.Message):
 
 global___DummyReq = DummyReq
 
+@typing_extensions.final
 class DummyRsp(google.protobuf.message.Message):
     """空响应"""
 
@@ -137,6 +137,7 @@ class DummyRsp(google.protobuf.message.Message):
 
 global___DummyRsp = DummyRsp
 
+@typing_extensions.final
 class EmotionInfo(google.protobuf.message.Message):
     """表情资源信息"""
 
@@ -168,6 +169,7 @@ class EmotionInfo(google.protobuf.message.Message):
 
 global___EmotionInfo = EmotionInfo
 
+@typing_extensions.final
 class MsgDetail(google.protobuf.message.Message):
     """"""
 
@@ -189,11 +191,13 @@ class MsgDetail(google.protobuf.message.Message):
 
 global___MsgDetail = MsgDetail
 
+@typing_extensions.final
 class MsgFeedUnreadRsp(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class UnreadEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -222,6 +226,7 @@ class MsgFeedUnreadRsp(google.protobuf.message.Message):
 
 global___MsgFeedUnreadRsp = MsgFeedUnreadRsp
 
+@typing_extensions.final
 class ReqAckAssisMsg(google.protobuf.message.Message):
     """更新应援团小助手消息已拉取进度-请求"""
 
@@ -239,6 +244,7 @@ class ReqAckAssisMsg(google.protobuf.message.Message):
 
 global___ReqAckAssisMsg = ReqAckAssisMsg
 
+@typing_extensions.final
 class ReqAckSessions(google.protobuf.message.Message):
     """拉取已读消息-请求"""
 
@@ -264,6 +270,7 @@ class ReqAckSessions(google.protobuf.message.Message):
 
 global___ReqAckSessions = ReqAckSessions
 
+@typing_extensions.final
 class ReqBatRmSess(google.protobuf.message.Message):
     """批量删除会话-请求"""
 
@@ -275,6 +282,7 @@ class ReqBatRmSess(google.protobuf.message.Message):
 
 global___ReqBatRmSess = ReqBatRmSess
 
+@typing_extensions.final
 class ReqCloseClearUnreadUI(google.protobuf.message.Message):
     """"""
 
@@ -286,6 +294,7 @@ class ReqCloseClearUnreadUI(google.protobuf.message.Message):
 
 global___ReqCloseClearUnreadUI = ReqCloseClearUnreadUI
 
+@typing_extensions.final
 class ReqGetMsg(google.protobuf.message.Message):
     """"""
 
@@ -312,6 +321,7 @@ class ReqGetMsg(google.protobuf.message.Message):
 
 global___ReqGetMsg = ReqGetMsg
 
+@typing_extensions.final
 class ReqGetSessions(google.protobuf.message.Message):
     """拉取会话记录列表-请求"""
 
@@ -361,6 +371,7 @@ class ReqGetSessions(google.protobuf.message.Message):
 
 global___ReqGetSessions = ReqGetSessions
 
+@typing_extensions.final
 class ReqGetSpecificSessions(google.protobuf.message.Message):
     """-请求"""
 
@@ -379,6 +390,7 @@ class ReqGetSpecificSessions(google.protobuf.message.Message):
 
 global___ReqGetSpecificSessions = ReqGetSpecificSessions
 
+@typing_extensions.final
 class ReqGroupAssisMsg(google.protobuf.message.Message):
     """应援团消息助手-请求"""
 
@@ -400,6 +412,7 @@ class ReqGroupAssisMsg(google.protobuf.message.Message):
 
 global___ReqGroupAssisMsg = ReqGroupAssisMsg
 
+@typing_extensions.final
 class ReqLiveInfo(google.protobuf.message.Message):
     """"""
 
@@ -421,6 +434,7 @@ class ReqLiveInfo(google.protobuf.message.Message):
 
 global___ReqLiveInfo = ReqLiveInfo
 
+@typing_extensions.final
 class ReqNewSessions(google.protobuf.message.Message):
     """拉取新消息-请求"""
 
@@ -450,6 +464,7 @@ class ReqNewSessions(google.protobuf.message.Message):
 
 global___ReqNewSessions = ReqNewSessions
 
+@typing_extensions.final
 class ReqRelationSync(google.protobuf.message.Message):
     """同步关系-请求"""
 
@@ -467,6 +482,7 @@ class ReqRelationSync(google.protobuf.message.Message):
 
 global___ReqRelationSync = ReqRelationSync
 
+@typing_extensions.final
 class ReqRemoveSession(google.protobuf.message.Message):
     """删除会话记录-请求"""
 
@@ -488,6 +504,7 @@ class ReqRemoveSession(google.protobuf.message.Message):
 
 global___ReqRemoveSession = ReqRemoveSession
 
+@typing_extensions.final
 class ReqSendMsg(google.protobuf.message.Message):
     """发送消息-请求"""
 
@@ -499,7 +516,7 @@ class ReqSendMsg(google.protobuf.message.Message):
     ERROR_CODE_FIELD_NUMBER: builtins.int
     DEV_ID_FIELD_NUMBER: builtins.int
     @property
-    def msg(self) -> bilibili.im.type.im_pb2.Msg:
+    def msg(self) -> bilireq.grpc.protos.bilibili.im.type.im_pb2.Msg:
         """消息内容"""
     cookie: builtins.str
     """"""
@@ -523,6 +540,7 @@ class ReqSendMsg(google.protobuf.message.Message):
 
 global___ReqSendMsg = ReqSendMsg
 
+@typing_extensions.final
 class ReqSessionDetail(google.protobuf.message.Message):
     """拉取会话详情-请求"""
 
@@ -548,6 +566,7 @@ class ReqSessionDetail(google.protobuf.message.Message):
 
 global___ReqSessionDetail = ReqSessionDetail
 
+@typing_extensions.final
 class ReqSessionDetails(google.protobuf.message.Message):
     """批量拉取会话详情-请求"""
 
@@ -566,6 +585,7 @@ class ReqSessionDetails(google.protobuf.message.Message):
 
 global___ReqSessionDetails = ReqSessionDetails
 
+@typing_extensions.final
 class ReqSessionMsg(google.protobuf.message.Message):
     """同步版本拉取消息-请求"""
 
@@ -607,6 +627,7 @@ class ReqSessionMsg(google.protobuf.message.Message):
 
 global___ReqSessionMsg = ReqSessionMsg
 
+@typing_extensions.final
 class ReqSetTop(google.protobuf.message.Message):
     """置顶聊天-请求"""
 
@@ -634,6 +655,7 @@ class ReqSetTop(google.protobuf.message.Message):
 
 global___ReqSetTop = ReqSetTop
 
+@typing_extensions.final
 class ReqShareList(google.protobuf.message.Message):
     """拉取最近私信分享列表-请求"""
 
@@ -651,6 +673,7 @@ class ReqShareList(google.protobuf.message.Message):
 
 global___ReqShareList = ReqShareList
 
+@typing_extensions.final
 class ReqShowClearUnreadUI(google.protobuf.message.Message):
     """"""
 
@@ -676,6 +699,7 @@ class ReqShowClearUnreadUI(google.protobuf.message.Message):
 
 global___ReqShowClearUnreadUI = ReqShowClearUnreadUI
 
+@typing_extensions.final
 class ReqSingleUnread(google.protobuf.message.Message):
     """未读私信数-请求"""
 
@@ -705,6 +729,7 @@ class ReqSingleUnread(google.protobuf.message.Message):
 
 global___ReqSingleUnread = ReqSingleUnread
 
+@typing_extensions.final
 class ReqSpecificSingleUnread(google.protobuf.message.Message):
     """-请求"""
 
@@ -723,6 +748,7 @@ class ReqSpecificSingleUnread(google.protobuf.message.Message):
 
 global___ReqSpecificSingleUnread = ReqSpecificSingleUnread
 
+@typing_extensions.final
 class ReqSyncAck(google.protobuf.message.Message):
     """确认同步进度-请求"""
 
@@ -740,6 +766,7 @@ class ReqSyncAck(google.protobuf.message.Message):
 
 global___ReqSyncAck = ReqSyncAck
 
+@typing_extensions.final
 class ReqTotalUnread(google.protobuf.message.Message):
     """"""
 
@@ -781,6 +808,7 @@ class ReqTotalUnread(google.protobuf.message.Message):
 
 global___ReqTotalUnread = ReqTotalUnread
 
+@typing_extensions.final
 class ReqUpdateAck(google.protobuf.message.Message):
     """更新已读进度-请求"""
 
@@ -806,6 +834,7 @@ class ReqUpdateAck(google.protobuf.message.Message):
 
 global___ReqUpdateAck = ReqUpdateAck
 
+@typing_extensions.final
 class ReqUpdateIntercept(google.protobuf.message.Message):
     """"""
 
@@ -831,6 +860,7 @@ class ReqUpdateIntercept(google.protobuf.message.Message):
 
 global___ReqUpdateIntercept = ReqUpdateIntercept
 
+@typing_extensions.final
 class ReqUpdateTotalUnread(google.protobuf.message.Message):
     """"""
 
@@ -842,6 +872,7 @@ class ReqUpdateTotalUnread(google.protobuf.message.Message):
 
 global___ReqUpdateTotalUnread = ReqUpdateTotalUnread
 
+@typing_extensions.final
 class RspCloseClearUnreadUI(google.protobuf.message.Message):
     """"""
 
@@ -853,6 +884,7 @@ class RspCloseClearUnreadUI(google.protobuf.message.Message):
 
 global___RspCloseClearUnreadUI = RspCloseClearUnreadUI
 
+@typing_extensions.final
 class RspGetMsg(google.protobuf.message.Message):
     """"""
 
@@ -871,6 +903,7 @@ class RspGetMsg(google.protobuf.message.Message):
 
 global___RspGetMsg = RspGetMsg
 
+@typing_extensions.final
 class RspLiveInfo(google.protobuf.message.Message):
     """"""
 
@@ -892,6 +925,7 @@ class RspLiveInfo(google.protobuf.message.Message):
 
 global___RspLiveInfo = RspLiveInfo
 
+@typing_extensions.final
 class RspMyGroupUnread(google.protobuf.message.Message):
     """我创建的应援团未读数-响应"""
 
@@ -909,6 +943,7 @@ class RspMyGroupUnread(google.protobuf.message.Message):
 
 global___RspMyGroupUnread = RspMyGroupUnread
 
+@typing_extensions.final
 class RspRelationSync(google.protobuf.message.Message):
     """同步关系-响应"""
 
@@ -945,6 +980,7 @@ class RspRelationSync(google.protobuf.message.Message):
 
 global___RspRelationSync = RspRelationSync
 
+@typing_extensions.final
 class RspSendMsg(google.protobuf.message.Message):
     """发送消息-响应"""
 
@@ -962,7 +998,7 @@ class RspSendMsg(google.protobuf.message.Message):
     msg_content: builtins.str
     """"""
     @property
-    def key_hit_infos(self) -> bilibili.im.type.im_pb2.KeyHitInfos:
+    def key_hit_infos(self) -> bilireq.grpc.protos.bilibili.im.type.im_pb2.KeyHitInfos:
         """"""
     def __init__(
         self,
@@ -977,6 +1013,7 @@ class RspSendMsg(google.protobuf.message.Message):
 
 global___RspSendMsg = RspSendMsg
 
+@typing_extensions.final
 class RspSessionDetails(google.protobuf.message.Message):
     """批量拉取会话详情-响应"""
 
@@ -995,6 +1032,7 @@ class RspSessionDetails(google.protobuf.message.Message):
 
 global___RspSessionDetails = RspSessionDetails
 
+@typing_extensions.final
 class RspSessionMsg(google.protobuf.message.Message):
     """同步版本拉取消息-响应"""
 
@@ -1030,11 +1068,13 @@ class RspSessionMsg(google.protobuf.message.Message):
 
 global___RspSessionMsg = RspSessionMsg
 
+@typing_extensions.final
 class RspSessions(google.protobuf.message.Message):
     """拉取消息-响应"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class SystemMsgEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1084,6 +1124,7 @@ class RspSessions(google.protobuf.message.Message):
 
 global___RspSessions = RspSessions
 
+@typing_extensions.final
 class RspShareList(google.protobuf.message.Message):
     """拉取最近私信分享列表-响应"""
 
@@ -1106,6 +1147,7 @@ class RspShareList(google.protobuf.message.Message):
 
 global___RspShareList = RspShareList
 
+@typing_extensions.final
 class RspShowClearUnreadUI(google.protobuf.message.Message):
     """"""
 
@@ -1127,6 +1169,7 @@ class RspShowClearUnreadUI(google.protobuf.message.Message):
 
 global___RspShowClearUnreadUI = RspShowClearUnreadUI
 
+@typing_extensions.final
 class RspSingleUnread(google.protobuf.message.Message):
     """未读私信数-响应"""
 
@@ -1137,6 +1180,8 @@ class RspSingleUnread(google.protobuf.message.Message):
     UNFOLLOW_PUSH_MSG_FIELD_NUMBER: builtins.int
     DUSTBIN_PUSH_MSG_FIELD_NUMBER: builtins.int
     DUSTBIN_UNREAD_FIELD_NUMBER: builtins.int
+    BIZ_MSG_UNFOLLOW_UNREAD_FIELD_NUMBER: builtins.int
+    BIZ_MSG_FOLLOW_UNREAD_FIELD_NUMBER: builtins.int
     unfollow_unread: builtins.int
     """未关注用户私信数"""
     follow_unread: builtins.int
@@ -1147,6 +1192,10 @@ class RspSingleUnread(google.protobuf.message.Message):
     """"""
     dustbin_unread: builtins.int
     """"""
+    biz_msg_unfollow_unread: builtins.int
+    """"""
+    biz_msg_follow_unread: builtins.int
+    """"""
     def __init__(
         self,
         *,
@@ -1155,16 +1204,20 @@ class RspSingleUnread(google.protobuf.message.Message):
         unfollow_push_msg: builtins.int = ...,
         dustbin_push_msg: builtins.int = ...,
         dustbin_unread: builtins.int = ...,
+        biz_msg_unfollow_unread: builtins.int = ...,
+        biz_msg_follow_unread: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["dustbin_push_msg", b"dustbin_push_msg", "dustbin_unread", b"dustbin_unread", "follow_unread", b"follow_unread", "unfollow_push_msg", b"unfollow_push_msg", "unfollow_unread", b"unfollow_unread"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["biz_msg_follow_unread", b"biz_msg_follow_unread", "biz_msg_unfollow_unread", b"biz_msg_unfollow_unread", "dustbin_push_msg", b"dustbin_push_msg", "dustbin_unread", b"dustbin_unread", "follow_unread", b"follow_unread", "unfollow_push_msg", b"unfollow_push_msg", "unfollow_unread", b"unfollow_unread"]) -> None: ...
 
 global___RspSingleUnread = RspSingleUnread
 
+@typing_extensions.final
 class RspSpecificSingleUnread(google.protobuf.message.Message):
     """-响应"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class TalkerUnreadCntEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1197,6 +1250,7 @@ class RspSpecificSingleUnread(google.protobuf.message.Message):
 
 global___RspSpecificSingleUnread = RspSpecificSingleUnread
 
+@typing_extensions.final
 class RspSyncAck(google.protobuf.message.Message):
     """确认同步进度-响应"""
 
@@ -1208,6 +1262,7 @@ class RspSyncAck(google.protobuf.message.Message):
 
 global___RspSyncAck = RspSyncAck
 
+@typing_extensions.final
 class RspTotalUnread(google.protobuf.message.Message):
     """"""
 
@@ -1241,6 +1296,7 @@ class RspTotalUnread(google.protobuf.message.Message):
 
 global___RspTotalUnread = RspTotalUnread
 
+@typing_extensions.final
 class RspUpdateTotalUnread(google.protobuf.message.Message):
     """"""
 
@@ -1252,6 +1308,7 @@ class RspUpdateTotalUnread(google.protobuf.message.Message):
 
 global___RspUpdateTotalUnread = RspUpdateTotalUnread
 
+@typing_extensions.final
 class SessionSingleUnreadRsp(google.protobuf.message.Message):
     """"""
 
@@ -1285,6 +1342,7 @@ class SessionSingleUnreadRsp(google.protobuf.message.Message):
 
 global___SessionSingleUnreadRsp = SessionSingleUnreadRsp
 
+@typing_extensions.final
 class ShareSessionInfo(google.protobuf.message.Message):
     """会话信息，用于私信分享"""
 
@@ -1316,6 +1374,7 @@ class ShareSessionInfo(google.protobuf.message.Message):
 
 global___ShareSessionInfo = ShareSessionInfo
 
+@typing_extensions.final
 class SimpleSession(google.protobuf.message.Message):
     """"""
 
@@ -1337,6 +1396,7 @@ class SimpleSession(google.protobuf.message.Message):
 
 global___SimpleSession = SimpleSession
 
+@typing_extensions.final
 class SysMsgInterfaceLastMsgRsp(google.protobuf.message.Message):
     """"""
 

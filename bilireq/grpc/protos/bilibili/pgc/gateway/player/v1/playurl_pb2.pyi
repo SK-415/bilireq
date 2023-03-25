@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class BusinessInfo(google.protobuf.message.Message):
     """其他业务信息"""
 
@@ -42,6 +43,7 @@ class BusinessInfo(google.protobuf.message.Message):
 
 global___BusinessInfo = BusinessInfo
 
+@typing_extensions.final
 class Event(google.protobuf.message.Message):
     """事件"""
 
@@ -61,6 +63,7 @@ class Event(google.protobuf.message.Message):
 
 global___Event = Event
 
+@typing_extensions.final
 class LivePlayInfo(google.protobuf.message.Message):
     """播放信息"""
 
@@ -88,6 +91,7 @@ class LivePlayInfo(google.protobuf.message.Message):
 
 global___LivePlayInfo = LivePlayInfo
 
+@typing_extensions.final
 class LivePlayViewReply(google.protobuf.message.Message):
     """直播播放页信息-响应"""
 
@@ -112,6 +116,7 @@ class LivePlayViewReply(google.protobuf.message.Message):
 
 global___LivePlayViewReply = LivePlayViewReply
 
+@typing_extensions.final
 class LivePlayViewReq(google.protobuf.message.Message):
     """直播播放页信息-请求"""
 
@@ -155,6 +160,7 @@ class LivePlayViewReq(google.protobuf.message.Message):
 
 global___LivePlayViewReq = LivePlayViewReq
 
+@typing_extensions.final
 class PlayAbilityConf(google.protobuf.message.Message):
     """禁用功能配置"""
 
@@ -288,6 +294,7 @@ class PlayAbilityConf(google.protobuf.message.Message):
 
 global___PlayAbilityConf = PlayAbilityConf
 
+@typing_extensions.final
 class PlayViewReply(google.protobuf.message.Message):
     """ 播放页信息-响应"""
 
@@ -298,7 +305,7 @@ class PlayViewReply(google.protobuf.message.Message):
     BUSINESS_FIELD_NUMBER: builtins.int
     EVENT_FIELD_NUMBER: builtins.int
     @property
-    def video_info(self) -> bilibili.app.playurl.v1.playurl_pb2.VideoInfo:
+    def video_info(self) -> bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.VideoInfo:
         """视频流信息"""
     @property
     def play_conf(self) -> global___PlayAbilityConf:
@@ -322,6 +329,7 @@ class PlayViewReply(google.protobuf.message.Message):
 
 global___PlayViewReply = PlayViewReply
 
+@typing_extensions.final
 class PlayViewReq(google.protobuf.message.Message):
     """播放页信息-请求"""
 
@@ -395,6 +403,7 @@ class PlayViewReq(google.protobuf.message.Message):
 
 global___PlayViewReq = PlayViewReq
 
+@typing_extensions.final
 class ProjectReply(google.protobuf.message.Message):
     """投屏地址-响应"""
 
@@ -402,7 +411,7 @@ class ProjectReply(google.protobuf.message.Message):
 
     PROJECT_FIELD_NUMBER: builtins.int
     @property
-    def project(self) -> bilibili.app.playurl.v1.playurl_pb2.PlayURLReply: ...
+    def project(self) -> bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.PlayURLReply: ...
     def __init__(
         self,
         *,
@@ -413,6 +422,7 @@ class ProjectReply(google.protobuf.message.Message):
 
 global___ProjectReply = ProjectReply
 
+@typing_extensions.final
 class ProjectReq(google.protobuf.message.Message):
     """投屏地址-请求"""
 
@@ -486,6 +496,7 @@ class ProjectReq(google.protobuf.message.Message):
 
 global___ProjectReq = ProjectReq
 
+@typing_extensions.final
 class QualityDescription(google.protobuf.message.Message):
     """"""
 
@@ -507,6 +518,7 @@ class QualityDescription(google.protobuf.message.Message):
 
 global___QualityDescription = QualityDescription
 
+@typing_extensions.final
 class ResponseDataUrl(google.protobuf.message.Message):
     """"""
 
@@ -539,6 +551,7 @@ class ResponseDataUrl(google.protobuf.message.Message):
 
 global___ResponseDataUrl = ResponseDataUrl
 
+@typing_extensions.final
 class RoomInfo(google.protobuf.message.Message):
     """房间信息"""
 
@@ -571,6 +584,7 @@ class RoomInfo(google.protobuf.message.Message):
 
 global___RoomInfo = RoomInfo
 
+@typing_extensions.final
 class RoomShowInfo(google.protobuf.message.Message):
     """房间信息-展示相关"""
 
@@ -596,6 +610,7 @@ class RoomShowInfo(google.protobuf.message.Message):
 
 global___RoomShowInfo = RoomShowInfo
 
+@typing_extensions.final
 class RoomStatusInfo(google.protobuf.message.Message):
     """房间信息-状态相关"""
 
@@ -655,6 +670,7 @@ class RoomStatusInfo(google.protobuf.message.Message):
 
 global___RoomStatusInfo = RoomStatusInfo
 
+@typing_extensions.final
 class Shake(google.protobuf.message.Message):
     """震动"""
 

@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class HelloWorldReq(google.protobuf.message.Message):
     """"""
 
@@ -31,6 +32,7 @@ class HelloWorldReq(google.protobuf.message.Message):
 
 global___HelloWorldReq = HelloWorldReq
 
+@typing_extensions.final
 class HelloWorldResp(google.protobuf.message.Message):
     """"""
 

@@ -65,6 +65,11 @@ class ReplyStub(object):
                 request_serializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.ShareRepliesInfoReq.SerializeToString,
                 response_deserializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.ShareRepliesInfoResp.FromString,
                 )
+        self.SuggestEmotes = channel.unary_unary(
+                '/bilibili.main.community.reply.v1.Reply/SuggestEmotes',
+                request_serializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.SuggestEmotesReq.SerializeToString,
+                response_deserializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.SuggestEmotesResp.FromString,
+                )
 
 
 class ReplyServicer(object):
@@ -114,28 +119,35 @@ class ReplyServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AtSearch(self, request, context):
-        """
+        """评论at用户搜索接口
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReplyInfo(self, request, context):
-        """
+        """查询单条评论接口
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UserCallback(self, request, context):
-        """
+        """用户回调上报接口
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ShareRepliesInfo(self, request, context):
+        """评论分享材料接口
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SuggestEmotes(self, request, context):
+        """评论表情推荐列表接口
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -193,6 +205,11 @@ def add_ReplyServicer_to_server(servicer, server):
                     servicer.ShareRepliesInfo,
                     request_deserializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.ShareRepliesInfoReq.FromString,
                     response_serializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.ShareRepliesInfoResp.SerializeToString,
+            ),
+            'SuggestEmotes': grpc.unary_unary_rpc_method_handler(
+                    servicer.SuggestEmotes,
+                    request_deserializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.SuggestEmotesReq.FromString,
+                    response_serializer=bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.SuggestEmotesResp.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -372,5 +389,22 @@ class Reply(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.main.community.reply.v1.Reply/ShareRepliesInfo',
             bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.ShareRepliesInfoReq.SerializeToString,
             bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.ShareRepliesInfoResp.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SuggestEmotes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.main.community.reply.v1.Reply/SuggestEmotes',
+            bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.SuggestEmotesReq.SerializeToString,
+            bilibili_dot_main_dot_community_dot_reply_dot_v1_dot_reply__pb2.SuggestEmotesResp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

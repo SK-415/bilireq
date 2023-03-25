@@ -17,6 +17,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class SmallCoverV5(google.protobuf.message.Message):
     """"""
 
@@ -34,13 +35,15 @@ class SmallCoverV5(google.protobuf.message.Message):
     RIGHT_ICON_1_FIELD_NUMBER: builtins.int
     RIGHT_ICON_2_FIELD_NUMBER: builtins.int
     LEFT_CORNER_MARK_STYLE_FIELD_NUMBER: builtins.int
+    COVER_RIGHT_TEXT_CONTENT_DESCRIPTION_FIELD_NUMBER: builtins.int
+    RIGHT_DESC1_CONTENT_DESCRIPTION_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     cover_gif: builtins.str
     """"""
     @property
-    def up(self) -> bilibili.app.card.v1.common_pb2.Up:
+    def up(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Up:
         """"""
     cover_right_text_1: builtins.str
     """封面右下角标文案"""
@@ -49,21 +52,25 @@ class SmallCoverV5(google.protobuf.message.Message):
     right_desc_2: builtins.str
     """右侧文案2"""
     @property
-    def rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """右侧推荐原因标签框"""
     @property
     def hotword_entrance(self) -> global___HotwordEntrance:
         """"""
     @property
-    def corner_mark_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def corner_mark_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """直播小卡的角标"""
     right_icon_1: builtins.int
     """右侧文案1图标id"""
     right_icon_2: builtins.int
     """右侧文案2图标id"""
     @property
-    def left_corner_mark_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def left_corner_mark_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """左上角角标"""
+    cover_right_text_content_description: builtins.str
+    """"""
+    right_desc1_content_description: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -79,12 +86,92 @@ class SmallCoverV5(google.protobuf.message.Message):
         right_icon_1: builtins.int = ...,
         right_icon_2: builtins.int = ...,
         left_corner_mark_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        cover_right_text_content_description: builtins.str = ...,
+        right_desc1_content_description: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["base", b"base", "corner_mark_style", b"corner_mark_style", "hotword_entrance", b"hotword_entrance", "left_corner_mark_style", b"left_corner_mark_style", "rcmd_reason_style", b"rcmd_reason_style", "up", b"up"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "corner_mark_style", b"corner_mark_style", "cover_gif", b"cover_gif", "cover_right_text_1", b"cover_right_text_1", "hotword_entrance", b"hotword_entrance", "left_corner_mark_style", b"left_corner_mark_style", "rcmd_reason_style", b"rcmd_reason_style", "right_desc_1", b"right_desc_1", "right_desc_2", b"right_desc_2", "right_icon_1", b"right_icon_1", "right_icon_2", b"right_icon_2", "up", b"up"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "corner_mark_style", b"corner_mark_style", "cover_gif", b"cover_gif", "cover_right_text_1", b"cover_right_text_1", "cover_right_text_content_description", b"cover_right_text_content_description", "hotword_entrance", b"hotword_entrance", "left_corner_mark_style", b"left_corner_mark_style", "rcmd_reason_style", b"rcmd_reason_style", "right_desc1_content_description", b"right_desc1_content_description", "right_desc_1", b"right_desc_1", "right_desc_2", b"right_desc_2", "right_icon_1", b"right_icon_1", "right_icon_2", b"right_icon_2", "up", b"up"]) -> None: ...
 
 global___SmallCoverV5 = SmallCoverV5
 
+@typing_extensions.final
+class SmallCoverV5Ad(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BASE_FIELD_NUMBER: builtins.int
+    COVER_GIF_FIELD_NUMBER: builtins.int
+    UP_FIELD_NUMBER: builtins.int
+    COVER_RIGHT_TEXT1_FIELD_NUMBER: builtins.int
+    RIGHT_DESC1_FIELD_NUMBER: builtins.int
+    RIGHT_DESC2_FIELD_NUMBER: builtins.int
+    RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
+    HOTWORD_ENTRANCE_FIELD_NUMBER: builtins.int
+    CORNER_MARK_STYLE_FIELD_NUMBER: builtins.int
+    RIGHT_ICON1_FIELD_NUMBER: builtins.int
+    RIGHT_ICON2_FIELD_NUMBER: builtins.int
+    LEFT_CORNER_MARK_STYLE_FIELD_NUMBER: builtins.int
+    COVER_RIGHT_TEXT_CONTENT_DESCRIPTION_FIELD_NUMBER: builtins.int
+    RIGHT_DESC1_CONTENT_DESCRIPTION_FIELD_NUMBER: builtins.int
+    @property
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
+        """"""
+    cover_gif: builtins.str
+    """"""
+    @property
+    def up(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Up:
+        """"""
+    cover_right_text1: builtins.str
+    """"""
+    right_desc1: builtins.str
+    """"""
+    right_desc2: builtins.str
+    """"""
+    @property
+    def rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
+        """"""
+    @property
+    def hotword_entrance(self) -> global___HotwordEntrance:
+        """"""
+    @property
+    def corner_mark_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
+        """"""
+    right_icon1: builtins.int
+    """"""
+    right_icon2: builtins.int
+    """"""
+    @property
+    def left_corner_mark_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
+        """"""
+    cover_right_text_content_description: builtins.str
+    """"""
+    right_desc1_content_description: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        cover_gif: builtins.str = ...,
+        up: bilibili.app.card.v1.common_pb2.Up | None = ...,
+        cover_right_text1: builtins.str = ...,
+        right_desc1: builtins.str = ...,
+        right_desc2: builtins.str = ...,
+        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        hotword_entrance: global___HotwordEntrance | None = ...,
+        corner_mark_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        right_icon1: builtins.int = ...,
+        right_icon2: builtins.int = ...,
+        left_corner_mark_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        cover_right_text_content_description: builtins.str = ...,
+        right_desc1_content_description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["base", b"base", "corner_mark_style", b"corner_mark_style", "hotword_entrance", b"hotword_entrance", "left_corner_mark_style", b"left_corner_mark_style", "rcmd_reason_style", b"rcmd_reason_style", "up", b"up"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "corner_mark_style", b"corner_mark_style", "cover_gif", b"cover_gif", "cover_right_text1", b"cover_right_text1", "cover_right_text_content_description", b"cover_right_text_content_description", "hotword_entrance", b"hotword_entrance", "left_corner_mark_style", b"left_corner_mark_style", "rcmd_reason_style", b"rcmd_reason_style", "right_desc1", b"right_desc1", "right_desc1_content_description", b"right_desc1_content_description", "right_desc2", b"right_desc2", "right_icon1", b"right_icon1", "right_icon2", b"right_icon2", "up", b"up"]) -> None: ...
+
+global___SmallCoverV5Ad = SmallCoverV5Ad
+
+@typing_extensions.final
 class HotwordEntrance(google.protobuf.message.Message):
     """"""
 
@@ -114,6 +201,7 @@ class HotwordEntrance(google.protobuf.message.Message):
 
 global___HotwordEntrance = HotwordEntrance
 
+@typing_extensions.final
 class LargeCoverV1(google.protobuf.message.Message):
     """"""
 
@@ -141,12 +229,12 @@ class LargeCoverV1(google.protobuf.message.Message):
     TITLE_SINGLE_LINE_FIELD_NUMBER: builtins.int
     COVER_RIGHT_TEXT_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     cover_gif: builtins.str
     """"""
     @property
-    def avatar(self) -> bilibili.app.card.v1.common_pb2.Avatar:
+    def avatar(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar:
         """"""
     cover_left_text_1: builtins.str
     """"""
@@ -167,24 +255,24 @@ class LargeCoverV1(google.protobuf.message.Message):
     can_play: builtins.int
     """"""
     @property
-    def top_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def top_rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def bottom_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def bottom_rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def rcmd_reason_style_v2(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def rcmd_reason_style_v2(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def left_cover_badge_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def left_cover_badge_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
-    def right_cover_badge_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def right_cover_badge_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     cover_badge_2: builtins.str
     """"""
     @property
-    def like_button(self) -> bilibili.app.card.v1.common_pb2.LikeButton:
+    def like_button(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.LikeButton:
         """"""
     title_single_line: builtins.int
     """"""
@@ -220,6 +308,7 @@ class LargeCoverV1(google.protobuf.message.Message):
 
 global___LargeCoverV1 = LargeCoverV1
 
+@typing_extensions.final
 class ThreeItemAllV2(google.protobuf.message.Message):
     """"""
 
@@ -229,10 +318,10 @@ class ThreeItemAllV2(google.protobuf.message.Message):
     TOP_RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     ITEM_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     @property
-    def top_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def top_rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     @property
     def item(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TwoItemHV1Item]:
@@ -249,6 +338,7 @@ class ThreeItemAllV2(google.protobuf.message.Message):
 
 global___ThreeItemAllV2 = ThreeItemAllV2
 
+@typing_extensions.final
 class TwoItemHV1Item(google.protobuf.message.Message):
     """"""
 
@@ -272,7 +362,7 @@ class TwoItemHV1Item(google.protobuf.message.Message):
     param: builtins.str
     """"""
     @property
-    def args(self) -> bilibili.app.card.v1.common_pb2.Args:
+    def args(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Args:
         """"""
     goto: builtins.str
     """"""
@@ -300,6 +390,7 @@ class TwoItemHV1Item(google.protobuf.message.Message):
 
 global___TwoItemHV1Item = TwoItemHV1Item
 
+@typing_extensions.final
 class RcmdOneItem(google.protobuf.message.Message):
     """推荐"""
 
@@ -309,10 +400,10 @@ class RcmdOneItem(google.protobuf.message.Message):
     TOPRCMDREASONSTYLE_FIELD_NUMBER: builtins.int
     ITEM_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     @property
-    def topRcmdReasonStyle(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def topRcmdReasonStyle(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """标签框信息"""
     @property
     def item(self) -> global___SmallCoverRcmdItem:
@@ -329,6 +420,7 @@ class RcmdOneItem(google.protobuf.message.Message):
 
 global___RcmdOneItem = RcmdOneItem
 
+@typing_extensions.final
 class SmallCoverRcmdItem(google.protobuf.message.Message):
     """小封面推荐内容信息"""
 
@@ -345,6 +437,8 @@ class SmallCoverRcmdItem(google.protobuf.message.Message):
     COVERGIF_FIELD_NUMBER: builtins.int
     RIGHTICON1_FIELD_NUMBER: builtins.int
     RIGHTICON2_FIELD_NUMBER: builtins.int
+    COVER_RIGHT_TEXT_CONTENT_DESCRIPTION_FIELD_NUMBER: builtins.int
+    RIGHT_DESC1_CONTENT_DESCRIPTION_FIELD_NUMBER: builtins.int
     title: builtins.str
     """标题"""
     cover: builtins.str
@@ -369,6 +463,10 @@ class SmallCoverRcmdItem(google.protobuf.message.Message):
     """右侧文案1图标id"""
     rightIcon2: builtins.int
     """右侧文案2图标id"""
+    cover_right_text_content_description: builtins.str
+    """"""
+    right_desc1_content_description: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -383,11 +481,14 @@ class SmallCoverRcmdItem(google.protobuf.message.Message):
         coverGif: builtins.str = ...,
         rightIcon1: builtins.int = ...,
         rightIcon2: builtins.int = ...,
+        cover_right_text_content_description: builtins.str = ...,
+        right_desc1_content_description: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "coverGif", b"coverGif", "coverRightText1", b"coverRightText1", "goto", b"goto", "param", b"param", "rightDesc1", b"rightDesc1", "rightDesc2", b"rightDesc2", "rightIcon1", b"rightIcon1", "rightIcon2", b"rightIcon2", "title", b"title", "uri", b"uri"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "coverGif", b"coverGif", "coverRightText1", b"coverRightText1", "cover_right_text_content_description", b"cover_right_text_content_description", "goto", b"goto", "param", b"param", "rightDesc1", b"rightDesc1", "rightDesc2", b"rightDesc2", "rightIcon1", b"rightIcon1", "rightIcon2", b"rightIcon2", "right_desc1_content_description", b"right_desc1_content_description", "title", b"title", "uri", b"uri"]) -> None: ...
 
 global___SmallCoverRcmdItem = SmallCoverRcmdItem
 
+@typing_extensions.final
 class ThreeItemV1(google.protobuf.message.Message):
     """"""
 
@@ -399,7 +500,7 @@ class ThreeItemV1(google.protobuf.message.Message):
     MORETEXT_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     titleIcon: builtins.int
     """"""
@@ -424,6 +525,7 @@ class ThreeItemV1(google.protobuf.message.Message):
 
 global___ThreeItemV1 = ThreeItemV1
 
+@typing_extensions.final
 class ThreeItemV1Item(google.protobuf.message.Message):
     """"""
 
@@ -436,7 +538,7 @@ class ThreeItemV1Item(google.protobuf.message.Message):
     DESC2_FIELD_NUMBER: builtins.int
     BADGE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     coverLeftText: builtins.str
     """"""
@@ -463,6 +565,7 @@ class ThreeItemV1Item(google.protobuf.message.Message):
 
 global___ThreeItemV1Item = ThreeItemV1Item
 
+@typing_extensions.final
 class HotTopicItem(google.protobuf.message.Message):
     """"""
 
@@ -492,6 +595,7 @@ class HotTopicItem(google.protobuf.message.Message):
 
 global___HotTopicItem = HotTopicItem
 
+@typing_extensions.final
 class HotTopic(google.protobuf.message.Message):
     """"""
 
@@ -501,7 +605,7 @@ class HotTopic(google.protobuf.message.Message):
     DESC_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     desc: builtins.str
     """"""
@@ -520,6 +624,7 @@ class HotTopic(google.protobuf.message.Message):
 
 global___HotTopic = HotTopic
 
+@typing_extensions.final
 class DynamicHot(google.protobuf.message.Message):
     """"""
 
@@ -535,7 +640,7 @@ class DynamicHot(google.protobuf.message.Message):
     COVER_RIGHT_TEXT_FIELD_NUMBER: builtins.int
     TOP_RCMD_REASON_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     top_left_title: builtins.str
     """"""
@@ -553,7 +658,7 @@ class DynamicHot(google.protobuf.message.Message):
     cover_right_text: builtins.str
     """"""
     @property
-    def top_rcmd_reason_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def top_rcmd_reason_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -573,6 +678,7 @@ class DynamicHot(google.protobuf.message.Message):
 
 global___DynamicHot = DynamicHot
 
+@typing_extensions.final
 class MiddleCoverV3(google.protobuf.message.Message):
     """"""
 
@@ -583,14 +689,14 @@ class MiddleCoverV3(google.protobuf.message.Message):
     DESC2_FIELD_NUMBER: builtins.int
     COVER_BADGE_STYLE_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     desc1: builtins.str
     """"""
     desc2: builtins.str
     """"""
     @property
-    def cover_badge_style(self) -> bilibili.app.card.v1.common_pb2.ReasonStyle:
+    def cover_badge_style(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle:
         """"""
     def __init__(
         self,
@@ -605,6 +711,7 @@ class MiddleCoverV3(google.protobuf.message.Message):
 
 global___MiddleCoverV3 = MiddleCoverV3
 
+@typing_extensions.final
 class LargeCoverV4(google.protobuf.message.Message):
     """"""
 
@@ -623,7 +730,7 @@ class LargeCoverV4(google.protobuf.message.Message):
     BVID_FIELD_NUMBER: builtins.int
     SUB_PARAM_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     cover_left_text_1: builtins.str
     """"""
@@ -636,7 +743,7 @@ class LargeCoverV4(google.protobuf.message.Message):
     can_play: builtins.int
     """"""
     @property
-    def up(self) -> bilibili.app.card.v1.common_pb2.Up:
+    def up(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Up:
         """"""
     short_link: builtins.str
     """"""
@@ -669,6 +776,7 @@ class LargeCoverV4(google.protobuf.message.Message):
 
 global___LargeCoverV4 = LargeCoverV4
 
+@typing_extensions.final
 class PopularTopEntrance(google.protobuf.message.Message):
     """热门列表顶部按钮"""
 
@@ -677,7 +785,7 @@ class PopularTopEntrance(google.protobuf.message.Message):
     BASE_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
     @property
-    def base(self) -> bilibili.app.card.v1.common_pb2.Base:
+    def base(self) -> bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base:
         """条目基本信息"""
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EntranceItem]:
@@ -693,6 +801,7 @@ class PopularTopEntrance(google.protobuf.message.Message):
 
 global___PopularTopEntrance = PopularTopEntrance
 
+@typing_extensions.final
 class EntranceItem(google.protobuf.message.Message):
     """热门列表按钮信息"""
 
@@ -742,6 +851,7 @@ class EntranceItem(google.protobuf.message.Message):
 
 global___EntranceItem = EntranceItem
 
+@typing_extensions.final
 class Bubble(google.protobuf.message.Message):
     """气泡信息"""
 

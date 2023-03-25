@@ -18,6 +18,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Bubble(google.protobuf.message.Message):
     """气泡信息"""
 
@@ -43,6 +44,7 @@ class Bubble(google.protobuf.message.Message):
 
 global___Bubble = Bubble
 
+@typing_extensions.final
 class Config(google.protobuf.message.Message):
     """配置信息"""
 
@@ -90,6 +92,7 @@ class Config(google.protobuf.message.Message):
 
 global___Config = Config
 
+@typing_extensions.final
 class EntranceShow(google.protobuf.message.Message):
     """按钮信息"""
 
@@ -137,6 +140,7 @@ class EntranceShow(google.protobuf.message.Message):
 
 global___EntranceShow = EntranceShow
 
+@typing_extensions.final
 class PopularReply(google.protobuf.message.Message):
     """热门列表-响应"""
 
@@ -165,6 +169,7 @@ class PopularReply(google.protobuf.message.Message):
 
 global___PopularReply = PopularReply
 
+@typing_extensions.final
 class PopularResultReq(google.protobuf.message.Message):
     """热门列表-请求"""
 
@@ -218,7 +223,7 @@ class PopularResultReq(google.protobuf.message.Message):
     0:代表手动刷新 1:代表自动刷新
     """
     @property
-    def player_args(self) -> bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
+    def player_args(self) -> bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs:
         """秒开参数"""
     def __init__(
         self,

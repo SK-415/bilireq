@@ -22,7 +22,7 @@ class _ActivitySeasonStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ActivitySeasonStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ActivitySeasonStatus.ValueType], builtins.type):  # noqa: F821
+class _ActivitySeasonStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ActivitySeasonStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     StatusNone: _ActivitySeasonStatus.ValueType  # 0
     """"""
@@ -46,7 +46,7 @@ class _OrderType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _OrderTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_OrderType.ValueType], builtins.type):  # noqa: F821
+class _OrderTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_OrderType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     TypeNone: _OrderType.ValueType  # 0
     """"""
@@ -74,7 +74,7 @@ class _ReplyEmoteMetaSize:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ReplyEmoteMetaSizeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReplyEmoteMetaSize.ValueType], builtins.type):  # noqa: F821
+class _ReplyEmoteMetaSizeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReplyEmoteMetaSize.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EMOTE_META_SIZE_UNSPECIFIED: _ReplyEmoteMetaSize.ValueType  # 0
     """"""
@@ -94,6 +94,7 @@ EMOTE_META_SIZE_BIG: ReplyEmoteMetaSize.ValueType  # 2
 """"""
 global___ReplyEmoteMetaSize = ReplyEmoteMetaSize
 
+@typing_extensions.final
 class AccInfo(google.protobuf.message.Message):
     """"""
 
@@ -127,6 +128,7 @@ class AccInfo(google.protobuf.message.Message):
 
 global___AccInfo = AccInfo
 
+@typing_extensions.final
 class AccountCard(google.protobuf.message.Message):
     """"""
 
@@ -211,6 +213,7 @@ class AccountCard(google.protobuf.message.Message):
 
 global___AccountCard = AccountCard
 
+@typing_extensions.final
 class ActivityArchiveReply(google.protobuf.message.Message):
     """"""
 
@@ -259,6 +262,7 @@ class ActivityArchiveReply(google.protobuf.message.Message):
 
 global___ActivityArchiveReply = ActivityArchiveReply
 
+@typing_extensions.final
 class ActivityArchiveReq(google.protobuf.message.Message):
     """"""
 
@@ -284,6 +288,7 @@ class ActivityArchiveReq(google.protobuf.message.Message):
 
 global___ActivityArchiveReq = ActivityArchiveReq
 
+@typing_extensions.final
 class ActivityEpisode(google.protobuf.message.Message):
     """"""
 
@@ -332,6 +337,7 @@ class ActivityEpisode(google.protobuf.message.Message):
 
 global___ActivityEpisode = ActivityEpisode
 
+@typing_extensions.final
 class ActivityGame(google.protobuf.message.Message):
     """"""
 
@@ -358,6 +364,7 @@ class ActivityGame(google.protobuf.message.Message):
 
 global___ActivityGame = ActivityGame
 
+@typing_extensions.final
 class ActivityGameIframe(google.protobuf.message.Message):
     """"""
 
@@ -379,6 +386,7 @@ class ActivityGameIframe(google.protobuf.message.Message):
 
 global___ActivityGameIframe = ActivityGameIframe
 
+@typing_extensions.final
 class ActivityLive(google.protobuf.message.Message):
     """"""
 
@@ -447,6 +455,7 @@ class ActivityLive(google.protobuf.message.Message):
 
 global___ActivityLive = ActivityLive
 
+@typing_extensions.final
 class ActivityLiveTimeInfoReply(google.protobuf.message.Message):
     """"""
 
@@ -477,6 +486,7 @@ class ActivityLiveTimeInfoReply(google.protobuf.message.Message):
 
 global___ActivityLiveTimeInfoReply = ActivityLiveTimeInfoReply
 
+@typing_extensions.final
 class ActivityLiveTimeInfoReq(google.protobuf.message.Message):
     """"""
 
@@ -494,6 +504,7 @@ class ActivityLiveTimeInfoReq(google.protobuf.message.Message):
 
 global___ActivityLiveTimeInfoReq = ActivityLiveTimeInfoReq
 
+@typing_extensions.final
 class ActivitySeasonReply(google.protobuf.message.Message):
     """"""
 
@@ -541,6 +552,7 @@ class ActivitySeasonReply(google.protobuf.message.Message):
 
 global___ActivitySeasonReply = ActivitySeasonReply
 
+@typing_extensions.final
 class ActivitySeasonReq(google.protobuf.message.Message):
     """"""
 
@@ -566,6 +578,7 @@ class ActivitySeasonReq(google.protobuf.message.Message):
 
 global___ActivitySeasonReq = ActivitySeasonReq
 
+@typing_extensions.final
 class ActivitySeasonSection(google.protobuf.message.Message):
     """"""
 
@@ -596,6 +609,7 @@ class ActivitySeasonSection(google.protobuf.message.Message):
 
 global___ActivitySeasonSection = ActivitySeasonSection
 
+@typing_extensions.final
 class ActivitySubscribe(google.protobuf.message.Message):
     """"""
 
@@ -654,11 +668,13 @@ class ActivitySubscribe(google.protobuf.message.Message):
 
 global___ActivitySubscribe = ActivitySubscribe
 
+@typing_extensions.final
 class ActivityTheme(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class KvColorEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -787,6 +803,7 @@ class ActivityTheme(google.protobuf.message.Message):
 
 global___ActivityTheme = ActivityTheme
 
+@typing_extensions.final
 class ActivityView(google.protobuf.message.Message):
     """"""
 
@@ -840,6 +857,7 @@ class ActivityView(google.protobuf.message.Message):
 
 global___ActivityView = ActivityView
 
+@typing_extensions.final
 class Arc(google.protobuf.message.Message):
     """"""
 
@@ -875,6 +893,8 @@ class Arc(google.protobuf.message.Message):
     STAFF_INFO_FIELD_NUMBER: builtins.int
     SEASON_ID_FIELD_NUMBER: builtins.int
     DESC_V2_FIELD_NUMBER: builtins.int
+    IS_CHARGEABLE_SEASON_FIELD_NUMBER: builtins.int
+    IS_BLOOPER_FIELD_NUMBER: builtins.int
     aid: builtins.int
     """"""
     videos: builtins.int
@@ -942,6 +962,10 @@ class Arc(google.protobuf.message.Message):
     @property
     def desc_v2(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DescV2]:
         """"""
+    is_chargeable_season: builtins.bool
+    """"""
+    is_blooper: builtins.bool
+    """"""
     def __init__(
         self,
         *,
@@ -975,12 +999,15 @@ class Arc(google.protobuf.message.Message):
         staff_info: collections.abc.Iterable[global___StaffInfo] | None = ...,
         season_id: builtins.int = ...,
         desc_v2: collections.abc.Iterable[global___DescV2] | None = ...,
+        is_chargeable_season: builtins.bool = ...,
+        is_blooper: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["author", b"author", "dimension", b"dimension", "rights", b"rights", "stat", b"stat"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["access", b"access", "aid", b"aid", "attribute", b"attribute", "author", b"author", "copyright", b"copyright", "ctime", b"ctime", "desc", b"desc", "desc_v2", b"desc_v2", "dimension", b"dimension", "duration", b"duration", "dynamic", b"dynamic", "first_cid", b"first_cid", "forward", b"forward", "mission_id", b"mission_id", "order_id", b"order_id", "pic", b"pic", "pubdate", b"pubdate", "redirect_url", b"redirect_url", "report_result", b"report_result", "rights", b"rights", "season_id", b"season_id", "staff_info", b"staff_info", "stat", b"stat", "state", b"state", "tag", b"tag", "tags", b"tags", "title", b"title", "type_id", b"type_id", "type_name", b"type_name", "videos", b"videos"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["access", b"access", "aid", b"aid", "attribute", b"attribute", "author", b"author", "copyright", b"copyright", "ctime", b"ctime", "desc", b"desc", "desc_v2", b"desc_v2", "dimension", b"dimension", "duration", b"duration", "dynamic", b"dynamic", "first_cid", b"first_cid", "forward", b"forward", "is_blooper", b"is_blooper", "is_chargeable_season", b"is_chargeable_season", "mission_id", b"mission_id", "order_id", b"order_id", "pic", b"pic", "pubdate", b"pubdate", "redirect_url", b"redirect_url", "report_result", b"report_result", "rights", b"rights", "season_id", b"season_id", "staff_info", b"staff_info", "stat", b"stat", "state", b"state", "tag", b"tag", "tags", b"tags", "title", b"title", "type_id", b"type_id", "type_name", b"type_name", "videos", b"videos"]) -> None: ...
 
 global___Arc = Arc
 
+@typing_extensions.final
 class Author(google.protobuf.message.Message):
     """"""
 
@@ -1006,6 +1033,7 @@ class Author(google.protobuf.message.Message):
 
 global___Author = Author
 
+@typing_extensions.final
 class Card(google.protobuf.message.Message):
     """"""
 
@@ -1046,6 +1074,7 @@ class Card(google.protobuf.message.Message):
 
 global___Card = Card
 
+@typing_extensions.final
 class CardLevelInfo(google.protobuf.message.Message):
     """"""
 
@@ -1075,6 +1104,7 @@ class CardLevelInfo(google.protobuf.message.Message):
 
 global___CardLevelInfo = CardLevelInfo
 
+@typing_extensions.final
 class CardVip(google.protobuf.message.Message):
     """"""
 
@@ -1112,6 +1142,7 @@ class CardVip(google.protobuf.message.Message):
 
 global___CardVip = CardVip
 
+@typing_extensions.final
 class ClickActivitySeasonReq(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1152,6 +1183,7 @@ class ClickActivitySeasonReq(google.protobuf.message.Message):
 
 global___ClickActivitySeasonReq = ClickActivitySeasonReq
 
+@typing_extensions.final
 class DescV2(google.protobuf.message.Message):
     """"""
 
@@ -1177,6 +1209,7 @@ class DescV2(google.protobuf.message.Message):
 
 global___DescV2 = DescV2
 
+@typing_extensions.final
 class Dimension(google.protobuf.message.Message):
     """"""
 
@@ -1202,6 +1235,7 @@ class Dimension(google.protobuf.message.Message):
 
 global___Dimension = Dimension
 
+@typing_extensions.final
 class FavSeasonParam(google.protobuf.message.Message):
     """"""
 
@@ -1219,6 +1253,7 @@ class FavSeasonParam(google.protobuf.message.Message):
 
 global___FavSeasonParam = FavSeasonParam
 
+@typing_extensions.final
 class HotReply(google.protobuf.message.Message):
     """"""
 
@@ -1243,6 +1278,7 @@ class HotReply(google.protobuf.message.Message):
 
 global___HotReply = HotReply
 
+@typing_extensions.final
 class JumpURLParam(google.protobuf.message.Message):
     """"""
 
@@ -1260,6 +1296,7 @@ class JumpURLParam(google.protobuf.message.Message):
 
 global___JumpURLParam = JumpURLParam
 
+@typing_extensions.final
 class LiveTimeline(google.protobuf.message.Message):
     """"""
 
@@ -1297,6 +1334,7 @@ class LiveTimeline(google.protobuf.message.Message):
 
 global___LiveTimeline = LiveTimeline
 
+@typing_extensions.final
 class NameplateInfo(google.protobuf.message.Message):
     """"""
 
@@ -1334,6 +1372,7 @@ class NameplateInfo(google.protobuf.message.Message):
 
 global___NameplateInfo = NameplateInfo
 
+@typing_extensions.final
 class NoReply(google.protobuf.message.Message):
     """"""
 
@@ -1345,6 +1384,7 @@ class NoReply(google.protobuf.message.Message):
 
 global___NoReply = NoReply
 
+@typing_extensions.final
 class OfficialInfo(google.protobuf.message.Message):
     """"""
 
@@ -1370,6 +1410,7 @@ class OfficialInfo(google.protobuf.message.Message):
 
 global___OfficialInfo = OfficialInfo
 
+@typing_extensions.final
 class OfficialVerify(google.protobuf.message.Message):
     """"""
 
@@ -1391,6 +1432,7 @@ class OfficialVerify(google.protobuf.message.Message):
 
 global___OfficialVerify = OfficialVerify
 
+@typing_extensions.final
 class OperationRelate(google.protobuf.message.Message):
     """"""
 
@@ -1418,6 +1460,7 @@ class OperationRelate(google.protobuf.message.Message):
 
 global___OperationRelate = OperationRelate
 
+@typing_extensions.final
 class Page(google.protobuf.message.Message):
     """"""
 
@@ -1466,6 +1509,7 @@ class Page(google.protobuf.message.Message):
 
 global___Page = Page
 
+@typing_extensions.final
 class PendantInfo(google.protobuf.message.Message):
     """"""
 
@@ -1495,6 +1539,25 @@ class PendantInfo(google.protobuf.message.Message):
 
 global___PendantInfo = PendantInfo
 
+@typing_extensions.final
+class ReasonStyle(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["text", b"text"]) -> None: ...
+
+global___ReasonStyle = ReasonStyle
+
+@typing_extensions.final
 class Relate(google.protobuf.message.Message):
     """"""
 
@@ -1522,6 +1585,7 @@ class Relate(google.protobuf.message.Message):
 
 global___Relate = Relate
 
+@typing_extensions.final
 class RelateItem(google.protobuf.message.Message):
     """"""
 
@@ -1543,6 +1607,7 @@ class RelateItem(google.protobuf.message.Message):
 
 global___RelateItem = RelateItem
 
+@typing_extensions.final
 class Relation(google.protobuf.message.Message):
     """"""
 
@@ -1564,6 +1629,7 @@ class Relation(google.protobuf.message.Message):
 
 global___Relation = Relation
 
+@typing_extensions.final
 class Reply(google.protobuf.message.Message):
     """"""
 
@@ -1704,11 +1770,13 @@ class Reply(google.protobuf.message.Message):
 
 global___Reply = Reply
 
+@typing_extensions.final
 class ReplyContent(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class EmoteEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1779,6 +1847,7 @@ class ReplyContent(google.protobuf.message.Message):
 
 global___ReplyContent = ReplyContent
 
+@typing_extensions.final
 class ReplyEmote(google.protobuf.message.Message):
     """"""
 
@@ -1834,6 +1903,7 @@ class ReplyEmote(google.protobuf.message.Message):
 
 global___ReplyEmote = ReplyEmote
 
+@typing_extensions.final
 class ReplyEmoteMeta(google.protobuf.message.Message):
     """"""
 
@@ -1851,6 +1921,7 @@ class ReplyEmoteMeta(google.protobuf.message.Message):
 
 global___ReplyEmoteMeta = ReplyEmoteMeta
 
+@typing_extensions.final
 class ReplyFansDetail(google.protobuf.message.Message):
     """"""
 
@@ -1896,6 +1967,7 @@ class ReplyFansDetail(google.protobuf.message.Message):
 
 global___ReplyFansDetail = ReplyFansDetail
 
+@typing_extensions.final
 class ReplyFolder(google.protobuf.message.Message):
     """"""
 
@@ -1921,6 +1993,7 @@ class ReplyFolder(google.protobuf.message.Message):
 
 global___ReplyFolder = ReplyFolder
 
+@typing_extensions.final
 class ReplyLabel(google.protobuf.message.Message):
     """"""
 
@@ -1966,6 +2039,7 @@ class ReplyLabel(google.protobuf.message.Message):
 
 global___ReplyLabel = ReplyLabel
 
+@typing_extensions.final
 class ReplyLevelInfo(google.protobuf.message.Message):
     """"""
 
@@ -1995,6 +2069,7 @@ class ReplyLevelInfo(google.protobuf.message.Message):
 
 global___ReplyLevelInfo = ReplyLevelInfo
 
+@typing_extensions.final
 class ReplyMember(google.protobuf.message.Message):
     """"""
 
@@ -2023,6 +2098,7 @@ class ReplyMember(google.protobuf.message.Message):
 
 global___ReplyMember = ReplyMember
 
+@typing_extensions.final
 class ReplyMemberInfo(google.protobuf.message.Message):
     """"""
 
@@ -2094,6 +2170,7 @@ class ReplyMemberInfo(google.protobuf.message.Message):
 
 global___ReplyMemberInfo = ReplyMemberInfo
 
+@typing_extensions.final
 class ReplyPage(google.protobuf.message.Message):
     """"""
 
@@ -2123,6 +2200,7 @@ class ReplyPage(google.protobuf.message.Message):
 
 global___ReplyPage = ReplyPage
 
+@typing_extensions.final
 class ReplyUpAction(google.protobuf.message.Message):
     """"""
 
@@ -2144,6 +2222,7 @@ class ReplyUpAction(google.protobuf.message.Message):
 
 global___ReplyUpAction = ReplyUpAction
 
+@typing_extensions.final
 class ReplyVip(google.protobuf.message.Message):
     """"""
 
@@ -2191,6 +2270,7 @@ class ReplyVip(google.protobuf.message.Message):
 
 global___ReplyVip = ReplyVip
 
+@typing_extensions.final
 class ReplyVote(google.protobuf.message.Message):
     """"""
 
@@ -2224,6 +2304,7 @@ class ReplyVote(google.protobuf.message.Message):
 
 global___ReplyVote = ReplyVote
 
+@typing_extensions.final
 class ReqUser(google.protobuf.message.Message):
     """"""
 
@@ -2253,6 +2334,7 @@ class ReqUser(google.protobuf.message.Message):
 
 global___ReqUser = ReqUser
 
+@typing_extensions.final
 class ReserveActivityParam(google.protobuf.message.Message):
     """"""
 
@@ -2279,6 +2361,7 @@ class ReserveActivityParam(google.protobuf.message.Message):
 
 global___ReserveActivityParam = ReserveActivityParam
 
+@typing_extensions.final
 class Rights(google.protobuf.message.Message):
     """"""
 
@@ -2295,6 +2378,8 @@ class Rights(google.protobuf.message.Message):
     UGC_PAY_FIELD_NUMBER: builtins.int
     IS_COOPERATION_FIELD_NUMBER: builtins.int
     UGC_PAY_PREVIEW_FIELD_NUMBER: builtins.int
+    ARC_PAY_FIELD_NUMBER: builtins.int
+    FREE_WATCH_FIELD_NUMBER: builtins.int
     bp: builtins.int
     """"""
     elec: builtins.int
@@ -2317,6 +2402,10 @@ class Rights(google.protobuf.message.Message):
     """"""
     ugc_pay_preview: builtins.int
     """"""
+    arc_pay: builtins.int
+    """"""
+    free_watch: builtins.int
+    """"""
     def __init__(
         self,
         *,
@@ -2331,11 +2420,14 @@ class Rights(google.protobuf.message.Message):
         ugc_pay: builtins.int = ...,
         is_cooperation: builtins.int = ...,
         ugc_pay_preview: builtins.int = ...,
+        arc_pay: builtins.int = ...,
+        free_watch: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["autoplay", b"autoplay", "bp", b"bp", "download", b"download", "elec", b"elec", "hd5", b"hd5", "is_cooperation", b"is_cooperation", "movie", b"movie", "no_reprint", b"no_reprint", "pay", b"pay", "ugc_pay", b"ugc_pay", "ugc_pay_preview", b"ugc_pay_preview"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["arc_pay", b"arc_pay", "autoplay", b"autoplay", "bp", b"bp", "download", b"download", "elec", b"elec", "free_watch", b"free_watch", "hd5", b"hd5", "is_cooperation", b"is_cooperation", "movie", b"movie", "no_reprint", b"no_reprint", "pay", b"pay", "ugc_pay", b"ugc_pay", "ugc_pay_preview", b"ugc_pay_preview"]) -> None: ...
 
 global___Rights = Rights
 
+@typing_extensions.final
 class SeasonEpisode(google.protobuf.message.Message):
     """"""
 
@@ -2351,6 +2443,7 @@ class SeasonEpisode(google.protobuf.message.Message):
     ARC_FIELD_NUMBER: builtins.int
     PAGE_FIELD_NUMBER: builtins.int
     BVID_FIELD_NUMBER: builtins.int
+    BADGE_STYLE_FIELD_NUMBER: builtins.int
     season_id: builtins.int
     """"""
     section_id: builtins.int
@@ -2373,6 +2466,9 @@ class SeasonEpisode(google.protobuf.message.Message):
         """"""
     bvid: builtins.str
     """"""
+    @property
+    def badge_style(self) -> global___ReasonStyle:
+        """"""
     def __init__(
         self,
         *,
@@ -2386,12 +2482,14 @@ class SeasonEpisode(google.protobuf.message.Message):
         arc: global___Arc | None = ...,
         page: global___Page | None = ...,
         bvid: builtins.str = ...,
+        badge_style: global___ReasonStyle | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["arc", b"arc", "page", b"page"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "arc", b"arc", "attribute", b"attribute", "bvid", b"bvid", "cid", b"cid", "id", b"id", "page", b"page", "season_id", b"season_id", "section_id", b"section_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["arc", b"arc", "badge_style", b"badge_style", "page", b"page"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "arc", b"arc", "attribute", b"attribute", "badge_style", b"badge_style", "bvid", b"bvid", "cid", b"cid", "id", b"id", "page", b"page", "season_id", b"season_id", "section_id", b"section_id", "title", b"title"]) -> None: ...
 
 global___SeasonEpisode = SeasonEpisode
 
+@typing_extensions.final
 class SeasonSection(google.protobuf.message.Message):
     """"""
 
@@ -2426,6 +2524,7 @@ class SeasonSection(google.protobuf.message.Message):
 
 global___SeasonSection = SeasonSection
 
+@typing_extensions.final
 class SeasonStat(google.protobuf.message.Message):
     """"""
 
@@ -2479,6 +2578,7 @@ class SeasonStat(google.protobuf.message.Message):
 
 global___SeasonStat = SeasonStat
 
+@typing_extensions.final
 class Space(google.protobuf.message.Message):
     """"""
 
@@ -2500,6 +2600,7 @@ class Space(google.protobuf.message.Message):
 
 global___Space = Space
 
+@typing_extensions.final
 class Staff(google.protobuf.message.Message):
     """"""
 
@@ -2553,6 +2654,7 @@ class Staff(google.protobuf.message.Message):
 
 global___Staff = Staff
 
+@typing_extensions.final
 class StaffInfo(google.protobuf.message.Message):
     """"""
 
@@ -2574,6 +2676,7 @@ class StaffInfo(google.protobuf.message.Message):
 
 global___StaffInfo = StaffInfo
 
+@typing_extensions.final
 class Stat(google.protobuf.message.Message):
     """"""
 
@@ -2639,6 +2742,7 @@ class Stat(google.protobuf.message.Message):
 
 global___Stat = Stat
 
+@typing_extensions.final
 class Subtitle(google.protobuf.message.Message):
     """"""
 
@@ -2661,6 +2765,7 @@ class Subtitle(google.protobuf.message.Message):
 
 global___Subtitle = Subtitle
 
+@typing_extensions.final
 class SubtitleItem(google.protobuf.message.Message):
     """"""
 
@@ -2704,6 +2809,7 @@ class SubtitleItem(google.protobuf.message.Message):
 
 global___SubtitleItem = SubtitleItem
 
+@typing_extensions.final
 class Tag(google.protobuf.message.Message):
     """"""
 
@@ -2783,6 +2889,7 @@ class Tag(google.protobuf.message.Message):
 
 global___Tag = Tag
 
+@typing_extensions.final
 class TagCount(google.protobuf.message.Message):
     """"""
 
@@ -2808,11 +2915,13 @@ class TagCount(google.protobuf.message.Message):
 
 global___TagCount = TagCount
 
+@typing_extensions.final
 class UGCPayAsset(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class PlatformPriceEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -2845,6 +2954,7 @@ class UGCPayAsset(google.protobuf.message.Message):
 
 global___UGCPayAsset = UGCPayAsset
 
+@typing_extensions.final
 class UGCSeason(google.protobuf.message.Message):
     """"""
 
@@ -2861,6 +2971,7 @@ class UGCSeason(google.protobuf.message.Message):
     STAT_FIELD_NUMBER: builtins.int
     EP_COUNT_FIELD_NUMBER: builtins.int
     SEASON_TYPE_FIELD_NUMBER: builtins.int
+    IS_PAY_SEASON_FIELD_NUMBER: builtins.int
     id: builtins.int
     """"""
     title: builtins.str
@@ -2885,6 +2996,8 @@ class UGCSeason(google.protobuf.message.Message):
     """"""
     season_type: builtins.int
     """"""
+    is_pay_season: builtins.bool
+    """"""
     def __init__(
         self,
         *,
@@ -2899,12 +3012,14 @@ class UGCSeason(google.protobuf.message.Message):
         stat: global___SeasonStat | None = ...,
         ep_count: builtins.int = ...,
         season_type: builtins.int = ...,
+        is_pay_season: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["stat", b"stat"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["attribute", b"attribute", "cover", b"cover", "ep_count", b"ep_count", "id", b"id", "intro", b"intro", "mid", b"mid", "season_type", b"season_type", "sections", b"sections", "sign_state", b"sign_state", "stat", b"stat", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["attribute", b"attribute", "cover", b"cover", "ep_count", b"ep_count", "id", b"id", "intro", b"intro", "is_pay_season", b"is_pay_season", "mid", b"mid", "season_type", b"season_type", "sections", b"sections", "sign_state", b"sign_state", "stat", b"stat", "title", b"title"]) -> None: ...
 
 global___UGCSeason = UGCSeason
 
+@typing_extensions.final
 class View(google.protobuf.message.Message):
     """"""
 
@@ -2962,6 +3077,7 @@ class View(google.protobuf.message.Message):
 
 global___View = View
 
+@typing_extensions.final
 class ViewDetailReply(google.protobuf.message.Message):
     """"""
 
@@ -3001,6 +3117,7 @@ class ViewDetailReply(google.protobuf.message.Message):
 
 global___ViewDetailReply = ViewDetailReply
 
+@typing_extensions.final
 class ViewDetailReq(google.protobuf.message.Message):
     """"""
 
@@ -3022,6 +3139,7 @@ class ViewDetailReq(google.protobuf.message.Message):
 
 global___ViewDetailReq = ViewDetailReq
 
+@typing_extensions.final
 class ViewLabel(google.protobuf.message.Message):
     """"""
 
@@ -3039,6 +3157,7 @@ class ViewLabel(google.protobuf.message.Message):
 
 global___ViewLabel = ViewLabel
 
+@typing_extensions.final
 class VipInfo(google.protobuf.message.Message):
     """"""
 
@@ -3068,6 +3187,7 @@ class VipInfo(google.protobuf.message.Message):
 
 global___VipInfo = VipInfo
 
+@typing_extensions.final
 class VipLabel(google.protobuf.message.Message):
     """"""
 

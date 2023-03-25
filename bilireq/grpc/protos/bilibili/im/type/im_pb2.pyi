@@ -22,7 +22,7 @@ class _CmdId:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _CmdIdEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CmdId.ValueType], builtins.type):  # noqa: F821
+class _CmdIdEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CmdId.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EN_CMD_ID_INVALID: _CmdId.ValueType  # 0
     """非法cmd"""
@@ -126,7 +126,7 @@ class _ENUM_BIZ_MSG_TYPE:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ENUM_BIZ_MSG_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ENUM_BIZ_MSG_TYPE.ValueType], builtins.type):  # noqa: F821
+class _ENUM_BIZ_MSG_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ENUM_BIZ_MSG_TYPE.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     BIZ_MSG_TYPE_NORMAL: _ENUM_BIZ_MSG_TYPE.ValueType  # 0
     """"""
@@ -146,7 +146,7 @@ class _MsgSource:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MsgSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MsgSource.ValueType], builtins.type):  # noqa: F821
+class _MsgSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MsgSource.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EN_MSG_SOURCE_UNKONW: _MsgSource.ValueType  # 0
     """"""
@@ -210,7 +210,7 @@ class _MsgType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _MsgTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MsgType.ValueType], builtins.type):  # noqa: F821
+class _MsgTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MsgType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EN_INVALID_MSG_TYPE: _MsgType.ValueType  # 0
     """基础消息类型
@@ -247,6 +247,8 @@ class _MsgTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTy
     EN_MSG_TYPE_COMMON_SHARE_CARD: _MsgType.ValueType  # 14
     """异形卡"""
     EN_MSG_TYPE_BIZ_MSG_TYPE: _MsgType.ValueType  # 50
+    """"""
+    EN_MSG_TYPE_MODIFY_MSG_TYPE: _MsgType.ValueType  # 51
     """"""
     EN_MSG_TYPE_GROUP_MEMBER_CHANGED: _MsgType.ValueType  # 101
     """功能类系统消息类型
@@ -366,6 +368,8 @@ EN_MSG_TYPE_COMMON_SHARE_CARD: MsgType.ValueType  # 14
 """异形卡"""
 EN_MSG_TYPE_BIZ_MSG_TYPE: MsgType.ValueType  # 50
 """"""
+EN_MSG_TYPE_MODIFY_MSG_TYPE: MsgType.ValueType  # 51
+""""""
 EN_MSG_TYPE_GROUP_MEMBER_CHANGED: MsgType.ValueType  # 101
 """功能类系统消息类型
 群成员变更
@@ -450,7 +454,7 @@ class _RecverType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _RecverTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RecverType.ValueType], builtins.type):  # noqa: F821
+class _RecverTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RecverType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EN_NO_MEANING: _RecverType.ValueType  # 0
     """"""
@@ -478,7 +482,7 @@ class _RelationLogType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _RelationLogTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RelationLogType.ValueType], builtins.type):  # noqa: F821
+class _RelationLogTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RelationLogType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     EN_INVALID_LOG_TYPE: _RelationLogType.ValueType  # 0
     """"""
@@ -510,7 +514,7 @@ class _SESSION_TYPE:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _SESSION_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SESSION_TYPE.ValueType], builtins.type):  # noqa: F821
+class _SESSION_TYPEEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SESSION_TYPE.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     INVALID_SESSION_TYPE: _SESSION_TYPE.ValueType  # 0
     """"""
@@ -538,6 +542,7 @@ ALL_SESSION: SESSION_TYPE.ValueType  # 4
 """"""
 global___SESSION_TYPE = SESSION_TYPE
 
+@typing_extensions.final
 class AccountInfo(google.protobuf.message.Message):
     """"""
 
@@ -559,6 +564,7 @@ class AccountInfo(google.protobuf.message.Message):
 
 global___AccountInfo = AccountInfo
 
+@typing_extensions.final
 class FriendRelation(google.protobuf.message.Message):
     """"""
 
@@ -590,6 +596,7 @@ class FriendRelation(google.protobuf.message.Message):
 
 global___FriendRelation = FriendRelation
 
+@typing_extensions.final
 class GroupRelation(google.protobuf.message.Message):
     """"""
 
@@ -647,6 +654,7 @@ class GroupRelation(google.protobuf.message.Message):
 
 global___GroupRelation = GroupRelation
 
+@typing_extensions.final
 class HighText(google.protobuf.message.Message):
     """关键词高亮文本"""
 
@@ -672,6 +680,7 @@ class HighText(google.protobuf.message.Message):
 
 global___HighText = HighText
 
+@typing_extensions.final
 class ImgInfo(google.protobuf.message.Message):
     """"""
 
@@ -701,6 +710,7 @@ class ImgInfo(google.protobuf.message.Message):
 
 global___ImgInfo = ImgInfo
 
+@typing_extensions.final
 class KeyHitInfos(google.protobuf.message.Message):
     """关键词命中信息"""
 
@@ -729,6 +739,77 @@ class KeyHitInfos(google.protobuf.message.Message):
 
 global___KeyHitInfos = KeyHitInfos
 
+@typing_extensions.final
+class Medal(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    UID_FIELD_NUMBER: builtins.int
+    MEDAL_ID_FIELD_NUMBER: builtins.int
+    LEVEL_FIELD_NUMBER: builtins.int
+    MEDAL_NAME_FIELD_NUMBER: builtins.int
+    SCORE_FIELD_NUMBER: builtins.int
+    INTIMACY_FIELD_NUMBER: builtins.int
+    MASTER_STATUS_FIELD_NUMBER: builtins.int
+    IS_RECEIVE_FIELD_NUMBER: builtins.int
+    MEDAL_COLOR_START_FIELD_NUMBER: builtins.int
+    MEDAL_COLOR_END_FIELD_NUMBER: builtins.int
+    MEDAL_COLOR_BORDER_FIELD_NUMBER: builtins.int
+    MEDAL_COLOR_NAME_FIELD_NUMBER: builtins.int
+    MEDAL_COLOR_LEVEL_FIELD_NUMBER: builtins.int
+    GUARD_LEVEL_FIELD_NUMBER: builtins.int
+    uid: builtins.int
+    """"""
+    medal_id: builtins.int
+    """"""
+    level: builtins.int
+    """"""
+    medal_name: builtins.str
+    """"""
+    score: builtins.int
+    """"""
+    intimacy: builtins.int
+    """"""
+    master_status: builtins.int
+    """"""
+    is_receive: builtins.int
+    """"""
+    medal_color_start: builtins.int
+    """"""
+    medal_color_end: builtins.int
+    """"""
+    medal_color_border: builtins.int
+    """"""
+    medal_color_name: builtins.int
+    """"""
+    medal_color_level: builtins.int
+    """"""
+    guard_level: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        uid: builtins.int = ...,
+        medal_id: builtins.int = ...,
+        level: builtins.int = ...,
+        medal_name: builtins.str = ...,
+        score: builtins.int = ...,
+        intimacy: builtins.int = ...,
+        master_status: builtins.int = ...,
+        is_receive: builtins.int = ...,
+        medal_color_start: builtins.int = ...,
+        medal_color_end: builtins.int = ...,
+        medal_color_border: builtins.int = ...,
+        medal_color_name: builtins.int = ...,
+        medal_color_level: builtins.int = ...,
+        guard_level: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["guard_level", b"guard_level", "intimacy", b"intimacy", "is_receive", b"is_receive", "level", b"level", "master_status", b"master_status", "medal_color_border", b"medal_color_border", "medal_color_end", b"medal_color_end", "medal_color_level", b"medal_color_level", "medal_color_name", b"medal_color_name", "medal_color_start", b"medal_color_start", "medal_id", b"medal_id", "medal_name", b"medal_name", "score", b"score", "uid", b"uid"]) -> None: ...
+
+global___Medal = Medal
+
+@typing_extensions.final
 class Msg(google.protobuf.message.Message):
     """"""
 
@@ -814,6 +895,7 @@ class Msg(google.protobuf.message.Message):
 
 global___Msg = Msg
 
+@typing_extensions.final
 class RelationLog(google.protobuf.message.Message):
     """"""
 
@@ -846,6 +928,7 @@ class RelationLog(google.protobuf.message.Message):
 
 global___RelationLog = RelationLog
 
+@typing_extensions.final
 class SessionInfo(google.protobuf.message.Message):
     """会话详情"""
 
@@ -876,6 +959,8 @@ class SessionInfo(google.protobuf.message.Message):
     SYSTEM_MSG_TYPE_FIELD_NUMBER: builtins.int
     ACCOUNT_INFO_FIELD_NUMBER: builtins.int
     LIVE_STATUS_FIELD_NUMBER: builtins.int
+    BIZ_MSG_UNREAD_COUNT_FIELD_NUMBER: builtins.int
+    USER_LABEL_FIELD_NUMBER: builtins.int
     talker_id: builtins.int
     """"""
     session_type: builtins.int
@@ -928,6 +1013,11 @@ class SessionInfo(google.protobuf.message.Message):
         """"""
     live_status: builtins.int
     """"""
+    biz_msg_unread_count: builtins.int
+    """"""
+    @property
+    def user_label(self) -> global___UserLabel:
+        """"""
     def __init__(
         self,
         *,
@@ -956,8 +1046,38 @@ class SessionInfo(google.protobuf.message.Message):
         system_msg_type: builtins.int = ...,
         account_info: global___AccountInfo | None = ...,
         live_status: builtins.int = ...,
+        biz_msg_unread_count: builtins.int = ...,
+        user_label: global___UserLabel | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["account_info", b"account_info", "last_msg", b"last_msg"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["account_info", b"account_info", "ack_seqno", b"ack_seqno", "ack_ts", b"ack_ts", "at_seqno", b"at_seqno", "can_fold", b"can_fold", "group_cover", b"group_cover", "group_name", b"group_name", "group_type", b"group_type", "is_dnd", b"is_dnd", "is_follow", b"is_follow", "is_guardian", b"is_guardian", "is_intercept", b"is_intercept", "is_trust", b"is_trust", "last_msg", b"last_msg", "live_status", b"live_status", "max_seqno", b"max_seqno", "new_push_msg", b"new_push_msg", "session_ts", b"session_ts", "session_type", b"session_type", "setting", b"setting", "status", b"status", "system_msg_type", b"system_msg_type", "talker_id", b"talker_id", "top_ts", b"top_ts", "unread_count", b"unread_count"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["account_info", b"account_info", "last_msg", b"last_msg", "user_label", b"user_label"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["account_info", b"account_info", "ack_seqno", b"ack_seqno", "ack_ts", b"ack_ts", "at_seqno", b"at_seqno", "biz_msg_unread_count", b"biz_msg_unread_count", "can_fold", b"can_fold", "group_cover", b"group_cover", "group_name", b"group_name", "group_type", b"group_type", "is_dnd", b"is_dnd", "is_follow", b"is_follow", "is_guardian", b"is_guardian", "is_intercept", b"is_intercept", "is_trust", b"is_trust", "last_msg", b"last_msg", "live_status", b"live_status", "max_seqno", b"max_seqno", "new_push_msg", b"new_push_msg", "session_ts", b"session_ts", "session_type", b"session_type", "setting", b"setting", "status", b"status", "system_msg_type", b"system_msg_type", "talker_id", b"talker_id", "top_ts", b"top_ts", "unread_count", b"unread_count", "user_label", b"user_label"]) -> None: ...
 
 global___SessionInfo = SessionInfo
+
+@typing_extensions.final
+class UserLabel(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LABEL_TYPE_FIELD_NUMBER: builtins.int
+    MEDAL_FIELD_NUMBER: builtins.int
+    GUARDIAN_RELATION_FIELD_NUMBER: builtins.int
+    label_type: builtins.int
+    """"""
+    @property
+    def medal(self) -> global___Medal:
+        """"""
+    guardian_relation: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        label_type: builtins.int = ...,
+        medal: global___Medal | None = ...,
+        guardian_relation: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["medal", b"medal"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["guardian_relation", b"guardian_relation", "label_type", b"label_type", "medal", b"medal"]) -> None: ...
+
+global___UserLabel = UserLabel

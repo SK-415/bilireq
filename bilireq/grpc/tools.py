@@ -22,14 +22,14 @@ for file_path in Path(".").rglob("*.proto"):
         )
 
     for file_path in [
-        file_path.with_name(file_path.stem + "_pb2_grpc.py"),
-        file_path.with_name(file_path.stem + "_pb2.py"),
-        file_path.with_name(file_path.stem + "_pb2.pyi"),
+        file_path.with_name(f"{file_path.stem}_pb2_grpc.py"),
+        file_path.with_name(f"{file_path.stem}_pb2.py"),
+        file_path.with_name(f"{file_path.stem}_pb2.pyi"),
     ]:
         if file_path.is_file():
-            with open(file_path, "r") as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 lines = f.readlines()
-            with open(file_path, "w") as f:
+            with open(file_path, "w", encoding="utf-8") as f:
                 for line in lines:
                     if line.startswith("from bilibili."):
                         line = line.replace(
@@ -40,11 +40,9 @@ for file_path in Path(".").rglob("*.proto"):
                             "import bilibili.", "import bilireq.grpc.protos.bilibili."
                         )
                     elif line.startswith("from pgc."):
-                        line = line.replace(
-                            "from pgc.", "from bilireq.grpc.protos.pgc."
-                        )
+                        line = line.replace("from pgc.", "from bilireq.grpc.protos.pgc.")
                     elif line.startswith("import pgc."):
-                        line = line.replace(
-                            "import pgc.", "import bilireq.grpc.protos.pgc."
-                        )
+                        line = line.replace("import pgc.", "import bilireq.grpc.protos.pgc.")
+                    elif "-> bilibili" in line:
+                        line = line.replace("-> bilibili", "-> bilireq.grpc.protos.bilibili")
                     f.write(line)

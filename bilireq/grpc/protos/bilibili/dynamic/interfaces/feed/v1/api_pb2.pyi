@@ -23,7 +23,7 @@ class _DynamicButtonClickBizType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DynamicButtonClickBizTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynamicButtonClickBizType.ValueType], builtins.type):  # noqa: F821
+class _DynamicButtonClickBizTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DynamicButtonClickBizType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DYNAMIC_BUTTON_CLICK_BIZ_TYPE_NONE: _DynamicButtonClickBizType.ValueType  # 0
     """"""
@@ -47,7 +47,7 @@ class _ReserveButtonMode:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ReserveButtonModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveButtonMode.ValueType], builtins.type):  # noqa: F821
+class _ReserveButtonModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveButtonMode.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     RESERVE_BUTTON_MODE_NONE: _ReserveButtonMode.ValueType  # 0
     """"""
@@ -71,7 +71,7 @@ class _ReserveButtonStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _ReserveButtonStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveButtonStatus.ValueType], builtins.type):  # noqa: F821
+class _ReserveButtonStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ReserveButtonStatus.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     RESERVE_BUTTON_STATUS_NONE: _ReserveButtonStatus.ValueType  # 0
     """"""
@@ -91,6 +91,7 @@ RESERVE_BUTTON_STATUS_CHECK: ReserveButtonStatus.ValueType  # 2
 """"""
 global___ReserveButtonStatus = ReserveButtonStatus
 
+@typing_extensions.final
 class CreateDynReq(google.protobuf.message.Message):
     """创建动态-请求"""
 
@@ -111,10 +112,10 @@ class CreateDynReq(google.protobuf.message.Message):
     TOPIC_FIELD_NUMBER: builtins.int
     UPLOAD_ID_FIELD_NUMBER: builtins.int
     @property
-    def meta(self) -> bilibili.dynamic.common.dynamic_pb2.UserCreateMeta:
+    def meta(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.UserCreateMeta:
         """用户创建接口meta信息"""
     @property
-    def content(self) -> bilibili.dynamic.common.dynamic_pb2.CreateContent:
+    def content(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateContent:
         """发布的内容"""
     scene: bilibili.dynamic.common.dynamic_pb2.CreateScene.ValueType
     """发布类型"""
@@ -122,30 +123,30 @@ class CreateDynReq(google.protobuf.message.Message):
     def pics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[bilibili.dynamic.common.dynamic_pb2.CreatePic]:
         """图片内容"""
     @property
-    def repost_src(self) -> bilibili.dynamic.common.dynamic_pb2.DynIdentity:
+    def repost_src(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.DynIdentity:
         """转发源"""
     @property
-    def video(self) -> bilibili.dynamic.common.dynamic_pb2.CreateDynVideo:
+    def video(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateDynVideo:
         """动态视频"""
     sketch_type: builtins.int
     """通用模板类型：2048方图 2049竖图 其他值无效"""
     @property
-    def sketch(self) -> bilibili.dynamic.common.dynamic_pb2.Sketch:
+    def sketch(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.Sketch:
         """通用模板的元内容（网页内容）"""
     @property
-    def program(self) -> bilibili.dynamic.common.dynamic_pb2.Program:
+    def program(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.Program:
         """小程序的内容"""
     @property
-    def dyn_tag(self) -> bilibili.dynamic.common.dynamic_pb2.CreateTag:
+    def dyn_tag(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateTag:
         """动态附加小卡"""
     @property
-    def attach_card(self) -> bilibili.dynamic.common.dynamic_pb2.CreateAttachCard:
+    def attach_card(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateAttachCard:
         """动态附加大卡"""
     @property
-    def option(self) -> bilibili.dynamic.common.dynamic_pb2.CreateOption:
+    def option(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateOption:
         """特殊的创建选项"""
     @property
-    def topic(self) -> bilibili.dynamic.common.dynamic_pb2.CreateTopic:
+    def topic(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateTopic:
         """"""
     upload_id: builtins.str
     """"""
@@ -172,6 +173,7 @@ class CreateDynReq(google.protobuf.message.Message):
 
 global___CreateDynReq = CreateDynReq
 
+@typing_extensions.final
 class CreateInitCheckReq(google.protobuf.message.Message):
     """"""
 
@@ -183,10 +185,10 @@ class CreateInitCheckReq(google.protobuf.message.Message):
     scene: builtins.int
     """"""
     @property
-    def meta(self) -> bilibili.dynamic.common.dynamic_pb2.MetaDataCtrl:
+    def meta(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.MetaDataCtrl:
         """"""
     @property
-    def repost(self) -> bilibili.dynamic.common.dynamic_pb2.RepostInitCheck:
+    def repost(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.RepostInitCheck:
         """"""
     def __init__(
         self,
@@ -200,6 +202,7 @@ class CreateInitCheckReq(google.protobuf.message.Message):
 
 global___CreateInitCheckReq = CreateInitCheckReq
 
+@typing_extensions.final
 class CreatePageInfosReq(google.protobuf.message.Message):
     """"""
 
@@ -217,6 +220,7 @@ class CreatePageInfosReq(google.protobuf.message.Message):
 
 global___CreatePageInfosReq = CreatePageInfosReq
 
+@typing_extensions.final
 class CreatePageInfosRsp(google.protobuf.message.Message):
     """"""
 
@@ -236,6 +240,7 @@ class CreatePageInfosRsp(google.protobuf.message.Message):
 
 global___CreatePageInfosRsp = CreatePageInfosRsp
 
+@typing_extensions.final
 class CreatePageTopicInfo(google.protobuf.message.Message):
     """"""
 
@@ -257,6 +262,7 @@ class CreatePageTopicInfo(google.protobuf.message.Message):
 
 global___CreatePageTopicInfo = CreatePageTopicInfo
 
+@typing_extensions.final
 class CreatePermissionButtonClickReq(google.protobuf.message.Message):
     """"""
 
@@ -274,6 +280,7 @@ class CreatePermissionButtonClickReq(google.protobuf.message.Message):
 
 global___CreatePermissionButtonClickReq = CreatePermissionButtonClickReq
 
+@typing_extensions.final
 class CreatePermissionButtonClickRsp(google.protobuf.message.Message):
     """"""
 
@@ -285,6 +292,7 @@ class CreatePermissionButtonClickRsp(google.protobuf.message.Message):
 
 global___CreatePermissionButtonClickRsp = CreatePermissionButtonClickRsp
 
+@typing_extensions.final
 class CreatePlusButtonClickReq(google.protobuf.message.Message):
     """"""
 
@@ -296,6 +304,7 @@ class CreatePlusButtonClickReq(google.protobuf.message.Message):
 
 global___CreatePlusButtonClickReq = CreatePlusButtonClickReq
 
+@typing_extensions.final
 class CreatePlusButtonClickRsp(google.protobuf.message.Message):
     """"""
 
@@ -307,6 +316,7 @@ class CreatePlusButtonClickRsp(google.protobuf.message.Message):
 
 global___CreatePlusButtonClickRsp = CreatePlusButtonClickRsp
 
+@typing_extensions.final
 class DynamicButtonClickReq(google.protobuf.message.Message):
     """"""
 
@@ -318,6 +328,7 @@ class DynamicButtonClickReq(google.protobuf.message.Message):
 
 global___DynamicButtonClickReq = DynamicButtonClickReq
 
+@typing_extensions.final
 class DynamicButtonClickRsp(google.protobuf.message.Message):
     """"""
 
@@ -329,6 +340,7 @@ class DynamicButtonClickRsp(google.protobuf.message.Message):
 
 global___DynamicButtonClickRsp = DynamicButtonClickRsp
 
+@typing_extensions.final
 class HotSearchReq(google.protobuf.message.Message):
     """"""
 
@@ -340,11 +352,13 @@ class HotSearchReq(google.protobuf.message.Message):
 
 global___HotSearchReq = HotSearchReq
 
+@typing_extensions.final
 class HotSearchRsp(google.protobuf.message.Message):
     """"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
     class Item(google.protobuf.message.Message):
         """"""
 
@@ -377,6 +391,7 @@ class HotSearchRsp(google.protobuf.message.Message):
 
 global___HotSearchRsp = HotSearchRsp
 
+@typing_extensions.final
 class ReserveButtonClickReq(google.protobuf.message.Message):
     """"""
 
@@ -418,6 +433,7 @@ class ReserveButtonClickReq(google.protobuf.message.Message):
 
 global___ReserveButtonClickReq = ReserveButtonClickReq
 
+@typing_extensions.final
 class ReserveButtonClickResp(google.protobuf.message.Message):
     """"""
 
@@ -459,6 +475,7 @@ class ReserveButtonClickResp(google.protobuf.message.Message):
 
 global___ReserveButtonClickResp = ReserveButtonClickResp
 
+@typing_extensions.final
 class SubmitCheckReq(google.protobuf.message.Message):
     """"""
 
@@ -467,7 +484,7 @@ class SubmitCheckReq(google.protobuf.message.Message):
     CONTENT_FIELD_NUMBER: builtins.int
     PICS_FIELD_NUMBER: builtins.int
     @property
-    def content(self) -> bilibili.dynamic.common.dynamic_pb2.CreateContent:
+    def content(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateContent:
         """"""
     @property
     def pics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[bilibili.dynamic.common.dynamic_pb2.CreatePic]:
@@ -483,6 +500,7 @@ class SubmitCheckReq(google.protobuf.message.Message):
 
 global___SubmitCheckReq = SubmitCheckReq
 
+@typing_extensions.final
 class SubmitCheckRsp(google.protobuf.message.Message):
     """"""
 
@@ -494,6 +512,7 @@ class SubmitCheckRsp(google.protobuf.message.Message):
 
 global___SubmitCheckRsp = SubmitCheckRsp
 
+@typing_extensions.final
 class SuggestReq(google.protobuf.message.Message):
     """"""
 
@@ -515,6 +534,7 @@ class SuggestReq(google.protobuf.message.Message):
 
 global___SuggestReq = SuggestReq
 
+@typing_extensions.final
 class SuggestRsp(google.protobuf.message.Message):
     """"""
 

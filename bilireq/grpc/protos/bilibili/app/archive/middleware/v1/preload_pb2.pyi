@@ -14,6 +14,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PlayerArgs(google.protobuf.message.Message):
     """视频秒开参数"""
 
@@ -23,6 +24,7 @@ class PlayerArgs(google.protobuf.message.Message):
     FNVER_FIELD_NUMBER: builtins.int
     FNVAL_FIELD_NUMBER: builtins.int
     FORCE_HOST_FIELD_NUMBER: builtins.int
+    VOICE_BALANCE_FIELD_NUMBER: builtins.int
     qn: builtins.int
     """清晰度"""
     fnver: builtins.int
@@ -33,6 +35,8 @@ class PlayerArgs(google.protobuf.message.Message):
     """返回url是否强制使用域名
     0:不强制使用域名 1:http域名 2:https域名
     """
+    voice_balance: builtins.int
+    """音量均衡"""
     def __init__(
         self,
         *,
@@ -40,7 +44,8 @@ class PlayerArgs(google.protobuf.message.Message):
         fnver: builtins.int = ...,
         fnval: builtins.int = ...,
         force_host: builtins.int = ...,
+        voice_balance: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "qn", b"qn"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "qn", b"qn", "voice_balance", b"voice_balance"]) -> None: ...
 
 global___PlayerArgs = PlayerArgs

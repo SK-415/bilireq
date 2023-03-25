@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class DanmukuEvent(google.protobuf.message.Message):
     """实时弹幕事件"""
 
@@ -34,6 +35,7 @@ class DanmukuEvent(google.protobuf.message.Message):
 
 global___DanmukuEvent = DanmukuEvent
 
+@typing_extensions.final
 class DanmakuElem(google.protobuf.message.Message):
     """弹幕条目"""
 
@@ -91,6 +93,7 @@ class DanmakuElem(google.protobuf.message.Message):
 
 global___DanmakuElem = DanmakuElem
 
+@typing_extensions.final
 class CommandDm(google.protobuf.message.Message):
     """互动弹幕"""
 

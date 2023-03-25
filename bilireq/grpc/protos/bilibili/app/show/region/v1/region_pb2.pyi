@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class RegionConfig(google.protobuf.message.Message):
     """"""
 
@@ -37,6 +38,7 @@ class RegionConfig(google.protobuf.message.Message):
 
 global___RegionConfig = RegionConfig
 
+@typing_extensions.final
 class RegionInfo(google.protobuf.message.Message):
     """"""
 
@@ -96,6 +98,7 @@ class RegionInfo(google.protobuf.message.Message):
 
 global___RegionInfo = RegionInfo
 
+@typing_extensions.final
 class RegionReply(google.protobuf.message.Message):
     """"""
 
@@ -114,6 +117,7 @@ class RegionReply(google.protobuf.message.Message):
 
 global___RegionReply = RegionReply
 
+@typing_extensions.final
 class RegionReq(google.protobuf.message.Message):
     """"""
 

@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class AddParams(google.protobuf.message.Message):
     """"""
 
@@ -36,6 +37,7 @@ class AddParams(google.protobuf.message.Message):
 
 global___AddParams = AddParams
 
+@typing_extensions.final
 class AddResult(google.protobuf.message.Message):
     """"""
 
@@ -53,6 +55,7 @@ class AddResult(google.protobuf.message.Message):
 
 global___AddResult = AddResult
 
+@typing_extensions.final
 class TestResp(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

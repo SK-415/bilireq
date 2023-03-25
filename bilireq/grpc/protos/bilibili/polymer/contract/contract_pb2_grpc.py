@@ -7,7 +7,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class ContractStub(object):
-    """
+    """契约
     """
 
     def __init__(self, channel):
@@ -21,13 +21,37 @@ class ContractStub(object):
                 request_serializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReq.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.AddContractV2 = channel.unary_unary(
+                '/bilibili.polymer.contract.Contract/AddContractV2',
+                request_serializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReq.SerializeToString,
+                response_deserializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReply.FromString,
+                )
+        self.ContractConfig = channel.unary_unary(
+                '/bilibili.polymer.contract.Contract/ContractConfig',
+                request_serializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.ContractConfigReq.SerializeToString,
+                response_deserializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.ContractConfigReply.FromString,
+                )
 
 
 class ContractServicer(object):
-    """
+    """契约
     """
 
     def AddContract(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddContractV2(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ContractConfig(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -42,6 +66,16 @@ def add_ContractServicer_to_server(servicer, server):
                     request_deserializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReq.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
+            'AddContractV2': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddContractV2,
+                    request_deserializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReq.FromString,
+                    response_serializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReply.SerializeToString,
+            ),
+            'ContractConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.ContractConfig,
+                    request_deserializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.ContractConfigReq.FromString,
+                    response_serializer=bilibili_dot_polymer_dot_contract_dot_contract__pb2.ContractConfigReply.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'bilibili.polymer.contract.Contract', rpc_method_handlers)
@@ -50,7 +84,7 @@ def add_ContractServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Contract(object):
-    """
+    """契约
     """
 
     @staticmethod
@@ -67,5 +101,39 @@ class Contract(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.polymer.contract.Contract/AddContract',
             bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReq.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddContractV2(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.polymer.contract.Contract/AddContractV2',
+            bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReq.SerializeToString,
+            bilibili_dot_polymer_dot_contract_dot_contract__pb2.AddContractReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ContractConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.polymer.contract.Contract/ContractConfig',
+            bilibili_dot_polymer_dot_contract_dot_contract__pb2.ContractConfigReq.SerializeToString,
+            bilibili_dot_polymer_dot_contract_dot_contract__pb2.ContractConfigReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

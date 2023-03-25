@@ -18,11 +18,79 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _AvatarType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _AvatarTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AvatarType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    AvatarTypeNone: _AvatarType.ValueType  # 0
+    """"""
+    AvatarTypeNFT: _AvatarType.ValueType  # 1
+    """"""
+
+class AvatarType(_AvatarType, metaclass=_AvatarTypeEnumTypeWrapper):
+    """"""
+
+AvatarTypeNone: AvatarType.ValueType  # 0
+""""""
+AvatarTypeNFT: AvatarType.ValueType  # 1
+""""""
+global___AvatarType = AvatarType
+
+class _BubbleType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _BubbleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BubbleType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    BubbleTypeNone: _BubbleType.ValueType  # 0
+    """"""
+    BubbleTypeClickButton: _BubbleType.ValueType  # 1
+    """"""
+    BubbleTypeDmSettingPanel: _BubbleType.ValueType  # 2
+    """"""
+
+class BubbleType(_BubbleType, metaclass=_BubbleTypeEnumTypeWrapper):
+    """"""
+
+BubbleTypeNone: BubbleType.ValueType  # 0
+""""""
+BubbleTypeClickButton: BubbleType.ValueType  # 1
+""""""
+BubbleTypeDmSettingPanel: BubbleType.ValueType  # 2
+""""""
+global___BubbleType = BubbleType
+
+class _CheckboxType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _CheckboxTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CheckboxType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    CheckboxTypeNone: _CheckboxType.ValueType  # 0
+    """"""
+    CheckboxTypeEncourage: _CheckboxType.ValueType  # 1
+    """"""
+    CheckboxTypeColorDM: _CheckboxType.ValueType  # 2
+    """"""
+
+class CheckboxType(_CheckboxType, metaclass=_CheckboxTypeEnumTypeWrapper):
+    """"""
+
+CheckboxTypeNone: CheckboxType.ValueType  # 0
+""""""
+CheckboxTypeEncourage: CheckboxType.ValueType  # 1
+""""""
+CheckboxTypeColorDM: CheckboxType.ValueType  # 2
+""""""
+global___CheckboxType = CheckboxType
+
 class _DMAttrBit:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _DMAttrBitEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DMAttrBit.ValueType], builtins.type):  # noqa: F821
+class _DMAttrBitEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DMAttrBit.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DMAttrBitProtect: _DMAttrBit.ValueType  # 0
     """保护弹幕"""
@@ -42,11 +110,151 @@ DMAttrHighLike: DMAttrBit.ValueType  # 2
 """高赞弹幕"""
 global___DMAttrBit = DMAttrBit
 
+class _ExposureType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ExposureTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ExposureType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    ExposureTypeNone: _ExposureType.ValueType  # 0
+    """"""
+    ExposureTypeDMSend: _ExposureType.ValueType  # 1
+    """"""
+
+class ExposureType(_ExposureType, metaclass=_ExposureTypeEnumTypeWrapper):
+    """"""
+
+ExposureTypeNone: ExposureType.ValueType  # 0
+""""""
+ExposureTypeDMSend: ExposureType.ValueType  # 1
+""""""
+global___ExposureType = ExposureType
+
+class _PostPanelBizType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _PostPanelBizTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PostPanelBizType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    PostPanelBizTypeNone: _PostPanelBizType.ValueType  # 0
+    """"""
+    PostPanelBizTypeEncourage: _PostPanelBizType.ValueType  # 1
+    """"""
+    PostPanelBizTypeColorDM: _PostPanelBizType.ValueType  # 2
+    """"""
+    PostPanelBizTypeNFTDM: _PostPanelBizType.ValueType  # 3
+    """"""
+    PostPanelBizTypeFragClose: _PostPanelBizType.ValueType  # 4
+    """"""
+    PostPanelBizTypeRecommend: _PostPanelBizType.ValueType  # 5
+    """"""
+
+class PostPanelBizType(_PostPanelBizType, metaclass=_PostPanelBizTypeEnumTypeWrapper):
+    """"""
+
+PostPanelBizTypeNone: PostPanelBizType.ValueType  # 0
+""""""
+PostPanelBizTypeEncourage: PostPanelBizType.ValueType  # 1
+""""""
+PostPanelBizTypeColorDM: PostPanelBizType.ValueType  # 2
+""""""
+PostPanelBizTypeNFTDM: PostPanelBizType.ValueType  # 3
+""""""
+PostPanelBizTypeFragClose: PostPanelBizType.ValueType  # 4
+""""""
+PostPanelBizTypeRecommend: PostPanelBizType.ValueType  # 5
+""""""
+global___PostPanelBizType = PostPanelBizType
+
+class _PostStatus:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _PostStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PostStatus.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    PostStatusNormal: _PostStatus.ValueType  # 0
+    """"""
+    PostStatusClosed: _PostStatus.ValueType  # 1
+    """"""
+
+class PostStatus(_PostStatus, metaclass=_PostStatusEnumTypeWrapper):
+    """"""
+
+PostStatusNormal: PostStatus.ValueType  # 0
+""""""
+PostStatusClosed: PostStatus.ValueType  # 1
+""""""
+global___PostStatus = PostStatus
+
+class _RenderType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _RenderTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RenderType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    RenderTypeNone: _RenderType.ValueType  # 0
+    """"""
+    RenderTypeSingle: _RenderType.ValueType  # 1
+    """"""
+    RenderTypeRotation: _RenderType.ValueType  # 2
+    """"""
+
+class RenderType(_RenderType, metaclass=_RenderTypeEnumTypeWrapper):
+    """"""
+
+RenderTypeNone: RenderType.ValueType  # 0
+""""""
+RenderTypeSingle: RenderType.ValueType  # 1
+""""""
+RenderTypeRotation: RenderType.ValueType  # 2
+""""""
+global___RenderType = RenderType
+
+class _SubtitleAiStatus:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _SubtitleAiStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SubtitleAiStatus.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    Exposure: _SubtitleAiStatus.ValueType  # 1
+    """"""
+    Assist: _SubtitleAiStatus.ValueType  # 2
+    """"""
+
+class SubtitleAiStatus(_SubtitleAiStatus, metaclass=_SubtitleAiStatusEnumTypeWrapper):
+    """"""
+
+Exposure: SubtitleAiStatus.ValueType  # 1
+""""""
+Assist: SubtitleAiStatus.ValueType  # 2
+""""""
+global___SubtitleAiStatus = SubtitleAiStatus
+
+class _SubtitleAiType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _SubtitleAiTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SubtitleAiType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    Normal: _SubtitleAiType.ValueType  # 0
+    """"""
+    Translate: _SubtitleAiType.ValueType  # 1
+    """"""
+
+class SubtitleAiType(_SubtitleAiType, metaclass=_SubtitleAiTypeEnumTypeWrapper):
+    """"""
+
+Normal: SubtitleAiType.ValueType  # 0
+""""""
+Translate: SubtitleAiType.ValueType  # 1
+""""""
+global___SubtitleAiType = SubtitleAiType
+
 class _SubtitleType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _SubtitleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SubtitleType.ValueType], builtins.type):  # noqa: F821
+class _SubtitleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SubtitleType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     CC: _SubtitleType.ValueType  # 0
     """CC字幕"""
@@ -61,6 +269,131 @@ AI: SubtitleType.ValueType  # 1
 """AI生成字幕"""
 global___SubtitleType = SubtitleType
 
+class _ToastFunctionType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ToastFunctionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ToastFunctionType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    ToastFunctionTypeNone: _ToastFunctionType.ValueType  # 0
+    """"""
+    ToastFunctionTypePostPanel: _ToastFunctionType.ValueType  # 1
+    """"""
+
+class ToastFunctionType(_ToastFunctionType, metaclass=_ToastFunctionTypeEnumTypeWrapper):
+    """"""
+
+ToastFunctionTypeNone: ToastFunctionType.ValueType  # 0
+""""""
+ToastFunctionTypePostPanel: ToastFunctionType.ValueType  # 1
+""""""
+global___ToastFunctionType = ToastFunctionType
+
+@typing_extensions.final
+class Avatar(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    AVATAR_TYPE_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """"""
+    url: builtins.str
+    """"""
+    avatar_type: global___AvatarType.ValueType
+    """"""
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        url: builtins.str = ...,
+        avatar_type: global___AvatarType.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar_type", b"avatar_type", "id", b"id", "url", b"url"]) -> None: ...
+
+global___Avatar = Avatar
+
+@typing_extensions.final
+class Bubble(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    url: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["text", b"text", "url", b"url"]) -> None: ...
+
+global___Bubble = Bubble
+
+@typing_extensions.final
+class BubbleV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    BUBBLE_TYPE_FIELD_NUMBER: builtins.int
+    EXPOSURE_ONCE_FIELD_NUMBER: builtins.int
+    EXPOSURE_TYPE_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    url: builtins.str
+    """"""
+    bubble_type: global___BubbleType.ValueType
+    """"""
+    exposure_once: builtins.bool
+    """"""
+    exposure_type: global___ExposureType.ValueType
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        url: builtins.str = ...,
+        bubble_type: global___BubbleType.ValueType = ...,
+        exposure_once: builtins.bool = ...,
+        exposure_type: global___ExposureType.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bubble_type", b"bubble_type", "exposure_once", b"exposure_once", "exposure_type", b"exposure_type", "text", b"text", "url", b"url"]) -> None: ...
+
+global___BubbleV2 = BubbleV2
+
+@typing_extensions.final
+class Button(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    ACTION_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    action: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        action: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "text", b"text"]) -> None: ...
+
+global___Button = Button
+
+@typing_extensions.final
 class BuzzwordConfig(google.protobuf.message.Message):
     """"""
 
@@ -79,6 +412,7 @@ class BuzzwordConfig(google.protobuf.message.Message):
 
 global___BuzzwordConfig = BuzzwordConfig
 
+@typing_extensions.final
 class BuzzwordShowConfig(google.protobuf.message.Message):
     """"""
 
@@ -116,6 +450,161 @@ class BuzzwordShowConfig(google.protobuf.message.Message):
 
 global___BuzzwordShowConfig = BuzzwordShowConfig
 
+@typing_extensions.final
+class CheckBox(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    DEFAULT_VALUE_FIELD_NUMBER: builtins.int
+    SHOW_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    type: global___CheckboxType.ValueType
+    """"""
+    default_value: builtins.bool
+    """"""
+    show: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        type: global___CheckboxType.ValueType = ...,
+        default_value: builtins.bool = ...,
+        show: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["default_value", b"default_value", "show", b"show", "text", b"text", "type", b"type"]) -> None: ...
+
+global___CheckBox = CheckBox
+
+@typing_extensions.final
+class CheckBoxV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    DEFAULT_VALUE_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    type: builtins.int
+    """"""
+    default_value: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        type: builtins.int = ...,
+        default_value: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["default_value", b"default_value", "text", b"text", "type", b"type"]) -> None: ...
+
+global___CheckBoxV2 = CheckBoxV2
+
+@typing_extensions.final
+class ClickButton(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PORTRAIT_TEXT_FIELD_NUMBER: builtins.int
+    LANDSCAPE_TEXT_FIELD_NUMBER: builtins.int
+    PORTRAIT_TEXT_FOCUS_FIELD_NUMBER: builtins.int
+    LANDSCAPE_TEXT_FOCUS_FIELD_NUMBER: builtins.int
+    RENDER_TYPE_FIELD_NUMBER: builtins.int
+    SHOW_FIELD_NUMBER: builtins.int
+    BUBBLE_FIELD_NUMBER: builtins.int
+    @property
+    def portrait_text(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def landscape_text(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def portrait_text_focus(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def landscape_text_focus(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    render_type: global___RenderType.ValueType
+    """"""
+    show: builtins.bool
+    """"""
+    @property
+    def bubble(self) -> global___Bubble:
+        """"""
+    def __init__(
+        self,
+        *,
+        portrait_text: collections.abc.Iterable[builtins.str] | None = ...,
+        landscape_text: collections.abc.Iterable[builtins.str] | None = ...,
+        portrait_text_focus: collections.abc.Iterable[builtins.str] | None = ...,
+        landscape_text_focus: collections.abc.Iterable[builtins.str] | None = ...,
+        render_type: global___RenderType.ValueType = ...,
+        show: builtins.bool = ...,
+        bubble: global___Bubble | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["bubble", b"bubble"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bubble", b"bubble", "landscape_text", b"landscape_text", "landscape_text_focus", b"landscape_text_focus", "portrait_text", b"portrait_text", "portrait_text_focus", b"portrait_text_focus", "render_type", b"render_type", "show", b"show"]) -> None: ...
+
+global___ClickButton = ClickButton
+
+@typing_extensions.final
+class ClickButtonV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PORTRAIT_TEXT_FIELD_NUMBER: builtins.int
+    LANDSCAPE_TEXT_FIELD_NUMBER: builtins.int
+    PORTRAIT_TEXT_FOCUS_FIELD_NUMBER: builtins.int
+    LANDSCAPE_TEXT_FOCUS_FIELD_NUMBER: builtins.int
+    RENDER_TYPE_FIELD_NUMBER: builtins.int
+    TEXT_INPUT_POST_FIELD_NUMBER: builtins.int
+    EXPOSURE_ONCE_FIELD_NUMBER: builtins.int
+    EXPOSURE_TYPE_FIELD_NUMBER: builtins.int
+    @property
+    def portrait_text(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def landscape_text(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def portrait_text_focus(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def landscape_text_focus(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    render_type: builtins.int
+    """"""
+    text_input_post: builtins.bool
+    """"""
+    exposure_once: builtins.bool
+    """"""
+    exposure_type: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        portrait_text: collections.abc.Iterable[builtins.str] | None = ...,
+        landscape_text: collections.abc.Iterable[builtins.str] | None = ...,
+        portrait_text_focus: collections.abc.Iterable[builtins.str] | None = ...,
+        landscape_text_focus: collections.abc.Iterable[builtins.str] | None = ...,
+        render_type: builtins.int = ...,
+        text_input_post: builtins.bool = ...,
+        exposure_once: builtins.bool = ...,
+        exposure_type: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["exposure_once", b"exposure_once", "exposure_type", b"exposure_type", "landscape_text", b"landscape_text", "landscape_text_focus", b"landscape_text_focus", "portrait_text", b"portrait_text", "portrait_text_focus", b"portrait_text_focus", "render_type", b"render_type", "text_input_post", b"text_input_post"]) -> None: ...
+
+global___ClickButtonV2 = ClickButtonV2
+
+@typing_extensions.final
 class CommandDm(google.protobuf.message.Message):
     """互动弹幕条目信息"""
 
@@ -169,6 +658,7 @@ class CommandDm(google.protobuf.message.Message):
 
 global___CommandDm = CommandDm
 
+@typing_extensions.final
 class DanmakuAIFlag(google.protobuf.message.Message):
     """弹幕ai云屏蔽列表"""
 
@@ -187,6 +677,7 @@ class DanmakuAIFlag(google.protobuf.message.Message):
 
 global___DanmakuAIFlag = DanmakuAIFlag
 
+@typing_extensions.final
 class DanmakuElem(google.protobuf.message.Message):
     """弹幕条目"""
 
@@ -205,12 +696,13 @@ class DanmakuElem(google.protobuf.message.Message):
     POOL_FIELD_NUMBER: builtins.int
     IDSTR_FIELD_NUMBER: builtins.int
     ATTR_FIELD_NUMBER: builtins.int
+    ANIMATION_FIELD_NUMBER: builtins.int
     id: builtins.int
     """弹幕dmid"""
     progress: builtins.int
     """弹幕出现位置(单位ms)"""
     mode: builtins.int
-    """弹幕类型"""
+    """弹幕类型 1 2 3:普通弹幕 4:底部弹幕 5:顶部弹幕 6:逆向弹幕 7:高级弹幕 8:代码弹幕 9:BAS弹幕(pool必须为2)"""
     fontsize: builtins.int
     """弹幕字号"""
     color: builtins.int
@@ -222,17 +714,19 @@ class DanmakuElem(google.protobuf.message.Message):
     ctime: builtins.int
     """发送时间"""
     weight: builtins.int
-    """权重 区间:[1,10]"""
+    """权重 用于屏蔽等级 区间:[1,10]"""
     action: builtins.str
     """动作"""
     pool: builtins.int
-    """弹幕池"""
+    """弹幕池 0:普通池 1:字幕池 2:特殊池(代码/BAS弹幕)"""
     idStr: builtins.str
     """弹幕dmid str"""
     attr: builtins.int
     """弹幕属性位(bin求AND)
     bit0:保护 bit1:直播 bit2:高赞
     """
+    animation: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -249,11 +743,13 @@ class DanmakuElem(google.protobuf.message.Message):
         pool: builtins.int = ...,
         idStr: builtins.str = ...,
         attr: builtins.int = ...,
+        animation: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "attr", b"attr", "color", b"color", "content", b"content", "ctime", b"ctime", "fontsize", b"fontsize", "id", b"id", "idStr", b"idStr", "midHash", b"midHash", "mode", b"mode", "pool", b"pool", "progress", b"progress", "weight", b"weight"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "animation", b"animation", "attr", b"attr", "color", b"color", "content", b"content", "ctime", b"ctime", "fontsize", b"fontsize", "id", b"id", "idStr", b"idStr", "midHash", b"midHash", "mode", b"mode", "pool", b"pool", "progress", b"progress", "weight", b"weight"]) -> None: ...
 
 global___DanmakuElem = DanmakuElem
 
+@typing_extensions.final
 class DanmakuFlag(google.protobuf.message.Message):
     """弹幕ai云屏蔽条目"""
 
@@ -275,6 +771,7 @@ class DanmakuFlag(google.protobuf.message.Message):
 
 global___DanmakuFlag = DanmakuFlag
 
+@typing_extensions.final
 class DanmakuFlagConfig(google.protobuf.message.Message):
     """云屏蔽配置信息"""
 
@@ -300,10 +797,27 @@ class DanmakuFlagConfig(google.protobuf.message.Message):
 
 global___DanmakuFlagConfig = DanmakuFlagConfig
 
+@typing_extensions.final
 class DanmuDefaultPlayerConfig(google.protobuf.message.Message):
     """弹幕默认配置"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class PlayerDanmakuAiRecommendedLevelV2MapEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.int
+        value: builtins.int
+        def __init__(
+            self,
+            *,
+            key: builtins.int = ...,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     PLAYER_DANMAKU_USE_DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     PLAYER_DANMAKU_AI_RECOMMENDED_SWITCH_FIELD_NUMBER: builtins.int
@@ -320,6 +834,8 @@ class DanmuDefaultPlayerConfig(google.protobuf.message.Message):
     PLAYER_DANMAKU_SPEED_FIELD_NUMBER: builtins.int
     INLINE_PLAYER_DANMAKU_SWITCH_FIELD_NUMBER: builtins.int
     PLAYER_DANMAKU_SENIOR_MODE_SWITCH_FIELD_NUMBER: builtins.int
+    PLAYER_DANMAKU_AI_RECOMMENDED_LEVEL_V2_FIELD_NUMBER: builtins.int
+    PLAYER_DANMAKU_AI_RECOMMENDED_LEVEL_V2_MAP_FIELD_NUMBER: builtins.int
     player_danmaku_use_default_config: builtins.bool
     """是否使用推荐弹幕设置"""
     player_danmaku_ai_recommended_switch: builtins.bool
@@ -350,6 +866,11 @@ class DanmuDefaultPlayerConfig(google.protobuf.message.Message):
     """是否开启弹幕"""
     player_danmaku_senior_mode_switch: builtins.int
     """"""
+    player_danmaku_ai_recommended_level_v2: builtins.int
+    """"""
+    @property
+    def player_danmaku_ai_recommended_level_v2_map(self) -> google.protobuf.internal.containers.ScalarMap[builtins.int, builtins.int]:
+        """"""
     def __init__(
         self,
         *,
@@ -368,15 +889,34 @@ class DanmuDefaultPlayerConfig(google.protobuf.message.Message):
         player_danmaku_speed: builtins.int = ...,
         inline_player_danmaku_switch: builtins.bool = ...,
         player_danmaku_senior_mode_switch: builtins.int = ...,
+        player_danmaku_ai_recommended_level_v2: builtins.int = ...,
+        player_danmaku_ai_recommended_level_v2_map: collections.abc.Mapping[builtins.int, builtins.int] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["inline_player_danmaku_switch", b"inline_player_danmaku_switch", "player_danmaku_ai_recommended_level", b"player_danmaku_ai_recommended_level", "player_danmaku_ai_recommended_switch", b"player_danmaku_ai_recommended_switch", "player_danmaku_blockbottom", b"player_danmaku_blockbottom", "player_danmaku_blockcolorful", b"player_danmaku_blockcolorful", "player_danmaku_blockrepeat", b"player_danmaku_blockrepeat", "player_danmaku_blockscroll", b"player_danmaku_blockscroll", "player_danmaku_blockspecial", b"player_danmaku_blockspecial", "player_danmaku_blocktop", b"player_danmaku_blocktop", "player_danmaku_domain", b"player_danmaku_domain", "player_danmaku_opacity", b"player_danmaku_opacity", "player_danmaku_scalingfactor", b"player_danmaku_scalingfactor", "player_danmaku_senior_mode_switch", b"player_danmaku_senior_mode_switch", "player_danmaku_speed", b"player_danmaku_speed", "player_danmaku_use_default_config", b"player_danmaku_use_default_config"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["inline_player_danmaku_switch", b"inline_player_danmaku_switch", "player_danmaku_ai_recommended_level", b"player_danmaku_ai_recommended_level", "player_danmaku_ai_recommended_level_v2", b"player_danmaku_ai_recommended_level_v2", "player_danmaku_ai_recommended_level_v2_map", b"player_danmaku_ai_recommended_level_v2_map", "player_danmaku_ai_recommended_switch", b"player_danmaku_ai_recommended_switch", "player_danmaku_blockbottom", b"player_danmaku_blockbottom", "player_danmaku_blockcolorful", b"player_danmaku_blockcolorful", "player_danmaku_blockrepeat", b"player_danmaku_blockrepeat", "player_danmaku_blockscroll", b"player_danmaku_blockscroll", "player_danmaku_blockspecial", b"player_danmaku_blockspecial", "player_danmaku_blocktop", b"player_danmaku_blocktop", "player_danmaku_domain", b"player_danmaku_domain", "player_danmaku_opacity", b"player_danmaku_opacity", "player_danmaku_scalingfactor", b"player_danmaku_scalingfactor", "player_danmaku_senior_mode_switch", b"player_danmaku_senior_mode_switch", "player_danmaku_speed", b"player_danmaku_speed", "player_danmaku_use_default_config", b"player_danmaku_use_default_config"]) -> None: ...
 
 global___DanmuDefaultPlayerConfig = DanmuDefaultPlayerConfig
 
+@typing_extensions.final
 class DanmuPlayerConfig(google.protobuf.message.Message):
     """弹幕配置"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class PlayerDanmakuAiRecommendedLevelV2MapEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.int
+        value: builtins.int
+        def __init__(
+            self,
+            *,
+            key: builtins.int = ...,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     PLAYER_DANMAKU_SWITCH_FIELD_NUMBER: builtins.int
     PLAYER_DANMAKU_SWITCH_SAVE_FIELD_NUMBER: builtins.int
@@ -398,6 +938,8 @@ class DanmuPlayerConfig(google.protobuf.message.Message):
     INLINE_PLAYER_DANMAKU_CONFIG_FIELD_NUMBER: builtins.int
     PLAYER_DANMAKU_IOS_SWITCH_SAVE_FIELD_NUMBER: builtins.int
     PLAYER_DANMAKU_SENIOR_MODE_SWITCH_FIELD_NUMBER: builtins.int
+    PLAYER_DANMAKU_AI_RECOMMENDED_LEVEL_V2_FIELD_NUMBER: builtins.int
+    PLAYER_DANMAKU_AI_RECOMMENDED_LEVEL_V2_MAP_FIELD_NUMBER: builtins.int
     player_danmaku_switch: builtins.bool
     """是否开启弹幕"""
     player_danmaku_switch_save: builtins.bool
@@ -438,6 +980,11 @@ class DanmuPlayerConfig(google.protobuf.message.Message):
     """"""
     player_danmaku_senior_mode_switch: builtins.int
     """"""
+    player_danmaku_ai_recommended_level_v2: builtins.int
+    """"""
+    @property
+    def player_danmaku_ai_recommended_level_v2_map(self) -> google.protobuf.internal.containers.ScalarMap[builtins.int, builtins.int]:
+        """"""
     def __init__(
         self,
         *,
@@ -461,11 +1008,32 @@ class DanmuPlayerConfig(google.protobuf.message.Message):
         inline_player_danmaku_config: builtins.int = ...,
         player_danmaku_ios_switch_save: builtins.int = ...,
         player_danmaku_senior_mode_switch: builtins.int = ...,
+        player_danmaku_ai_recommended_level_v2: builtins.int = ...,
+        player_danmaku_ai_recommended_level_v2_map: collections.abc.Mapping[builtins.int, builtins.int] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["inline_player_danmaku_config", b"inline_player_danmaku_config", "inline_player_danmaku_switch", b"inline_player_danmaku_switch", "player_danmaku_ai_recommended_level", b"player_danmaku_ai_recommended_level", "player_danmaku_ai_recommended_switch", b"player_danmaku_ai_recommended_switch", "player_danmaku_blockbottom", b"player_danmaku_blockbottom", "player_danmaku_blockcolorful", b"player_danmaku_blockcolorful", "player_danmaku_blockrepeat", b"player_danmaku_blockrepeat", "player_danmaku_blockscroll", b"player_danmaku_blockscroll", "player_danmaku_blockspecial", b"player_danmaku_blockspecial", "player_danmaku_blocktop", b"player_danmaku_blocktop", "player_danmaku_domain", b"player_danmaku_domain", "player_danmaku_enableblocklist", b"player_danmaku_enableblocklist", "player_danmaku_ios_switch_save", b"player_danmaku_ios_switch_save", "player_danmaku_opacity", b"player_danmaku_opacity", "player_danmaku_scalingfactor", b"player_danmaku_scalingfactor", "player_danmaku_senior_mode_switch", b"player_danmaku_senior_mode_switch", "player_danmaku_speed", b"player_danmaku_speed", "player_danmaku_switch", b"player_danmaku_switch", "player_danmaku_switch_save", b"player_danmaku_switch_save", "player_danmaku_use_default_config", b"player_danmaku_use_default_config"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["inline_player_danmaku_config", b"inline_player_danmaku_config", "inline_player_danmaku_switch", b"inline_player_danmaku_switch", "player_danmaku_ai_recommended_level", b"player_danmaku_ai_recommended_level", "player_danmaku_ai_recommended_level_v2", b"player_danmaku_ai_recommended_level_v2", "player_danmaku_ai_recommended_level_v2_map", b"player_danmaku_ai_recommended_level_v2_map", "player_danmaku_ai_recommended_switch", b"player_danmaku_ai_recommended_switch", "player_danmaku_blockbottom", b"player_danmaku_blockbottom", "player_danmaku_blockcolorful", b"player_danmaku_blockcolorful", "player_danmaku_blockrepeat", b"player_danmaku_blockrepeat", "player_danmaku_blockscroll", b"player_danmaku_blockscroll", "player_danmaku_blockspecial", b"player_danmaku_blockspecial", "player_danmaku_blocktop", b"player_danmaku_blocktop", "player_danmaku_domain", b"player_danmaku_domain", "player_danmaku_enableblocklist", b"player_danmaku_enableblocklist", "player_danmaku_ios_switch_save", b"player_danmaku_ios_switch_save", "player_danmaku_opacity", b"player_danmaku_opacity", "player_danmaku_scalingfactor", b"player_danmaku_scalingfactor", "player_danmaku_senior_mode_switch", b"player_danmaku_senior_mode_switch", "player_danmaku_speed", b"player_danmaku_speed", "player_danmaku_switch", b"player_danmaku_switch", "player_danmaku_switch_save", b"player_danmaku_switch_save", "player_danmaku_use_default_config", b"player_danmaku_use_default_config"]) -> None: ...
 
 global___DanmuPlayerConfig = DanmuPlayerConfig
 
+@typing_extensions.final
+class DanmuPlayerConfigPanel(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SELECTION_TEXT_FIELD_NUMBER: builtins.int
+    selection_text: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        selection_text: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["selection_text", b"selection_text"]) -> None: ...
+
+global___DanmuPlayerConfigPanel = DanmuPlayerConfigPanel
+
+@typing_extensions.final
 class DanmuPlayerDynamicConfig(google.protobuf.message.Message):
     """弹幕显示区域自动配置"""
 
@@ -487,6 +1055,7 @@ class DanmuPlayerDynamicConfig(google.protobuf.message.Message):
 
 global___DanmuPlayerDynamicConfig = DanmuPlayerDynamicConfig
 
+@typing_extensions.final
 class DanmuPlayerViewConfig(google.protobuf.message.Message):
     """弹幕配置信息"""
 
@@ -495,6 +1064,7 @@ class DanmuPlayerViewConfig(google.protobuf.message.Message):
     DANMUKU_DEFAULT_PLAYER_CONFIG_FIELD_NUMBER: builtins.int
     DANMUKU_PLAYER_CONFIG_FIELD_NUMBER: builtins.int
     DANMUKU_PLAYER_DYNAMIC_CONFIG_FIELD_NUMBER: builtins.int
+    DANMUKU_PLAYER_CONFIG_PANEL_FIELD_NUMBER: builtins.int
     @property
     def danmuku_default_player_config(self) -> global___DanmuDefaultPlayerConfig:
         """弹幕默认配置"""
@@ -504,22 +1074,43 @@ class DanmuPlayerViewConfig(google.protobuf.message.Message):
     @property
     def danmuku_player_dynamic_config(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DanmuPlayerDynamicConfig]:
         """弹幕显示区域自动配置列表"""
+    @property
+    def danmuku_player_config_panel(self) -> global___DanmuPlayerConfigPanel:
+        """"""
     def __init__(
         self,
         *,
         danmuku_default_player_config: global___DanmuDefaultPlayerConfig | None = ...,
         danmuku_player_config: global___DanmuPlayerConfig | None = ...,
         danmuku_player_dynamic_config: collections.abc.Iterable[global___DanmuPlayerDynamicConfig] | None = ...,
+        danmuku_player_config_panel: global___DanmuPlayerConfigPanel | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["danmuku_default_player_config", b"danmuku_default_player_config", "danmuku_player_config", b"danmuku_player_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["danmuku_default_player_config", b"danmuku_default_player_config", "danmuku_player_config", b"danmuku_player_config", "danmuku_player_dynamic_config", b"danmuku_player_dynamic_config"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["danmuku_default_player_config", b"danmuku_default_player_config", "danmuku_player_config", b"danmuku_player_config", "danmuku_player_config_panel", b"danmuku_player_config_panel"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["danmuku_default_player_config", b"danmuku_default_player_config", "danmuku_player_config", b"danmuku_player_config", "danmuku_player_config_panel", b"danmuku_player_config_panel", "danmuku_player_dynamic_config", b"danmuku_player_dynamic_config"]) -> None: ...
 
 global___DanmuPlayerViewConfig = DanmuPlayerViewConfig
 
+@typing_extensions.final
 class DanmuWebPlayerConfig(google.protobuf.message.Message):
     """web端用户弹幕配置"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class AiLevelV2MapEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.int
+        value: builtins.int
+        def __init__(
+            self,
+            *,
+            key: builtins.int = ...,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     DM_SWITCH_FIELD_NUMBER: builtins.int
     AI_SWITCH_FIELD_NUMBER: builtins.int
@@ -542,6 +1133,8 @@ class DanmuWebPlayerConfig(google.protobuf.message.Message):
     FONTBORDER_FIELD_NUMBER: builtins.int
     DRAW_TYPE_FIELD_NUMBER: builtins.int
     SENIOR_MODE_SWITCH_FIELD_NUMBER: builtins.int
+    AI_LEVEL_V2_FIELD_NUMBER: builtins.int
+    AI_LEVEL_V2_MAP_FIELD_NUMBER: builtins.int
     dm_switch: builtins.bool
     """是否开启弹幕"""
     ai_switch: builtins.bool
@@ -584,6 +1177,11 @@ class DanmuWebPlayerConfig(google.protobuf.message.Message):
     """弹幕渲染类型"""
     senior_mode_switch: builtins.int
     """"""
+    ai_level_v2: builtins.int
+    """"""
+    @property
+    def ai_level_v2_map(self) -> google.protobuf.internal.containers.ScalarMap[builtins.int, builtins.int]:
+        """"""
     def __init__(
         self,
         *,
@@ -608,11 +1206,14 @@ class DanmuWebPlayerConfig(google.protobuf.message.Message):
         fontborder: builtins.int = ...,
         draw_type: builtins.str = ...,
         senior_mode_switch: builtins.int = ...,
+        ai_level_v2: builtins.int = ...,
+        ai_level_v2_map: collections.abc.Mapping[builtins.int, builtins.int] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ai_level", b"ai_level", "ai_switch", b"ai_switch", "blockbottom", b"blockbottom", "blockcolor", b"blockcolor", "blockscroll", b"blockscroll", "blockspecial", b"blockspecial", "blocktop", b"blocktop", "bold", b"bold", "dm_switch", b"dm_switch", "dmarea", b"dmarea", "dmask", b"dmask", "draw_type", b"draw_type", "fontborder", b"fontborder", "fontfamily", b"fontfamily", "fontsize", b"fontsize", "opacity", b"opacity", "preventshade", b"preventshade", "screensync", b"screensync", "senior_mode_switch", b"senior_mode_switch", "speedplus", b"speedplus", "speedsync", b"speedsync"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ai_level", b"ai_level", "ai_level_v2", b"ai_level_v2", "ai_level_v2_map", b"ai_level_v2_map", "ai_switch", b"ai_switch", "blockbottom", b"blockbottom", "blockcolor", b"blockcolor", "blockscroll", b"blockscroll", "blockspecial", b"blockspecial", "blocktop", b"blocktop", "bold", b"bold", "dm_switch", b"dm_switch", "dmarea", b"dmarea", "dmask", b"dmask", "draw_type", b"draw_type", "fontborder", b"fontborder", "fontfamily", b"fontfamily", "fontsize", b"fontsize", "opacity", b"opacity", "preventshade", b"preventshade", "screensync", b"screensync", "senior_mode_switch", b"senior_mode_switch", "speedplus", b"speedplus", "speedsync", b"speedsync"]) -> None: ...
 
 global___DanmuWebPlayerConfig = DanmuWebPlayerConfig
 
+@typing_extensions.final
 class DmExpoReportReq(google.protobuf.message.Message):
     """"""
 
@@ -638,6 +1239,7 @@ class DmExpoReportReq(google.protobuf.message.Message):
 
 global___DmExpoReportReq = DmExpoReportReq
 
+@typing_extensions.final
 class DmExpoReportRes(google.protobuf.message.Message):
     """"""
 
@@ -649,6 +1251,7 @@ class DmExpoReportRes(google.protobuf.message.Message):
 
 global___DmExpoReportRes = DmExpoReportRes
 
+@typing_extensions.final
 class DmPlayerConfigReq(google.protobuf.message.Message):
     """修改弹幕配置-请求"""
 
@@ -673,6 +1276,7 @@ class DmPlayerConfigReq(google.protobuf.message.Message):
     ENABLEBLOCKLIST_FIELD_NUMBER: builtins.int
     INLINEPLAYERDANMAKUSWITCH_FIELD_NUMBER: builtins.int
     SENIOR_MODE_SWITCH_FIELD_NUMBER: builtins.int
+    AI_RECOMMENDED_LEVEL_V2_FIELD_NUMBER: builtins.int
     ts: builtins.int
     """"""
     @property
@@ -729,6 +1333,9 @@ class DmPlayerConfigReq(google.protobuf.message.Message):
     @property
     def senior_mode_switch(self) -> global___PlayerDanmakuSeniorModeSwitch:
         """"""
+    @property
+    def ai_recommended_level_v2(self) -> global___PlayerDanmakuAiRecommendedLevelV2:
+        """"""
     def __init__(
         self,
         *,
@@ -751,12 +1358,14 @@ class DmPlayerConfigReq(google.protobuf.message.Message):
         enableblocklist: global___PlayerDanmakuEnableblocklist | None = ...,
         inlinePlayerDanmakuSwitch: global___InlinePlayerDanmakuSwitch | None = ...,
         senior_mode_switch: global___PlayerDanmakuSeniorModeSwitch | None = ...,
+        ai_recommended_level_v2: global___PlayerDanmakuAiRecommendedLevelV2 | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["ai_recommended_level", b"ai_recommended_level", "ai_recommended_switch", b"ai_recommended_switch", "blockbottom", b"blockbottom", "blockcolorful", b"blockcolorful", "blockrepeat", b"blockrepeat", "blockscroll", b"blockscroll", "blockspecial", b"blockspecial", "blocktop", b"blocktop", "domain", b"domain", "enableblocklist", b"enableblocklist", "inlinePlayerDanmakuSwitch", b"inlinePlayerDanmakuSwitch", "opacity", b"opacity", "scalingfactor", b"scalingfactor", "senior_mode_switch", b"senior_mode_switch", "speed", b"speed", "switch", b"switch", "switch_save", b"switch_save", "use_default_config", b"use_default_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ai_recommended_level", b"ai_recommended_level", "ai_recommended_switch", b"ai_recommended_switch", "blockbottom", b"blockbottom", "blockcolorful", b"blockcolorful", "blockrepeat", b"blockrepeat", "blockscroll", b"blockscroll", "blockspecial", b"blockspecial", "blocktop", b"blocktop", "domain", b"domain", "enableblocklist", b"enableblocklist", "inlinePlayerDanmakuSwitch", b"inlinePlayerDanmakuSwitch", "opacity", b"opacity", "scalingfactor", b"scalingfactor", "senior_mode_switch", b"senior_mode_switch", "speed", b"speed", "switch", b"switch", "switch_save", b"switch_save", "ts", b"ts", "use_default_config", b"use_default_config"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["ai_recommended_level", b"ai_recommended_level", "ai_recommended_level_v2", b"ai_recommended_level_v2", "ai_recommended_switch", b"ai_recommended_switch", "blockbottom", b"blockbottom", "blockcolorful", b"blockcolorful", "blockrepeat", b"blockrepeat", "blockscroll", b"blockscroll", "blockspecial", b"blockspecial", "blocktop", b"blocktop", "domain", b"domain", "enableblocklist", b"enableblocklist", "inlinePlayerDanmakuSwitch", b"inlinePlayerDanmakuSwitch", "opacity", b"opacity", "scalingfactor", b"scalingfactor", "senior_mode_switch", b"senior_mode_switch", "speed", b"speed", "switch", b"switch", "switch_save", b"switch_save", "use_default_config", b"use_default_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ai_recommended_level", b"ai_recommended_level", "ai_recommended_level_v2", b"ai_recommended_level_v2", "ai_recommended_switch", b"ai_recommended_switch", "blockbottom", b"blockbottom", "blockcolorful", b"blockcolorful", "blockrepeat", b"blockrepeat", "blockscroll", b"blockscroll", "blockspecial", b"blockspecial", "blocktop", b"blocktop", "domain", b"domain", "enableblocklist", b"enableblocklist", "inlinePlayerDanmakuSwitch", b"inlinePlayerDanmakuSwitch", "opacity", b"opacity", "scalingfactor", b"scalingfactor", "senior_mode_switch", b"senior_mode_switch", "speed", b"speed", "switch", b"switch", "switch_save", b"switch_save", "ts", b"ts", "use_default_config", b"use_default_config"]) -> None: ...
 
 global___DmPlayerConfigReq = DmPlayerConfigReq
 
+@typing_extensions.final
 class DmSegConfig(google.protobuf.message.Message):
     """"""
 
@@ -778,6 +1387,7 @@ class DmSegConfig(google.protobuf.message.Message):
 
 global___DmSegConfig = DmSegConfig
 
+@typing_extensions.final
 class DmSegMobileReply(google.protobuf.message.Message):
     """获取弹幕-响应"""
 
@@ -808,6 +1418,7 @@ class DmSegMobileReply(google.protobuf.message.Message):
 
 global___DmSegMobileReply = DmSegMobileReply
 
+@typing_extensions.final
 class DmSegMobileReq(google.protobuf.message.Message):
     """获取弹幕-请求"""
 
@@ -818,6 +1429,10 @@ class DmSegMobileReq(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     SEGMENT_INDEX_FIELD_NUMBER: builtins.int
     TEENAGERS_MODE_FIELD_NUMBER: builtins.int
+    PS_FIELD_NUMBER: builtins.int
+    PE_FIELD_NUMBER: builtins.int
+    PULL_MODE_FIELD_NUMBER: builtins.int
+    FROM_SCENE_FIELD_NUMBER: builtins.int
     pid: builtins.int
     """稿件avid/漫画epid"""
     oid: builtins.int
@@ -830,6 +1445,14 @@ class DmSegMobileReq(google.protobuf.message.Message):
     """分段(6min)"""
     teenagers_mode: builtins.int
     """是否青少年模式"""
+    ps: builtins.int
+    """"""
+    pe: builtins.int
+    """"""
+    pull_mode: builtins.int
+    """"""
+    from_scene: builtins.int
+    """"""
     def __init__(
         self,
         *,
@@ -838,11 +1461,16 @@ class DmSegMobileReq(google.protobuf.message.Message):
         type: builtins.int = ...,
         segment_index: builtins.int = ...,
         teenagers_mode: builtins.int = ...,
+        ps: builtins.int = ...,
+        pe: builtins.int = ...,
+        pull_mode: builtins.int = ...,
+        from_scene: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["oid", b"oid", "pid", b"pid", "segment_index", b"segment_index", "teenagers_mode", b"teenagers_mode", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["from_scene", b"from_scene", "oid", b"oid", "pe", b"pe", "pid", b"pid", "ps", b"ps", "pull_mode", b"pull_mode", "segment_index", b"segment_index", "teenagers_mode", b"teenagers_mode", "type", b"type"]) -> None: ...
 
 global___DmSegMobileReq = DmSegMobileReq
 
+@typing_extensions.final
 class DmSegOttReply(google.protobuf.message.Message):
     """ott弹幕列表-响应"""
 
@@ -867,6 +1495,7 @@ class DmSegOttReply(google.protobuf.message.Message):
 
 global___DmSegOttReply = DmSegOttReply
 
+@typing_extensions.final
 class DmSegOttReq(google.protobuf.message.Message):
     """ott弹幕列表-请求"""
 
@@ -898,6 +1527,7 @@ class DmSegOttReq(google.protobuf.message.Message):
 
 global___DmSegOttReq = DmSegOttReq
 
+@typing_extensions.final
 class DmSegSDKReply(google.protobuf.message.Message):
     """弹幕SDK-响应"""
 
@@ -922,6 +1552,7 @@ class DmSegSDKReply(google.protobuf.message.Message):
 
 global___DmSegSDKReply = DmSegSDKReply
 
+@typing_extensions.final
 class DmSegSDKReq(google.protobuf.message.Message):
     """弹幕SDK-请求"""
 
@@ -953,6 +1584,7 @@ class DmSegSDKReq(google.protobuf.message.Message):
 
 global___DmSegSDKReq = DmSegSDKReq
 
+@typing_extensions.final
 class DmViewReply(google.protobuf.message.Message):
     """客户端弹幕元数据-响应"""
 
@@ -974,6 +1606,9 @@ class DmViewReply(google.protobuf.message.Message):
     EXPO_REPORT_FIELD_NUMBER: builtins.int
     BUZZWORD_CONFIG_FIELD_NUMBER: builtins.int
     EXPRESSIONS_FIELD_NUMBER: builtins.int
+    POST_PANEL_FIELD_NUMBER: builtins.int
+    ACTIVITY_META_FIELD_NUMBER: builtins.int
+    POST_PANEL2_FIELD_NUMBER: builtins.int
     closed: builtins.bool
     """是否已关闭弹幕
     0:未关闭 1:已关闭
@@ -1017,6 +1652,15 @@ class DmViewReply(google.protobuf.message.Message):
     @property
     def expressions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Expressions]:
         """"""
+    @property
+    def post_panel(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PostPanel]:
+        """"""
+    @property
+    def activity_meta(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def post_panel2(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PostPanelV2]:
+        """"""
     def __init__(
         self,
         *,
@@ -1036,12 +1680,16 @@ class DmViewReply(google.protobuf.message.Message):
         expo_report: global___ExpoReport | None = ...,
         buzzword_config: global___BuzzwordConfig | None = ...,
         expressions: collections.abc.Iterable[global___Expressions] | None = ...,
+        post_panel: collections.abc.Iterable[global___PostPanel] | None = ...,
+        activity_meta: collections.abc.Iterable[builtins.str] | None = ...,
+        post_panel2: collections.abc.Iterable[global___PostPanelV2] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag", "buzzword_config", b"buzzword_config", "expo_report", b"expo_report", "mask", b"mask", "player_config", b"player_config", "subtitle", b"subtitle"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag", "allow", b"allow", "buzzword_config", b"buzzword_config", "check_box", b"check_box", "check_box_show_msg", b"check_box_show_msg", "closed", b"closed", "expo_report", b"expo_report", "expressions", b"expressions", "input_placeholder", b"input_placeholder", "mask", b"mask", "player_config", b"player_config", "report_filter_content", b"report_filter_content", "send_box_style", b"send_box_style", "special_dms", b"special_dms", "subtitle", b"subtitle", "text_placeholder", b"text_placeholder"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["activity_meta", b"activity_meta", "ai_flag", b"ai_flag", "allow", b"allow", "buzzword_config", b"buzzword_config", "check_box", b"check_box", "check_box_show_msg", b"check_box_show_msg", "closed", b"closed", "expo_report", b"expo_report", "expressions", b"expressions", "input_placeholder", b"input_placeholder", "mask", b"mask", "player_config", b"player_config", "post_panel", b"post_panel", "post_panel2", b"post_panel2", "report_filter_content", b"report_filter_content", "send_box_style", b"send_box_style", "special_dms", b"special_dms", "subtitle", b"subtitle", "text_placeholder", b"text_placeholder"]) -> None: ...
 
 global___DmViewReply = DmViewReply
 
+@typing_extensions.final
 class DmViewReq(google.protobuf.message.Message):
     """客户端弹幕元数据-请求"""
 
@@ -1077,8 +1725,11 @@ class DmViewReq(google.protobuf.message.Message):
 
 global___DmViewReq = DmViewReq
 
+@typing_extensions.final
 class DmWebViewReply(google.protobuf.message.Message):
-    """web端弹幕元数据-响应"""
+    """web端弹幕元数据-响应
+    https://api.bilibili.com/x/v2/dm/web/view
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1094,6 +1745,8 @@ class DmWebViewReply(google.protobuf.message.Message):
     PLAYER_CONFIG_FIELD_NUMBER: builtins.int
     REPORT_FILTER_CONTENT_FIELD_NUMBER: builtins.int
     EXPRESSIONS_FIELD_NUMBER: builtins.int
+    POST_PANEL_FIELD_NUMBER: builtins.int
+    ACTIVITY_META_FIELD_NUMBER: builtins.int
     state: builtins.int
     """是否已关闭弹幕
     0:未关闭 1:已关闭
@@ -1127,6 +1780,12 @@ class DmWebViewReply(google.protobuf.message.Message):
     @property
     def expressions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Expressions]:
         """"""
+    @property
+    def post_panel(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PostPanel]:
+        """"""
+    @property
+    def activity_meta(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
     def __init__(
         self,
         *,
@@ -1142,12 +1801,15 @@ class DmWebViewReply(google.protobuf.message.Message):
         player_config: global___DanmuWebPlayerConfig | None = ...,
         report_filter_content: collections.abc.Iterable[builtins.str] | None = ...,
         expressions: collections.abc.Iterable[global___Expressions] | None = ...,
+        post_panel: collections.abc.Iterable[global___PostPanel] | None = ...,
+        activity_meta: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["dm_sge", b"dm_sge", "flag", b"flag", "player_config", b"player_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["check_box", b"check_box", "commandDms", b"commandDms", "count", b"count", "dm_sge", b"dm_sge", "expressions", b"expressions", "flag", b"flag", "player_config", b"player_config", "report_filter_content", b"report_filter_content", "special_dms", b"special_dms", "state", b"state", "text", b"text", "text_side", b"text_side"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["activity_meta", b"activity_meta", "check_box", b"check_box", "commandDms", b"commandDms", "count", b"count", "dm_sge", b"dm_sge", "expressions", b"expressions", "flag", b"flag", "player_config", b"player_config", "post_panel", b"post_panel", "report_filter_content", b"report_filter_content", "special_dms", b"special_dms", "state", b"state", "text", b"text", "text_side", b"text_side"]) -> None: ...
 
 global___DmWebViewReply = DmWebViewReply
 
+@typing_extensions.final
 class ExpoReport(google.protobuf.message.Message):
     """"""
 
@@ -1165,6 +1827,7 @@ class ExpoReport(google.protobuf.message.Message):
 
 global___ExpoReport = ExpoReport
 
+@typing_extensions.final
 class Expression(google.protobuf.message.Message):
     """"""
 
@@ -1192,6 +1855,7 @@ class Expression(google.protobuf.message.Message):
 
 global___Expression = Expression
 
+@typing_extensions.final
 class Expressions(google.protobuf.message.Message):
     """"""
 
@@ -1210,6 +1874,79 @@ class Expressions(google.protobuf.message.Message):
 
 global___Expressions = Expressions
 
+@typing_extensions.final
+class InlinePlayerDanmakuSwitch(google.protobuf.message.Message):
+    """是否开启弹幕"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VALUE_FIELD_NUMBER: builtins.int
+    value: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        value: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["value", b"value"]) -> None: ...
+
+global___InlinePlayerDanmakuSwitch = InlinePlayerDanmakuSwitch
+
+@typing_extensions.final
+class Label(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TITLE_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    """"""
+    @property
+    def content(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    def __init__(
+        self,
+        *,
+        title: builtins.str = ...,
+        content: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["content", b"content", "title", b"title"]) -> None: ...
+
+global___Label = Label
+
+@typing_extensions.final
+class LabelV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TITLE_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    EXPOSURE_ONCE_FIELD_NUMBER: builtins.int
+    EXPOSURE_TYPE_FIELD_NUMBER: builtins.int
+    title: builtins.str
+    """"""
+    @property
+    def content(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    exposure_once: builtins.bool
+    """"""
+    exposure_type: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        title: builtins.str = ...,
+        content: collections.abc.Iterable[builtins.str] | None = ...,
+        exposure_once: builtins.bool = ...,
+        exposure_type: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["content", b"content", "exposure_once", b"exposure_once", "exposure_type", b"exposure_type", "title", b"title"]) -> None: ...
+
+global___LabelV2 = LabelV2
+
+@typing_extensions.final
 class Period(google.protobuf.message.Message):
     """"""
 
@@ -1231,25 +1968,8 @@ class Period(google.protobuf.message.Message):
 
 global___Period = Period
 
-class InlinePlayerDanmakuSwitch(google.protobuf.message.Message):
-    """是否开启弹幕"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    VALUE_FIELD_NUMBER: builtins.int
-    value: builtins.bool
-    def __init__(
-        self,
-        *,
-        value: builtins.bool = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["value", b"value"]) -> None: ...
-
-global___InlinePlayerDanmakuSwitch = InlinePlayerDanmakuSwitch
-
+@typing_extensions.final
 class PlayerDanmakuAiRecommendedLevel(google.protobuf.message.Message):
-    """智能云屏蔽等级"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1263,9 +1983,23 @@ class PlayerDanmakuAiRecommendedLevel(google.protobuf.message.Message):
 
 global___PlayerDanmakuAiRecommendedLevel = PlayerDanmakuAiRecommendedLevel
 
-class PlayerDanmakuAiRecommendedSwitch(google.protobuf.message.Message):
-    """是否开启智能云屏蔽"""
+@typing_extensions.final
+class PlayerDanmakuAiRecommendedLevelV2(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    VALUE_FIELD_NUMBER: builtins.int
+    value: builtins.int
+    def __init__(
+        self,
+        *,
+        value: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["value", b"value"]) -> None: ...
+
+global___PlayerDanmakuAiRecommendedLevelV2 = PlayerDanmakuAiRecommendedLevelV2
+
+@typing_extensions.final
+class PlayerDanmakuAiRecommendedSwitch(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1279,9 +2013,8 @@ class PlayerDanmakuAiRecommendedSwitch(google.protobuf.message.Message):
 
 global___PlayerDanmakuAiRecommendedSwitch = PlayerDanmakuAiRecommendedSwitch
 
+@typing_extensions.final
 class PlayerDanmakuBlockbottom(google.protobuf.message.Message):
-    """是否屏蔽底端弹幕"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1295,9 +2028,8 @@ class PlayerDanmakuBlockbottom(google.protobuf.message.Message):
 
 global___PlayerDanmakuBlockbottom = PlayerDanmakuBlockbottom
 
+@typing_extensions.final
 class PlayerDanmakuBlockcolorful(google.protobuf.message.Message):
-    """是否屏蔽彩色弹幕"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1311,9 +2043,8 @@ class PlayerDanmakuBlockcolorful(google.protobuf.message.Message):
 
 global___PlayerDanmakuBlockcolorful = PlayerDanmakuBlockcolorful
 
+@typing_extensions.final
 class PlayerDanmakuBlockrepeat(google.protobuf.message.Message):
-    """是否屏蔽重复弹幕"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1327,9 +2058,8 @@ class PlayerDanmakuBlockrepeat(google.protobuf.message.Message):
 
 global___PlayerDanmakuBlockrepeat = PlayerDanmakuBlockrepeat
 
+@typing_extensions.final
 class PlayerDanmakuBlockscroll(google.protobuf.message.Message):
-    """是否屏蔽滚动弹幕"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1343,9 +2073,8 @@ class PlayerDanmakuBlockscroll(google.protobuf.message.Message):
 
 global___PlayerDanmakuBlockscroll = PlayerDanmakuBlockscroll
 
+@typing_extensions.final
 class PlayerDanmakuBlockspecial(google.protobuf.message.Message):
-    """是否屏蔽高级弹幕"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1359,9 +2088,8 @@ class PlayerDanmakuBlockspecial(google.protobuf.message.Message):
 
 global___PlayerDanmakuBlockspecial = PlayerDanmakuBlockspecial
 
+@typing_extensions.final
 class PlayerDanmakuBlocktop(google.protobuf.message.Message):
-    """是否屏蔽顶端弹幕"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1375,9 +2103,8 @@ class PlayerDanmakuBlocktop(google.protobuf.message.Message):
 
 global___PlayerDanmakuBlocktop = PlayerDanmakuBlocktop
 
+@typing_extensions.final
 class PlayerDanmakuDomain(google.protobuf.message.Message):
-    """弹幕显示区域"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1391,9 +2118,8 @@ class PlayerDanmakuDomain(google.protobuf.message.Message):
 
 global___PlayerDanmakuDomain = PlayerDanmakuDomain
 
+@typing_extensions.final
 class PlayerDanmakuEnableblocklist(google.protobuf.message.Message):
-    """是否开启屏蔽列表"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1407,9 +2133,8 @@ class PlayerDanmakuEnableblocklist(google.protobuf.message.Message):
 
 global___PlayerDanmakuEnableblocklist = PlayerDanmakuEnableblocklist
 
+@typing_extensions.final
 class PlayerDanmakuOpacity(google.protobuf.message.Message):
-    """弹幕不透明度"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1423,9 +2148,8 @@ class PlayerDanmakuOpacity(google.protobuf.message.Message):
 
 global___PlayerDanmakuOpacity = PlayerDanmakuOpacity
 
+@typing_extensions.final
 class PlayerDanmakuScalingfactor(google.protobuf.message.Message):
-    """弹幕缩放比例"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1439,9 +2163,8 @@ class PlayerDanmakuScalingfactor(google.protobuf.message.Message):
 
 global___PlayerDanmakuScalingfactor = PlayerDanmakuScalingfactor
 
+@typing_extensions.final
 class PlayerDanmakuSeniorModeSwitch(google.protobuf.message.Message):
-    """"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1455,9 +2178,8 @@ class PlayerDanmakuSeniorModeSwitch(google.protobuf.message.Message):
 
 global___PlayerDanmakuSeniorModeSwitch = PlayerDanmakuSeniorModeSwitch
 
+@typing_extensions.final
 class PlayerDanmakuSpeed(google.protobuf.message.Message):
-    """弹幕速度"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1471,28 +2193,26 @@ class PlayerDanmakuSpeed(google.protobuf.message.Message):
 
 global___PlayerDanmakuSpeed = PlayerDanmakuSpeed
 
+@typing_extensions.final
 class PlayerDanmakuSwitch(google.protobuf.message.Message):
-    """是否开启弹幕"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
-    CANIGNORE_FIELD_NUMBER: builtins.int
+    CAN_IGNORE_FIELD_NUMBER: builtins.int
     value: builtins.bool
-    canIgnore: builtins.bool
+    can_ignore: builtins.bool
     def __init__(
         self,
         *,
         value: builtins.bool = ...,
-        canIgnore: builtins.bool = ...,
+        can_ignore: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["canIgnore", b"canIgnore", "value", b"value"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["can_ignore", b"can_ignore", "value", b"value"]) -> None: ...
 
 global___PlayerDanmakuSwitch = PlayerDanmakuSwitch
 
+@typing_extensions.final
 class PlayerDanmakuSwitchSave(google.protobuf.message.Message):
-    """是否记录弹幕开关设置"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1506,9 +2226,8 @@ class PlayerDanmakuSwitchSave(google.protobuf.message.Message):
 
 global___PlayerDanmakuSwitchSave = PlayerDanmakuSwitchSave
 
+@typing_extensions.final
 class PlayerDanmakuUseDefaultConfig(google.protobuf.message.Message):
-    """是否使用推荐弹幕设置"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALUE_FIELD_NUMBER: builtins.int
@@ -1522,6 +2241,123 @@ class PlayerDanmakuUseDefaultConfig(google.protobuf.message.Message):
 
 global___PlayerDanmakuUseDefaultConfig = PlayerDanmakuUseDefaultConfig
 
+@typing_extensions.final
+class PostPanel(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    START_FIELD_NUMBER: builtins.int
+    END_FIELD_NUMBER: builtins.int
+    PRIORITY_FIELD_NUMBER: builtins.int
+    BIZ_ID_FIELD_NUMBER: builtins.int
+    BIZ_TYPE_FIELD_NUMBER: builtins.int
+    CLICK_BUTTON_FIELD_NUMBER: builtins.int
+    TEXT_INPUT_FIELD_NUMBER: builtins.int
+    CHECK_BOX_FIELD_NUMBER: builtins.int
+    TOAST_FIELD_NUMBER: builtins.int
+    start: builtins.int
+    """"""
+    end: builtins.int
+    """"""
+    priority: builtins.int
+    """"""
+    biz_id: builtins.int
+    """"""
+    biz_type: global___PostPanelBizType.ValueType
+    """"""
+    @property
+    def click_button(self) -> global___ClickButton:
+        """"""
+    @property
+    def text_input(self) -> global___TextInput:
+        """"""
+    @property
+    def check_box(self) -> global___CheckBox:
+        """"""
+    @property
+    def toast(self) -> global___Toast:
+        """"""
+    def __init__(
+        self,
+        *,
+        start: builtins.int = ...,
+        end: builtins.int = ...,
+        priority: builtins.int = ...,
+        biz_id: builtins.int = ...,
+        biz_type: global___PostPanelBizType.ValueType = ...,
+        click_button: global___ClickButton | None = ...,
+        text_input: global___TextInput | None = ...,
+        check_box: global___CheckBox | None = ...,
+        toast: global___Toast | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["check_box", b"check_box", "click_button", b"click_button", "text_input", b"text_input", "toast", b"toast"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["biz_id", b"biz_id", "biz_type", b"biz_type", "check_box", b"check_box", "click_button", b"click_button", "end", b"end", "priority", b"priority", "start", b"start", "text_input", b"text_input", "toast", b"toast"]) -> None: ...
+
+global___PostPanel = PostPanel
+
+@typing_extensions.final
+class PostPanelV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    START_FIELD_NUMBER: builtins.int
+    END_FIELD_NUMBER: builtins.int
+    BIZ_TYPE_FIELD_NUMBER: builtins.int
+    CLICK_BUTTON_FIELD_NUMBER: builtins.int
+    TEXT_INPUT_FIELD_NUMBER: builtins.int
+    CHECK_BOX_FIELD_NUMBER: builtins.int
+    TOAST_FIELD_NUMBER: builtins.int
+    BUBBLE_FIELD_NUMBER: builtins.int
+    LABEL_FIELD_NUMBER: builtins.int
+    POST_STATUS_FIELD_NUMBER: builtins.int
+    start: builtins.int
+    """"""
+    end: builtins.int
+    """"""
+    biz_type: builtins.int
+    """"""
+    @property
+    def click_button(self) -> global___ClickButtonV2:
+        """"""
+    @property
+    def text_input(self) -> global___TextInputV2:
+        """"""
+    @property
+    def check_box(self) -> global___CheckBoxV2:
+        """"""
+    @property
+    def toast(self) -> global___ToastV2:
+        """"""
+    @property
+    def bubble(self) -> global___BubbleV2:
+        """"""
+    @property
+    def label(self) -> global___LabelV2:
+        """"""
+    post_status: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        start: builtins.int = ...,
+        end: builtins.int = ...,
+        biz_type: builtins.int = ...,
+        click_button: global___ClickButtonV2 | None = ...,
+        text_input: global___TextInputV2 | None = ...,
+        check_box: global___CheckBoxV2 | None = ...,
+        toast: global___ToastV2 | None = ...,
+        bubble: global___BubbleV2 | None = ...,
+        label: global___LabelV2 | None = ...,
+        post_status: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["bubble", b"bubble", "check_box", b"check_box", "click_button", b"click_button", "label", b"label", "text_input", b"text_input", "toast", b"toast"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["biz_type", b"biz_type", "bubble", b"bubble", "check_box", b"check_box", "click_button", b"click_button", "end", b"end", "label", b"label", "post_status", b"post_status", "start", b"start", "text_input", b"text_input", "toast", b"toast"]) -> None: ...
+
+global___PostPanelV2 = PostPanelV2
+
+@typing_extensions.final
 class Response(google.protobuf.message.Message):
     """修改弹幕配置-响应"""
 
@@ -1543,6 +2379,7 @@ class Response(google.protobuf.message.Message):
 
 global___Response = Response
 
+@typing_extensions.final
 class SubtitleItem(google.protobuf.message.Message):
     """单个字幕信息"""
 
@@ -1555,6 +2392,9 @@ class SubtitleItem(google.protobuf.message.Message):
     SUBTITLE_URL_FIELD_NUMBER: builtins.int
     AUTHOR_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
+    LAN_DOC_BRIEF_FIELD_NUMBER: builtins.int
+    AI_TYPE_FIELD_NUMBER: builtins.int
+    AI_STATUS_FIELD_NUMBER: builtins.int
     id: builtins.int
     """字幕id"""
     id_str: builtins.str
@@ -1570,6 +2410,12 @@ class SubtitleItem(google.protobuf.message.Message):
         """字幕作者信息"""
     type: global___SubtitleType.ValueType
     """字幕类型"""
+    lan_doc_brief: builtins.str
+    """"""
+    ai_type: global___SubtitleAiType.ValueType
+    """"""
+    ai_status: global___SubtitleAiStatus.ValueType
+    """"""
     def __init__(
         self,
         *,
@@ -1580,12 +2426,190 @@ class SubtitleItem(google.protobuf.message.Message):
         subtitle_url: builtins.str = ...,
         author: global___UserInfo | None = ...,
         type: global___SubtitleType.ValueType = ...,
+        lan_doc_brief: builtins.str = ...,
+        ai_type: global___SubtitleAiType.ValueType = ...,
+        ai_status: global___SubtitleAiStatus.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["author", b"author"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["author", b"author", "id", b"id", "id_str", b"id_str", "lan", b"lan", "lan_doc", b"lan_doc", "subtitle_url", b"subtitle_url", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ai_status", b"ai_status", "ai_type", b"ai_type", "author", b"author", "id", b"id", "id_str", b"id_str", "lan", b"lan", "lan_doc", b"lan_doc", "lan_doc_brief", b"lan_doc_brief", "subtitle_url", b"subtitle_url", "type", b"type"]) -> None: ...
 
 global___SubtitleItem = SubtitleItem
 
+@typing_extensions.final
+class TextInput(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PORTRAIT_PLACEHOLDER_FIELD_NUMBER: builtins.int
+    LANDSCAPE_PLACEHOLDER_FIELD_NUMBER: builtins.int
+    RENDER_TYPE_FIELD_NUMBER: builtins.int
+    PLACEHOLDER_POST_FIELD_NUMBER: builtins.int
+    SHOW_FIELD_NUMBER: builtins.int
+    AVATAR_FIELD_NUMBER: builtins.int
+    POST_STATUS_FIELD_NUMBER: builtins.int
+    LABEL_FIELD_NUMBER: builtins.int
+    @property
+    def portrait_placeholder(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def landscape_placeholder(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    render_type: global___RenderType.ValueType
+    """"""
+    placeholder_post: builtins.bool
+    """"""
+    show: builtins.bool
+    """"""
+    @property
+    def avatar(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Avatar]:
+        """"""
+    post_status: global___PostStatus.ValueType
+    """"""
+    @property
+    def label(self) -> global___Label:
+        """"""
+    def __init__(
+        self,
+        *,
+        portrait_placeholder: collections.abc.Iterable[builtins.str] | None = ...,
+        landscape_placeholder: collections.abc.Iterable[builtins.str] | None = ...,
+        render_type: global___RenderType.ValueType = ...,
+        placeholder_post: builtins.bool = ...,
+        show: builtins.bool = ...,
+        avatar: collections.abc.Iterable[global___Avatar] | None = ...,
+        post_status: global___PostStatus.ValueType = ...,
+        label: global___Label | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["label", b"label"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "label", b"label", "landscape_placeholder", b"landscape_placeholder", "placeholder_post", b"placeholder_post", "portrait_placeholder", b"portrait_placeholder", "post_status", b"post_status", "render_type", b"render_type", "show", b"show"]) -> None: ...
+
+global___TextInput = TextInput
+
+@typing_extensions.final
+class TextInputV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PORTRAIT_PLACEHOLDER_FIELD_NUMBER: builtins.int
+    LANDSCAPE_PLACEHOLDER_FIELD_NUMBER: builtins.int
+    RENDER_TYPE_FIELD_NUMBER: builtins.int
+    PLACEHOLDER_POST_FIELD_NUMBER: builtins.int
+    AVATAR_FIELD_NUMBER: builtins.int
+    TEXT_INPUT_LIMIT_FIELD_NUMBER: builtins.int
+    @property
+    def portrait_placeholder(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    @property
+    def landscape_placeholder(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """"""
+    render_type: global___RenderType.ValueType
+    """"""
+    placeholder_post: builtins.bool
+    """"""
+    @property
+    def avatar(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Avatar]:
+        """"""
+    text_input_limit: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        portrait_placeholder: collections.abc.Iterable[builtins.str] | None = ...,
+        landscape_placeholder: collections.abc.Iterable[builtins.str] | None = ...,
+        render_type: global___RenderType.ValueType = ...,
+        placeholder_post: builtins.bool = ...,
+        avatar: collections.abc.Iterable[global___Avatar] | None = ...,
+        text_input_limit: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["avatar", b"avatar", "landscape_placeholder", b"landscape_placeholder", "placeholder_post", b"placeholder_post", "portrait_placeholder", b"portrait_placeholder", "render_type", b"render_type", "text_input_limit", b"text_input_limit"]) -> None: ...
+
+global___TextInputV2 = TextInputV2
+
+@typing_extensions.final
+class Toast(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    DURATION_FIELD_NUMBER: builtins.int
+    SHOW_FIELD_NUMBER: builtins.int
+    BUTTON_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    duration: builtins.int
+    """"""
+    show: builtins.bool
+    """"""
+    @property
+    def button(self) -> global___Button:
+        """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        duration: builtins.int = ...,
+        show: builtins.bool = ...,
+        button: global___Button | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["button", b"button"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["button", b"button", "duration", b"duration", "show", b"show", "text", b"text"]) -> None: ...
+
+global___Toast = Toast
+
+@typing_extensions.final
+class ToastButtonV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    ACTION_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    action: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        action: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "text", b"text"]) -> None: ...
+
+global___ToastButtonV2 = ToastButtonV2
+
+@typing_extensions.final
+class ToastV2(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    DURATION_FIELD_NUMBER: builtins.int
+    TOAST_BUTTON_V2_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """"""
+    duration: builtins.int
+    """"""
+    @property
+    def toast_button_v2(self) -> global___ToastButtonV2:
+        """"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        duration: builtins.int = ...,
+        toast_button_v2: global___ToastButtonV2 | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["toast_button_v2", b"toast_button_v2"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["duration", b"duration", "text", b"text", "toast_button_v2", b"toast_button_v2"]) -> None: ...
+
+global___ToastV2 = ToastV2
+
+@typing_extensions.final
 class UserInfo(google.protobuf.message.Message):
     """字幕作者信息"""
 
@@ -1623,6 +2647,7 @@ class UserInfo(google.protobuf.message.Message):
 
 global___UserInfo = UserInfo
 
+@typing_extensions.final
 class VideoMask(google.protobuf.message.Message):
     """智能防挡弹幕蒙版信息"""
 
@@ -1658,6 +2683,7 @@ class VideoMask(google.protobuf.message.Message):
 
 global___VideoMask = VideoMask
 
+@typing_extensions.final
 class VideoSubtitle(google.protobuf.message.Message):
     """视频字幕信息"""
 

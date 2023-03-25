@@ -16,6 +16,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class Arc(google.protobuf.message.Message):
     """稿件基本信息"""
 
@@ -51,6 +52,10 @@ class Arc(google.protobuf.message.Message):
     STAFF_INFO_FIELD_NUMBER: builtins.int
     SEASON_ID_FIELD_NUMBER: builtins.int
     ATTRIBUTE_V2_FIELD_NUMBER: builtins.int
+    SEASON_THEME_FIELD_NUMBER: builtins.int
+    SHORT_LINK_V2_FIELD_NUMBER: builtins.int
+    UP_FROM_V2_FIELD_NUMBER: builtins.int
+    FIRST_FRAME_FIELD_NUMBER: builtins.int
     aid: builtins.int
     """稿件avid"""
     videos: builtins.int
@@ -121,6 +126,15 @@ class Arc(google.protobuf.message.Message):
     """UGC合集id"""
     attribute_v2: builtins.int
     """新版属性位配置(也没用)"""
+    @property
+    def season_theme(self) -> global___SeasonTheme:
+        """"""
+    short_link_v2: builtins.str
+    """"""
+    up_from_v2: builtins.int
+    """"""
+    first_frame: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -154,12 +168,17 @@ class Arc(google.protobuf.message.Message):
         staff_info: collections.abc.Iterable[global___StaffInfo] | None = ...,
         season_id: builtins.int = ...,
         attribute_v2: builtins.int = ...,
+        season_theme: global___SeasonTheme | None = ...,
+        short_link_v2: builtins.str = ...,
+        up_from_v2: builtins.int = ...,
+        first_frame: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["author", b"author", "dimension", b"dimension", "rights", b"rights", "stat", b"stat"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["access", b"access", "aid", b"aid", "attribute", b"attribute", "attribute_v2", b"attribute_v2", "author", b"author", "copyright", b"copyright", "ctime", b"ctime", "desc", b"desc", "dimension", b"dimension", "duration", b"duration", "dynamic", b"dynamic", "first_cid", b"first_cid", "forward", b"forward", "mission_id", b"mission_id", "order_id", b"order_id", "pic", b"pic", "pubdate", b"pubdate", "redirect_url", b"redirect_url", "report_result", b"report_result", "rights", b"rights", "season_id", b"season_id", "staff_info", b"staff_info", "stat", b"stat", "state", b"state", "tag", b"tag", "tags", b"tags", "title", b"title", "type_id", b"type_id", "type_name", b"type_name", "videos", b"videos"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["author", b"author", "dimension", b"dimension", "rights", b"rights", "season_theme", b"season_theme", "stat", b"stat"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["access", b"access", "aid", b"aid", "attribute", b"attribute", "attribute_v2", b"attribute_v2", "author", b"author", "copyright", b"copyright", "ctime", b"ctime", "desc", b"desc", "dimension", b"dimension", "duration", b"duration", "dynamic", b"dynamic", "first_cid", b"first_cid", "first_frame", b"first_frame", "forward", b"forward", "mission_id", b"mission_id", "order_id", b"order_id", "pic", b"pic", "pubdate", b"pubdate", "redirect_url", b"redirect_url", "report_result", b"report_result", "rights", b"rights", "season_id", b"season_id", "season_theme", b"season_theme", "short_link_v2", b"short_link_v2", "staff_info", b"staff_info", "stat", b"stat", "state", b"state", "tag", b"tag", "tags", b"tags", "title", b"title", "type_id", b"type_id", "type_name", b"type_name", "up_from_v2", b"up_from_v2", "videos", b"videos"]) -> None: ...
 
 global___Arc = Arc
 
+@typing_extensions.final
 class Author(google.protobuf.message.Message):
     """UP主信息"""
 
@@ -185,6 +204,7 @@ class Author(google.protobuf.message.Message):
 
 global___Author = Author
 
+@typing_extensions.final
 class Dimension(google.protobuf.message.Message):
     """分辨率"""
 
@@ -212,6 +232,7 @@ class Dimension(google.protobuf.message.Message):
 
 global___Dimension = Dimension
 
+@typing_extensions.final
 class Page(google.protobuf.message.Message):
     """分P信息"""
 
@@ -226,6 +247,7 @@ class Page(google.protobuf.message.Message):
     DESC_FIELD_NUMBER: builtins.int
     WEBLINK_FIELD_NUMBER: builtins.int
     DIMENSION_FIELD_NUMBER: builtins.int
+    FIRST_FRAME_FIELD_NUMBER: builtins.int
     cid: builtins.int
     """视频cid"""
     page: builtins.int
@@ -243,6 +265,8 @@ class Page(google.protobuf.message.Message):
     @property
     def dimension(self) -> global___Dimension:
         """分P分辨率"""
+    first_frame: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -254,12 +278,14 @@ class Page(google.protobuf.message.Message):
         desc: builtins.str = ...,
         webLink: builtins.str = ...,
         dimension: global___Dimension | None = ...,
+        first_frame: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["dimension", b"dimension"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "desc", b"desc", "dimension", b"dimension", "duration", b"duration", "from", b"from", "page", b"page", "part", b"part", "vid", b"vid", "webLink", b"webLink"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "desc", b"desc", "dimension", b"dimension", "duration", b"duration", "first_frame", b"first_frame", "from", b"from", "page", b"page", "part", b"part", "vid", b"vid", "webLink", b"webLink"]) -> None: ...
 
 global___Page = Page
 
+@typing_extensions.final
 class Rights(google.protobuf.message.Message):
     """稿件控制标志"""
 
@@ -277,6 +303,8 @@ class Rights(google.protobuf.message.Message):
     IS_COOPERATION_FIELD_NUMBER: builtins.int
     UGC_PAY_PREVIEW_FIELD_NUMBER: builtins.int
     NO_BACKGROUND_FIELD_NUMBER: builtins.int
+    ARC_PAY_FIELD_NUMBER: builtins.int
+    PAY_FREE_WATCH_FIELD_NUMBER: builtins.int
     bp: builtins.int
     """老版是否付费"""
     elec: builtins.int
@@ -290,17 +318,21 @@ class Rights(google.protobuf.message.Message):
     hd5: builtins.int
     """是否高码率"""
     no_reprint: builtins.int
-    """是否禁止转载标志"""
+    """是否显示“禁止转载”标志"""
     autoplay: builtins.int
     """是否允许自动播放"""
     ugc_pay: builtins.int
-    """UGC稿件需要付费"""
+    """UGC稿件需要付费(旧版)"""
     is_cooperation: builtins.int
     """是否联合投稿"""
     ugc_pay_preview: builtins.int
     """是否UGC付费预览"""
     no_background: builtins.int
     """是否禁止后台播放"""
+    arc_pay: builtins.int
+    """UGC稿件需要付费"""
+    pay_free_watch: builtins.int
+    """是否已付费可自由观看"""
     def __init__(
         self,
         *,
@@ -316,11 +348,40 @@ class Rights(google.protobuf.message.Message):
         is_cooperation: builtins.int = ...,
         ugc_pay_preview: builtins.int = ...,
         no_background: builtins.int = ...,
+        arc_pay: builtins.int = ...,
+        pay_free_watch: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["autoplay", b"autoplay", "bp", b"bp", "download", b"download", "elec", b"elec", "hd5", b"hd5", "is_cooperation", b"is_cooperation", "movie", b"movie", "no_background", b"no_background", "no_reprint", b"no_reprint", "pay", b"pay", "ugc_pay", b"ugc_pay", "ugc_pay_preview", b"ugc_pay_preview"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["arc_pay", b"arc_pay", "autoplay", b"autoplay", "bp", b"bp", "download", b"download", "elec", b"elec", "hd5", b"hd5", "is_cooperation", b"is_cooperation", "movie", b"movie", "no_background", b"no_background", "no_reprint", b"no_reprint", "pay", b"pay", "pay_free_watch", b"pay_free_watch", "ugc_pay", b"ugc_pay", "ugc_pay_preview", b"ugc_pay_preview"]) -> None: ...
 
 global___Rights = Rights
 
+@typing_extensions.final
+class SeasonTheme(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BG_COLOR_FIELD_NUMBER: builtins.int
+    SELECTED_BG_COLOR_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_FIELD_NUMBER: builtins.int
+    bg_color: builtins.str
+    """"""
+    selected_bg_color: builtins.str
+    """"""
+    text_color: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        bg_color: builtins.str = ...,
+        selected_bg_color: builtins.str = ...,
+        text_color: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "selected_bg_color", b"selected_bg_color", "text_color", b"text_color"]) -> None: ...
+
+global___SeasonTheme = SeasonTheme
+
+@typing_extensions.final
 class StaffInfo(google.protobuf.message.Message):
     """合作成员信息"""
 
@@ -348,6 +409,7 @@ class StaffInfo(google.protobuf.message.Message):
 
 global___StaffInfo = StaffInfo
 
+@typing_extensions.final
 class Stat(google.protobuf.message.Message):
     """状态数"""
 
@@ -367,7 +429,7 @@ class Stat(google.protobuf.message.Message):
     aid: builtins.int
     """稿件avid"""
     view: builtins.int
-    """播放数"""
+    """播放数(当屏蔽时为-1)"""
     danmaku: builtins.int
     """弹幕数"""
     reply: builtins.int

@@ -20,7 +20,7 @@ class _PrivacyConfigState:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PrivacyConfigStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PrivacyConfigState.ValueType], builtins.type):  # noqa: F821
+class _PrivacyConfigStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PrivacyConfigState.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     close: _PrivacyConfigState.ValueType  # 0
     """关闭"""
@@ -40,7 +40,7 @@ class _PrivacyConfigType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PrivacyConfigTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PrivacyConfigType.ValueType], builtins.type):  # noqa: F821
+class _PrivacyConfigTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PrivacyConfigType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     none: _PrivacyConfigType.ValueType  # 0
     """"""
@@ -56,6 +56,7 @@ dynamic_city: PrivacyConfigType.ValueType  # 1
 """动态同城"""
 global___PrivacyConfigType = PrivacyConfigType
 
+@typing_extensions.final
 class NoArgRequest(google.protobuf.message.Message):
     """空请求"""
 
@@ -67,6 +68,7 @@ class NoArgRequest(google.protobuf.message.Message):
 
 global___NoArgRequest = NoArgRequest
 
+@typing_extensions.final
 class NoReply(google.protobuf.message.Message):
     """空响应"""
 
@@ -78,6 +80,7 @@ class NoReply(google.protobuf.message.Message):
 
 global___NoReply = NoReply
 
+@typing_extensions.final
 class PrivacyConfigItem(google.protobuf.message.Message):
     """隐私设置"""
 
@@ -111,6 +114,7 @@ class PrivacyConfigItem(google.protobuf.message.Message):
 
 global___PrivacyConfigItem = PrivacyConfigItem
 
+@typing_extensions.final
 class PrivacyConfigReply(google.protobuf.message.Message):
     """获取隐私设置-响应"""
 
@@ -130,6 +134,7 @@ class PrivacyConfigReply(google.protobuf.message.Message):
 
 global___PrivacyConfigReply = PrivacyConfigReply
 
+@typing_extensions.final
 class SetPrivacyConfigRequest(google.protobuf.message.Message):
     """修改隐私设置-请求"""
 

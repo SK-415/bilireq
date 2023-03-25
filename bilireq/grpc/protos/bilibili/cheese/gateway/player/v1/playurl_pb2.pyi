@@ -15,6 +15,7 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+@typing_extensions.final
 class PlayViewReq(google.protobuf.message.Message):
     """播放页信息-请求"""
 
@@ -84,6 +85,7 @@ class PlayViewReq(google.protobuf.message.Message):
 
 global___PlayViewReq = PlayViewReq
 
+@typing_extensions.final
 class ProjectReq(google.protobuf.message.Message):
     """投屏地址-请求"""
 
@@ -157,6 +159,7 @@ class ProjectReq(google.protobuf.message.Message):
 
 global___ProjectReq = ProjectReq
 
+@typing_extensions.final
 class PlayViewReply(google.protobuf.message.Message):
     """播放页信息-响应"""
 
@@ -165,7 +168,7 @@ class PlayViewReply(google.protobuf.message.Message):
     VIDEO_INFO_FIELD_NUMBER: builtins.int
     PLAY_CONF_FIELD_NUMBER: builtins.int
     @property
-    def video_info(self) -> bilibili.app.playurl.v1.playurl_pb2.VideoInfo:
+    def video_info(self) -> bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.VideoInfo:
         """视频url信息"""
     @property
     def play_conf(self) -> global___PlayAbilityConf:
@@ -181,6 +184,7 @@ class PlayViewReply(google.protobuf.message.Message):
 
 global___PlayViewReply = PlayViewReply
 
+@typing_extensions.final
 class PlayAbilityConf(google.protobuf.message.Message):
     """禁用功能配置"""
 
@@ -294,6 +298,7 @@ class PlayAbilityConf(google.protobuf.message.Message):
 
 global___PlayAbilityConf = PlayAbilityConf
 
+@typing_extensions.final
 class ProjectReply(google.protobuf.message.Message):
     """投屏地址-响应"""
 
@@ -301,7 +306,7 @@ class ProjectReply(google.protobuf.message.Message):
 
     PROJECT_FIELD_NUMBER: builtins.int
     @property
-    def project(self) -> bilibili.app.playurl.v1.playurl_pb2.PlayURLReply: ...
+    def project(self) -> bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.PlayURLReply: ...
     def __init__(
         self,
         *,
