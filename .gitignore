@@ -7,6 +7,7 @@ _test/
 playground/
 venv/
 .venv/
+build/
 
 test_data.py
 .pdm-python
