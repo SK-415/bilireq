@@ -6,5 +6,7 @@ dist/
 _test/
 playground/
 venv/
+.venv/
 
 test_data.py
+.pdm-python

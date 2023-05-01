@@ -1,32 +1,39 @@
-[tool.poetry]
+[project]
+authors = [
+    {name = "SK-415", email = "2967923486@qq.com"},
+]
+requires-python = ">=3.7,<4.0"
+dependencies = [
+    "httpx>=0.24.0",
+    "rsa>=4.9",
+    "grpcio>=1.54.0",
+    "protobuf>=4.22.3",
+]
 name = "bilireq"
-version = "0.2.4"
+version = "0.2.5"
 description = ""
-authors = ["SK-415 <2967923486@qq.com>"]
-license = "MIT"
+license = {text = "MIT"}
 
-[tool.poetry.dependencies]
-python = "^3.7"
-httpx = "^0.23.0"
-qrcode = {extras = ["pil"], version = "^7.3.1"}
-rsa = "^4.9"
-grpcio = "^1.49.1"
-protobuf = "^4.21.7"
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
-[tool.poetry.dev-dependencies]
-grpcio-tools = "^1.49.1"
-mypy-protobuf = "^3.3.0"
+[project.optional-dependencies]
+qrcode = ["qrcode[pil]"]
 
-[tool.poetry.extras]
-qrcode = ["qrcode"]
+[project.urls]
+repository = "https://github.com/SK-415/bilireq"
+
+[tool.pdm]
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "grpcio-tools>=1.54.0",
+    "mypy-protobuf>=3.4.0",
+]
+
+[tool.pdm.build]
+includes = []
 
 [tool.pyright]
 ignore = ["bilireq/grpc/protos"]
-
-# [[tool.poetry.source]]
-# name = "tsinghua"
-# url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
