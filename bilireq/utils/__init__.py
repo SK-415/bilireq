@@ -153,7 +153,7 @@ async def request(
             )
         global _salt
         _salt = await _getsalt()
-        return request(method, url, retry_time, **kwargs)
+        return await request(method, url, retry_time, **kwargs)
     if raw_json["code"] != 0:
         raise ResponseCodeError(
             code=raw_json["code"],
