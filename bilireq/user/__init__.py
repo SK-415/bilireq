@@ -9,7 +9,9 @@ async def get_user_info(uid: Union[int, str], *, auth=None, reqtype="app", **kwa
     """根据 UID 获取指定用户信息"""
     url = f"{BASE_URL}/x/space/wbi/acc/info"
     params = {"mid": uid}
-    return await get(url, params=params, auth=auth, reqtype=reqtype, **kwargs)
+    return await get(
+        url, params=params, auth=auth, reqtype=reqtype, is_wbi=True, **kwargs
+    )
 
 
 async def get_videos(
