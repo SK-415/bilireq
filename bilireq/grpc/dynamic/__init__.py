@@ -15,6 +15,8 @@ from ..protos.bilibili.app.dynamic.v2.dynamic_pb2 import (
 )
 from ..protos.bilibili.app.dynamic.v2.dynamic_pb2_grpc import DynamicStub
 from ..utils import grpc_request
+from typing import List
+
 
 
 @grpc_request
@@ -39,7 +41,7 @@ async def grpc_get_followed_dynamic_users(**kwargs) -> DynMixUpListViewMoreReply
 
 
 @grpc_request
-async def grpc_get_dynamic_details(dynamic_ids: list[int], **kwargs) -> DynDetailsReply:
+async def grpc_get_dynamic_details(dynamic_ids: List[int], **kwargs) -> DynDetailsReply:
     stub = DynamicStub(kwargs.pop("_channel"))
     req = DynDetailsReq(dynamic_ids=json.dumps({"dyn_ids": dynamic_ids}))
     return await stub.DynDetails(req, **kwargs)

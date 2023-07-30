@@ -2,7 +2,7 @@
 authors = [
     {name = "SK-415", email = "2967923486@qq.com"},
 ]
-requires-python = ">=3.7,<4.0"
+requires-python = ">=3.8,<4.0"
 dependencies = [
     "httpx",
     "rsa>=4.9",
@@ -10,7 +10,7 @@ dependencies = [
     "protobuf>=4.23.4",
 ]
 name = "bilireq"
-version = "0.2.7"
+version = "0.2.8"
 description = ""
 license = {text = "MIT"}
 
