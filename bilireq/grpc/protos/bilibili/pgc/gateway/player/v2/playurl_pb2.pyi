@@ -35,6 +35,8 @@ class _ClipTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     """"""
     CLIP_TYPE_MULTI_VIEW: _ClipType.ValueType  # 4
     """"""
+    CLIP_TYPE_AD: _ClipType.ValueType  # 5
+    """"""
 
 class ClipType(_ClipType, metaclass=_ClipTypeEnumTypeWrapper):
     """跳过片头/片尾配置: Clip类型"""
@@ -48,6 +50,8 @@ CLIP_TYPE_ED: ClipType.ValueType  # 2
 CLIP_TYPE_HE: ClipType.ValueType  # 3
 """"""
 CLIP_TYPE_MULTI_VIEW: ClipType.ValueType  # 4
+""""""
+CLIP_TYPE_AD: ClipType.ValueType  # 5
 """"""
 global___ClipType = ClipType
 
@@ -85,6 +89,10 @@ class _DrmTechTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     """"""
     FAIR_PLAY: _DrmTechType.ValueType  # 1
     """"""
+    WIDE_VINE: _DrmTechType.ValueType  # 2
+    """"""
+    BILI_DRM: _DrmTechType.ValueType  # 3
+    """"""
 
 class DrmTechType(_DrmTechType, metaclass=_DrmTechTypeEnumTypeWrapper):
     """DRM技术类型"""
@@ -93,7 +101,31 @@ NON: DrmTechType.ValueType  # 0
 """"""
 FAIR_PLAY: DrmTechType.ValueType  # 1
 """"""
+WIDE_VINE: DrmTechType.ValueType  # 2
+""""""
+BILI_DRM: DrmTechType.ValueType  # 3
+""""""
 global___DrmTechType = DrmTechType
+
+class _EpPublicityVideoType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _EpPublicityVideoTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_EpPublicityVideoType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    PRE: _EpPublicityVideoType.ValueType  # 0
+    """"""
+    INLINE: _EpPublicityVideoType.ValueType  # 1
+    """"""
+
+class EpPublicityVideoType(_EpPublicityVideoType, metaclass=_EpPublicityVideoTypeEnumTypeWrapper):
+    """"""
+
+PRE: EpPublicityVideoType.ValueType  # 0
+""""""
+INLINE: EpPublicityVideoType.ValueType  # 1
+""""""
+global___EpPublicityVideoType = EpPublicityVideoType
 
 class _InlineScene:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -151,6 +183,30 @@ TYPE_PREVIEW: InlineType.ValueType  # 3
 """"""
 global___InlineType = InlineType
 
+class _LimitActionType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LimitActionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LimitActionType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LAT_UNKNOWN: _LimitActionType.ValueType  # 0
+    """"""
+    SHOW_LIMIT_DIALOG: _LimitActionType.ValueType  # 1
+    """"""
+    SKIP_CURRENT_EP: _LimitActionType.ValueType  # 2
+    """"""
+
+class LimitActionType(_LimitActionType, metaclass=_LimitActionTypeEnumTypeWrapper):
+    """限制操作类型"""
+
+LAT_UNKNOWN: LimitActionType.ValueType  # 0
+""""""
+SHOW_LIMIT_DIALOG: LimitActionType.ValueType  # 1
+""""""
+SKIP_CURRENT_EP: LimitActionType.ValueType  # 2
+""""""
+global___LimitActionType = LimitActionType
+
 class _PlayErr:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -171,6 +227,112 @@ WithMultiDeviceLoginErr: PlayErr.ValueType  # 1
 """管控类型的错误码"""
 global___PlayErr = PlayErr
 
+class _SecurityLevel:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _SecurityLevelEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SecurityLevel.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LEVEL_UNKNOWN: _SecurityLevel.ValueType  # 0
+    """"""
+    LEVEL_L1: _SecurityLevel.ValueType  # 1
+    """"""
+    LEVEL_L2: _SecurityLevel.ValueType  # 2
+    """"""
+    LEVEL_L3: _SecurityLevel.ValueType  # 3
+    """"""
+
+class SecurityLevel(_SecurityLevel, metaclass=_SecurityLevelEnumTypeWrapper):
+    """DRM 安全等级"""
+
+LEVEL_UNKNOWN: SecurityLevel.ValueType  # 0
+""""""
+LEVEL_L1: SecurityLevel.ValueType  # 1
+""""""
+LEVEL_L2: SecurityLevel.ValueType  # 2
+""""""
+LEVEL_L3: SecurityLevel.ValueType  # 3
+""""""
+global___SecurityLevel = SecurityLevel
+
+@typing_extensions.final
+class Animation(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class QnSvgaAnimationMapEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    QN_SVGA_ANIMATION_MAP_FIELD_NUMBER: builtins.int
+    @property
+    def qn_svga_animation_map(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """"""
+    def __init__(
+        self,
+        *,
+        qn_svga_animation_map: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["qn_svga_animation_map", b"qn_svga_animation_map"]) -> None: ...
+
+global___Animation = Animation
+
+@typing_extensions.final
+class AudioMaterialProto(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AUDIO_ID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    EDITION_FIELD_NUMBER: builtins.int
+    PERSON_ID_FIELD_NUMBER: builtins.int
+    PERSON_NAME_FIELD_NUMBER: builtins.int
+    PERSON_AVATAR_FIELD_NUMBER: builtins.int
+    AUDIO_FIELD_NUMBER: builtins.int
+    audio_id: builtins.str
+    """"""
+    title: builtins.str
+    """"""
+    edition: builtins.str
+    """"""
+    person_id: builtins.int
+    """"""
+    person_name: builtins.str
+    """"""
+    person_avatar: builtins.str
+    """"""
+    @property
+    def audio(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DashItem]:
+        """"""
+    def __init__(
+        self,
+        *,
+        audio_id: builtins.str = ...,
+        title: builtins.str = ...,
+        edition: builtins.str = ...,
+        person_id: builtins.int = ...,
+        person_name: builtins.str = ...,
+        person_avatar: builtins.str = ...,
+        audio: collections.abc.Iterable[global___DashItem] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "audio_id", b"audio_id", "edition", b"edition", "person_avatar", b"person_avatar", "person_id", b"person_id", "person_name", b"person_name", "title", b"title"]) -> None: ...
+
+global___AudioMaterialProto = AudioMaterialProto
+
 @typing_extensions.final
 class BadgeInfo(google.protobuf.message.Message):
     """角标信息"""
@@ -182,6 +344,7 @@ class BadgeInfo(google.protobuf.message.Message):
     BG_COLOR_NIGHT_FIELD_NUMBER: builtins.int
     TEXT_COLOR_FIELD_NUMBER: builtins.int
     BG_GRADIENT_COLOR_FIELD_NUMBER: builtins.int
+    IMG_FIELD_NUMBER: builtins.int
     text: builtins.str
     """角标文案"""
     bg_color: builtins.str
@@ -193,6 +356,8 @@ class BadgeInfo(google.protobuf.message.Message):
     @property
     def bg_gradient_color(self) -> global___GradientColor:
         """? 新版本客户端已弃用此项"""
+    img: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -201,9 +366,10 @@ class BadgeInfo(google.protobuf.message.Message):
         bg_color_night: builtins.str = ...,
         text_color: builtins.str = ...,
         bg_gradient_color: global___GradientColor | None = ...,
+        img: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["bg_gradient_color", b"bg_gradient_color"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "bg_gradient_color", b"bg_gradient_color", "text", b"text", "text_color", b"text_color"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "bg_gradient_color", b"bg_gradient_color", "img", b"img", "text", b"text", "text_color", b"text_color"]) -> None: ...
 
 global___BadgeInfo = BadgeInfo
 
@@ -268,6 +434,8 @@ class ButtonInfo(google.protobuf.message.Message):
     SIMPLE_BG_COLOR_NIGHT_FIELD_NUMBER: builtins.int
     BG_GRADIENT_COLOR_FIELD_NUMBER: builtins.int
     ORDER_REPORT_PARAMS_FIELD_NUMBER: builtins.int
+    TASK_PARAM_FIELD_NUMBER: builtins.int
+    PC_LINK_FIELD_NUMBER: builtins.int
     text: builtins.str
     """按钮文案"""
     text_color: builtins.str
@@ -303,6 +471,11 @@ class ButtonInfo(google.protobuf.message.Message):
     @property
     def order_report_params(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """"""
+    @property
+    def task_param(self) -> global___TaskParam:
+        """"""
+    pc_link: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -321,9 +494,11 @@ class ButtonInfo(google.protobuf.message.Message):
         simple_bg_color_night: builtins.str = ...,
         bg_gradient_color: global___GradientColor | None = ...,
         order_report_params: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        task_param: global___TaskParam | None = ...,
+        pc_link: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["badge_info", b"badge_info", "bg_gradient_color", b"bg_gradient_color", "report", b"report", "simple_text_info", b"simple_text_info"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["action_type", b"action_type", "badge_info", b"badge_info", "bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "bg_gradient_color", b"bg_gradient_color", "left_strikethrough_text", b"left_strikethrough_text", "link", b"link", "order_report_params", b"order_report_params", "report", b"report", "simple_bg_color", b"simple_bg_color", "simple_bg_color_night", b"simple_bg_color_night", "simple_text_info", b"simple_text_info", "text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["badge_info", b"badge_info", "bg_gradient_color", b"bg_gradient_color", "report", b"report", "simple_text_info", b"simple_text_info", "task_param", b"task_param"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action_type", b"action_type", "badge_info", b"badge_info", "bg_color", b"bg_color", "bg_color_night", b"bg_color_night", "bg_gradient_color", b"bg_gradient_color", "left_strikethrough_text", b"left_strikethrough_text", "link", b"link", "order_report_params", b"order_report_params", "pc_link", b"pc_link", "report", b"report", "simple_bg_color", b"simple_bg_color", "simple_bg_color_night", b"simple_bg_color_night", "simple_text_info", b"simple_text_info", "task_param", b"task_param", "text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night"]) -> None: ...
 
 global___ButtonInfo = ButtonInfo
 
@@ -423,6 +598,8 @@ class Coupon(google.protobuf.message.Message):
     PAY_BUTTON_TEXT_LINE_THROUGH_FIELD_NUMBER: builtins.int
     REAL_AMOUNT_FIELD_NUMBER: builtins.int
     EXPIRE_TIME_FIELD_NUMBER: builtins.int
+    OTYPE_FIELD_NUMBER: builtins.int
+    AMOUNT_FIELD_NUMBER: builtins.int
     coupon_token: builtins.str
     """优惠券token"""
     type: builtins.int
@@ -446,6 +623,10 @@ class Coupon(google.protobuf.message.Message):
     @property
     def expire_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """使用过期时间"""
+    otype: builtins.int
+    """"""
+    amount: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -459,9 +640,11 @@ class Coupon(google.protobuf.message.Message):
         pay_button_text_line_through: builtins.str = ...,
         real_amount: builtins.str = ...,
         expire_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        otype: builtins.int = ...,
+        amount: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["expire_time", b"expire_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["coupon_token", b"coupon_token", "desc", b"desc", "expire_time", b"expire_time", "pay_button_text", b"pay_button_text", "pay_button_text_line_through", b"pay_button_text_line_through", "real_amount", b"real_amount", "title", b"title", "type", b"type", "use_desc", b"use_desc", "value", b"value"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["amount", b"amount", "coupon_token", b"coupon_token", "desc", b"desc", "expire_time", b"expire_time", "otype", b"otype", "pay_button_text", b"pay_button_text", "pay_button_text_line_through", b"pay_button_text_line_through", "real_amount", b"real_amount", "title", b"title", "type", b"type", "use_desc", b"use_desc", "value", b"value"]) -> None: ...
 
 global___Coupon = Coupon
 
@@ -551,6 +734,7 @@ class DashItem(google.protobuf.message.Message):
     MD5_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     FRAME_RATE_FIELD_NUMBER: builtins.int
+    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
     id: builtins.int
     """清晰度"""
     base_url: builtins.str
@@ -568,6 +752,8 @@ class DashItem(google.protobuf.message.Message):
     """视频大小"""
     frame_rate: builtins.str
     """帧率"""
+    widevine_pssh: builtins.str
+    """DRM widevine 密钥"""
     def __init__(
         self,
         *,
@@ -579,8 +765,9 @@ class DashItem(google.protobuf.message.Message):
         md5: builtins.str = ...,
         size: builtins.int = ...,
         frame_rate: builtins.str = ...,
+        widevine_pssh: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "id", b"id", "md5", b"md5", "size", b"size"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "id", b"id", "md5", b"md5", "size", b"size", "widevine_pssh", b"widevine_pssh"]) -> None: ...
 
 global___DashItem = DashItem
 
@@ -601,6 +788,7 @@ class DashVideo(google.protobuf.message.Message):
     FRAME_RATE_FIELD_NUMBER: builtins.int
     WIDTH_FIELD_NUMBER: builtins.int
     HEIGHT_FIELD_NUMBER: builtins.int
+    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
     base_url: builtins.str
     """主线流"""
     @property
@@ -624,6 +812,8 @@ class DashVideo(google.protobuf.message.Message):
     """宽"""
     height: builtins.int
     """高"""
+    widevine_pssh: builtins.str
+    """DRM 密钥"""
     def __init__(
         self,
         *,
@@ -638,10 +828,29 @@ class DashVideo(google.protobuf.message.Message):
         frame_rate: builtins.str = ...,
         width: builtins.int = ...,
         height: builtins.int = ...,
+        widevine_pssh: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["audio_id", b"audio_id", "backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "height", b"height", "md5", b"md5", "no_rexcode", b"no_rexcode", "size", b"size", "width", b"width"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio_id", b"audio_id", "backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "height", b"height", "md5", b"md5", "no_rexcode", b"no_rexcode", "size", b"size", "widevine_pssh", b"widevine_pssh", "width", b"width"]) -> None: ...
 
 global___DashVideo = DashVideo
+
+@typing_extensions.final
+class DataControl(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NEED_WATCH_PROGRESS_FIELD_NUMBER: builtins.int
+    need_watch_progress: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        need_watch_progress: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["need_watch_progress", b"need_watch_progress"]) -> None: ...
+
+global___DataControl = DataControl
 
 @typing_extensions.final
 class Dialog(google.protobuf.message.Message):
@@ -663,6 +872,7 @@ class Dialog(google.protobuf.message.Message):
     COUNT_DOWN_SEC_FIELD_NUMBER: builtins.int
     RIGHT_BOTTOM_DESC_FIELD_NUMBER: builtins.int
     BOTTOM_DISPLAY_FIELD_NUMBER: builtins.int
+    PLAY_LIST_FIELD_NUMBER: builtins.int
     code: builtins.int
     """鉴权限制码"""
     msg: builtins.str
@@ -700,6 +910,9 @@ class Dialog(google.protobuf.message.Message):
     @property
     def bottom_display(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BottomDisplay]:
         """"""
+    @property
+    def play_list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlayList]:
+        """"""
     def __init__(
         self,
         *,
@@ -717,9 +930,10 @@ class Dialog(google.protobuf.message.Message):
         count_down_sec: builtins.int = ...,
         right_bottom_desc: global___TextInfo | None = ...,
         bottom_display: collections.abc.Iterable[global___BottomDisplay] | None = ...,
+        play_list: collections.abc.Iterable[global___PlayList] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["bottom_desc", b"bottom_desc", "config", b"config", "image", b"image", "report", b"report", "right_bottom_desc", b"right_bottom_desc", "subtitle", b"subtitle", "title", b"title"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bottom_desc", b"bottom_desc", "bottom_display", b"bottom_display", "button", b"button", "code", b"code", "config", b"config", "count_down_sec", b"count_down_sec", "image", b"image", "msg", b"msg", "report", b"report", "right_bottom_desc", b"right_bottom_desc", "style_type", b"style_type", "subtitle", b"subtitle", "title", b"title", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bottom_desc", b"bottom_desc", "bottom_display", b"bottom_display", "button", b"button", "code", b"code", "config", b"config", "count_down_sec", b"count_down_sec", "image", b"image", "msg", b"msg", "play_list", b"play_list", "report", b"report", "right_bottom_desc", b"right_bottom_desc", "style_type", b"style_type", "subtitle", b"subtitle", "title", b"title", "type", b"type"]) -> None: ...
 
 global___Dialog = Dialog
 
@@ -733,6 +947,7 @@ class DialogConfig(google.protobuf.message.Message):
     IS_ORIENTATION_ENABLE_FIELD_NUMBER: builtins.int
     IS_NESTED_SCROLL_ENABLE_FIELD_NUMBER: builtins.int
     IS_FORCE_HALFSCREEN_ENABLE_FIELD_NUMBER: builtins.int
+    IS_BACKGROUND_TRANSLUCENT_ENABLE_FIELD_NUMBER: builtins.int
     is_show_cover: builtins.bool
     """是否显示高斯模糊背景图"""
     is_orientation_enable: builtins.bool
@@ -741,6 +956,8 @@ class DialogConfig(google.protobuf.message.Message):
     """是否响应上滑吸顶"""
     is_force_halfscreen_enable: builtins.bool
     """是否强制竖屏"""
+    is_background_translucent_enable: builtins.bool
+    """是否启用背景半透明"""
     def __init__(
         self,
         *,
@@ -748,8 +965,9 @@ class DialogConfig(google.protobuf.message.Message):
         is_orientation_enable: builtins.bool = ...,
         is_nested_scroll_enable: builtins.bool = ...,
         is_force_halfscreen_enable: builtins.bool = ...,
+        is_background_translucent_enable: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["is_force_halfscreen_enable", b"is_force_halfscreen_enable", "is_nested_scroll_enable", b"is_nested_scroll_enable", "is_orientation_enable", b"is_orientation_enable", "is_show_cover", b"is_show_cover"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["is_background_translucent_enable", b"is_background_translucent_enable", "is_force_halfscreen_enable", b"is_force_halfscreen_enable", "is_nested_scroll_enable", b"is_nested_scroll_enable", "is_orientation_enable", b"is_orientation_enable", "is_show_cover", b"is_show_cover"]) -> None: ...
 
 global___DialogConfig = DialogConfig
 
@@ -828,7 +1046,7 @@ global___DolbyItem = DolbyItem
 
 @typing_extensions.final
 class EndPage(google.protobuf.message.Message):
-    """播放结束页"""
+    """播放结束后的尾页Dialog"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -836,9 +1054,9 @@ class EndPage(google.protobuf.message.Message):
     HIDE_FIELD_NUMBER: builtins.int
     @property
     def dialog(self) -> global___Dialog:
-        """鉴权浮层"""
+        """"""
     hide: builtins.bool
-    """播放完后是否隐藏end_page"""
+    """"""
     def __init__(
         self,
         *,
@@ -849,6 +1067,204 @@ class EndPage(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["dialog", b"dialog", "hide", b"hide"]) -> None: ...
 
 global___EndPage = EndPage
+
+@typing_extensions.final
+class EpInlineVideo(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MATERIAL_NO_FIELD_NUMBER: builtins.int
+    AID_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    material_no: builtins.int
+    """"""
+    aid: builtins.int
+    """"""
+    cid: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        material_no: builtins.int = ...,
+        aid: builtins.int = ...,
+        cid: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "cid", b"cid", "material_no", b"material_no"]) -> None: ...
+
+global___EpInlineVideo = EpInlineVideo
+
+@typing_extensions.final
+class EpisodeAdvertisementInfo(google.protobuf.message.Message):
+    """剧集广告信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    LINK_FIELD_NUMBER: builtins.int
+    FOLLOW_VIDEO_BNT_FLAG_FIELD_NUMBER: builtins.int
+    NEXT_VIDEO_TITLE_FIELD_NUMBER: builtins.int
+    NEXT_VIDEO_LINK_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    SEASON_ID_FIELD_NUMBER: builtins.int
+    FOLLOW_FIELD_NUMBER: builtins.int
+    aid: builtins.int
+    """"""
+    title: builtins.str
+    """"""
+    link: builtins.str
+    """"""
+    follow_video_bnt_flag: builtins.int
+    """"""
+    next_video_title: builtins.str
+    """"""
+    next_video_link: builtins.str
+    """"""
+    cid: builtins.int
+    """"""
+    season_id: builtins.int
+    """"""
+    follow: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        aid: builtins.int = ...,
+        title: builtins.str = ...,
+        link: builtins.str = ...,
+        follow_video_bnt_flag: builtins.int = ...,
+        next_video_title: builtins.str = ...,
+        next_video_link: builtins.str = ...,
+        cid: builtins.int = ...,
+        season_id: builtins.int = ...,
+        follow: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "cid", b"cid", "follow", b"follow", "follow_video_bnt_flag", b"follow_video_bnt_flag", "link", b"link", "next_video_link", b"next_video_link", "next_video_title", b"next_video_title", "season_id", b"season_id", "title", b"title"]) -> None: ...
+
+global___EpisodeAdvertisementInfo = EpisodeAdvertisementInfo
+
+@typing_extensions.final
+class EpisodeInfo(google.protobuf.message.Message):
+    """EP信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EP_ID_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    AID_FIELD_NUMBER: builtins.int
+    EP_STATUS_FIELD_NUMBER: builtins.int
+    SEASON_INFO_FIELD_NUMBER: builtins.int
+    COVER_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    INTERACTION_FIELD_NUMBER: builtins.int
+    LONG_TITLE_FIELD_NUMBER: builtins.int
+    ep_id: builtins.int
+    """"""
+    cid: builtins.int
+    """"""
+    aid: builtins.int
+    """"""
+    ep_status: builtins.int
+    """"""
+    @property
+    def season_info(self) -> global___SeasonInfo:
+        """"""
+    cover: builtins.str
+    """"""
+    title: builtins.str
+    """"""
+    @property
+    def interaction(self) -> global___Interaction:
+        """"""
+    long_title: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        ep_id: builtins.int = ...,
+        cid: builtins.int = ...,
+        aid: builtins.int = ...,
+        ep_status: builtins.int = ...,
+        season_info: global___SeasonInfo | None = ...,
+        cover: builtins.str = ...,
+        title: builtins.str = ...,
+        interaction: global___Interaction | None = ...,
+        long_title: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["interaction", b"interaction", "season_info", b"season_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "cid", b"cid", "cover", b"cover", "ep_id", b"ep_id", "ep_status", b"ep_status", "interaction", b"interaction", "long_title", b"long_title", "season_info", b"season_info", "title", b"title"]) -> None: ...
+
+global___EpisodeInfo = EpisodeInfo
+
+@typing_extensions.final
+class EpPreVideo(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AID_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    aid: builtins.int
+    """"""
+    cid: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        aid: builtins.int = ...,
+        cid: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "cid", b"cid"]) -> None: ...
+
+global___EpPreVideo = EpPreVideo
+
+@typing_extensions.final
+class EpPublicityVideo(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Type:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[EpPublicityVideo._Type.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        DATA_NOT_SET: EpPublicityVideo._Type.ValueType  # 0
+        EP_PRE_VIDEO: EpPublicityVideo._Type.ValueType  # 2
+        EP_INLINE: EpPublicityVideo._Type.ValueType  # 3
+
+    class Type(_Type, metaclass=_TypeEnumTypeWrapper):
+        """"""
+
+    DATA_NOT_SET: EpPublicityVideo.Type.ValueType  # 0
+    EP_PRE_VIDEO: EpPublicityVideo.Type.ValueType  # 2
+    EP_INLINE: EpPublicityVideo.Type.ValueType  # 3
+
+    TYPE_FIELD_NUMBER: builtins.int
+    EP_PRE_VIDEO_FIELD_NUMBER: builtins.int
+    EP_INLINE_VIDEO_FIELD_NUMBER: builtins.int
+    type: global___EpPublicityVideo.Type.ValueType
+    """"""
+    @property
+    def ep_pre_video(self) -> global___EpPreVideo:
+        """"""
+    @property
+    def ep_inline_video(self) -> global___EpInlineVideo:
+        """"""
+    def __init__(
+        self,
+        *,
+        type: global___EpPublicityVideo.Type.ValueType = ...,
+        ep_pre_video: global___EpPreVideo | None = ...,
+        ep_inline_video: global___EpInlineVideo | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["data", b"data", "ep_inline_video", b"ep_inline_video", "ep_pre_video", b"ep_pre_video"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["data", b"data", "ep_inline_video", b"ep_inline_video", "ep_pre_video", b"ep_pre_video", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["data", b"data"]) -> typing_extensions.Literal["ep_pre_video", "ep_inline_video"] | None: ...
+
+global___EpPublicityVideo = EpPublicityVideo
 
 @typing_extensions.final
 class Event(google.protobuf.message.Message):
@@ -872,7 +1288,7 @@ global___Event = Event
 
 @typing_extensions.final
 class FreyaConfig(google.protobuf.message.Message):
-    """? 放映室提示语"""
+    """放映室提示语"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -987,6 +1403,32 @@ class HighDefinitionTrialInfo(google.protobuf.message.Message):
 global___HighDefinitionTrialInfo = HighDefinitionTrialInfo
 
 @typing_extensions.final
+class HistoryNode(google.protobuf.message.Message):
+    """历史记录节点"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NODE_ID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    node_id: builtins.int
+    """节点ID"""
+    title: builtins.str
+    """节点标题"""
+    cid: builtins.int
+    """对应CID"""
+    def __init__(
+        self,
+        *,
+        node_id: builtins.int = ...,
+        title: builtins.str = ...,
+        cid: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "node_id", b"node_id", "title", b"title"]) -> None: ...
+
+global___HistoryNode = HistoryNode
+
+@typing_extensions.final
 class ImageInfo(google.protobuf.message.Message):
     """图片信息"""
 
@@ -1003,6 +1445,38 @@ class ImageInfo(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["url", b"url"]) -> None: ...
 
 global___ImageInfo = ImageInfo
+
+@typing_extensions.final
+class Interaction(google.protobuf.message.Message):
+    """交互信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HISTORY_NODE_FIELD_NUMBER: builtins.int
+    GRAPH_VERSION_FIELD_NUMBER: builtins.int
+    MSG_FIELD_NUMBER: builtins.int
+    IS_INTERACTION_FIELD_NUMBER: builtins.int
+    @property
+    def history_node(self) -> global___HistoryNode:
+        """历史节点"""
+    graph_version: builtins.int
+    """版本"""
+    msg: builtins.str
+    """交互消息"""
+    is_interaction: builtins.bool
+    """是否为交互"""
+    def __init__(
+        self,
+        *,
+        history_node: global___HistoryNode | None = ...,
+        graph_version: builtins.int = ...,
+        msg: builtins.str = ...,
+        is_interaction: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["history_node", b"history_node"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["graph_version", b"graph_version", "history_node", b"history_node", "is_interaction", b"is_interaction", "msg", b"msg"]) -> None: ...
+
+global___Interaction = Interaction
 
 @typing_extensions.final
 class MultiView(google.protobuf.message.Message):
@@ -1075,47 +1549,50 @@ class PayTip(google.protobuf.message.Message):
     ANGLE_STYLE_FIELD_NUMBER: builtins.int
     REPORT_TYPE_FIELD_NUMBER: builtins.int
     ORDER_REPORT_PARAMS_FIELD_NUMBER: builtins.int
+    GIANT_SCREEN_IMG_FIELD_NUMBER: builtins.int
     title: builtins.str
-    """"""
+    """标题"""
     url: builtins.str
-    """"""
+    """跳转链接"""
     icon: builtins.str
-    """"""
+    """图标"""
     type: builtins.int
-    """"""
+    """浮层类型"""
     show_type: builtins.int
-    """"""
+    """显示类型"""
     img: builtins.str
-    """"""
+    """图片信息"""
     bg_day_color: builtins.str
-    """"""
+    """白天背景颜色"""
     bg_night_color: builtins.str
-    """"""
+    """夜间背景颜色"""
     bg_line_color: builtins.str
-    """"""
+    """白天线条颜色"""
     bg_night_line_color: builtins.str
-    """"""
+    """夜间线条颜色"""
     text_color: builtins.str
-    """"""
+    """文字颜色"""
     text_night_color: builtins.str
-    """"""
+    """夜间文字颜色"""
     view_start_time: builtins.int
-    """"""
+    """视图展示起始时间"""
     @property
     def button(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ButtonInfo]:
-        """"""
+        """按钮列表"""
     url_open_type: builtins.int
-    """"""
+    """跳转链接打开方式"""
     @property
     def report(self) -> global___Report:
-        """"""
+        """埋点上报信息"""
     angle_style: builtins.int
-    """"""
+    """角度样式"""
     report_type: builtins.int
-    """"""
+    """埋点上报类型"""
     @property
     def order_report_params(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """"""
+        """订单埋点上报参数"""
+    giant_screen_img: builtins.str
+    """巨屏图片信息"""
     def __init__(
         self,
         *,
@@ -1138,9 +1615,10 @@ class PayTip(google.protobuf.message.Message):
         angle_style: builtins.int = ...,
         report_type: builtins.int = ...,
         order_report_params: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        giant_screen_img: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["report", b"report"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["angle_style", b"angle_style", "bg_day_color", b"bg_day_color", "bg_line_color", b"bg_line_color", "bg_night_color", b"bg_night_color", "bg_night_line_color", b"bg_night_line_color", "button", b"button", "icon", b"icon", "img", b"img", "order_report_params", b"order_report_params", "report", b"report", "report_type", b"report_type", "show_type", b"show_type", "text_color", b"text_color", "text_night_color", b"text_night_color", "title", b"title", "type", b"type", "url", b"url", "url_open_type", b"url_open_type", "view_start_time", b"view_start_time"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["angle_style", b"angle_style", "bg_day_color", b"bg_day_color", "bg_line_color", b"bg_line_color", "bg_night_color", b"bg_night_color", "bg_night_line_color", b"bg_night_line_color", "button", b"button", "giant_screen_img", b"giant_screen_img", "icon", b"icon", "img", b"img", "order_report_params", b"order_report_params", "report", b"report", "report_type", b"report_type", "show_type", b"show_type", "text_color", b"text_color", "text_night_color", b"text_night_color", "title", b"title", "type", b"type", "url", b"url", "url_open_type", b"url_open_type", "view_start_time", b"view_start_time"]) -> None: ...
 
 global___PayTip = PayTip
 
@@ -1182,6 +1660,7 @@ class PlayAbilityConf(google.protobuf.message.Message):
     SKIP_OPED_SWITCH_DISABLE_FIELD_NUMBER: builtins.int
     RECORD_SCREEN_DISABLE_FIELD_NUMBER: builtins.int
     COLOR_OPTIMIZE_DISABLE_FIELD_NUMBER: builtins.int
+    DUBBING_DISABLE_FIELD_NUMBER: builtins.int
     background_play_disable: builtins.bool
     """后台播放"""
     flip_disable: builtins.bool
@@ -1241,11 +1720,13 @@ class PlayAbilityConf(google.protobuf.message.Message):
     freya_full_disable: builtins.bool
     """全屏一起看入口"""
     skip_oped_switch_disable: builtins.bool
-    """"""
+    """跳过片头片尾"""
     record_screen_disable: builtins.bool
-    """"""
+    """录屏"""
     color_optimize_disable: builtins.bool
-    """"""
+    """色觉优化"""
+    dubbing_disable: builtins.bool
+    """配音"""
     def __init__(
         self,
         *,
@@ -1281,8 +1762,9 @@ class PlayAbilityConf(google.protobuf.message.Message):
         skip_oped_switch_disable: builtins.bool = ...,
         record_screen_disable: builtins.bool = ...,
         color_optimize_disable: builtins.bool = ...,
+        dubbing_disable: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["background_play_disable", b"background_play_disable", "cast_disable", b"cast_disable", "coin_disable", b"coin_disable", "color_optimize_disable", b"color_optimize_disable", "definition_disable", b"definition_disable", "dislike_disable", b"dislike_disable", "dolby_disable", b"dolby_disable", "edit_dm_disable", b"edit_dm_disable", "elec_disable", b"elec_disable", "feedback_disable", b"feedback_disable", "flip_disable", b"flip_disable", "freya_enter_disable", b"freya_enter_disable", "freya_full_disable", b"freya_full_disable", "inner_dm_disable", b"inner_dm_disable", "like_disable", b"like_disable", "lock_screen_disable", b"lock_screen_disable", "next_disable", b"next_disable", "outer_dm_disable", b"outer_dm_disable", "playback_mode_disable", b"playback_mode_disable", "playback_rate_disable", b"playback_rate_disable", "playback_speed_disable", b"playback_speed_disable", "recommend_disable", b"recommend_disable", "record_screen_disable", b"record_screen_disable", "scale_mode_disable", b"scale_mode_disable", "screen_shot_disable", b"screen_shot_disable", "selections_disable", b"selections_disable", "shake_disable", b"shake_disable", "share_disable", b"share_disable", "skip_oped_switch_disable", b"skip_oped_switch_disable", "small_window_disable", b"small_window_disable", "subtitle_disable", b"subtitle_disable", "time_up_disable", b"time_up_disable"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["background_play_disable", b"background_play_disable", "cast_disable", b"cast_disable", "coin_disable", b"coin_disable", "color_optimize_disable", b"color_optimize_disable", "definition_disable", b"definition_disable", "dislike_disable", b"dislike_disable", "dolby_disable", b"dolby_disable", "dubbing_disable", b"dubbing_disable", "edit_dm_disable", b"edit_dm_disable", "elec_disable", b"elec_disable", "feedback_disable", b"feedback_disable", "flip_disable", b"flip_disable", "freya_enter_disable", b"freya_enter_disable", "freya_full_disable", b"freya_full_disable", "inner_dm_disable", b"inner_dm_disable", "like_disable", b"like_disable", "lock_screen_disable", b"lock_screen_disable", "next_disable", b"next_disable", "outer_dm_disable", b"outer_dm_disable", "playback_mode_disable", b"playback_mode_disable", "playback_rate_disable", b"playback_rate_disable", "playback_speed_disable", b"playback_speed_disable", "recommend_disable", b"recommend_disable", "record_screen_disable", b"record_screen_disable", "scale_mode_disable", b"scale_mode_disable", "screen_shot_disable", b"screen_shot_disable", "selections_disable", b"selections_disable", "shake_disable", b"shake_disable", "share_disable", b"share_disable", "skip_oped_switch_disable", b"skip_oped_switch_disable", "small_window_disable", b"small_window_disable", "subtitle_disable", b"subtitle_disable", "time_up_disable", b"time_up_disable"]) -> None: ...
 
 global___PlayAbilityConf = PlayAbilityConf
 
@@ -1296,7 +1778,7 @@ class PlayAbilityExtConf(google.protobuf.message.Message):
     FREYA_CONFIG_FIELD_NUMBER: builtins.int
     CAST_TIPS_FIELD_NUMBER: builtins.int
     allow_close_subtitle: builtins.bool
-    """自定义配置扩展信息"""
+    """"""
     @property
     def freya_config(self) -> global___FreyaConfig:
         """"""
@@ -1314,6 +1796,91 @@ class PlayAbilityExtConf(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["allow_close_subtitle", b"allow_close_subtitle", "cast_tips", b"cast_tips", "freya_config", b"freya_config"]) -> None: ...
 
 global___PlayAbilityExtConf = PlayAbilityExtConf
+
+@typing_extensions.final
+class PlayDubbingInfo(google.protobuf.message.Message):
+    """播放配音信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BACKGROUND_AUDIO_FIELD_NUMBER: builtins.int
+    ROLE_AUDIO_LIST_FIELD_NUMBER: builtins.int
+    GUIDE_TEXT_FIELD_NUMBER: builtins.int
+    @property
+    def background_audio(self) -> global___AudioMaterialProto:
+        """背景音频"""
+    @property
+    def role_audio_list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RoleAudioProto]:
+        """角色音频列表"""
+    guide_text: builtins.str
+    """引导文本"""
+    def __init__(
+        self,
+        *,
+        background_audio: global___AudioMaterialProto | None = ...,
+        role_audio_list: collections.abc.Iterable[global___RoleAudioProto] | None = ...,
+        guide_text: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["background_audio", b"background_audio"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["background_audio", b"background_audio", "guide_text", b"guide_text", "role_audio_list", b"role_audio_list"]) -> None: ...
+
+global___PlayDubbingInfo = PlayDubbingInfo
+
+@typing_extensions.final
+class PlayExtInfo(google.protobuf.message.Message):
+    """播放扩展信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLAY_DUBBING_INFO_FIELD_NUMBER: builtins.int
+    @property
+    def play_dubbing_info(self) -> global___PlayDubbingInfo:
+        """播放配音信息"""
+    def __init__(
+        self,
+        *,
+        play_dubbing_info: global___PlayDubbingInfo | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["play_dubbing_info", b"play_dubbing_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["play_dubbing_info", b"play_dubbing_info"]) -> None: ...
+
+global___PlayExtInfo = PlayExtInfo
+
+@typing_extensions.final
+class PlayList(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SEASON_ID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    COVER_FIELD_NUMBER: builtins.int
+    LINK_FIELD_NUMBER: builtins.int
+    BADGE_INFO_FIELD_NUMBER: builtins.int
+    season_id: builtins.int
+    """"""
+    title: builtins.str
+    """"""
+    cover: builtins.str
+    """"""
+    link: builtins.str
+    """"""
+    @property
+    def badge_info(self) -> global___BadgeInfo:
+        """"""
+    def __init__(
+        self,
+        *,
+        season_id: builtins.int = ...,
+        title: builtins.str = ...,
+        cover: builtins.str = ...,
+        link: builtins.str = ...,
+        badge_info: global___BadgeInfo | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["badge_info", b"badge_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["badge_info", b"badge_info", "cover", b"cover", "link", b"link", "season_id", b"season_id", "title", b"title"]) -> None: ...
+
+global___PlayList = PlayList
 
 @typing_extensions.final
 class PlayViewBusinessInfo(google.protobuf.message.Message):
@@ -1367,6 +1934,14 @@ class PlayViewBusinessInfo(google.protobuf.message.Message):
     QUALITY_EXT_MAP_FIELD_NUMBER: builtins.int
     EXP_MAP_FIELD_NUMBER: builtins.int
     DRM_TECH_TYPE_FIELD_NUMBER: builtins.int
+    LIMIT_ACTION_TYPE_FIELD_NUMBER: builtins.int
+    IS_DRM_FIELD_NUMBER: builtins.int
+    RECORD_INFO_FIELD_NUMBER: builtins.int
+    VIP_STATUS_FIELD_NUMBER: builtins.int
+    IS_LIVE_PRE_FIELD_NUMBER: builtins.int
+    EPISODE_INFO_FIELD_NUMBER: builtins.int
+    EPISODE_ADVERTISEMENT_INFO_FIELD_NUMBER: builtins.int
+    USER_STATUS_FIELD_NUMBER: builtins.int
     is_preview: builtins.bool
     """当前视频是否是预览"""
     bp: builtins.bool
@@ -1396,6 +1971,26 @@ class PlayViewBusinessInfo(google.protobuf.message.Message):
         """"""
     drm_tech_type: global___DrmTechType.ValueType
     """DRM技术类型"""
+    limit_action_type: builtins.int
+    """"""
+    is_drm: builtins.bool
+    """"""
+    @property
+    def record_info(self) -> global___RecordInfo:
+        """"""
+    vip_status: builtins.int
+    """"""
+    is_live_pre: builtins.bool
+    """"""
+    @property
+    def episode_info(self) -> global___EpisodeInfo:
+        """"""
+    @property
+    def episode_advertisement_info(self) -> global___EpisodeAdvertisementInfo:
+        """"""
+    @property
+    def user_status(self) -> global___UserStatus:
+        """"""
     def __init__(
         self,
         *,
@@ -1411,9 +2006,17 @@ class PlayViewBusinessInfo(google.protobuf.message.Message):
         quality_ext_map: collections.abc.Mapping[builtins.int, global___QualityExtInfo] | None = ...,
         exp_map: collections.abc.Mapping[builtins.str, builtins.int] | None = ...,
         drm_tech_type: global___DrmTechType.ValueType = ...,
+        limit_action_type: builtins.int = ...,
+        is_drm: builtins.bool = ...,
+        record_info: global___RecordInfo | None = ...,
+        vip_status: builtins.int = ...,
+        is_live_pre: builtins.bool = ...,
+        episode_info: global___EpisodeInfo | None = ...,
+        episode_advertisement_info: global___EpisodeAdvertisementInfo | None = ...,
+        user_status: global___UserStatus | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["continue_play_info", b"continue_play_info", "dimension", b"dimension"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bp", b"bp", "clip_info", b"clip_info", "continue_play_info", b"continue_play_info", "dimension", b"dimension", "drm_tech_type", b"drm_tech_type", "ep_whole_duration", b"ep_whole_duration", "exp_map", b"exp_map", "inline_type", b"inline_type", "is_preview", b"is_preview", "marlin_token", b"marlin_token", "playback_speed_color", b"playback_speed_color", "quality_ext_map", b"quality_ext_map"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["continue_play_info", b"continue_play_info", "dimension", b"dimension", "episode_advertisement_info", b"episode_advertisement_info", "episode_info", b"episode_info", "record_info", b"record_info", "user_status", b"user_status"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bp", b"bp", "clip_info", b"clip_info", "continue_play_info", b"continue_play_info", "dimension", b"dimension", "drm_tech_type", b"drm_tech_type", "ep_whole_duration", b"ep_whole_duration", "episode_advertisement_info", b"episode_advertisement_info", "episode_info", b"episode_info", "exp_map", b"exp_map", "inline_type", b"inline_type", "is_drm", b"is_drm", "is_live_pre", b"is_live_pre", "is_preview", b"is_preview", "limit_action_type", b"limit_action_type", "marlin_token", b"marlin_token", "playback_speed_color", b"playback_speed_color", "quality_ext_map", b"quality_ext_map", "record_info", b"record_info", "user_status", b"user_status", "vip_status", b"vip_status"]) -> None: ...
 
 global___PlayViewBusinessInfo = PlayViewBusinessInfo
 
@@ -1429,6 +2032,7 @@ class PlayViewReply(google.protobuf.message.Message):
     EVENT_FIELD_NUMBER: builtins.int
     VIEW_INFO_FIELD_NUMBER: builtins.int
     PLAY_EXT_CONF_FIELD_NUMBER: builtins.int
+    PLAY_EXT_INFO_FIELD_NUMBER: builtins.int
     @property
     def video_info(self) -> global___VideoInfo:
         """视频流信息"""
@@ -1447,6 +2051,9 @@ class PlayViewReply(google.protobuf.message.Message):
     @property
     def play_ext_conf(self) -> global___PlayAbilityExtConf:
         """自定义配置扩展信息"""
+    @property
+    def play_ext_info(self) -> global___PlayExtInfo:
+        """播放扩展信息"""
     def __init__(
         self,
         *,
@@ -1456,9 +2063,10 @@ class PlayViewReply(google.protobuf.message.Message):
         event: global___Event | None = ...,
         view_info: global___ViewInfo | None = ...,
         play_ext_conf: global___PlayAbilityExtConf | None = ...,
+        play_ext_info: global___PlayExtInfo | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["business", b"business", "event", b"event", "play_conf", b"play_conf", "play_ext_conf", b"play_ext_conf", "video_info", b"video_info", "view_info", b"view_info"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["business", b"business", "event", b"event", "play_conf", b"play_conf", "play_ext_conf", b"play_ext_conf", "video_info", b"video_info", "view_info", b"view_info"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["business", b"business", "event", b"event", "play_conf", b"play_conf", "play_ext_conf", b"play_ext_conf", "play_ext_info", b"play_ext_info", "video_info", b"video_info", "view_info", b"view_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["business", b"business", "event", b"event", "play_conf", b"play_conf", "play_ext_conf", b"play_ext_conf", "play_ext_info", b"play_ext_info", "video_info", b"video_info", "view_info", b"view_info"]) -> None: ...
 
 global___PlayViewReply = PlayViewReply
 
@@ -1486,6 +2094,9 @@ class PlayViewReq(google.protobuf.message.Message):
     SCENE_CONTROL_FIELD_NUMBER: builtins.int
     INLINE_SCENE_FIELD_NUMBER: builtins.int
     MATERIAL_NO_FIELD_NUMBER: builtins.int
+    SECURITY_LEVEL_FIELD_NUMBER: builtins.int
+    SEASON_ID_FIELD_NUMBER: builtins.int
+    DATA_CONTROL_FIELD_NUMBER: builtins.int
     epid: builtins.int
     """剧集epid"""
     cid: builtins.int
@@ -1527,6 +2138,13 @@ class PlayViewReq(google.protobuf.message.Message):
     """"""
     material_no: builtins.int
     """"""
+    security_level: builtins.int
+    """DRM 安全等级"""
+    season_id: builtins.int
+    """"""
+    @property
+    def data_control(self) -> global___DataControl:
+        """"""
     def __init__(
         self,
         *,
@@ -1548,9 +2166,12 @@ class PlayViewReq(google.protobuf.message.Message):
         scene_control: global___SceneControl | None = ...,
         inline_scene: global___InlineScene.ValueType = ...,
         material_no: builtins.int = ...,
+        security_level: builtins.int = ...,
+        season_id: builtins.int = ...,
+        data_control: global___DataControl | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["scene_control", b"scene_control"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "download", b"download", "epid", b"epid", "fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "fourk", b"fourk", "from_spmid", b"from_spmid", "inline_scene", b"inline_scene", "is_need_view_info", b"is_need_view_info", "is_preview", b"is_preview", "material_no", b"material_no", "prefer_codec_type", b"prefer_codec_type", "qn", b"qn", "room_id", b"room_id", "scene_control", b"scene_control", "spmid", b"spmid", "teenagers_mode", b"teenagers_mode"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["data_control", b"data_control", "scene_control", b"scene_control"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "data_control", b"data_control", "download", b"download", "epid", b"epid", "fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "fourk", b"fourk", "from_spmid", b"from_spmid", "inline_scene", b"inline_scene", "is_need_view_info", b"is_need_view_info", "is_preview", b"is_preview", "material_no", b"material_no", "prefer_codec_type", b"prefer_codec_type", "qn", b"qn", "room_id", b"room_id", "scene_control", b"scene_control", "season_id", b"season_id", "security_level", b"security_level", "spmid", b"spmid", "teenagers_mode", b"teenagers_mode"]) -> None: ...
 
 global___PlayViewReq = PlayViewReq
 
@@ -1686,6 +2307,28 @@ class QualityExtInfo(google.protobuf.message.Message):
 global___QualityExtInfo = QualityExtInfo
 
 @typing_extensions.final
+class RecordInfo(google.protobuf.message.Message):
+    """备案信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RECORD_FIELD_NUMBER: builtins.int
+    RECORD_ICON_FIELD_NUMBER: builtins.int
+    record: builtins.str
+    """记录"""
+    record_icon: builtins.str
+    """记录图标"""
+    def __init__(
+        self,
+        *,
+        record: builtins.str = ...,
+        record_icon: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["record", b"record", "record_icon", b"record_icon"]) -> None: ...
+
+global___RecordInfo = RecordInfo
+
+@typing_extensions.final
 class Report(google.protobuf.message.Message):
     """埋点上报信息"""
 
@@ -1751,6 +2394,55 @@ class ResponseUrl(google.protobuf.message.Message):
 global___ResponseUrl = ResponseUrl
 
 @typing_extensions.final
+class Rights(google.protobuf.message.Message):
+    """权限信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CAN_WATCH_FIELD_NUMBER: builtins.int
+    can_watch: builtins.int
+    """是否可以观看"""
+    def __init__(
+        self,
+        *,
+        can_watch: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["can_watch", b"can_watch"]) -> None: ...
+
+global___Rights = Rights
+
+@typing_extensions.final
+class RoleAudioProto(google.protobuf.message.Message):
+    """角色配音信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROLE_ID_FIELD_NUMBER: builtins.int
+    ROLE_NAME_FIELD_NUMBER: builtins.int
+    ROLE_AVATAR_FIELD_NUMBER: builtins.int
+    AUDIO_MATERIAL_LIST_FIELD_NUMBER: builtins.int
+    role_id: builtins.int
+    """角色ID"""
+    role_name: builtins.str
+    """角色名称"""
+    role_avatar: builtins.str
+    """角色头像"""
+    @property
+    def audio_material_list(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudioMaterialProto]:
+        """音频素材列表"""
+    def __init__(
+        self,
+        *,
+        role_id: builtins.int = ...,
+        role_name: builtins.str = ...,
+        role_avatar: builtins.str = ...,
+        audio_material_list: collections.abc.Iterable[global___AudioMaterialProto] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio_material_list", b"audio_material_list", "role_avatar", b"role_avatar", "role_id", b"role_id", "role_name", b"role_name"]) -> None: ...
+
+global___RoleAudioProto = RoleAudioProto
+
+@typing_extensions.final
 class SceneControl(google.protobuf.message.Message):
     """场景控制"""
 
@@ -1783,6 +2475,85 @@ class SceneControl(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["fav_playlist", b"fav_playlist", "is_need_trial", b"is_need_trial", "pip", b"pip", "small_window", b"small_window", "was_he_inline", b"was_he_inline"]) -> None: ...
 
 global___SceneControl = SceneControl
+
+@typing_extensions.final
+class Scheme(google.protobuf.message.Message):
+    """方案"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _ActionType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ActionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Scheme._ActionType.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        UNKNOWN: Scheme._ActionType.ValueType  # 0
+        SHOW_TOAST: Scheme._ActionType.ValueType  # 1
+
+    class ActionType(_ActionType, metaclass=_ActionTypeEnumTypeWrapper): ...
+    UNKNOWN: Scheme.ActionType.ValueType  # 0
+    SHOW_TOAST: Scheme.ActionType.ValueType  # 1
+
+    ACTION_TYPE_FIELD_NUMBER: builtins.int
+    TOAST_FIELD_NUMBER: builtins.int
+    action_type: global___Scheme.ActionType.ValueType
+    """"""
+    toast: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        action_type: global___Scheme.ActionType.ValueType = ...,
+        toast: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action_type", b"action_type", "toast", b"toast"]) -> None: ...
+
+global___Scheme = Scheme
+
+@typing_extensions.final
+class SeasonInfo(google.protobuf.message.Message):
+    """PGC SEASON 信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SEASON_ID_FIELD_NUMBER: builtins.int
+    SEASON_TYPE_FIELD_NUMBER: builtins.int
+    SEASON_STATUS_FIELD_NUMBER: builtins.int
+    COVER_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    RIGHTS_FIELD_NUMBER: builtins.int
+    MODE_FIELD_NUMBER: builtins.int
+    season_id: builtins.int
+    """PGC SEASON ID"""
+    season_type: builtins.int
+    """PGC SEASON 类型"""
+    season_status: builtins.int
+    """PGC SEASON 状态"""
+    cover: builtins.str
+    """封面"""
+    title: builtins.str
+    """标题"""
+    @property
+    def rights(self) -> global___Rights:
+        """权限信息"""
+    mode: builtins.int
+    """模式"""
+    def __init__(
+        self,
+        *,
+        season_id: builtins.int = ...,
+        season_type: builtins.int = ...,
+        season_status: builtins.int = ...,
+        cover: builtins.str = ...,
+        title: builtins.str = ...,
+        rights: global___Rights | None = ...,
+        mode: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["rights", b"rights"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cover", b"cover", "mode", b"mode", "rights", b"rights", "season_id", b"season_id", "season_status", b"season_status", "season_type", b"season_type", "title", b"title"]) -> None: ...
+
+global___SeasonInfo = SeasonInfo
 
 @typing_extensions.final
 class SegmentVideo(google.protobuf.message.Message):
@@ -1866,38 +2637,45 @@ class StreamInfo(google.protobuf.message.Message):
     NEED_VIP_FIELD_NUMBER: builtins.int
     NEED_LOGIN_FIELD_NUMBER: builtins.int
     INTACT_FIELD_NUMBER: builtins.int
-    NO_REXCODE_FIELD_NUMBER: builtins.int
     ATTRIBUTE_FIELD_NUMBER: builtins.int
     NEW_DESCRIPTION_FIELD_NUMBER: builtins.int
     DISPLAY_DESC_FIELD_NUMBER: builtins.int
     SUPERSCRIPT_FIELD_NUMBER: builtins.int
+    SCHEME_FIELD_NUMBER: builtins.int
+    SUPPORT_DRM_FIELD_NUMBER: builtins.int
+    SUBTITLE_FIELD_NUMBER: builtins.int
     quality: builtins.int
-    """清晰度"""
+    """视频质量"""
     format: builtins.str
-    """格式"""
+    """视频格式"""
     description: builtins.str
-    """格式描述"""
+    """描述信息"""
     err_code: builtins.int
     """错误码"""
     @property
     def limit(self) -> global___StreamLimit:
-        """不满足条件信息"""
+        """流限制信息"""
     need_vip: builtins.bool
-    """是否需要vip"""
+    """是否需要VIP"""
     need_login: builtins.bool
     """是否需要登录"""
     intact: builtins.bool
     """是否完整"""
-    no_rexcode: builtins.bool
-    """是否非全二压"""
     attribute: builtins.int
-    """清晰度属性位"""
+    """权限信息"""
     new_description: builtins.str
-    """新版格式描述"""
+    """新版描述信息"""
     display_desc: builtins.str
-    """格式文字"""
+    """显示描述信息"""
     superscript: builtins.str
-    """新版格式描述备注"""
+    """上标"""
+    @property
+    def scheme(self) -> global___Scheme:
+        """方案信息"""
+    support_drm: builtins.bool
+    """是否支持DRM"""
+    subtitle: builtins.str
+    """字幕信息"""
     def __init__(
         self,
         *,
@@ -1909,14 +2687,16 @@ class StreamInfo(google.protobuf.message.Message):
         need_vip: builtins.bool = ...,
         need_login: builtins.bool = ...,
         intact: builtins.bool = ...,
-        no_rexcode: builtins.bool = ...,
         attribute: builtins.int = ...,
         new_description: builtins.str = ...,
         display_desc: builtins.str = ...,
         superscript: builtins.str = ...,
+        scheme: global___Scheme | None = ...,
+        support_drm: builtins.bool = ...,
+        subtitle: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["limit", b"limit"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["attribute", b"attribute", "description", b"description", "display_desc", b"display_desc", "err_code", b"err_code", "format", b"format", "intact", b"intact", "limit", b"limit", "need_login", b"need_login", "need_vip", b"need_vip", "new_description", b"new_description", "no_rexcode", b"no_rexcode", "quality", b"quality", "superscript", b"superscript"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["limit", b"limit", "scheme", b"scheme"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["attribute", b"attribute", "description", b"description", "display_desc", b"display_desc", "err_code", b"err_code", "format", b"format", "intact", b"intact", "limit", b"limit", "need_login", b"need_login", "need_vip", b"need_vip", "new_description", b"new_description", "quality", b"quality", "scheme", b"scheme", "subtitle", b"subtitle", "superscript", b"superscript", "support_drm", b"support_drm"]) -> None: ...
 
 global___StreamInfo = StreamInfo
 
@@ -1947,28 +2727,54 @@ class StreamLimit(google.protobuf.message.Message):
 global___StreamLimit = StreamLimit
 
 @typing_extensions.final
+class TaskParam(google.protobuf.message.Message):
+    """任务参数信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TASK_TYPE_FIELD_NUMBER: builtins.int
+    ACTIVITY_ID_FIELD_NUMBER: builtins.int
+    TIPS_ID_FIELD_NUMBER: builtins.int
+    task_type: builtins.str
+    """任务类型"""
+    activity_id: builtins.int
+    """活动ID"""
+    tips_id: builtins.int
+    """提示ID"""
+    def __init__(
+        self,
+        *,
+        task_type: builtins.str = ...,
+        activity_id: builtins.int = ...,
+        tips_id: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["activity_id", b"activity_id", "task_type", b"task_type", "tips_id", b"tips_id"]) -> None: ...
+
+global___TaskParam = TaskParam
+
+@typing_extensions.final
 class TextInfo(google.protobuf.message.Message):
     """文案信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TEXT_FIELD_NUMBER: builtins.int
-    TEXTCOLOR_FIELD_NUMBER: builtins.int
-    TEXTCOLORNIGHT_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_NIGHT_FIELD_NUMBER: builtins.int
     text: builtins.str
     """文案"""
-    textColor: builtins.str
+    text_color: builtins.str
     """字体色值"""
-    textColorNight: builtins.str
+    text_color_night: builtins.str
     """字体色值-夜间模式"""
     def __init__(
         self,
         *,
         text: builtins.str = ...,
-        textColor: builtins.str = ...,
-        textColorNight: builtins.str = ...,
+        text_color: builtins.str = ...,
+        text_color_night: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["text", b"text", "textColor", b"textColor", "textColorNight", b"textColorNight"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["text", b"text", "text_color", b"text_color", "text_color_night", b"text_color_night"]) -> None: ...
 
 global___TextInfo = TextInfo
 
@@ -2034,6 +2840,39 @@ class Toast(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["button", b"button", "icon", b"icon", "order_report_params", b"order_report_params", "report", b"report", "show_style_type", b"show_style_type", "text", b"text", "toast_text", b"toast_text"]) -> None: ...
 
 global___Toast = Toast
+
+@typing_extensions.final
+class UserStatus(google.protobuf.message.Message):
+    """用户状态信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PAY_CHECK_FIELD_NUMBER: builtins.int
+    SPONSOR_FIELD_NUMBER: builtins.int
+    WATCH_PROGRESS_FIELD_NUMBER: builtins.int
+    AID_WATCH_PROGRESS_FIELD_NUMBER: builtins.int
+    pay_check: builtins.bool
+    """是否支付"""
+    sponsor: builtins.bool
+    """是否承包"""
+    @property
+    def watch_progress(self) -> global___WatchProgress:
+        """观看进度"""
+    @property
+    def aid_watch_progress(self) -> global___WatchProgress:
+        """系列观看进度"""
+    def __init__(
+        self,
+        *,
+        pay_check: builtins.bool = ...,
+        sponsor: builtins.bool = ...,
+        watch_progress: global___WatchProgress | None = ...,
+        aid_watch_progress: global___WatchProgress | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["aid_watch_progress", b"aid_watch_progress", "watch_progress", b"watch_progress"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid_watch_progress", b"aid_watch_progress", "pay_check", b"pay_check", "sponsor", b"sponsor", "watch_progress", b"watch_progress"]) -> None: ...
+
+global___UserStatus = UserStatus
 
 @typing_extensions.final
 class VideoInfo(google.protobuf.message.Message):
@@ -2121,6 +2960,24 @@ class ViewInfo(google.protobuf.message.Message):
         def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    @typing_extensions.final
+    class ExtToastEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        @property
+        def value(self) -> global___Toast: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: global___Toast | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     DIALOG_FIELD_NUMBER: builtins.int
     TOAST_FIELD_NUMBER: builtins.int
     COUPON_INFO_FIELD_NUMBER: builtins.int
@@ -2132,39 +2989,47 @@ class ViewInfo(google.protobuf.message.Message):
     PAY_TIP_FIELD_NUMBER: builtins.int
     HIGH_DEFINITION_TRIAL_INFO_FIELD_NUMBER: builtins.int
     EXT_DIALOG_FIELD_NUMBER: builtins.int
+    ANIMATION_FIELD_NUMBER: builtins.int
+    EXT_TOAST_FIELD_NUMBER: builtins.int
     @property
     def dialog(self) -> global___Dialog:
-        """鉴权浮层"""
+        """弹窗"""
     @property
     def toast(self) -> global___Toast:
-        """toast"""
+        """Toast"""
     @property
     def coupon_info(self) -> global___CouponInfo:
         """优惠券信息"""
     @property
     def demand_no_pay_epids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
-        """未购买的超前点播ep列表"""
+        """未支付剧集ID列表"""
     @property
     def end_page(self) -> global___EndPage:
-        """播放结束页"""
+        """结束页"""
     @property
     def exp_config(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.bool]:
-        """"""
+        """扩展配置"""
     @property
     def pop_win(self) -> global___PopWin:
         """弹窗"""
     @property
     def try_watch_prompt_bar(self) -> global___PromptBar:
-        """"""
+        """试看提示栏"""
     @property
     def pay_tip(self) -> global___PayTip:
-        """"""
+        """支付提示信息"""
     @property
     def high_definition_trial_info(self) -> global___HighDefinitionTrialInfo:
-        """"""
+        """高清试看提示信息"""
     @property
     def ext_dialog(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___Dialog]:
-        """"""
+        """弹窗扩展"""
+    @property
+    def animation(self) -> global___Animation:
+        """动画"""
+    @property
+    def ext_toast(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___Toast]:
+        """Toast扩展"""
     def __init__(
         self,
         *,
@@ -2179,8 +3044,55 @@ class ViewInfo(google.protobuf.message.Message):
         pay_tip: global___PayTip | None = ...,
         high_definition_trial_info: global___HighDefinitionTrialInfo | None = ...,
         ext_dialog: collections.abc.Mapping[builtins.str, global___Dialog] | None = ...,
+        animation: global___Animation | None = ...,
+        ext_toast: collections.abc.Mapping[builtins.str, global___Toast] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["coupon_info", b"coupon_info", "dialog", b"dialog", "end_page", b"end_page", "high_definition_trial_info", b"high_definition_trial_info", "pay_tip", b"pay_tip", "pop_win", b"pop_win", "toast", b"toast", "try_watch_prompt_bar", b"try_watch_prompt_bar"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["coupon_info", b"coupon_info", "demand_no_pay_epids", b"demand_no_pay_epids", "dialog", b"dialog", "end_page", b"end_page", "exp_config", b"exp_config", "ext_dialog", b"ext_dialog", "high_definition_trial_info", b"high_definition_trial_info", "pay_tip", b"pay_tip", "pop_win", b"pop_win", "toast", b"toast", "try_watch_prompt_bar", b"try_watch_prompt_bar"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["animation", b"animation", "coupon_info", b"coupon_info", "dialog", b"dialog", "end_page", b"end_page", "high_definition_trial_info", b"high_definition_trial_info", "pay_tip", b"pay_tip", "pop_win", b"pop_win", "toast", b"toast", "try_watch_prompt_bar", b"try_watch_prompt_bar"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["animation", b"animation", "coupon_info", b"coupon_info", "demand_no_pay_epids", b"demand_no_pay_epids", "dialog", b"dialog", "end_page", b"end_page", "exp_config", b"exp_config", "ext_dialog", b"ext_dialog", "ext_toast", b"ext_toast", "high_definition_trial_info", b"high_definition_trial_info", "pay_tip", b"pay_tip", "pop_win", b"pop_win", "toast", b"toast", "try_watch_prompt_bar", b"try_watch_prompt_bar"]) -> None: ...
 
 global___ViewInfo = ViewInfo
+
+@typing_extensions.final
+class WatchProgress(google.protobuf.message.Message):
+    """观看进度信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LAST_EP_ID_FIELD_NUMBER: builtins.int
+    LAST_EP_INDEX_FIELD_NUMBER: builtins.int
+    PROGRESS_FIELD_NUMBER: builtins.int
+    LAST_PLAY_CID_FIELD_NUMBER: builtins.int
+    TOAST_FIELD_NUMBER: builtins.int
+    TOAST_WITHOUT_TIME_FIELD_NUMBER: builtins.int
+    LAST_PLAY_AID_FIELD_NUMBER: builtins.int
+    last_ep_id: builtins.int
+    """上次观看的 EP ID"""
+    last_ep_index: builtins.str
+    """上次观看到的EP INDEX"""
+    progress: builtins.int
+    """上次观看的进度"""
+    last_play_cid: builtins.int
+    """上次观看的 CID"""
+    @property
+    def toast(self) -> global___Toast:
+        """带时间的提示信息"""
+    @property
+    def toast_without_time(self) -> global___Toast:
+        """不带时间的提示信息"""
+    last_play_aid: builtins.int
+    """上次观看的 AID"""
+    def __init__(
+        self,
+        *,
+        last_ep_id: builtins.int = ...,
+        last_ep_index: builtins.str = ...,
+        progress: builtins.int = ...,
+        last_play_cid: builtins.int = ...,
+        toast: global___Toast | None = ...,
+        toast_without_time: global___Toast | None = ...,
+        last_play_aid: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["toast", b"toast", "toast_without_time", b"toast_without_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["last_ep_id", b"last_ep_id", "last_ep_index", b"last_ep_index", "last_play_aid", b"last_play_aid", "last_play_cid", b"last_play_cid", "progress", b"progress", "toast", b"toast", "toast_without_time", b"toast_without_time"]) -> None: ...
+
+global___WatchProgress = WatchProgress

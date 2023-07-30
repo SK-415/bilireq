@@ -11,3 +11,5 @@ build/
 
 test_data.py
 .pdm-python
+login_cache.json
+test/http_pack/*

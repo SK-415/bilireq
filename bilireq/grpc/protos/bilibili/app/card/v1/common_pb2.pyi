@@ -208,7 +208,7 @@ class Base(google.protobuf.message.Message):
         args: global___Args | None = ...,
         player_args: global___PlayerArgs | None = ...,
         idx: builtins.int = ...,
-        ad_info: bilibili.app.card.v1.ad_pb2.AdInfo | None = ...,
+        ad_info: bilireq.grpc.protos.bilibili.app.card.v1.ad_pb2.AdInfo | None = ...,
         mask: global___Mask | None = ...,
         from_type: builtins.str = ...,
         three_point_v2: collections.abc.Iterable[global___ThreePointV2] | None = ...,

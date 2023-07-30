@@ -6,7 +6,7 @@ from bilireq.grpc.protos.bilibili.app.dynamic.v2 import dynamic_pb2 as bilibili_
 
 
 class DynamicStub(object):
-    """v2动态
+    """v2动态, rpc 按字母顺序排列
     """
 
     def __init__(self, channel):
@@ -15,50 +15,90 @@ class DynamicStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.DynVideo = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynVideo',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReply.FromString,
+        self.AlumniDynamics = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/AlumniDynamics',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReply.FromString,
                 )
-        self.DynAll = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynAll',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReply.FromString,
+        self.CampusBillBoard = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusBillBoard',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.FromString,
                 )
-        self.DynDetails = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynDetails',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReply.FromString,
+        self.CampusEntryTab = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusEntryTab',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusEntryTabReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusEntryTabResp.FromString,
                 )
-        self.DynVideoPersonal = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynVideoPersonal',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReply.FromString,
+        self.CampusFeedback = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusFeedback',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReply.FromString,
                 )
-        self.DynVideoUpdOffset = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynVideoUpdOffset',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoUpdOffsetReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+        self.CampusHomePages = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusHomePages',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusHomePagesReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusHomePagesReply.FromString,
+                )
+        self.CampusMateLikeList = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusMateLikeList',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReply.FromString,
+                )
+        self.CampusMngDetail = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusMngDetail',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngDetailReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngDetailReply.FromString,
+                )
+        self.CampusMngQuizOperate = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusMngQuizOperate',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngQuizOperateReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngQuizOperateReply.FromString,
+                )
+        self.CampusMngSubmit = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusMngSubmit',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngSubmitReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngSubmitReply.FromString,
+                )
+        self.CampusRcmd = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusRcmd',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReply.FromString,
+                )
+        self.CampusRcmdFeed = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusRcmdFeed',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReply.FromString,
+                )
+        self.CampusRecommend = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusRecommend',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRecommendReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRecommendReply.FromString,
+                )
+        self.CampusRedDot = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusRedDot',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReply.FromString,
+                )
+        self.CampusSquare = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusSquare',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusSquareReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusSquareReply.FromString,
+                )
+        self.CampusTopicRcmdFeed = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/CampusTopicRcmdFeed',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReply.FromString,
                 )
         self.DynAdditionCommonFollow = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/DynAdditionCommonFollow',
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAdditionCommonFollowReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAdditionCommonFollowReply.FromString,
                 )
-        self.DynThumb = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynThumb',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynThumbReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
-                )
-        self.DynFakeCard = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynFakeCard',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReply.FromString,
-                )
-        self.DynRcmdUpExchange = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynRcmdUpExchange',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReply.FromString,
+        self.DynAll = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynAll',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReply.FromString,
                 )
         self.DynAllPersonal = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/DynAllPersonal',
@@ -70,105 +110,125 @@ class DynamicStub(object):
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllUpdOffsetReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
                 )
-        self.DynVote = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynVote',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReply.FromString,
+        self.DynDetail = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynDetail',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReply.FromString,
                 )
-        self.DynMixUpListViewMore = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynMixUpListViewMore',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReply.FromString,
+        self.DynDetails = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynDetails',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReply.FromString,
+                )
+        self.DynFakeCard = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynFakeCard',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReply.FromString,
+                )
+        self.DynFriend = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynFriend',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFriendReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFriendReply.FromString,
                 )
         self.DynLight = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/DynLight',
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynLightReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynLightReply.FromString,
                 )
-        self.DynDetail = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynDetail',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReply.FromString,
+        self.DynMixUpListViewMore = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynMixUpListViewMore',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReply.FromString,
                 )
-        self.LikeList = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/LikeList',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReply.FromString,
-                )
-        self.RepostList = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/RepostList',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.FromString,
-                )
-        self.ReactionList = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/ReactionList',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.FromString,
-                )
-        self.DynSpace = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynSpace',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceRsp.FromString,
-                )
-        self.DynUnLoginRcmd = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynUnLoginRcmd',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReply.FromString,
-                )
-        self.DynServerDetails = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynServerDetails',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReply.FromString,
+        self.DynRcmdUpExchange = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynRcmdUpExchange',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReply.FromString,
                 )
         self.DynSearch = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/DynSearch',
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSearchReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSearchReply.FromString,
                 )
-        self.SetDecision = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/SetDecision',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetDecisionReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+        self.DynServerDetails = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynServerDetails',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReply.FromString,
                 )
-        self.AlumniDynamics = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/AlumniDynamics',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReply.FromString,
+        self.DynSpace = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynSpace',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceRsp.FromString,
                 )
-        self.CampusRcmd = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusRcmd',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReply.FromString,
-                )
-        self.SubscribeCampus = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/SubscribeCampus',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SubscribeCampusReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
-                )
-        self.SetRecentCampus = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/SetRecentCampus',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetRecentCampusReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+        self.DynSpaceSearchDetails = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynSpaceSearchDetails',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReply.FromString,
                 )
         self.DynTab = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/DynTab',
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynTabReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynTabReply.FromString,
                 )
-        self.SchoolSearch = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/SchoolSearch',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReply.FromString,
+        self.DynThumb = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynThumb',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynThumbReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
                 )
-        self.SchoolRecommend = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/SchoolRecommend',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReply.FromString,
+        self.DynUnLoginRcmd = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynUnLoginRcmd',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReply.FromString,
                 )
-        self.DynSpaceSearchDetails = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/DynSpaceSearchDetails',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReply.FromString,
+        self.DynVideo = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynVideo',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReply.FromString,
+                )
+        self.DynVideoPersonal = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynVideoPersonal',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReply.FromString,
+                )
+        self.DynVideoUpdOffset = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynVideoUpdOffset',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoUpdOffsetReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+                )
+        self.DynVote = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/DynVote',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReply.FromString,
+                )
+        self.FeedFilter = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/FeedFilter',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FeedFilterReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FeedFilterReply.FromString,
+                )
+        self.FetchTabSetting = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/FetchTabSetting',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FetchTabSettingReply.FromString,
+                )
+        self.HomeSubscribe = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/HomeSubscribe',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.HomeSubscribeReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.HomeSubscribeReply.FromString,
+                )
+        self.LbsPoi = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/LbsPoi',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LbsPoiReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LbsPoiReply.FromString,
+                )
+        self.LegacyTopicFeed = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/LegacyTopicFeed',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LegacyTopicFeedReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LegacyTopicFeedReply.FromString,
+                )
+        self.LikeList = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/LikeList',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReply.FromString,
                 )
         self.OfficialAccounts = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/OfficialAccounts',
@@ -180,87 +240,167 @@ class DynamicStub(object):
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.OfficialDynamicsReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.OfficialDynamicsReply.FromString,
                 )
-        self.CampusRedDot = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusRedDot',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReply.FromString,
+        self.ReactionList = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/ReactionList',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.FromString,
                 )
-        self.CampusRcmdFeed = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusRcmdFeed',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReply.FromString,
+        self.RepostList = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/RepostList',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.FromString,
                 )
-        self.TopicSquare = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/TopicSquare',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReply.FromString,
+        self.SchoolRecommend = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/SchoolRecommend',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReply.FromString,
+                )
+        self.SchoolSearch = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/SchoolSearch',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReply.FromString,
+                )
+        self.SetDecision = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/SetDecision',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetDecisionReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+                )
+        self.SetRecentCampus = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/SetRecentCampus',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetRecentCampusReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+                )
+        self.SubscribeCampus = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/SubscribeCampus',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SubscribeCampusReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
                 )
         self.TopicList = channel.unary_unary(
                 '/bilibili.app.dynamic.v2.Dynamic/TopicList',
                 request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicListReq.SerializeToString,
                 response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicListReply.FromString,
                 )
-        self.CampusMateLikeList = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusMateLikeList',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReply.FromString,
+        self.TopicSquare = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/TopicSquare',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReply.FromString,
                 )
-        self.CampusFeedback = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusFeedback',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReply.FromString,
+        self.UnfollowMatch = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/UnfollowMatch',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.UnfollowMatchReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
                 )
-        self.CampusBillboard = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusBillboard',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.FromString,
-                )
-        self.CampusBillboardInternal = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusBillboardInternal',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillboardInternalReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.FromString,
-                )
-        self.CampusTopicRcmdFeed = channel.unary_unary(
-                '/bilibili.app.dynamic.v2.Dynamic/CampusTopicRcmdFeed',
-                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReq.SerializeToString,
-                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReply.FromString,
+        self.UpdateTabSetting = channel.unary_unary(
+                '/bilibili.app.dynamic.v2.Dynamic/UpdateTabSetting',
+                request_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.UpdateTabSettingReq.SerializeToString,
+                response_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
                 )
 
 
 class DynamicServicer(object):
-    """v2动态
+    """v2动态, rpc 按字母顺序排列
     """
 
-    def DynVideo(self, request, context):
-        """动态视频页
+    def AlumniDynamics(self, request, context):
+        """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynAll(self, request, context):
-        """动态综合页
+    def CampusBillBoard(self, request, context):
+        """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynDetails(self, request, context):
-        """批量动态id获取动态详情
+    def CampusEntryTab(self, request, context):
+        """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynVideoPersonal(self, request, context):
-        """视频页最近访问 - 个人feed流
+    def CampusFeedback(self, request, context):
+        """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynVideoUpdOffset(self, request, context):
-        """视频页最近访问 - 标记已读
+    def CampusHomePages(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusMateLikeList(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusMngDetail(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusMngQuizOperate(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusMngSubmit(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusRcmd(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusRcmdFeed(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusRecommend(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusRedDot(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusSquare(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CampusTopicRcmdFeed(self, request, context):
+        """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -273,22 +413,8 @@ class DynamicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynThumb(self, request, context):
-        """动态点赞
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DynFakeCard(self, request, context):
-        """动态发布生成临时卡
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DynRcmdUpExchange(self, request, context):
-        """关注推荐up主换一换
+    def DynAll(self, request, context):
+        """动态综合页
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -308,15 +434,29 @@ class DynamicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynVote(self, request, context):
-        """投票操作接口
+    def DynDetail(self, request, context):
+        """动态详情页
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynMixUpListViewMore(self, request, context):
-        """网关调用 - 查看更多-列表
+    def DynDetails(self, request, context):
+        """批量动态id获取动态详情
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DynFakeCard(self, request, context):
+        """动态发布生成临时卡
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DynFriend(self, request, context):
+        """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -329,50 +469,15 @@ class DynamicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynDetail(self, request, context):
-        """动态详情页
+    def DynMixUpListViewMore(self, request, context):
+        """网关调用 - 查看更多-列表
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def LikeList(self, request, context):
-        """点赞列表
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RepostList(self, request, context):
-        """转发列表
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ReactionList(self, request, context):
-        """新版动态转发点赞列表 需要登录
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DynSpace(self, request, context):
-        """空间页动态
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DynUnLoginRcmd(self, request, context):
-        """未登录页分区UP主推荐
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DynServerDetails(self, request, context):
-        """
+    def DynRcmdUpExchange(self, request, context):
+        """关注推荐up主换一换
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -385,35 +490,21 @@ class DynamicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SetDecision(self, request, context):
+    def DynServerDetails(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AlumniDynamics(self, request, context):
-        """
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CampusRcmd(self, request, context):
-        """
+    def DynSpace(self, request, context):
+        """空间页动态
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SubscribeCampus(self, request, context):
-        """
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SetRecentCampus(self, request, context):
+    def DynSpaceSearchDetails(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -427,22 +518,85 @@ class DynamicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SchoolSearch(self, request, context):
+    def DynThumb(self, request, context):
+        """动态点赞
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DynUnLoginRcmd(self, request, context):
+        """未登录页分区UP主推荐
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DynVideo(self, request, context):
+        """动态视频页
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DynVideoPersonal(self, request, context):
+        """视频页最近访问 - 个人feed流
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DynVideoUpdOffset(self, request, context):
+        """视频页最近访问 - 标记已读
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DynVote(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SchoolRecommend(self, request, context):
+    def FeedFilter(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DynSpaceSearchDetails(self, request, context):
+    def FetchTabSetting(self, request, context):
         """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def HomeSubscribe(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def LbsPoi(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def LegacyTopicFeed(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def LikeList(self, request, context):
+        """点赞列表
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -462,21 +616,49 @@ class DynamicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CampusRedDot(self, request, context):
+    def ReactionList(self, request, context):
+        """新版动态转发点赞列表 需要登录
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RepostList(self, request, context):
+        """转发列表
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SchoolRecommend(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CampusRcmdFeed(self, request, context):
+    def SchoolSearch(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def TopicSquare(self, request, context):
+    def SetDecision(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetRecentCampus(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SubscribeCampus(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -490,35 +672,21 @@ class DynamicServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CampusMateLikeList(self, request, context):
+    def TopicSquare(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CampusFeedback(self, request, context):
+    def UnfollowMatch(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CampusBillboard(self, request, context):
-        """
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CampusBillboardInternal(self, request, context):
-        """
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CampusTopicRcmdFeed(self, request, context):
+    def UpdateTabSetting(self, request, context):
         """
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -528,50 +696,90 @@ class DynamicServicer(object):
 
 def add_DynamicServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'DynVideo': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynVideo,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReply.SerializeToString,
+            'AlumniDynamics': grpc.unary_unary_rpc_method_handler(
+                    servicer.AlumniDynamics,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReply.SerializeToString,
             ),
-            'DynAll': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynAll,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReply.SerializeToString,
+            'CampusBillBoard': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusBillBoard,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.SerializeToString,
             ),
-            'DynDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynDetails,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReply.SerializeToString,
+            'CampusEntryTab': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusEntryTab,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusEntryTabReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusEntryTabResp.SerializeToString,
             ),
-            'DynVideoPersonal': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynVideoPersonal,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReply.SerializeToString,
+            'CampusFeedback': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusFeedback,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReply.SerializeToString,
             ),
-            'DynVideoUpdOffset': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynVideoUpdOffset,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoUpdOffsetReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
+            'CampusHomePages': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusHomePages,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusHomePagesReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusHomePagesReply.SerializeToString,
+            ),
+            'CampusMateLikeList': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusMateLikeList,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReply.SerializeToString,
+            ),
+            'CampusMngDetail': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusMngDetail,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngDetailReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngDetailReply.SerializeToString,
+            ),
+            'CampusMngQuizOperate': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusMngQuizOperate,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngQuizOperateReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngQuizOperateReply.SerializeToString,
+            ),
+            'CampusMngSubmit': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusMngSubmit,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngSubmitReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngSubmitReply.SerializeToString,
+            ),
+            'CampusRcmd': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusRcmd,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReply.SerializeToString,
+            ),
+            'CampusRcmdFeed': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusRcmdFeed,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReply.SerializeToString,
+            ),
+            'CampusRecommend': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusRecommend,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRecommendReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRecommendReply.SerializeToString,
+            ),
+            'CampusRedDot': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusRedDot,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReply.SerializeToString,
+            ),
+            'CampusSquare': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusSquare,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusSquareReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusSquareReply.SerializeToString,
+            ),
+            'CampusTopicRcmdFeed': grpc.unary_unary_rpc_method_handler(
+                    servicer.CampusTopicRcmdFeed,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReply.SerializeToString,
             ),
             'DynAdditionCommonFollow': grpc.unary_unary_rpc_method_handler(
                     servicer.DynAdditionCommonFollow,
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAdditionCommonFollowReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAdditionCommonFollowReply.SerializeToString,
             ),
-            'DynThumb': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynThumb,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynThumbReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
-            ),
-            'DynFakeCard': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynFakeCard,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReply.SerializeToString,
-            ),
-            'DynRcmdUpExchange': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynRcmdUpExchange,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReply.SerializeToString,
+            'DynAll': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynAll,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReply.SerializeToString,
             ),
             'DynAllPersonal': grpc.unary_unary_rpc_method_handler(
                     servicer.DynAllPersonal,
@@ -583,105 +791,125 @@ def add_DynamicServicer_to_server(servicer, server):
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllUpdOffsetReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
             ),
-            'DynVote': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynVote,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReply.SerializeToString,
+            'DynDetail': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynDetail,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReply.SerializeToString,
             ),
-            'DynMixUpListViewMore': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynMixUpListViewMore,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReply.SerializeToString,
+            'DynDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynDetails,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReply.SerializeToString,
+            ),
+            'DynFakeCard': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynFakeCard,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReply.SerializeToString,
+            ),
+            'DynFriend': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynFriend,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFriendReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFriendReply.SerializeToString,
             ),
             'DynLight': grpc.unary_unary_rpc_method_handler(
                     servicer.DynLight,
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynLightReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynLightReply.SerializeToString,
             ),
-            'DynDetail': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynDetail,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReply.SerializeToString,
+            'DynMixUpListViewMore': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynMixUpListViewMore,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReply.SerializeToString,
             ),
-            'LikeList': grpc.unary_unary_rpc_method_handler(
-                    servicer.LikeList,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReply.SerializeToString,
-            ),
-            'RepostList': grpc.unary_unary_rpc_method_handler(
-                    servicer.RepostList,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.SerializeToString,
-            ),
-            'ReactionList': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReactionList,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.SerializeToString,
-            ),
-            'DynSpace': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynSpace,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceRsp.SerializeToString,
-            ),
-            'DynUnLoginRcmd': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynUnLoginRcmd,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReply.SerializeToString,
-            ),
-            'DynServerDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynServerDetails,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReply.SerializeToString,
+            'DynRcmdUpExchange': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynRcmdUpExchange,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReply.SerializeToString,
             ),
             'DynSearch': grpc.unary_unary_rpc_method_handler(
                     servicer.DynSearch,
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSearchReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSearchReply.SerializeToString,
             ),
-            'SetDecision': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetDecision,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetDecisionReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
+            'DynServerDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynServerDetails,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReply.SerializeToString,
             ),
-            'AlumniDynamics': grpc.unary_unary_rpc_method_handler(
-                    servicer.AlumniDynamics,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReply.SerializeToString,
+            'DynSpace': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynSpace,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceRsp.SerializeToString,
             ),
-            'CampusRcmd': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusRcmd,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReply.SerializeToString,
-            ),
-            'SubscribeCampus': grpc.unary_unary_rpc_method_handler(
-                    servicer.SubscribeCampus,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SubscribeCampusReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
-            ),
-            'SetRecentCampus': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetRecentCampus,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetRecentCampusReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
+            'DynSpaceSearchDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynSpaceSearchDetails,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReply.SerializeToString,
             ),
             'DynTab': grpc.unary_unary_rpc_method_handler(
                     servicer.DynTab,
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynTabReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynTabReply.SerializeToString,
             ),
-            'SchoolSearch': grpc.unary_unary_rpc_method_handler(
-                    servicer.SchoolSearch,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReply.SerializeToString,
+            'DynThumb': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynThumb,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynThumbReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
             ),
-            'SchoolRecommend': grpc.unary_unary_rpc_method_handler(
-                    servicer.SchoolRecommend,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReply.SerializeToString,
+            'DynUnLoginRcmd': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynUnLoginRcmd,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReply.SerializeToString,
             ),
-            'DynSpaceSearchDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.DynSpaceSearchDetails,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReply.SerializeToString,
+            'DynVideo': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynVideo,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReply.SerializeToString,
+            ),
+            'DynVideoPersonal': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynVideoPersonal,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReply.SerializeToString,
+            ),
+            'DynVideoUpdOffset': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynVideoUpdOffset,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoUpdOffsetReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
+            ),
+            'DynVote': grpc.unary_unary_rpc_method_handler(
+                    servicer.DynVote,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReply.SerializeToString,
+            ),
+            'FeedFilter': grpc.unary_unary_rpc_method_handler(
+                    servicer.FeedFilter,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FeedFilterReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FeedFilterReply.SerializeToString,
+            ),
+            'FetchTabSetting': grpc.unary_unary_rpc_method_handler(
+                    servicer.FetchTabSetting,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FetchTabSettingReply.SerializeToString,
+            ),
+            'HomeSubscribe': grpc.unary_unary_rpc_method_handler(
+                    servicer.HomeSubscribe,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.HomeSubscribeReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.HomeSubscribeReply.SerializeToString,
+            ),
+            'LbsPoi': grpc.unary_unary_rpc_method_handler(
+                    servicer.LbsPoi,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LbsPoiReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LbsPoiReply.SerializeToString,
+            ),
+            'LegacyTopicFeed': grpc.unary_unary_rpc_method_handler(
+                    servicer.LegacyTopicFeed,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LegacyTopicFeedReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LegacyTopicFeedReply.SerializeToString,
+            ),
+            'LikeList': grpc.unary_unary_rpc_method_handler(
+                    servicer.LikeList,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReply.SerializeToString,
             ),
             'OfficialAccounts': grpc.unary_unary_rpc_method_handler(
                     servicer.OfficialAccounts,
@@ -693,50 +921,60 @@ def add_DynamicServicer_to_server(servicer, server):
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.OfficialDynamicsReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.OfficialDynamicsReply.SerializeToString,
             ),
-            'CampusRedDot': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusRedDot,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReply.SerializeToString,
+            'ReactionList': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReactionList,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.SerializeToString,
             ),
-            'CampusRcmdFeed': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusRcmdFeed,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReply.SerializeToString,
+            'RepostList': grpc.unary_unary_rpc_method_handler(
+                    servicer.RepostList,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.SerializeToString,
             ),
-            'TopicSquare': grpc.unary_unary_rpc_method_handler(
-                    servicer.TopicSquare,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReply.SerializeToString,
+            'SchoolRecommend': grpc.unary_unary_rpc_method_handler(
+                    servicer.SchoolRecommend,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReply.SerializeToString,
+            ),
+            'SchoolSearch': grpc.unary_unary_rpc_method_handler(
+                    servicer.SchoolSearch,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReply.SerializeToString,
+            ),
+            'SetDecision': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetDecision,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetDecisionReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
+            ),
+            'SetRecentCampus': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetRecentCampus,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetRecentCampusReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
+            ),
+            'SubscribeCampus': grpc.unary_unary_rpc_method_handler(
+                    servicer.SubscribeCampus,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SubscribeCampusReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
             ),
             'TopicList': grpc.unary_unary_rpc_method_handler(
                     servicer.TopicList,
                     request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicListReq.FromString,
                     response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicListReply.SerializeToString,
             ),
-            'CampusMateLikeList': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusMateLikeList,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReply.SerializeToString,
+            'TopicSquare': grpc.unary_unary_rpc_method_handler(
+                    servicer.TopicSquare,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReply.SerializeToString,
             ),
-            'CampusFeedback': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusFeedback,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReply.SerializeToString,
+            'UnfollowMatch': grpc.unary_unary_rpc_method_handler(
+                    servicer.UnfollowMatch,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.UnfollowMatchReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
             ),
-            'CampusBillboard': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusBillboard,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.SerializeToString,
-            ),
-            'CampusBillboardInternal': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusBillboardInternal,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillboardInternalReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.SerializeToString,
-            ),
-            'CampusTopicRcmdFeed': grpc.unary_unary_rpc_method_handler(
-                    servicer.CampusTopicRcmdFeed,
-                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReq.FromString,
-                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReply.SerializeToString,
+            'UpdateTabSetting': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateTabSetting,
+                    request_deserializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.UpdateTabSettingReq.FromString,
+                    response_serializer=bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -746,11 +984,11 @@ def add_DynamicServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Dynamic(object):
-    """v2动态
+    """v2动态, rpc 按字母顺序排列
     """
 
     @staticmethod
-    def DynVideo(request,
+    def AlumniDynamics(request,
             target,
             options=(),
             channel_credentials=None,
@@ -760,14 +998,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVideo',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/AlumniDynamics',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynAll(request,
+    def CampusBillBoard(request,
             target,
             options=(),
             channel_credentials=None,
@@ -777,14 +1015,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynAll',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusBillBoard',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynDetails(request,
+    def CampusEntryTab(request,
             target,
             options=(),
             channel_credentials=None,
@@ -794,14 +1032,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynDetails',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusEntryTab',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusEntryTabReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusEntryTabResp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynVideoPersonal(request,
+    def CampusFeedback(request,
             target,
             options=(),
             channel_credentials=None,
@@ -811,14 +1049,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVideoPersonal',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusFeedback',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynVideoUpdOffset(request,
+    def CampusHomePages(request,
             target,
             options=(),
             channel_credentials=None,
@@ -828,9 +1066,179 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVideoUpdOffset',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoUpdOffsetReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusHomePages',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusHomePagesReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusHomePagesReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusMateLikeList(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusMateLikeList',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusMngDetail(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusMngDetail',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngDetailReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngDetailReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusMngQuizOperate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusMngQuizOperate',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngQuizOperateReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngQuizOperateReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusMngSubmit(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusMngSubmit',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngSubmitReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMngSubmitReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusRcmd(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusRcmd',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusRcmdFeed(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusRcmdFeed',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusRecommend(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusRecommend',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRecommendReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRecommendReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusRedDot(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusRedDot',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusSquare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusSquare',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusSquareReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusSquareReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CampusTopicRcmdFeed(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusTopicRcmdFeed',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -852,7 +1260,7 @@ class Dynamic(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynThumb(request,
+    def DynAll(request,
             target,
             options=(),
             channel_credentials=None,
@@ -862,43 +1270,9 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynThumb',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynThumbReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DynFakeCard(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynFakeCard',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DynRcmdUpExchange(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynRcmdUpExchange',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynAll',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynAllReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -937,7 +1311,7 @@ class Dynamic(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynVote(request,
+    def DynDetail(request,
             target,
             options=(),
             channel_credentials=None,
@@ -947,14 +1321,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVote',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynDetail',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynMixUpListViewMore(request,
+    def DynDetails(request,
             target,
             options=(),
             channel_credentials=None,
@@ -964,9 +1338,43 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynMixUpListViewMore',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynDetails',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailsReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DynFakeCard(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynFakeCard',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFakeCardReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DynFriend(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynFriend',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFriendReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynFriendReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -988,7 +1396,7 @@ class Dynamic(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynDetail(request,
+    def DynMixUpListViewMore(request,
             target,
             options=(),
             channel_credentials=None,
@@ -998,14 +1406,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynDetail',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynDetailReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynMixUpListViewMore',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynMixUpListViewMoreReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def LikeList(request,
+    def DynRcmdUpExchange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1015,94 +1423,9 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/LikeList',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RepostList(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/RepostList',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ReactionList(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/ReactionList',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DynSpace(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynSpace',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceRsp.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DynUnLoginRcmd(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynUnLoginRcmd',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DynServerDetails(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynServerDetails',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynRcmdUpExchange',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdUpExchangeReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1124,7 +1447,7 @@ class Dynamic(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SetDecision(request,
+    def DynServerDetails(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1134,14 +1457,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SetDecision',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetDecisionReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynServerDetails',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynServerDetailsReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AlumniDynamics(request,
+    def DynSpace(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1151,14 +1474,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/AlumniDynamics',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.AlumniDynamicsReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynSpace',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceRsp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CampusRcmd(request,
+    def DynSpaceSearchDetails(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1168,43 +1491,9 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusRcmd',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SubscribeCampus(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SubscribeCampus',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SubscribeCampusReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SetRecentCampus(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SetRecentCampus',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetRecentCampusReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynSpaceSearchDetails',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1226,7 +1515,7 @@ class Dynamic(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SchoolSearch(request,
+    def DynThumb(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1236,14 +1525,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SchoolSearch',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynThumb',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynThumbReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SchoolRecommend(request,
+    def DynUnLoginRcmd(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1253,14 +1542,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SchoolRecommend',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynUnLoginRcmd',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynRcmdReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DynSpaceSearchDetails(request,
+    def DynVideo(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1270,9 +1559,162 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynSpaceSearchDetails',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynSpaceSearchDetailsReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVideo',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DynVideoPersonal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVideoPersonal',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoPersonalReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DynVideoUpdOffset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVideoUpdOffset',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVideoUpdOffsetReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DynVote(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/DynVote',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.DynVoteReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FeedFilter(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/FeedFilter',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FeedFilterReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FeedFilterReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FetchTabSetting(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/FetchTabSetting',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.FetchTabSettingReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def HomeSubscribe(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/HomeSubscribe',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.HomeSubscribeReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.HomeSubscribeReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def LbsPoi(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/LbsPoi',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LbsPoiReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LbsPoiReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def LegacyTopicFeed(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/LegacyTopicFeed',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LegacyTopicFeedReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LegacyTopicFeedReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def LikeList(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/LikeList',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.LikeListReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1311,7 +1753,7 @@ class Dynamic(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CampusRedDot(request,
+    def ReactionList(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1321,14 +1763,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusRedDot',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRedDotReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/ReactionList',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.ReactionListReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CampusRcmdFeed(request,
+    def RepostList(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1338,14 +1780,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusRcmdFeed',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusRcmdFeedReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/RepostList',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.RepostListRsp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def TopicSquare(request,
+    def SchoolRecommend(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1355,9 +1797,77 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/TopicSquare',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SchoolRecommend',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolRecommendReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SchoolSearch(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SchoolSearch',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SchoolSearchReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetDecision(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SetDecision',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetDecisionReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetRecentCampus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SetRecentCampus',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SetRecentCampusReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SubscribeCampus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/SubscribeCampus',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.SubscribeCampusReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1379,7 +1889,7 @@ class Dynamic(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CampusMateLikeList(request,
+    def TopicSquare(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1389,14 +1899,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusMateLikeList',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusMateLikeListReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/TopicSquare',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.TopicSquareReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CampusFeedback(request,
+    def UnfollowMatch(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1406,14 +1916,14 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusFeedback',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusFeedbackReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/UnfollowMatch',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.UnfollowMatchReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CampusBillboard(request,
+    def UpdateTabSetting(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1423,42 +1933,8 @@ class Dynamic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusBillboard',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CampusBillboardInternal(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusBillboardInternal',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillboardInternalReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusBillBoardReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CampusTopicRcmdFeed(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/CampusTopicRcmdFeed',
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReq.SerializeToString,
-            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.CampusTopicRcmdFeedReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/bilibili.app.dynamic.v2.Dynamic/UpdateTabSetting',
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.UpdateTabSettingReq.SerializeToString,
+            bilibili_dot_app_dot_dynamic_dot_v2_dot_dynamic__pb2.NoReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

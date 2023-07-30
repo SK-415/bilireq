@@ -18,6 +18,26 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _ArcType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ArcTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ArcType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    ARC_TYPE_NORMAL: _ArcType.ValueType  # 0
+    """"""
+    ARC_TYPE_INTERACT: _ArcType.ValueType  # 1
+    """"""
+
+class ArcType(_ArcType, metaclass=_ArcTypeEnumTypeWrapper):
+    """"""
+
+ARC_TYPE_NORMAL: ArcType.ValueType  # 0
+""""""
+ARC_TYPE_INTERACT: ArcType.ValueType  # 1
+""""""
+global___ArcType = ArcType
+
 class _CodeType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -25,7 +45,7 @@ class _CodeType:
 class _CodeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CodeType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     NOCODE: _CodeType.ValueType  # 0
-    """"""
+    """不指定"""
     CODE264: _CodeType.ValueType  # 1
     """H264"""
     CODE265: _CodeType.ValueType  # 2
@@ -37,7 +57,7 @@ class CodeType(_CodeType, metaclass=_CodeTypeEnumTypeWrapper):
     """视频编码"""
 
 NOCODE: CodeType.ValueType  # 0
-""""""
+"""不指定"""
 CODE264: CodeType.ValueType  # 1
 """H264"""
 CODE265: CodeType.ValueType  # 2
@@ -224,41 +244,92 @@ global___VideoType = VideoType
 
 @typing_extensions.final
 class ArcConf(google.protobuf.message.Message):
+    """ArcConf消息"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     IS_SUPPORT_FIELD_NUMBER: builtins.int
-    DISABLE_FIELD_NUMBER: builtins.int
-    EXTRA_CONNENT_FIELD_NUMBER: builtins.int
+    DISABLED_FIELD_NUMBER: builtins.int
+    EXTRA_CONTENT_FIELD_NUMBER: builtins.int
     UNSUPPORT_SCENE_FIELD_NUMBER: builtins.int
     is_support: builtins.bool
-    disable: builtins.bool
+    """是否支持"""
+    disabled: builtins.bool
+    """是否禁用"""
     @property
-    def extra_connent(self) -> global___ExtraContent: ...
+    def extra_content(self) -> global___ExtraContent:
+        """额外内容"""
     @property
-    def unsupport_scene(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
+    def unsupport_scene(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+        """不支持场景列表"""
     def __init__(
         self,
         *,
         is_support: builtins.bool = ...,
-        disable: builtins.bool = ...,
-        extra_connent: global___ExtraContent | None = ...,
+        disabled: builtins.bool = ...,
+        extra_content: global___ExtraContent | None = ...,
         unsupport_scene: collections.abc.Iterable[builtins.int] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["extra_connent", b"extra_connent"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["disable", b"disable", "extra_connent", b"extra_connent", "is_support", b"is_support", "unsupport_scene", b"unsupport_scene"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["extra_content", b"extra_content"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["disabled", b"disabled", "extra_content", b"extra_content", "is_support", b"is_support", "unsupport_scene", b"unsupport_scene"]) -> None: ...
 
 global___ArcConf = ArcConf
 
 @typing_extensions.final
+class Button(google.protobuf.message.Message):
+    """按钮组件"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class ReportParamsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    TEXT_FIELD_NUMBER: builtins.int
+    LINK_FIELD_NUMBER: builtins.int
+    REPORT_PARAMS_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """按钮文本"""
+    link: builtins.str
+    """按钮跳转链接"""
+    @property
+    def report_params(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """埋点上报相关"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        link: builtins.str = ...,
+        report_params: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["link", b"link", "report_params", b"report_params", "text", b"text"]) -> None: ...
+
+global___Button = Button
+
+@typing_extensions.final
 class ConfValue(google.protobuf.message.Message):
+    """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SWITCH_VAL_FIELD_NUMBER: builtins.int
     SELECTED_VAL_FIELD_NUMBER: builtins.int
     switch_val: builtins.int
-    """dash流"""
+    """"""
     selected_val: builtins.int
-    """分段流"""
+    """"""
     def __init__(
         self,
         *,
@@ -272,7 +343,123 @@ class ConfValue(google.protobuf.message.Message):
 global___ConfValue = ConfValue
 
 @typing_extensions.final
+class DashItem(google.protobuf.message.Message):
+    """Dash条目"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    BASE_URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
+    BANDWIDTH_FIELD_NUMBER: builtins.int
+    CODECID_FIELD_NUMBER: builtins.int
+    MD5_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    FRAME_RATE_FIELD_NUMBER: builtins.int
+    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
+    id: builtins.int
+    """清晰度"""
+    base_url: builtins.str
+    """主线流"""
+    @property
+    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """备用流"""
+    bandwidth: builtins.int
+    """带宽"""
+    codecid: builtins.int
+    """编码id"""
+    md5: builtins.str
+    """md5"""
+    size: builtins.int
+    """大小"""
+    frame_rate: builtins.str
+    """帧率"""
+    widevine_pssh: builtins.str
+    """DRM密钥"""
+    def __init__(
+        self,
+        *,
+        id: builtins.int = ...,
+        base_url: builtins.str = ...,
+        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
+        bandwidth: builtins.int = ...,
+        codecid: builtins.int = ...,
+        md5: builtins.str = ...,
+        size: builtins.int = ...,
+        frame_rate: builtins.str = ...,
+        widevine_pssh: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "id", b"id", "md5", b"md5", "size", b"size", "widevine_pssh", b"widevine_pssh"]) -> None: ...
+
+global___DashItem = DashItem
+
+@typing_extensions.final
+class DashVideo(google.protobuf.message.Message):
+    """视频流信息: dash流"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BASE_URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
+    BANDWIDTH_FIELD_NUMBER: builtins.int
+    CODECID_FIELD_NUMBER: builtins.int
+    MD5_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    AUDIO_ID_FIELD_NUMBER: builtins.int
+    NO_REXCODE_FIELD_NUMBER: builtins.int
+    FRAME_RATE_FIELD_NUMBER: builtins.int
+    WIDTH_FIELD_NUMBER: builtins.int
+    HEIGHT_FIELD_NUMBER: builtins.int
+    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
+    base_url: builtins.str
+    """主线流"""
+    @property
+    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """备用流"""
+    bandwidth: builtins.int
+    """带宽"""
+    codecid: builtins.int
+    """编码id"""
+    md5: builtins.str
+    """md5"""
+    size: builtins.int
+    """大小"""
+    audio_id: builtins.int
+    """伴音质量id"""
+    no_rexcode: builtins.bool
+    """是否非全二压"""
+    frame_rate: builtins.str
+    """帧率"""
+    width: builtins.int
+    """宽"""
+    height: builtins.int
+    """高"""
+    widevine_pssh: builtins.str
+    """DRM密钥"""
+    def __init__(
+        self,
+        *,
+        base_url: builtins.str = ...,
+        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
+        bandwidth: builtins.int = ...,
+        codecid: builtins.int = ...,
+        md5: builtins.str = ...,
+        size: builtins.int = ...,
+        audio_id: builtins.int = ...,
+        no_rexcode: builtins.bool = ...,
+        frame_rate: builtins.str = ...,
+        width: builtins.int = ...,
+        height: builtins.int = ...,
+        widevine_pssh: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio_id", b"audio_id", "backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "height", b"height", "md5", b"md5", "no_rexcode", b"no_rexcode", "size", b"size", "widevine_pssh", b"widevine_pssh", "width", b"width"]) -> None: ...
+
+global___DashVideo = DashVideo
+
+@typing_extensions.final
 class DeviceConf(google.protobuf.message.Message):
+    """"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONF_VALUE_FIELD_NUMBER: builtins.int
@@ -287,6 +474,98 @@ class DeviceConf(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["conf_value", b"conf_value"]) -> None: ...
 
 global___DeviceConf = DeviceConf
+
+@typing_extensions.final
+class Dimension(google.protobuf.message.Message):
+    """当前分辨率信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    WIDTH_FIELD_NUMBER: builtins.int
+    HEIGHT_FIELD_NUMBER: builtins.int
+    ROTATE_FIELD_NUMBER: builtins.int
+    width: builtins.int
+    """宽"""
+    height: builtins.int
+    """长"""
+    rotate: builtins.int
+    """旋转角度"""
+    def __init__(
+        self,
+        *,
+        width: builtins.int = ...,
+        height: builtins.int = ...,
+        rotate: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["height", b"height", "rotate", b"rotate", "width", b"width"]) -> None: ...
+
+global___Dimension = Dimension
+
+@typing_extensions.final
+class DolbyItem(google.protobuf.message.Message):
+    """杜比伴音流信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Type:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[DolbyItem._Type.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        NONE: DolbyItem._Type.ValueType  # 0
+        """NONE"""
+        COMMON: DolbyItem._Type.ValueType  # 1
+        """普通杜比音效"""
+        ATMOS: DolbyItem._Type.ValueType  # 2
+        """全景杜比音效"""
+
+    class Type(_Type, metaclass=_TypeEnumTypeWrapper):
+        """杜比类型"""
+
+    NONE: DolbyItem.Type.ValueType  # 0
+    """NONE"""
+    COMMON: DolbyItem.Type.ValueType  # 1
+    """普通杜比音效"""
+    ATMOS: DolbyItem.Type.ValueType  # 2
+    """全景杜比音效"""
+
+    TYPE_FIELD_NUMBER: builtins.int
+    AUDIO_FIELD_NUMBER: builtins.int
+    type: global___DolbyItem.Type.ValueType
+    """杜比类型"""
+    @property
+    def audio(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DashItem]:
+        """音频流"""
+    def __init__(
+        self,
+        *,
+        type: global___DolbyItem.Type.ValueType = ...,
+        audio: collections.abc.Iterable[global___DashItem] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "type", b"type"]) -> None: ...
+
+global___DolbyItem = DolbyItem
+
+@typing_extensions.final
+class Event(google.protobuf.message.Message):
+    """事件"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SHAKE_FIELD_NUMBER: builtins.int
+    @property
+    def shake(self) -> global___Shake:
+        """震动"""
+    def __init__(
+        self,
+        *,
+        shake: global___Shake | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["shake", b"shake"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["shake", b"shake"]) -> None: ...
+
+global___Event = Event
 
 @typing_extensions.final
 class ExtraContent(google.protobuf.message.Message):
@@ -316,32 +595,237 @@ class History(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    CURRENT_VIDEO_FIELD_NUMBER: builtins.int
+    RELATED_VIDEO_FIELD_NUMBER: builtins.int
+    @property
+    def current_video(self) -> global___HistoryInfo:
+        """"""
+    @property
+    def related_video(self) -> global___HistoryInfo:
+        """"""
+    def __init__(
+        self,
+        *,
+        current_video: global___HistoryInfo | None = ...,
+        related_video: global___HistoryInfo | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["current_video", b"current_video", "related_video", b"related_video"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["current_video", b"current_video", "related_video", b"related_video"]) -> None: ...
+
+global___History = History
+
+@typing_extensions.final
+class HistoryInfo(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
     PROGRESS_FIELD_NUMBER: builtins.int
-    TOAST_FIELD_NUMBER: builtins.int
     LAST_PLAY_CID_FIELD_NUMBER: builtins.int
+    TOAST_FIELD_NUMBER: builtins.int
+    TOAST_WITHOUT_TIME_FIELD_NUMBER: builtins.int
+    LAST_PLAY_AID_FIELD_NUMBER: builtins.int
     progress: builtins.int
-    """播放进度"""
-    toast: builtins.str
     """"""
     last_play_cid: builtins.int
+    """"""
+    @property
+    def toast(self) -> global___Toast:
+        """"""
+    @property
+    def toast_without_time(self) -> global___Toast:
+        """"""
+    last_play_aid: builtins.int
     """"""
     def __init__(
         self,
         *,
         progress: builtins.int = ...,
-        toast: builtins.str = ...,
         last_play_cid: builtins.int = ...,
+        toast: global___Toast | None = ...,
+        toast_without_time: global___Toast | None = ...,
+        last_play_aid: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["last_play_cid", b"last_play_cid", "progress", b"progress", "toast", b"toast"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["toast", b"toast", "toast_without_time", b"toast_without_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["last_play_aid", b"last_play_aid", "last_play_cid", b"last_play_cid", "progress", b"progress", "toast", b"toast", "toast_without_time", b"toast_without_time"]) -> None: ...
 
-global___History = History
+global___HistoryInfo = HistoryInfo
 
 @typing_extensions.final
-class PlayDeviceConf(google.protobuf.message.Message):
+class Interaction(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HISTORY_NODE_FIELD_NUMBER: builtins.int
+    GRAPH_VERSION_FIELD_NUMBER: builtins.int
+    MSG_FIELD_NUMBER: builtins.int
+    MARK_FIELD_NUMBER: builtins.int
+    @property
+    def history_node(self) -> global___Node:
+        """"""
+    graph_version: builtins.int
+    """"""
+    msg: builtins.str
+    """"""
+    mark: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        history_node: global___Node | None = ...,
+        graph_version: builtins.int = ...,
+        msg: builtins.str = ...,
+        mark: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["history_node", b"history_node"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["graph_version", b"graph_version", "history_node", b"history_node", "mark", b"mark", "msg", b"msg"]) -> None: ...
+
+global___Interaction = Interaction
+
+@typing_extensions.final
+class LossLessItem(google.protobuf.message.Message):
+    """HIRES伴音流信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IS_LOSSLESS_AUDIO_FIELD_NUMBER: builtins.int
+    AUDIO_FIELD_NUMBER: builtins.int
+    NEED_VIP_FIELD_NUMBER: builtins.int
+    is_lossless_audio: builtins.bool
+    """是否为hires"""
+    @property
+    def audio(self) -> global___DashItem:
+        """音频流信息"""
+    need_vip: builtins.bool
+    """是否需要大会员"""
+    def __init__(
+        self,
+        *,
+        is_lossless_audio: builtins.bool = ...,
+        audio: global___DashItem | None = ...,
+        need_vip: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["audio", b"audio"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "is_lossless_audio", b"is_lossless_audio", "need_vip", b"need_vip"]) -> None: ...
+
+global___LossLessItem = LossLessItem
+
+@typing_extensions.final
+class Node(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NODE_ID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    node_id: builtins.int
+    """"""
+    title: builtins.str
+    """"""
+    cid: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        node_id: builtins.int = ...,
+        title: builtins.str = ...,
+        cid: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "node_id", b"node_id", "title", b"title"]) -> None: ...
+
+global___Node = Node
+
+@typing_extensions.final
+class PlayArc(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_TYPE_FIELD_NUMBER: builtins.int
+    AID_FIELD_NUMBER: builtins.int
+    CID_FIELD_NUMBER: builtins.int
+    DRM_TECH_TYPE_FIELD_NUMBER: builtins.int
+    ARC_TYPE_FIELD_NUMBER: builtins.int
+    INTERACTION_FIELD_NUMBER: builtins.int
+    DIMENSION_FIELD_NUMBER: builtins.int
+    video_type: global___VideoType.ValueType
+    """"""
+    aid: builtins.int
+    """"""
+    cid: builtins.int
+    """"""
+    drm_tech_type: global___DrmTechType.ValueType
+    """"""
+    arc_type: global___ArcType.ValueType
+    """"""
+    @property
+    def interaction(self) -> global___Interaction:
+        """"""
+    @property
+    def dimension(self) -> global___Dimension:
+        """"""
+    def __init__(
+        self,
+        *,
+        video_type: global___VideoType.ValueType = ...,
+        aid: builtins.int = ...,
+        cid: builtins.int = ...,
+        drm_tech_type: global___DrmTechType.ValueType = ...,
+        arc_type: global___ArcType.ValueType = ...,
+        interaction: global___Interaction | None = ...,
+        dimension: global___Dimension | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["dimension", b"dimension", "interaction", b"interaction"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "arc_type", b"arc_type", "cid", b"cid", "dimension", b"dimension", "drm_tech_type", b"drm_tech_type", "interaction", b"interaction", "video_type", b"video_type"]) -> None: ...
+
+global___PlayArc = PlayArc
+
+@typing_extensions.final
+class PlayArcConf(google.protobuf.message.Message):
+    """播放页信息-响应: PlayArcConf"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing_extensions.final
     class ArcConfsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.int
+        @property
+        def value(self) -> global___ArcConf: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.int = ...,
+            value: global___ArcConf | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    ARC_CONFS_FIELD_NUMBER: builtins.int
+    @property
+    def arc_confs(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___ArcConf]: ...
+    def __init__(
+        self,
+        *,
+        arc_confs: collections.abc.Mapping[builtins.int, global___ArcConf] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["arc_confs", b"arc_confs"]) -> None: ...
+
+global___PlayArcConf = PlayArcConf
+
+@typing_extensions.final
+class PlayDeviceConf(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class DeviceConfsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         KEY_FIELD_NUMBER: builtins.int
@@ -358,17 +842,125 @@ class PlayDeviceConf(google.protobuf.message.Message):
         def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    ARC_CONFS_FIELD_NUMBER: builtins.int
+    DEVICE_CONFS_FIELD_NUMBER: builtins.int
     @property
-    def arc_confs(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___DeviceConf]: ...
+    def device_confs(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___DeviceConf]:
+        """"""
     def __init__(
         self,
         *,
-        arc_confs: collections.abc.Mapping[builtins.int, global___DeviceConf] | None = ...,
+        device_confs: collections.abc.Mapping[builtins.int, global___DeviceConf] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["arc_confs", b"arc_confs"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["device_confs", b"device_confs"]) -> None: ...
 
 global___PlayDeviceConf = PlayDeviceConf
+
+@typing_extensions.final
+class QnTrialInfo(google.protobuf.message.Message):
+    """播放页信息-响应: 高画质试看信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRIAL_ABLE_FIELD_NUMBER: builtins.int
+    REMAINING_TIMES_FIELD_NUMBER: builtins.int
+    START_FIELD_NUMBER: builtins.int
+    TIME_LENGTH_FIELD_NUMBER: builtins.int
+    START_TOAST_FIELD_NUMBER: builtins.int
+    END_TOAST_FIELD_NUMBER: builtins.int
+    QUALITY_OPEN_TIP_BTN_FIELD_NUMBER: builtins.int
+    trial_able: builtins.bool
+    """能否试看高画质"""
+    remaining_times: builtins.int
+    """"""
+    start: builtins.int
+    """"""
+    time_length: builtins.int
+    """"""
+    @property
+    def start_toast(self) -> global___Toast:
+        """"""
+    @property
+    def end_toast(self) -> global___Toast:
+        """"""
+    @property
+    def quality_open_tip_btn(self) -> global___Button:
+        """"""
+    def __init__(
+        self,
+        *,
+        trial_able: builtins.bool = ...,
+        remaining_times: builtins.int = ...,
+        start: builtins.int = ...,
+        time_length: builtins.int = ...,
+        start_toast: global___Toast | None = ...,
+        end_toast: global___Toast | None = ...,
+        quality_open_tip_btn: global___Button | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["end_toast", b"end_toast", "quality_open_tip_btn", b"quality_open_tip_btn", "start_toast", b"start_toast"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["end_toast", b"end_toast", "quality_open_tip_btn", b"quality_open_tip_btn", "remaining_times", b"remaining_times", "start", b"start", "start_toast", b"start_toast", "time_length", b"time_length", "trial_able", b"trial_able"]) -> None: ...
+
+global___QnTrialInfo = QnTrialInfo
+
+@typing_extensions.final
+class ResponseDash(google.protobuf.message.Message):
+    """Dash Response, 未使用"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_FIELD_NUMBER: builtins.int
+    AUDIO_FIELD_NUMBER: builtins.int
+    @property
+    def video(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DashItem]: ...
+    @property
+    def audio(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DashItem]: ...
+    def __init__(
+        self,
+        *,
+        video: collections.abc.Iterable[global___DashItem] | None = ...,
+        audio: collections.abc.Iterable[global___DashItem] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "video", b"video"]) -> None: ...
+
+global___ResponseDash = ResponseDash
+
+@typing_extensions.final
+class ResponseUrl(google.protobuf.message.Message):
+    """分段流条目"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ORDER_FIELD_NUMBER: builtins.int
+    LENGTH_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
+    MD5_FIELD_NUMBER: builtins.int
+    order: builtins.int
+    """分段序号"""
+    length: builtins.int
+    """分段时长"""
+    size: builtins.int
+    """分段大小"""
+    url: builtins.str
+    """主线流"""
+    @property
+    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """备用流"""
+    md5: builtins.str
+    """md5"""
+    def __init__(
+        self,
+        *,
+        order: builtins.int = ...,
+        length: builtins.int = ...,
+        size: builtins.int = ...,
+        url: builtins.str = ...,
+        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
+        md5: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "length", b"length", "md5", b"md5", "order", b"order", "size", b"size", "url", b"url"]) -> None: ...
+
+global___ResponseUrl = ResponseUrl
 
 @typing_extensions.final
 class Scheme(google.protobuf.message.Message):
@@ -392,7 +984,9 @@ class Scheme(google.protobuf.message.Message):
     ACTION_TYPE_FIELD_NUMBER: builtins.int
     TOAST_FIELD_NUMBER: builtins.int
     action_type: global___Scheme.ActionType.ValueType
+    """"""
     toast: builtins.str
+    """"""
     def __init__(
         self,
         *,
@@ -402,6 +996,42 @@ class Scheme(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["action_type", b"action_type", "toast", b"toast"]) -> None: ...
 
 global___Scheme = Scheme
+
+@typing_extensions.final
+class SegmentVideo(google.protobuf.message.Message):
+    """视频流信息: 分段流"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SEGMENT_FIELD_NUMBER: builtins.int
+    @property
+    def segment(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ResponseUrl]: ...
+    def __init__(
+        self,
+        *,
+        segment: collections.abc.Iterable[global___ResponseUrl] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["segment", b"segment"]) -> None: ...
+
+global___SegmentVideo = SegmentVideo
+
+@typing_extensions.final
+class Shake(google.protobuf.message.Message):
+    """震动"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FILE_FIELD_NUMBER: builtins.int
+    file: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        file: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["file", b"file"]) -> None: ...
+
+global___Shake = Shake
 
 @typing_extensions.final
 class Stream(google.protobuf.message.Message):
@@ -520,199 +1150,6 @@ class StreamInfo(google.protobuf.message.Message):
 global___StreamInfo = StreamInfo
 
 @typing_extensions.final
-class DashItem(google.protobuf.message.Message):
-    """Dash条目"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ID_FIELD_NUMBER: builtins.int
-    BASE_URL_FIELD_NUMBER: builtins.int
-    BACKUP_URL_FIELD_NUMBER: builtins.int
-    BANDWIDTH_FIELD_NUMBER: builtins.int
-    CODECID_FIELD_NUMBER: builtins.int
-    MD5_FIELD_NUMBER: builtins.int
-    SIZE_FIELD_NUMBER: builtins.int
-    FRAME_RATE_FIELD_NUMBER: builtins.int
-    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
-    id: builtins.int
-    """清晰度"""
-    base_url: builtins.str
-    """主线流"""
-    @property
-    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """备用流"""
-    bandwidth: builtins.int
-    """带宽"""
-    codecid: builtins.int
-    """编码id"""
-    md5: builtins.str
-    """md5"""
-    size: builtins.int
-    """大小"""
-    frame_rate: builtins.str
-    """帧率"""
-    widevine_pssh: builtins.str
-    """DRM密钥"""
-    def __init__(
-        self,
-        *,
-        id: builtins.int = ...,
-        base_url: builtins.str = ...,
-        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
-        bandwidth: builtins.int = ...,
-        codecid: builtins.int = ...,
-        md5: builtins.str = ...,
-        size: builtins.int = ...,
-        frame_rate: builtins.str = ...,
-        widevine_pssh: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "id", b"id", "md5", b"md5", "size", b"size", "widevine_pssh", b"widevine_pssh"]) -> None: ...
-
-global___DashItem = DashItem
-
-@typing_extensions.final
-class DashVideo(google.protobuf.message.Message):
-    """视频流信息: dash流"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    BASE_URL_FIELD_NUMBER: builtins.int
-    BACKUP_URL_FIELD_NUMBER: builtins.int
-    BANDWIDTH_FIELD_NUMBER: builtins.int
-    CODECID_FIELD_NUMBER: builtins.int
-    MD5_FIELD_NUMBER: builtins.int
-    SIZE_FIELD_NUMBER: builtins.int
-    AUDIO_ID_FIELD_NUMBER: builtins.int
-    NO_REXCODE_FIELD_NUMBER: builtins.int
-    FRAME_RATE_FIELD_NUMBER: builtins.int
-    WIDTH_FIELD_NUMBER: builtins.int
-    HEIGHT_FIELD_NUMBER: builtins.int
-    WIDEVINE_PSSH_FIELD_NUMBER: builtins.int
-    base_url: builtins.str
-    """主线流"""
-    @property
-    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """备用流"""
-    bandwidth: builtins.int
-    """带宽"""
-    codecid: builtins.int
-    """编码id"""
-    md5: builtins.str
-    """md5"""
-    size: builtins.int
-    """大小"""
-    audio_id: builtins.int
-    """伴音质量id"""
-    no_rexcode: builtins.bool
-    """是否非全二压"""
-    frame_rate: builtins.str
-    """帧率"""
-    width: builtins.int
-    """宽"""
-    height: builtins.int
-    """高"""
-    widevine_pssh: builtins.str
-    """DRM密钥"""
-    def __init__(
-        self,
-        *,
-        base_url: builtins.str = ...,
-        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
-        bandwidth: builtins.int = ...,
-        codecid: builtins.int = ...,
-        md5: builtins.str = ...,
-        size: builtins.int = ...,
-        audio_id: builtins.int = ...,
-        no_rexcode: builtins.bool = ...,
-        frame_rate: builtins.str = ...,
-        width: builtins.int = ...,
-        height: builtins.int = ...,
-        widevine_pssh: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["audio_id", b"audio_id", "backup_url", b"backup_url", "bandwidth", b"bandwidth", "base_url", b"base_url", "codecid", b"codecid", "frame_rate", b"frame_rate", "height", b"height", "md5", b"md5", "no_rexcode", b"no_rexcode", "size", b"size", "widevine_pssh", b"widevine_pssh", "width", b"width"]) -> None: ...
-
-global___DashVideo = DashVideo
-
-@typing_extensions.final
-class SegmentVideo(google.protobuf.message.Message):
-    """视频流信息: 分段流"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SEGMENT_FIELD_NUMBER: builtins.int
-    @property
-    def segment(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ResponseUrl]: ...
-    def __init__(
-        self,
-        *,
-        segment: collections.abc.Iterable[global___ResponseUrl] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["segment", b"segment"]) -> None: ...
-
-global___SegmentVideo = SegmentVideo
-
-@typing_extensions.final
-class ResponseUrl(google.protobuf.message.Message):
-    """分段流条目"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ORDER_FIELD_NUMBER: builtins.int
-    LENGTH_FIELD_NUMBER: builtins.int
-    SIZE_FIELD_NUMBER: builtins.int
-    URL_FIELD_NUMBER: builtins.int
-    BACKUP_URL_FIELD_NUMBER: builtins.int
-    MD5_FIELD_NUMBER: builtins.int
-    order: builtins.int
-    """分段序号"""
-    length: builtins.int
-    """分段时长"""
-    size: builtins.int
-    """分段大小"""
-    url: builtins.str
-    """主线流"""
-    @property
-    def backup_url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """备用流"""
-    md5: builtins.str
-    """md5"""
-    def __init__(
-        self,
-        *,
-        order: builtins.int = ...,
-        length: builtins.int = ...,
-        size: builtins.int = ...,
-        url: builtins.str = ...,
-        backup_url: collections.abc.Iterable[builtins.str] | None = ...,
-        md5: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["backup_url", b"backup_url", "length", b"length", "md5", b"md5", "order", b"order", "size", b"size", "url", b"url"]) -> None: ...
-
-global___ResponseUrl = ResponseUrl
-
-@typing_extensions.final
-class ResponseDash(google.protobuf.message.Message):
-    """Dash Response, 未使用"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    VIDEO_FIELD_NUMBER: builtins.int
-    AUDIO_FIELD_NUMBER: builtins.int
-    @property
-    def video(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DashItem]: ...
-    @property
-    def audio(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DashItem]: ...
-    def __init__(
-        self,
-        *,
-        video: collections.abc.Iterable[global___DashItem] | None = ...,
-        audio: collections.abc.Iterable[global___DashItem] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "video", b"video"]) -> None: ...
-
-global___ResponseDash = ResponseDash
-
-@typing_extensions.final
 class StreamLimit(google.protobuf.message.Message):
     """视频流信息: 流媒体元数据: 清晰度不满足条件信息"""
 
@@ -737,6 +1174,30 @@ class StreamLimit(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["msg", b"msg", "title", b"title", "uri", b"uri"]) -> None: ...
 
 global___StreamLimit = StreamLimit
+
+@typing_extensions.final
+class Toast(google.protobuf.message.Message):
+    """Toast信息"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    BUTTON_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """toast文案"""
+    @property
+    def button(self) -> global___Button:
+        """toast按钮"""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+        button: global___Button | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["button", b"button"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["button", b"button", "text", b"text"]) -> None: ...
+
+global___Toast = Toast
 
 @typing_extensions.final
 class VideoVod(google.protobuf.message.Message):
@@ -811,6 +1272,7 @@ class VodInfo(google.protobuf.message.Message):
     DOLBY_FIELD_NUMBER: builtins.int
     VOLUME_FIELD_NUMBER: builtins.int
     LOSS_LESS_ITEM_FIELD_NUMBER: builtins.int
+    SUPPORT_PROJECT_FIELD_NUMBER: builtins.int
     quality: builtins.int
     """视频清晰度"""
     format: builtins.str
@@ -834,6 +1296,8 @@ class VodInfo(google.protobuf.message.Message):
     @property
     def loss_less_item(self) -> global___LossLessItem:
         """HIRES伴音流信息"""
+    support_project: builtins.bool
+    """是否支持投屏"""
     def __init__(
         self,
         *,
@@ -846,86 +1310,12 @@ class VodInfo(google.protobuf.message.Message):
         dolby: global___DolbyItem | None = ...,
         volume: global___VolumeInfo | None = ...,
         loss_less_item: global___LossLessItem | None = ...,
+        support_project: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["dolby", b"dolby", "loss_less_item", b"loss_less_item", "volume", b"volume"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["dash_audio", b"dash_audio", "dolby", b"dolby", "format", b"format", "loss_less_item", b"loss_less_item", "quality", b"quality", "stream_list", b"stream_list", "timelength", b"timelength", "video_codecid", b"video_codecid", "volume", b"volume"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["dash_audio", b"dash_audio", "dolby", b"dolby", "format", b"format", "loss_less_item", b"loss_less_item", "quality", b"quality", "stream_list", b"stream_list", "support_project", b"support_project", "timelength", b"timelength", "video_codecid", b"video_codecid", "volume", b"volume"]) -> None: ...
 
 global___VodInfo = VodInfo
-
-@typing_extensions.final
-class DolbyItem(google.protobuf.message.Message):
-    """杜比伴音流信息"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _Type:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[DolbyItem._Type.ValueType], builtins.type):  # noqa: F821
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        NONE: DolbyItem._Type.ValueType  # 0
-        """NONE"""
-        COMMON: DolbyItem._Type.ValueType  # 1
-        """普通杜比音效"""
-        ATMOS: DolbyItem._Type.ValueType  # 2
-        """全景杜比音效"""
-
-    class Type(_Type, metaclass=_TypeEnumTypeWrapper):
-        """杜比类型"""
-
-    NONE: DolbyItem.Type.ValueType  # 0
-    """NONE"""
-    COMMON: DolbyItem.Type.ValueType  # 1
-    """普通杜比音效"""
-    ATMOS: DolbyItem.Type.ValueType  # 2
-    """全景杜比音效"""
-
-    TYPE_FIELD_NUMBER: builtins.int
-    AUDIO_FIELD_NUMBER: builtins.int
-    type: global___DolbyItem.Type.ValueType
-    """杜比类型"""
-    @property
-    def audio(self) -> global___DashItem:
-        """音频流"""
-    def __init__(
-        self,
-        *,
-        type: global___DolbyItem.Type.ValueType = ...,
-        audio: global___DashItem | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["audio", b"audio"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "type", b"type"]) -> None: ...
-
-global___DolbyItem = DolbyItem
-
-@typing_extensions.final
-class LossLessItem(google.protobuf.message.Message):
-    """HIRES伴音流信息"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    IS_LOSSLESS_AUDIO_FIELD_NUMBER: builtins.int
-    AUDIO_FIELD_NUMBER: builtins.int
-    NEED_VIP_FIELD_NUMBER: builtins.int
-    is_lossless_audio: builtins.bool
-    """是否为hires"""
-    @property
-    def audio(self) -> global___DashItem:
-        """音频流信息"""
-    need_vip: builtins.bool
-    """是否需要大会员"""
-    def __init__(
-        self,
-        *,
-        is_lossless_audio: builtins.bool = ...,
-        audio: global___DashItem | None = ...,
-        need_vip: builtins.bool = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["audio", b"audio"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["audio", b"audio", "is_lossless_audio", b"is_lossless_audio", "need_vip", b"need_vip"]) -> None: ...
-
-global___LossLessItem = LossLessItem
 
 @typing_extensions.final
 class VolumeInfo(google.protobuf.message.Message):
@@ -968,193 +1358,3 @@ class VolumeInfo(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["measured_i", b"measured_i", "measured_lra", b"measured_lra", "measured_threshold", b"measured_threshold", "measured_tp", b"measured_tp", "target_i", b"target_i", "target_offset", b"target_offset", "target_tp", b"target_tp"]) -> None: ...
 
 global___VolumeInfo = VolumeInfo
-
-@typing_extensions.final
-class PlayArc(google.protobuf.message.Message):
-    """"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    VIDEO_TYPE_FIELD_NUMBER: builtins.int
-    AID_FIELD_NUMBER: builtins.int
-    CID_FIELD_NUMBER: builtins.int
-    DRM_TECH_TYPE_FIELD_NUMBER: builtins.int
-    video_type: global___VideoType.ValueType
-    aid: builtins.int
-    cid: builtins.int
-    drm_tech_type: global___DrmTechType.ValueType
-    def __init__(
-        self,
-        *,
-        video_type: global___VideoType.ValueType = ...,
-        aid: builtins.int = ...,
-        cid: builtins.int = ...,
-        drm_tech_type: global___DrmTechType.ValueType = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["aid", b"aid", "cid", b"cid", "drm_tech_type", b"drm_tech_type", "video_type", b"video_type"]) -> None: ...
-
-global___PlayArc = PlayArc
-
-@typing_extensions.final
-class PlayArcConf(google.protobuf.message.Message):
-    """播放页信息-响应: PlayArcConf"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing_extensions.final
-    class ArcConfsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.int
-        @property
-        def value(self) -> global___PlayArc: ...
-        def __init__(
-            self,
-            *,
-            key: builtins.int = ...,
-            value: global___PlayArc | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    ARC_CONFS_FIELD_NUMBER: builtins.int
-    @property
-    def arc_confs(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___PlayArc]: ...
-    def __init__(
-        self,
-        *,
-        arc_confs: collections.abc.Mapping[builtins.int, global___PlayArc] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["arc_confs", b"arc_confs"]) -> None: ...
-
-global___PlayArcConf = PlayArcConf
-
-@typing_extensions.final
-class QnTrialButton(google.protobuf.message.Message):
-    """高画质试看信息: 按钮"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TEXT_FIELD_NUMBER: builtins.int
-    LINK_FIELD_NUMBER: builtins.int
-    text: builtins.str
-    link: builtins.str
-    def __init__(
-        self,
-        *,
-        text: builtins.str = ...,
-        link: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["link", b"link", "text", b"text"]) -> None: ...
-
-global___QnTrialButton = QnTrialButton
-
-@typing_extensions.final
-class QnTrialInfo(google.protobuf.message.Message):
-    """播放页信息-响应: 高画质试看信息"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TRIAL_ABLE_FIELD_NUMBER: builtins.int
-    REMAINING_TIMES_FIELD_NUMBER: builtins.int
-    START_FIELD_NUMBER: builtins.int
-    TIME_LENGTH_FIELD_NUMBER: builtins.int
-    START_TOAST_FIELD_NUMBER: builtins.int
-    END_TOAST_FIELD_NUMBER: builtins.int
-    QUALITY_OPEN_TIP_BTN_FIELD_NUMBER: builtins.int
-    trial_able: builtins.bool
-    """能否试看高画质"""
-    remaining_times: builtins.int
-    """"""
-    start: builtins.int
-    """"""
-    time_length: builtins.int
-    """"""
-    @property
-    def start_toast(self) -> global___QnTrialToast:
-        """"""
-    @property
-    def end_toast(self) -> global___QnTrialToast:
-        """"""
-    @property
-    def quality_open_tip_btn(self) -> global___QnTrialButton:
-        """"""
-    def __init__(
-        self,
-        *,
-        trial_able: builtins.bool = ...,
-        remaining_times: builtins.int = ...,
-        start: builtins.int = ...,
-        time_length: builtins.int = ...,
-        start_toast: global___QnTrialToast | None = ...,
-        end_toast: global___QnTrialToast | None = ...,
-        quality_open_tip_btn: global___QnTrialButton | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["end_toast", b"end_toast", "quality_open_tip_btn", b"quality_open_tip_btn", "start_toast", b"start_toast"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["end_toast", b"end_toast", "quality_open_tip_btn", b"quality_open_tip_btn", "remaining_times", b"remaining_times", "start", b"start", "start_toast", b"start_toast", "time_length", b"time_length", "trial_able", b"trial_able"]) -> None: ...
-
-global___QnTrialInfo = QnTrialInfo
-
-@typing_extensions.final
-class QnTrialToast(google.protobuf.message.Message):
-    """高画质试看信息: Toast信息"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TEXT_FIELD_NUMBER: builtins.int
-    BUTTON_FIELD_NUMBER: builtins.int
-    text: builtins.str
-    """toast文案 老字段"""
-    @property
-    def button(self) -> global___QnTrialButton:
-        """toast按钮"""
-    def __init__(
-        self,
-        *,
-        text: builtins.str = ...,
-        button: global___QnTrialButton | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["button", b"button"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["button", b"button", "text", b"text"]) -> None: ...
-
-global___QnTrialToast = QnTrialToast
-
-@typing_extensions.final
-class Event(google.protobuf.message.Message):
-    """事件"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SHAKE_FIELD_NUMBER: builtins.int
-    @property
-    def shake(self) -> global___Shake:
-        """震动"""
-    def __init__(
-        self,
-        *,
-        shake: global___Shake | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["shake", b"shake"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["shake", b"shake"]) -> None: ...
-
-global___Event = Event
-
-@typing_extensions.final
-class Shake(google.protobuf.message.Message):
-    """震动"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FILE_FIELD_NUMBER: builtins.int
-    file: builtins.str
-    """"""
-    def __init__(
-        self,
-        *,
-        file: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["file", b"file"]) -> None: ...
-
-global___Shake = Shake

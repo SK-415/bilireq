@@ -117,7 +117,7 @@ class CreateDynReq(google.protobuf.message.Message):
     @property
     def content(self) -> bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateContent:
         """发布的内容"""
-    scene: bilibili.dynamic.common.dynamic_pb2.CreateScene.ValueType
+    scene: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateScene.ValueType
     """发布类型"""
     @property
     def pics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[bilibili.dynamic.common.dynamic_pb2.CreatePic]:
@@ -153,19 +153,19 @@ class CreateDynReq(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        meta: bilibili.dynamic.common.dynamic_pb2.UserCreateMeta | None = ...,
-        content: bilibili.dynamic.common.dynamic_pb2.CreateContent | None = ...,
-        scene: bilibili.dynamic.common.dynamic_pb2.CreateScene.ValueType = ...,
+        meta: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.UserCreateMeta | None = ...,
+        content: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateContent | None = ...,
+        scene: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateScene.ValueType = ...,
         pics: collections.abc.Iterable[bilibili.dynamic.common.dynamic_pb2.CreatePic] | None = ...,
-        repost_src: bilibili.dynamic.common.dynamic_pb2.DynIdentity | None = ...,
-        video: bilibili.dynamic.common.dynamic_pb2.CreateDynVideo | None = ...,
+        repost_src: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.DynIdentity | None = ...,
+        video: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateDynVideo | None = ...,
         sketch_type: builtins.int = ...,
-        sketch: bilibili.dynamic.common.dynamic_pb2.Sketch | None = ...,
-        program: bilibili.dynamic.common.dynamic_pb2.Program | None = ...,
-        dyn_tag: bilibili.dynamic.common.dynamic_pb2.CreateTag | None = ...,
-        attach_card: bilibili.dynamic.common.dynamic_pb2.CreateAttachCard | None = ...,
-        option: bilibili.dynamic.common.dynamic_pb2.CreateOption | None = ...,
-        topic: bilibili.dynamic.common.dynamic_pb2.CreateTopic | None = ...,
+        sketch: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.Sketch | None = ...,
+        program: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.Program | None = ...,
+        dyn_tag: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateTag | None = ...,
+        attach_card: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateAttachCard | None = ...,
+        option: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateOption | None = ...,
+        topic: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateTopic | None = ...,
         upload_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["attach_card", b"attach_card", "content", b"content", "dyn_tag", b"dyn_tag", "meta", b"meta", "option", b"option", "program", b"program", "repost_src", b"repost_src", "sketch", b"sketch", "topic", b"topic", "video", b"video"]) -> builtins.bool: ...
@@ -194,8 +194,8 @@ class CreateInitCheckReq(google.protobuf.message.Message):
         self,
         *,
         scene: builtins.int = ...,
-        meta: bilibili.dynamic.common.dynamic_pb2.MetaDataCtrl | None = ...,
-        repost: bilibili.dynamic.common.dynamic_pb2.RepostInitCheck | None = ...,
+        meta: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.MetaDataCtrl | None = ...,
+        repost: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.RepostInitCheck | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["meta", b"meta", "repost", b"repost"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["meta", b"meta", "repost", b"repost", "scene", b"scene"]) -> None: ...
@@ -492,7 +492,7 @@ class SubmitCheckReq(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        content: bilibili.dynamic.common.dynamic_pb2.CreateContent | None = ...,
+        content: bilireq.grpc.protos.bilibili.dynamic.common.dynamic_pb2.CreateContent | None = ...,
         pics: collections.abc.Iterable[bilibili.dynamic.common.dynamic_pb2.CreatePic] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["content", b"content"]) -> builtins.bool: ...

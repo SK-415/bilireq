@@ -505,7 +505,7 @@ class CursorReq(google.protobuf.message.Message):
         cursor: global___Cursor | None = ...,
         business: builtins.str = ...,
         player_preload: global___PlayerPreloadParams | None = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["cursor", b"cursor", "player_args", b"player_args", "player_preload", b"player_preload"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["business", b"business", "cursor", b"cursor", "player_args", b"player_args", "player_preload", b"player_preload"]) -> None: ...
@@ -607,7 +607,7 @@ class CursorV2Req(google.protobuf.message.Message):
         cursor: global___Cursor | None = ...,
         business: builtins.str = ...,
         player_preload: global___PlayerPreloadParams | None = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         is_local: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["cursor", b"cursor", "player_args", b"player_args", "player_preload", b"player_preload"]) -> builtins.bool: ...

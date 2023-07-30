@@ -349,7 +349,7 @@ class LargeCoverInline(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         cover_left_text1: builtins.str = ...,
         cover_left_icon1: builtins.int = ...,
         cover_left_text2: builtins.str = ...,
@@ -760,7 +760,7 @@ class TopicCardItem(google.protobuf.message.Message):
         self,
         *,
         type: builtins.int = ...,
-        dynamic_item: bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
+        dynamic_item: bilireq.grpc.protos.bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
         ford_card_item: global___FoldCardItem | None = ...,
         video_small_card_item: global___VideoSmallCardItem | None = ...,
     ) -> None: ...
@@ -894,7 +894,7 @@ class TopicDetailsAllReq(google.protobuf.message.Message):
         offset: builtins.str = ...,
         page_size: builtins.int = ...,
         local_time: builtins.int = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         need_refresh: builtins.int = ...,
         source: builtins.str = ...,
         topic_details_ext_mode: builtins.int = ...,
@@ -960,7 +960,7 @@ class TopicDetailsFoldReq(google.protobuf.message.Message):
         offset: builtins.str = ...,
         page_size: builtins.int = ...,
         local_time: builtins.int = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         from_sort_by: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["player_args", b"player_args"]) -> builtins.bool: ...

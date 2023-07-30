@@ -2297,8 +2297,8 @@ class SearchAllRequest(google.protobuf.message.Message):
         is_org_query: builtins.int = ...,
         local_time: builtins.int = ...,
         ad_extra: builtins.str = ...,
-        pagination: bilibili.pagination.pagination_pb2.Pagination | None = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        pagination: bilireq.grpc.protos.bilibili.pagination.pagination_pb2.Pagination | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pagination", b"pagination", "player_args", b"player_args"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["ad_extra", b"ad_extra", "duration_list", b"duration_list", "extra_word", b"extra_word", "from_source", b"from_source", "is_org_query", b"is_org_query", "keyword", b"keyword", "local_time", b"local_time", "order", b"order", "pagination", b"pagination", "player_args", b"player_args", "tid_list", b"tid_list"]) -> None: ...
@@ -2386,7 +2386,7 @@ class SearchAllResponse(google.protobuf.message.Message):
         org_extra_word: builtins.str = ...,
         select_bar_type: builtins.int = ...,
         new_search_exp_num: builtins.int = ...,
-        pagination: bilibili.pagination.pagination_pb2.PaginationReply | None = ...,
+        pagination: bilireq.grpc.protos.bilibili.pagination.pagination_pb2.PaginationReply | None = ...,
         app_display_option: global___DisplayOption | None = ...,
         annotation: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
@@ -2787,6 +2787,61 @@ class SearchByTypeRequest(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _CategorySort:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _CategorySortEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SearchByTypeRequest._CategorySort.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        CATEGORY_SORT_DEFAULT: SearchByTypeRequest._CategorySort.ValueType  # 0
+        CATEGORY_SORT_PUBLISH_TIME: SearchByTypeRequest._CategorySort.ValueType  # 1
+        CATEGORY_SORT_CLICK_COUNT: SearchByTypeRequest._CategorySort.ValueType  # 2
+        CATEGORY_SORT_COMMENT_COUNT: SearchByTypeRequest._CategorySort.ValueType  # 3
+        CATEGORY_SORT_LIKE_COUNT: SearchByTypeRequest._CategorySort.ValueType  # 4
+
+    class CategorySort(_CategorySort, metaclass=_CategorySortEnumTypeWrapper): ...
+    CATEGORY_SORT_DEFAULT: SearchByTypeRequest.CategorySort.ValueType  # 0
+    CATEGORY_SORT_PUBLISH_TIME: SearchByTypeRequest.CategorySort.ValueType  # 1
+    CATEGORY_SORT_CLICK_COUNT: SearchByTypeRequest.CategorySort.ValueType  # 2
+    CATEGORY_SORT_COMMENT_COUNT: SearchByTypeRequest.CategorySort.ValueType  # 3
+    CATEGORY_SORT_LIKE_COUNT: SearchByTypeRequest.CategorySort.ValueType  # 4
+
+    class _UserType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _UserTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SearchByTypeRequest._UserType.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        ALL: SearchByTypeRequest._UserType.ValueType  # 0
+        UP: SearchByTypeRequest._UserType.ValueType  # 1
+        NORMAL_USER: SearchByTypeRequest._UserType.ValueType  # 2
+        AUTHENTICATED_USER: SearchByTypeRequest._UserType.ValueType  # 3
+
+    class UserType(_UserType, metaclass=_UserTypeEnumTypeWrapper): ...
+    ALL: SearchByTypeRequest.UserType.ValueType  # 0
+    UP: SearchByTypeRequest.UserType.ValueType  # 1
+    NORMAL_USER: SearchByTypeRequest.UserType.ValueType  # 2
+    AUTHENTICATED_USER: SearchByTypeRequest.UserType.ValueType  # 3
+
+    class _UserSort:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _UserSortEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SearchByTypeRequest._UserSort.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        USER_SORT_DEFAULT: SearchByTypeRequest._UserSort.ValueType  # 0
+        USER_SORT_FANS_DESCEND: SearchByTypeRequest._UserSort.ValueType  # 1
+        USER_SORT_FANS_ASCEND: SearchByTypeRequest._UserSort.ValueType  # 2
+        USER_SORT_LEVEL_DESCEND: SearchByTypeRequest._UserSort.ValueType  # 3
+        USER_SORT_LEVEL_ASCEND: SearchByTypeRequest._UserSort.ValueType  # 4
+
+    class UserSort(_UserSort, metaclass=_UserSortEnumTypeWrapper): ...
+    USER_SORT_DEFAULT: SearchByTypeRequest.UserSort.ValueType  # 0
+    USER_SORT_FANS_DESCEND: SearchByTypeRequest.UserSort.ValueType  # 1
+    USER_SORT_FANS_ASCEND: SearchByTypeRequest.UserSort.ValueType  # 2
+    USER_SORT_LEVEL_DESCEND: SearchByTypeRequest.UserSort.ValueType  # 3
+    USER_SORT_LEVEL_ASCEND: SearchByTypeRequest.UserSort.ValueType  # 4
+
     TYPE_FIELD_NUMBER: builtins.int
     KEYWORD_FIELD_NUMBER: builtins.int
     CATEGORY_SORT_FIELD_NUMBER: builtins.int
@@ -2799,13 +2854,13 @@ class SearchByTypeRequest(google.protobuf.message.Message):
     """搜索目标类型, 番剧为7"""
     keyword: builtins.str
     """关键词"""
-    category_sort: builtins.int
+    category_sort: global___SearchByTypeRequest.CategorySort.ValueType
     """"""
     category_id: builtins.int
     """"""
-    user_type: builtins.int
+    user_type: global___SearchByTypeRequest.UserType.ValueType
     """"""
-    user_sort: builtins.int
+    user_sort: global___SearchByTypeRequest.UserSort.ValueType
     """"""
     @property
     def pagination(self) -> bilireq.grpc.protos.bilibili.pagination.pagination_pb2.Pagination:
@@ -2818,12 +2873,12 @@ class SearchByTypeRequest(google.protobuf.message.Message):
         *,
         type: builtins.int = ...,
         keyword: builtins.str = ...,
-        category_sort: builtins.int = ...,
+        category_sort: global___SearchByTypeRequest.CategorySort.ValueType = ...,
         category_id: builtins.int = ...,
-        user_type: builtins.int = ...,
-        user_sort: builtins.int = ...,
-        pagination: bilibili.pagination.pagination_pb2.Pagination | None = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        user_type: global___SearchByTypeRequest.UserType.ValueType = ...,
+        user_sort: global___SearchByTypeRequest.UserSort.ValueType = ...,
+        pagination: bilireq.grpc.protos.bilibili.pagination.pagination_pb2.Pagination | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pagination", b"pagination", "player_args", b"player_args"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["category_id", b"category_id", "category_sort", b"category_sort", "keyword", b"keyword", "pagination", b"pagination", "player_args", b"player_args", "type", b"type", "user_sort", b"user_sort", "user_type", b"user_type"]) -> None: ...
@@ -2888,7 +2943,7 @@ class SearchByTypeResponse(google.protobuf.message.Message):
         keyword: builtins.str = ...,
         result_is_recommend: builtins.int = ...,
         items: collections.abc.Iterable[global___Item] | None = ...,
-        pagination: bilibili.pagination.pagination_pb2.PaginationReply | None = ...,
+        pagination: bilireq.grpc.protos.bilibili.pagination.pagination_pb2.PaginationReply | None = ...,
         annotation: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["pagination", b"pagination"]) -> builtins.bool: ...

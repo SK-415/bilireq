@@ -6,7 +6,7 @@ from bilireq.grpc.protos.bilibili.api.probe.v1 import probe_pb2 as bilibili_dot_
 
 
 class ProbeStub(object):
-    """
+    """服务可用性探针
     """
 
     def __init__(self, channel):
@@ -38,7 +38,7 @@ class ProbeStub(object):
 
 
 class ProbeServicer(object):
-    """
+    """服务可用性探针
     """
 
     def TestCode(self, request, context):
@@ -100,7 +100,7 @@ def add_ProbeServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Probe(object):
-    """
+    """服务可用性探针
     """
 
     @staticmethod
@@ -168,5 +168,206 @@ class Probe(object):
         return grpc.experimental.unary_unary(request, target, '/bilibili.api.probe.v1.Probe/TestSub',
             bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ProbeSubReq.SerializeToString,
             bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ProbeSubReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class ProbeServiceStub(object):
+    """服务可用性探针
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Echo = channel.unary_unary(
+                '/bilibili.api.probe.v1.ProbeService/Echo',
+                request_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+                response_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+                )
+        self.EchoBody = channel.unary_unary(
+                '/bilibili.api.probe.v1.ProbeService/EchoBody',
+                request_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+                response_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+                )
+        self.EchoDelete = channel.unary_unary(
+                '/bilibili.api.probe.v1.ProbeService/EchoDelete',
+                request_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+                response_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+                )
+        self.EchoError = channel.unary_unary(
+                '/bilibili.api.probe.v1.ProbeService/EchoError',
+                request_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ErrorMessage.SerializeToString,
+                response_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ErrorMessage.FromString,
+                )
+        self.EchoPatch = channel.unary_unary(
+                '/bilibili.api.probe.v1.ProbeService/EchoPatch',
+                request_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.DynamicMessageUpdate.SerializeToString,
+                response_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.DynamicMessageUpdate.FromString,
+                )
+
+
+class ProbeServiceServicer(object):
+    """服务可用性探针
+    """
+
+    def Echo(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EchoBody(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EchoDelete(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EchoError(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EchoPatch(self, request, context):
+        """
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_ProbeServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'Echo': grpc.unary_unary_rpc_method_handler(
+                    servicer.Echo,
+                    request_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+                    response_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+            ),
+            'EchoBody': grpc.unary_unary_rpc_method_handler(
+                    servicer.EchoBody,
+                    request_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+                    response_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+            ),
+            'EchoDelete': grpc.unary_unary_rpc_method_handler(
+                    servicer.EchoDelete,
+                    request_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+                    response_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+            ),
+            'EchoError': grpc.unary_unary_rpc_method_handler(
+                    servicer.EchoError,
+                    request_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ErrorMessage.FromString,
+                    response_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ErrorMessage.SerializeToString,
+            ),
+            'EchoPatch': grpc.unary_unary_rpc_method_handler(
+                    servicer.EchoPatch,
+                    request_deserializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.DynamicMessageUpdate.FromString,
+                    response_serializer=bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.DynamicMessageUpdate.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'bilibili.api.probe.v1.ProbeService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class ProbeService(object):
+    """服务可用性探针
+    """
+
+    @staticmethod
+    def Echo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.api.probe.v1.ProbeService/Echo',
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EchoBody(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.api.probe.v1.ProbeService/EchoBody',
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EchoDelete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.api.probe.v1.ProbeService/EchoDelete',
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.SerializeToString,
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.SimpleMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EchoError(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.api.probe.v1.ProbeService/EchoError',
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ErrorMessage.SerializeToString,
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.ErrorMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EchoPatch(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.api.probe.v1.ProbeService/EchoPatch',
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.DynamicMessageUpdate.SerializeToString,
+            bilibili_dot_api_dot_probe_dot_v1_dot_probe__pb2.DynamicMessageUpdate.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

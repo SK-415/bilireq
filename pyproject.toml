@@ -4,13 +4,13 @@ authors = [
 ]
 requires-python = ">=3.7,<4.0"
 dependencies = [
-    "httpx>=0.24.0",
+    "httpx",
     "rsa>=4.9",
-    "grpcio>=1.54.0",
-    "protobuf>=4.22.3",
+    "grpcio>=1.56.2",
+    "protobuf>=4.23.4",
 ]
 name = "bilireq"
-version = "0.2.6"
+version = "0.2.7"
 description = ""
 license = {text = "MIT"}
 
@@ -28,7 +28,7 @@ repository = "https://github.com/SK-415/bilireq"
 
 [tool.pdm.dev-dependencies]
 dev = [
-    "grpcio-tools>=1.54.0",
+    "grpcio-tools>=1.56.2",
     "mypy-protobuf>=3.4.0",
 ]
 

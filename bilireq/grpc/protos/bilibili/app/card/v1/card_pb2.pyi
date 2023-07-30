@@ -68,17 +68,17 @@ class Card(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        small_cover_v5: bilibili.app.card.v1.single_pb2.SmallCoverV5 | None = ...,
-        large_cover_v1: bilibili.app.card.v1.single_pb2.LargeCoverV1 | None = ...,
-        three_item_all_v2: bilibili.app.card.v1.single_pb2.ThreeItemAllV2 | None = ...,
-        three_item_v1: bilibili.app.card.v1.single_pb2.ThreeItemV1 | None = ...,
-        hot_topic: bilibili.app.card.v1.single_pb2.HotTopic | None = ...,
-        three_item_h_v5: bilibili.app.card.v1.single_pb2.DynamicHot | None = ...,
-        middle_cover_v3: bilibili.app.card.v1.single_pb2.MiddleCoverV3 | None = ...,
-        large_cover_v4: bilibili.app.card.v1.single_pb2.LargeCoverV4 | None = ...,
-        popular_top_entrance: bilibili.app.card.v1.single_pb2.PopularTopEntrance | None = ...,
-        rcmd_one_item: bilibili.app.card.v1.single_pb2.RcmdOneItem | None = ...,
-        small_cover_v5_ad: bilibili.app.card.v1.single_pb2.SmallCoverV5Ad | None = ...,
+        small_cover_v5: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.SmallCoverV5 | None = ...,
+        large_cover_v1: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.LargeCoverV1 | None = ...,
+        three_item_all_v2: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.ThreeItemAllV2 | None = ...,
+        three_item_v1: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.ThreeItemV1 | None = ...,
+        hot_topic: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.HotTopic | None = ...,
+        three_item_h_v5: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.DynamicHot | None = ...,
+        middle_cover_v3: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.MiddleCoverV3 | None = ...,
+        large_cover_v4: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.LargeCoverV4 | None = ...,
+        popular_top_entrance: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.PopularTopEntrance | None = ...,
+        rcmd_one_item: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.RcmdOneItem | None = ...,
+        small_cover_v5_ad: bilireq.grpc.protos.bilibili.app.card.v1.single_pb2.SmallCoverV5Ad | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["hot_topic", b"hot_topic", "item", b"item", "large_cover_v1", b"large_cover_v1", "large_cover_v4", b"large_cover_v4", "middle_cover_v3", b"middle_cover_v3", "popular_top_entrance", b"popular_top_entrance", "rcmd_one_item", b"rcmd_one_item", "small_cover_v5", b"small_cover_v5", "small_cover_v5_ad", b"small_cover_v5_ad", "three_item_all_v2", b"three_item_all_v2", "three_item_h_v5", b"three_item_h_v5", "three_item_v1", b"three_item_v1"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["hot_topic", b"hot_topic", "item", b"item", "large_cover_v1", b"large_cover_v1", "large_cover_v4", b"large_cover_v4", "middle_cover_v3", b"middle_cover_v3", "popular_top_entrance", b"popular_top_entrance", "rcmd_one_item", b"rcmd_one_item", "small_cover_v5", b"small_cover_v5", "small_cover_v5_ad", b"small_cover_v5_ad", "three_item_all_v2", b"three_item_all_v2", "three_item_h_v5", b"three_item_h_v5", "three_item_v1", b"three_item_v1"]) -> None: ...

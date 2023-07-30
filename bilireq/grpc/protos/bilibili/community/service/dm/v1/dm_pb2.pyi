@@ -110,6 +110,25 @@ DMAttrHighLike: DMAttrBit.ValueType  # 2
 """高赞弹幕"""
 global___DMAttrBit = DMAttrBit
 
+class _DmColorfulType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _DmColorfulTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DmColorfulType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    NoneType: _DmColorfulType.ValueType  # 0
+    """无"""
+    VipGradualColor: _DmColorfulType.ValueType  # 60001
+    """渐变色"""
+
+class DmColorfulType(_DmColorfulType, metaclass=_DmColorfulTypeEnumTypeWrapper): ...
+
+NoneType: DmColorfulType.ValueType  # 0
+"""无"""
+VipGradualColor: DmColorfulType.ValueType  # 60001
+"""渐变色"""
+global___DmColorfulType = DmColorfulType
+
 class _ExposureType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -697,6 +716,7 @@ class DanmakuElem(google.protobuf.message.Message):
     IDSTR_FIELD_NUMBER: builtins.int
     ATTR_FIELD_NUMBER: builtins.int
     ANIMATION_FIELD_NUMBER: builtins.int
+    COLORFUL_FIELD_NUMBER: builtins.int
     id: builtins.int
     """弹幕dmid"""
     progress: builtins.int
@@ -708,7 +728,7 @@ class DanmakuElem(google.protobuf.message.Message):
     color: builtins.int
     """弹幕颜色"""
     midHash: builtins.str
-    """发送着mid hash"""
+    """发送者mid hash"""
     content: builtins.str
     """弹幕正文"""
     ctime: builtins.int
@@ -727,6 +747,8 @@ class DanmakuElem(google.protobuf.message.Message):
     """
     animation: builtins.str
     """"""
+    colorful: global___DmColorfulType.ValueType
+    """大会员专属颜色"""
     def __init__(
         self,
         *,
@@ -744,8 +766,9 @@ class DanmakuElem(google.protobuf.message.Message):
         idStr: builtins.str = ...,
         attr: builtins.int = ...,
         animation: builtins.str = ...,
+        colorful: global___DmColorfulType.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "animation", b"animation", "attr", b"attr", "color", b"color", "content", b"content", "ctime", b"ctime", "fontsize", b"fontsize", "id", b"id", "idStr", b"idStr", "midHash", b"midHash", "mode", b"mode", "pool", b"pool", "progress", b"progress", "weight", b"weight"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["action", b"action", "animation", b"animation", "attr", b"attr", "color", b"color", "colorful", b"colorful", "content", b"content", "ctime", b"ctime", "fontsize", b"fontsize", "id", b"id", "idStr", b"idStr", "midHash", b"midHash", "mode", b"mode", "pool", b"pool", "progress", b"progress", "weight", b"weight"]) -> None: ...
 
 global___DanmakuElem = DanmakuElem
 
@@ -1214,6 +1237,26 @@ class DanmuWebPlayerConfig(google.protobuf.message.Message):
 global___DanmuWebPlayerConfig = DanmuWebPlayerConfig
 
 @typing_extensions.final
+class DmColorful(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TYPE_FIELD_NUMBER: builtins.int
+    SRC_FIELD_NUMBER: builtins.int
+    type: global___DmColorfulType.ValueType
+    """颜色类型"""
+    src: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        type: global___DmColorfulType.ValueType = ...,
+        src: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["src", b"src", "type", b"type"]) -> None: ...
+
+global___DmColorful = DmColorful
+
+@typing_extensions.final
 class DmExpoReportReq(google.protobuf.message.Message):
     """"""
 
@@ -1396,6 +1439,7 @@ class DmSegMobileReply(google.protobuf.message.Message):
     ELEMS_FIELD_NUMBER: builtins.int
     STATE_FIELD_NUMBER: builtins.int
     AI_FLAG_FIELD_NUMBER: builtins.int
+    COLORFULSRC_FIELD_NUMBER: builtins.int
     @property
     def elems(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DanmakuElem]:
         """弹幕列表"""
@@ -1406,15 +1450,18 @@ class DmSegMobileReply(google.protobuf.message.Message):
     @property
     def ai_flag(self) -> global___DanmakuAIFlag:
         """弹幕云屏蔽ai评分值"""
+    @property
+    def colorfulSrc(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DmColorful]: ...
     def __init__(
         self,
         *,
         elems: collections.abc.Iterable[global___DanmakuElem] | None = ...,
         state: builtins.int = ...,
         ai_flag: global___DanmakuAIFlag | None = ...,
+        colorfulSrc: collections.abc.Iterable[global___DmColorful] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag", "elems", b"elems", "state", b"state"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["ai_flag", b"ai_flag", "colorfulSrc", b"colorfulSrc", "elems", b"elems", "state", b"state"]) -> None: ...
 
 global___DmSegMobileReply = DmSegMobileReply
 

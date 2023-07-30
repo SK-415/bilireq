@@ -2,3 +2,66 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from bilireq.grpc.protos.bilibili.relation.interfaces import api_pb2 as bilibili_dot_relation_dot_interfaces_dot_api__pb2
+
+
+class RelationInterfaceStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.AtSearch = channel.unary_unary(
+                '/bilibili.relation.interface.v1.RelationInterface/AtSearch',
+                request_serializer=bilibili_dot_relation_dot_interfaces_dot_api__pb2.AtSearchReq.SerializeToString,
+                response_deserializer=bilibili_dot_relation_dot_interfaces_dot_api__pb2.AtSearchReply.FromString,
+                )
+
+
+class RelationInterfaceServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def AtSearch(self, request, context):
+        """评论区 At 用户列表 (无需登录鉴权)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_RelationInterfaceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'AtSearch': grpc.unary_unary_rpc_method_handler(
+                    servicer.AtSearch,
+                    request_deserializer=bilibili_dot_relation_dot_interfaces_dot_api__pb2.AtSearchReq.FromString,
+                    response_serializer=bilibili_dot_relation_dot_interfaces_dot_api__pb2.AtSearchReply.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'bilibili.relation.interface.v1.RelationInterface', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class RelationInterface(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def AtSearch(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bilibili.relation.interface.v1.RelationInterface/AtSearch',
+            bilibili_dot_relation_dot_interfaces_dot_api__pb2.AtSearchReq.SerializeToString,
+            bilibili_dot_relation_dot_interfaces_dot_api__pb2.AtSearchReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

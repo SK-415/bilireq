@@ -529,7 +529,7 @@ class ReqSendMsg(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        msg: bilibili.im.type.im_pb2.Msg | None = ...,
+        msg: bilireq.grpc.protos.bilibili.im.type.im_pb2.Msg | None = ...,
         cookie: builtins.str = ...,
         cookie2: builtins.str = ...,
         error_code: builtins.int = ...,
@@ -1006,7 +1006,7 @@ class RspSendMsg(google.protobuf.message.Message):
         msg_key: builtins.int = ...,
         e_infos: collections.abc.Iterable[global___EmotionInfo] | None = ...,
         msg_content: builtins.str = ...,
-        key_hit_infos: bilibili.im.type.im_pb2.KeyHitInfos | None = ...,
+        key_hit_infos: bilireq.grpc.protos.bilibili.im.type.im_pb2.KeyHitInfos | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["key_hit_infos", b"key_hit_infos"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["e_infos", b"e_infos", "key_hit_infos", b"key_hit_infos", "msg_content", b"msg_content", "msg_key", b"msg_key"]) -> None: ...

@@ -74,18 +74,18 @@ class SmallCoverV5(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         cover_gif: builtins.str = ...,
-        up: bilibili.app.card.v1.common_pb2.Up | None = ...,
+        up: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Up | None = ...,
         cover_right_text_1: builtins.str = ...,
         right_desc_1: builtins.str = ...,
         right_desc_2: builtins.str = ...,
-        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        rcmd_reason_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         hotword_entrance: global___HotwordEntrance | None = ...,
-        corner_mark_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        corner_mark_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         right_icon_1: builtins.int = ...,
         right_icon_2: builtins.int = ...,
-        left_corner_mark_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        left_corner_mark_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         cover_right_text_content_description: builtins.str = ...,
         right_desc1_content_description: builtins.str = ...,
     ) -> None: ...
@@ -151,18 +151,18 @@ class SmallCoverV5Ad(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         cover_gif: builtins.str = ...,
-        up: bilibili.app.card.v1.common_pb2.Up | None = ...,
+        up: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Up | None = ...,
         cover_right_text1: builtins.str = ...,
         right_desc1: builtins.str = ...,
         right_desc2: builtins.str = ...,
-        rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        rcmd_reason_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         hotword_entrance: global___HotwordEntrance | None = ...,
-        corner_mark_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        corner_mark_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         right_icon1: builtins.int = ...,
         right_icon2: builtins.int = ...,
-        left_corner_mark_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        left_corner_mark_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         cover_right_text_content_description: builtins.str = ...,
         right_desc1_content_description: builtins.str = ...,
     ) -> None: ...
@@ -281,9 +281,9 @@ class LargeCoverV1(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         cover_gif: builtins.str = ...,
-        avatar: bilibili.app.card.v1.common_pb2.Avatar | None = ...,
+        avatar: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Avatar | None = ...,
         cover_left_text_1: builtins.str = ...,
         cover_left_text_2: builtins.str = ...,
         cover_left_text_3: builtins.str = ...,
@@ -293,13 +293,13 @@ class LargeCoverV1(google.protobuf.message.Message):
         desc: builtins.str = ...,
         official_icon: builtins.int = ...,
         can_play: builtins.int = ...,
-        top_rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
-        bottom_rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
-        rcmd_reason_style_v2: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
-        left_cover_badge_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
-        right_cover_badge_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        top_rcmd_reason_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        bottom_rcmd_reason_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        rcmd_reason_style_v2: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        left_cover_badge_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        right_cover_badge_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         cover_badge_2: builtins.str = ...,
-        like_button: bilibili.app.card.v1.common_pb2.LikeButton | None = ...,
+        like_button: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.LikeButton | None = ...,
         title_single_line: builtins.int = ...,
         cover_right_text: builtins.str = ...,
     ) -> None: ...
@@ -329,8 +329,8 @@ class ThreeItemAllV2(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
-        top_rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
+        top_rcmd_reason_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         item: collections.abc.Iterable[global___TwoItemHV1Item] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["base", b"base", "top_rcmd_reason_style", b"top_rcmd_reason_style"]) -> builtins.bool: ...
@@ -379,7 +379,7 @@ class TwoItemHV1Item(google.protobuf.message.Message):
         cover: builtins.str = ...,
         uri: builtins.str = ...,
         param: builtins.str = ...,
-        args: bilibili.app.card.v1.common_pb2.Args | None = ...,
+        args: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Args | None = ...,
         goto: builtins.str = ...,
         cover_left_text_1: builtins.str = ...,
         cover_left_icon_1: builtins.int = ...,
@@ -411,8 +411,8 @@ class RcmdOneItem(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
-        topRcmdReasonStyle: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
+        topRcmdReasonStyle: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
         item: global___SmallCoverRcmdItem | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["base", b"base", "item", b"item", "topRcmdReasonStyle", b"topRcmdReasonStyle"]) -> builtins.bool: ...
@@ -514,7 +514,7 @@ class ThreeItemV1(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         titleIcon: builtins.int = ...,
         moreUri: builtins.str = ...,
         moreText: builtins.str = ...,
@@ -553,7 +553,7 @@ class ThreeItemV1Item(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         coverLeftText: builtins.str = ...,
         coverLeftIcon: builtins.int = ...,
         desc1: builtins.str = ...,
@@ -615,7 +615,7 @@ class HotTopic(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         desc: builtins.str = ...,
         items: collections.abc.Iterable[global___HotTopicItem] | None = ...,
     ) -> None: ...
@@ -663,7 +663,7 @@ class DynamicHot(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         top_left_title: builtins.str = ...,
         desc1: builtins.str = ...,
         desc2: builtins.str = ...,
@@ -671,7 +671,7 @@ class DynamicHot(google.protobuf.message.Message):
         more_text: builtins.str = ...,
         covers: collections.abc.Iterable[builtins.str] | None = ...,
         cover_right_text: builtins.str = ...,
-        top_rcmd_reason_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        top_rcmd_reason_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["base", b"base", "top_rcmd_reason_style", b"top_rcmd_reason_style"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "cover_right_text", b"cover_right_text", "covers", b"covers", "desc1", b"desc1", "desc2", b"desc2", "more_text", b"more_text", "more_uri", b"more_uri", "top_left_title", b"top_left_title", "top_rcmd_reason_style", b"top_rcmd_reason_style"]) -> None: ...
@@ -701,10 +701,10 @@ class MiddleCoverV3(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         desc1: builtins.str = ...,
         desc2: builtins.str = ...,
-        cover_badge_style: bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
+        cover_badge_style: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.ReasonStyle | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["base", b"base", "cover_badge_style", b"cover_badge_style"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["base", b"base", "cover_badge_style", b"cover_badge_style", "desc1", b"desc1", "desc2", b"desc2"]) -> None: ...
@@ -758,13 +758,13 @@ class LargeCoverV4(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         cover_left_text_1: builtins.str = ...,
         cover_left_text_2: builtins.str = ...,
         cover_left_text_3: builtins.str = ...,
         cover_badge: builtins.str = ...,
         can_play: builtins.int = ...,
-        up: bilibili.app.card.v1.common_pb2.Up | None = ...,
+        up: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Up | None = ...,
         short_link: builtins.str = ...,
         share_subtitle: builtins.str = ...,
         play_number: builtins.str = ...,
@@ -793,7 +793,7 @@ class PopularTopEntrance(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        base: bilibili.app.card.v1.common_pb2.Base | None = ...,
+        base: bilireq.grpc.protos.bilibili.app.card.v1.common_pb2.Base | None = ...,
         items: collections.abc.Iterable[global___EntranceItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["base", b"base"]) -> builtins.bool: ...

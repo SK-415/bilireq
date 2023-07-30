@@ -45,4 +45,6 @@ for file_path in Path(".").rglob("*.proto"):
                         line = line.replace("import pgc.", "import bilireq.grpc.protos.pgc.")
                     elif "-> bilibili" in line:
                         line = line.replace("-> bilibili", "-> bilireq.grpc.protos.bilibili")
+                    elif ": bilibili" in line:
+                        line = line.replace(": bilibili", ": bilireq.grpc.protos.bilibili")
                     f.write(line)

@@ -155,7 +155,7 @@ class FrameOption(google.protobuf.message.Message):
         message_id: builtins.int = ...,
         sequence: builtins.int = ...,
         is_ack: builtins.bool = ...,
-        status: bilibili.rpc.status_pb2.Status | None = ...,
+        status: bilireq.grpc.protos.bilibili.rpc.status_pb2.Status | None = ...,
         ack_origin: builtins.str = ...,
         timestamp: builtins.int = ...,
     ) -> None: ...

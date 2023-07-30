@@ -30,19 +30,19 @@ class Metadata(google.protobuf.message.Message):
     BUVID_FIELD_NUMBER: builtins.int
     PLATFORM_FIELD_NUMBER: builtins.int
     access_key: builtins.str
-    """登录Token"""
+    """登录 access_key"""
     mobi_app: builtins.str
-    """包类型"""
+    """包类型, 如 `android`"""
     device: builtins.str
-    """运行设备"""
+    """运行设备, 留空即可"""
     build: builtins.int
-    """构建id"""
+    """构建id, 如 `7380300`"""
     channel: builtins.str
-    """APP分发渠道"""
+    """APP分发渠道, 如 `master`"""
     buvid: builtins.str
-    """设备buvid"""
+    """设备唯一标识"""
     platform: builtins.str
-    """平台类型"""
+    """平台类型, 如 `android`"""
     def __init__(
         self,
         *,

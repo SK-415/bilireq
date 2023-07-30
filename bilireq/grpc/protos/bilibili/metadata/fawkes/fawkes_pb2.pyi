@@ -46,11 +46,11 @@ class FawkesReq(google.protobuf.message.Message):
     ENV_FIELD_NUMBER: builtins.int
     SESSION_ID_FIELD_NUMBER: builtins.int
     appkey: builtins.str
-    """客户端在fawkes系统的唯一名"""
+    """客户端在fawkes系统的唯一名, 如 `android64`"""
     env: builtins.str
-    """客户端在fawkes系统中的环境参数"""
+    """客户端在fawkes系统中的环境参数, 如 `prod`"""
     session_id: builtins.str
-    """启动id"""
+    """启动id, 8 位 0~9, a~z 组成的字符串"""
     def __init__(
         self,
         *,

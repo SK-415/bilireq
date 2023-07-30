@@ -1207,7 +1207,7 @@ class DynOurCityReq(google.protobuf.message.Message):
         lbs_state: builtins.int = ...,
         refresh_city: builtins.int = ...,
         exp_conf: global___ExpConf | None = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         city_code: builtins.int = ...,
         build_time: builtins.int = ...,
     ) -> None: ...
@@ -3182,7 +3182,7 @@ class SVideoReq(google.protobuf.message.Message):
         from_spmid: builtins.str = ...,
         player_preload: global___PlayerPreloadParams | None = ...,
         focus_aid: builtins.int = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["player_args", b"player_args", "player_preload", b"player_preload"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["fnval", b"fnval", "fnver", b"fnver", "focus_aid", b"focus_aid", "force_host", b"force_host", "fourk", b"fourk", "from_spmid", b"from_spmid", "offset", b"offset", "oid", b"oid", "player_args", b"player_args", "player_preload", b"player_preload", "qn", b"qn", "spmid", b"spmid", "type", b"type"]) -> None: ...

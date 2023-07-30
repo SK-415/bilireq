@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from test_data import AUTH, PASSWORD, PHONE, UID, USERNAME
+from test.test_data import AUTH, PASSWORD, PHONE, UID, USERNAME
 
 from bilireq.auth import Auth
 from bilireq.dynamic import (

@@ -572,7 +572,7 @@ class DynamicCard(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        dynamic: bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
+        dynamic: bilireq.grpc.protos.bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["dynamic", b"dynamic"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["dynamic", b"dynamic"]) -> None: ...
@@ -678,7 +678,7 @@ class DynamicReq(google.protobuf.message.Message):
         raw_params: builtins.str = ...,
         params: global___DynamicParams | None = ...,
         from_spmid: builtins.str = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         local_time: builtins.int = ...,
         is_cold_start: builtins.bool = ...,
         primary_page_id: builtins.int = ...,
@@ -1145,7 +1145,7 @@ class IndexReq(google.protobuf.message.Message):
         https_url_req: builtins.int = ...,
         from_spmid: builtins.str = ...,
         current_tab: builtins.str = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         local_time: builtins.int = ...,
         is_cold_start: builtins.bool = ...,
         primary_page_id: builtins.int = ...,
@@ -1186,7 +1186,7 @@ class InlineIndexReq(google.protobuf.message.Message):
         page_id: builtins.int = ...,
         https_url_req: builtins.int = ...,
         from_spmid: builtins.str = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         local_time: builtins.int = ...,
         is_cold_start: builtins.bool = ...,
     ) -> None: ...
@@ -1212,7 +1212,7 @@ class LayerDynamic(google.protobuf.message.Message):
         self,
         *,
         title: builtins.str = ...,
-        dynamic: bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
+        dynamic: bilireq.grpc.protos.bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["dynamic", b"dynamic"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["dynamic", b"dynamic", "title", b"title"]) -> None: ...
@@ -3643,7 +3643,7 @@ class TabIndexReq(google.protobuf.message.Message):
         page_id: builtins.int = ...,
         https_url_req: builtins.int = ...,
         from_spmid: builtins.str = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         primary_page_id: builtins.int = ...,
         local_time: builtins.int = ...,
         is_cold_start: builtins.bool = ...,
@@ -4114,7 +4114,7 @@ class TopicIndexReq(google.protobuf.message.Message):
         https_url_req: builtins.int = ...,
         from_spmid: builtins.str = ...,
         current_tab: builtins.str = ...,
-        player_args: bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
+        player_args: bilireq.grpc.protos.bilibili.app.archive.middleware.v1.preload_pb2.PlayerArgs | None = ...,
         local_time: builtins.int = ...,
         is_cold_start: builtins.bool = ...,
     ) -> None: ...

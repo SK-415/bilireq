@@ -1060,7 +1060,7 @@ class CreateResp(google.protobuf.message.Message):
         dyn_id_str: builtins.str = ...,
         dyn_type: builtins.int = ...,
         dyn_rid: builtins.int = ...,
-        fake_card: bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
+        fake_card: bilireq.grpc.protos.bilibili.app.dynamic.v2.dynamic_pb2.DynamicItem | None = ...,
         video_result: global___CreateDynVideoResult | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["fake_card", b"fake_card", "video_result", b"video_result"]) -> builtins.bool: ...

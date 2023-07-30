@@ -60,7 +60,7 @@ class PlayViewReq(google.protobuf.message.Message):
     """上一页spm"""
     teenagers_mode: builtins.int
     """青少年模式"""
-    prefer_codec_type: bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType
+    prefer_codec_type: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType
     """视频编码"""
     is_preview: builtins.bool
     """是否强制请求预览视频"""
@@ -78,7 +78,7 @@ class PlayViewReq(google.protobuf.message.Message):
         spmid: builtins.str = ...,
         from_spmid: builtins.str = ...,
         teenagers_mode: builtins.int = ...,
-        prefer_codec_type: bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType = ...,
+        prefer_codec_type: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType = ...,
         is_preview: builtins.bool = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["cid", b"cid", "download", b"download", "ep_id", b"ep_id", "fnval", b"fnval", "fnver", b"fnver", "force_host", b"force_host", "fourk", b"fourk", "from_spmid", b"from_spmid", "is_preview", b"is_preview", "prefer_codec_type", b"prefer_codec_type", "qn", b"qn", "spmid", b"spmid", "teenagers_mode", b"teenagers_mode"]) -> None: ...
@@ -176,7 +176,7 @@ class PlayViewReply(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        video_info: bilibili.app.playurl.v1.playurl_pb2.VideoInfo | None = ...,
+        video_info: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.VideoInfo | None = ...,
         play_conf: global___PlayAbilityConf | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["play_conf", b"play_conf", "video_info", b"video_info"]) -> builtins.bool: ...
@@ -310,7 +310,7 @@ class ProjectReply(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        project: bilibili.app.playurl.v1.playurl_pb2.PlayURLReply | None = ...,
+        project: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.PlayURLReply | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["project", b"project"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["project", b"project"]) -> None: ...

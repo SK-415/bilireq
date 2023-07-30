@@ -319,7 +319,7 @@ class PlayViewReply(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        video_info: bilibili.app.playurl.v1.playurl_pb2.VideoInfo | None = ...,
+        video_info: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.VideoInfo | None = ...,
         play_conf: global___PlayAbilityConf | None = ...,
         business: global___BusinessInfo | None = ...,
         event: global___Event | None = ...,
@@ -375,7 +375,7 @@ class PlayViewReq(google.protobuf.message.Message):
     """上一页spm"""
     teenagers_mode: builtins.int
     """青少年模式"""
-    prefer_codec_type: bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType
+    prefer_codec_type: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType
     """视频编码"""
     is_preview: builtins.bool
     """是否强制请求预览视频"""
@@ -395,7 +395,7 @@ class PlayViewReq(google.protobuf.message.Message):
         spmid: builtins.str = ...,
         from_spmid: builtins.str = ...,
         teenagers_mode: builtins.int = ...,
-        prefer_codec_type: bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType = ...,
+        prefer_codec_type: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.CodeType.ValueType = ...,
         is_preview: builtins.bool = ...,
         room_id: builtins.int = ...,
     ) -> None: ...
@@ -415,7 +415,7 @@ class ProjectReply(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        project: bilibili.app.playurl.v1.playurl_pb2.PlayURLReply | None = ...,
+        project: bilireq.grpc.protos.bilibili.app.playurl.v1.playurl_pb2.PlayURLReply | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["project", b"project"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["project", b"project"]) -> None: ...

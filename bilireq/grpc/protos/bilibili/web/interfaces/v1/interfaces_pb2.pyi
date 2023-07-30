@@ -96,7 +96,7 @@ global___ReplyEmoteMetaSize = ReplyEmoteMetaSize
 
 @typing_extensions.final
 class AccInfo(google.protobuf.message.Message):
-    """"""
+    """用户信息"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -106,9 +106,9 @@ class AccInfo(google.protobuf.message.Message):
     FACE_FIELD_NUMBER: builtins.int
     SIGN_FIELD_NUMBER: builtins.int
     mid: builtins.int
-    """"""
+    """用户UID"""
     name: builtins.str
-    """"""
+    """用户昵称"""
     sex: builtins.str
     """"""
     face: builtins.str

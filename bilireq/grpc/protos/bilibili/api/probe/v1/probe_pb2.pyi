@@ -32,6 +32,8 @@ class _CategoryEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     """"""
     CATEGORY_THREE: _Category.ValueType  # 3
     """"""
+    CATEGORY_FOUR: _Category.ValueType  # 4
+    """"""
 
 class Category(_Category, metaclass=_CategoryEnumTypeWrapper):
     """"""
@@ -43,6 +45,8 @@ CATEGORY_ONE: Category.ValueType  # 1
 CATEGORY_TWO: Category.ValueType  # 2
 """"""
 CATEGORY_THREE: Category.ValueType  # 3
+""""""
+CATEGORY_FOUR: Category.ValueType  # 4
 """"""
 global___Category = Category
 
@@ -58,7 +62,7 @@ class _ErrorReasonEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     """"""
 
 class ErrorReason(_ErrorReason, metaclass=_ErrorReasonEnumTypeWrapper):
-    """"""
+    """Deprecated"""
 
 PROBE_UNSPECIFIED: ErrorReason.ValueType  # 0
 """"""
@@ -72,9 +76,27 @@ class CodeReply(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    ID_FIELD_NUMBER: builtins.int
+    ID1_FIELD_NUMBER: builtins.int
+    CODE_FIELD_NUMBER: builtins.int
+    MESSAGE_S_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """"""
+    id1: builtins.str
+    """"""
+    code: builtins.int
+    """"""
+    message_s: builtins.str
+    """"""
     def __init__(
         self,
+        *,
+        id: builtins.str = ...,
+        id1: builtins.str = ...,
+        code: builtins.int = ...,
+        message_s: builtins.str = ...,
     ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "id", b"id", "id1", b"id1", "message_s", b"message_s"]) -> None: ...
 
 global___CodeReply = CodeReply
 
@@ -95,6 +117,42 @@ class CodeReq(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["code", b"code"]) -> None: ...
 
 global___CodeReq = CodeReq
+
+@typing_extensions.final
+class CreateTopic(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    id: builtins.int
+    """"""
+    def __init__(
+        self,
+        *,
+        id: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["id", b"id"]) -> None: ...
+
+global___CreateTopic = CreateTopic
+
+@typing_extensions.final
+class CreatTask(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TASK_FIELD_NUMBER: builtins.int
+    task: builtins.str
+    """"""
+    def __init__(
+        self,
+        *,
+        task: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["task", b"task"]) -> None: ...
+
+global___CreatTask = CreatTask
 
 @typing_extensions.final
 class DynamicMessageUpdate(google.protobuf.message.Message):
@@ -162,7 +220,11 @@ class Embedded(google.protobuf.message.Message):
     FLOAT_VAL_FIELD_NUMBER: builtins.int
     DOUBLE_VAL_FIELD_NUMBER: builtins.int
     STRING_VAL_FIELD_NUMBER: builtins.int
+    REPEATED_BOOL_VAL_FIELD_NUMBER: builtins.int
     REPEATED_INT32_VAL_FIELD_NUMBER: builtins.int
+    REPEATED_INT64_VAL_FIELD_NUMBER: builtins.int
+    REPEATED_FLOAT_VAL_FIELD_NUMBER: builtins.int
+    REPEATED_DOUBLE_VAL_FIELD_NUMBER: builtins.int
     REPEATED_STRING_VAL_FIELD_NUMBER: builtins.int
     MAP_STRING_VAL_FIELD_NUMBER: builtins.int
     MAP_ERROR_VAL_FIELD_NUMBER: builtins.int
@@ -179,7 +241,19 @@ class Embedded(google.protobuf.message.Message):
     string_val: builtins.str
     """"""
     @property
+    def repeated_bool_val(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.bool]:
+        """"""
+    @property
     def repeated_int32_val(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+        """"""
+    @property
+    def repeated_int64_val(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+        """"""
+    @property
+    def repeated_float_val(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float]:
+        """"""
+    @property
+    def repeated_double_val(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float]:
         """"""
     @property
     def repeated_string_val(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -199,12 +273,16 @@ class Embedded(google.protobuf.message.Message):
         float_val: builtins.float = ...,
         double_val: builtins.float = ...,
         string_val: builtins.str = ...,
+        repeated_bool_val: collections.abc.Iterable[builtins.bool] | None = ...,
         repeated_int32_val: collections.abc.Iterable[builtins.int] | None = ...,
+        repeated_int64_val: collections.abc.Iterable[builtins.int] | None = ...,
+        repeated_float_val: collections.abc.Iterable[builtins.float] | None = ...,
+        repeated_double_val: collections.abc.Iterable[builtins.float] | None = ...,
         repeated_string_val: collections.abc.Iterable[builtins.str] | None = ...,
         map_string_val: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         map_error_val: collections.abc.Mapping[builtins.str, global___ErrorMessage] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bool_val", b"bool_val", "double_val", b"double_val", "float_val", b"float_val", "int32_val", b"int32_val", "int64_val", b"int64_val", "map_error_val", b"map_error_val", "map_string_val", b"map_string_val", "repeated_int32_val", b"repeated_int32_val", "repeated_string_val", b"repeated_string_val", "string_val", b"string_val"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["bool_val", b"bool_val", "double_val", b"double_val", "float_val", b"float_val", "int32_val", b"int32_val", "int64_val", b"int64_val", "map_error_val", b"map_error_val", "map_string_val", b"map_string_val", "repeated_bool_val", b"repeated_bool_val", "repeated_double_val", b"repeated_double_val", "repeated_float_val", b"repeated_float_val", "repeated_int32_val", b"repeated_int32_val", "repeated_int64_val", b"repeated_int64_val", "repeated_string_val", b"repeated_string_val", "string_val", b"string_val"]) -> None: ...
 
 global___Embedded = Embedded
 
@@ -351,12 +429,12 @@ class ProbeSubReq(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     BUVID_FIELD_NUMBER: builtins.int
-    buvid: builtins.int
+    buvid: builtins.str
     """"""
     def __init__(
         self,
         *,
-        buvid: builtins.int = ...,
+        buvid: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["buvid", b"buvid"]) -> None: ...
 
@@ -397,3 +475,29 @@ class SimpleMessage(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["cate", b"cate", "embedded", b"embedded", "id", b"id", "lang", b"lang", "num", b"num"]) -> None: ...
 
 global___SimpleMessage = SimpleMessage
+
+@typing_extensions.final
+class Task(google.protobuf.message.Message):
+    """"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    AUTHOR_FIELD_NUMBER: builtins.int
+    CACHE_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """"""
+    author: builtins.str
+    """"""
+    cache: builtins.bool
+    """"""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        author: builtins.str = ...,
+        cache: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["author", b"author", "cache", b"cache", "name", b"name"]) -> None: ...
+
+global___Task = Task
