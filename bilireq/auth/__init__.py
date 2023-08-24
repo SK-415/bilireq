@@ -12,6 +12,9 @@ class Auth(collections.UserDict):
             self.update(auth)
         # self.update(kwargs)
 
+    def __bool__(self):
+        return bool(self.tokens) and bool(self.cookies)
+
     @property
     def uid(self):
         return self["uid"]
