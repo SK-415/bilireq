@@ -10,7 +10,7 @@ dependencies = [
     "protobuf>=4.23.4",
 ]
 name = "bilireq"
-version = "0.2.8"
+version = "0.2.9"
 description = ""
 license = {text = "MIT"}
 
