@@ -11,7 +11,7 @@ dependencies = [
 ]
 name = "bilireq"
 version = "0.2.9"
-description = ""
+description = "又一个哔哩哔哩请求库"
 license = {text = "MIT"}
 
 [build-system]
