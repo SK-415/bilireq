@@ -34,4 +34,4 @@ jobs:
 
       - name: Build and Publish
         run: |
-          pdm publish --username __token__ --password ${{ secrets.PYPI_TOKEN }}
+          pdm publish --username __token__ --password ${{ secrets.PYPI_API_TOKEN }}
