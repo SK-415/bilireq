@@ -88,8 +88,7 @@ class Login:
             try:
                 resp = await get_qrcode_login_result(auth_code)
                 auth = Auth()
-                auth.access_token = resp["token_info"]["access_token"]
-                auth.refresh_token = resp["token_info"]["refresh_token"]
+                auth.data = auth.refresh_handler(resp)
                 return await auth.refresh()
             except ResponseCodeError as e:
                 if e.code != 86039:
