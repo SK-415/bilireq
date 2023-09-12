@@ -23,7 +23,7 @@ from typing import List
 async def grpc_get_user_dynamics(uid: int, offset: str = "", page: int = 1, **kwargs) -> DynSpaceRsp:
     stub = DynamicStub(kwargs.pop("_channel"))
     req = DynSpaceReq(host_uid=uid, history_offset=offset, page=page)
-    return await stub.DynSpace(req, **kwargs)
+    return await stub.DynSpace(req)
 
 
 @grpc_request
