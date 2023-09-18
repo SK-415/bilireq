@@ -14,9 +14,7 @@ from ..exceptions import ResponseCodeError
 
 DEFAULT_HEADERS = {
     "user-agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-        " AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88"
-        " Safari/537.36 Edg/87.0.664.60"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
     ),
     "Referer": "https://www.bilibili.com/",
 }
