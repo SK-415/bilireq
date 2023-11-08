@@ -5,7 +5,7 @@ authors = [
 requires-python = ">=3.8,<4.0"
 dependencies = [
     "httpx",
-    "rsa>=4.9",
+    "pycryptodome>=3.19.0",
     "grpcio>=1.56.2",
     "protobuf>=4.23.4",
 ]
@@ -20,6 +20,7 @@ build-backend = "pdm.backend"
 
 [project.optional-dependencies]
 qrcode = ["qrcode[pil]"]
+web_qrcode = ["qrcode[pil]","lxml"]
 
 [project.urls]
 repository = "https://github.com/SK-415/bilireq"
