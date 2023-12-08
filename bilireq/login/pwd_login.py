@@ -1,7 +1,8 @@
 import base64
 from typing import Dict
 
-import rsa
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_v1_5
 
 from ..utils import post
 
@@ -12,9 +13,10 @@ async def _encrypt_pwd(pwd: str) -> str:
     """加密密码"""
     url = f"{BASE_URL}api/oauth2/getKey"
     resp: Dict[str, str] = await post(url, reqtype="app")
-    pub_key = rsa.PublicKey.load_pkcs1_openssl_pem(resp["key"].encode())
+    pub_key = RSA.import_key(resp["key"].encode())
+    cipher = PKCS1_v1_5.new(pub_key)
     msg = (resp["hash"] + pwd).encode()
-    return base64.b64encode(rsa.encrypt(msg, pub_key)).decode("ascii")
+    return base64.b64encode(cipher.encrypt(msg, pub_key)).decode("ascii")
 
 
 async def pwd_login(username: str, password: str, **kwargs):

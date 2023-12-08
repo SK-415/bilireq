@@ -1,22 +1,20 @@
-import time
 import re
+import time
 from hashlib import md5
 from typing import Any, Dict, Optional, Union, Tuple
 from urllib.parse import urlencode
 
-from httpx import AsyncClient
-from httpx._models import Response
+from httpx import AsyncClient, Response
 from httpx._types import HeaderTypes, ProxiesTypes, URLTypes
 
 from .._typing import T_Auth
-from ..auth import Auth
+from ..auth import Auth, WebAuth
 from ..exceptions import ResponseCodeError
 
 DEFAULT_HEADERS = {
-    "user-agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-        " AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88"
-        " Safari/537.36 Edg/87.0.664.60"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 "
+        "Safari/537.36 Edg/114.0.1823.67"
     ),
     "Referer": "https://www.bilibili.com/",
 }
@@ -29,10 +27,13 @@ _salt = None
 async def get_homepage_cookies(proxies=None):
     if not homepage_cookies:
         async with AsyncClient(proxies=proxies) as client:
+            headers = {
+                "User-Agent": DEFAULT_HEADERS["User-Agent"],
+            }
             resp = await client.request(
                 "GET",
-                "https://www.bilibili.com/",
-                headers=DEFAULT_HEADERS,
+                "https://data.bilibili.com/v/",
+                headers=headers,
                 follow_redirects=True,
             )
         resp.encoding = "utf-8"
@@ -50,8 +51,10 @@ def _encrypt_params(params: Dict[str, Any], local_id: int = 0) -> Dict[str, Any]
     return params
 
 
-async def _getsalt(*, proxies: ProxiesTypes = {"all://": None}):
-    async with AsyncClient(proxies=proxies) as client:
+async def _get_salt(*, proxies=None):
+    if proxies is None:
+        proxies = {"all://": None}
+    async with AsyncClient(proxies=proxies, verify=False) as client:
         url = "https://api.bilibili.com/x/web-interface/nav"
         req = await client.request("GET", url, headers=DEFAULT_HEADERS)
     con = req.json()
@@ -64,7 +67,9 @@ async def _getsalt(*, proxies: ProxiesTypes = {"all://": None}):
     array = list(n)
     # 注释fmt是为了阻止Black把下面的order格式化为更多行
     # fmt:off
-    order = [46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35, 27, 43, 5,49, 33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13, 37, 48, 7,16, 24, 55, 40, 61, 26, 17, 0, 1, 60, 51, 30, 4, 22, 25, 54,21, 56, 59, 6, 63, 57, 62, 11, 36, 20, 34, 44, 52]
+    order = [46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35, 27, 43, 5, 49, 33, 9, 42, 19, 29, 28, 14, 39,
+             12, 38, 41, 13, 37, 48, 7, 16, 24, 55, 40, 61, 26, 17, 0, 1, 60, 51, 30, 4, 22, 25, 54, 21, 56, 59, 6, 63,
+             57, 62, 11, 36, 20, 34, 44, 52]
     # fmt:on
     salt = "".join([array[i] for i in order])[:32]
     return salt
@@ -87,7 +92,7 @@ async def _encrypt_w_rid(params: Union[str, dict]) -> Tuple[str, str]:
         raise Exception(f"invalid type of e:{type(params)}")
     params_list.sort()
     if _salt is None:
-        _salt = await _getsalt()
+        _salt = await _get_salt()
     w_rid = md5(("&".join(params_list) + _salt).encode(encoding="utf-8")).hexdigest()
     return w_rid, wts
 
@@ -112,19 +117,24 @@ async def _request(
     auth: T_Auth = None,
     reqtype: str = "app",
     is_wbi: bool = False,
-    headers: HeaderTypes = DEFAULT_HEADERS,
-    proxies: ProxiesTypes = {"all://": None},
+    headers: HeaderTypes = None,
+    proxies: ProxiesTypes = None,
     **kwargs,
 ) -> Response:
-    auth = Auth(auth)
+    if proxies is None:
+        proxies = {"all://": None}
+    if headers is None:
+        headers = DEFAULT_HEADERS
     if params is None:
         params = {}
     if cookies is None:
         cookies = {}
     if reqtype.lower() == "app":
+        auth = Auth(auth)
         params.update(auth.tokens)
         _encrypt_params(params)
     else:
+        auth = WebAuth(auth)
         cookies.update(auth.cookies)
     cookies.update(await get_homepage_cookies(proxies))
     if is_wbi:
@@ -133,14 +143,21 @@ async def _request(
         resp = await client.request(
             method, url, headers=headers, params=params, cookies=cookies, **kwargs
         )
+        cookies.update(resp.cookies)
     resp.encoding = "utf-8"
     return resp
 
 
 async def request(
-    method: str, url: URLTypes, retry_time: int = 3, *, raw: bool = False, **kwargs
+    method: str,
+    url: URLTypes,
+    retry_time: int = 3,
+    *,
+    raw: bool = False,
+    **kwargs,
 ) -> Dict[str, Any]:
-    raw_json: Dict[str, Any] = (await _request(method, url, **kwargs)).json()
+    resp = await _request(method, url, **kwargs)
+    raw_json: Dict[str, Any] = resp.json()
     if raw:
         return raw_json
     if raw_json["code"] == -403:
@@ -152,7 +169,7 @@ async def request(
                 data=raw_json.get("data", None),
             )
         global _salt
-        _salt = await _getsalt()
+        _salt = await _get_salt()
         return await request(method, url, retry_time, **kwargs)
     if raw_json["code"] != 0:
         raise ResponseCodeError(
