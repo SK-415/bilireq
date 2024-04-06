@@ -8,9 +8,10 @@ dependencies = [
     "pycryptodome>=3.19.0",
     "grpcio>=1.56.2",
     "protobuf>=4.23.4",
+    "qrcode>=7.4.2",
 ]
 name = "bilireq"
-version = "0.2.12"
+version = "0.2.13"
 description = "又一个哔哩哔哩请求库"
 license = {text = "MIT"}
 
@@ -19,8 +20,7 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [project.optional-dependencies]
-qrcode = ["qrcode[pil]"]
-web_qrcode = ["qrcode[pil]","lxml"]
+web_qrcode = ["lxml"]
 
 [project.urls]
 repository = "https://github.com/SK-415/bilireq"
