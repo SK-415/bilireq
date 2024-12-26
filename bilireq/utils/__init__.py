@@ -5,7 +5,7 @@ from typing import Any, Dict, Optional, Union, Tuple
 from urllib.parse import urlencode
 
 from httpx import AsyncClient, Response
-from httpx._types import HeaderTypes, ProxiesTypes, URLTypes
+from httpx._types import HeaderTypes, ProxyTypes, URLTypes
 
 from .._typing import T_Auth
 from ..auth import Auth, WebAuth
@@ -118,7 +118,7 @@ async def _request(
     reqtype: str = "app",
     is_wbi: bool = False,
     headers: HeaderTypes = None,
-    proxies: ProxiesTypes = None,
+    proxies: ProxyTypes = None,
     **kwargs,
 ) -> Response:
     if proxies is None:
