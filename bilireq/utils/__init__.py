@@ -23,10 +23,33 @@ APPSEC = "59b43e04ad6965f34319062b478f83dd"
 homepage_cookies: Dict[str, str] = {}
 _salt = None
 
+# 复用长驻 AsyncClient，避免每个请求都新建/销毁整套
+# httpx + httpcore + anyio + SSL 对象图（会产生循环垃圾，使 RSS 持续上涨）。
+_shared_clients: Dict[Any, "AsyncClient"] = {}
+
+
+def _get_shared_client(proxies, verify: bool = True) -> "AsyncClient":
+    key = (repr(proxies), verify)
+    client = _shared_clients.get(key)
+    if client is None or client.is_closed:
+        client = AsyncClient(proxies=proxies, verify=verify)
+        _shared_clients[key] = client
+    return client
+
+
+_homepage_cookies_attempted = False
+
 
 async def get_homepage_cookies(proxies=None):
-    if not homepage_cookies:
-        async with AsyncClient(proxies=proxies) as client:
+    # 原逻辑用 `if not homepage_cookies` 做缓存判断，但
+    # https://data.bilibili.com/v/ 现在返回 403、响应里没有任何 Cookie，
+    # 缓存永远填不上，于是每次 B 站请求都重发一次该请求。
+    # 改为「每个进程只尝试一次」。
+    global _homepage_cookies_attempted
+    if not _homepage_cookies_attempted:
+        _homepage_cookies_attempted = True
+        try:
+            client = _get_shared_client(proxies)
             headers = {
                 "User-Agent": DEFAULT_HEADERS["User-Agent"],
             }
@@ -36,8 +59,10 @@ async def get_homepage_cookies(proxies=None):
                 headers=headers,
                 follow_redirects=True,
             )
-        resp.encoding = "utf-8"
-        homepage_cookies.update(resp.cookies)
+            resp.encoding = "utf-8"
+            homepage_cookies.update(resp.cookies)
+        except Exception:
+            pass
     return homepage_cookies
 
 
@@ -54,9 +79,9 @@ def _encrypt_params(params: Dict[str, Any], local_id: int = 0) -> Dict[str, Any]
 async def _get_salt(*, proxies=None):
     if proxies is None:
         proxies = {"all://": None}
-    async with AsyncClient(proxies=proxies, verify=False) as client:
-        url = "https://api.bilibili.com/x/web-interface/nav"
-        req = await client.request("GET", url, headers=DEFAULT_HEADERS)
+    client = _get_shared_client(proxies, verify=False)
+    url = "https://api.bilibili.com/x/web-interface/nav"
+    req = await client.request("GET", url, headers=DEFAULT_HEADERS)
     con = req.json()
     img_url = con["data"]["wbi_img"]["img_url"]
     sub_url = con["data"]["wbi_img"]["sub_url"]
@@ -139,11 +164,11 @@ async def _request(
     cookies.update(await get_homepage_cookies(proxies))
     if is_wbi:
         await _sign_params(params)
-    async with AsyncClient(proxies=proxies) as client:
-        resp = await client.request(
-            method, url, headers=headers, params=params, cookies=cookies, **kwargs
-        )
-        cookies.update(resp.cookies)
+    client = _get_shared_client(proxies)
+    resp = await client.request(
+        method, url, headers=headers, params=params, cookies=cookies, **kwargs
+    )
+    cookies.update(resp.cookies)
     resp.encoding = "utf-8"
     return resp
 
